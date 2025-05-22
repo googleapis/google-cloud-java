@@ -148,7 +148,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * value must be between 5 and 100.
    *
    * The number of delivery attempts is defined as 1 + (the sum of number of
-   * NACKs and number of times the acknowledgement deadline has been exceeded
+   * NACKs and number of times the acknowledgment deadline has been exceeded
    * for the message).
    *
    * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
@@ -695,7 +695,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
-     * NACKs and number of times the acknowledgement deadline has been exceeded
+     * NACKs and number of times the acknowledgment deadline has been exceeded
      * for the message).
      *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
@@ -723,7 +723,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
-     * NACKs and number of times the acknowledgement deadline has been exceeded
+     * NACKs and number of times the acknowledgment deadline has been exceeded
      * for the message).
      *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that
@@ -755,7 +755,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * value must be between 5 and 100.
      *
      * The number of delivery attempts is defined as 1 + (the sum of number of
-     * NACKs and number of times the acknowledgement deadline has been exceeded
+     * NACKs and number of times the acknowledgment deadline has been exceeded
      * for the message).
      *
      * A NACK is any call to ModifyAckDeadline with a 0 deadline. Note that

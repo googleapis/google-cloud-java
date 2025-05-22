@@ -945,6 +945,444 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface SchemaViolationReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Set when a Pub/Sub message fails to get published due to a schema
+   * validation violation.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason}
+   */
+  public static final class SchemaViolationReason extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)
+      SchemaViolationReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use SchemaViolationReason.newBuilder() to construct.
+    private SchemaViolationReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SchemaViolationReason() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SchemaViolationReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_SchemaViolationReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_SchemaViolationReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set when a Pub/Sub message fails to get published due to a schema
+     * validation violation.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)
+        com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_SchemaViolationReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_SchemaViolationReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_SchemaViolationReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) {
+          return mergeFrom(
+              (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SchemaViolationReason> PARSER =
+        new com.google.protobuf.AbstractParser<SchemaViolationReason>() {
+          @java.lang.Override
+          public SchemaViolationReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SchemaViolationReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SchemaViolationReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface CloudStorageFailureOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure)
@@ -1109,6 +1547,50 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
         getApiViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    boolean hasSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason getSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.ReasonCase getReasonCase();
   }
 
@@ -1169,6 +1651,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       AVRO_FAILURE_REASON(5),
       API_VIOLATION_REASON(6),
+      SCHEMA_VIOLATION_REASON(7),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -1192,6 +1675,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return AVRO_FAILURE_REASON;
           case 6:
             return API_VIOLATION_REASON;
+          case 7:
+            return SCHEMA_VIOLATION_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -1461,6 +1946,68 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
 
+    public static final int SCHEMA_VIOLATION_REASON_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchemaViolationReason() {
+      return reasonCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getSchemaViolationReason() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1492,6 +2039,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             6, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        output.writeMessage(
+            7, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1520,6 +2071,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 6, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1546,6 +2102,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           break;
         case 6:
           if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
+          break;
+        case 7:
+          if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
           break;
         case 0:
         default:
@@ -1575,6 +2134,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 6:
           hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getSchemaViolationReason().hashCode();
           break;
         case 0:
         default:
@@ -1731,6 +2294,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (apiViolationReasonBuilder_ != null) {
           apiViolationReasonBuilder_.clear();
         }
+        if (schemaViolationReasonBuilder_ != null) {
+          schemaViolationReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -1792,6 +2358,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 6 && apiViolationReasonBuilder_ != null) {
           result.reason_ = apiViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 7 && schemaViolationReasonBuilder_ != null) {
+          result.reason_ = schemaViolationReasonBuilder_.build();
         }
       }
 
@@ -1869,6 +2438,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeApiViolationReason(other.getApiViolationReason());
               break;
             }
+          case SCHEMA_VIOLATION_REASON:
+            {
+              mergeSchemaViolationReason(other.getSchemaViolationReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -1932,6 +2506,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getSchemaViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2746,6 +3327,255 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return apiViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          schemaViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the schemaViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasSchemaViolationReason() {
+        return reasonCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The schemaViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 7) {
+            return schemaViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+              builderForValue) {
+        if (schemaViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 7
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 7) {
+            schemaViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            schemaViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          schemaViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+          getSchemaViolationReasonBuilder() {
+        return getSchemaViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+          getSchemaViolationReasonOrBuilder() {
+        if ((reasonCase_ == 7) && (schemaViolationReasonBuilder_ != null)) {
+          return schemaViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          getSchemaViolationReasonFieldBuilder() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 7)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                    .getDefaultInstance();
+          }
+          schemaViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 7;
+        onChanged();
+        return schemaViolationReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2944,6 +3774,50 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
         getApiViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    boolean hasSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason getSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.ReasonCase getReasonCase();
   }
 
@@ -3003,6 +3877,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
+      SCHEMA_VIOLATION_REASON(6),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -3024,6 +3899,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         switch (value) {
           case 5:
             return API_VIOLATION_REASON;
+          case 6:
+            return SCHEMA_VIOLATION_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -3249,6 +4126,68 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
 
+    public static final int SCHEMA_VIOLATION_REASON_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchemaViolationReason() {
+      return reasonCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getSchemaViolationReason() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3279,6 +4218,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3305,6 +4248,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3329,6 +4277,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       switch (reasonCase_) {
         case 5:
           if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
+          break;
+        case 6:
+          if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
           break;
         case 0:
         default:
@@ -3356,6 +4307,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getSchemaViolationReason().hashCode();
           break;
         case 0:
         default:
@@ -3510,6 +4465,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (apiViolationReasonBuilder_ != null) {
           apiViolationReasonBuilder_.clear();
         }
+        if (schemaViolationReasonBuilder_ != null) {
+          schemaViolationReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -3571,6 +4529,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         result.reason_ = this.reason_;
         if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
           result.reason_ = apiViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
+          result.reason_ = schemaViolationReasonBuilder_.build();
         }
       }
 
@@ -3646,6 +4607,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeApiViolationReason(other.getApiViolationReason());
               break;
             }
+          case SCHEMA_VIOLATION_REASON:
+            {
+              mergeSchemaViolationReason(other.getSchemaViolationReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -3708,6 +4674,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getSchemaViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4330,6 +5303,255 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return apiViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          schemaViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the schemaViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasSchemaViolationReason() {
+        return reasonCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The schemaViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 6) {
+            return schemaViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+              builderForValue) {
+        if (schemaViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 6) {
+            schemaViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            schemaViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          schemaViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+          getSchemaViolationReasonBuilder() {
+        return getSchemaViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+          getSchemaViolationReasonOrBuilder() {
+        if ((reasonCase_ == 6) && (schemaViolationReasonBuilder_ != null)) {
+          return schemaViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          getSchemaViolationReasonFieldBuilder() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 6)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                    .getDefaultInstance();
+          }
+          schemaViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 6;
+        onChanged();
+        return schemaViolationReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4528,6 +5750,50 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
         getApiViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    boolean hasSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason getSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.ReasonCase
         getReasonCase();
   }
@@ -4589,6 +5855,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
+      SCHEMA_VIOLATION_REASON(6),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -4610,6 +5877,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         switch (value) {
           case 5:
             return API_VIOLATION_REASON;
+          case 6:
+            return SCHEMA_VIOLATION_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -4835,6 +6104,68 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
 
+    public static final int SCHEMA_VIOLATION_REASON_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchemaViolationReason() {
+      return reasonCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getSchemaViolationReason() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4865,6 +6196,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4890,6 +6225,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      if (reasonCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4917,6 +6257,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
           break;
+        case 6:
+          if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
         case 0:
         default:
       }
@@ -4943,6 +6286,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getSchemaViolationReason().hashCode();
           break;
         case 0:
         default:
@@ -5100,6 +6447,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (apiViolationReasonBuilder_ != null) {
           apiViolationReasonBuilder_.clear();
         }
+        if (schemaViolationReasonBuilder_ != null) {
+          schemaViolationReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -5163,6 +6513,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         result.reason_ = this.reason_;
         if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
           result.reason_ = apiViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
+          result.reason_ = schemaViolationReasonBuilder_.build();
         }
       }
 
@@ -5240,6 +6593,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeApiViolationReason(other.getApiViolationReason());
               break;
             }
+          case SCHEMA_VIOLATION_REASON:
+            {
+              mergeSchemaViolationReason(other.getSchemaViolationReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -5302,6 +6660,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getSchemaViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5924,6 +7289,255 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return apiViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          schemaViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the schemaViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasSchemaViolationReason() {
+        return reasonCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The schemaViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 6) {
+            return schemaViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+              builderForValue) {
+        if (schemaViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 6) {
+            schemaViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            schemaViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          schemaViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+          getSchemaViolationReasonBuilder() {
+        return getSchemaViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+          getSchemaViolationReasonOrBuilder() {
+        if ((reasonCase_ == 6) && (schemaViolationReasonBuilder_ != null)) {
+          return schemaViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          getSchemaViolationReasonFieldBuilder() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 6)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                    .getDefaultInstance();
+          }
+          schemaViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 6;
+        onChanged();
+        return schemaViolationReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6123,6 +7737,50 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
         getApiViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    boolean hasSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason getSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.ReasonCase
         getReasonCase();
   }
@@ -6184,6 +7842,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
+      SCHEMA_VIOLATION_REASON(6),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -6205,6 +7864,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         switch (value) {
           case 5:
             return API_VIOLATION_REASON;
+          case 6:
+            return SCHEMA_VIOLATION_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -6430,6 +8091,68 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
 
+    public static final int SCHEMA_VIOLATION_REASON_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchemaViolationReason() {
+      return reasonCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getSchemaViolationReason() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6460,6 +8183,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
       }
+      if (reasonCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6485,6 +8212,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      if (reasonCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6512,6 +8244,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
           break;
+        case 6:
+          if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
         case 0:
         default:
       }
@@ -6538,6 +8273,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getSchemaViolationReason().hashCode();
           break;
         case 0:
         default:
@@ -6695,6 +8434,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (apiViolationReasonBuilder_ != null) {
           apiViolationReasonBuilder_.clear();
         }
+        if (schemaViolationReasonBuilder_ != null) {
+          schemaViolationReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -6758,6 +8500,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         result.reason_ = this.reason_;
         if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
           result.reason_ = apiViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
+          result.reason_ = schemaViolationReasonBuilder_.build();
         }
       }
 
@@ -6835,6 +8580,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeApiViolationReason(other.getApiViolationReason());
               break;
             }
+          case SCHEMA_VIOLATION_REASON:
+            {
+              mergeSchemaViolationReason(other.getSchemaViolationReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -6897,6 +8647,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getSchemaViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7519,6 +9276,255 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return apiViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          schemaViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the schemaViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasSchemaViolationReason() {
+        return reasonCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The schemaViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 6) {
+            return schemaViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+              builderForValue) {
+        if (schemaViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 6) {
+            schemaViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            schemaViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          schemaViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+          getSchemaViolationReasonBuilder() {
+        return getSchemaViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+          getSchemaViolationReasonOrBuilder() {
+        if ((reasonCase_ == 6) && (schemaViolationReasonBuilder_ != null)) {
+          return schemaViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          getSchemaViolationReasonFieldBuilder() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 6)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                    .getDefaultInstance();
+          }
+          schemaViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 6;
+        onChanged();
+        return schemaViolationReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7587,6 +9593,1576 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface AwsKinesisFailureReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The stream ARN of the Kinesis stream being ingested from.
+     * </pre>
+     *
+     * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The streamArn.
+     */
+    java.lang.String getStreamArn();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The stream ARN of the Kinesis stream being ingested from.
+     * </pre>
+     *
+     * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for streamArn.
+     */
+    com.google.protobuf.ByteString getStreamArnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition key of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionKey.
+     */
+    java.lang.String getPartitionKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition key of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for partitionKey.
+     */
+    com.google.protobuf.ByteString getPartitionKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The sequence number of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sequenceNumber.
+     */
+    java.lang.String getSequenceNumber();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The sequence number of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sequenceNumber.
+     */
+    com.google.protobuf.ByteString getSequenceNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    boolean hasSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason getSchemaViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder();
+
+    com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.ReasonCase getReasonCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Failure when ingesting from an AWS Kinesis source.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason}
+   */
+  public static final class AwsKinesisFailureReason extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)
+      AwsKinesisFailureReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use AwsKinesisFailureReason.newBuilder() to construct.
+    private AwsKinesisFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsKinesisFailureReason() {
+      streamArn_ = "";
+      partitionKey_ = "";
+      sequenceNumber_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsKinesisFailureReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsKinesisFailureReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsKinesisFailureReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder.class);
+    }
+
+    private int reasonCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object reason_;
+
+    public enum ReasonCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SCHEMA_VIOLATION_REASON(4),
+      REASON_NOT_SET(0);
+      private final int value;
+
+      private ReasonCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ReasonCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ReasonCase forNumber(int value) {
+        switch (value) {
+          case 4:
+            return SCHEMA_VIOLATION_REASON;
+          case 0:
+            return REASON_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ReasonCase getReasonCase() {
+      return ReasonCase.forNumber(reasonCase_);
+    }
+
+    public static final int STREAM_ARN_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object streamArn_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The stream ARN of the Kinesis stream being ingested from.
+     * </pre>
+     *
+     * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The streamArn.
+     */
+    @java.lang.Override
+    public java.lang.String getStreamArn() {
+      java.lang.Object ref = streamArn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        streamArn_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The stream ARN of the Kinesis stream being ingested from.
+     * </pre>
+     *
+     * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for streamArn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStreamArnBytes() {
+      java.lang.Object ref = streamArn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        streamArn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTITION_KEY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object partitionKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition key of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionKey.
+     */
+    @java.lang.Override
+    public java.lang.String getPartitionKey() {
+      java.lang.Object ref = partitionKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partitionKey_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition key of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for partitionKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPartitionKeyBytes() {
+      java.lang.Object ref = partitionKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partitionKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEQUENCE_NUMBER_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sequenceNumber_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The sequence number of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sequenceNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getSequenceNumber() {
+      java.lang.Object ref = sequenceNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sequenceNumber_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The sequence number of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sequenceNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSequenceNumberBytes() {
+      java.lang.Object ref = sequenceNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sequenceNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCHEMA_VIOLATION_REASON_FIELD_NUMBER = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchemaViolationReason() {
+      return reasonCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+        getSchemaViolationReason() {
+      if (reasonCase_ == 4) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub message failed schema validation.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+        getSchemaViolationReasonOrBuilder() {
+      if (reasonCase_ == 4) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamArn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, streamArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partitionKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sequenceNumber_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sequenceNumber_);
+      }
+      if (reasonCase_ == 4) {
+        output.writeMessage(
+            4, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamArn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, streamArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partitionKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sequenceNumber_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sequenceNumber_);
+      }
+      if (reasonCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) obj;
+
+      if (!getStreamArn().equals(other.getStreamArn())) return false;
+      if (!getPartitionKey().equals(other.getPartitionKey())) return false;
+      if (!getSequenceNumber().equals(other.getSequenceNumber())) return false;
+      if (!getReasonCase().equals(other.getReasonCase())) return false;
+      switch (reasonCase_) {
+        case 4:
+          if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STREAM_ARN_FIELD_NUMBER;
+      hash = (53 * hash) + getStreamArn().hashCode();
+      hash = (37 * hash) + PARTITION_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPartitionKey().hashCode();
+      hash = (37 * hash) + SEQUENCE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getSequenceNumber().hashCode();
+      switch (reasonCase_) {
+        case 4:
+          hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failure when ingesting from an AWS Kinesis source.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsKinesisFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsKinesisFailureReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        streamArn_ = "";
+        partitionKey_ = "";
+        sequenceNumber_ = "";
+        if (schemaViolationReasonBuilder_ != null) {
+          schemaViolationReasonBuilder_.clear();
+        }
+        reasonCase_ = 0;
+        reason_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsKinesisFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.streamArn_ = streamArn_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.partitionKey_ = partitionKey_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sequenceNumber_ = sequenceNumber_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason result) {
+        result.reasonCase_ = reasonCase_;
+        result.reason_ = this.reason_;
+        if (reasonCase_ == 4 && schemaViolationReasonBuilder_ != null) {
+          result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) {
+          return mergeFrom(
+              (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+                .getDefaultInstance()) return this;
+        if (!other.getStreamArn().isEmpty()) {
+          streamArn_ = other.streamArn_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPartitionKey().isEmpty()) {
+          partitionKey_ = other.partitionKey_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getSequenceNumber().isEmpty()) {
+          sequenceNumber_ = other.sequenceNumber_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        switch (other.getReasonCase()) {
+          case SCHEMA_VIOLATION_REASON:
+            {
+              mergeSchemaViolationReason(other.getSchemaViolationReason());
+              break;
+            }
+          case REASON_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  streamArn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  partitionKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  sequenceNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSchemaViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 4;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int reasonCase_ = 0;
+      private java.lang.Object reason_;
+
+      public ReasonCase getReasonCase() {
+        return ReasonCase.forNumber(reasonCase_);
+      }
+
+      public Builder clearReason() {
+        reasonCase_ = 0;
+        reason_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object streamArn_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The stream ARN of the Kinesis stream being ingested from.
+       * </pre>
+       *
+       * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The streamArn.
+       */
+      public java.lang.String getStreamArn() {
+        java.lang.Object ref = streamArn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          streamArn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The stream ARN of the Kinesis stream being ingested from.
+       * </pre>
+       *
+       * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for streamArn.
+       */
+      public com.google.protobuf.ByteString getStreamArnBytes() {
+        java.lang.Object ref = streamArn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          streamArn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The stream ARN of the Kinesis stream being ingested from.
+       * </pre>
+       *
+       * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The streamArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreamArn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streamArn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The stream ARN of the Kinesis stream being ingested from.
+       * </pre>
+       *
+       * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStreamArn() {
+        streamArn_ = getDefaultInstance().getStreamArn();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The stream ARN of the Kinesis stream being ingested from.
+       * </pre>
+       *
+       * <code>string stream_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for streamArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreamArnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        streamArn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object partitionKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition key of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The partitionKey.
+       */
+      public java.lang.String getPartitionKey() {
+        java.lang.Object ref = partitionKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partitionKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition key of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for partitionKey.
+       */
+      public com.google.protobuf.ByteString getPartitionKeyBytes() {
+        java.lang.Object ref = partitionKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          partitionKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition key of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The partitionKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partitionKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition key of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartitionKey() {
+        partitionKey_ = getDefaultInstance().getPartitionKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition key of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string partition_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for partitionKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        partitionKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sequenceNumber_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The sequence number of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sequenceNumber.
+       */
+      public java.lang.String getSequenceNumber() {
+        java.lang.Object ref = sequenceNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sequenceNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The sequence number of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for sequenceNumber.
+       */
+      public com.google.protobuf.ByteString getSequenceNumberBytes() {
+        java.lang.Object ref = sequenceNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sequenceNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The sequence number of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sequenceNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSequenceNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sequenceNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The sequence number of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSequenceNumber() {
+        sequenceNumber_ = getDefaultInstance().getSequenceNumber();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The sequence number of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>string sequence_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for sequenceNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSequenceNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sequenceNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          schemaViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the schemaViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasSchemaViolationReason() {
+        return reasonCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The schemaViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+          getSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 4) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 4) {
+            return schemaViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+              builderForValue) {
+        if (schemaViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          schemaViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSchemaViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason value) {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 4
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 4) {
+            schemaViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            schemaViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSchemaViolationReason() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 4) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 4) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          schemaViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder
+          getSchemaViolationReasonBuilder() {
+        return getSchemaViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
+          getSchemaViolationReasonOrBuilder() {
+        if ((reasonCase_ == 4) && (schemaViolationReasonBuilder_ != null)) {
+          return schemaViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 4) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub message failed schema validation.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason schema_violation_reason = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>
+          getSchemaViolationReasonFieldBuilder() {
+        if (schemaViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 4)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason
+                    .getDefaultInstance();
+          }
+          schemaViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 4;
+        onChanged();
+        return schemaViolationReasonBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsKinesisFailureReason> PARSER =
+        new com.google.protobuf.AbstractParser<AwsKinesisFailureReason>() {
+          @java.lang.Override
+          public AwsKinesisFailureReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsKinesisFailureReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsKinesisFailureReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int failureCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -7600,6 +11176,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     AWS_MSK_FAILURE(4),
     AZURE_EVENT_HUBS_FAILURE(5),
     CONFLUENT_CLOUD_FAILURE(6),
+    AWS_KINESIS_FAILURE(7),
     FAILURE_NOT_SET(0);
     private final int value;
 
@@ -7627,6 +11204,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return AZURE_EVENT_HUBS_FAILURE;
         case 6:
           return CONFLUENT_CLOUD_FAILURE;
+        case 7:
+          return AWS_KINESIS_FAILURE;
         case 0:
           return FAILURE_NOT_SET;
         default:
@@ -8001,6 +11580,67 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         .getDefaultInstance();
   }
 
+  public static final int AWS_KINESIS_FAILURE_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsKinesisFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsKinesisFailure() {
+    return failureCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsKinesisFailure.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason getAwsKinesisFailure() {
+    if (failureCase_ == 7) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder
+      getAwsKinesisFailureOrBuilder() {
+    if (failureCase_ == 7) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8037,6 +11677,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       output.writeMessage(
           6, (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_);
     }
+    if (failureCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8072,6 +11716,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_);
     }
+    if (failureCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8103,6 +11752,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         break;
       case 6:
         if (!getConfluentCloudFailure().equals(other.getConfluentCloudFailure())) return false;
+        break;
+      case 7:
+        if (!getAwsKinesisFailure().equals(other.getAwsKinesisFailure())) return false;
         break;
       case 0:
       default:
@@ -8138,6 +11790,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       case 6:
         hash = (37 * hash) + CONFLUENT_CLOUD_FAILURE_FIELD_NUMBER;
         hash = (53 * hash) + getConfluentCloudFailure().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + AWS_KINESIS_FAILURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsKinesisFailure().hashCode();
         break;
       case 0:
       default:
@@ -8297,6 +11953,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       if (confluentCloudFailureBuilder_ != null) {
         confluentCloudFailureBuilder_.clear();
       }
+      if (awsKinesisFailureBuilder_ != null) {
+        awsKinesisFailureBuilder_.clear();
+      }
       failureCase_ = 0;
       failure_ = null;
       return this;
@@ -8358,6 +12017,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       if (failureCase_ == 6 && confluentCloudFailureBuilder_ != null) {
         result.failure_ = confluentCloudFailureBuilder_.build();
+      }
+      if (failureCase_ == 7 && awsKinesisFailureBuilder_ != null) {
+        result.failure_ = awsKinesisFailureBuilder_.build();
       }
     }
 
@@ -8437,6 +12099,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             mergeConfluentCloudFailure(other.getConfluentCloudFailure());
             break;
           }
+        case AWS_KINESIS_FAILURE:
+          {
+            mergeAwsKinesisFailure(other.getAwsKinesisFailure());
+            break;
+          }
         case FAILURE_NOT_SET:
           {
             break;
@@ -8507,6 +12174,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                 failureCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAwsKinesisFailureFieldBuilder().getBuilder(), extensionRegistry);
+                failureCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9751,6 +13425,255 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 6;
       onChanged();
       return confluentCloudFailureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder>
+        awsKinesisFailureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the awsKinesisFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsKinesisFailure() {
+      return failureCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The awsKinesisFailure.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+        getAwsKinesisFailure() {
+      if (awsKinesisFailureBuilder_ == null) {
+        if (failureCase_ == 7) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+            .getDefaultInstance();
+      } else {
+        if (failureCase_ == 7) {
+          return awsKinesisFailureBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsKinesisFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason value) {
+      if (awsKinesisFailureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        failure_ = value;
+        onChanged();
+      } else {
+        awsKinesisFailureBuilder_.setMessage(value);
+      }
+      failureCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsKinesisFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder
+            builderForValue) {
+      if (awsKinesisFailureBuilder_ == null) {
+        failure_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsKinesisFailureBuilder_.setMessage(builderForValue.build());
+      }
+      failureCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAwsKinesisFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason value) {
+      if (awsKinesisFailureBuilder_ == null) {
+        if (failureCase_ == 7
+            && failure_
+                != com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+                    .getDefaultInstance()) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.newBuilder(
+                      (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          failure_ = value;
+        }
+        onChanged();
+      } else {
+        if (failureCase_ == 7) {
+          awsKinesisFailureBuilder_.mergeFrom(value);
+        } else {
+          awsKinesisFailureBuilder_.setMessage(value);
+        }
+      }
+      failureCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAwsKinesisFailure() {
+      if (awsKinesisFailureBuilder_ == null) {
+        if (failureCase_ == 7) {
+          failureCase_ = 0;
+          failure_ = null;
+          onChanged();
+        }
+      } else {
+        if (failureCase_ == 7) {
+          failureCase_ = 0;
+          failure_ = null;
+        }
+        awsKinesisFailureBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder
+        getAwsKinesisFailureBuilder() {
+      return getAwsKinesisFailureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder
+        getAwsKinesisFailureOrBuilder() {
+      if ((failureCase_ == 7) && (awsKinesisFailureBuilder_ != null)) {
+        return awsKinesisFailureBuilder_.getMessageOrBuilder();
+      } else {
+        if (failureCase_ == 7) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from AWS Kinesis.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder>
+        getAwsKinesisFailureFieldBuilder() {
+      if (awsKinesisFailureBuilder_ == null) {
+        if (!(failureCase_ == 7)) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason
+                  .getDefaultInstance();
+        }
+        awsKinesisFailureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.Builder,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder>(
+                (com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason) failure_,
+                getParentForChildren(),
+                isClean());
+        failure_ = null;
+      }
+      failureCase_ = 7;
+      onChanged();
+      return awsKinesisFailureBuilder_;
     }
 
     @java.lang.Override

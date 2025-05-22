@@ -74,7 +74,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,7 +87,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -100,7 +100,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -114,7 +114,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -128,8 +128,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -142,8 +142,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,8 +156,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -171,8 +171,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -186,7 +186,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -199,7 +199,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -212,7 +212,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -226,7 +226,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -240,7 +240,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -255,7 +255,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -270,7 +270,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -286,7 +286,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -303,7 +303,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Acknowledgement IDs sent in one or more previous requests to acknowledge a
+   * Acknowledgment IDs sent in one or more previous requests to acknowledge a
    * previously received message.
    * </pre>
    *
@@ -358,7 +358,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -373,7 +373,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -388,7 +388,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -404,7 +404,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -426,8 +426,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -442,8 +442,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -458,8 +458,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -475,8 +475,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -498,7 +498,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -513,7 +513,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -528,7 +528,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -544,7 +544,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were out of order.
+     * Optional. List of acknowledgment IDs that were out of order.
      * </pre>
      *
      * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -566,7 +566,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -583,7 +583,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -600,7 +600,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -618,7 +618,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -856,7 +856,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Acknowledgement IDs sent in one or more previous requests to acknowledge a
+     * Acknowledgment IDs sent in one or more previous requests to acknowledge a
      * previously received message.
      * </pre>
      *
@@ -1133,7 +1133,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1149,7 +1149,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1164,7 +1164,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1180,7 +1180,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1196,7 +1196,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1220,7 +1220,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1243,7 +1243,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1263,7 +1263,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1282,7 +1282,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1316,8 +1316,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1333,8 +1333,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1349,8 +1349,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1366,8 +1366,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1383,8 +1383,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1408,8 +1408,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1432,8 +1432,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1453,8 +1453,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1473,8 +1473,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1508,7 +1508,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1525,7 +1525,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1541,7 +1541,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1558,7 +1558,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1575,7 +1575,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1600,7 +1600,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1624,7 +1624,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1645,7 +1645,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1665,7 +1665,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were out of order.
+       * Optional. List of acknowledgment IDs that were out of order.
        * </pre>
        *
        * <code>repeated string unordered_ack_ids = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1701,7 +1701,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1720,7 +1720,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1738,7 +1738,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1757,7 +1757,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1776,7 +1776,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1803,7 +1803,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1829,7 +1829,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1852,7 +1852,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1874,7 +1874,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -1973,7 +1973,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1986,7 +1986,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1999,7 +1999,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2013,7 +2013,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2027,8 +2027,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2041,8 +2041,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2055,8 +2055,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2070,8 +2070,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2085,7 +2085,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2100,7 +2100,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2115,7 +2115,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2131,7 +2131,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2148,7 +2148,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Acknowledgement IDs sent in one or more previous requests to modify the
+   * Acknowledgment IDs sent in one or more previous requests to modify the
    * deadline for a specific message.
    * </pre>
    *
@@ -2205,7 +2205,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2220,7 +2220,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2235,7 +2235,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2251,7 +2251,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Successfully processed acknowledgement IDs.
+     * Optional. Successfully processed acknowledgment IDs.
      * </pre>
      *
      * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2273,8 +2273,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2289,8 +2289,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2305,8 +2305,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2322,8 +2322,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that were malformed or whose
-     * acknowledgement deadline has expired.
+     * Optional. List of acknowledgment IDs that were malformed or whose
+     * acknowledgment deadline has expired.
      * </pre>
      *
      * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2345,7 +2345,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2362,7 +2362,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2379,7 +2379,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2397,7 +2397,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs that failed processing with
+     * Optional. List of acknowledgment IDs that failed processing with
      * temporary issues.
      * </pre>
      *
@@ -2625,7 +2625,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Acknowledgement IDs sent in one or more previous requests to modify the
+     * Acknowledgment IDs sent in one or more previous requests to modify the
      * deadline for a specific message.
      * </pre>
      *
@@ -2884,7 +2884,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2900,7 +2900,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2915,7 +2915,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2931,7 +2931,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2947,7 +2947,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2971,7 +2971,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2994,7 +2994,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3014,7 +3014,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3033,7 +3033,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. Successfully processed acknowledgement IDs.
+       * Optional. Successfully processed acknowledgment IDs.
        * </pre>
        *
        * <code>repeated string ack_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3067,8 +3067,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3084,8 +3084,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3100,8 +3100,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3117,8 +3117,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3134,8 +3134,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3159,8 +3159,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3183,8 +3183,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3204,8 +3204,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3224,8 +3224,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that were malformed or whose
-       * acknowledgement deadline has expired.
+       * Optional. List of acknowledgment IDs that were malformed or whose
+       * acknowledgment deadline has expired.
        * </pre>
        *
        * <code>repeated string invalid_ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3260,7 +3260,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3279,7 +3279,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3297,7 +3297,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3316,7 +3316,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3335,7 +3335,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3362,7 +3362,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3388,7 +3388,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3411,7 +3411,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *
@@ -3433,7 +3433,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. List of acknowledgement IDs that failed processing with
+       * Optional. List of acknowledgment IDs that failed processing with
        * temporary issues.
        * </pre>
        *

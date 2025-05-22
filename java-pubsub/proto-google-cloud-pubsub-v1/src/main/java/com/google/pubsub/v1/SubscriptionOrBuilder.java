@@ -586,8 +586,8 @@ public interface SubscriptionOrBuilder
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
-   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
-   * exceeded events for a given message.
+   * RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded
+   * events for a given message.
    * </pre>
    *
    * <code>
@@ -607,8 +607,8 @@ public interface SubscriptionOrBuilder
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
-   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
-   * exceeded events for a given message.
+   * RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded
+   * events for a given message.
    * </pre>
    *
    * <code>
@@ -628,8 +628,8 @@ public interface SubscriptionOrBuilder
    *
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
-   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
-   * exceeded events for a given message.
+   * RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded
+   * events for a given message.
    * </pre>
    *
    * <code>
@@ -664,7 +664,7 @@ public interface SubscriptionOrBuilder
    * subscription:
    *
    * * The message sent to a subscriber is guaranteed not to be resent
-   * before the message's acknowledgement deadline expires.
+   * before the message's acknowledgment deadline expires.
    * * An acknowledged message will not be resent to a subscriber.
    *
    * Note that subscribers may still receive multiple copies of a message

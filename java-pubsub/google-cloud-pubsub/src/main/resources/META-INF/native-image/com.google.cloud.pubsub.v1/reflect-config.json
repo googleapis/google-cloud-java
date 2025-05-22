@@ -2115,6 +2115,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.pubsub.v1.IngestionFailureEvent$AwsKinesisFailureReason",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.pubsub.v1.IngestionFailureEvent$AwsKinesisFailureReason$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.pubsub.v1.IngestionFailureEvent$AwsMskFailureReason",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -2188,6 +2206,24 @@
   },
   {
     "name": "com.google.pubsub.v1.IngestionFailureEvent$ConfluentCloudFailureReason$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.pubsub.v1.IngestionFailureEvent$SchemaViolationReason",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.pubsub.v1.IngestionFailureEvent$SchemaViolationReason$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

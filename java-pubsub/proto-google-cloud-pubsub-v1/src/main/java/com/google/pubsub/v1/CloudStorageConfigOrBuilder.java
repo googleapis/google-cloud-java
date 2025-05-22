@@ -242,7 +242,7 @@ public interface CloudStorageConfigOrBuilder
    * <pre>
    * Optional. The maximum duration that can elapse before a new Cloud Storage
    * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
-   * exceed the subscription's acknowledgement deadline.
+   * exceed the subscription's acknowledgment deadline.
    * </pre>
    *
    * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -258,7 +258,7 @@ public interface CloudStorageConfigOrBuilder
    * <pre>
    * Optional. The maximum duration that can elapse before a new Cloud Storage
    * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
-   * exceed the subscription's acknowledgement deadline.
+   * exceed the subscription's acknowledgment deadline.
    * </pre>
    *
    * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -274,7 +274,7 @@ public interface CloudStorageConfigOrBuilder
    * <pre>
    * Optional. The maximum duration that can elapse before a new Cloud Storage
    * file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not
-   * exceed the subscription's acknowledgement deadline.
+   * exceed the subscription's acknowledgment deadline.
    * </pre>
    *
    * <code>.google.protobuf.Duration max_duration = 6 [(.google.api.field_behavior) = OPTIONAL];

@@ -266,7 +266,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> StreamingPull</td>
- *      <td><p> Establishes a stream with the server, which sends messages down to the client. The client streams acknowledgements and ack deadline modifications back to the server. The server will close the stream and return the status on any error. The server may close the stream with status `UNAVAILABLE` to reassign server-side resources, in which case, the client should re-establish the stream. Flow control can be achieved by configuring the underlying RPC channel.</td>
+ *      <td><p> Establishes a stream with the server, which sends messages down to the client. The client streams acknowledgments and ack deadline modifications back to the server. The server will close the stream and return the status on any error. The server may close the stream with status `UNAVAILABLE` to reassign server-side resources, in which case, the client should re-establish the stream. Flow control can be achieved by configuring the underlying RPC channel.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -2379,7 +2379,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Establishes a stream with the server, which sends messages down to the client. The client
-   * streams acknowledgements and ack deadline modifications back to the server. The server will
+   * streams acknowledgments and ack deadline modifications back to the server. The server will
    * close the stream and return the status on any error. The server may close the stream with
    * status `UNAVAILABLE` to reassign server-side resources, in which case, the client should
    * re-establish the stream. Flow control can be achieved by configuring the underlying RPC

@@ -28,7 +28,7 @@ package com.google.pubsub.v1;
  * Retry delay will be exponential based on provided minimum and maximum
  * backoffs. https://en.wikipedia.org/wiki/Exponential_backoff.
  *
- * RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded
+ * RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded
  * events for a given message.
  *
  * Retry Policy is implemented on a best effort basis. At times, the delay
@@ -378,7 +378,7 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
    * Retry delay will be exponential based on provided minimum and maximum
    * backoffs. https://en.wikipedia.org/wiki/Exponential_backoff.
    *
-   * RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded
+   * RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded
    * events for a given message.
    *
    * Retry Policy is implemented on a best effort basis. At times, the delay

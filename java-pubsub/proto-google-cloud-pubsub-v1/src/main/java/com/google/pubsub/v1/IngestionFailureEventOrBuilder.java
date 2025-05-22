@@ -254,5 +254,49 @@ public interface IngestionFailureEventOrBuilder
   com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder
       getConfluentCloudFailureOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsKinesisFailure field is set.
+   */
+  boolean hasAwsKinesisFailure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsKinesisFailure.
+   */
+  com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason getAwsKinesisFailure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from AWS Kinesis.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason aws_kinesis_failure = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReasonOrBuilder
+      getAwsKinesisFailureOrBuilder();
+
   com.google.pubsub.v1.IngestionFailureEvent.FailureCase getFailureCase();
 }

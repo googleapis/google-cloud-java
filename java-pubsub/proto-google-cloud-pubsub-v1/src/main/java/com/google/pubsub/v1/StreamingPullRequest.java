@@ -24,7 +24,7 @@ package com.google.pubsub.v1;
  *
  * <pre>
  * Request for the `StreamingPull` streaming RPC method. This request is used to
- * establish the initial stream as well as to stream acknowledgements and ack
+ * establish the initial stream as well as to stream acknowledgments and ack
  * deadline modifications from the client to the server.
  * </pre>
  *
@@ -143,12 +143,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * Optional. List of acknowledgment IDs for acknowledging previously received
    * messages (received on this stream or a different stream). If an ack ID has
    * expired, the corresponding message may be redelivered later. Acknowledging
-   * a message more than once will not result in an error. If the
-   * acknowledgement ID is malformed, the stream will be aborted with status
-   * `INVALID_ARGUMENT`.
+   * a message more than once will not result in an error. If the acknowledgment
+   * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -163,12 +162,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * Optional. List of acknowledgment IDs for acknowledging previously received
    * messages (received on this stream or a different stream). If an ack ID has
    * expired, the corresponding message may be redelivered later. Acknowledging
-   * a message more than once will not result in an error. If the
-   * acknowledgement ID is malformed, the stream will be aborted with status
-   * `INVALID_ARGUMENT`.
+   * a message more than once will not result in an error. If the acknowledgment
+   * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,12 +181,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * Optional. List of acknowledgment IDs for acknowledging previously received
    * messages (received on this stream or a different stream). If an ack ID has
    * expired, the corresponding message may be redelivered later. Acknowledging
-   * a message more than once will not result in an error. If the
-   * acknowledgement ID is malformed, the stream will be aborted with status
-   * `INVALID_ARGUMENT`.
+   * a message more than once will not result in an error. If the acknowledgment
+   * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -204,12 +201,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs for acknowledging previously received
+   * Optional. List of acknowledgment IDs for acknowledging previously received
    * messages (received on this stream or a different stream). If an ack ID has
    * expired, the corresponding message may be redelivered later. Acknowledging
-   * a message more than once will not result in an error. If the
-   * acknowledgement ID is malformed, the stream will be aborted with status
-   * `INVALID_ARGUMENT`.
+   * a message more than once will not result in an error. If the acknowledgment
+   * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -318,7 +314,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * Optional. List of acknowledgment IDs whose deadline will be modified based
    * on the corresponding element in `modify_deadline_seconds`. This field can
    * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
@@ -338,7 +334,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * Optional. List of acknowledgment IDs whose deadline will be modified based
    * on the corresponding element in `modify_deadline_seconds`. This field can
    * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
@@ -358,7 +354,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * Optional. List of acknowledgment IDs whose deadline will be modified based
    * on the corresponding element in `modify_deadline_seconds`. This field can
    * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
@@ -379,7 +375,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. List of acknowledgement IDs whose deadline will be modified based
+   * Optional. List of acknowledgment IDs whose deadline will be modified based
    * on the corresponding element in `modify_deadline_seconds`. This field can
    * be used to indicate that more time is needed to process a message by the
    * subscriber, or to make the message available for redelivery if the
@@ -796,7 +792,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request for the `StreamingPull` streaming RPC method. This request is used to
-   * establish the initial stream as well as to stream acknowledgements and ack
+   * establish the initial stream as well as to stream acknowledgments and ack
    * deadline modifications from the client to the server.
    * </pre>
    *
@@ -1257,12 +1253,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1278,12 +1273,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1298,12 +1292,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1319,12 +1312,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1340,12 +1332,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1369,12 +1360,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1397,12 +1387,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1422,12 +1411,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1446,12 +1434,11 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs for acknowledging previously received
+     * Optional. List of acknowledgment IDs for acknowledging previously received
      * messages (received on this stream or a different stream). If an ack ID has
      * expired, the corresponding message may be redelivered later. Acknowledging
-     * a message more than once will not result in an error. If the
-     * acknowledgement ID is malformed, the stream will be aborted with status
-     * `INVALID_ARGUMENT`.
+     * a message more than once will not result in an error. If the acknowledgment
+     * ID is malformed, the stream will be aborted with status `INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>repeated string ack_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1700,7 +1687,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1721,7 +1708,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1741,7 +1728,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1762,7 +1749,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1783,7 +1770,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1812,7 +1799,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1840,7 +1827,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1865,7 +1852,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
@@ -1889,7 +1876,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. List of acknowledgement IDs whose deadline will be modified based
+     * Optional. List of acknowledgment IDs whose deadline will be modified based
      * on the corresponding element in `modify_deadline_seconds`. This field can
      * be used to indicate that more time is needed to process a message by the
      * subscriber, or to make the message available for redelivery if the
