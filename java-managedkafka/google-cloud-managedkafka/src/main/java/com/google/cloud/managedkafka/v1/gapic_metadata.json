@@ -10,11 +10,20 @@
         "grpc": {
           "libraryClient": "ManagedKafkaClient",
           "rpcs": {
+            "AddAclEntry": {
+              "methods": ["addAclEntry", "addAclEntry", "addAclEntry", "addAclEntryCallable"]
+            },
+            "CreateAcl": {
+              "methods": ["createAcl", "createAcl", "createAcl", "createAclCallable"]
+            },
             "CreateCluster": {
               "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
             },
             "CreateTopic": {
               "methods": ["createTopic", "createTopic", "createTopic", "createTopicCallable"]
+            },
+            "DeleteAcl": {
+              "methods": ["deleteAcl", "deleteAcl", "deleteAcl", "deleteAclCallable"]
             },
             "DeleteCluster": {
               "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
@@ -24,6 +33,9 @@
             },
             "DeleteTopic": {
               "methods": ["deleteTopic", "deleteTopic", "deleteTopic", "deleteTopicCallable"]
+            },
+            "GetAcl": {
+              "methods": ["getAcl", "getAcl", "getAcl", "getAclCallable"]
             },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
@@ -37,6 +49,9 @@
             "GetTopic": {
               "methods": ["getTopic", "getTopic", "getTopic", "getTopicCallable"]
             },
+            "ListAcls": {
+              "methods": ["listAcls", "listAcls", "listAcls", "listAclsPagedCallable", "listAclsCallable"]
+            },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
             },
@@ -48,6 +63,12 @@
             },
             "ListTopics": {
               "methods": ["listTopics", "listTopics", "listTopics", "listTopicsPagedCallable", "listTopicsCallable"]
+            },
+            "RemoveAclEntry": {
+              "methods": ["removeAclEntry", "removeAclEntry", "removeAclEntry", "removeAclEntryCallable"]
+            },
+            "UpdateAcl": {
+              "methods": ["updateAcl", "updateAcl", "updateAclCallable"]
             },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]

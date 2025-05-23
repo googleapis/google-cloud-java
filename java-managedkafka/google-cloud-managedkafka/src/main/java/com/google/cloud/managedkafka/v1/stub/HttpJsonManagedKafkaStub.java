@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1.stub;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -41,16 +42,24 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.managedkafka.v1.Acl;
+import com.google.cloud.managedkafka.v1.AddAclEntryRequest;
+import com.google.cloud.managedkafka.v1.AddAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Cluster;
 import com.google.cloud.managedkafka.v1.ConsumerGroup;
+import com.google.cloud.managedkafka.v1.CreateAclRequest;
 import com.google.cloud.managedkafka.v1.CreateClusterRequest;
 import com.google.cloud.managedkafka.v1.CreateTopicRequest;
+import com.google.cloud.managedkafka.v1.DeleteAclRequest;
 import com.google.cloud.managedkafka.v1.DeleteClusterRequest;
 import com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.DeleteTopicRequest;
+import com.google.cloud.managedkafka.v1.GetAclRequest;
 import com.google.cloud.managedkafka.v1.GetClusterRequest;
 import com.google.cloud.managedkafka.v1.GetConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.GetTopicRequest;
+import com.google.cloud.managedkafka.v1.ListAclsRequest;
+import com.google.cloud.managedkafka.v1.ListAclsResponse;
 import com.google.cloud.managedkafka.v1.ListClustersRequest;
 import com.google.cloud.managedkafka.v1.ListClustersResponse;
 import com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest;
@@ -58,7 +67,10 @@ import com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse;
 import com.google.cloud.managedkafka.v1.ListTopicsRequest;
 import com.google.cloud.managedkafka.v1.ListTopicsResponse;
 import com.google.cloud.managedkafka.v1.OperationMetadata;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryRequest;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Topic;
+import com.google.cloud.managedkafka.v1.UpdateAclRequest;
 import com.google.cloud.managedkafka.v1.UpdateClusterRequest;
 import com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.UpdateTopicRequest;
@@ -600,6 +612,252 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListAclsRequest, ListAclsResponse>
+      listAclsMethodDescriptor =
+          ApiMethodDescriptor.<ListAclsRequest, ListAclsResponse>newBuilder()
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/ListAcls")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/clusters/*}/acls",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclsResponse>newBuilder()
+                      .setDefaultInstance(ListAclsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAclRequest, Acl> getAclMethodDescriptor =
+      ApiMethodDescriptor.<GetAclRequest, Acl>newBuilder()
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/GetAcl")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetAclRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/clusters/*/acls/**}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Acl>newBuilder()
+                  .setDefaultInstance(Acl.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateAclRequest, Acl> createAclMethodDescriptor =
+      ApiMethodDescriptor.<CreateAclRequest, Acl>newBuilder()
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/CreateAcl")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<CreateAclRequest>newBuilder()
+                  .setPath(
+                      "/v1/{parent=projects/*/locations/*/clusters/*}/acls",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<CreateAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "parent", request.getParent());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<CreateAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "aclId", request.getAclId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request -> ProtoRestSerializer.create().toBody("acl", request.getAcl(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Acl>newBuilder()
+                  .setDefaultInstance(Acl.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateAclRequest, Acl> updateAclMethodDescriptor =
+      ApiMethodDescriptor.<UpdateAclRequest, Acl>newBuilder()
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/UpdateAcl")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateAclRequest>newBuilder()
+                  .setPath(
+                      "/v1/{acl.name=projects/*/locations/*/clusters/*/acls/**}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "acl.name", request.getAcl().getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request -> ProtoRestSerializer.create().toBody("acl", request.getAcl(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Acl>newBuilder()
+                  .setDefaultInstance(Acl.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteAclRequest, Empty> deleteAclMethodDescriptor =
+      ApiMethodDescriptor.<DeleteAclRequest, Empty>newBuilder()
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/DeleteAcl")
+          .setHttpMethod("DELETE")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<DeleteAclRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/clusters/*/acls/**}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteAclRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Empty>newBuilder()
+                  .setDefaultInstance(Empty.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<AddAclEntryRequest, AddAclEntryResponse>
+      addAclEntryMethodDescriptor =
+          ApiMethodDescriptor.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/AddAclEntry")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddAclEntryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{acl=projects/*/locations/*/clusters/*/acls/**}:addAclEntry",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAclEntryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "acl", request.getAcl());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAclEntryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclEntry", request.getAclEntry(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AddAclEntryResponse>newBuilder()
+                      .setDefaultInstance(AddAclEntryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RemoveAclEntryRequest, RemoveAclEntryResponse>
+      removeAclEntryMethodDescriptor =
+          ApiMethodDescriptor.<RemoveAclEntryRequest, RemoveAclEntryResponse>newBuilder()
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/RemoveAclEntry")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveAclEntryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{acl=projects/*/locations/*/clusters/*/acls/**}:removeAclEntry",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAclEntryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "acl", request.getAcl());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAclEntryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclEntry", request.getAclEntry(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RemoveAclEntryResponse>newBuilder()
+                      .setDefaultInstance(RemoveAclEntryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -695,6 +953,14 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
   private final UnaryCallable<UpdateConsumerGroupRequest, ConsumerGroup>
       updateConsumerGroupCallable;
   private final UnaryCallable<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupCallable;
+  private final UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable;
+  private final UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable;
+  private final UnaryCallable<GetAclRequest, Acl> getAclCallable;
+  private final UnaryCallable<CreateAclRequest, Acl> createAclCallable;
+  private final UnaryCallable<UpdateAclRequest, Acl> updateAclCallable;
+  private final UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable;
+  private final UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable;
+  private final UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -928,6 +1194,84 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListAclsRequest, ListAclsResponse> listAclsTransportSettings =
+        HttpJsonCallSettings.<ListAclsRequest, ListAclsResponse>newBuilder()
+            .setMethodDescriptor(listAclsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetAclRequest, Acl> getAclTransportSettings =
+        HttpJsonCallSettings.<GetAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(getAclMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateAclRequest, Acl> createAclTransportSettings =
+        HttpJsonCallSettings.<CreateAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(createAclMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateAclRequest, Acl> updateAclTransportSettings =
+        HttpJsonCallSettings.<UpdateAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(updateAclMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl.name", String.valueOf(request.getAcl().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteAclRequest, Empty> deleteAclTransportSettings =
+        HttpJsonCallSettings.<DeleteAclRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAclMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntryTransportSettings =
+        HttpJsonCallSettings.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
+            .setMethodDescriptor(addAclEntryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl", String.valueOf(request.getAcl()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse>
+        removeAclEntryTransportSettings =
+            HttpJsonCallSettings.<RemoveAclEntryRequest, RemoveAclEntryResponse>newBuilder()
+                .setMethodDescriptor(removeAclEntryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("acl", String.valueOf(request.getAcl()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1029,6 +1373,30 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
             deleteConsumerGroupTransportSettings,
             settings.deleteConsumerGroupSettings(),
             clientContext);
+    this.listAclsCallable =
+        callableFactory.createUnaryCallable(
+            listAclsTransportSettings, settings.listAclsSettings(), clientContext);
+    this.listAclsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclsTransportSettings, settings.listAclsSettings(), clientContext);
+    this.getAclCallable =
+        callableFactory.createUnaryCallable(
+            getAclTransportSettings, settings.getAclSettings(), clientContext);
+    this.createAclCallable =
+        callableFactory.createUnaryCallable(
+            createAclTransportSettings, settings.createAclSettings(), clientContext);
+    this.updateAclCallable =
+        callableFactory.createUnaryCallable(
+            updateAclTransportSettings, settings.updateAclSettings(), clientContext);
+    this.deleteAclCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclTransportSettings, settings.deleteAclSettings(), clientContext);
+    this.addAclEntryCallable =
+        callableFactory.createUnaryCallable(
+            addAclEntryTransportSettings, settings.addAclEntrySettings(), clientContext);
+    this.removeAclEntryCallable =
+        callableFactory.createUnaryCallable(
+            removeAclEntryTransportSettings, settings.removeAclEntrySettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1060,6 +1428,13 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
     methodDescriptors.add(getConsumerGroupMethodDescriptor);
     methodDescriptors.add(updateConsumerGroupMethodDescriptor);
     methodDescriptors.add(deleteConsumerGroupMethodDescriptor);
+    methodDescriptors.add(listAclsMethodDescriptor);
+    methodDescriptors.add(getAclMethodDescriptor);
+    methodDescriptors.add(createAclMethodDescriptor);
+    methodDescriptors.add(updateAclMethodDescriptor);
+    methodDescriptors.add(deleteAclMethodDescriptor);
+    methodDescriptors.add(addAclEntryMethodDescriptor);
+    methodDescriptors.add(removeAclEntryMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1172,6 +1547,46 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
   @Override
   public UnaryCallable<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupCallable() {
     return deleteConsumerGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable() {
+    return listAclsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable() {
+    return listAclsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclRequest, Acl> getAclCallable() {
+    return getAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclRequest, Acl> createAclCallable() {
+    return createAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAclRequest, Acl> updateAclCallable() {
+    return updateAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable() {
+    return deleteAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable() {
+    return addAclEntryCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntryCallable() {
+    return removeAclEntryCallable;
   }
 
   @Override

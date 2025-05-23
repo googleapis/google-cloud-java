@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -213,6 +214,42 @@ public class ManagedKafkaSettings extends ClientSettings<ManagedKafkaSettings> {
   /** Returns the object with the settings used for calls to deleteConsumerGroup. */
   public UnaryCallSettings<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupSettings() {
     return ((ManagedKafkaStubSettings) getStubSettings()).deleteConsumerGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAcls. */
+  public PagedCallSettings<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+      listAclsSettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).listAclsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAcl. */
+  public UnaryCallSettings<GetAclRequest, Acl> getAclSettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).getAclSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAcl. */
+  public UnaryCallSettings<CreateAclRequest, Acl> createAclSettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).createAclSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAcl. */
+  public UnaryCallSettings<UpdateAclRequest, Acl> updateAclSettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).updateAclSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAcl. */
+  public UnaryCallSettings<DeleteAclRequest, Empty> deleteAclSettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).deleteAclSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addAclEntry. */
+  public UnaryCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntrySettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).addAclEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeAclEntry. */
+  public UnaryCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntrySettings() {
+    return ((ManagedKafkaStubSettings) getStubSettings()).removeAclEntrySettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -432,6 +469,44 @@ public class ManagedKafkaSettings extends ClientSettings<ManagedKafkaSettings> {
     public UnaryCallSettings.Builder<DeleteConsumerGroupRequest, Empty>
         deleteConsumerGroupSettings() {
       return getStubSettingsBuilder().deleteConsumerGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAcls. */
+    public PagedCallSettings.Builder<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+        listAclsSettings() {
+      return getStubSettingsBuilder().listAclsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAcl. */
+    public UnaryCallSettings.Builder<GetAclRequest, Acl> getAclSettings() {
+      return getStubSettingsBuilder().getAclSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAcl. */
+    public UnaryCallSettings.Builder<CreateAclRequest, Acl> createAclSettings() {
+      return getStubSettingsBuilder().createAclSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAcl. */
+    public UnaryCallSettings.Builder<UpdateAclRequest, Acl> updateAclSettings() {
+      return getStubSettingsBuilder().updateAclSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAcl. */
+    public UnaryCallSettings.Builder<DeleteAclRequest, Empty> deleteAclSettings() {
+      return getStubSettingsBuilder().deleteAclSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addAclEntry. */
+    public UnaryCallSettings.Builder<AddAclEntryRequest, AddAclEntryResponse>
+        addAclEntrySettings() {
+      return getStubSettingsBuilder().addAclEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeAclEntry. */
+    public UnaryCallSettings.Builder<RemoveAclEntryRequest, RemoveAclEntryResponse>
+        removeAclEntrySettings() {
+      return getStubSettingsBuilder().removeAclEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

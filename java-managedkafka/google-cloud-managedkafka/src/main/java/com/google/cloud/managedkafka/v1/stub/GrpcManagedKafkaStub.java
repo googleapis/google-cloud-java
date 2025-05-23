@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1.stub;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -33,16 +34,24 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.managedkafka.v1.Acl;
+import com.google.cloud.managedkafka.v1.AddAclEntryRequest;
+import com.google.cloud.managedkafka.v1.AddAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Cluster;
 import com.google.cloud.managedkafka.v1.ConsumerGroup;
+import com.google.cloud.managedkafka.v1.CreateAclRequest;
 import com.google.cloud.managedkafka.v1.CreateClusterRequest;
 import com.google.cloud.managedkafka.v1.CreateTopicRequest;
+import com.google.cloud.managedkafka.v1.DeleteAclRequest;
 import com.google.cloud.managedkafka.v1.DeleteClusterRequest;
 import com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.DeleteTopicRequest;
+import com.google.cloud.managedkafka.v1.GetAclRequest;
 import com.google.cloud.managedkafka.v1.GetClusterRequest;
 import com.google.cloud.managedkafka.v1.GetConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.GetTopicRequest;
+import com.google.cloud.managedkafka.v1.ListAclsRequest;
+import com.google.cloud.managedkafka.v1.ListAclsResponse;
 import com.google.cloud.managedkafka.v1.ListClustersRequest;
 import com.google.cloud.managedkafka.v1.ListClustersResponse;
 import com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest;
@@ -50,7 +59,10 @@ import com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse;
 import com.google.cloud.managedkafka.v1.ListTopicsRequest;
 import com.google.cloud.managedkafka.v1.ListTopicsResponse;
 import com.google.cloud.managedkafka.v1.OperationMetadata;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryRequest;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Topic;
+import com.google.cloud.managedkafka.v1.UpdateAclRequest;
 import com.google.cloud.managedkafka.v1.UpdateClusterRequest;
 import com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.UpdateTopicRequest;
@@ -201,6 +213,68 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListAclsRequest, ListAclsResponse>
+      listAclsMethodDescriptor =
+          MethodDescriptor.<ListAclsRequest, ListAclsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/ListAcls")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListAclsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListAclsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAclRequest, Acl> getAclMethodDescriptor =
+      MethodDescriptor.<GetAclRequest, Acl>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/GetAcl")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetAclRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateAclRequest, Acl> createAclMethodDescriptor =
+      MethodDescriptor.<CreateAclRequest, Acl>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/CreateAcl")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateAclRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateAclRequest, Acl> updateAclMethodDescriptor =
+      MethodDescriptor.<UpdateAclRequest, Acl>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/UpdateAcl")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateAclRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteAclRequest, Empty> deleteAclMethodDescriptor =
+      MethodDescriptor.<DeleteAclRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/DeleteAcl")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteAclRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<AddAclEntryRequest, AddAclEntryResponse>
+      addAclEntryMethodDescriptor =
+          MethodDescriptor.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/AddAclEntry")
+              .setRequestMarshaller(ProtoUtils.marshaller(AddAclEntryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AddAclEntryResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveAclEntryRequest, RemoveAclEntryResponse>
+      removeAclEntryMethodDescriptor =
+          MethodDescriptor.<RemoveAclEntryRequest, RemoveAclEntryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/RemoveAclEntry")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveAclEntryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveAclEntryResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -247,6 +321,14 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
   private final UnaryCallable<UpdateConsumerGroupRequest, ConsumerGroup>
       updateConsumerGroupCallable;
   private final UnaryCallable<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupCallable;
+  private final UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable;
+  private final UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable;
+  private final UnaryCallable<GetAclRequest, Acl> getAclCallable;
+  private final UnaryCallable<CreateAclRequest, Acl> createAclCallable;
+  private final UnaryCallable<UpdateAclRequest, Acl> updateAclCallable;
+  private final UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable;
+  private final UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable;
+  private final UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -438,6 +520,77 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListAclsRequest, ListAclsResponse> listAclsTransportSettings =
+        GrpcCallSettings.<ListAclsRequest, ListAclsResponse>newBuilder()
+            .setMethodDescriptor(listAclsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAclRequest, Acl> getAclTransportSettings =
+        GrpcCallSettings.<GetAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(getAclMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAclRequest, Acl> createAclTransportSettings =
+        GrpcCallSettings.<CreateAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(createAclMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAclRequest, Acl> updateAclTransportSettings =
+        GrpcCallSettings.<UpdateAclRequest, Acl>newBuilder()
+            .setMethodDescriptor(updateAclMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl.name", String.valueOf(request.getAcl().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAclRequest, Empty> deleteAclTransportSettings =
+        GrpcCallSettings.<DeleteAclRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAclMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntryTransportSettings =
+        GrpcCallSettings.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
+            .setMethodDescriptor(addAclEntryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl", String.valueOf(request.getAcl()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse>
+        removeAclEntryTransportSettings =
+            GrpcCallSettings.<RemoveAclEntryRequest, RemoveAclEntryResponse>newBuilder()
+                .setMethodDescriptor(removeAclEntryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("acl", String.valueOf(request.getAcl()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -536,6 +689,30 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
             deleteConsumerGroupTransportSettings,
             settings.deleteConsumerGroupSettings(),
             clientContext);
+    this.listAclsCallable =
+        callableFactory.createUnaryCallable(
+            listAclsTransportSettings, settings.listAclsSettings(), clientContext);
+    this.listAclsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclsTransportSettings, settings.listAclsSettings(), clientContext);
+    this.getAclCallable =
+        callableFactory.createUnaryCallable(
+            getAclTransportSettings, settings.getAclSettings(), clientContext);
+    this.createAclCallable =
+        callableFactory.createUnaryCallable(
+            createAclTransportSettings, settings.createAclSettings(), clientContext);
+    this.updateAclCallable =
+        callableFactory.createUnaryCallable(
+            updateAclTransportSettings, settings.updateAclSettings(), clientContext);
+    this.deleteAclCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclTransportSettings, settings.deleteAclSettings(), clientContext);
+    this.addAclEntryCallable =
+        callableFactory.createUnaryCallable(
+            addAclEntryTransportSettings, settings.addAclEntrySettings(), clientContext);
+    this.removeAclEntryCallable =
+        callableFactory.createUnaryCallable(
+            removeAclEntryTransportSettings, settings.removeAclEntrySettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -657,6 +834,46 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
   @Override
   public UnaryCallable<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupCallable() {
     return deleteConsumerGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable() {
+    return listAclsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable() {
+    return listAclsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclRequest, Acl> getAclCallable() {
+    return getAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclRequest, Acl> createAclCallable() {
+    return createAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAclRequest, Acl> updateAclCallable() {
+    return updateAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable() {
+    return deleteAclCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable() {
+    return addAclEntryCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntryCallable() {
+    return removeAclEntryCallable;
   }
 
   @Override
