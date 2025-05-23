@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1.stub;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -28,16 +29,24 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.managedkafka.v1.Acl;
+import com.google.cloud.managedkafka.v1.AddAclEntryRequest;
+import com.google.cloud.managedkafka.v1.AddAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Cluster;
 import com.google.cloud.managedkafka.v1.ConsumerGroup;
+import com.google.cloud.managedkafka.v1.CreateAclRequest;
 import com.google.cloud.managedkafka.v1.CreateClusterRequest;
 import com.google.cloud.managedkafka.v1.CreateTopicRequest;
+import com.google.cloud.managedkafka.v1.DeleteAclRequest;
 import com.google.cloud.managedkafka.v1.DeleteClusterRequest;
 import com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.DeleteTopicRequest;
+import com.google.cloud.managedkafka.v1.GetAclRequest;
 import com.google.cloud.managedkafka.v1.GetClusterRequest;
 import com.google.cloud.managedkafka.v1.GetConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.GetTopicRequest;
+import com.google.cloud.managedkafka.v1.ListAclsRequest;
+import com.google.cloud.managedkafka.v1.ListAclsResponse;
 import com.google.cloud.managedkafka.v1.ListClustersRequest;
 import com.google.cloud.managedkafka.v1.ListClustersResponse;
 import com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest;
@@ -45,7 +54,10 @@ import com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse;
 import com.google.cloud.managedkafka.v1.ListTopicsRequest;
 import com.google.cloud.managedkafka.v1.ListTopicsResponse;
 import com.google.cloud.managedkafka.v1.OperationMetadata;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryRequest;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Topic;
+import com.google.cloud.managedkafka.v1.UpdateAclRequest;
 import com.google.cloud.managedkafka.v1.UpdateClusterRequest;
 import com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.UpdateTopicRequest;
@@ -154,6 +166,38 @@ public abstract class ManagedKafkaStub implements BackgroundResource {
 
   public UnaryCallable<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConsumerGroupCallable()");
+  }
+
+  public UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclsCallable()");
+  }
+
+  public UnaryCallable<GetAclRequest, Acl> getAclCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAclCallable()");
+  }
+
+  public UnaryCallable<CreateAclRequest, Acl> createAclCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAclCallable()");
+  }
+
+  public UnaryCallable<UpdateAclRequest, Acl> updateAclCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAclCallable()");
+  }
+
+  public UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAclCallable()");
+  }
+
+  public UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAclEntryCallable()");
+  }
+
+  public UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeAclEntryCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

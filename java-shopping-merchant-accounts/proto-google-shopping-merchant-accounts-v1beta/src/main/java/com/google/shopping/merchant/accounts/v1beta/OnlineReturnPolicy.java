@@ -6645,11 +6645,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field specifies if merchant only accepts defective products for
-   * returns, and this field is required.
+   * Optional. This field specifies if merchant
+   * only accepts defective products for returns.
    * </pre>
    *
-   * <code>optional bool accept_defective_only = 11;</code>
+   * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the acceptDefectiveOnly field is set.
    */
@@ -6662,11 +6663,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field specifies if merchant only accepts defective products for
-   * returns, and this field is required.
+   * Optional. This field specifies if merchant
+   * only accepts defective products for returns.
    * </pre>
    *
-   * <code>optional bool accept_defective_only = 11;</code>
+   * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The acceptDefectiveOnly.
    */
@@ -6682,11 +6684,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The field specifies the number of days it takes for merchants to process
-   * refunds, field is optional.
+   * Optional. The field specifies the number of
+   * days it takes for merchants to process refunds.
    * </pre>
    *
-   * <code>optional int32 process_refund_days = 12;</code>
+   * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the processRefundDays field is set.
    */
@@ -6699,11 +6701,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The field specifies the number of days it takes for merchants to process
-   * refunds, field is optional.
+   * Optional. The field specifies the number of
+   * days it takes for merchants to process refunds.
    * </pre>
    *
-   * <code>optional int32 process_refund_days = 12;</code>
+   * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The processRefundDays.
    */
@@ -6719,11 +6721,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field specifies if merchant allows customers to exchange products,
-   * this field is required.
+   * Optional. This field specifies if merchant
+   * allows customers to exchange products.
    * </pre>
    *
-   * <code>optional bool accept_exchange = 13;</code>
+   * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the acceptExchange field is set.
    */
@@ -6736,11 +6738,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field specifies if merchant allows customers to exchange products,
-   * this field is required.
+   * Optional. This field specifies if merchant
+   * allows customers to exchange products.
    * </pre>
    *
-   * <code>optional bool accept_exchange = 13;</code>
+   * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The acceptExchange.
    */
@@ -6756,12 +6758,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The field specifies the return label source. This field is required when
-   * return method is BY_MAIL.
+   * Optional. The field specifies the return
+   * label source.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the returnLabelSource field is set.
@@ -6775,12 +6777,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The field specifies the return label source. This field is required when
-   * return method is BY_MAIL.
+   * Optional. The field specifies the return
+   * label source.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for returnLabelSource.
@@ -6794,12 +6796,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The field specifies the return label source. This field is required when
-   * return method is BY_MAIL.
+   * Optional. The field specifies the return
+   * label source.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The returnLabelSource.
@@ -10149,11 +10151,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant only accepts defective products for
-     * returns, and this field is required.
+     * Optional. This field specifies if merchant
+     * only accepts defective products for returns.
      * </pre>
      *
-     * <code>optional bool accept_defective_only = 11;</code>
+     * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the acceptDefectiveOnly field is set.
      */
@@ -10166,11 +10169,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant only accepts defective products for
-     * returns, and this field is required.
+     * Optional. This field specifies if merchant
+     * only accepts defective products for returns.
      * </pre>
      *
-     * <code>optional bool accept_defective_only = 11;</code>
+     * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The acceptDefectiveOnly.
      */
@@ -10183,11 +10187,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant only accepts defective products for
-     * returns, and this field is required.
+     * Optional. This field specifies if merchant
+     * only accepts defective products for returns.
      * </pre>
      *
-     * <code>optional bool accept_defective_only = 11;</code>
+     * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The acceptDefectiveOnly to set.
      * @return This builder for chaining.
@@ -10204,11 +10209,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant only accepts defective products for
-     * returns, and this field is required.
+     * Optional. This field specifies if merchant
+     * only accepts defective products for returns.
      * </pre>
      *
-     * <code>optional bool accept_defective_only = 11;</code>
+     * <code>optional bool accept_defective_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -10225,11 +10231,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the number of days it takes for merchants to process
-     * refunds, field is optional.
+     * Optional. The field specifies the number of
+     * days it takes for merchants to process refunds.
      * </pre>
      *
-     * <code>optional int32 process_refund_days = 12;</code>
+     * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the processRefundDays field is set.
      */
@@ -10242,11 +10249,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the number of days it takes for merchants to process
-     * refunds, field is optional.
+     * Optional. The field specifies the number of
+     * days it takes for merchants to process refunds.
      * </pre>
      *
-     * <code>optional int32 process_refund_days = 12;</code>
+     * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The processRefundDays.
      */
@@ -10259,11 +10267,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the number of days it takes for merchants to process
-     * refunds, field is optional.
+     * Optional. The field specifies the number of
+     * days it takes for merchants to process refunds.
      * </pre>
      *
-     * <code>optional int32 process_refund_days = 12;</code>
+     * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The processRefundDays to set.
      * @return This builder for chaining.
@@ -10280,11 +10289,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the number of days it takes for merchants to process
-     * refunds, field is optional.
+     * Optional. The field specifies the number of
+     * days it takes for merchants to process refunds.
      * </pre>
      *
-     * <code>optional int32 process_refund_days = 12;</code>
+     * <code>optional int32 process_refund_days = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -10301,11 +10311,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant allows customers to exchange products,
-     * this field is required.
+     * Optional. This field specifies if merchant
+     * allows customers to exchange products.
      * </pre>
      *
-     * <code>optional bool accept_exchange = 13;</code>
+     * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the acceptExchange field is set.
      */
@@ -10318,11 +10328,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant allows customers to exchange products,
-     * this field is required.
+     * Optional. This field specifies if merchant
+     * allows customers to exchange products.
      * </pre>
      *
-     * <code>optional bool accept_exchange = 13;</code>
+     * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The acceptExchange.
      */
@@ -10335,11 +10345,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant allows customers to exchange products,
-     * this field is required.
+     * Optional. This field specifies if merchant
+     * allows customers to exchange products.
      * </pre>
      *
-     * <code>optional bool accept_exchange = 13;</code>
+     * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The acceptExchange to set.
      * @return This builder for chaining.
@@ -10356,11 +10366,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field specifies if merchant allows customers to exchange products,
-     * this field is required.
+     * Optional. This field specifies if merchant
+     * allows customers to exchange products.
      * </pre>
      *
-     * <code>optional bool accept_exchange = 13;</code>
+     * <code>optional bool accept_exchange = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -10377,12 +10387,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the returnLabelSource field is set.
@@ -10396,12 +10406,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for returnLabelSource.
@@ -10415,12 +10425,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for returnLabelSource to set.
@@ -10437,12 +10447,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The returnLabelSource.
@@ -10463,12 +10473,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The returnLabelSource to set.
@@ -10489,12 +10499,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The field specifies the return label source. This field is required when
-     * return method is BY_MAIL.
+     * Optional. The field specifies the return
+     * label source.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

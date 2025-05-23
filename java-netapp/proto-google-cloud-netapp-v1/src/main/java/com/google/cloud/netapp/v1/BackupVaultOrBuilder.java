@@ -376,4 +376,48 @@ public interface BackupVaultOrBuilder
    * @return The bytes for destinationBackupVault.
    */
   com.google.protobuf.ByteString getDestinationBackupVaultBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the backupRetentionPolicy field is set.
+   */
+  boolean hasBackupRetentionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupRetentionPolicy.
+   */
+  com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy getBackupRetentionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder
+      getBackupRetentionPolicyOrBuilder();
 }

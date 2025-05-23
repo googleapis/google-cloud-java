@@ -64,13 +64,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListComments</td>
- *      <td><p> List all the comments associated with a case.
- * <p>  EXAMPLES:
- * <p>  cURL:
- * <p>  ```shell case="projects/some-project/cases/43595344" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$case/comments" ```
- * <p>  Python:
- * <p>  ```python import googleapiclient.discovery
- * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = (     supportApiService.cases()     .comments()     .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```</td>
+ *      <td><p> List all the comments associated with a case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -91,13 +85,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateComment</td>
  *      <td><p> Add a new comment to a case.
- * <p>  The comment must have the following fields set: `body`.
- * <p>  EXAMPLES:
- * <p>  cURL:
- * <p>  ```shell case="projects/some-project/cases/43591344" curl \\\\   --request POST \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   --header 'Content-Type: application/json' \\\\   --data '{     "body": "This is a test comment."   }' \\\\   "https://cloudsupport.googleapis.com/v2/$case/comments" ```
- * <p>  Python:
- * <p>  ```python import googleapiclient.discovery
- * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = (     supportApiService.cases()     .comments()     .create(         parent="projects/some-project/cases/43595344",         body={"body": "This is a test comment."},     ) ) print(request.execute()) ```</td>
+ * <p>  The comment must have the following fields set: `body`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -223,24 +211,6 @@ public class CommentServiceClient implements BackgroundResource {
   /**
    * List all the comments associated with a case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -272,24 +242,6 @@ public class CommentServiceClient implements BackgroundResource {
   /**
    * List all the comments associated with a case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -317,24 +269,6 @@ public class CommentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the comments associated with a case.
-   *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -368,24 +302,6 @@ public class CommentServiceClient implements BackgroundResource {
   /**
    * List all the comments associated with a case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -418,24 +334,6 @@ public class CommentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the comments associated with a case.
-   *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -477,26 +375,6 @@ public class CommentServiceClient implements BackgroundResource {
    *
    * <p>The comment must have the following fields set: `body`.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43591344" curl \\\\ --request POST \\\\ --header
-   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
-   * application/json' \\\\ --data '{ "body": "This is a test comment." }' \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments() .create(
-   * parent="projects/some-project/cases/43595344", body={"body": "This is a test comment."}, ) )
-   * print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -531,26 +409,6 @@ public class CommentServiceClient implements BackgroundResource {
    *
    * <p>The comment must have the following fields set: `body`.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43591344" curl \\\\ --request POST \\\\ --header
-   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
-   * application/json' \\\\ --data '{ "body": "This is a test comment." }' \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments() .create(
-   * parent="projects/some-project/cases/43595344", body={"body": "This is a test comment."}, ) )
-   * print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -582,26 +440,6 @@ public class CommentServiceClient implements BackgroundResource {
    *
    * <p>The comment must have the following fields set: `body`.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43591344" curl \\\\ --request POST \\\\ --header
-   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
-   * application/json' \\\\ --data '{ "body": "This is a test comment." }' \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments() .create(
-   * parent="projects/some-project/cases/43595344", body={"body": "This is a test comment."}, ) )
-   * print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -632,26 +470,6 @@ public class CommentServiceClient implements BackgroundResource {
    * Add a new comment to a case.
    *
    * <p>The comment must have the following fields set: `body`.
-   *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/43591344" curl \\\\ --request POST \\\\ --header
-   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
-   * application/json' \\\\ --data '{ "body": "This is a test comment." }' \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/comments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .comments() .create(
-   * parent="projects/some-project/cases/43595344", body={"body": "This is a test comment."}, ) )
-   * print(request.execute()) ```
    *
    * <p>Sample code:
    *

@@ -96,6 +96,46 @@ public final class ManagedKafkaProto {
       internal_static_google_cloud_managedkafka_v1_DeleteConsumerGroupRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_managedkafka_v1_DeleteConsumerGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ListAclsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ListAclsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ListAclsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ListAclsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_GetAclRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_GetAclRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_CreateAclRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_CreateAclRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_UpdateAclRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_UpdateAclRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_DeleteAclRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_DeleteAclRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_AddAclEntryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_AddAclEntryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_AddAclEntryResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_AddAclEntryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_RemoveAclEntryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_RemoveAclEntryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_RemoveAclEntryResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_RemoveAclEntryResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -184,70 +224,134 @@ public final class ManagedKafkaProto {
           + "\0132+.google.cloud.managedkafka.v1.ConsumerGroupB\003\340A\002\"]\n"
           + "\032DeleteConsumerGroupRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
-          + ")managedkafka.googleapis.com/ConsumerGroup2\265\026\n"
+          + ")managedkafka.googleapis.com/ConsumerGroup\"{\n"
+          + "\017ListAclsRequest\0227\n"
+          + "\006parent\030\001 \001("
+          + "\tB\'\340A\002\372A!\022\037managedkafka.googleapis.com/Acl\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\\\n"
+          + "\020ListAclsResponse\022/\n"
+          + "\004acls\030\001 \003(\0132!.google.cloud.managedkafka.v1.Acl\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"F\n\r"
+          + "GetAclRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037managedkafka.googleapis.com/Acl\"\225\001\n"
+          + "\020CreateAclRequest\0227\n"
+          + "\006parent\030\001 \001("
+          + "\tB\'\340A\002\372A!\022\037managedkafka.googleapis.com/Acl\022\023\n"
+          + "\006acl_id\030\002 \001(\tB\003\340A\002\0223\n"
+          + "\003acl\030\003 \001(\0132!.google.cloud.managedkafka.v1.AclB\003\340A\002\"}\n"
+          + "\020UpdateAclRequest\0223\n"
+          + "\003acl\030\001 \001(\0132!.google.cloud.managedkafka.v1.AclB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"I\n"
+          + "\020DeleteAclRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037managedkafka.googleapis.com/Acl\"\212\001\n"
+          + "\022AddAclEntryRequest\0224\n"
+          + "\003acl\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037managedkafka.googleapis.com/Acl\022>\n"
+          + "\tacl_entry\030\002"
+          + " \001(\0132&.google.cloud.managedkafka.v1.AclEntryB\003\340A\002\"Z\n"
+          + "\023AddAclEntryResponse\022.\n"
+          + "\003acl\030\001 \001(\0132!.google.cloud.managedkafka.v1.Acl\022\023\n"
+          + "\013acl_created\030\002 \001(\010\"\215\001\n"
+          + "\025RemoveAclEntryRequest\0224\n"
+          + "\003acl\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037managedkafka.googleapis.com/Acl\022>\n"
+          + "\tacl_entry\030\002 "
+          + "\001(\0132&.google.cloud.managedkafka.v1.AclEntryB\003\340A\002\"k\n"
+          + "\026RemoveAclEntryResponse\0220\n"
+          + "\003acl\030\001 \001(\0132!.google.cloud.managedkafka.v1.AclH\000\022\025\n"
+          + "\013acl_deleted\030\002 \001(\010H\000B\010\n"
+          + "\006result2\321 \n"
           + "\014ManagedKafka\022\264\001\n"
-          + "\014ListClusters\0221.google.cloud.managedkafka.v1.ListClustersRequest\0322.google"
-          + ".cloud.managedkafka.v1.ListClustersRespo"
-          + "nse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/clusters\022\241\001\n\n"
-          + "GetCluster\022/.google.cloud.managedkafka.v1.GetClus"
-          + "terRequest\032%.google.cloud.managedkafka.v"
-          + "1.Cluster\";\332A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locations/*/clusters/*}\022\334\001\n\r"
-          + "CreateCluster\0222.google.cloud.managedkafka.v1."
-          + "CreateClusterRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
-          + "\007Cluster\022\021OperationMeta"
-          + "data\332A\031parent,cluster,cluster_id\202\323\344\223\0027\","
-          + "/v1/{parent=projects/*/locations/*}/clusters:\007cluster\022\336\001\n\r"
-          + "UpdateCluster\0222.google"
-          + ".cloud.managedkafka.v1.UpdateClusterRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
-          + "\007Cluster\022\021OperationMetadata\332A\023cluster,up"
-          + "date_mask\202\323\344\223\002?24/v1/{cluster.name=proje"
-          + "cts/*/locations/*/clusters/*}:\007cluster\022\314\001\n\r"
-          + "DeleteCluster\0222.google.cloud.managedk"
-          + "afka.v1.DeleteClusterRequest\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002.*"
-          + ",/v1/{name=projects/*/locations/*/clusters/*}\022\267\001\n\n"
-          + "ListTopics\022/.google.cloud.managedkafka.v1.ListTopicsRequest\0320.google.c"
-          + "loud.managedkafka.v1.ListTopicsResponse\""
-          + "F\332A\006parent\202\323\344\223\0027\0225/v1/{parent=projects/*/locations/*/clusters/*}/topics\022\244\001\n"
-          + "\010GetTopic\022-.google.cloud.managedkafka.v1.GetT"
-          + "opicRequest\032#.google.cloud.managedkafka."
-          + "v1.Topic\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=proje"
-          + "cts/*/locations/*/clusters/*/topics/*}\022\302\001\n"
-          + "\013CreateTopic\0220.google.cloud.managedkaf"
-          + "ka.v1.CreateTopicRequest\032#.google.cloud."
-          + "managedkafka.v1.Topic\"\\\332A\025parent,topic,t"
-          + "opic_id\202\323\344\223\002>\"5/v1/{parent=projects/*/locations/*/clusters/*}/topics:\005topic\022\304\001\n"
-          + "\013UpdateTopic\0220.google.cloud.managedkafka."
-          + "v1.UpdateTopicRequest\032#.google.cloud.man"
-          + "agedkafka.v1.Topic\"^\332A\021topic,update_mask"
-          + "\202\323\344\223\002D2;/v1/{topic.name=projects/*/locations/*/clusters/*/topics/*}:\005topic\022\235\001\n"
-          + "\013DeleteTopic\0220.google.cloud.managedkafka.v"
-          + "1.DeleteTopicRequest\032\026.google.protobuf.E"
-          + "mpty\"D\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/locations/*/clusters/*/topics/*}\022\327\001\n"
-          + "\022ListConsumerGroups\0227.google.cloud.managed"
-          + "kafka.v1.ListConsumerGroupsRequest\0328.google.cloud.managedkafka.v1.ListConsumerGr"
-          + "oupsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{pare"
-          + "nt=projects/*/locations/*/clusters/*}/consumerGroups\022\305\001\n"
-          + "\020GetConsumerGroup\0225.google.cloud.managedkafka.v1.GetConsumerGrou"
-          + "pRequest\032+.google.cloud.managedkafka.v1."
-          + "ConsumerGroup\"M\332A\004name\202\323\344\223\002@\022>/v1/{name="
-          + "projects/*/locations/*/clusters/*/consumerGroups/**}\022\201\002\n"
-          + "\023UpdateConsumerGroup\0228.google.cloud.managedkafka.v1.UpdateConsum"
-          + "erGroupRequest\032+.google.cloud.managedkaf"
-          + "ka.v1.ConsumerGroup\"\202\001\332A\032consumer_group,"
-          + "update_mask\202\323\344\223\002_2M/v1/{consumer_group.n"
-          + "ame=projects/*/locations/*/clusters/*/consumerGroups/**}:\016consumer_group\022\266\001\n"
-          + "\023DeleteConsumerGroup\0228.google.cloud.managedk"
-          + "afka.v1.DeleteConsumerGroupRequest\032\026.goo"
-          + "gle.protobuf.Empty\"M\332A\004name\202\323\344\223\002@*>/v1/{"
-          + "name=projects/*/locations/*/clusters/*/c"
-          + "onsumerGroups/**}\032O\312A\033managedkafka.googl"
-          + "eapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\335\001\n"
-          + " com.google.cloud.managedkafka.v1B\021ManagedKafkaProtoP\001ZDcl"
-          + "oud.google.com/go/managedkafka/apiv1/man"
-          + "agedkafkapb;managedkafkapb\252\002\034Google.Clou"
-          + "d.ManagedKafka.V1\312\002\034Google\\Cloud\\Managed"
-          + "Kafka\\V1\352\002\037Google::Cloud::ManagedKafka::V1b\006proto3"
+          + "\014ListClusters\0221.google.cloud.managedkafka.v1.ListClustersReque"
+          + "st\0322.google.cloud.managedkafka.v1.ListCl"
+          + "ustersResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{pa"
+          + "rent=projects/*/locations/*}/clusters\022\241\001\n\n"
+          + "GetCluster\022/.google.cloud.managedkafka.v1.GetClusterRequest\032%.google.cloud.man"
+          + "agedkafka.v1.Cluster\";\332A\004name\202\323\344\223\002.\022,/v1"
+          + "/{name=projects/*/locations/*/clusters/*}\022\334\001\n\r"
+          + "CreateCluster\0222.google.cloud.manag"
+          + "edkafka.v1.CreateClusterRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
+          + "\007Cluster\022\021OperationMetadata\332A\031parent,cluster,cluster"
+          + "_id\202\323\344\223\0027\",/v1/{parent=projects/*/locations/*}/clusters:\007cluster\022\336\001\n\r"
+          + "UpdateCluster\0222.google.cloud.managedkafka.v1.Update"
+          + "ClusterRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
+          + "\007Cluster\022\021OperationMetadata\332A"
+          + "\023cluster,update_mask\202\323\344\223\002?24/v1/{cluster"
+          + ".name=projects/*/locations/*/clusters/*}:\007cluster\022\314\001\n\r"
+          + "DeleteCluster\0222.google.clo"
+          + "ud.managedkafka.v1.DeleteClusterRequest\032\035.google.longrunning.Operation\"h\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/clusters/*}\022\267\001\n\n"
+          + "ListTopics\022/.google.cloud.managedkafka.v1.ListTopicsRequest"
+          + "\0320.google.cloud.managedkafka.v1.ListTopi"
+          + "csResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{parent"
+          + "=projects/*/locations/*/clusters/*}/topics\022\244\001\n"
+          + "\010GetTopic\022-.google.cloud.managedkafka.v1.GetTopicRequest\032#.google.cloud.ma"
+          + "nagedkafka.v1.Topic\"D\332A\004name\202\323\344\223\0027\0225/v1/"
+          + "{name=projects/*/locations/*/clusters/*/topics/*}\022\302\001\n"
+          + "\013CreateTopic\0220.google.cloud.managedkafka.v1.CreateTopicRequest\032#.go"
+          + "ogle.cloud.managedkafka.v1.Topic\"\\\332A\025par"
+          + "ent,topic,topic_id\202\323\344\223\002>\"5/v1/{parent=pr"
+          + "ojects/*/locations/*/clusters/*}/topics:\005topic\022\304\001\n"
+          + "\013UpdateTopic\0220.google.cloud.managedkafka.v1.UpdateTopicRequest\032#.googl"
+          + "e.cloud.managedkafka.v1.Topic\"^\332A\021topic,"
+          + "update_mask\202\323\344\223\002D2;/v1/{topic.name=proje"
+          + "cts/*/locations/*/clusters/*/topics/*}:\005topic\022\235\001\n"
+          + "\013DeleteTopic\0220.google.cloud.managedkafka.v1.DeleteTopicRequest\032\026.google"
+          + ".protobuf.Empty\"D\332A\004name\202\323\344\223\0027*5/v1/{nam"
+          + "e=projects/*/locations/*/clusters/*/topics/*}\022\327\001\n"
+          + "\022ListConsumerGroups\0227.google.cloud.managedkafka.v1.ListConsumerGroupsRe"
+          + "quest\0328.google.cloud.managedkafka.v1.Lis"
+          + "tConsumerGroupsResponse\"N\332A\006parent\202\323\344\223\002?"
+          + "\022=/v1/{parent=projects/*/locations/*/clusters/*}/consumerGroups\022\305\001\n"
+          + "\020GetConsumerGroup\0225.google.cloud.managedkafka.v1.GetC"
+          + "onsumerGroupRequest\032+.google.cloud.manag"
+          + "edkafka.v1.ConsumerGroup\"M\332A\004name\202\323\344\223\002@\022"
+          + ">/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/**}\022\201\002\n"
+          + "\023UpdateConsumerGroup\0228.google.cloud.managedkafka.v1.U"
+          + "pdateConsumerGroupRequest\032+.google.cloud"
+          + ".managedkafka.v1.ConsumerGroup\"\202\001\332A\032cons"
+          + "umer_group,update_mask\202\323\344\223\002_2M/v1/{consu"
+          + "mer_group.name=projects/*/locations/*/cl"
+          + "usters/*/consumerGroups/**}:\016consumer_group\022\266\001\n"
+          + "\023DeleteConsumerGroup\0228.google.cloud.managedkafka.v1.DeleteConsumerGroupRe"
+          + "quest\032\026.google.protobuf.Empty\"M\332A\004name\202\323"
+          + "\344\223\002@*>/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/**}\022\257\001\n"
+          + "\010ListAcls\022-.google.cloud.managedkafka.v1.ListAcl"
+          + "sRequest\032..google.cloud.managedkafka.v1."
+          + "ListAclsResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{"
+          + "parent=projects/*/locations/*/clusters/*}/acls\022\235\001\n"
+          + "\006GetAcl\022+.google.cloud.managedkafka.v1.GetAclRequest\032!.google.cloud.ma"
+          + "nagedkafka.v1.Acl\"C\332A\004name\202\323\344\223\0026\0224/v1/{n"
+          + "ame=projects/*/locations/*/clusters/*/acls/**}\022\264\001\n"
+          + "\tCreateAcl\022..google.cloud.managedkafka.v1.CreateAclRequest\032!.google.cl"
+          + "oud.managedkafka.v1.Acl\"T\332A\021parent,acl,a"
+          + "cl_id\202\323\344\223\002:\"3/v1/{parent=projects/*/locations/*/clusters/*}/acls:\003acl\022\267\001\n"
+          + "\tUpdateAcl\022..google.cloud.managedkafka.v1.Updat"
+          + "eAclRequest\032!.google.cloud.managedkafka."
+          + "v1.Acl\"W\332A\017acl,update_mask\202\323\344\223\002?28/v1/{a"
+          + "cl.name=projects/*/locations/*/clusters/*/acls/**}:\003acl\022\230\001\n"
+          + "\tDeleteAcl\022..google.cloud.managedkafka.v1.DeleteAclRequest\032\026."
+          + "google.protobuf.Empty\"C\332A\004name\202\323\344\223\0026*4/v"
+          + "1/{name=projects/*/locations/*/clusters/*/acls/**}\022\326\001\n"
+          + "\013AddAclEntry\0220.google.cloud.managedkafka.v1.AddAclEntryRequest\0321.g"
+          + "oogle.cloud.managedkafka.v1.AddAclEntryResponse\"b\332A\r"
+          + "acl,acl_entry\202\323\344\223\002L\"?/v1/{ac"
+          + "l=projects/*/locations/*/clusters/*/acls/**}:addAclEntry:\tacl_entry\022\342\001\n"
+          + "\016RemoveAclEntry\0223.google.cloud.managedkafka.v1.Re"
+          + "moveAclEntryRequest\0324.google.cloud.managedkafka.v1.RemoveAclEntryResponse\"e\332A\r"
+          + "acl,acl_entry\202\323\344\223\002O\"B/v1/{acl=projects/*/l"
+          + "ocations/*/clusters/*/acls/**}:removeAclEntry:"
+          + "\tacl_entry\032O\312A\033managedkafka.google"
+          + "apis.com\322A.https://www.googleapis.com/auth/cloud-platformB\335\001\n"
+          + " com.google.cloud.managedkafka.v1B\021ManagedKafkaProtoP\001ZDclo"
+          + "ud.google.com/go/managedkafka/apiv1/mana"
+          + "gedkafkapb;managedkafkapb\252\002\034Google.Cloud"
+          + ".ManagedKafka.V1\312\002\034Google\\Cloud\\ManagedK"
+          + "afka\\V1\352\002\037Google::Cloud::ManagedKafka::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -398,6 +502,86 @@ public final class ManagedKafkaProto {
             internal_static_google_cloud_managedkafka_v1_DeleteConsumerGroupRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_cloud_managedkafka_v1_ListAclsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_managedkafka_v1_ListAclsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ListAclsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_managedkafka_v1_ListAclsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_managedkafka_v1_ListAclsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ListAclsResponse_descriptor,
+            new java.lang.String[] {
+              "Acls", "NextPageToken",
+            });
+    internal_static_google_cloud_managedkafka_v1_GetAclRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_managedkafka_v1_GetAclRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_GetAclRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_managedkafka_v1_CreateAclRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_managedkafka_v1_CreateAclRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_CreateAclRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "AclId", "Acl",
+            });
+    internal_static_google_cloud_managedkafka_v1_UpdateAclRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_managedkafka_v1_UpdateAclRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_UpdateAclRequest_descriptor,
+            new java.lang.String[] {
+              "Acl", "UpdateMask",
+            });
+    internal_static_google_cloud_managedkafka_v1_DeleteAclRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_managedkafka_v1_DeleteAclRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_DeleteAclRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_managedkafka_v1_AddAclEntryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_managedkafka_v1_AddAclEntryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_AddAclEntryRequest_descriptor,
+            new java.lang.String[] {
+              "Acl", "AclEntry",
+            });
+    internal_static_google_cloud_managedkafka_v1_AddAclEntryResponse_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_managedkafka_v1_AddAclEntryResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_AddAclEntryResponse_descriptor,
+            new java.lang.String[] {
+              "Acl", "AclCreated",
+            });
+    internal_static_google_cloud_managedkafka_v1_RemoveAclEntryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_managedkafka_v1_RemoveAclEntryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_RemoveAclEntryRequest_descriptor,
+            new java.lang.String[] {
+              "Acl", "AclEntry",
+            });
+    internal_static_google_cloud_managedkafka_v1_RemoveAclEntryResponse_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_managedkafka_v1_RemoveAclEntryResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_RemoveAclEntryResponse_descriptor,
+            new java.lang.String[] {
+              "Acl", "AclDeleted", "Result",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

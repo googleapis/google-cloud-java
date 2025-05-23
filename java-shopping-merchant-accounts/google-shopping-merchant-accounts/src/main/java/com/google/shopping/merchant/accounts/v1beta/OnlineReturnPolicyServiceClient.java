@@ -121,6 +121,8 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createOnlineReturnPolicy(AccountName parent)
  *           <li><p> createOnlineReturnPolicy(String parent)
+ *           <li><p> createOnlineReturnPolicy(AccountName parent, OnlineReturnPolicy onlineReturnPolicy)
+ *           <li><p> createOnlineReturnPolicy(String parent, OnlineReturnPolicy onlineReturnPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -148,7 +150,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteOnlineReturnPolicy</td>
- *      <td><p> Deletes an existing return policy for a given merchant.</td>
+ *      <td><p> Deletes an existing return policy.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -593,8 +595,8 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The merchant account for which to create a return policy. Format:
-   *     `accounts/{account}`
+   * @param parent Required. The merchant account for which the return policy will be created.
+   *     Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OnlineReturnPolicy createOnlineReturnPolicy(AccountName parent) {
@@ -625,13 +627,85 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The merchant account for which to create a return policy. Format:
-   *     `accounts/{account}`
+   * @param parent Required. The merchant account for which the return policy will be created.
+   *     Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OnlineReturnPolicy createOnlineReturnPolicy(String parent) {
     CreateOnlineReturnPolicyRequest request =
         CreateOnlineReturnPolicyRequest.newBuilder().setParent(parent).build();
+    return createOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The merchant account for which the return policy will be created.
+   *     Format: `accounts/{account}`
+   * @param onlineReturnPolicy Required. The return policy object to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy createOnlineReturnPolicy(
+      AccountName parent, OnlineReturnPolicy onlineReturnPolicy) {
+    CreateOnlineReturnPolicyRequest request =
+        CreateOnlineReturnPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setOnlineReturnPolicy(onlineReturnPolicy)
+            .build();
+    return createOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
+   *   OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The merchant account for which the return policy will be created.
+   *     Format: `accounts/{account}`
+   * @param onlineReturnPolicy Required. The return policy object to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy createOnlineReturnPolicy(
+      String parent, OnlineReturnPolicy onlineReturnPolicy) {
+    CreateOnlineReturnPolicyRequest request =
+        CreateOnlineReturnPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setOnlineReturnPolicy(onlineReturnPolicy)
+            .build();
     return createOnlineReturnPolicy(request);
   }
 
@@ -719,8 +793,13 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param onlineReturnPolicy Required. The return policy to update.
-   * @param updateMask
+   * @param onlineReturnPolicy Required. The online return policy to update. The online return
+   *     policy's `name` field is used to identify the online return policy to be updated.
+   * @param updateMask Optional. List of fields being updated.
+   *     <p>The following fields are supported (in both `snake_case` and `lowerCamelCase`):
+   *     <p>- `accept_defective_only` - `accept_exchange` - `item_conditions` - `policy` -
+   *     `process_refund_days` - `restocking_fee` - `return_methods` - `return_policy_uri` -
+   *     `return_shipping_fee`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OnlineReturnPolicy updateOnlineReturnPolicy(
@@ -798,7 +877,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing return policy for a given merchant.
+   * Deletes an existing return policy.
    *
    * <p>Sample code:
    *
@@ -829,7 +908,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing return policy for a given merchant.
+   * Deletes an existing return policy.
    *
    * <p>Sample code:
    *
@@ -858,7 +937,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing return policy for a given merchant.
+   * Deletes an existing return policy.
    *
    * <p>Sample code:
    *
@@ -887,7 +966,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing return policy for a given merchant.
+   * Deletes an existing return policy.
    *
    * <p>Sample code:
    *
