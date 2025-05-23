@@ -2021,6 +2021,25 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     return recentScheduledExecutionRecords_.get(index);
   }
 
+  public static final int DISABLED_FIELD_NUMBER = 8;
+  private boolean disabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables automatic creation of workflow invocations.
+   * </pre>
+   *
+   * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -2235,6 +2254,9 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, timeZone_);
     }
+    if (disabled_ != false) {
+      output.writeBool(8, disabled_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getCreateTime());
     }
@@ -2273,6 +2295,9 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, timeZone_);
     }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, disabled_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
     }
@@ -2308,6 +2333,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getRecentScheduledExecutionRecordsList()
         .equals(other.getRecentScheduledExecutionRecordsList())) return false;
+    if (getDisabled() != other.getDisabled()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -2347,6 +2373,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RECENT_SCHEDULED_EXECUTION_RECORDS_FIELD_NUMBER;
       hash = (53 * hash) + getRecentScheduledExecutionRecordsList().hashCode();
     }
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -2527,6 +2555,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         recentScheduledExecutionRecordsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      disabled_ = false;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2608,14 +2637,17 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         result.timeZone_ = timeZone_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.disabled_ = disabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000008;
       }
@@ -2719,6 +2751,9 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2727,7 +2762,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasInternalMetadata()) {
         internalMetadata_ = other.internalMetadata_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2802,22 +2837,28 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 64:
+              {
+                disabled_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 internalMetadata_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             default:
@@ -4011,6 +4052,62 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       return recentScheduledExecutionRecordsBuilder_;
     }
 
+    private boolean disabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of workflow invocations.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of workflow invocations.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of workflow invocations.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      disabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4032,7 +4129,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -4078,7 +4175,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4100,7 +4197,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4118,7 +4215,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4129,7 +4226,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -4147,7 +4244,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4169,7 +4266,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4244,7 +4341,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4290,7 +4387,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4312,7 +4409,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4330,7 +4427,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4341,7 +4438,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4359,7 +4456,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4381,7 +4478,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4452,7 +4549,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the internalMetadata field is set.
      */
     public boolean hasInternalMetadata() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4527,7 +4624,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       internalMetadata_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4548,7 +4645,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInternalMetadata() {
       internalMetadata_ = getDefaultInstance().getInternalMetadata();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4574,7 +4671,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       internalMetadata_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

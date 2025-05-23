@@ -444,7 +444,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an existing return policy for a given merchant.
+     * Deletes an existing return policy.
      * </pre>
      */
     default void deleteOnlineReturnPolicy(
@@ -570,7 +570,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an existing return policy for a given merchant.
+     * Deletes an existing return policy.
      * </pre>
      */
     public void deleteOnlineReturnPolicy(
@@ -663,7 +663,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an existing return policy for a given merchant.
+     * Deletes an existing return policy.
      * </pre>
      */
     public com.google.protobuf.Empty deleteOnlineReturnPolicy(
@@ -754,7 +754,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an existing return policy for a given merchant.
+     * Deletes an existing return policy.
      * </pre>
      */
     public com.google.protobuf.Empty deleteOnlineReturnPolicy(
@@ -852,7 +852,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an existing return policy for a given merchant.
+     * Deletes an existing return policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

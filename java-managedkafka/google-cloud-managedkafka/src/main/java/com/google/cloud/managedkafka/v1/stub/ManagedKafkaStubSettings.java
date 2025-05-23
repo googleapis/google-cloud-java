@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1.stub;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -55,16 +56,24 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.managedkafka.v1.Acl;
+import com.google.cloud.managedkafka.v1.AddAclEntryRequest;
+import com.google.cloud.managedkafka.v1.AddAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Cluster;
 import com.google.cloud.managedkafka.v1.ConsumerGroup;
+import com.google.cloud.managedkafka.v1.CreateAclRequest;
 import com.google.cloud.managedkafka.v1.CreateClusterRequest;
 import com.google.cloud.managedkafka.v1.CreateTopicRequest;
+import com.google.cloud.managedkafka.v1.DeleteAclRequest;
 import com.google.cloud.managedkafka.v1.DeleteClusterRequest;
 import com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.DeleteTopicRequest;
+import com.google.cloud.managedkafka.v1.GetAclRequest;
 import com.google.cloud.managedkafka.v1.GetClusterRequest;
 import com.google.cloud.managedkafka.v1.GetConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.GetTopicRequest;
+import com.google.cloud.managedkafka.v1.ListAclsRequest;
+import com.google.cloud.managedkafka.v1.ListAclsResponse;
 import com.google.cloud.managedkafka.v1.ListClustersRequest;
 import com.google.cloud.managedkafka.v1.ListClustersResponse;
 import com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest;
@@ -72,7 +81,10 @@ import com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse;
 import com.google.cloud.managedkafka.v1.ListTopicsRequest;
 import com.google.cloud.managedkafka.v1.ListTopicsResponse;
 import com.google.cloud.managedkafka.v1.OperationMetadata;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryRequest;
+import com.google.cloud.managedkafka.v1.RemoveAclEntryResponse;
 import com.google.cloud.managedkafka.v1.Topic;
+import com.google.cloud.managedkafka.v1.UpdateAclRequest;
 import com.google.cloud.managedkafka.v1.UpdateClusterRequest;
 import com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest;
 import com.google.cloud.managedkafka.v1.UpdateTopicRequest;
@@ -195,6 +207,15 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
   private final UnaryCallSettings<UpdateConsumerGroupRequest, ConsumerGroup>
       updateConsumerGroupSettings;
   private final UnaryCallSettings<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupSettings;
+  private final PagedCallSettings<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+      listAclsSettings;
+  private final UnaryCallSettings<GetAclRequest, Acl> getAclSettings;
+  private final UnaryCallSettings<CreateAclRequest, Acl> createAclSettings;
+  private final UnaryCallSettings<UpdateAclRequest, Acl> updateAclSettings;
+  private final UnaryCallSettings<DeleteAclRequest, Empty> deleteAclSettings;
+  private final UnaryCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntrySettings;
+  private final UnaryCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse>
+      removeAclEntrySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -306,6 +327,40 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
             }
           };
 
+  private static final PagedListDescriptor<ListAclsRequest, ListAclsResponse, Acl>
+      LIST_ACLS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAclsRequest, ListAclsResponse, Acl>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAclsRequest injectToken(ListAclsRequest payload, String token) {
+              return ListAclsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAclsRequest injectPageSize(ListAclsRequest payload, int pageSize) {
+              return ListAclsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAclsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAclsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Acl> extractResources(ListAclsResponse payload) {
+              return payload.getAclsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -392,6 +447,22 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
                       PageContext.create(
                           callable, LIST_CONSUMER_GROUPS_PAGE_STR_DESC, request, context);
               return ListConsumerGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+      LIST_ACLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAclsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAclsRequest, ListAclsResponse> callable,
+                ListAclsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAclsResponse> futureResponse) {
+              PageContext<ListAclsRequest, ListAclsResponse, Acl> pageContext =
+                  PageContext.create(callable, LIST_ACLS_PAGE_STR_DESC, request, context);
+              return ListAclsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -503,6 +574,42 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
   /** Returns the object with the settings used for calls to deleteConsumerGroup. */
   public UnaryCallSettings<DeleteConsumerGroupRequest, Empty> deleteConsumerGroupSettings() {
     return deleteConsumerGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAcls. */
+  public PagedCallSettings<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+      listAclsSettings() {
+    return listAclsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAcl. */
+  public UnaryCallSettings<GetAclRequest, Acl> getAclSettings() {
+    return getAclSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAcl. */
+  public UnaryCallSettings<CreateAclRequest, Acl> createAclSettings() {
+    return createAclSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAcl. */
+  public UnaryCallSettings<UpdateAclRequest, Acl> updateAclSettings() {
+    return updateAclSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAcl. */
+  public UnaryCallSettings<DeleteAclRequest, Empty> deleteAclSettings() {
+    return deleteAclSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addAclEntry. */
+  public UnaryCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntrySettings() {
+    return addAclEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeAclEntry. */
+  public UnaryCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse> removeAclEntrySettings() {
+    return removeAclEntrySettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -644,6 +751,13 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
     getConsumerGroupSettings = settingsBuilder.getConsumerGroupSettings().build();
     updateConsumerGroupSettings = settingsBuilder.updateConsumerGroupSettings().build();
     deleteConsumerGroupSettings = settingsBuilder.deleteConsumerGroupSettings().build();
+    listAclsSettings = settingsBuilder.listAclsSettings().build();
+    getAclSettings = settingsBuilder.getAclSettings().build();
+    createAclSettings = settingsBuilder.createAclSettings().build();
+    updateAclSettings = settingsBuilder.updateAclSettings().build();
+    deleteAclSettings = settingsBuilder.deleteAclSettings().build();
+    addAclEntrySettings = settingsBuilder.addAclEntrySettings().build();
+    removeAclEntrySettings = settingsBuilder.removeAclEntrySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -680,6 +794,17 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
         updateConsumerGroupSettings;
     private final UnaryCallSettings.Builder<DeleteConsumerGroupRequest, Empty>
         deleteConsumerGroupSettings;
+    private final PagedCallSettings.Builder<
+            ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+        listAclsSettings;
+    private final UnaryCallSettings.Builder<GetAclRequest, Acl> getAclSettings;
+    private final UnaryCallSettings.Builder<CreateAclRequest, Acl> createAclSettings;
+    private final UnaryCallSettings.Builder<UpdateAclRequest, Acl> updateAclSettings;
+    private final UnaryCallSettings.Builder<DeleteAclRequest, Empty> deleteAclSettings;
+    private final UnaryCallSettings.Builder<AddAclEntryRequest, AddAclEntryResponse>
+        addAclEntrySettings;
+    private final UnaryCallSettings.Builder<RemoveAclEntryRequest, RemoveAclEntryResponse>
+        removeAclEntrySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -752,6 +877,13 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
       getConsumerGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateConsumerGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConsumerGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAclsSettings = PagedCallSettings.newBuilder(LIST_ACLS_PAGE_STR_FACT);
+      getAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addAclEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeAclEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -771,6 +903,13 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
               getConsumerGroupSettings,
               updateConsumerGroupSettings,
               deleteConsumerGroupSettings,
+              listAclsSettings,
+              getAclSettings,
+              createAclSettings,
+              updateAclSettings,
+              deleteAclSettings,
+              addAclEntrySettings,
+              removeAclEntrySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -796,6 +935,13 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
       getConsumerGroupSettings = settings.getConsumerGroupSettings.toBuilder();
       updateConsumerGroupSettings = settings.updateConsumerGroupSettings.toBuilder();
       deleteConsumerGroupSettings = settings.deleteConsumerGroupSettings.toBuilder();
+      listAclsSettings = settings.listAclsSettings.toBuilder();
+      getAclSettings = settings.getAclSettings.toBuilder();
+      createAclSettings = settings.createAclSettings.toBuilder();
+      updateAclSettings = settings.updateAclSettings.toBuilder();
+      deleteAclSettings = settings.deleteAclSettings.toBuilder();
+      addAclEntrySettings = settings.addAclEntrySettings.toBuilder();
+      removeAclEntrySettings = settings.removeAclEntrySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -815,6 +961,13 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
               getConsumerGroupSettings,
               updateConsumerGroupSettings,
               deleteConsumerGroupSettings,
+              listAclsSettings,
+              getAclSettings,
+              createAclSettings,
+              updateAclSettings,
+              deleteAclSettings,
+              addAclEntrySettings,
+              removeAclEntrySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -913,6 +1066,41 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
           .deleteConsumerGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listAclsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAclSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createAclSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateAclSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAclSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addAclEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .removeAclEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1108,6 +1296,44 @@ public class ManagedKafkaStubSettings extends StubSettings<ManagedKafkaStubSetti
     public UnaryCallSettings.Builder<DeleteConsumerGroupRequest, Empty>
         deleteConsumerGroupSettings() {
       return deleteConsumerGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAcls. */
+    public PagedCallSettings.Builder<ListAclsRequest, ListAclsResponse, ListAclsPagedResponse>
+        listAclsSettings() {
+      return listAclsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAcl. */
+    public UnaryCallSettings.Builder<GetAclRequest, Acl> getAclSettings() {
+      return getAclSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAcl. */
+    public UnaryCallSettings.Builder<CreateAclRequest, Acl> createAclSettings() {
+      return createAclSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAcl. */
+    public UnaryCallSettings.Builder<UpdateAclRequest, Acl> updateAclSettings() {
+      return updateAclSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAcl. */
+    public UnaryCallSettings.Builder<DeleteAclRequest, Empty> deleteAclSettings() {
+      return deleteAclSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addAclEntry. */
+    public UnaryCallSettings.Builder<AddAclEntryRequest, AddAclEntryResponse>
+        addAclEntrySettings() {
+      return addAclEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeAclEntry. */
+    public UnaryCallSettings.Builder<RemoveAclEntryRequest, RemoveAclEntryResponse>
+        removeAclEntrySettings() {
+      return removeAclEntrySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

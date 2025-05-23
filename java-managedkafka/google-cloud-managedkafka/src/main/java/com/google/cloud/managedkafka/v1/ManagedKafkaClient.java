@@ -343,6 +343,139 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListAcls</td>
+ *      <td><p> Lists the acls in a given cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAcls(ListAclsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAcls(ClusterName parent)
+ *           <li><p> listAcls(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAclsPagedCallable()
+ *           <li><p> listAclsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAcl</td>
+ *      <td><p> Returns the properties of a single acl.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAcl(GetAclRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAcl(AclName name)
+ *           <li><p> getAcl(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAclCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAcl</td>
+ *      <td><p> Creates a new acl in the given project, location, and cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAcl(CreateAclRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAcl(ClusterName parent, Acl acl, String aclId)
+ *           <li><p> createAcl(String parent, Acl acl, String aclId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAclCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAcl</td>
+ *      <td><p> Updates the properties of a single acl.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAcl(UpdateAclRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAcl(Acl acl, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAclCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAcl</td>
+ *      <td><p> Deletes an acl.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAcl(DeleteAclRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAcl(AclName name)
+ *           <li><p> deleteAcl(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAclCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddAclEntry</td>
+ *      <td><p> Incremental update: Adds an acl entry to an acl. Creates the acl if it does not exist yet.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addAclEntry(AddAclEntryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> addAclEntry(AclName acl, AclEntry aclEntry)
+ *           <li><p> addAclEntry(String acl, AclEntry aclEntry)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addAclEntryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveAclEntry</td>
+ *      <td><p> Incremental update: Removes an acl entry from an acl. Deletes the acl if its acl entries become empty (i.e. if the removed entry was the last one in the acl).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeAclEntry(RemoveAclEntryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> removeAclEntry(AclName acl, AclEntry aclEntry)
+ *           <li><p> removeAclEntry(String acl, AclEntry aclEntry)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeAclEntryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -2325,6 +2458,886 @@ public class ManagedKafkaClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the acls in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   for (Acl element : managedKafkaClient.listAcls(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent cluster whose acls are to be listed. Structured like
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclsPagedResponse listAcls(ClusterName parent) {
+    ListAclsRequest request =
+        ListAclsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAcls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the acls in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   for (Acl element : managedKafkaClient.listAcls(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent cluster whose acls are to be listed. Structured like
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclsPagedResponse listAcls(String parent) {
+    ListAclsRequest request = ListAclsRequest.newBuilder().setParent(parent).build();
+    return listAcls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the acls in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   ListAclsRequest request =
+   *       ListAclsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Acl element : managedKafkaClient.listAcls(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclsPagedResponse listAcls(ListAclsRequest request) {
+    return listAclsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the acls in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   ListAclsRequest request =
+   *       ListAclsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Acl> future = managedKafkaClient.listAclsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Acl element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclsRequest, ListAclsPagedResponse> listAclsPagedCallable() {
+    return stub.listAclsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the acls in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   ListAclsRequest request =
+   *       ListAclsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAclsResponse response = managedKafkaClient.listAclsCallable().call(request);
+   *     for (Acl element : response.getAclsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclsRequest, ListAclsResponse> listAclsCallable() {
+    return stub.listAclsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+   *   Acl response = managedKafkaClient.getAcl(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the acl to return. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl getAcl(AclName name) {
+    GetAclRequest request =
+        GetAclRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString();
+   *   Acl response = managedKafkaClient.getAcl(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the acl to return. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl getAcl(String name) {
+    GetAclRequest request = GetAclRequest.newBuilder().setName(name).build();
+    return getAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   GetAclRequest request =
+   *       GetAclRequest.newBuilder()
+   *           .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .build();
+   *   Acl response = managedKafkaClient.getAcl(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl getAcl(GetAclRequest request) {
+    return getAclCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   GetAclRequest request =
+   *       GetAclRequest.newBuilder()
+   *           .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .build();
+   *   ApiFuture<Acl> future = managedKafkaClient.getAclCallable().futureCall(request);
+   *   // Do something.
+   *   Acl response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAclRequest, Acl> getAclCallable() {
+    return stub.getAclCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new acl in the given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Acl acl = Acl.newBuilder().build();
+   *   String aclId = "aclId92636997";
+   *   Acl response = managedKafkaClient.createAcl(parent, acl, aclId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent cluster in which to create the acl. Structured like
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @param acl Required. Configuration of the acl to create. Its `name` field is ignored.
+   * @param aclId Required. The ID to use for the acl, which will become the final component of the
+   *     acl's name. The structure of `acl_id` defines the Resource Pattern (resource_type,
+   *     resource_name, pattern_type) of the acl. `acl_id` is structured like one of the following:
+   *     <p>For acls on the cluster: `cluster`
+   *     <p>For acls on a single resource within the cluster: `topic/{resource_name}`
+   *     `consumerGroup/{resource_name}` `transactionalId/{resource_name}`
+   *     <p>For acls on all resources that match a prefix: `topicPrefixed/{resource_name}`
+   *     `consumerGroupPrefixed/{resource_name}` `transactionalIdPrefixed/{resource_name}`
+   *     <p>For acls on all resources of a given type (i.e. the wildcard literal "&#42;"):
+   *     `allTopics` (represents `topic/&#42;`) `allConsumerGroups` (represents
+   *     `consumerGroup/&#42;`) `allTransactionalIds` (represents `transactionalId/&#42;`)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl createAcl(ClusterName parent, Acl acl, String aclId) {
+    CreateAclRequest request =
+        CreateAclRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAcl(acl)
+            .setAclId(aclId)
+            .build();
+    return createAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new acl in the given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Acl acl = Acl.newBuilder().build();
+   *   String aclId = "aclId92636997";
+   *   Acl response = managedKafkaClient.createAcl(parent, acl, aclId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent cluster in which to create the acl. Structured like
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @param acl Required. Configuration of the acl to create. Its `name` field is ignored.
+   * @param aclId Required. The ID to use for the acl, which will become the final component of the
+   *     acl's name. The structure of `acl_id` defines the Resource Pattern (resource_type,
+   *     resource_name, pattern_type) of the acl. `acl_id` is structured like one of the following:
+   *     <p>For acls on the cluster: `cluster`
+   *     <p>For acls on a single resource within the cluster: `topic/{resource_name}`
+   *     `consumerGroup/{resource_name}` `transactionalId/{resource_name}`
+   *     <p>For acls on all resources that match a prefix: `topicPrefixed/{resource_name}`
+   *     `consumerGroupPrefixed/{resource_name}` `transactionalIdPrefixed/{resource_name}`
+   *     <p>For acls on all resources of a given type (i.e. the wildcard literal "&#42;"):
+   *     `allTopics` (represents `topic/&#42;`) `allConsumerGroups` (represents
+   *     `consumerGroup/&#42;`) `allTransactionalIds` (represents `transactionalId/&#42;`)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl createAcl(String parent, Acl acl, String aclId) {
+    CreateAclRequest request =
+        CreateAclRequest.newBuilder().setParent(parent).setAcl(acl).setAclId(aclId).build();
+    return createAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new acl in the given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   CreateAclRequest request =
+   *       CreateAclRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setAclId("aclId92636997")
+   *           .setAcl(Acl.newBuilder().build())
+   *           .build();
+   *   Acl response = managedKafkaClient.createAcl(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl createAcl(CreateAclRequest request) {
+    return createAclCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new acl in the given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   CreateAclRequest request =
+   *       CreateAclRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setAclId("aclId92636997")
+   *           .setAcl(Acl.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Acl> future = managedKafkaClient.createAclCallable().futureCall(request);
+   *   // Do something.
+   *   Acl response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAclRequest, Acl> createAclCallable() {
+    return stub.createAclCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   Acl acl = Acl.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Acl response = managedKafkaClient.updateAcl(acl, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param acl Required. The updated acl. Its `name` and `etag` fields must be populated.
+   *     `acl_entries` must not be empty in the updated acl; to remove all acl entries for an acl,
+   *     use DeleteAcl.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Acl resource by the update. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl updateAcl(Acl acl, FieldMask updateMask) {
+    UpdateAclRequest request =
+        UpdateAclRequest.newBuilder().setAcl(acl).setUpdateMask(updateMask).build();
+    return updateAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   UpdateAclRequest request =
+   *       UpdateAclRequest.newBuilder()
+   *           .setAcl(Acl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Acl response = managedKafkaClient.updateAcl(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Acl updateAcl(UpdateAclRequest request) {
+    return updateAclCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the properties of a single acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   UpdateAclRequest request =
+   *       UpdateAclRequest.newBuilder()
+   *           .setAcl(Acl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Acl> future = managedKafkaClient.updateAclCallable().futureCall(request);
+   *   // Do something.
+   *   Acl response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAclRequest, Acl> updateAclCallable() {
+    return stub.updateAclCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+   *   managedKafkaClient.deleteAcl(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the acl to delete. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAcl(AclName name) {
+    DeleteAclRequest request =
+        DeleteAclRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString();
+   *   managedKafkaClient.deleteAcl(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the acl to delete. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAcl(String name) {
+    DeleteAclRequest request = DeleteAclRequest.newBuilder().setName(name).build();
+    deleteAcl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   DeleteAclRequest request =
+   *       DeleteAclRequest.newBuilder()
+   *           .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .build();
+   *   managedKafkaClient.deleteAcl(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAcl(DeleteAclRequest request) {
+    deleteAclCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an acl.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   DeleteAclRequest request =
+   *       DeleteAclRequest.newBuilder()
+   *           .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = managedKafkaClient.deleteAclCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAclRequest, Empty> deleteAclCallable() {
+    return stub.deleteAclCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Adds an acl entry to an acl. Creates the acl if it does not exist yet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+   *   AclEntry aclEntry = AclEntry.newBuilder().build();
+   *   AddAclEntryResponse response = managedKafkaClient.addAclEntry(acl, aclEntry);
+   * }
+   * }</pre>
+   *
+   * @param acl Required. The name of the acl to add the acl entry to. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @param aclEntry Required. The acl entry to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddAclEntryResponse addAclEntry(AclName acl, AclEntry aclEntry) {
+    AddAclEntryRequest request =
+        AddAclEntryRequest.newBuilder()
+            .setAcl(acl == null ? null : acl.toString())
+            .setAclEntry(aclEntry)
+            .build();
+    return addAclEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Adds an acl entry to an acl. Creates the acl if it does not exist yet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString();
+   *   AclEntry aclEntry = AclEntry.newBuilder().build();
+   *   AddAclEntryResponse response = managedKafkaClient.addAclEntry(acl, aclEntry);
+   * }
+   * }</pre>
+   *
+   * @param acl Required. The name of the acl to add the acl entry to. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @param aclEntry Required. The acl entry to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddAclEntryResponse addAclEntry(String acl, AclEntry aclEntry) {
+    AddAclEntryRequest request =
+        AddAclEntryRequest.newBuilder().setAcl(acl).setAclEntry(aclEntry).build();
+    return addAclEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Adds an acl entry to an acl. Creates the acl if it does not exist yet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AddAclEntryRequest request =
+   *       AddAclEntryRequest.newBuilder()
+   *           .setAcl(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .setAclEntry(AclEntry.newBuilder().build())
+   *           .build();
+   *   AddAclEntryResponse response = managedKafkaClient.addAclEntry(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddAclEntryResponse addAclEntry(AddAclEntryRequest request) {
+    return addAclEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Adds an acl entry to an acl. Creates the acl if it does not exist yet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AddAclEntryRequest request =
+   *       AddAclEntryRequest.newBuilder()
+   *           .setAcl(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .setAclEntry(AclEntry.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AddAclEntryResponse> future =
+   *       managedKafkaClient.addAclEntryCallable().futureCall(request);
+   *   // Do something.
+   *   AddAclEntryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddAclEntryRequest, AddAclEntryResponse> addAclEntryCallable() {
+    return stub.addAclEntryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Removes an acl entry from an acl. Deletes the acl if its acl entries become
+   * empty (i.e. if the removed entry was the last one in the acl).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+   *   AclEntry aclEntry = AclEntry.newBuilder().build();
+   *   RemoveAclEntryResponse response = managedKafkaClient.removeAclEntry(acl, aclEntry);
+   * }
+   * }</pre>
+   *
+   * @param acl Required. The name of the acl to remove the acl entry from. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @param aclEntry Required. The acl entry to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveAclEntryResponse removeAclEntry(AclName acl, AclEntry aclEntry) {
+    RemoveAclEntryRequest request =
+        RemoveAclEntryRequest.newBuilder()
+            .setAcl(acl == null ? null : acl.toString())
+            .setAclEntry(aclEntry)
+            .build();
+    return removeAclEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Removes an acl entry from an acl. Deletes the acl if its acl entries become
+   * empty (i.e. if the removed entry was the last one in the acl).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   String acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString();
+   *   AclEntry aclEntry = AclEntry.newBuilder().build();
+   *   RemoveAclEntryResponse response = managedKafkaClient.removeAclEntry(acl, aclEntry);
+   * }
+   * }</pre>
+   *
+   * @param acl Required. The name of the acl to remove the acl entry from. Structured like:
+   *     `projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}`.
+   *     <p>The structure of `acl_id` defines the Resource Pattern (resource_type, resource_name,
+   *     pattern_type) of the acl. See `Acl.name` for details.
+   * @param aclEntry Required. The acl entry to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveAclEntryResponse removeAclEntry(String acl, AclEntry aclEntry) {
+    RemoveAclEntryRequest request =
+        RemoveAclEntryRequest.newBuilder().setAcl(acl).setAclEntry(aclEntry).build();
+    return removeAclEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Removes an acl entry from an acl. Deletes the acl if its acl entries become
+   * empty (i.e. if the removed entry was the last one in the acl).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   RemoveAclEntryRequest request =
+   *       RemoveAclEntryRequest.newBuilder()
+   *           .setAcl(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .setAclEntry(AclEntry.newBuilder().build())
+   *           .build();
+   *   RemoveAclEntryResponse response = managedKafkaClient.removeAclEntry(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveAclEntryResponse removeAclEntry(RemoveAclEntryRequest request) {
+    return removeAclEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incremental update: Removes an acl entry from an acl. Deletes the acl if its acl entries become
+   * empty (i.e. if the removed entry was the last one in the acl).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedKafkaClient managedKafkaClient = ManagedKafkaClient.create()) {
+   *   RemoveAclEntryRequest request =
+   *       RemoveAclEntryRequest.newBuilder()
+   *           .setAcl(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+   *           .setAclEntry(AclEntry.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RemoveAclEntryResponse> future =
+   *       managedKafkaClient.removeAclEntryCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveAclEntryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveAclEntryRequest, RemoveAclEntryResponse>
+      removeAclEntryCallable() {
+    return stub.removeAclEntryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2733,6 +3746,69 @@ public class ManagedKafkaClient implements BackgroundResource {
     protected ListConsumerGroupsFixedSizeCollection createCollection(
         List<ListConsumerGroupsPage> pages, int collectionSize) {
       return new ListConsumerGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAclsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAclsRequest, ListAclsResponse, Acl, ListAclsPage, ListAclsFixedSizeCollection> {
+
+    public static ApiFuture<ListAclsPagedResponse> createAsync(
+        PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
+        ApiFuture<ListAclsResponse> futureResponse) {
+      ApiFuture<ListAclsPage> futurePage =
+          ListAclsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListAclsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListAclsPagedResponse(ListAclsPage page) {
+      super(page, ListAclsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAclsPage
+      extends AbstractPage<ListAclsRequest, ListAclsResponse, Acl, ListAclsPage> {
+
+    private ListAclsPage(
+        PageContext<ListAclsRequest, ListAclsResponse, Acl> context, ListAclsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAclsPage createEmptyPage() {
+      return new ListAclsPage(null, null);
+    }
+
+    @Override
+    protected ListAclsPage createPage(
+        PageContext<ListAclsRequest, ListAclsResponse, Acl> context, ListAclsResponse response) {
+      return new ListAclsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAclsPage> createPageAsync(
+        PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
+        ApiFuture<ListAclsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAclsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAclsRequest, ListAclsResponse, Acl, ListAclsPage, ListAclsFixedSizeCollection> {
+
+    private ListAclsFixedSizeCollection(List<ListAclsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAclsFixedSizeCollection createEmptyCollection() {
+      return new ListAclsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAclsFixedSizeCollection createCollection(
+        List<ListAclsPage> pages, int collectionSize) {
+      return new ListAclsFixedSizeCollection(pages, collectionSize);
     }
   }
 

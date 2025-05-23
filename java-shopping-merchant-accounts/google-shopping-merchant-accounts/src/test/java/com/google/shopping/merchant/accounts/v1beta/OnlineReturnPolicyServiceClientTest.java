@@ -383,6 +383,116 @@ public class OnlineReturnPolicyServiceClientTest {
   }
 
   @Test
+  public void createOnlineReturnPolicyTest3() throws Exception {
+    OnlineReturnPolicy expectedResponse =
+        OnlineReturnPolicy.newBuilder()
+            .setName(OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]").toString())
+            .setReturnPolicyId("returnPolicyId-636904643")
+            .setLabel("label102727412")
+            .addAllCountries(new ArrayList<String>())
+            .setPolicy(OnlineReturnPolicy.Policy.newBuilder().build())
+            .addAllSeasonalOverrides(new ArrayList<OnlineReturnPolicy.SeasonalOverride>())
+            .setRestockingFee(OnlineReturnPolicy.RestockingFee.newBuilder().build())
+            .addAllReturnMethods(new ArrayList<OnlineReturnPolicy.ReturnMethod>())
+            .addAllItemConditions(new ArrayList<OnlineReturnPolicy.ItemCondition>())
+            .setReturnShippingFee(OnlineReturnPolicy.ReturnShippingFee.newBuilder().build())
+            .setReturnPolicyUri("returnPolicyUri1730804618")
+            .setAcceptDefectiveOnly(true)
+            .setProcessRefundDays(1233584878)
+            .setAcceptExchange(true)
+            .build();
+    mockOnlineReturnPolicyService.addResponse(expectedResponse);
+
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+
+    OnlineReturnPolicy actualResponse = client.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOnlineReturnPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOnlineReturnPolicyRequest actualRequest =
+        ((CreateOnlineReturnPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(onlineReturnPolicy, actualRequest.getOnlineReturnPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOnlineReturnPolicyExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOnlineReturnPolicyService.addException(exception);
+
+    try {
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+      client.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOnlineReturnPolicyTest4() throws Exception {
+    OnlineReturnPolicy expectedResponse =
+        OnlineReturnPolicy.newBuilder()
+            .setName(OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]").toString())
+            .setReturnPolicyId("returnPolicyId-636904643")
+            .setLabel("label102727412")
+            .addAllCountries(new ArrayList<String>())
+            .setPolicy(OnlineReturnPolicy.Policy.newBuilder().build())
+            .addAllSeasonalOverrides(new ArrayList<OnlineReturnPolicy.SeasonalOverride>())
+            .setRestockingFee(OnlineReturnPolicy.RestockingFee.newBuilder().build())
+            .addAllReturnMethods(new ArrayList<OnlineReturnPolicy.ReturnMethod>())
+            .addAllItemConditions(new ArrayList<OnlineReturnPolicy.ItemCondition>())
+            .setReturnShippingFee(OnlineReturnPolicy.ReturnShippingFee.newBuilder().build())
+            .setReturnPolicyUri("returnPolicyUri1730804618")
+            .setAcceptDefectiveOnly(true)
+            .setProcessRefundDays(1233584878)
+            .setAcceptExchange(true)
+            .build();
+    mockOnlineReturnPolicyService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+
+    OnlineReturnPolicy actualResponse = client.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOnlineReturnPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOnlineReturnPolicyRequest actualRequest =
+        ((CreateOnlineReturnPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(onlineReturnPolicy, actualRequest.getOnlineReturnPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOnlineReturnPolicyExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOnlineReturnPolicyService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+      client.createOnlineReturnPolicy(parent, onlineReturnPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateOnlineReturnPolicyTest() throws Exception {
     OnlineReturnPolicy expectedResponse =
         OnlineReturnPolicy.newBuilder()

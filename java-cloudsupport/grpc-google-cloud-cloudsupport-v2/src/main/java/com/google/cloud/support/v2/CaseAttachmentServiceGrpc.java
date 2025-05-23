@@ -152,30 +152,6 @@ public final class CaseAttachmentServiceGrpc {
      *
      * <pre>
      * List all the attachments associated with a support case.
-     * EXAMPLES:
-     * cURL:
-     * ```shell
-     * case="projects/some-project/cases/23598314"
-     * curl &#92;
-     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
-     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
-     * ```
-     * Python:
-     * ```python
-     * import googleapiclient.discovery
-     * api_version = "v2"
-     * supportApiService = googleapiclient.discovery.build(
-     *     serviceName="cloudsupport",
-     *     version=api_version,
-     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-     * )
-     * request = (
-     *     supportApiService.cases()
-     *     .attachments()
-     *     .list(parent="projects/some-project/cases/43595344")
-     * )
-     * print(request.execute())
-     * ```
      * </pre>
      */
     default void listAttachments(
@@ -227,30 +203,6 @@ public final class CaseAttachmentServiceGrpc {
      *
      * <pre>
      * List all the attachments associated with a support case.
-     * EXAMPLES:
-     * cURL:
-     * ```shell
-     * case="projects/some-project/cases/23598314"
-     * curl &#92;
-     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
-     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
-     * ```
-     * Python:
-     * ```python
-     * import googleapiclient.discovery
-     * api_version = "v2"
-     * supportApiService = googleapiclient.discovery.build(
-     *     serviceName="cloudsupport",
-     *     version=api_version,
-     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-     * )
-     * request = (
-     *     supportApiService.cases()
-     *     .attachments()
-     *     .list(parent="projects/some-project/cases/43595344")
-     * )
-     * print(request.execute())
-     * ```
      * </pre>
      */
     public void listAttachments(
@@ -289,30 +241,6 @@ public final class CaseAttachmentServiceGrpc {
      *
      * <pre>
      * List all the attachments associated with a support case.
-     * EXAMPLES:
-     * cURL:
-     * ```shell
-     * case="projects/some-project/cases/23598314"
-     * curl &#92;
-     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
-     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
-     * ```
-     * Python:
-     * ```python
-     * import googleapiclient.discovery
-     * api_version = "v2"
-     * supportApiService = googleapiclient.discovery.build(
-     *     serviceName="cloudsupport",
-     *     version=api_version,
-     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-     * )
-     * request = (
-     *     supportApiService.cases()
-     *     .attachments()
-     *     .list(parent="projects/some-project/cases/43595344")
-     * )
-     * print(request.execute())
-     * ```
      * </pre>
      */
     public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
@@ -347,30 +275,6 @@ public final class CaseAttachmentServiceGrpc {
      *
      * <pre>
      * List all the attachments associated with a support case.
-     * EXAMPLES:
-     * cURL:
-     * ```shell
-     * case="projects/some-project/cases/23598314"
-     * curl &#92;
-     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
-     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
-     * ```
-     * Python:
-     * ```python
-     * import googleapiclient.discovery
-     * api_version = "v2"
-     * supportApiService = googleapiclient.discovery.build(
-     *     serviceName="cloudsupport",
-     *     version=api_version,
-     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-     * )
-     * request = (
-     *     supportApiService.cases()
-     *     .attachments()
-     *     .list(parent="projects/some-project/cases/43595344")
-     * )
-     * print(request.execute())
-     * ```
      * </pre>
      */
     public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
@@ -406,30 +310,6 @@ public final class CaseAttachmentServiceGrpc {
      *
      * <pre>
      * List all the attachments associated with a support case.
-     * EXAMPLES:
-     * cURL:
-     * ```shell
-     * case="projects/some-project/cases/23598314"
-     * curl &#92;
-     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
-     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
-     * ```
-     * Python:
-     * ```python
-     * import googleapiclient.discovery
-     * api_version = "v2"
-     * supportApiService = googleapiclient.discovery.build(
-     *     serviceName="cloudsupport",
-     *     version=api_version,
-     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-     * )
-     * request = (
-     *     supportApiService.cases()
-     *     .attachments()
-     *     .list(parent="projects/some-project/cases/43595344")
-     * )
-     * print(request.execute())
-     * ```
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

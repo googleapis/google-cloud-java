@@ -28,10 +28,10 @@ public interface CaseOrBuilder
    *
    *
    * <pre>
-   * The resource name for the case.
+   * Identifier. The resource name for the case.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -41,10 +41,10 @@ public interface CaseOrBuilder
    *
    *
    * <pre>
-   * The resource name for the case.
+   * Identifier. The resource name for the case.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

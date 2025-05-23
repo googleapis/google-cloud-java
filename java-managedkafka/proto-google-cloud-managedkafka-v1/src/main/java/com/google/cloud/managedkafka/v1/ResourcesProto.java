@@ -124,6 +124,14 @@ public final class ResourcesProto {
       internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_Acl_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_Acl_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_AclEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_AclEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -296,18 +304,32 @@ public final class ResourcesProto {
           + "\017minimum_backoff\030\001"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\0227\n"
           + "\017maximum_backoff\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001B\242\004\n"
-          + " com.google.cloud.managedkafka.v1B\016ResourcesP"
-          + "rotoP\001ZDcloud.google.com/go/managedkafka"
-          + "/apiv1/managedkafkapb;managedkafkapb\252\002\034G"
-          + "oogle.Cloud.ManagedKafka.V1\312\002\034Google\\Clo"
-          + "ud\\ManagedKafka\\V1\352\002\037Google::Cloud::ManagedKafka::V1\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations"
-          + "/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352Ak\n"
-          + "*secretmanager.googleapis.com/SecretVersion\022=projects/{projec"
-          + "t}/secrets/{secret}/versions/{secret_version}\352A\\\n"
-          + "\037privateca.googleapis.com/CaPool\0229projects/{project}/locations/{locatio"
-          + "n}/caPools/{ca_pool}b\006proto3"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"\270\002\n"
+          + "\003Acl\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022@\n"
+          + "\013acl_entries\030\002 \003(\0132"
+          + "&.google.cloud.managedkafka.v1.AclEntryB\003\340A\002\022\021\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001\022\032\n\r"
+          + "resource_type\030\004 \001(\tB\003\340A\003\022\032\n\r"
+          + "resource_name\030\005 \001(\tB\003\340A\003\022\031\n"
+          + "\014pattern_type\030\006 \001(\tB\003\340A\003:v\352As\n"
+          + "\037managedkafka.googleapis.com/Acl\022Eprojects/{proj"
+          + "ect}/locations/{location}/clusters/{cluster}/acls/{acl}*\004acls2\003acl\"k\n"
+          + "\010AclEntry\022\026\n"
+          + "\tprincipal\030\004 \001(\tB\003\340A\002\022\034\n"
+          + "\017permission_type\030\005 \001(\tB\003\340A\002\022\026\n"
+          + "\toperation\030\006 \001(\tB\003\340A\002\022\021\n"
+          + "\004host\030\007 \001(\tB\003\340A\002B\242\004\n"
+          + " com.google.cloud.managedkafka.v1B\016ResourcesProtoP\001ZDcloud.go"
+          + "ogle.com/go/managedkafka/apiv1/managedka"
+          + "fkapb;managedkafkapb\252\002\034Google.Cloud.Mana"
+          + "gedKafka.V1\312\002\034Google\\Cloud\\ManagedKafka\\V1\352\002\037Google::Cloud::ManagedKafka::V1\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}/keyR"
+          + "ings/{key_ring}/cryptoKeys/{crypto_key}\352Ak\n"
+          + "*secretmanager.googleapis.com/SecretV"
+          + "ersion\022=projects/{project}/secrets/{secret}/versions/{secret_version}\352A\\\n"
+          + "\037privateca.googleapis.com/CaPool\0229projects/{pro"
+          + "ject}/locations/{location}/caPools/{ca_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -542,6 +564,22 @@ public final class ResourcesProto {
             internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_descriptor,
             new java.lang.String[] {
               "MinimumBackoff", "MaximumBackoff",
+            });
+    internal_static_google_cloud_managedkafka_v1_Acl_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_managedkafka_v1_Acl_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_Acl_descriptor,
+            new java.lang.String[] {
+              "Name", "AclEntries", "Etag", "ResourceType", "ResourceName", "PatternType",
+            });
+    internal_static_google_cloud_managedkafka_v1_AclEntry_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_managedkafka_v1_AclEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_AclEntry_descriptor,
+            new java.lang.String[] {
+              "Principal", "PermissionType", "Operation", "Host",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
