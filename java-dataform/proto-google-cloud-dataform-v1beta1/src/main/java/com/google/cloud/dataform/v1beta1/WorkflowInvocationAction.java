@@ -2132,6 +2132,7806 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
   }
 
+  public interface DataPreparationActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the contentsYaml field is set.
+     */
+    boolean hasContentsYaml();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The contentsYaml.
+     */
+    java.lang.String getContentsYaml();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for contentsYaml.
+     */
+    com.google.protobuf.ByteString getContentsYamlBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     *
+     * @return Whether the contentsSql field is set.
+     */
+    boolean hasContentsSql();
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     *
+     * @return The contentsSql.
+     */
+    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSqlDefinition
+        getContentsSql();
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     */
+    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSqlDefinitionOrBuilder
+        getContentsSqlOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated BigQuery SQL script that will be executed. For
+     * reference only.
+     * </pre>
+     *
+     * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The generatedSql.
+     */
+    java.lang.String getGeneratedSql();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated BigQuery SQL script that will be executed. For
+     * reference only.
+     * </pre>
+     *
+     * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for generatedSql.
+     */
+    com.google.protobuf.ByteString getGeneratedSqlBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString getJobIdBytes();
+
+    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.DefinitionCase
+        getDefinitionCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a workflow action that will run a Data Preparation.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction}
+   */
+  public static final class DataPreparationAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+      DataPreparationActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use DataPreparationAction.newBuilder() to construct.
+    private DataPreparationAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataPreparationAction() {
+      generatedSql_ = "";
+      jobId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataPreparationAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .class,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .Builder.class);
+    }
+
+    public interface ActionSqlDefinitionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The SQL query representing the data preparation steps. Formatted as a
+       * Pipe SQL query statement.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      java.lang.String getQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * The SQL query representing the data preparation steps. Formatted as a
+       * Pipe SQL query statement.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       *
+       * @return Whether the errorTable field is set.
+       */
+      boolean hasErrorTable();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       *
+       * @return The errorTable.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          getErrorTable();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTableOrBuilder
+          getErrorTableOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       *
+       * @return Whether the loadConfig field is set.
+       */
+      boolean hasLoadConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       *
+       * @return The loadConfig.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          getLoadConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfigOrBuilder
+          getLoadConfigOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Definition of a SQL Data Preparation
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition}
+     */
+    public static final class ActionSqlDefinition extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition)
+        ActionSqlDefinitionOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ActionSqlDefinition.newBuilder() to construct.
+      private ActionSqlDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ActionSqlDefinition() {
+        query_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ActionSqlDefinition();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSqlDefinition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSqlDefinition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int QUERY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object query_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The SQL query representing the data preparation steps. Formatted as a
+       * Pipe SQL query statement.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      @java.lang.Override
+      public java.lang.String getQuery() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          query_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The SQL query representing the data preparation steps. Formatted as a
+       * Pipe SQL query statement.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getQueryBytes() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          query_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ERROR_TABLE_FIELD_NUMBER = 2;
+      private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          errorTable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       *
+       * @return Whether the errorTable field is set.
+       */
+      @java.lang.Override
+      public boolean hasErrorTable() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       *
+       * @return The errorTable.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          getErrorTable() {
+        return errorTable_ == null
+            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable.getDefaultInstance()
+            : errorTable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table configuration,
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTableOrBuilder
+          getErrorTableOrBuilder() {
+        return errorTable_ == null
+            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable.getDefaultInstance()
+            : errorTable_;
+      }
+
+      public static final int LOAD_CONFIG_FIELD_NUMBER = 3;
+      private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          loadConfig_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       *
+       * @return Whether the loadConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasLoadConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       *
+       * @return The loadConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          getLoadConfig() {
+        return loadConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig.getDefaultInstance()
+            : loadConfig_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Load configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfigOrBuilder
+          getLoadConfigOrBuilder() {
+        return loadConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig.getDefaultInstance()
+            : loadConfig_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getErrorTable());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(3, getLoadConfig());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getErrorTable());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLoadConfig());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition
+            other =
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSqlDefinition)
+                    obj;
+
+        if (!getQuery().equals(other.getQuery())) return false;
+        if (hasErrorTable() != other.hasErrorTable()) return false;
+        if (hasErrorTable()) {
+          if (!getErrorTable().equals(other.getErrorTable())) return false;
+        }
+        if (hasLoadConfig() != other.hasLoadConfig()) return false;
+        if (hasLoadConfig()) {
+          if (!getLoadConfig().equals(other.getLoadConfig())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getQuery().hashCode();
+        if (hasErrorTable()) {
+          hash = (37 * hash) + ERROR_TABLE_FIELD_NUMBER;
+          hash = (53 * hash) + getErrorTable().hashCode();
+        }
+        if (hasLoadConfig()) {
+          hash = (37 * hash) + LOAD_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getLoadConfig().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Definition of a SQL Data Preparation
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition)
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinitionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSqlDefinition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSqlDefinition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSqlDefinition.class,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSqlDefinition.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getErrorTableFieldBuilder();
+            getLoadConfigFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          query_ = "";
+          errorTable_ = null;
+          if (errorTableBuilder_ != null) {
+            errorTableBuilder_.dispose();
+            errorTableBuilder_ = null;
+          }
+          loadConfig_ = null;
+          if (loadConfigBuilder_ != null) {
+            loadConfigBuilder_.dispose();
+            loadConfigBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSqlDefinition_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition
+            build() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition
+            buildPartial() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition
+              result =
+                  new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSqlDefinition(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.query_ = query_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.errorTable_ =
+                errorTableBuilder_ == null ? errorTable_ : errorTableBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.loadConfig_ =
+                loadConfigBuilder_ == null ? loadConfig_ : loadConfigBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition) {
+            return mergeFrom(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSqlDefinition)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition
+                other) {
+          if (other
+              == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition.getDefaultInstance()) return this;
+          if (!other.getQuery().isEmpty()) {
+            query_ = other.query_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasErrorTable()) {
+            mergeErrorTable(other.getErrorTable());
+          }
+          if (other.hasLoadConfig()) {
+            mergeLoadConfig(other.getLoadConfig());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    query_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getErrorTableFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getLoadConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object query_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The SQL query representing the data preparation steps. Formatted as a
+         * Pipe SQL query statement.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The query.
+         */
+        public java.lang.String getQuery() {
+          java.lang.Object ref = query_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            query_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The SQL query representing the data preparation steps. Formatted as a
+         * Pipe SQL query statement.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The bytes for query.
+         */
+        public com.google.protobuf.ByteString getQueryBytes() {
+          java.lang.Object ref = query_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            query_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The SQL query representing the data preparation steps. Formatted as a
+         * Pipe SQL query statement.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQuery(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          query_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The SQL query representing the data preparation steps. Formatted as a
+         * Pipe SQL query statement.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQuery() {
+          query_ = getDefaultInstance().getQuery();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The SQL query representing the data preparation steps. Formatted as a
+         * Pipe SQL query statement.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The bytes for query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQueryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          query_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            errorTable_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTableOrBuilder>
+            errorTableBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         *
+         * @return Whether the errorTable field is set.
+         */
+        public boolean hasErrorTable() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         *
+         * @return The errorTable.
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            getErrorTable() {
+          if (errorTableBuilder_ == null) {
+            return errorTable_ == null
+                ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.getDefaultInstance()
+                : errorTable_;
+          } else {
+            return errorTableBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public Builder setErrorTable(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable
+                value) {
+          if (errorTableBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            errorTable_ = value;
+          } else {
+            errorTableBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public Builder setErrorTable(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.Builder
+                builderForValue) {
+          if (errorTableBuilder_ == null) {
+            errorTable_ = builderForValue.build();
+          } else {
+            errorTableBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public Builder mergeErrorTable(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable
+                value) {
+          if (errorTableBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && errorTable_ != null
+                && errorTable_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionErrorTable.getDefaultInstance()) {
+              getErrorTableBuilder().mergeFrom(value);
+            } else {
+              errorTable_ = value;
+            }
+          } else {
+            errorTableBuilder_.mergeFrom(value);
+          }
+          if (errorTable_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public Builder clearErrorTable() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          errorTable_ = null;
+          if (errorTableBuilder_ != null) {
+            errorTableBuilder_.dispose();
+            errorTableBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable.Builder
+            getErrorTableBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getErrorTableFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTableOrBuilder
+            getErrorTableOrBuilder() {
+          if (errorTableBuilder_ != null) {
+            return errorTableBuilder_.getMessageOrBuilder();
+          } else {
+            return errorTable_ == null
+                ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.getDefaultInstance()
+                : errorTable_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table configuration,
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable error_table = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTableOrBuilder>
+            getErrorTableFieldBuilder() {
+          if (errorTableBuilder_ == null) {
+            errorTableBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionErrorTable,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionErrorTable.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionErrorTableOrBuilder>(
+                    getErrorTable(), getParentForChildren(), isClean());
+            errorTable_ = null;
+          }
+          return errorTableBuilder_;
+        }
+
+        private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            loadConfig_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfigOrBuilder>
+            loadConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         *
+         * @return Whether the loadConfig field is set.
+         */
+        public boolean hasLoadConfig() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         *
+         * @return The loadConfig.
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            getLoadConfig() {
+          if (loadConfigBuilder_ == null) {
+            return loadConfig_ == null
+                ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.getDefaultInstance()
+                : loadConfig_;
+          } else {
+            return loadConfigBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public Builder setLoadConfig(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig
+                value) {
+          if (loadConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            loadConfig_ = value;
+          } else {
+            loadConfigBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public Builder setLoadConfig(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.Builder
+                builderForValue) {
+          if (loadConfigBuilder_ == null) {
+            loadConfig_ = builderForValue.build();
+          } else {
+            loadConfigBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public Builder mergeLoadConfig(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig
+                value) {
+          if (loadConfigBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && loadConfig_ != null
+                && loadConfig_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionLoadConfig.getDefaultInstance()) {
+              getLoadConfigBuilder().mergeFrom(value);
+            } else {
+              loadConfig_ = value;
+            }
+          } else {
+            loadConfigBuilder_.mergeFrom(value);
+          }
+          if (loadConfig_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public Builder clearLoadConfig() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          loadConfig_ = null;
+          if (loadConfigBuilder_ != null) {
+            loadConfigBuilder_.dispose();
+            loadConfigBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig.Builder
+            getLoadConfigBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getLoadConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfigOrBuilder
+            getLoadConfigOrBuilder() {
+          if (loadConfigBuilder_ != null) {
+            return loadConfigBuilder_.getMessageOrBuilder();
+          } else {
+            return loadConfig_ == null
+                ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.getDefaultInstance()
+                : loadConfig_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Load configuration.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig load_config = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfigOrBuilder>
+            getLoadConfigFieldBuilder() {
+          if (loadConfigBuilder_ == null) {
+            loadConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionLoadConfig,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionLoadConfig.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionLoadConfigOrBuilder>(
+                    getLoadConfig(), getParentForChildren(), isClean());
+            loadConfig_ = null;
+          }
+          return loadConfigBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition)
+      private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+              .DataPreparationAction.ActionSqlDefinition
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition();
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ActionSqlDefinition> PARSER =
+          new com.google.protobuf.AbstractParser<ActionSqlDefinition>() {
+            @java.lang.Override
+            public ActionSqlDefinition parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ActionSqlDefinition> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ActionSqlDefinition> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ActionErrorTableOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       *
+       * @return Whether the target field is set.
+       */
+      boolean hasTarget();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       *
+       * @return The target.
+       */
+      com.google.cloud.dataform.v1beta1.Target getTarget();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       */
+      com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table partition expiration in days. Only positive values are
+       * allowed.
+       * </pre>
+       *
+       * <code>int32 retention_days = 2;</code>
+       *
+       * @return The retentionDays.
+       */
+      int getRetentionDays();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Error table information, used to write error data into a BigQuery
+     * table.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable}
+     */
+    public static final class ActionErrorTable extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable)
+        ActionErrorTableOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ActionErrorTable.newBuilder() to construct.
+      private ActionErrorTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ActionErrorTable() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ActionErrorTable();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionErrorTable_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionErrorTable_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int TARGET_FIELD_NUMBER = 1;
+      private com.google.cloud.dataform.v1beta1.Target target_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       *
+       * @return Whether the target field is set.
+       */
+      @java.lang.Override
+      public boolean hasTarget() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       *
+       * @return The target.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.Target getTarget() {
+        return target_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : target_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Error Table target.
+       * </pre>
+       *
+       * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
+        return target_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : target_;
+      }
+
+      public static final int RETENTION_DAYS_FIELD_NUMBER = 2;
+      private int retentionDays_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table partition expiration in days. Only positive values are
+       * allowed.
+       * </pre>
+       *
+       * <code>int32 retention_days = 2;</code>
+       *
+       * @return The retentionDays.
+       */
+      @java.lang.Override
+      public int getRetentionDays() {
+        return retentionDays_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getTarget());
+        }
+        if (retentionDays_ != 0) {
+          output.writeInt32(2, retentionDays_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTarget());
+        }
+        if (retentionDays_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, retentionDays_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            other =
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionErrorTable)
+                    obj;
+
+        if (hasTarget() != other.hasTarget()) return false;
+        if (hasTarget()) {
+          if (!getTarget().equals(other.getTarget())) return false;
+        }
+        if (getRetentionDays() != other.getRetentionDays()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasTarget()) {
+          hash = (37 * hash) + TARGET_FIELD_NUMBER;
+          hash = (53 * hash) + getTarget().hashCode();
+        }
+        hash = (37 * hash) + RETENTION_DAYS_FIELD_NUMBER;
+        hash = (53 * hash) + getRetentionDays();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionErrorTable
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Error table information, used to write error data into a BigQuery
+       * table.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable)
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTableOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionErrorTable_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionErrorTable_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionErrorTable.class,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionErrorTable.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getTargetFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          target_ = null;
+          if (targetBuilder_ != null) {
+            targetBuilder_.dispose();
+            targetBuilder_ = null;
+          }
+          retentionDays_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionErrorTable_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            build() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionErrorTable
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable
+            buildPartial() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionErrorTable
+              result =
+                  new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionErrorTable(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.retentionDays_ = retentionDays_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionErrorTable) {
+            return mergeFrom(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionErrorTable)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionErrorTable
+                other) {
+          if (other
+              == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionErrorTable.getDefaultInstance()) return this;
+          if (other.hasTarget()) {
+            mergeTarget(other.getTarget());
+          }
+          if (other.getRetentionDays() != 0) {
+            setRetentionDays(other.getRetentionDays());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    retentionDays_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.dataform.v1beta1.Target target_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.Target,
+                com.google.cloud.dataform.v1beta1.Target.Builder,
+                com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+            targetBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         *
+         * @return Whether the target field is set.
+         */
+        public boolean hasTarget() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         *
+         * @return The target.
+         */
+        public com.google.cloud.dataform.v1beta1.Target getTarget() {
+          if (targetBuilder_ == null) {
+            return target_ == null
+                ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+                : target_;
+          } else {
+            return targetBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public Builder setTarget(com.google.cloud.dataform.v1beta1.Target value) {
+          if (targetBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            target_ = value;
+          } else {
+            targetBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public Builder setTarget(com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+          if (targetBuilder_ == null) {
+            target_ = builderForValue.build();
+          } else {
+            targetBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
+          if (targetBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && target_ != null
+                && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
+              getTargetBuilder().mergeFrom(value);
+            } else {
+              target_ = value;
+            }
+          } else {
+            targetBuilder_.mergeFrom(value);
+          }
+          if (target_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public Builder clearTarget() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          target_ = null;
+          if (targetBuilder_ != null) {
+            targetBuilder_.dispose();
+            targetBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getTargetFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
+          if (targetBuilder_ != null) {
+            return targetBuilder_.getMessageOrBuilder();
+          } else {
+            return target_ == null
+                ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+                : target_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error Table target.
+         * </pre>
+         *
+         * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.Target,
+                com.google.cloud.dataform.v1beta1.Target.Builder,
+                com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+            getTargetFieldBuilder() {
+          if (targetBuilder_ == null) {
+            targetBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.Target,
+                    com.google.cloud.dataform.v1beta1.Target.Builder,
+                    com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
+                    getTarget(), getParentForChildren(), isClean());
+            target_ = null;
+          }
+          return targetBuilder_;
+        }
+
+        private int retentionDays_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table partition expiration in days. Only positive values are
+         * allowed.
+         * </pre>
+         *
+         * <code>int32 retention_days = 2;</code>
+         *
+         * @return The retentionDays.
+         */
+        @java.lang.Override
+        public int getRetentionDays() {
+          return retentionDays_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table partition expiration in days. Only positive values are
+         * allowed.
+         * </pre>
+         *
+         * <code>int32 retention_days = 2;</code>
+         *
+         * @param value The retentionDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRetentionDays(int value) {
+
+          retentionDays_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Error table partition expiration in days. Only positive values are
+         * allowed.
+         * </pre>
+         *
+         * <code>int32 retention_days = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRetentionDays() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          retentionDays_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable)
+      private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+              .DataPreparationAction.ActionErrorTable
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionErrorTable();
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ActionErrorTable> PARSER =
+          new com.google.protobuf.AbstractParser<ActionErrorTable>() {
+            @java.lang.Override
+            public ActionErrorTable parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ActionErrorTable> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ActionErrorTable> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionErrorTable
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ActionLoadConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       *
+       * @return Whether the replace field is set.
+       */
+      boolean hasReplace();
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       *
+       * @return The replace.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getReplace();
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadModeOrBuilder
+          getReplaceOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       *
+       * @return Whether the append field is set.
+       */
+      boolean hasAppend();
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       *
+       * @return The append.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getAppend();
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadModeOrBuilder
+          getAppendOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       *
+       * @return Whether the maximum field is set.
+       */
+      boolean hasMaximum();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       *
+       * @return The maximum.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getMaximum();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadModeOrBuilder
+          getMaximumOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       *
+       * @return Whether the unique field is set.
+       */
+      boolean hasUnique();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       *
+       * @return The unique.
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getUnique();
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       */
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadModeOrBuilder
+          getUniqueOrBuilder();
+
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig.ModeCase
+          getModeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simplified load configuration for actions
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig}
+     */
+    public static final class ActionLoadConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig)
+        ActionLoadConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ActionLoadConfig.newBuilder() to construct.
+      private ActionLoadConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ActionLoadConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ActionLoadConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionLoadConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionLoadConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig.Builder.class);
+      }
+
+      private int modeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object mode_;
+
+      public enum ModeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        REPLACE(1),
+        APPEND(2),
+        MAXIMUM(3),
+        UNIQUE(4),
+        MODE_NOT_SET(0);
+        private final int value;
+
+        private ModeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ModeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ModeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return REPLACE;
+            case 2:
+              return APPEND;
+            case 3:
+              return MAXIMUM;
+            case 4:
+              return UNIQUE;
+            case 0:
+              return MODE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ModeCase getModeCase() {
+        return ModeCase.forNumber(modeCase_);
+      }
+
+      public static final int REPLACE_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       *
+       * @return Whether the replace field is set.
+       */
+      @java.lang.Override
+      public boolean hasReplace() {
+        return modeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       *
+       * @return The replace.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getReplace() {
+        if (modeCase_ == 1) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSimpleLoadMode.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Replace destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadModeOrBuilder
+          getReplaceOrBuilder() {
+        if (modeCase_ == 1) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSimpleLoadMode.getDefaultInstance();
+      }
+
+      public static final int APPEND_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       *
+       * @return Whether the append field is set.
+       */
+      @java.lang.Override
+      public boolean hasAppend() {
+        return modeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       *
+       * @return The append.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getAppend() {
+        if (modeCase_ == 2) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSimpleLoadMode.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Append into destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadModeOrBuilder
+          getAppendOrBuilder() {
+        if (modeCase_ == 2) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSimpleLoadMode.getDefaultInstance();
+      }
+
+      public static final int MAXIMUM_FIELD_NUMBER = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       *
+       * @return Whether the maximum field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaximum() {
+        return modeCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       *
+       * @return The maximum.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getMaximum() {
+        if (modeCase_ == 3) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionIncrementalLoadMode.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value exceeds the previous maximum value for
+       * a column in the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadModeOrBuilder
+          getMaximumOrBuilder() {
+        if (modeCase_ == 3) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionIncrementalLoadMode.getDefaultInstance();
+      }
+
+      public static final int UNIQUE_FIELD_NUMBER = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       *
+       * @return Whether the unique field is set.
+       */
+      @java.lang.Override
+      public boolean hasUnique() {
+        return modeCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       *
+       * @return The unique.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getUnique() {
+        if (modeCase_ == 4) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionIncrementalLoadMode.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Insert records where the value of a column is not already present in
+       * the destination table
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadModeOrBuilder
+          getUniqueOrBuilder() {
+        if (modeCase_ == 4) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode)
+              mode_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionIncrementalLoadMode.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (modeCase_ == 1) {
+          output.writeMessage(
+              1,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode)
+                  mode_);
+        }
+        if (modeCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode)
+                  mode_);
+        }
+        if (modeCase_ == 3) {
+          output.writeMessage(
+              3,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode)
+                  mode_);
+        }
+        if (modeCase_ == 4) {
+          output.writeMessage(
+              4,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode)
+                  mode_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (modeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1,
+                  (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                          .ActionSimpleLoadMode)
+                      mode_);
+        }
+        if (modeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                          .ActionSimpleLoadMode)
+                      mode_);
+        }
+        if (modeCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                          .ActionIncrementalLoadMode)
+                      mode_);
+        }
+        if (modeCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4,
+                  (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                          .ActionIncrementalLoadMode)
+                      mode_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            other =
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionLoadConfig)
+                    obj;
+
+        if (!getModeCase().equals(other.getModeCase())) return false;
+        switch (modeCase_) {
+          case 1:
+            if (!getReplace().equals(other.getReplace())) return false;
+            break;
+          case 2:
+            if (!getAppend().equals(other.getAppend())) return false;
+            break;
+          case 3:
+            if (!getMaximum().equals(other.getMaximum())) return false;
+            break;
+          case 4:
+            if (!getUnique().equals(other.getUnique())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (modeCase_) {
+          case 1:
+            hash = (37 * hash) + REPLACE_FIELD_NUMBER;
+            hash = (53 * hash) + getReplace().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + APPEND_FIELD_NUMBER;
+            hash = (53 * hash) + getAppend().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
+            hash = (53 * hash) + getMaximum().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + UNIQUE_FIELD_NUMBER;
+            hash = (53 * hash) + getUnique().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionLoadConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Simplified load configuration for actions
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig)
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionLoadConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionLoadConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionLoadConfig.class,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionLoadConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (replaceBuilder_ != null) {
+            replaceBuilder_.clear();
+          }
+          if (appendBuilder_ != null) {
+            appendBuilder_.clear();
+          }
+          if (maximumBuilder_ != null) {
+            maximumBuilder_.clear();
+          }
+          if (uniqueBuilder_ != null) {
+            uniqueBuilder_.clear();
+          }
+          modeCase_ = 0;
+          mode_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionLoadConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            build() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionLoadConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig
+            buildPartial() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionLoadConfig
+              result =
+                  new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionLoadConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig
+                result) {
+          result.modeCase_ = modeCase_;
+          result.mode_ = this.mode_;
+          if (modeCase_ == 1 && replaceBuilder_ != null) {
+            result.mode_ = replaceBuilder_.build();
+          }
+          if (modeCase_ == 2 && appendBuilder_ != null) {
+            result.mode_ = appendBuilder_.build();
+          }
+          if (modeCase_ == 3 && maximumBuilder_ != null) {
+            result.mode_ = maximumBuilder_.build();
+          }
+          if (modeCase_ == 4 && uniqueBuilder_ != null) {
+            result.mode_ = uniqueBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionLoadConfig) {
+            return mergeFrom(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionLoadConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionLoadConfig
+                other) {
+          if (other
+              == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionLoadConfig.getDefaultInstance()) return this;
+          switch (other.getModeCase()) {
+            case REPLACE:
+              {
+                mergeReplace(other.getReplace());
+                break;
+              }
+            case APPEND:
+              {
+                mergeAppend(other.getAppend());
+                break;
+              }
+            case MAXIMUM:
+              {
+                mergeMaximum(other.getMaximum());
+                break;
+              }
+            case UNIQUE:
+              {
+                mergeUnique(other.getUnique());
+                break;
+              }
+            case MODE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getReplaceFieldBuilder().getBuilder(), extensionRegistry);
+                    modeCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getAppendFieldBuilder().getBuilder(), extensionRegistry);
+                    modeCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getMaximumFieldBuilder().getBuilder(), extensionRegistry);
+                    modeCase_ = 3;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(getUniqueFieldBuilder().getBuilder(), extensionRegistry);
+                    modeCase_ = 4;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int modeCase_ = 0;
+        private java.lang.Object mode_;
+
+        public ModeCase getModeCase() {
+          return ModeCase.forNumber(modeCase_);
+        }
+
+        public Builder clearMode() {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadModeOrBuilder>
+            replaceBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         *
+         * @return Whether the replace field is set.
+         */
+        @java.lang.Override
+        public boolean hasReplace() {
+          return modeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         *
+         * @return The replace.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            getReplace() {
+          if (replaceBuilder_ == null) {
+            if (modeCase_ == 1) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSimpleLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          } else {
+            if (modeCase_ == 1) {
+              return replaceBuilder_.getMessage();
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        public Builder setReplace(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode
+                value) {
+          if (replaceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mode_ = value;
+            onChanged();
+          } else {
+            replaceBuilder_.setMessage(value);
+          }
+          modeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        public Builder setReplace(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder
+                builderForValue) {
+          if (replaceBuilder_ == null) {
+            mode_ = builderForValue.build();
+            onChanged();
+          } else {
+            replaceBuilder_.setMessage(builderForValue.build());
+          }
+          modeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        public Builder mergeReplace(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode
+                value) {
+          if (replaceBuilder_ == null) {
+            if (modeCase_ == 1
+                && mode_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionSimpleLoadMode.getDefaultInstance()) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.newBuilder(
+                          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                                  .DataPreparationAction.ActionSimpleLoadMode)
+                              mode_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              mode_ = value;
+            }
+            onChanged();
+          } else {
+            if (modeCase_ == 1) {
+              replaceBuilder_.mergeFrom(value);
+            } else {
+              replaceBuilder_.setMessage(value);
+            }
+          }
+          modeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        public Builder clearReplace() {
+          if (replaceBuilder_ == null) {
+            if (modeCase_ == 1) {
+              modeCase_ = 0;
+              mode_ = null;
+              onChanged();
+            }
+          } else {
+            if (modeCase_ == 1) {
+              modeCase_ = 0;
+              mode_ = null;
+            }
+            replaceBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.Builder
+            getReplaceBuilder() {
+          return getReplaceFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadModeOrBuilder
+            getReplaceOrBuilder() {
+          if ((modeCase_ == 1) && (replaceBuilder_ != null)) {
+            return replaceBuilder_.getMessageOrBuilder();
+          } else {
+            if (modeCase_ == 1) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSimpleLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Replace destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode replace = 1;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadModeOrBuilder>
+            getReplaceFieldBuilder() {
+          if (replaceBuilder_ == null) {
+            if (!(modeCase_ == 1)) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.getDefaultInstance();
+            }
+            replaceBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadModeOrBuilder>(
+                    (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                            .DataPreparationAction.ActionSimpleLoadMode)
+                        mode_,
+                    getParentForChildren(),
+                    isClean());
+            mode_ = null;
+          }
+          modeCase_ = 1;
+          onChanged();
+          return replaceBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadModeOrBuilder>
+            appendBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         *
+         * @return Whether the append field is set.
+         */
+        @java.lang.Override
+        public boolean hasAppend() {
+          return modeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         *
+         * @return The append.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            getAppend() {
+          if (appendBuilder_ == null) {
+            if (modeCase_ == 2) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSimpleLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          } else {
+            if (modeCase_ == 2) {
+              return appendBuilder_.getMessage();
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        public Builder setAppend(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode
+                value) {
+          if (appendBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mode_ = value;
+            onChanged();
+          } else {
+            appendBuilder_.setMessage(value);
+          }
+          modeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        public Builder setAppend(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder
+                builderForValue) {
+          if (appendBuilder_ == null) {
+            mode_ = builderForValue.build();
+            onChanged();
+          } else {
+            appendBuilder_.setMessage(builderForValue.build());
+          }
+          modeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        public Builder mergeAppend(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode
+                value) {
+          if (appendBuilder_ == null) {
+            if (modeCase_ == 2
+                && mode_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionSimpleLoadMode.getDefaultInstance()) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.newBuilder(
+                          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                                  .DataPreparationAction.ActionSimpleLoadMode)
+                              mode_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              mode_ = value;
+            }
+            onChanged();
+          } else {
+            if (modeCase_ == 2) {
+              appendBuilder_.mergeFrom(value);
+            } else {
+              appendBuilder_.setMessage(value);
+            }
+          }
+          modeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        public Builder clearAppend() {
+          if (appendBuilder_ == null) {
+            if (modeCase_ == 2) {
+              modeCase_ = 0;
+              mode_ = null;
+              onChanged();
+            }
+          } else {
+            if (modeCase_ == 2) {
+              modeCase_ = 0;
+              mode_ = null;
+            }
+            appendBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.Builder
+            getAppendBuilder() {
+          return getAppendFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadModeOrBuilder
+            getAppendOrBuilder() {
+          if ((modeCase_ == 2) && (appendBuilder_ != null)) {
+            return appendBuilder_.getMessageOrBuilder();
+          } else {
+            if (modeCase_ == 2) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSimpleLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Append into destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode append = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadModeOrBuilder>
+            getAppendFieldBuilder() {
+          if (appendBuilder_ == null) {
+            if (!(modeCase_ == 2)) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.getDefaultInstance();
+            }
+            appendBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadModeOrBuilder>(
+                    (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                            .DataPreparationAction.ActionSimpleLoadMode)
+                        mode_,
+                    getParentForChildren(),
+                    isClean());
+            mode_ = null;
+          }
+          modeCase_ = 2;
+          onChanged();
+          return appendBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadModeOrBuilder>
+            maximumBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         *
+         * @return Whether the maximum field is set.
+         */
+        @java.lang.Override
+        public boolean hasMaximum() {
+          return modeCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         *
+         * @return The maximum.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            getMaximum() {
+          if (maximumBuilder_ == null) {
+            if (modeCase_ == 3) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionIncrementalLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          } else {
+            if (modeCase_ == 3) {
+              return maximumBuilder_.getMessage();
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        public Builder setMaximum(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                value) {
+          if (maximumBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mode_ = value;
+            onChanged();
+          } else {
+            maximumBuilder_.setMessage(value);
+          }
+          modeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        public Builder setMaximum(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder
+                builderForValue) {
+          if (maximumBuilder_ == null) {
+            mode_ = builderForValue.build();
+            onChanged();
+          } else {
+            maximumBuilder_.setMessage(builderForValue.build());
+          }
+          modeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        public Builder mergeMaximum(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                value) {
+          if (maximumBuilder_ == null) {
+            if (modeCase_ == 3
+                && mode_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionIncrementalLoadMode.getDefaultInstance()) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.newBuilder(
+                          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                                  .DataPreparationAction.ActionIncrementalLoadMode)
+                              mode_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              mode_ = value;
+            }
+            onChanged();
+          } else {
+            if (modeCase_ == 3) {
+              maximumBuilder_.mergeFrom(value);
+            } else {
+              maximumBuilder_.setMessage(value);
+            }
+          }
+          modeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        public Builder clearMaximum() {
+          if (maximumBuilder_ == null) {
+            if (modeCase_ == 3) {
+              modeCase_ = 0;
+              mode_ = null;
+              onChanged();
+            }
+          } else {
+            if (modeCase_ == 3) {
+              modeCase_ = 0;
+              mode_ = null;
+            }
+            maximumBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.Builder
+            getMaximumBuilder() {
+          return getMaximumFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadModeOrBuilder
+            getMaximumOrBuilder() {
+          if ((modeCase_ == 3) && (maximumBuilder_ != null)) {
+            return maximumBuilder_.getMessageOrBuilder();
+          } else {
+            if (modeCase_ == 3) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionIncrementalLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value exceeds the previous maximum value for
+         * a column in the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode maximum = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadModeOrBuilder>
+            getMaximumFieldBuilder() {
+          if (maximumBuilder_ == null) {
+            if (!(modeCase_ == 3)) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.getDefaultInstance();
+            }
+            maximumBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadModeOrBuilder>(
+                    (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                            .DataPreparationAction.ActionIncrementalLoadMode)
+                        mode_,
+                    getParentForChildren(),
+                    isClean());
+            mode_ = null;
+          }
+          modeCase_ = 3;
+          onChanged();
+          return maximumBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadModeOrBuilder>
+            uniqueBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         *
+         * @return Whether the unique field is set.
+         */
+        @java.lang.Override
+        public boolean hasUnique() {
+          return modeCase_ == 4;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         *
+         * @return The unique.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            getUnique() {
+          if (uniqueBuilder_ == null) {
+            if (modeCase_ == 4) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionIncrementalLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          } else {
+            if (modeCase_ == 4) {
+              return uniqueBuilder_.getMessage();
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        public Builder setUnique(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                value) {
+          if (uniqueBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mode_ = value;
+            onChanged();
+          } else {
+            uniqueBuilder_.setMessage(value);
+          }
+          modeCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        public Builder setUnique(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder
+                builderForValue) {
+          if (uniqueBuilder_ == null) {
+            mode_ = builderForValue.build();
+            onChanged();
+          } else {
+            uniqueBuilder_.setMessage(builderForValue.build());
+          }
+          modeCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        public Builder mergeUnique(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                value) {
+          if (uniqueBuilder_ == null) {
+            if (modeCase_ == 4
+                && mode_
+                    != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                        .DataPreparationAction.ActionIncrementalLoadMode.getDefaultInstance()) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.newBuilder(
+                          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                                  .DataPreparationAction.ActionIncrementalLoadMode)
+                              mode_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              mode_ = value;
+            }
+            onChanged();
+          } else {
+            if (modeCase_ == 4) {
+              uniqueBuilder_.mergeFrom(value);
+            } else {
+              uniqueBuilder_.setMessage(value);
+            }
+          }
+          modeCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        public Builder clearUnique() {
+          if (uniqueBuilder_ == null) {
+            if (modeCase_ == 4) {
+              modeCase_ = 0;
+              mode_ = null;
+              onChanged();
+            }
+          } else {
+            if (modeCase_ == 4) {
+              modeCase_ = 0;
+              mode_ = null;
+            }
+            uniqueBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.Builder
+            getUniqueBuilder() {
+          return getUniqueFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadModeOrBuilder
+            getUniqueOrBuilder() {
+          if ((modeCase_ == 4) && (uniqueBuilder_ != null)) {
+            return uniqueBuilder_.getMessageOrBuilder();
+          } else {
+            if (modeCase_ == 4) {
+              return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionIncrementalLoadMode)
+                  mode_;
+            }
+            return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Insert records where the value of a column is not already present in
+         * the destination table
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode unique = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadModeOrBuilder>
+            getUniqueFieldBuilder() {
+          if (uniqueBuilder_ == null) {
+            if (!(modeCase_ == 4)) {
+              mode_ =
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.getDefaultInstance();
+            }
+            uniqueBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode.Builder,
+                    com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadModeOrBuilder>(
+                    (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                            .DataPreparationAction.ActionIncrementalLoadMode)
+                        mode_,
+                    getParentForChildren(),
+                    isClean());
+            mode_ = null;
+          }
+          modeCase_ = 4;
+          onChanged();
+          return uniqueBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionLoadConfig)
+      private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+              .DataPreparationAction.ActionLoadConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionLoadConfig();
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ActionLoadConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ActionLoadConfig>() {
+            @java.lang.Override
+            public ActionLoadConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ActionLoadConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ActionLoadConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionLoadConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ActionSimpleLoadModeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode)
+        com.google.protobuf.MessageOrBuilder {}
+
+    /**
+     *
+     *
+     * <pre>
+     * Simple load definition
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode}
+     */
+    public static final class ActionSimpleLoadMode extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode)
+        ActionSimpleLoadModeOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ActionSimpleLoadMode.newBuilder() to construct.
+      private ActionSimpleLoadMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ActionSimpleLoadMode() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ActionSimpleLoadMode();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSimpleLoadMode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSimpleLoadMode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            other =
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode)
+                    obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Simple load definition
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode)
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadModeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSimpleLoadMode_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSimpleLoadMode_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.class,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSimpleLoadMode.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionSimpleLoadMode_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            build() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode
+            buildPartial() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode
+              result =
+                  new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSimpleLoadMode(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode) {
+            return mergeFrom(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSimpleLoadMode)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSimpleLoadMode
+                other) {
+          if (other
+              == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSimpleLoadMode.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadMode)
+      private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+              .DataPreparationAction.ActionSimpleLoadMode
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSimpleLoadMode();
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ActionSimpleLoadMode> PARSER =
+          new com.google.protobuf.AbstractParser<ActionSimpleLoadMode>() {
+            @java.lang.Override
+            public ActionSimpleLoadMode parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ActionSimpleLoadMode> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ActionSimpleLoadMode> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSimpleLoadMode
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ActionIncrementalLoadModeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Column name for incremental load modes
+       * </pre>
+       *
+       * <code>string column = 1;</code>
+       *
+       * @return The column.
+       */
+      java.lang.String getColumn();
+
+      /**
+       *
+       *
+       * <pre>
+       * Column name for incremental load modes
+       * </pre>
+       *
+       * <code>string column = 1;</code>
+       *
+       * @return The bytes for column.
+       */
+      com.google.protobuf.ByteString getColumnBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Load definition for incremental load modes
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode}
+     */
+    public static final class ActionIncrementalLoadMode
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode)
+        ActionIncrementalLoadModeOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ActionIncrementalLoadMode.newBuilder() to construct.
+      private ActionIncrementalLoadMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ActionIncrementalLoadMode() {
+        column_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ActionIncrementalLoadMode();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionIncrementalLoadMode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionIncrementalLoadMode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode.Builder.class);
+      }
+
+      public static final int COLUMN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object column_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Column name for incremental load modes
+       * </pre>
+       *
+       * <code>string column = 1;</code>
+       *
+       * @return The column.
+       */
+      @java.lang.Override
+      public java.lang.String getColumn() {
+        java.lang.Object ref = column_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          column_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Column name for incremental load modes
+       * </pre>
+       *
+       * <code>string column = 1;</code>
+       *
+       * @return The bytes for column.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getColumnBytes() {
+        java.lang.Object ref = column_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          column_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            other =
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode)
+                    obj;
+
+        if (!getColumn().equals(other.getColumn())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + getColumn().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Load definition for incremental load modes
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode)
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadModeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionIncrementalLoadMode_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionIncrementalLoadMode_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.class,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionIncrementalLoadMode.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          column_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataform.v1beta1.DataformProto
+              .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_ActionIncrementalLoadMode_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            build() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode
+            buildPartial() {
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode
+              result =
+                  new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionIncrementalLoadMode(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.column_ = column_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode) {
+            return mergeFrom(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionIncrementalLoadMode)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionIncrementalLoadMode
+                other) {
+          if (other
+              == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionIncrementalLoadMode.getDefaultInstance()) return this;
+          if (!other.getColumn().isEmpty()) {
+            column_ = other.column_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    column_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object column_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Column name for incremental load modes
+         * </pre>
+         *
+         * <code>string column = 1;</code>
+         *
+         * @return The column.
+         */
+        public java.lang.String getColumn() {
+          java.lang.Object ref = column_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            column_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Column name for incremental load modes
+         * </pre>
+         *
+         * <code>string column = 1;</code>
+         *
+         * @return The bytes for column.
+         */
+        public com.google.protobuf.ByteString getColumnBytes() {
+          java.lang.Object ref = column_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            column_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Column name for incremental load modes
+         * </pre>
+         *
+         * <code>string column = 1;</code>
+         *
+         * @param value The column to set.
+         * @return This builder for chaining.
+         */
+        public Builder setColumn(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          column_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Column name for incremental load modes
+         * </pre>
+         *
+         * <code>string column = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearColumn() {
+          column_ = getDefaultInstance().getColumn();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Column name for incremental load modes
+         * </pre>
+         *
+         * <code>string column = 1;</code>
+         *
+         * @param value The bytes for column to set.
+         * @return This builder for chaining.
+         */
+        public Builder setColumnBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          column_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadMode)
+      private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+              .DataPreparationAction.ActionIncrementalLoadMode
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionIncrementalLoadMode();
+      }
+
+      public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ActionIncrementalLoadMode> PARSER =
+          new com.google.protobuf.AbstractParser<ActionIncrementalLoadMode>() {
+            @java.lang.Override
+            public ActionIncrementalLoadMode parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ActionIncrementalLoadMode> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ActionIncrementalLoadMode> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionIncrementalLoadMode
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int definitionCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object definition_;
+
+    public enum DefinitionCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      CONTENTS_YAML(2),
+      CONTENTS_SQL(6),
+      DEFINITION_NOT_SET(0);
+      private final int value;
+
+      private DefinitionCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DefinitionCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DefinitionCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return CONTENTS_YAML;
+          case 6:
+            return CONTENTS_SQL;
+          case 0:
+            return DEFINITION_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DefinitionCase getDefinitionCase() {
+      return DefinitionCase.forNumber(definitionCase_);
+    }
+
+    public static final int CONTENTS_YAML_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the contentsYaml field is set.
+     */
+    public boolean hasContentsYaml() {
+      return definitionCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The contentsYaml.
+     */
+    public java.lang.String getContentsYaml() {
+      java.lang.Object ref = "";
+      if (definitionCase_ == 2) {
+        ref = definition_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (definitionCase_ == 2) {
+          definition_ = s;
+        }
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. YAML representing the contents of the data preparation.
+     * Can be used to show the customer what the input was to their workflow.
+     * </pre>
+     *
+     * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for contentsYaml.
+     */
+    public com.google.protobuf.ByteString getContentsYamlBytes() {
+      java.lang.Object ref = "";
+      if (definitionCase_ == 2) {
+        ref = definition_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (definitionCase_ == 2) {
+          definition_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENTS_SQL_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     *
+     * @return Whether the contentsSql field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentsSql() {
+      return definitionCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     *
+     * @return The contentsSql.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSqlDefinition
+        getContentsSql() {
+      if (definitionCase_ == 6) {
+        return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition)
+            definition_;
+      }
+      return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+          .ActionSqlDefinition.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL definition for a Data Preparation. Contains a SQL query and
+     * additional context information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .ActionSqlDefinitionOrBuilder
+        getContentsSqlOrBuilder() {
+      if (definitionCase_ == 6) {
+        return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .ActionSqlDefinition)
+            definition_;
+      }
+      return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+          .ActionSqlDefinition.getDefaultInstance();
+    }
+
+    public static final int GENERATED_SQL_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object generatedSql_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated BigQuery SQL script that will be executed. For
+     * reference only.
+     * </pre>
+     *
+     * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The generatedSql.
+     */
+    @java.lang.Override
+    public java.lang.String getGeneratedSql() {
+      java.lang.Object ref = generatedSql_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        generatedSql_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated BigQuery SQL script that will be executed. For
+     * reference only.
+     * </pre>
+     *
+     * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for generatedSql.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGeneratedSqlBytes() {
+      java.lang.Object ref = generatedSql_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        generatedSql_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (definitionCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, definition_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generatedSql_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, generatedSql_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobId_);
+      }
+      if (definitionCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition)
+                definition_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (definitionCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, definition_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generatedSql_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, generatedSql_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobId_);
+      }
+      if (definitionCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                        .ActionSqlDefinition)
+                    definition_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction other =
+          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction) obj;
+
+      if (!getGeneratedSql().equals(other.getGeneratedSql())) return false;
+      if (!getJobId().equals(other.getJobId())) return false;
+      if (!getDefinitionCase().equals(other.getDefinitionCase())) return false;
+      switch (definitionCase_) {
+        case 2:
+          if (!getContentsYaml().equals(other.getContentsYaml())) return false;
+          break;
+        case 6:
+          if (!getContentsSql().equals(other.getContentsSql())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GENERATED_SQL_FIELD_NUMBER;
+      hash = (53 * hash) + getGeneratedSql().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      switch (definitionCase_) {
+        case 2:
+          hash = (37 * hash) + CONTENTS_YAML_FIELD_NUMBER;
+          hash = (53 * hash) + getContentsYaml().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + CONTENTS_SQL_FIELD_NUMBER;
+          hash = (53 * hash) + getContentsSql().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a workflow action that will run a Data Preparation.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (contentsSqlBuilder_ != null) {
+          contentsSqlBuilder_.clear();
+        }
+        generatedSql_ = "";
+        jobId_ = "";
+        definitionCase_ = 0;
+        definition_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_DataPreparationAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+          build() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+          buildPartial() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction result =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.generatedSql_ = generatedSql_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.jobId_ = jobId_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction result) {
+        result.definitionCase_ = definitionCase_;
+        result.definition_ = this.definition_;
+        if (definitionCase_ == 6 && contentsSqlBuilder_ != null) {
+          result.definition_ = contentsSqlBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction) {
+          return mergeFrom(
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction other) {
+        if (other
+            == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .getDefaultInstance()) return this;
+        if (!other.getGeneratedSql().isEmpty()) {
+          generatedSql_ = other.generatedSql_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        switch (other.getDefinitionCase()) {
+          case CONTENTS_YAML:
+            {
+              definitionCase_ = 2;
+              definition_ = other.definition_;
+              onChanged();
+              break;
+            }
+          case CONTENTS_SQL:
+            {
+              mergeContentsSql(other.getContentsSql());
+              break;
+            }
+          case DEFINITION_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  definitionCase_ = 2;
+                  definition_ = s;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  generatedSql_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  jobId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 50:
+                {
+                  input.readMessage(getContentsSqlFieldBuilder().getBuilder(), extensionRegistry);
+                  definitionCase_ = 6;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int definitionCase_ = 0;
+      private java.lang.Object definition_;
+
+      public DefinitionCase getDefinitionCase() {
+        return DefinitionCase.forNumber(definitionCase_);
+      }
+
+      public Builder clearDefinition() {
+        definitionCase_ = 0;
+        definition_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the contentsYaml field is set.
+       */
+      @java.lang.Override
+      public boolean hasContentsYaml() {
+        return definitionCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The contentsYaml.
+       */
+      @java.lang.Override
+      public java.lang.String getContentsYaml() {
+        java.lang.Object ref = "";
+        if (definitionCase_ == 2) {
+          ref = definition_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (definitionCase_ == 2) {
+            definition_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for contentsYaml.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContentsYamlBytes() {
+        java.lang.Object ref = "";
+        if (definitionCase_ == 2) {
+          ref = definition_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (definitionCase_ == 2) {
+            definition_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The contentsYaml to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentsYaml(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        definitionCase_ = 2;
+        definition_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContentsYaml() {
+        if (definitionCase_ == 2) {
+          definitionCase_ = 0;
+          definition_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. YAML representing the contents of the data preparation.
+       * Can be used to show the customer what the input was to their workflow.
+       * </pre>
+       *
+       * <code>string contents_yaml = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for contentsYaml to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentsYamlBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        definitionCase_ = 2;
+        definition_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition.Builder,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinitionOrBuilder>
+          contentsSqlBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       *
+       * @return Whether the contentsSql field is set.
+       */
+      @java.lang.Override
+      public boolean hasContentsSql() {
+        return definitionCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       *
+       * @return The contentsSql.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition
+          getContentsSql() {
+        if (contentsSqlBuilder_ == null) {
+          if (definitionCase_ == 6) {
+            return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition)
+                definition_;
+          }
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition.getDefaultInstance();
+        } else {
+          if (definitionCase_ == 6) {
+            return contentsSqlBuilder_.getMessage();
+          }
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      public Builder setContentsSql(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition
+              value) {
+        if (contentsSqlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          definition_ = value;
+          onChanged();
+        } else {
+          contentsSqlBuilder_.setMessage(value);
+        }
+        definitionCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      public Builder setContentsSql(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition.Builder
+              builderForValue) {
+        if (contentsSqlBuilder_ == null) {
+          definition_ = builderForValue.build();
+          onChanged();
+        } else {
+          contentsSqlBuilder_.setMessage(builderForValue.build());
+        }
+        definitionCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      public Builder mergeContentsSql(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition
+              value) {
+        if (contentsSqlBuilder_ == null) {
+          if (definitionCase_ == 6
+              && definition_
+                  != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                      .DataPreparationAction.ActionSqlDefinition.getDefaultInstance()) {
+            definition_ =
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition.newBuilder(
+                        (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                                .DataPreparationAction.ActionSqlDefinition)
+                            definition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            definition_ = value;
+          }
+          onChanged();
+        } else {
+          if (definitionCase_ == 6) {
+            contentsSqlBuilder_.mergeFrom(value);
+          } else {
+            contentsSqlBuilder_.setMessage(value);
+          }
+        }
+        definitionCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      public Builder clearContentsSql() {
+        if (contentsSqlBuilder_ == null) {
+          if (definitionCase_ == 6) {
+            definitionCase_ = 0;
+            definition_ = null;
+            onChanged();
+          }
+        } else {
+          if (definitionCase_ == 6) {
+            definitionCase_ = 0;
+            definition_ = null;
+          }
+          contentsSqlBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition.Builder
+          getContentsSqlBuilder() {
+        return getContentsSqlFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinitionOrBuilder
+          getContentsSqlOrBuilder() {
+        if ((definitionCase_ == 6) && (contentsSqlBuilder_ != null)) {
+          return contentsSqlBuilder_.getMessageOrBuilder();
+        } else {
+          if (definitionCase_ == 6) {
+            return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition)
+                definition_;
+          }
+          return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+              .ActionSqlDefinition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * SQL definition for a Data Preparation. Contains a SQL query and
+       * additional context information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.ActionSqlDefinition contents_sql = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinition.Builder,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .ActionSqlDefinitionOrBuilder>
+          getContentsSqlFieldBuilder() {
+        if (contentsSqlBuilder_ == null) {
+          if (!(definitionCase_ == 6)) {
+            definition_ =
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .ActionSqlDefinition.getDefaultInstance();
+          }
+          contentsSqlBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSqlDefinition,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSqlDefinition.Builder,
+                  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                      .ActionSqlDefinitionOrBuilder>(
+                  (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                          .ActionSqlDefinition)
+                      definition_,
+                  getParentForChildren(),
+                  isClean());
+          definition_ = null;
+        }
+        definitionCase_ = 6;
+        onChanged();
+        return contentsSqlBuilder_;
+      }
+
+      private java.lang.Object generatedSql_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The generated BigQuery SQL script that will be executed. For
+       * reference only.
+       * </pre>
+       *
+       * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The generatedSql.
+       */
+      public java.lang.String getGeneratedSql() {
+        java.lang.Object ref = generatedSql_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          generatedSql_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The generated BigQuery SQL script that will be executed. For
+       * reference only.
+       * </pre>
+       *
+       * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for generatedSql.
+       */
+      public com.google.protobuf.ByteString getGeneratedSqlBytes() {
+        java.lang.Object ref = generatedSql_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          generatedSql_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The generated BigQuery SQL script that will be executed. For
+       * reference only.
+       * </pre>
+       *
+       * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The generatedSql to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGeneratedSql(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generatedSql_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The generated BigQuery SQL script that will be executed. For
+       * reference only.
+       * </pre>
+       *
+       * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGeneratedSql() {
+        generatedSql_ = getDefaultInstance().getGeneratedSql();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The generated BigQuery SQL script that will be executed. For
+       * reference only.
+       * </pre>
+       *
+       * <code>string generated_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for generatedSql to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGeneratedSqlBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        generatedSql_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        jobId_ = getDefaultInstance().getJobId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        jobId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+    private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+            .DataPreparationAction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction();
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataPreparationAction> PARSER =
+        new com.google.protobuf.AbstractParser<DataPreparationAction>() {
+          @java.lang.Override
+          public DataPreparationAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataPreparationAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataPreparationAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int actionCase_ = 0;
 
@@ -2144,6 +9944,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIGQUERY_ACTION(6),
     NOTEBOOK_ACTION(8),
+    DATA_PREPARATION_ACTION(9),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -2167,6 +9968,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           return BIGQUERY_ACTION;
         case 8:
           return NOTEBOOK_ACTION;
+        case 9:
+          return DATA_PREPARATION_ACTION;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -2308,6 +10111,72 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_;
     }
     return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        .getDefaultInstance();
+  }
+
+  public static final int DATA_PREPARATION_ACTION_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataPreparationAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataPreparationAction() {
+    return actionCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataPreparationAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+      getDataPreparationAction() {
+    if (actionCase_ == 9) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+          action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationActionOrBuilder
+      getDataPreparationActionOrBuilder() {
+    if (actionCase_ == 9) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+          action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
         .getDefaultInstance();
   }
 
@@ -2717,6 +10586,12 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       output.writeMessage(
           8, (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_);
     }
+    if (actionCase_ == 9) {
+      output.writeMessage(
+          9,
+          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+              action_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, internalMetadata_);
     }
@@ -2756,6 +10631,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8,
               (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_);
+    }
+    if (actionCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+                  action_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, internalMetadata_);
@@ -2802,6 +10684,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       case 8:
         if (!getNotebookAction().equals(other.getNotebookAction())) return false;
         break;
+      case 9:
+        if (!getDataPreparationAction().equals(other.getDataPreparationAction())) return false;
+        break;
       case 0:
       default:
     }
@@ -2844,6 +10729,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       case 8:
         hash = (37 * hash) + NOTEBOOK_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getNotebookAction().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + DATA_PREPARATION_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDataPreparationAction().hashCode();
         break;
       case 0:
       default:
@@ -3006,6 +10895,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (notebookActionBuilder_ != null) {
         notebookActionBuilder_.clear();
       }
+      if (dataPreparationActionBuilder_ != null) {
+        dataPreparationActionBuilder_.clear();
+      }
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -3064,27 +10956,27 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     private void buildPartial0(com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.canonicalTarget_ =
             canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.failureReason_ = failureReason_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.invocationTiming_ =
             invocationTimingBuilder_ == null ? invocationTiming_ : invocationTimingBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000008;
       }
@@ -3100,6 +10992,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (actionCase_ == 8 && notebookActionBuilder_ != null) {
         result.action_ = notebookActionBuilder_.build();
+      }
+      if (actionCase_ == 9 && dataPreparationActionBuilder_ != null) {
+        result.action_ = dataPreparationActionBuilder_.build();
       }
     }
 
@@ -3160,7 +11055,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (!other.getFailureReason().isEmpty()) {
         failureReason_ = other.failureReason_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasInvocationTiming()) {
@@ -3168,7 +11063,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (other.hasInternalMetadata()) {
         internalMetadata_ = other.internalMetadata_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getActionCase()) {
@@ -3180,6 +11075,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         case NOTEBOOK_ACTION:
           {
             mergeNotebookAction(other.getNotebookAction());
+            break;
+          }
+        case DATA_PREPARATION_ACTION:
+          {
+            mergeDataPreparationAction(other.getDataPreparationAction());
             break;
           }
         case ACTION_NOT_SET:
@@ -3216,26 +11116,26 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
@@ -3247,7 +11147,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 58:
               {
                 failureReason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -3256,10 +11156,17 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
                 actionCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDataPreparationActionFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 9;
+                break;
+              } // case 74
             case 82:
               {
                 internalMetadata_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -3799,6 +11706,267 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return notebookActionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                .DataPreparationActionOrBuilder>
+        dataPreparationActionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataPreparationAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataPreparationAction() {
+      return actionCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataPreparationAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        getDataPreparationAction() {
+      if (dataPreparationActionBuilder_ == null) {
+        if (actionCase_ == 9) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 9) {
+          return dataPreparationActionBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataPreparationAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction value) {
+      if (dataPreparationActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        dataPreparationActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataPreparationAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.Builder
+            builderForValue) {
+      if (dataPreparationActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataPreparationActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataPreparationAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction value) {
+      if (dataPreparationActionBuilder_ == null) {
+        if (actionCase_ == 9
+            && action_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .newBuilder(
+                      (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                              .DataPreparationAction)
+                          action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 9) {
+          dataPreparationActionBuilder_.mergeFrom(value);
+        } else {
+          dataPreparationActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataPreparationAction() {
+      if (dataPreparationActionBuilder_ == null) {
+        if (actionCase_ == 9) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 9) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        dataPreparationActionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction.Builder
+        getDataPreparationActionBuilder() {
+      return getDataPreparationActionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationActionOrBuilder
+        getDataPreparationActionOrBuilder() {
+      if ((actionCase_ == 9) && (dataPreparationActionBuilder_ != null)) {
+        return dataPreparationActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 9) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's data preparation action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                .Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                .DataPreparationActionOrBuilder>
+        getDataPreparationActionFieldBuilder() {
+      if (dataPreparationActionBuilder_ == null) {
+        if (!(actionCase_ == 9)) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                  .getDefaultInstance();
+        }
+        dataPreparationActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+                    .Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                    .DataPreparationActionOrBuilder>(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction)
+                    action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 9;
+      onChanged();
+      return dataPreparationActionBuilder_;
+    }
+
     private com.google.cloud.dataform.v1beta1.Target target_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataform.v1beta1.Target,
@@ -3821,7 +11989,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -3869,7 +12037,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3892,7 +12060,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3911,7 +12079,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && target_ != null
             && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getTargetBuilder().mergeFrom(value);
@@ -3922,7 +12090,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         targetBuilder_.mergeFrom(value);
       }
       if (target_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -3941,7 +12109,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -3964,7 +12132,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
@@ -4042,7 +12210,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the canonicalTarget field is set.
      */
     public boolean hasCanonicalTarget() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -4090,7 +12258,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4114,7 +12282,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4133,7 +12301,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (canonicalTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && canonicalTarget_ != null
             && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getCanonicalTargetBuilder().mergeFrom(value);
@@ -4144,7 +12312,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         canonicalTargetBuilder_.mergeFrom(value);
       }
       if (canonicalTarget_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -4163,7 +12331,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCanonicalTarget() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       canonicalTarget_ = null;
       if (canonicalTargetBuilder_ != null) {
         canonicalTargetBuilder_.dispose();
@@ -4186,7 +12354,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
@@ -4278,7 +12446,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4324,7 +12492,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4344,7 +12512,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -4418,7 +12586,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       failureReason_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4437,7 +12605,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder clearFailureReason() {
       failureReason_ = getDefaultInstance().getFailureReason();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4461,7 +12629,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       failureReason_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4491,7 +12659,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the invocationTiming field is set.
      */
     public boolean hasInvocationTiming() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -4545,7 +12713,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4571,7 +12739,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4593,7 +12761,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeInvocationTiming(com.google.type.Interval value) {
       if (invocationTimingBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && invocationTiming_ != null
             && invocationTiming_ != com.google.type.Interval.getDefaultInstance()) {
           getInvocationTimingBuilder().mergeFrom(value);
@@ -4604,7 +12772,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         invocationTimingBuilder_.mergeFrom(value);
       }
       if (invocationTiming_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -4626,7 +12794,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearInvocationTiming() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       invocationTiming_ = null;
       if (invocationTimingBuilder_ != null) {
         invocationTimingBuilder_.dispose();
@@ -4652,7 +12820,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.type.Interval.Builder getInvocationTimingBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }
@@ -4731,7 +12899,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the internalMetadata field is set.
      */
     public boolean hasInternalMetadata() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4806,7 +12974,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       internalMetadata_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4827,7 +12995,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder clearInternalMetadata() {
       internalMetadata_ = getDefaultInstance().getInternalMetadata();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4853,7 +13021,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       internalMetadata_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

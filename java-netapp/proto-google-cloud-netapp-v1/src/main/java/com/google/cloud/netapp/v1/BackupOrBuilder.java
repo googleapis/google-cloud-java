@@ -443,4 +443,47 @@ public interface BackupOrBuilder
    * @return The bytes for backupRegion.
    */
   com.google.protobuf.ByteString getBackupRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the enforcedRetentionEndTime field is set.
+   */
+  boolean hasEnforcedRetentionEndTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enforcedRetentionEndTime.
+   */
+  com.google.protobuf.Timestamp getEnforcedRetentionEndTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEnforcedRetentionEndTimeOrBuilder();
 }

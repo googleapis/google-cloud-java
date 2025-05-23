@@ -28,7 +28,9 @@ public interface UpdateOnlineReturnPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The return policy to update.
+   * Required. The online return policy to update.
+   * The online return policy's `name` field is used to identify the
+   * online return policy to be updated.
    * </pre>
    *
    * <code>
@@ -43,7 +45,9 @@ public interface UpdateOnlineReturnPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The return policy to update.
+   * Required. The online return policy to update.
+   * The online return policy's `name` field is used to identify the
+   * online return policy to be updated.
    * </pre>
    *
    * <code>
@@ -58,7 +62,9 @@ public interface UpdateOnlineReturnPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The return policy to update.
+   * Required. The online return policy to update.
+   * The online return policy's `name` field is used to identify the
+   * online return policy to be updated.
    * </pre>
    *
    * <code>
@@ -69,19 +75,81 @@ public interface UpdateOnlineReturnPolicyRequestOrBuilder
       getOnlineReturnPolicyOrBuilder();
 
   /**
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   *
+   * <pre>
+   * Optional. List of fields being updated.
+   *
+   * The following fields are supported (in both `snake_case` and
+   * `lowerCamelCase`):
+   *
+   * - `accept_defective_only`
+   * - `accept_exchange`
+   * - `item_conditions`
+   * - `policy`
+   * - `process_refund_days`
+   * - `restocking_fee`
+   * - `return_methods`
+   * - `return_policy_uri`
+   * - `return_shipping_fee`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
 
   /**
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   *
+   * <pre>
+   * Optional. List of fields being updated.
+   *
+   * The following fields are supported (in both `snake_case` and
+   * `lowerCamelCase`):
+   *
+   * - `accept_defective_only`
+   * - `accept_exchange`
+   * - `item_conditions`
+   * - `policy`
+   * - `process_refund_days`
+   * - `restocking_fee`
+   * - `return_methods`
+   * - `return_policy_uri`
+   * - `return_shipping_fee`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
 
-  /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of fields being updated.
+   *
+   * The following fields are supported (in both `snake_case` and
+   * `lowerCamelCase`):
+   *
+   * - `accept_defective_only`
+   * - `accept_exchange`
+   * - `item_conditions`
+   * - `policy`
+   * - `process_refund_days`
+   * - `restocking_fee`
+   * - `return_methods`
+   * - `return_policy_uri`
+   * - `return_shipping_fee`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

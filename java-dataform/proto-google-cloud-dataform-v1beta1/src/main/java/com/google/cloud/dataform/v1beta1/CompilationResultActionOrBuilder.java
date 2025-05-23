@@ -221,6 +221,50 @@ public interface CompilationResultActionOrBuilder
    *
    *
    * <pre>
+   * The data preparation executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.DataPreparation data_preparation = 9;
+   * </code>
+   *
+   * @return Whether the dataPreparation field is set.
+   */
+  boolean hasDataPreparation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The data preparation executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.DataPreparation data_preparation = 9;
+   * </code>
+   *
+   * @return The dataPreparation.
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.DataPreparation getDataPreparation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The data preparation executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.DataPreparation data_preparation = 9;
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.DataPreparationOrBuilder
+      getDataPreparationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * This action's identifier. Unique within the compilation result.
    * </pre>
    *

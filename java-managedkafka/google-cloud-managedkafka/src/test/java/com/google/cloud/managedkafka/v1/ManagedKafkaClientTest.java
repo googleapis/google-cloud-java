@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -42,6 +43,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -1188,6 +1190,552 @@ public class ManagedKafkaClientTest {
     try {
       String name = "name3373707";
       client.deleteConsumerGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclsTest() throws Exception {
+    Acl responsesElement = Acl.newBuilder().build();
+    ListAclsResponse expectedResponse =
+        ListAclsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAcls(Arrays.asList(responsesElement))
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListAclsPagedResponse pagedListResponse = client.listAcls(parent);
+
+    List<Acl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclsRequest actualRequest = ((ListAclsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listAcls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclsTest2() throws Exception {
+    Acl responsesElement = Acl.newBuilder().build();
+    ListAclsResponse expectedResponse =
+        ListAclsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAcls(Arrays.asList(responsesElement))
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAclsPagedResponse pagedListResponse = client.listAcls(parent);
+
+    List<Acl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclsRequest actualRequest = ((ListAclsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAcls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+
+    Acl actualResponse = client.getAcl(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclRequest actualRequest = ((GetAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      client.getAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclTest2() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Acl actualResponse = client.getAcl(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclRequest actualRequest = ((GetAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    Acl acl = Acl.newBuilder().build();
+    String aclId = "aclId92636997";
+
+    Acl actualResponse = client.createAcl(parent, acl, aclId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAclRequest actualRequest = ((CreateAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(acl, actualRequest.getAcl());
+    Assert.assertEquals(aclId, actualRequest.getAclId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAclExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      Acl acl = Acl.newBuilder().build();
+      String aclId = "aclId92636997";
+      client.createAcl(parent, acl, aclId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclTest2() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Acl acl = Acl.newBuilder().build();
+    String aclId = "aclId92636997";
+
+    Acl actualResponse = client.createAcl(parent, acl, aclId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAclRequest actualRequest = ((CreateAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(acl, actualRequest.getAcl());
+    Assert.assertEquals(aclId, actualRequest.getAclId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAclExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Acl acl = Acl.newBuilder().build();
+      String aclId = "aclId92636997";
+      client.createAcl(parent, acl, aclId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    Acl acl = Acl.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Acl actualResponse = client.updateAcl(acl, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAclRequest actualRequest = ((UpdateAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(acl, actualRequest.getAcl());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAclExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      Acl acl = Acl.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAcl(acl, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAclTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+
+    client.deleteAcl(name);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAclRequest actualRequest = ((DeleteAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAclExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      client.deleteAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAclTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAcl(name);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAclRequest actualRequest = ((DeleteAclRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAclExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addAclEntryTest() throws Exception {
+    AddAclEntryResponse expectedResponse =
+        AddAclEntryResponse.newBuilder()
+            .setAcl(Acl.newBuilder().build())
+            .setAclCreated(true)
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    AddAclEntryResponse actualResponse = client.addAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddAclEntryRequest actualRequest = ((AddAclEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(acl.toString(), actualRequest.getAcl());
+    Assert.assertEquals(aclEntry, actualRequest.getAclEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addAclEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.addAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addAclEntryTest2() throws Exception {
+    AddAclEntryResponse expectedResponse =
+        AddAclEntryResponse.newBuilder()
+            .setAcl(Acl.newBuilder().build())
+            .setAclCreated(true)
+            .build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String acl = "acl96394";
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    AddAclEntryResponse actualResponse = client.addAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddAclEntryRequest actualRequest = ((AddAclEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(acl, actualRequest.getAcl());
+    Assert.assertEquals(aclEntry, actualRequest.getAclEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addAclEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String acl = "acl96394";
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.addAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeAclEntryTest() throws Exception {
+    RemoveAclEntryResponse expectedResponse = RemoveAclEntryResponse.newBuilder().build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    RemoveAclEntryResponse actualResponse = client.removeAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveAclEntryRequest actualRequest = ((RemoveAclEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(acl.toString(), actualRequest.getAcl());
+    Assert.assertEquals(aclEntry, actualRequest.getAclEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeAclEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.removeAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeAclEntryTest2() throws Exception {
+    RemoveAclEntryResponse expectedResponse = RemoveAclEntryResponse.newBuilder().build();
+    mockManagedKafka.addResponse(expectedResponse);
+
+    String acl = "acl96394";
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    RemoveAclEntryResponse actualResponse = client.removeAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedKafka.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveAclEntryRequest actualRequest = ((RemoveAclEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(acl, actualRequest.getAcl());
+    Assert.assertEquals(aclEntry, actualRequest.getAclEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeAclEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedKafka.addException(exception);
+
+    try {
+      String acl = "acl96394";
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.removeAclEntry(acl, aclEntry);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

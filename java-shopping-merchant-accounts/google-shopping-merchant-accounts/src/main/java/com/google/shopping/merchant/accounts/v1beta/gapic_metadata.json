@@ -137,6 +137,21 @@
         }
       }
     },
+    "GbpAccountsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GbpAccountsServiceClient",
+          "rpcs": {
+            "LinkGbpAccount": {
+              "methods": ["linkGbpAccount", "linkGbpAccount", "linkGbpAccount", "linkGbpAccountCallable"]
+            },
+            "ListGbpAccounts": {
+              "methods": ["listGbpAccounts", "listGbpAccounts", "listGbpAccounts", "listGbpAccountsPagedCallable", "listGbpAccountsCallable"]
+            }
+          }
+        }
+      }
+    },
     "HomepageService": {
       "clients": {
         "grpc": {
@@ -158,13 +173,52 @@
         }
       }
     },
+    "LfpProvidersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LfpProvidersServiceClient",
+          "rpcs": {
+            "FindLfpProviders": {
+              "methods": ["findLfpProviders", "findLfpProviders", "findLfpProviders", "findLfpProvidersPagedCallable", "findLfpProvidersCallable"]
+            },
+            "LinkLfpProvider": {
+              "methods": ["linkLfpProvider", "linkLfpProvider", "linkLfpProvider", "linkLfpProviderCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OmnichannelSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OmnichannelSettingsServiceClient",
+          "rpcs": {
+            "CreateOmnichannelSetting": {
+              "methods": ["createOmnichannelSetting", "createOmnichannelSetting", "createOmnichannelSetting", "createOmnichannelSettingCallable"]
+            },
+            "GetOmnichannelSetting": {
+              "methods": ["getOmnichannelSetting", "getOmnichannelSetting", "getOmnichannelSetting", "getOmnichannelSettingCallable"]
+            },
+            "ListOmnichannelSettings": {
+              "methods": ["listOmnichannelSettings", "listOmnichannelSettings", "listOmnichannelSettings", "listOmnichannelSettingsPagedCallable", "listOmnichannelSettingsCallable"]
+            },
+            "RequestInventoryVerification": {
+              "methods": ["requestInventoryVerification", "requestInventoryVerification", "requestInventoryVerification", "requestInventoryVerificationCallable"]
+            },
+            "UpdateOmnichannelSetting": {
+              "methods": ["updateOmnichannelSetting", "updateOmnichannelSetting", "updateOmnichannelSettingCallable"]
+            }
+          }
+        }
+      }
+    },
     "OnlineReturnPolicyService": {
       "clients": {
         "grpc": {
           "libraryClient": "OnlineReturnPolicyServiceClient",
           "rpcs": {
             "CreateOnlineReturnPolicy": {
-              "methods": ["createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicyCallable"]
+              "methods": ["createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicyCallable"]
             },
             "DeleteOnlineReturnPolicy": {
               "methods": ["deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicyCallable"]

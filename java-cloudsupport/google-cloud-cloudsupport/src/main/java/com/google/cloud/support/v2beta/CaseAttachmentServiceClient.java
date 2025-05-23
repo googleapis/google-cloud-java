@@ -68,13 +68,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAttachments</td>
- *      <td><p> List all the attachments associated with a support case.
- * <p>  EXAMPLES:
- * <p>  cURL:
- * <p>  ```shell case="projects/some-project/cases/23598314" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
- * <p>  Python:
- * <p>  ```python import googleapiclient.discovery
- * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = (     supportApiService.cases()     .attachments()     .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```</td>
+ *      <td><p> List all the attachments associated with a support case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -205,24 +199,6 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   /**
    * List all the attachments associated with a support case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/23598314" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .attachments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -255,24 +231,6 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   /**
    * List all the attachments associated with a support case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/23598314" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .attachments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -301,24 +259,6 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the attachments associated with a support case.
-   *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/23598314" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .attachments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -353,24 +293,6 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   /**
    * List all the attachments associated with a support case.
    *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/23598314" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .attachments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -404,24 +326,6 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the attachments associated with a support case.
-   *
-   * <p>EXAMPLES:
-   *
-   * <p>cURL:
-   *
-   * <p>```shell case="projects/some-project/cases/23598314" curl \\\\ --header "Authorization:
-   * Bearer $(gcloud auth print-access-token)" \\\\
-   * "https://cloudsupport.googleapis.com/v2/$case/attachments" ```
-   *
-   * <p>Python:
-   *
-   * <p>```python import googleapiclient.discovery
-   *
-   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
-   * serviceName="cloudsupport", version=api_version,
-   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
-   * ) request = ( supportApiService.cases() .attachments()
-   * .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
    *
    * <p>Sample code:
    *

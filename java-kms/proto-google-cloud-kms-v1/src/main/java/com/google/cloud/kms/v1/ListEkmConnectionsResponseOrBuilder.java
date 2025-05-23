@@ -116,6 +116,10 @@ public interface ListEkmConnectionsResponseOrBuilder
    * <pre>
    * The total number of [EkmConnections][google.cloud.kms.v1.EkmConnection]
    * that matched the query.
+   *
+   * This field is not populated if
+   * [ListEkmConnectionsRequest.filter][google.cloud.kms.v1.ListEkmConnectionsRequest.filter]
+   * is applied.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

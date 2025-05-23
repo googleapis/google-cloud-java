@@ -349,4 +349,146 @@ public class MockManagedKafkaImpl extends ManagedKafkaImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listAcls(ListAclsRequest request, StreamObserver<ListAclsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAclsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAclsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAcls, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAclsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAcl(GetAclRequest request, StreamObserver<Acl> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Acl) {
+      requests.add(request);
+      responseObserver.onNext(((Acl) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAcl, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Acl.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAcl(CreateAclRequest request, StreamObserver<Acl> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Acl) {
+      requests.add(request);
+      responseObserver.onNext(((Acl) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAcl, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Acl.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAcl(UpdateAclRequest request, StreamObserver<Acl> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Acl) {
+      requests.add(request);
+      responseObserver.onNext(((Acl) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAcl, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Acl.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAcl(DeleteAclRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAcl, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addAclEntry(
+      AddAclEntryRequest request, StreamObserver<AddAclEntryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AddAclEntryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AddAclEntryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddAclEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AddAclEntryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeAclEntry(
+      RemoveAclEntryRequest request, StreamObserver<RemoveAclEntryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveAclEntryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveAclEntryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveAclEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveAclEntryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
