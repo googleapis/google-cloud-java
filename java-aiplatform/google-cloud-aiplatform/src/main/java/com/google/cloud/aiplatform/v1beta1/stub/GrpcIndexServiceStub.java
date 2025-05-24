@@ -33,6 +33,8 @@ import com.google.cloud.aiplatform.v1beta1.CreateIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
@@ -83,6 +85,14 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ImportIndexRequest, Operation> importIndexMethodDescriptor =
+      MethodDescriptor.<ImportIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/ImportIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(ImportIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -183,6 +193,9 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
   private final OperationCallable<CreateIndexRequest, Index, CreateIndexOperationMetadata>
       createIndexOperationCallable;
   private final UnaryCallable<GetIndexRequest, Index> getIndexCallable;
+  private final UnaryCallable<ImportIndexRequest, Operation> importIndexCallable;
+  private final OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesResponse> listIndexesCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse>
       listIndexesPagedCallable;
@@ -260,6 +273,16 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportIndexRequest, Operation> importIndexTransportSettings =
+        GrpcCallSettings.<ImportIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIndexMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -383,6 +406,15 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
     this.getIndexCallable =
         callableFactory.createUnaryCallable(
             getIndexTransportSettings, settings.getIndexSettings(), clientContext);
+    this.importIndexCallable =
+        callableFactory.createUnaryCallable(
+            importIndexTransportSettings, settings.importIndexSettings(), clientContext);
+    this.importIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            importIndexTransportSettings,
+            settings.importIndexOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listIndexesCallable =
         callableFactory.createUnaryCallable(
             listIndexesTransportSettings, settings.listIndexesSettings(), clientContext);
@@ -456,6 +488,17 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
   @Override
   public UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     return getIndexCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIndexRequest, Operation> importIndexCallable() {
+    return importIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable() {
+    return importIndexOperationCallable;
   }
 
   @Override

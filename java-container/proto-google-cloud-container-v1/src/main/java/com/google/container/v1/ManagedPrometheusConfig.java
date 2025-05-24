@@ -63,6 +63,7 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
             com.google.container.v1.ManagedPrometheusConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
 
@@ -82,6 +83,59 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     return enabled_;
   }
 
+  public static final int AUTO_MONITORING_CONFIG_FIELD_NUMBER = 2;
+  private com.google.container.v1.AutoMonitoringConfig autoMonitoringConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   *
+   * @return Whether the autoMonitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoMonitoringConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   *
+   * @return The autoMonitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.AutoMonitoringConfig getAutoMonitoringConfig() {
+    return autoMonitoringConfig_ == null
+        ? com.google.container.v1.AutoMonitoringConfig.getDefaultInstance()
+        : autoMonitoringConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AutoMonitoringConfigOrBuilder getAutoMonitoringConfigOrBuilder() {
+    return autoMonitoringConfig_ == null
+        ? com.google.container.v1.AutoMonitoringConfig.getDefaultInstance()
+        : autoMonitoringConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -99,6 +153,9 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getAutoMonitoringConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -110,6 +167,10 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     size = 0;
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAutoMonitoringConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -128,6 +189,10 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
         (com.google.container.v1.ManagedPrometheusConfig) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
+    if (hasAutoMonitoringConfig() != other.hasAutoMonitoringConfig()) return false;
+    if (hasAutoMonitoringConfig()) {
+      if (!getAutoMonitoringConfig().equals(other.getAutoMonitoringConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,6 +206,10 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    if (hasAutoMonitoringConfig()) {
+      hash = (37 * hash) + AUTO_MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoMonitoringConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -272,10 +341,19 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.container.v1.ManagedPrometheusConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAutoMonitoringConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -283,6 +361,11 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       enabled_ = false;
+      autoMonitoringConfig_ = null;
+      if (autoMonitoringConfigBuilder_ != null) {
+        autoMonitoringConfigBuilder_.dispose();
+        autoMonitoringConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -322,6 +405,15 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.autoMonitoringConfig_ =
+            autoMonitoringConfigBuilder_ == null
+                ? autoMonitoringConfig_
+                : autoMonitoringConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -373,6 +465,9 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
+      if (other.hasAutoMonitoringConfig()) {
+        mergeAutoMonitoringConfig(other.getAutoMonitoringConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -405,6 +500,13 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getAutoMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -478,6 +580,203 @@ public final class ManagedPrometheusConfig extends com.google.protobuf.Generated
       enabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.AutoMonitoringConfig autoMonitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.AutoMonitoringConfig,
+            com.google.container.v1.AutoMonitoringConfig.Builder,
+            com.google.container.v1.AutoMonitoringConfigOrBuilder>
+        autoMonitoringConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     *
+     * @return Whether the autoMonitoringConfig field is set.
+     */
+    public boolean hasAutoMonitoringConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     *
+     * @return The autoMonitoringConfig.
+     */
+    public com.google.container.v1.AutoMonitoringConfig getAutoMonitoringConfig() {
+      if (autoMonitoringConfigBuilder_ == null) {
+        return autoMonitoringConfig_ == null
+            ? com.google.container.v1.AutoMonitoringConfig.getDefaultInstance()
+            : autoMonitoringConfig_;
+      } else {
+        return autoMonitoringConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public Builder setAutoMonitoringConfig(com.google.container.v1.AutoMonitoringConfig value) {
+      if (autoMonitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoMonitoringConfig_ = value;
+      } else {
+        autoMonitoringConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public Builder setAutoMonitoringConfig(
+        com.google.container.v1.AutoMonitoringConfig.Builder builderForValue) {
+      if (autoMonitoringConfigBuilder_ == null) {
+        autoMonitoringConfig_ = builderForValue.build();
+      } else {
+        autoMonitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public Builder mergeAutoMonitoringConfig(com.google.container.v1.AutoMonitoringConfig value) {
+      if (autoMonitoringConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && autoMonitoringConfig_ != null
+            && autoMonitoringConfig_
+                != com.google.container.v1.AutoMonitoringConfig.getDefaultInstance()) {
+          getAutoMonitoringConfigBuilder().mergeFrom(value);
+        } else {
+          autoMonitoringConfig_ = value;
+        }
+      } else {
+        autoMonitoringConfigBuilder_.mergeFrom(value);
+      }
+      if (autoMonitoringConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public Builder clearAutoMonitoringConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      autoMonitoringConfig_ = null;
+      if (autoMonitoringConfigBuilder_ != null) {
+        autoMonitoringConfigBuilder_.dispose();
+        autoMonitoringConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public com.google.container.v1.AutoMonitoringConfig.Builder getAutoMonitoringConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getAutoMonitoringConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    public com.google.container.v1.AutoMonitoringConfigOrBuilder
+        getAutoMonitoringConfigOrBuilder() {
+      if (autoMonitoringConfigBuilder_ != null) {
+        return autoMonitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return autoMonitoringConfig_ == null
+            ? com.google.container.v1.AutoMonitoringConfig.getDefaultInstance()
+            : autoMonitoringConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GKE Workload Auto-Monitoring Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.AutoMonitoringConfig,
+            com.google.container.v1.AutoMonitoringConfig.Builder,
+            com.google.container.v1.AutoMonitoringConfigOrBuilder>
+        getAutoMonitoringConfigFieldBuilder() {
+      if (autoMonitoringConfigBuilder_ == null) {
+        autoMonitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.AutoMonitoringConfig,
+                com.google.container.v1.AutoMonitoringConfig.Builder,
+                com.google.container.v1.AutoMonitoringConfigOrBuilder>(
+                getAutoMonitoringConfig(), getParentForChildren(), isClean());
+        autoMonitoringConfig_ = null;
+      }
+      return autoMonitoringConfigBuilder_;
     }
 
     @java.lang.Override
