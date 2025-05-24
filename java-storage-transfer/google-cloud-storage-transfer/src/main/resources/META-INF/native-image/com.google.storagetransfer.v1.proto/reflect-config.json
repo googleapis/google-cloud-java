@@ -1809,6 +1809,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.storagetransfer.v1.proto.TransferTypes$AzureBlobStorageData$FederatedIdentityConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.storagetransfer.v1.proto.TransferTypes$AzureBlobStorageData$FederatedIdentityConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.storagetransfer.v1.proto.TransferTypes$AzureCredentials",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -107,7 +107,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1877
+   *     google/container/v1/cluster_service.proto;l=2098
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -133,7 +133,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1890
+   *     google/container/v1/cluster_service.proto;l=2111
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -159,7 +159,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1890
+   *     google/container/v1/cluster_service.proto;l=2111
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -289,7 +289,7 @@ public interface ClusterOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -312,7 +312,7 @@ public interface ClusterOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -640,6 +640,68 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @return A list containing the alphaClusterFeatureGates.
+   */
+  java.util.List<java.lang.String> getAlphaClusterFeatureGatesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @return The count of alphaClusterFeatureGates.
+   */
+  int getAlphaClusterFeatureGatesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alphaClusterFeatureGates at the given index.
+   */
+  java.lang.String getAlphaClusterFeatureGates(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alphaClusterFeatureGates at the given index.
+   */
+  com.google.protobuf.ByteString getAlphaClusterFeatureGatesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
    * </pre>
@@ -857,7 +919,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1992
+   *     google/container/v1/cluster_service.proto;l=2218
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -879,7 +941,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1992
+   *     google/container/v1/cluster_service.proto;l=2218
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -1643,7 +1705,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2066
+   *     google/container/v1/cluster_service.proto;l=2292
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1661,7 +1723,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2066
+   *     google/container/v1/cluster_service.proto;l=2292
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1795,7 +1857,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2101
+   *     google/container/v1/cluster_service.proto;l=2327
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1817,7 +1879,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2101
+   *     google/container/v1/cluster_service.proto;l=2327
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1895,7 +1957,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2114
+   *     google/container/v1/cluster_service.proto;l=2340
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1915,7 +1977,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2114
+   *     google/container/v1/cluster_service.proto;l=2340
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -1983,7 +2045,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2131
+   *     google/container/v1/cluster_service.proto;l=2357
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2001,7 +2063,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2131
+   *     google/container/v1/cluster_service.proto;l=2357
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2019,7 +2081,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2131
+   *     google/container/v1/cluster_service.proto;l=2357
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2038,7 +2100,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2131
+   *     google/container/v1/cluster_service.proto;l=2357
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2058,7 +2120,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2136
+   *     google/container/v1/cluster_service.proto;l=2362
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2131,12 +2193,17 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Enable the ability to use Cloud TPUs in this cluster.
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>bool enable_tpu = 115;</code>
+   * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2379
    * @return The enableTpu.
    */
+  @java.lang.Deprecated
   boolean getEnableTpu();
 
   /**
@@ -2146,12 +2213,19 @@ public interface ClusterOrBuilder
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>string tpu_ipv4_cidr_block = 116 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string tpu_ipv4_cidr_block = 116 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2386
    * @return The tpuIpv4CidrBlock.
    */
+  @java.lang.Deprecated
   java.lang.String getTpuIpv4CidrBlock();
 
   /**
@@ -2161,12 +2235,19 @@ public interface ClusterOrBuilder
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>string tpu_ipv4_cidr_block = 116 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string tpu_ipv4_cidr_block = 116 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2386
    * @return The bytes for tpuIpv4CidrBlock.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes();
 
   /**
@@ -2441,6 +2522,43 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodePoolAutoConfig node_pool_auto_config = 136;</code>
    */
   com.google.container.v1.NodePoolAutoConfigOrBuilder getNodePoolAutoConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling pod_autoscaling = 138;</code>
+   *
+   * @return Whether the podAutoscaling field is set.
+   */
+  boolean hasPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling pod_autoscaling = 138;</code>
+   *
+   * @return The podAutoscaling.
+   */
+  com.google.container.v1.PodAutoscaling getPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling pod_autoscaling = 138;</code>
+   */
+  com.google.container.v1.PodAutoscalingOrBuilder getPodAutoscalingOrBuilder();
 
   /**
    *
@@ -2866,4 +2984,48 @@ public interface ClusterOrBuilder
    * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
    */
   com.google.container.v1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>.google.container.v1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   *
+   * @return Whether the anonymousAuthenticationConfig field is set.
+   */
+  boolean hasAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>.google.container.v1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   *
+   * @return The anonymousAuthenticationConfig.
+   */
+  com.google.container.v1.AnonymousAuthenticationConfig getAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>.google.container.v1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   */
+  com.google.container.v1.AnonymousAuthenticationConfigOrBuilder
+      getAnonymousAuthenticationConfigOrBuilder();
 }

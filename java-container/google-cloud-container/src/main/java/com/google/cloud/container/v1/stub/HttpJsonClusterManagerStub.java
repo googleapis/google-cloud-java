@@ -34,12 +34,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -55,6 +58,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -1643,6 +1647,80 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoMethodDescriptor =
+          ApiMethodDescriptor.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+              .setFullMethodName("google.container.v1.ClusterManager/FetchClusterUpgradeInfo")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchClusterUpgradeInfoRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*}:fetchClusterUpgradeInfo",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchClusterUpgradeInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/zones/*/clusters/*}:fetchClusterUpgradeInfo")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchClusterUpgradeInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "version", request.getVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ClusterUpgradeInfo>newBuilder()
+                      .setDefaultInstance(ClusterUpgradeInfo.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoMethodDescriptor =
+          ApiMethodDescriptor.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+              .setFullMethodName("google.container.v1.ClusterManager/FetchNodePoolUpgradeInfo")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchNodePoolUpgradeInfoRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*/nodePools/*}:fetchNodePoolUpgradeInfo",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchNodePoolUpgradeInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/zones/*/clusters/*/nodePools/*}:fetchNodePoolUpgradeInfo")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchNodePoolUpgradeInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "version", request.getVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NodePoolUpgradeInfo>newBuilder()
+                      .setDefaultInstance(NodePoolUpgradeInfo.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -1686,6 +1764,10 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable;
+  private final UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable;
+  private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -2210,6 +2292,30 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoTransportSettings =
+            HttpJsonCallSettings.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchClusterUpgradeInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoTransportSettings =
+            HttpJsonCallSettings.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchNodePoolUpgradeInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -2338,6 +2444,16 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
             checkAutopilotCompatibilityTransportSettings,
             settings.checkAutopilotCompatibilitySettings(),
             clientContext);
+    this.fetchClusterUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchClusterUpgradeInfoTransportSettings,
+            settings.fetchClusterUpgradeInfoSettings(),
+            clientContext);
+    this.fetchNodePoolUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchNodePoolUpgradeInfoTransportSettings,
+            settings.fetchNodePoolUpgradeInfoSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2380,6 +2496,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
     methodDescriptors.add(setMaintenancePolicyMethodDescriptor);
     methodDescriptors.add(listUsableSubnetworksMethodDescriptor);
     methodDescriptors.add(checkAutopilotCompatibilityMethodDescriptor);
+    methodDescriptors.add(fetchClusterUpgradeInfoMethodDescriptor);
+    methodDescriptors.add(fetchNodePoolUpgradeInfoMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2560,6 +2678,18 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
   public UnaryCallable<CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable() {
     return checkAutopilotCompatibilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    return fetchClusterUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    return fetchNodePoolUpgradeInfoCallable;
   }
 
   @Override

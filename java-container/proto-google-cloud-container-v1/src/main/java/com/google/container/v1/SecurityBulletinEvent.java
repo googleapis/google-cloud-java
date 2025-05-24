@@ -50,6 +50,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.emptyList();
     patchedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     suggestedUpgradeTarget_ = "";
+    mitigatedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -629,6 +630,74 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     return manualStepsRequired_;
   }
 
+  public static final int MITIGATED_VERSIONS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList mitigatedVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @return A list containing the mitigatedVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getMitigatedVersionsList() {
+    return mitigatedVersions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @return The count of mitigatedVersions.
+   */
+  public int getMitigatedVersionsCount() {
+    return mitigatedVersions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mitigatedVersions at the given index.
+   */
+  public java.lang.String getMitigatedVersions(int index) {
+    return mitigatedVersions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mitigatedVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getMitigatedVersionsBytes(int index) {
+    return mitigatedVersions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -673,6 +742,9 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
     if (manualStepsRequired_ != false) {
       output.writeBool(10, manualStepsRequired_);
+    }
+    for (int i = 0; i < mitigatedVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, mitigatedVersions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -728,6 +800,14 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     if (manualStepsRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, manualStepsRequired_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < mitigatedVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(mitigatedVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMitigatedVersionsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -755,6 +835,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     if (!getPatchedVersionsList().equals(other.getPatchedVersionsList())) return false;
     if (!getSuggestedUpgradeTarget().equals(other.getSuggestedUpgradeTarget())) return false;
     if (getManualStepsRequired() != other.getManualStepsRequired()) return false;
+    if (!getMitigatedVersionsList().equals(other.getMitigatedVersionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -792,6 +873,10 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getSuggestedUpgradeTarget().hashCode();
     hash = (37 * hash) + MANUAL_STEPS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManualStepsRequired());
+    if (getMitigatedVersionsCount() > 0) {
+      hash = (37 * hash) + MITIGATED_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMitigatedVersionsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -943,6 +1028,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       patchedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       suggestedUpgradeTarget_ = "";
       manualStepsRequired_ = false;
+      mitigatedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1011,6 +1097,10 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.manualStepsRequired_ = manualStepsRequired_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        mitigatedVersions_.makeImmutable();
+        result.mitigatedVersions_ = mitigatedVersions_;
       }
     }
 
@@ -1122,6 +1212,16 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       if (other.getManualStepsRequired() != false) {
         setManualStepsRequired(other.getManualStepsRequired());
       }
+      if (!other.mitigatedVersions_.isEmpty()) {
+        if (mitigatedVersions_.isEmpty()) {
+          mitigatedVersions_ = other.mitigatedVersions_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureMitigatedVersionsIsMutable();
+          mitigatedVersions_.addAll(other.mitigatedVersions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1211,6 +1311,13 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMitigatedVersionsIsMutable();
+                mitigatedVersions_.add(s);
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2536,6 +2643,189 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public Builder clearManualStepsRequired() {
       bitField0_ = (bitField0_ & ~0x00000200);
       manualStepsRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList mitigatedVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureMitigatedVersionsIsMutable() {
+      if (!mitigatedVersions_.isModifiable()) {
+        mitigatedVersions_ = new com.google.protobuf.LazyStringArrayList(mitigatedVersions_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @return A list containing the mitigatedVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getMitigatedVersionsList() {
+      mitigatedVersions_.makeImmutable();
+      return mitigatedVersions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @return The count of mitigatedVersions.
+     */
+    public int getMitigatedVersionsCount() {
+      return mitigatedVersions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The mitigatedVersions at the given index.
+     */
+    public java.lang.String getMitigatedVersions(int index) {
+      return mitigatedVersions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the mitigatedVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getMitigatedVersionsBytes(int index) {
+      return mitigatedVersions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The mitigatedVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMitigatedVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMitigatedVersionsIsMutable();
+      mitigatedVersions_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param value The mitigatedVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMitigatedVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMitigatedVersionsIsMutable();
+      mitigatedVersions_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param values The mitigatedVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMitigatedVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureMitigatedVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mitigatedVersions_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMitigatedVersions() {
+      mitigatedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The GKE versions where this vulnerability is mitigated.
+     * </pre>
+     *
+     * <code>repeated string mitigated_versions = 11;</code>
+     *
+     * @param value The bytes of the mitigatedVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMitigatedVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureMitigatedVersionsIsMutable();
+      mitigatedVersions_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

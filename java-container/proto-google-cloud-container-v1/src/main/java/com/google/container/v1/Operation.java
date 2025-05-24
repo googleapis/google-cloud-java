@@ -309,8 +309,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * The cluster is being created. The cluster should be assumed to be
      * unusable until the operation finishes.
      *
-     * In the event of the operation failing, the cluster will enter the [ERROR
-     * state][Cluster.Status.ERROR] and eventually be deleted.
+     * In the event of the operation failing, the cluster will enter the
+     * [ERROR state][google.container.v1.Cluster.Status.ERROR] and eventually be
+     * deleted.
      * </pre>
      *
      * <code>CREATE_CLUSTER = 1;</code>
@@ -323,9 +324,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * The cluster is being deleted. The cluster should be assumed to be
      * unusable as soon as this operation starts.
      *
-     * In the event of the operation failing, the cluster will enter the [ERROR
-     * state][Cluster.Status.ERROR] and the deletion will be automatically
-     * retried until completed.
+     * In the event of the operation failing, the cluster will enter the
+     * [ERROR state][google.container.v1.Cluster.Status.ERROR] and the deletion
+     * will be automatically retried until completed.
      * </pre>
      *
      * <code>DELETE_CLUSTER = 2;</code>
@@ -573,8 +574,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * The cluster is being created. The cluster should be assumed to be
      * unusable until the operation finishes.
      *
-     * In the event of the operation failing, the cluster will enter the [ERROR
-     * state][Cluster.Status.ERROR] and eventually be deleted.
+     * In the event of the operation failing, the cluster will enter the
+     * [ERROR state][google.container.v1.Cluster.Status.ERROR] and eventually be
+     * deleted.
      * </pre>
      *
      * <code>CREATE_CLUSTER = 1;</code>
@@ -588,9 +590,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * The cluster is being deleted. The cluster should be assumed to be
      * unusable as soon as this operation starts.
      *
-     * In the event of the operation failing, the cluster will enter the [ERROR
-     * state][Cluster.Status.ERROR] and the deletion will be automatically
-     * retried until completed.
+     * In the event of the operation failing, the cluster will enter the
+     * [ERROR state][google.container.v1.Cluster.Status.ERROR] and the deletion
+     * will be automatically retried until completed.
      * </pre>
      *
      * <code>DELETE_CLUSTER = 2;</code>
@@ -1015,7 +1017,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2884
+   *     google/container/v1/cluster_service.proto;l=3137
    * @return The zone.
    */
   @java.lang.Override
@@ -1044,7 +1046,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2884
+   *     google/container/v1/cluster_service.proto;l=3137
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -1214,7 +1216,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2898
+   *     google/container/v1/cluster_service.proto;l=3151
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -1244,7 +1246,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2898
+   *     google/container/v1/cluster_service.proto;l=3151
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -2788,7 +2790,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @deprecated google.container.v1.Operation.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2884
+     *     google/container/v1/cluster_service.proto;l=3137
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2816,7 +2818,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @deprecated google.container.v1.Operation.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2884
+     *     google/container/v1/cluster_service.proto;l=3137
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2844,7 +2846,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @deprecated google.container.v1.Operation.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2884
+     *     google/container/v1/cluster_service.proto;l=3137
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2871,7 +2873,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @deprecated google.container.v1.Operation.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2884
+     *     google/container/v1/cluster_service.proto;l=3137
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2894,7 +2896,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @deprecated google.container.v1.Operation.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2884
+     *     google/container/v1/cluster_service.proto;l=3137
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3246,7 +3248,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Operation.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2898
+     *     google/container/v1/cluster_service.proto;l=3151
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -3275,7 +3277,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Operation.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2898
+     *     google/container/v1/cluster_service.proto;l=3151
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -3304,7 +3306,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Operation.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2898
+     *     google/container/v1/cluster_service.proto;l=3151
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3332,7 +3334,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Operation.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2898
+     *     google/container/v1/cluster_service.proto;l=3151
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3356,7 +3358,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Operation.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2898
+     *     google/container/v1/cluster_service.proto;l=3151
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

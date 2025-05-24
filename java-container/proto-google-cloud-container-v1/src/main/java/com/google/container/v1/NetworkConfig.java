@@ -1649,6 +1649,41 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return defaultEnablePrivateNodes_;
   }
 
+  public static final int DISABLE_L4_LB_FIREWALL_RECONCILIATION_FIELD_NUMBER = 24;
+  private boolean disableL4LbFirewallReconciliation_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return Whether the disableL4LbFirewallReconciliation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableL4LbFirewallReconciliation() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return The disableL4LbFirewallReconciliation.
+   */
+  @java.lang.Override
+  public boolean getDisableL4LbFirewallReconciliation() {
+    return disableL4LbFirewallReconciliation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1713,6 +1748,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeBool(22, defaultEnablePrivateNodes_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeBool(24, disableL4LbFirewallReconciliation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1780,6 +1818,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, defaultEnablePrivateNodes_);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              24, disableL4LbFirewallReconciliation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1839,6 +1882,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDefaultEnablePrivateNodes() != other.hasDefaultEnablePrivateNodes()) return false;
     if (hasDefaultEnablePrivateNodes()) {
       if (getDefaultEnablePrivateNodes() != other.getDefaultEnablePrivateNodes()) return false;
+    }
+    if (hasDisableL4LbFirewallReconciliation() != other.hasDisableL4LbFirewallReconciliation())
+      return false;
+    if (hasDisableL4LbFirewallReconciliation()) {
+      if (getDisableL4LbFirewallReconciliation() != other.getDisableL4LbFirewallReconciliation())
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1902,6 +1951,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDefaultEnablePrivateNodes()) {
       hash = (37 * hash) + DEFAULT_ENABLE_PRIVATE_NODES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDefaultEnablePrivateNodes());
+    }
+    if (hasDisableL4LbFirewallReconciliation()) {
+      hash = (37 * hash) + DISABLE_L4_LB_FIREWALL_RECONCILIATION_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getDisableL4LbFirewallReconciliation());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2091,6 +2146,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       inTransitEncryptionConfig_ = 0;
       enableCiliumClusterwideNetworkPolicy_ = false;
       defaultEnablePrivateNodes_ = false;
+      disableL4LbFirewallReconciliation_ = false;
       return this;
     }
 
@@ -2195,6 +2251,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         result.defaultEnablePrivateNodes_ = defaultEnablePrivateNodes_;
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.disableL4LbFirewallReconciliation_ = disableL4LbFirewallReconciliation_;
+        to_bitField0_ |= 0x00000200;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2294,6 +2354,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDefaultEnablePrivateNodes()) {
         setDefaultEnablePrivateNodes(other.getDefaultEnablePrivateNodes());
+      }
+      if (other.hasDisableL4LbFirewallReconciliation()) {
+        setDisableL4LbFirewallReconciliation(other.getDisableL4LbFirewallReconciliation());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2421,6 +2484,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 176
+            case 192:
+              {
+                disableL4LbFirewallReconciliation_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 192
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4483,6 +4552,78 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDefaultEnablePrivateNodes() {
       bitField0_ = (bitField0_ & ~0x00008000);
       defaultEnablePrivateNodes_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableL4LbFirewallReconciliation_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable L4 load balancer VPC firewalls to enable firewall policies.
+     * </pre>
+     *
+     * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+     *
+     * @return Whether the disableL4LbFirewallReconciliation field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableL4LbFirewallReconciliation() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable L4 load balancer VPC firewalls to enable firewall policies.
+     * </pre>
+     *
+     * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+     *
+     * @return The disableL4LbFirewallReconciliation.
+     */
+    @java.lang.Override
+    public boolean getDisableL4LbFirewallReconciliation() {
+      return disableL4LbFirewallReconciliation_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable L4 load balancer VPC firewalls to enable firewall policies.
+     * </pre>
+     *
+     * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+     *
+     * @param value The disableL4LbFirewallReconciliation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableL4LbFirewallReconciliation(boolean value) {
+
+      disableL4LbFirewallReconciliation_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable L4 load balancer VPC firewalls to enable firewall policies.
+     * </pre>
+     *
+     * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableL4LbFirewallReconciliation() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      disableL4LbFirewallReconciliation_ = false;
       onChanged();
       return this;
     }

@@ -29,12 +29,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -50,6 +53,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -423,6 +427,27 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(CheckAutopilotCompatibilityResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1.ClusterManager/FetchClusterUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchClusterUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ClusterUpgradeInfo.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1.ClusterManager/FetchNodePoolUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchNodePoolUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NodePoolUpgradeInfo.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -466,6 +491,10 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable;
+  private final UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable;
+  private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -955,6 +984,28 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchClusterUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchNodePoolUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -1082,6 +1133,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         callableFactory.createUnaryCallable(
             checkAutopilotCompatibilityTransportSettings,
             settings.checkAutopilotCompatibilitySettings(),
+            clientContext);
+    this.fetchClusterUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchClusterUpgradeInfoTransportSettings,
+            settings.fetchClusterUpgradeInfoSettings(),
+            clientContext);
+    this.fetchNodePoolUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchNodePoolUpgradeInfoTransportSettings,
+            settings.fetchNodePoolUpgradeInfoSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1269,6 +1330,18 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   public UnaryCallable<CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable() {
     return checkAutopilotCompatibilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    return fetchClusterUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    return fetchNodePoolUpgradeInfoCallable;
   }
 
   @Override

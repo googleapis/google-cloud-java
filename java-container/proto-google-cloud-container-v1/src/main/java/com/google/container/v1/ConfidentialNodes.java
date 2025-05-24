@@ -40,7 +40,9 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     super(builder);
   }
 
-  private ConfidentialNodes() {}
+  private ConfidentialNodes() {
+    confidentialInstanceType_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -63,6 +65,191 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
             com.google.container.v1.ConfidentialNodes.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of technology used by the confidential node.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.ConfidentialNodes.ConfidentialInstanceType}
+   */
+  public enum ConfidentialInstanceType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No type specified. Do not use this value.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * AMD Secure Encrypted Virtualization.
+     * </pre>
+     *
+     * <code>SEV = 1;</code>
+     */
+    SEV(1),
+    /**
+     *
+     *
+     * <pre>
+     * AMD Secure Encrypted Virtualization - Secure Nested Paging.
+     * </pre>
+     *
+     * <code>SEV_SNP = 2;</code>
+     */
+    SEV_SNP(2),
+    /**
+     *
+     *
+     * <pre>
+     * Intel Trust Domain eXtension.
+     * </pre>
+     *
+     * <code>TDX = 3;</code>
+     */
+    TDX(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No type specified. Do not use this value.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * AMD Secure Encrypted Virtualization.
+     * </pre>
+     *
+     * <code>SEV = 1;</code>
+     */
+    public static final int SEV_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * AMD Secure Encrypted Virtualization - Secure Nested Paging.
+     * </pre>
+     *
+     * <code>SEV_SNP = 2;</code>
+     */
+    public static final int SEV_SNP_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Intel Trust Domain eXtension.
+     * </pre>
+     *
+     * <code>TDX = 3;</code>
+     */
+    public static final int TDX_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfidentialInstanceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConfidentialInstanceType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED;
+        case 1:
+          return SEV;
+        case 2:
+          return SEV_SNP;
+        case 3:
+          return TDX;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>() {
+              public ConfidentialInstanceType findValueByNumber(int number) {
+                return ConfidentialInstanceType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.ConfidentialNodes.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ConfidentialInstanceType[] VALUES = values();
+
+    public static ConfidentialInstanceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConfidentialInstanceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.ConfidentialNodes.ConfidentialInstanceType)
+  }
+
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
 
@@ -82,6 +269,51 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     return enabled_;
   }
 
+  public static final int CONFIDENTIAL_INSTANCE_TYPE_FIELD_NUMBER = 2;
+  private int confidentialInstanceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for confidentialInstanceType.
+   */
+  @java.lang.Override
+  public int getConfidentialInstanceTypeValue() {
+    return confidentialInstanceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+   * </code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType
+      getConfidentialInstanceType() {
+    com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType result =
+        com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType.forNumber(
+            confidentialInstanceType_);
+    return result == null
+        ? com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -99,6 +331,12 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
+    if (confidentialInstanceType_
+        != com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType
+            .CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, confidentialInstanceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -110,6 +348,12 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+    }
+    if (confidentialInstanceType_
+        != com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType
+            .CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, confidentialInstanceType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -128,6 +372,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
         (com.google.container.v1.ConfidentialNodes) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
+    if (confidentialInstanceType_ != other.confidentialInstanceType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,6 +386,8 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    hash = (37 * hash) + CONFIDENTIAL_INSTANCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + confidentialInstanceType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -283,6 +530,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       enabled_ = false;
+      confidentialInstanceType_ = 0;
       return this;
     }
 
@@ -321,6 +569,9 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidentialInstanceType_ = confidentialInstanceType_;
       }
     }
 
@@ -372,6 +623,9 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
+      if (other.confidentialInstanceType_ != 0) {
+        setConfidentialInstanceTypeValue(other.getConfidentialInstanceTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -404,6 +658,12 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                confidentialInstanceType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -475,6 +735,116 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
     public Builder clearEnabled() {
       bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int confidentialInstanceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the type of technology used by the confidential node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for confidentialInstanceType.
+     */
+    @java.lang.Override
+    public int getConfidentialInstanceTypeValue() {
+      return confidentialInstanceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the type of technology used by the confidential node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for confidentialInstanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidentialInstanceTypeValue(int value) {
+      confidentialInstanceType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the type of technology used by the confidential node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+     * </code>
+     *
+     * @return The confidentialInstanceType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType
+        getConfidentialInstanceType() {
+      com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType result =
+          com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType.forNumber(
+              confidentialInstanceType_);
+      return result == null
+          ? com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the type of technology used by the confidential node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+     * </code>
+     *
+     * @param value The confidentialInstanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidentialInstanceType(
+        com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      confidentialInstanceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the type of technology used by the confidential node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConfidentialInstanceType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      confidentialInstanceType_ = 0;
       onChanged();
       return this;
     }

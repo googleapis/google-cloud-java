@@ -198,7 +198,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1336
+   *     google/container/v1/cluster_service.proto;l=1544
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -222,7 +222,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1336
+   *     google/container/v1/cluster_service.proto;l=1544
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -881,6 +881,63 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : rayOperatorConfig_;
   }
 
+  public static final int HIGH_SCALE_CHECKPOINTING_CONFIG_FIELD_NUMBER = 22;
+  private com.google.container.v1.HighScaleCheckpointingConfig highScaleCheckpointingConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return Whether the highScaleCheckpointingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHighScaleCheckpointingConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return The highScaleCheckpointingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.HighScaleCheckpointingConfig getHighScaleCheckpointingConfig() {
+    return highScaleCheckpointingConfig_ == null
+        ? com.google.container.v1.HighScaleCheckpointingConfig.getDefaultInstance()
+        : highScaleCheckpointingConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.HighScaleCheckpointingConfigOrBuilder
+      getHighScaleCheckpointingConfigOrBuilder() {
+    return highScaleCheckpointingConfig_ == null
+        ? com.google.container.v1.HighScaleCheckpointingConfig.getDefaultInstance()
+        : highScaleCheckpointingConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -936,6 +993,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(21, getRayOperatorConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(22, getHighScaleCheckpointingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -998,6 +1058,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getRayOperatorConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, getHighScaleCheckpointingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1074,6 +1139,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasRayOperatorConfig()) {
       if (!getRayOperatorConfig().equals(other.getRayOperatorConfig())) return false;
     }
+    if (hasHighScaleCheckpointingConfig() != other.hasHighScaleCheckpointingConfig()) return false;
+    if (hasHighScaleCheckpointingConfig()) {
+      if (!getHighScaleCheckpointingConfig().equals(other.getHighScaleCheckpointingConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1140,6 +1210,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasRayOperatorConfig()) {
       hash = (37 * hash) + RAY_OPERATOR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRayOperatorConfig().hashCode();
+    }
+    if (hasHighScaleCheckpointingConfig()) {
+      hash = (37 * hash) + HIGH_SCALE_CHECKPOINTING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getHighScaleCheckpointingConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1296,6 +1370,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getStatefulHaConfigFieldBuilder();
         getParallelstoreCsiDriverConfigFieldBuilder();
         getRayOperatorConfigFieldBuilder();
+        getHighScaleCheckpointingConfigFieldBuilder();
       }
     }
 
@@ -1372,6 +1447,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (rayOperatorConfigBuilder_ != null) {
         rayOperatorConfigBuilder_.dispose();
         rayOperatorConfigBuilder_ = null;
+      }
+      highScaleCheckpointingConfig_ = null;
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        highScaleCheckpointingConfigBuilder_.dispose();
+        highScaleCheckpointingConfigBuilder_ = null;
       }
       return this;
     }
@@ -1501,6 +1581,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 : rayOperatorConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.highScaleCheckpointingConfig_ =
+            highScaleCheckpointingConfigBuilder_ == null
+                ? highScaleCheckpointingConfig_
+                : highScaleCheckpointingConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1590,6 +1677,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRayOperatorConfig()) {
         mergeRayOperatorConfig(other.getRayOperatorConfig());
+      }
+      if (other.hasHighScaleCheckpointingConfig()) {
+        mergeHighScaleCheckpointingConfig(other.getHighScaleCheckpointingConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1714,6 +1804,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getHighScaleCheckpointingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2178,7 +2275,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1336
+     *     google/container/v1/cluster_service.proto;l=1544
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2201,7 +2298,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1336
+     *     google/container/v1/cluster_service.proto;l=1544
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -4687,6 +4784,215 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         rayOperatorConfig_ = null;
       }
       return rayOperatorConfigBuilder_;
+    }
+
+    private com.google.container.v1.HighScaleCheckpointingConfig highScaleCheckpointingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.HighScaleCheckpointingConfig,
+            com.google.container.v1.HighScaleCheckpointingConfig.Builder,
+            com.google.container.v1.HighScaleCheckpointingConfigOrBuilder>
+        highScaleCheckpointingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     *
+     * @return Whether the highScaleCheckpointingConfig field is set.
+     */
+    public boolean hasHighScaleCheckpointingConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     *
+     * @return The highScaleCheckpointingConfig.
+     */
+    public com.google.container.v1.HighScaleCheckpointingConfig getHighScaleCheckpointingConfig() {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        return highScaleCheckpointingConfig_ == null
+            ? com.google.container.v1.HighScaleCheckpointingConfig.getDefaultInstance()
+            : highScaleCheckpointingConfig_;
+      } else {
+        return highScaleCheckpointingConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder setHighScaleCheckpointingConfig(
+        com.google.container.v1.HighScaleCheckpointingConfig value) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        highScaleCheckpointingConfig_ = value;
+      } else {
+        highScaleCheckpointingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder setHighScaleCheckpointingConfig(
+        com.google.container.v1.HighScaleCheckpointingConfig.Builder builderForValue) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        highScaleCheckpointingConfig_ = builderForValue.build();
+      } else {
+        highScaleCheckpointingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder mergeHighScaleCheckpointingConfig(
+        com.google.container.v1.HighScaleCheckpointingConfig value) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && highScaleCheckpointingConfig_ != null
+            && highScaleCheckpointingConfig_
+                != com.google.container.v1.HighScaleCheckpointingConfig.getDefaultInstance()) {
+          getHighScaleCheckpointingConfigBuilder().mergeFrom(value);
+        } else {
+          highScaleCheckpointingConfig_ = value;
+        }
+      } else {
+        highScaleCheckpointingConfigBuilder_.mergeFrom(value);
+      }
+      if (highScaleCheckpointingConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder clearHighScaleCheckpointingConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      highScaleCheckpointingConfig_ = null;
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        highScaleCheckpointingConfigBuilder_.dispose();
+        highScaleCheckpointingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public com.google.container.v1.HighScaleCheckpointingConfig.Builder
+        getHighScaleCheckpointingConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getHighScaleCheckpointingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public com.google.container.v1.HighScaleCheckpointingConfigOrBuilder
+        getHighScaleCheckpointingConfigOrBuilder() {
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        return highScaleCheckpointingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return highScaleCheckpointingConfig_ == null
+            ? com.google.container.v1.HighScaleCheckpointingConfig.getDefaultInstance()
+            : highScaleCheckpointingConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.HighScaleCheckpointingConfig,
+            com.google.container.v1.HighScaleCheckpointingConfig.Builder,
+            com.google.container.v1.HighScaleCheckpointingConfigOrBuilder>
+        getHighScaleCheckpointingConfigFieldBuilder() {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        highScaleCheckpointingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.HighScaleCheckpointingConfig,
+                com.google.container.v1.HighScaleCheckpointingConfig.Builder,
+                com.google.container.v1.HighScaleCheckpointingConfigOrBuilder>(
+                getHighScaleCheckpointingConfig(), getParentForChildren(), isClean());
+        highScaleCheckpointingConfig_ = null;
+      }
+      return highScaleCheckpointingConfigBuilder_;
     }
 
     @java.lang.Override

@@ -117,6 +117,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ImportIndex</td>
+ *      <td><p> Imports an Index from an external source (e.g., BigQuery).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importIndexAsync(ImportIndexRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importIndexOperationCallable()
+ *           <li><p> importIndexCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListIndexes</td>
  *      <td><p> Lists Indexes in a Location.</td>
  *      <td>
@@ -639,6 +654,97 @@ public class IndexServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     return stub.getIndexCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an Index from an external source (e.g., BigQuery).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   ImportIndexRequest request =
+   *       ImportIndexRequest.newBuilder()
+   *           .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .setIsCompleteOverwrite(true)
+   *           .setConfig(ImportIndexRequest.ConnectorConfig.newBuilder().build())
+   *           .build();
+   *   Index response = indexServiceClient.importIndexAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Index, ImportIndexOperationMetadata> importIndexAsync(
+      ImportIndexRequest request) {
+    return importIndexOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an Index from an external source (e.g., BigQuery).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   ImportIndexRequest request =
+   *       ImportIndexRequest.newBuilder()
+   *           .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .setIsCompleteOverwrite(true)
+   *           .setConfig(ImportIndexRequest.ConnectorConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Index, ImportIndexOperationMetadata> future =
+   *       indexServiceClient.importIndexOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Index response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable() {
+    return stub.importIndexOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an Index from an external source (e.g., BigQuery).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   ImportIndexRequest request =
+   *       ImportIndexRequest.newBuilder()
+   *           .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .setIsCompleteOverwrite(true)
+   *           .setConfig(ImportIndexRequest.ConnectorConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = indexServiceClient.importIndexCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportIndexRequest, Operation> importIndexCallable() {
+    return stub.importIndexCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

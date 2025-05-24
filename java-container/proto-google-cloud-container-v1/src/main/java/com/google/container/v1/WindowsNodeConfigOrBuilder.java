@@ -28,7 +28,7 @@ public interface WindowsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * OSVersion specifies the Windows node config to be used on the node
+   * OSVersion specifies the Windows node config to be used on the node.
    * </pre>
    *
    * <code>.google.container.v1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -41,7 +41,7 @@ public interface WindowsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * OSVersion specifies the Windows node config to be used on the node
+   * OSVersion specifies the Windows node config to be used on the node.
    * </pre>
    *
    * <code>.google.container.v1.WindowsNodeConfig.OSVersion os_version = 1;</code>

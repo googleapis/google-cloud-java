@@ -53,4 +53,17 @@ public interface EphemeralStorageLocalSsdConfigOrBuilder
    * @return The localSsdCount.
    */
   int getLocalSsdCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of local SSDs to use for GKE Data Cache.
+   * </pre>
+   *
+   * <code>int32 data_cache_count = 2;</code>
+   *
+   * @return The dataCacheCount.
+   */
+  int getDataCacheCount();
 }
