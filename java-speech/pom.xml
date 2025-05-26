@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech-parent</artifactId>
   <packaging>pom</packaging>
-  <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+  <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
   <name>Google Cloud speech Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,22 +29,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v2</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v2:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:proto-google-cloud-speech-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v2</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v2:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:grpc-google-cloud-speech-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -54,7 +54,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

@@ -1105,7 +1105,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
-        <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

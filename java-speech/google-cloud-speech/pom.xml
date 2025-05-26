@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+  <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Speech</name>
   <description>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech-parent</artifactId>
-    <version>4.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+    <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-speech</site.installationModule>
@@ -21,14 +21,17 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v2</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -49,26 +52,45 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-common-protos</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.google.protobuf</groupId>-->
+<!--      <artifactId>protobuf-java</artifactId>-->
+<!--    </dependency>-->
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
+      <groupId>org.example</groupId>
+      <artifactId>protobuf-api</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -84,39 +106,46 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v2</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
       <classifier>testlib</classifier>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
       <classifier>testlib</classifier>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
