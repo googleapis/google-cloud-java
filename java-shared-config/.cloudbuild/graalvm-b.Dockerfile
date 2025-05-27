@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/graalvm/graalvm-community:23.0.2-ol9-20250121
+FROM ghcr.io/graalvm/graalvm-community:24.0.1-ol9-20250415
 
 # native-image comes out of the box
 RUN native-image --version
