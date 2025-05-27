@@ -292,7 +292,8 @@ public class ITSystemTest {
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertThat(annotation.getSurpriseLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
+      assertThat(annotation.getSurpriseLikelihood()).isAnyOf(Likelihood.LIKELY, 
+	Likelihood.POSSIBLE);
     }
   }
 
