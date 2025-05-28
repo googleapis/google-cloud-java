@@ -1679,4 +1679,173 @@ public interface SearchRequestOrBuilder
    * @return The bytes for placeId.
    */
   com.google.protobuf.ByteString getPlaceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getUserAttributesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsUserAttributes(java.lang.String key);
+
+  /** Use {@link #getUserAttributesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList> getUserAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+      getUserAttributesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.retail.v2alpha.StringList getUserAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.retail.v2alpha.StringList defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.StringList getUserAttributesOrThrow(java.lang.String key);
 }

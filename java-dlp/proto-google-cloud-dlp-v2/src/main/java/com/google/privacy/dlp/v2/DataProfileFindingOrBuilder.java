@@ -288,4 +288,71 @@ public interface DataProfileFindingOrBuilder
    * @return The resourceVisibility.
    */
   com.google.privacy.dlp.v2.ResourceVisibility getResourceVisibility();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * of the resource profiled for this finding.
+   * </pre>
+   *
+   * <code>string full_resource_name = 9;</code>
+   *
+   * @return The fullResourceName.
+   */
+  java.lang.String getFullResourceName();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * of the resource profiled for this finding.
+   * </pre>
+   *
+   * <code>string full_resource_name = 9;</code>
+   *
+   * @return The bytes for fullResourceName.
+   */
+  com.google.protobuf.ByteString getFullResourceNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the resource that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 10;</code>
+   *
+   * @return Whether the dataSourceType field is set.
+   */
+  boolean hasDataSourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the resource that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 10;</code>
+   *
+   * @return The dataSourceType.
+   */
+  com.google.privacy.dlp.v2.DataSourceType getDataSourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the resource that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 10;</code>
+   */
+  com.google.privacy.dlp.v2.DataSourceTypeOrBuilder getDataSourceTypeOrBuilder();
 }

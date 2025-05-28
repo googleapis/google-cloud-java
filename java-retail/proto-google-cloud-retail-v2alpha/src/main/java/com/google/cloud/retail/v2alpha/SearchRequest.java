@@ -79,6 +79,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 34:
         return internalGetLabels();
+      case 47:
+        return internalGetUserAttributes();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -20582,6 +20584,207 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int USER_ATTRIBUTES_FIELD_NUMBER = 47;
+
+  private static final class UserAttributesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.retail.v2alpha.StringList>newDefaultInstance(
+                    com.google.cloud.retail.v2alpha.SearchServiceProto
+                        .internal_static_google_cloud_retail_v2alpha_SearchRequest_UserAttributesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.retail.v2alpha.StringList.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+      userAttributes_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+      internalGetUserAttributes() {
+    if (userAttributes_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          UserAttributesDefaultEntryHolder.defaultEntry);
+    }
+    return userAttributes_;
+  }
+
+  public int getUserAttributesCount() {
+    return internalGetUserAttributes().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsUserAttributes(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserAttributes().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getUserAttributesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+      getUserAttributes() {
+    return getUserAttributesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+      getUserAttributesMap() {
+    return internalGetUserAttributes().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.retail.v2alpha.StringList getUserAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.retail.v2alpha.StringList defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList> map =
+        internalGetUserAttributes().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user attributes that could be used for personalization of
+   * search results.
+   * * Populate at most 100 key-value pairs per query.
+   * * Only supports string keys and repeated string values.
+   * * Duplcate keys are not allowed within a single query.
+   *
+   * Example:
+   *    user_attributes: [
+   *     { key: "pets"
+   *       value {
+   *         values: "dog"
+   *         values: "cat"
+   *       }
+   *     },
+   *     { key: "state"
+   *       value {
+   *         values: "CA"
+   *       }
+   *     }
+   *    ]
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.StringList getUserAttributesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList> map =
+        internalGetUserAttributes().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -20684,6 +20887,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 46, placeId_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserAttributes(), UserAttributesDefaultEntryHolder.defaultEntry, 47);
     getUnknownFields().writeTo(output);
   }
 
@@ -20803,6 +21008,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46, placeId_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2alpha.StringList> entry :
+        internalGetUserAttributes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+          userAttributes__ =
+              UserAttributesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, userAttributes__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -20871,6 +21087,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (!getPlaceId().equals(other.getPlaceId())) return false;
+    if (!internalGetUserAttributes().equals(other.internalGetUserAttributes())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -20962,6 +21179,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + PLACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPlaceId().hashCode();
+    if (!internalGetUserAttributes().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserAttributes().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -21089,6 +21310,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 34:
           return internalGetLabels();
+        case 47:
+          return internalGetUserAttributes();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -21100,6 +21323,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 34:
           return internalGetMutableLabels();
+        case 47:
+          return internalGetMutableUserAttributes();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -21209,6 +21434,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       languageCode_ = "";
       regionCode_ = "";
       placeId_ = "";
+      internalGetMutableUserAttributes().clear();
       return this;
     }
 
@@ -21366,6 +21592,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
         result.placeId_ = placeId_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.userAttributes_ =
+            internalGetUserAttributes().build(UserAttributesDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -21560,6 +21790,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x08000000;
         onChanged();
       }
+      internalGetMutableUserAttributes().mergeFrom(other.internalGetUserAttributes());
+      bitField0_ |= 0x10000000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -21776,6 +22008,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 370
+            case 378:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+                    userAttributes__ =
+                        input.readMessage(
+                            UserAttributesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableUserAttributes()
+                    .ensureBuilderMap()
+                    .put(userAttributes__.getKey(), userAttributes__.getValue());
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -27707,6 +27953,422 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x08000000;
       onChanged();
       return this;
+    }
+
+    private static final class UserAttributesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.retail.v2alpha.StringListOrBuilder,
+            com.google.cloud.retail.v2alpha.StringList> {
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.StringList build(
+          com.google.cloud.retail.v2alpha.StringListOrBuilder val) {
+        if (val instanceof com.google.cloud.retail.v2alpha.StringList) {
+          return (com.google.cloud.retail.v2alpha.StringList) val;
+        }
+        return ((com.google.cloud.retail.v2alpha.StringList.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+          defaultEntry() {
+        return UserAttributesDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final UserAttributesConverter userAttributesConverter =
+        new UserAttributesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2alpha.StringListOrBuilder,
+            com.google.cloud.retail.v2alpha.StringList,
+            com.google.cloud.retail.v2alpha.StringList.Builder>
+        userAttributes_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2alpha.StringListOrBuilder,
+            com.google.cloud.retail.v2alpha.StringList,
+            com.google.cloud.retail.v2alpha.StringList.Builder>
+        internalGetUserAttributes() {
+      if (userAttributes_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(userAttributesConverter);
+      }
+      return userAttributes_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.retail.v2alpha.StringListOrBuilder,
+            com.google.cloud.retail.v2alpha.StringList,
+            com.google.cloud.retail.v2alpha.StringList.Builder>
+        internalGetMutableUserAttributes() {
+      if (userAttributes_ == null) {
+        userAttributes_ = new com.google.protobuf.MapFieldBuilder<>(userAttributesConverter);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return userAttributes_;
+    }
+
+    public int getUserAttributesCount() {
+      return internalGetUserAttributes().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsUserAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserAttributes().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getUserAttributesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+        getUserAttributes() {
+      return getUserAttributesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+        getUserAttributesMap() {
+      return internalGetUserAttributes().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.retail.v2alpha.StringList getUserAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.retail.v2alpha.StringList defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringListOrBuilder> map =
+          internalGetMutableUserAttributes().ensureBuilderMap();
+      return map.containsKey(key) ? userAttributesConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.StringList getUserAttributesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringListOrBuilder> map =
+          internalGetMutableUserAttributes().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return userAttributesConverter.build(map.get(key));
+    }
+
+    public Builder clearUserAttributes() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      internalGetMutableUserAttributes().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeUserAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserAttributes().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
+        getMutableUserAttributes() {
+      bitField0_ |= 0x10000000;
+      return internalGetMutableUserAttributes().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putUserAttributes(
+        java.lang.String key, com.google.cloud.retail.v2alpha.StringList value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserAttributes().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x10000000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllUserAttributes(
+        java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2alpha.StringList> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableUserAttributes().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x10000000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user attributes that could be used for personalization of
+     * search results.
+     * * Populate at most 100 key-value pairs per query.
+     * * Only supports string keys and repeated string values.
+     * * Duplcate keys are not allowed within a single query.
+     *
+     * Example:
+     *    user_attributes: [
+     *     { key: "pets"
+     *       value {
+     *         values: "dog"
+     *         values: "cat"
+     *       }
+     *     },
+     *     { key: "state"
+     *       value {
+     *         values: "CA"
+     *       }
+     *     }
+     *    ]
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2alpha.StringList&gt; user_attributes = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.StringList.Builder putUserAttributesBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringListOrBuilder>
+          builderMap = internalGetMutableUserAttributes().ensureBuilderMap();
+      com.google.cloud.retail.v2alpha.StringListOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.retail.v2alpha.StringList.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.retail.v2alpha.StringList) {
+        entry = ((com.google.cloud.retail.v2alpha.StringList) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.retail.v2alpha.StringList.Builder) entry;
     }
 
     @java.lang.Override

@@ -297,4 +297,23 @@ public interface VertexRagStoreOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder getRagRetrievalConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Currently only supported for Gemini Multimodal Live API.
+   *
+   * In Gemini Multimodal Live API, if `store_context` bool is
+   * true, Gemini will leverage it to automatically memorize the
+   * interactions between the client and Gemini, and retrieve context when
+   * needed to augment the response generation for users' ongoing and future
+   * interactions.
+   * </pre>
+   *
+   * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The storeContext.
+   */
+  boolean getStoreContext();
 }

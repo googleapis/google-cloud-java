@@ -1468,6 +1468,31 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         : ragRetrievalConfig_;
   }
 
+  public static final int STORE_CONTEXT_FIELD_NUMBER = 7;
+  private boolean storeContext_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Currently only supported for Gemini Multimodal Live API.
+   *
+   * In Gemini Multimodal Live API, if `store_context` bool is
+   * true, Gemini will leverage it to automatically memorize the
+   * interactions between the client and Gemini, and retrieve context when
+   * needed to augment the response generation for users' ongoing and future
+   * interactions.
+   * </pre>
+   *
+   * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The storeContext.
+   */
+  @java.lang.Override
+  public boolean getStoreContext() {
+    return storeContext_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1497,6 +1522,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getRagRetrievalConfig());
     }
+    if (storeContext_ != false) {
+      output.writeBool(7, storeContext_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1525,6 +1553,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRagRetrievalConfig());
+    }
+    if (storeContext_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, storeContext_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1557,6 +1588,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (hasRagRetrievalConfig()) {
       if (!getRagRetrievalConfig().equals(other.getRagRetrievalConfig())) return false;
     }
+    if (getStoreContext() != other.getStoreContext()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1591,6 +1623,8 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RAG_RETRIEVAL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagRetrievalConfig().hashCode();
     }
+    hash = (37 * hash) + STORE_CONTEXT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStoreContext());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1756,6 +1790,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ragRetrievalConfigBuilder_.dispose();
         ragRetrievalConfigBuilder_ = null;
       }
+      storeContext_ = false;
       return this;
     }
 
@@ -1825,6 +1860,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
                 ? ragRetrievalConfig_
                 : ragRetrievalConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.storeContext_ = storeContext_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1921,6 +1959,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRagRetrievalConfig()) {
         mergeRagRetrievalConfig(other.getRagRetrievalConfig());
       }
+      if (other.getStoreContext() != false) {
+        setStoreContext(other.getStoreContext());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1987,6 +2028,12 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 56:
+              {
+                storeContext_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3113,6 +3160,80 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ragRetrievalConfig_ = null;
       }
       return ragRetrievalConfigBuilder_;
+    }
+
+    private boolean storeContext_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The storeContext.
+     */
+    @java.lang.Override
+    public boolean getStoreContext() {
+      return storeContext_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The storeContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoreContext(boolean value) {
+
+      storeContext_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoreContext() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      storeContext_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
