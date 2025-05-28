@@ -21,6 +21,7 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.gson.JsonArray;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
 import java.time.Duration;
@@ -81,6 +82,41 @@ public class JsonStreamWriter implements AutoCloseable {
   public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset)
       throws IOException, Descriptors.DescriptorValidationException {
     return this.schemaAwareStreamWriter.append(jsonArr, offset);
+  }
+
+  private JSONArray gsonToOrgJSON(JsonArray jsonArr) {
+    return new JSONArray(jsonArr.toString());
+  }
+
+  /**
+   * Writes a JsonArray that contains JsonObjects to the BigQuery table by first converting the JSON
+   * data to protobuf messages, then using StreamWriter's append() to write the data at current end
+   * of stream. If there is a schema update, the current StreamWriter is closed. A new StreamWriter
+   * is created with the updated TableSchema.
+   *
+   * @param jsonArr The JSON array that contains JsonObjects to be written
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
+   */
+  public ApiFuture<AppendRowsResponse> append(JsonArray jsonArr)
+      throws IOException, Descriptors.DescriptorValidationException {
+    return this.append(jsonArr, -1);
+  }
+
+  /**
+   * Writes a JsonArray that contains JsonObjects to the BigQuery table by first converting the JSON
+   * data to protobuf messages, then using StreamWriter's append() to write the data at the
+   * specified offset. If there is a schema update, the current StreamWriter is closed. A new
+   * StreamWriter is created with the updated TableSchema.
+   *
+   * @param jsonArr The JSON array that contains JSONObjects to be written
+   * @param offset Offset for deduplication
+   * @return {@code ApiFuture<AppendRowsResponse>} returns an AppendRowsResponse message wrapped in
+   *     an ApiFuture
+   */
+  public ApiFuture<AppendRowsResponse> append(JsonArray jsonArr, long offset)
+      throws IOException, Descriptors.DescriptorValidationException {
+    return this.append(gsonToOrgJSON(jsonArr), offset);
   }
 
   public String getStreamName() {

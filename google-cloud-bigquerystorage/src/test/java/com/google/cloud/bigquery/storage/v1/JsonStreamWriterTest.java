@@ -38,6 +38,8 @@ import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
@@ -215,6 +217,49 @@ public class JsonStreamWriterTest {
     foo.put("foo", "allen");
     JSONArray jsonArr = new JSONArray();
     jsonArr.put(foo);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+            .setTraceId("test:empty")
+            .build()) {
+
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .build());
+
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
+      appendFuture.get();
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          expectedProto.toByteString());
+      assertEquals(
+          "java-jsonwriter test:empty", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+    }
+  }
+
+  @Test
+  public void testSingleAppendSimpleGson() throws Exception {
+    FooType expectedProto = FooType.newBuilder().setFoo("allen").build();
+    JsonObject foo = new JsonObject();
+    foo.addProperty("foo", "allen");
+    JsonArray jsonArr = new JsonArray();
+    jsonArr.add(foo);
 
     try (JsonStreamWriter writer =
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
