@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -302,10 +303,14 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
             .map(m -> METER_NAME + m)
             .collect(ImmutableList.toImmutableList());
 
+    private static final AtomicLong nextTaskIdSuffix = new AtomicLong();
     private final String taskId;
 
     PublicTimeSeriesConverter() {
-      this(BigtableExporterUtils.DEFAULT_TASK_VALUE.get());
+      this(
+          BigtableExporterUtils.DEFAULT_TASK_VALUE.get()
+              + "-"
+              + nextTaskIdSuffix.getAndIncrement());
     }
 
     PublicTimeSeriesConverter(String taskId) {

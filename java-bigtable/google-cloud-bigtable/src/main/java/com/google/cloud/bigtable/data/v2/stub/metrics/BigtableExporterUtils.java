@@ -79,6 +79,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -101,6 +102,8 @@ class BigtableExporterUtils {
       ImmutableMap.of(
           GCPPlatformDetector.SupportedPlatform.GOOGLE_COMPUTE_ENGINE, "gcp_compute_engine",
           GCPPlatformDetector.SupportedPlatform.GOOGLE_KUBERNETES_ENGINE, "gcp_kubernetes_engine");
+
+  private static final AtomicLong nextUuidSuffix = new AtomicLong();
 
   private BigtableExporterUtils() {}
 
@@ -249,7 +252,7 @@ class BigtableExporterUtils {
         .putLabels("host_id", attrs.get(AttributeKeys.GKE_HOST_ID))
         .putLabels("host_name", hostname)
         .putLabels("client_name", CLIENT_NAME)
-        .putLabels("uuid", DEFAULT_TASK_VALUE.get())
+        .putLabels("uuid", DEFAULT_TASK_VALUE.get() + "-" + nextUuidSuffix.getAndIncrement())
         .build();
   }
 
