@@ -7,6 +7,7 @@ Java idiomatic client for [Places API (New)][product-docs].
 
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
+- [Client Library Examples][library-examples]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -92,10 +93,9 @@ to add `google-maps-places` as a dependency in your code.
 See the [Places API (New) client library docs][javadocs] to learn how to
 use this Places API (New) Client Library.
 
+## Examples
 
-
-
-
+[Cleint library examples][library-examples] of how to use the Places API (New) are available to help you get started.
 
 ## Troubleshooting
 
@@ -188,6 +188,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://developers.google.com/maps/documentation/places/web-service/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-maps-places/latest/overview
+[library-examples]: https://developers.google.com/maps/documentation/places/web-service/client-library-examples#java
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
