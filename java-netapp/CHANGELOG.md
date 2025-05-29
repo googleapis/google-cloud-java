@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.43.0 (2025-05-29)
+
+### Features
+
+* A new message 'google.cloud.netapp.v1.BackupRetentionPolicy' is added in 'google.cloud.netapp.v1.BackupVault' ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+
+
+
 ## 0.41.0 (2025-05-06)
 
 ### Features

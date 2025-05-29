@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.65.0 (2025-05-29)
+
+### Features
+
+* add encryption_spec to Model Monitoring public preview API ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* add VertexAISearch.max_results, filter, data_store_specs options ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* add VertexAISearch.max_results, filter, data_store_specs options ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* adding thoughts_token_count to prediction service ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* adding thoughts_token_count to v1beta1 client library ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+
+
+
 ## 3.63.0 (2025-05-06)
 
 ### Features

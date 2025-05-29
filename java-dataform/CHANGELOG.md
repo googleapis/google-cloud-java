@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.63.0 (2025-05-29)
+
+### Features
+
+* Support adding a workflow action to execute a Data Preparation node ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+
+
+
 ## 0.61.0 (2025-05-06)
 
 ### Dependencies
