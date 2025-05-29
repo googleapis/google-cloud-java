@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.31.5](https://github.com/googleapis/java-firestore/compare/v3.31.4...v3.31.5) (2025-05-28)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.58.0 ([819dc99](https://github.com/googleapis/java-firestore/commit/819dc99ea4f90a8b5cba21cc7016921aa156f3da))
+
+
+### Dependencies
+
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.44.5 ([#2128](https://github.com/googleapis/java-firestore/issues/2128)) ([b100ac3](https://github.com/googleapis/java-firestore/commit/b100ac3d75e8967e18589d5d719e5bf63969c438))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.63.0 ([#2122](https://github.com/googleapis/java-firestore/issues/2122)) ([d5f6a8e](https://github.com/googleapis/java-firestore/commit/d5f6a8ea2e463143fb0fe4328de87a9886f1e78c))
+* Update dependency com.google.cloud:google-cloud-trace to v2.63.0 ([#2123](https://github.com/googleapis/java-firestore/issues/2123)) ([504fdb4](https://github.com/googleapis/java-firestore/commit/504fdb464783af39b8844392f84bcf8800dd0862))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.35.0 ([#2129](https://github.com/googleapis/java-firestore/issues/2129)) ([f5013ad](https://github.com/googleapis/java-firestore/commit/f5013add2338af8b5780df65c691999123795a37))
+
 ## [3.31.4](https://github.com/googleapis/java-firestore/compare/v3.31.3...v3.31.4) (2025-05-14)
 
 
