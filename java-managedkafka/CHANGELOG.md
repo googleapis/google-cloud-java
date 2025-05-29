@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.20.0 (2025-05-29)
+
+### Features
+
+* add Managed Kafka ACL API ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+
+
+
 ## 0.18.0 (2025-05-06)
 
 ### Bug Fixes
