@@ -77,5 +77,23 @@ public class AggregationResultTest {
     RuntimeException e2 =
         assertThrows(RuntimeException.class, () -> aggregationResult.getDouble("qty_avg"));
     assertThat(e2.getMessage()).isEqualTo("Unsupported type BOOLEAN received for alias 'qty_avg'.");
+
+    RuntimeException e3 =
+        assertThrows(RuntimeException.class, () -> aggregationResult.getNumber("qty_avg"));
+    assertThat(e3.getMessage()).isEqualTo("Unsupported type BOOLEAN received for alias 'qty_avg'.");
+  }
+
+  @Test
+  public void shouldGetDoubleAggregatedResultValueAsNumber() {
+    AggregationResult aggregationResult =
+        new AggregationResult(ImmutableMap.of("qty_avg", DoubleValue.of(45.9322)));
+    assertThat(aggregationResult.getNumber("qty_avg")).isEqualTo(45.9322);
+  }
+
+  @Test
+  public void shouldGetLongAggregatedResultValueAsNumber() {
+    AggregationResult aggregationResult =
+        new AggregationResult(ImmutableMap.of("count", LongValue.of(50)));
+    assertThat(aggregationResult.getNumber("count")).isEqualTo(50);
   }
 }
