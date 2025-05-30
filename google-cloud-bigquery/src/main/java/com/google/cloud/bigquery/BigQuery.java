@@ -77,6 +77,42 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
+  enum DatasetView {
+    DATASET_VIEW_UNSPECIFIED("DATASET_VIEW_UNSPECIFIED"),
+    FULL("FULL"),
+    METADATA("METADATA"),
+    ACL("ACL");
+
+    private final String view;
+
+    DatasetView(String view) {
+      this.view = view;
+    }
+
+    @Override
+    public String toString() {
+      return view;
+    }
+  }
+
+  enum DatasetUpdateMode {
+    UPDATE_MODE_UNSPECIFIED("UPDATE_MODE_UNSPECIFIED"),
+    UPDATE_FULL("UPDATE_FULL"),
+    UPDATE_METADATA("UPDATE_METADATA"),
+    UPDATE_ACL("UPDATE_ACL");
+
+    private final String updateMode;
+
+    DatasetUpdateMode(String updateMode) {
+      this.updateMode = updateMode;
+    }
+
+    @Override
+    public String toString() {
+      return updateMode;
+    }
+  }
+
   /**
    * Fields of a BigQuery Table resource.
    *
@@ -306,6 +342,22 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static DatasetOption accessPolicyVersion(Integer accessPolicyVersion) {
       return new DatasetOption(BigQueryRpc.Option.ACCESS_POLICY_VERSION, accessPolicyVersion);
+    }
+
+    /**
+     * Returns an option to specify the view that determines which dataset information is returned.
+     * By default, metadata and ACL information are returned.
+     */
+    public static DatasetOption datasetView(DatasetView datasetView) {
+      return new DatasetOption(BigQueryRpc.Option.DATASET_VIEW, datasetView);
+    }
+
+    /**
+     * Returns an option to specify the fields of dataset that update/patch operation is targeting.
+     * By default, both metadata and ACL fields are updated.
+     */
+    public static DatasetOption updateMode(DatasetUpdateMode updateMode) {
+      return new DatasetOption(BigQueryRpc.Option.DATASET_UPDATE_MODE, updateMode);
     }
   }
 

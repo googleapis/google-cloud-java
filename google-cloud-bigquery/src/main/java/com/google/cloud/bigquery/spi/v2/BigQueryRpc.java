@@ -60,7 +60,9 @@ public interface BigQueryRpc extends ServiceRpc {
     TABLE_METADATA_VIEW("view"),
     RETRY_OPTIONS("retryOptions"),
     BIGQUERY_RETRY_CONFIG("bigQueryRetryConfig"),
-    ACCESS_POLICY_VERSION("accessPolicyVersion");
+    ACCESS_POLICY_VERSION("accessPolicyVersion"),
+    DATASET_VIEW("datasetView"),
+    DATASET_UPDATE_MODE("datasetUpdateMode");
 
     private final String value;
 

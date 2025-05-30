@@ -149,10 +149,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .get(projectId, datasetId)
             .setFields(Option.FIELDS.getString(options))
             .setPrettyPrint(false);
-    for (Map.Entry<Option, ?> entry : options.entrySet()) {
-      if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
-        bqGetRequest.setAccessPolicyVersion((Integer) entry.getValue());
-      }
+    if (options.containsKey(Option.ACCESS_POLICY_VERSION)) {
+      bqGetRequest.setAccessPolicyVersion((Integer) options.get(Option.ACCESS_POLICY_VERSION));
+    }
+    if (options.containsKey(Option.DATASET_VIEW)) {
+      bqGetRequest.setDatasetView(options.get(Option.DATASET_VIEW).toString());
     }
     return bqGetRequest.execute();
   }
@@ -350,10 +351,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .patch(reference.getProjectId(), reference.getDatasetId(), dataset)
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
-    for (Map.Entry<Option, ?> entry : options.entrySet()) {
-      if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
-        bqPatchRequest.setAccessPolicyVersion((Integer) entry.getValue());
-      }
+    if (options.containsKey(Option.ACCESS_POLICY_VERSION)) {
+      bqPatchRequest.setAccessPolicyVersion((Integer) options.get(Option.ACCESS_POLICY_VERSION));
+    }
+    if (options.containsKey(Option.DATASET_UPDATE_MODE)) {
+      bqPatchRequest.setUpdateMode(options.get(Option.DATASET_UPDATE_MODE).toString());
     }
     return bqPatchRequest.execute();
   }

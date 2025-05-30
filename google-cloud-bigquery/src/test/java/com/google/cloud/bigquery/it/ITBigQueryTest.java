@@ -48,6 +48,8 @@ import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
+import com.google.cloud.bigquery.BigQuery.DatasetUpdateMode;
+import com.google.cloud.bigquery.BigQuery.DatasetView;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
@@ -1236,7 +1238,8 @@ public class ITBigQueryTest {
             "requests after the year 2024",
             "location");
     Acl acl = Acl.of(user, role, condition);
-    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+    DatasetOption accessPolicyOption = DatasetOption.accessPolicyVersion(3);
+    DatasetOption viewOption = DatasetOption.datasetView(DatasetView.FULL);
 
     Dataset dataset =
         bigquery.create(
@@ -1244,10 +1247,11 @@ public class ITBigQueryTest {
                 .setDescription("Some Description")
                 .setAcl(ImmutableList.of(acl))
                 .build(),
-            datasetOption);
+            accessPolicyOption);
     assertThat(dataset).isNotNull();
 
-    Dataset remoteDataset = bigquery.getDataset(accessPolicyDataset, datasetOption);
+    Dataset remoteDataset =
+        bigquery.getDataset(accessPolicyDataset, accessPolicyOption, viewOption);
     assertNotNull(remoteDataset);
     assertEquals(dataset.getDescription(), remoteDataset.getDescription());
     assertNotNull(remoteDataset.getCreationTime());
@@ -1356,6 +1360,7 @@ public class ITBigQueryTest {
     acls.add(acl);
 
     DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+    DatasetOption updateModeOption = DatasetOption.updateMode(DatasetUpdateMode.UPDATE_FULL);
     Dataset updatedDataset =
         bigquery.update(
             dataset.toBuilder()
@@ -1363,7 +1368,8 @@ public class ITBigQueryTest {
                 .setLabels(null)
                 .setAcl(acls)
                 .build(),
-            datasetOption);
+            datasetOption,
+            updateModeOption);
     assertNotNull(updatedDataset);
     assertEquals(updatedDataset.getDescription(), "Updated Description");
     assertThat(updatedDataset.getLabels().isEmpty());
