@@ -76,6 +76,14 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Timestamp;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -90,9 +98,12 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 import org.apache.avro.Conversions;
 import org.apache.avro.LogicalTypes;
@@ -452,6 +463,36 @@ public class ITBigQueryStorageTest {
                   .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
                   .build())
           .build();
+
+  private static final Map<String, Map<AttributeKey<?>, Object>> OTEL_ATTRIBUTES =
+      new HashMap<String, Map<AttributeKey<?>, Object>>();
+  private static final Map<String, String> OTEL_PARENT_SPAN_IDS = new HashMap<>();
+  private static final Map<String, String> OTEL_SPAN_IDS_TO_NAMES = new HashMap<>();
+
+  private static class TestSpanExporter implements io.opentelemetry.sdk.trace.export.SpanExporter {
+    @Override
+    public CompletableResultCode export(Collection<SpanData> collection) {
+      if (collection.isEmpty()) {
+        return CompletableResultCode.ofFailure();
+      }
+      for (SpanData data : collection) {
+        OTEL_ATTRIBUTES.put(data.getName(), data.getAttributes().asMap());
+        OTEL_PARENT_SPAN_IDS.put(data.getName(), data.getParentSpanId());
+        OTEL_SPAN_IDS_TO_NAMES.put(data.getSpanId(), data.getName());
+      }
+      return CompletableResultCode.ofSuccess();
+    }
+
+    @Override
+    public CompletableResultCode flush() {
+      return CompletableResultCode.ofSuccess();
+    }
+
+    @Override
+    public CompletableResultCode shutdown() {
+      return CompletableResultCode.ofSuccess();
+    }
+  }
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -1548,6 +1589,71 @@ public class ITBigQueryStorageTest {
 
     assertEquals(164_656, rowCount);
     localClient.close();
+  }
+
+  @Test
+  public void testSimpleReadWithOtelTracing() throws IOException {
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(new TestSpanExporter()))
+            .setSampler(Sampler.alwaysOn())
+            .build();
+    OpenTelemetry otel =
+        OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+
+    BigQueryReadSettings otelSettings =
+        BigQueryReadSettings.newBuilder().setEnableOpenTelemetryTracing(true).build();
+    BigQueryReadClient otelClient = BigQueryReadClient.create(otelSettings);
+
+    String table =
+        BigQueryResource.FormatTableResource(
+            /* projectId= */ "bigquery-public-data",
+            /* datasetId= */ "samples",
+            /* tableId= */ "shakespeare");
+
+    ReadSession session =
+        otelClient.createReadSession(
+            /* parent= */ parentProjectId,
+            /* readSession= */ ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.AVRO)
+                .build(),
+            /* maxStreamCount= */ 1);
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
+
+    ServerStream<ReadRowsResponse> stream = otelClient.readRowsCallable().call(readRowsRequest);
+
+    assertNotNull(
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession"));
+    assertNotNull(
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable"));
+    assertNotNull(
+        OTEL_ATTRIBUTES.get(
+            "com.google.cloud.bigquery.storage.v1.read.stub.createReadSessionCallable"));
+    assertNotNull(
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.readRowsCallable"));
+    assertNotNull(
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.stub.readRowsCallable"));
+
+    // createReadSession is the parent span of createReadSessionCallable
+    assertEquals(
+        OTEL_SPAN_IDS_TO_NAMES.get(
+            OTEL_PARENT_SPAN_IDS.get(
+                "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable")),
+        "com.google.cloud.bigquery.storage.v1.read.createReadSession");
+
+    Map<AttributeKey<?>, Object> createReadSessionMap =
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession");
+    assertNotNull(createReadSessionMap);
+    assertNotNull(
+        createReadSessionMap.get(
+            AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
+    assertEquals(
+        createReadSessionMap.get(
+            AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")),
+        1L);
   }
 
   public void testUniverseDomain() throws IOException {

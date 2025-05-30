@@ -20,14 +20,14 @@ import io.opentelemetry.api.OpenTelemetry;
 import java.util.logging.Logger;
 
 /** Container for global singleton objects. */
-class Singletons {
+public class Singletons {
 
   private static final Logger log = Logger.getLogger(Singletons.class.getName());
 
   // Global OpenTelemetry instance
   private static OpenTelemetry openTelemetry = null;
 
-  static OpenTelemetry getOpenTelemetry() {
+  public static OpenTelemetry getOpenTelemetry() {
     if (openTelemetry == null) {
       openTelemetry = GlobalOpenTelemetry.get();
       log.info("BigQueryStorage initialized Open Telemetry");

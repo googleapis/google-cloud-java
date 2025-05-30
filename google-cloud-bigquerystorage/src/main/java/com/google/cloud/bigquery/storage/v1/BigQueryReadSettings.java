@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigquery.storage.v1.stub.EnhancedBigQueryReadStubSettings;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.util.List;
 
@@ -76,6 +77,8 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
   }
 
   private RetryAttemptListener readRowsRetryAttemptListener = null;
+  private boolean enableOpenTelemetryTracing = false;
+  private Tracer openTelemetryTracer = null;
 
   /**
    * If a non null readRowsRetryAttemptListener is provided, client will call onRetryAttempt
@@ -87,8 +90,27 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
     this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
   }
 
+  public void setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
+    this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
+    if (enableOpenTelemetryTracing) {
+      this.openTelemetryTracer =
+          Singletons.getOpenTelemetry()
+              .getTracerProvider()
+              .tracerBuilder("com.google.cloud.bigquery.storage.v1.read")
+              .build();
+    }
+  }
+
   public RetryAttemptListener getReadRowsRetryAttemptListener() {
     return readRowsRetryAttemptListener;
+  }
+
+  public boolean isOpenTelemetryEnabled() {
+    return this.enableOpenTelemetryTracing;
+  }
+
+  public Tracer getOpenTelemetryTracer() {
+    return this.openTelemetryTracer;
   }
 
   /** Returns the object with the settings used for calls to splitReadStream. */
@@ -199,10 +221,16 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
     }
 
     private RetryAttemptListener readRowsRetryAttemptListener = null;
+    private boolean enableOpenTelemetryTracing = false;
 
     public Builder setReadRowsRetryAttemptListener(
         RetryAttemptListener readRowsRetryAttemptListener) {
       this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
+      return this;
+    }
+
+    public Builder setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
+      this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
       return this;
     }
 
@@ -228,6 +256,7 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
     public BigQueryReadSettings build() throws IOException {
       BigQueryReadSettings settings = new BigQueryReadSettings(this);
       settings.setReadRowsRetryAttemptListener(readRowsRetryAttemptListener);
+      settings.setEnableOpenTelemetryTracing(enableOpenTelemetryTracing);
       return settings;
     }
   }
