@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.cloudcontrolspartner.v1.stub.CloudControlsPartnerCoreStub;
 import com.google.cloud.cloudcontrolspartner.v1.stub.CloudControlsPartnerCoreStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -182,7 +184,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAccessApprovalRequests</td>
- *      <td><p> Lists access requests associated with a workload</td>
+ *      <td><p> Deprecated: Only returns access approval requests directly associated with an assured workload folder.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -216,6 +218,62 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getPartnerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCustomer</td>
+ *      <td><p> Creates a new customer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCustomer(CreateCustomerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCustomer(OrganizationLocationName parent, Customer customer, String customerId)
+ *           <li><p> createCustomer(String parent, Customer customer, String customerId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCustomer</td>
+ *      <td><p> Update details of a single customer</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCustomer(UpdateCustomerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCustomer(Customer customer, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCustomer</td>
+ *      <td><p> Delete details of a single customer</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCustomer(DeleteCustomerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteCustomer(CustomerName name)
+ *           <li><p> deleteCustomer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCustomerCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1171,7 +1229,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1195,7 +1254,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @param parent Required. Parent resource Format:
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(
       WorkloadName parent) {
     ListAccessApprovalRequestsRequest request =
@@ -1207,7 +1268,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1231,7 +1293,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @param parent Required. Parent resource Format:
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(String parent) {
     ListAccessApprovalRequestsRequest request =
         ListAccessApprovalRequestsRequest.newBuilder().setParent(parent).build();
@@ -1240,7 +1304,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1271,7 +1336,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(
       ListAccessApprovalRequestsRequest request) {
     return listAccessApprovalRequestsPagedCallable().call(request);
@@ -1279,7 +1346,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1311,7 +1379,10 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable() {
@@ -1320,7 +1391,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1357,7 +1429,10 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
       listAccessApprovalRequestsCallable() {
     return stub.listAccessApprovalRequestsCallable();
@@ -1474,6 +1549,355 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable() {
     return stub.getPartnerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new customer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   Customer customer = Customer.newBuilder().build();
+   *   String customerId = "customerId-1581184615";
+   *   Customer response =
+   *       cloudControlsPartnerCoreClient.createCustomer(parent, customer, customerId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource Format:
+   *     `organizations/{organization}/locations/{location}`
+   * @param customer Required. The customer to create.
+   * @param customerId Required. The customer id to use for the customer, which will become the
+   *     final component of the customer's resource name. The specified value must be a valid Google
+   *     cloud organization id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer createCustomer(
+      OrganizationLocationName parent, Customer customer, String customerId) {
+    CreateCustomerRequest request =
+        CreateCustomerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomer(customer)
+            .setCustomerId(customerId)
+            .build();
+    return createCustomer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new customer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   Customer customer = Customer.newBuilder().build();
+   *   String customerId = "customerId-1581184615";
+   *   Customer response =
+   *       cloudControlsPartnerCoreClient.createCustomer(parent, customer, customerId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource Format:
+   *     `organizations/{organization}/locations/{location}`
+   * @param customer Required. The customer to create.
+   * @param customerId Required. The customer id to use for the customer, which will become the
+   *     final component of the customer's resource name. The specified value must be a valid Google
+   *     cloud organization id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer createCustomer(String parent, Customer customer, String customerId) {
+    CreateCustomerRequest request =
+        CreateCustomerRequest.newBuilder()
+            .setParent(parent)
+            .setCustomer(customer)
+            .setCustomerId(customerId)
+            .build();
+    return createCustomer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new customer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   CreateCustomerRequest request =
+   *       CreateCustomerRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setCustomerId("customerId-1581184615")
+   *           .build();
+   *   Customer response = cloudControlsPartnerCoreClient.createCustomer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer createCustomer(CreateCustomerRequest request) {
+    return createCustomerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new customer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   CreateCustomerRequest request =
+   *       CreateCustomerRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setCustomerId("customerId-1581184615")
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudControlsPartnerCoreClient.createCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
+    return stub.createCustomerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   Customer customer = Customer.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Customer response = cloudControlsPartnerCoreClient.updateCustomer(customer, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param customer Required. The customer to update Format:
+   *     `organizations/{organization}/locations/{location}/customers/{customer}`
+   * @param updateMask Optional. The list of fields to update
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer updateCustomer(Customer customer, FieldMask updateMask) {
+    UpdateCustomerRequest request =
+        UpdateCustomerRequest.newBuilder().setCustomer(customer).setUpdateMask(updateMask).build();
+    return updateCustomer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   UpdateCustomerRequest request =
+   *       UpdateCustomerRequest.newBuilder()
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Customer response = cloudControlsPartnerCoreClient.updateCustomer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer updateCustomer(UpdateCustomerRequest request) {
+    return updateCustomerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   UpdateCustomerRequest request =
+   *       UpdateCustomerRequest.newBuilder()
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudControlsPartnerCoreClient.updateCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
+    return stub.updateCustomerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   CustomerName name = CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]");
+   *   cloudControlsPartnerCoreClient.deleteCustomer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. name of the resource to be deleted format:
+   *     name=organizations/&#42;/locations/&#42;/customers/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomer(CustomerName name) {
+    DeleteCustomerRequest request =
+        DeleteCustomerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteCustomer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   String name = CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString();
+   *   cloudControlsPartnerCoreClient.deleteCustomer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. name of the resource to be deleted format:
+   *     name=organizations/&#42;/locations/&#42;/customers/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomer(String name) {
+    DeleteCustomerRequest request = DeleteCustomerRequest.newBuilder().setName(name).build();
+    deleteCustomer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   DeleteCustomerRequest request =
+   *       DeleteCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString())
+   *           .build();
+   *   cloudControlsPartnerCoreClient.deleteCustomer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomer(DeleteCustomerRequest request) {
+    deleteCustomerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete details of a single customer
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+   *     CloudControlsPartnerCoreClient.create()) {
+   *   DeleteCustomerRequest request =
+   *       DeleteCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       cloudControlsPartnerCoreClient.deleteCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
+    return stub.deleteCustomerCallable();
   }
 
   @Override

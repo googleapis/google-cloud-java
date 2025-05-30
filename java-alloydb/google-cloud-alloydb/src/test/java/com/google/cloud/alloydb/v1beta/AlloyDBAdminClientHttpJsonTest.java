@@ -220,6 +220,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -286,6 +293,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -352,6 +366,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -427,6 +448,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -502,6 +530,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -536,6 +571,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -590,9 +632,356 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
               .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
               .setSatisfiesPzs(true)
+              .setPscConfig(Cluster.PscConfig.newBuilder().build())
+              .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+              .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+              .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+              .setSubscriptionType(SubscriptionType.forNumber(0))
+              .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportClusterTest() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportClusterTest2() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importClusterTest() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importClusterTest2() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest2() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -715,6 +1104,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -786,6 +1182,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -831,6 +1234,162 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void switchoverClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    Cluster actualResponse = client.switchoverClusterAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.switchoverClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchoverClusterTest2() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+
+    Cluster actualResponse = client.switchoverClusterAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      client.switchoverClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void restoreClusterTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -857,6 +1416,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -942,6 +1508,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1017,6 +1590,13 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setPscConfig(Cluster.PscConfig.newBuilder().build())
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setGeminiConfig(GeminiClusterConfig.newBuilder().build())
+            .setSubscriptionType(SubscriptionType.forNumber(0))
+            .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1183,6 +1763,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1194,6 +1775,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1251,6 +1835,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1262,6 +1847,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1321,6 +1909,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1332,6 +1921,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1398,6 +1990,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1409,6 +2002,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1475,6 +2071,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1486,6 +2083,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1553,6 +2153,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1564,6 +2165,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1690,6 +2294,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1701,6 +2306,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1726,6 +2334,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1737,6 +2346,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1782,6 +2394,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setWritableNode(Instance.Node.newBuilder().build())
               .addAllNodes(new ArrayList<Instance.Node>())
               .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+              .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
               .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
               .setIpAddress("ipAddress1634032845")
               .setPublicIpAddress("publicIpAddress2055303268")
@@ -1793,6 +2406,9 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSatisfiesPzs(true)
               .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
               .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+              .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+              .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+              .setGcaConfig(GCAInstanceConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1911,6 +2527,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1922,6 +2539,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1984,6 +2604,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1995,6 +2616,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2059,6 +2683,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2070,6 +2695,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2134,6 +2762,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2145,6 +2774,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2211,6 +2843,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2222,6 +2855,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2284,6 +2920,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2295,6 +2932,9 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2338,6 +2978,116 @@ public class AlloyDBAdminClientHttpJsonTest {
       client.restartInstanceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void executeSqlTest() throws Exception {
+    ExecuteSqlResponse expectedResponse =
+        ExecuteSqlResponse.newBuilder()
+            .addAllSqlResults(new ArrayList<SqlResult>())
+            .setMetadata(ExecuteSqlMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+    String database = "database1789464955";
+    String user = "user3599307";
+    String sqlStatement = "sqlStatement937767745";
+    String password = "password1216985755";
+
+    ExecuteSqlResponse actualResponse =
+        client.executeSql(instance, database, user, sqlStatement, password);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeSqlExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+      String database = "database1789464955";
+      String user = "user3599307";
+      String sqlStatement = "sqlStatement937767745";
+      String password = "password1216985755";
+      client.executeSql(instance, database, user, sqlStatement, password);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeSqlTest2() throws Exception {
+    ExecuteSqlResponse expectedResponse =
+        ExecuteSqlResponse.newBuilder()
+            .addAllSqlResults(new ArrayList<SqlResult>())
+            .setMetadata(ExecuteSqlMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String instance =
+        "projects/project-4969/locations/location-4969/clusters/cluster-4969/instances/instance-4969";
+    String database = "database1789464955";
+    String user = "user3599307";
+    String sqlStatement = "sqlStatement937767745";
+    String password = "password1216985755";
+
+    ExecuteSqlResponse actualResponse =
+        client.executeSql(instance, database, user, sqlStatement, password);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeSqlExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String instance =
+          "projects/project-4969/locations/location-4969/clusters/cluster-4969/instances/instance-4969";
+      String database = "database1789464955";
+      String user = "user3599307";
+      String sqlStatement = "sqlStatement937767745";
+      String password = "password1216985755";
+      client.executeSql(instance, database, user, sqlStatement, password);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -2465,6 +3215,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2528,6 +3279,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2591,6 +3343,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2663,6 +3416,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2735,6 +3489,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2766,6 +3521,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2817,6 +3573,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
               .setSatisfiesPzs(true)
               .setDatabaseVersion(DatabaseVersion.forNumber(0))
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -3316,6 +4073,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3362,6 +4120,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3410,6 +4169,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3460,6 +4220,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3510,6 +4271,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3518,6 +4280,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
             .setPassword("password1216985755")
             .addAllDatabaseRoles(new ArrayList<String>())
+            .setKeepExtraRoles(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3552,6 +4315,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
               .setPassword("password1216985755")
               .addAllDatabaseRoles(new ArrayList<String>())
+              .setKeepExtraRoles(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateUser(user, updateMask);

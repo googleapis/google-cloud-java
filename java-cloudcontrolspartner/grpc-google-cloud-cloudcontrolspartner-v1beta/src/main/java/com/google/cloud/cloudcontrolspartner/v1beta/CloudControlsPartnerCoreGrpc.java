@@ -432,6 +432,149 @@ public final class CloudControlsPartnerCoreGrpc {
     return getGetPartnerMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest,
+          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+      getCreateCustomerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomer",
+      requestType = com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest.class,
+      responseType = com.google.cloud.cloudcontrolspartner.v1beta.Customer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest,
+          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+      getCreateCustomerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest,
+            com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+        getCreateCustomerMethod;
+    if ((getCreateCustomerMethod = CloudControlsPartnerCoreGrpc.getCreateCustomerMethod) == null) {
+      synchronized (CloudControlsPartnerCoreGrpc.class) {
+        if ((getCreateCustomerMethod = CloudControlsPartnerCoreGrpc.getCreateCustomerMethod)
+            == null) {
+          CloudControlsPartnerCoreGrpc.getCreateCustomerMethod =
+              getCreateCustomerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest,
+                          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCustomer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.cloudcontrolspartner.v1beta.Customer
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudControlsPartnerCoreMethodDescriptorSupplier("CreateCustomer"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest,
+          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+      getUpdateCustomerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomer",
+      requestType = com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest.class,
+      responseType = com.google.cloud.cloudcontrolspartner.v1beta.Customer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest,
+          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+      getUpdateCustomerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest,
+            com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+        getUpdateCustomerMethod;
+    if ((getUpdateCustomerMethod = CloudControlsPartnerCoreGrpc.getUpdateCustomerMethod) == null) {
+      synchronized (CloudControlsPartnerCoreGrpc.class) {
+        if ((getUpdateCustomerMethod = CloudControlsPartnerCoreGrpc.getUpdateCustomerMethod)
+            == null) {
+          CloudControlsPartnerCoreGrpc.getUpdateCustomerMethod =
+              getUpdateCustomerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest,
+                          com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCustomer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.cloudcontrolspartner.v1beta.Customer
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudControlsPartnerCoreMethodDescriptorSupplier("UpdateCustomer"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCustomerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest,
+          com.google.protobuf.Empty>
+      getDeleteCustomerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCustomer",
+      requestType = com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest,
+          com.google.protobuf.Empty>
+      getDeleteCustomerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest,
+            com.google.protobuf.Empty>
+        getDeleteCustomerMethod;
+    if ((getDeleteCustomerMethod = CloudControlsPartnerCoreGrpc.getDeleteCustomerMethod) == null) {
+      synchronized (CloudControlsPartnerCoreGrpc.class) {
+        if ((getDeleteCustomerMethod = CloudControlsPartnerCoreGrpc.getDeleteCustomerMethod)
+            == null) {
+          CloudControlsPartnerCoreGrpc.getDeleteCustomerMethod =
+              getDeleteCustomerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCustomer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudControlsPartnerCoreMethodDescriptorSupplier("DeleteCustomer"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCustomerMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudControlsPartnerCoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudControlsPartnerCoreStub> factory =
@@ -591,9 +734,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAccessApprovalRequests(
         com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest request,
         io.grpc.stub.StreamObserver<
@@ -615,6 +760,50 @@ public final class CloudControlsPartnerCoreGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Partner>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPartnerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new customer.
+     * </pre>
+     */
+    default void createCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single customer
+     * </pre>
+     */
+    default void updateCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete details of a single customer
+     * </pre>
+     */
+    default void deleteCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCustomerMethod(), responseObserver);
     }
   }
 
@@ -761,9 +950,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAccessApprovalRequests(
         com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest request,
         io.grpc.stub.StreamObserver<
@@ -788,6 +979,56 @@ public final class CloudControlsPartnerCoreGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPartnerMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new customer.
+     * </pre>
+     */
+    public void createCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single customer
+     * </pre>
+     */
+    public void updateCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCustomerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete details of a single customer
+     * </pre>
+     */
+    public void deleteCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCustomerMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -893,9 +1134,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse
         listAccessApprovalRequests(
             com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest
@@ -915,6 +1158,45 @@ public final class CloudControlsPartnerCoreGrpc {
         com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPartnerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new customer.
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.Customer createCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single customer
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.Customer updateCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete details of a single customer
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomerMethod(), getCallOptions(), request);
     }
   }
 
@@ -1021,9 +1303,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse
         listAccessApprovalRequests(
             com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest
@@ -1043,6 +1327,45 @@ public final class CloudControlsPartnerCoreGrpc {
         com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPartnerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new customer.
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.Customer createCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single customer
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.Customer updateCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete details of a single customer
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomer(
+        com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomerMethod(), getCallOptions(), request);
     }
   }
 
@@ -1157,9 +1480,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse>
         listAccessApprovalRequests(
@@ -1182,6 +1507,47 @@ public final class CloudControlsPartnerCoreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPartnerMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new customer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+        createCustomer(com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single customer
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.cloudcontrolspartner.v1beta.Customer>
+        updateCustomer(com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCustomerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete details of a single customer
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteCustomer(com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCustomerMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_WORKLOAD = 0;
@@ -1192,6 +1558,9 @@ public final class CloudControlsPartnerCoreGrpc {
   private static final int METHODID_GET_PARTNER_PERMISSIONS = 5;
   private static final int METHODID_LIST_ACCESS_APPROVAL_REQUESTS = 6;
   private static final int METHODID_GET_PARTNER = 7;
+  private static final int METHODID_CREATE_CUSTOMER = 8;
+  private static final int METHODID_UPDATE_CUSTOMER = 9;
+  private static final int METHODID_DELETE_CUSTOMER = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1264,6 +1633,23 @@ public final class CloudControlsPartnerCoreGrpc {
               (com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Partner>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOMER:
+          serviceImpl.createCustomer(
+              (com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CUSTOMER:
+          serviceImpl.updateCustomer(
+              (com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.cloudcontrolspartner.v1beta.Customer>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CUSTOMER:
+          serviceImpl.deleteCustomer(
+              (com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1340,6 +1726,26 @@ public final class CloudControlsPartnerCoreGrpc {
                     com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest,
                     com.google.cloud.cloudcontrolspartner.v1beta.Partner>(
                     service, METHODID_GET_PARTNER)))
+        .addMethod(
+            getCreateCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest,
+                    com.google.cloud.cloudcontrolspartner.v1beta.Customer>(
+                    service, METHODID_CREATE_CUSTOMER)))
+        .addMethod(
+            getUpdateCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest,
+                    com.google.cloud.cloudcontrolspartner.v1beta.Customer>(
+                    service, METHODID_UPDATE_CUSTOMER)))
+        .addMethod(
+            getDeleteCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CUSTOMER)))
         .build();
   }
 
@@ -1399,6 +1805,9 @@ public final class CloudControlsPartnerCoreGrpc {
                       .addMethod(getGetPartnerPermissionsMethod())
                       .addMethod(getListAccessApprovalRequestsMethod())
                       .addMethod(getGetPartnerMethod())
+                      .addMethod(getCreateCustomerMethod())
+                      .addMethod(getUpdateCustomerMethod())
+                      .addMethod(getDeleteCustomerMethod())
                       .build();
         }
       }
