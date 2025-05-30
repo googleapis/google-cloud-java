@@ -33,7 +33,6 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.cloudcontrolspartner.v1.stub.CloudControlsPartnerCoreStubSettings;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -128,12 +127,7 @@ public class CloudControlsPartnerCoreSettings
         .getPartnerPermissionsSettings();
   }
 
-  /**
-   * Returns the object with the settings used for calls to listAccessApprovalRequests.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
+  /** Returns the object with the settings used for calls to listAccessApprovalRequests. */
   public PagedCallSettings<
           ListAccessApprovalRequestsRequest,
           ListAccessApprovalRequestsResponse,
@@ -146,21 +140,6 @@ public class CloudControlsPartnerCoreSettings
   /** Returns the object with the settings used for calls to getPartner. */
   public UnaryCallSettings<GetPartnerRequest, Partner> getPartnerSettings() {
     return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).getPartnerSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createCustomer. */
-  public UnaryCallSettings<CreateCustomerRequest, Customer> createCustomerSettings() {
-    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).createCustomerSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateCustomer. */
-  public UnaryCallSettings<UpdateCustomerRequest, Customer> updateCustomerSettings() {
-    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).updateCustomerSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteCustomer. */
-  public UnaryCallSettings<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
-    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).deleteCustomerSettings();
   }
 
   public static final CloudControlsPartnerCoreSettings create(
@@ -312,12 +291,7 @@ public class CloudControlsPartnerCoreSettings
       return getStubSettingsBuilder().getPartnerPermissionsSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listAccessApprovalRequests.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
+    /** Returns the builder for the settings used for calls to listAccessApprovalRequests. */
     public PagedCallSettings.Builder<
             ListAccessApprovalRequestsRequest,
             ListAccessApprovalRequestsResponse,
@@ -329,21 +303,6 @@ public class CloudControlsPartnerCoreSettings
     /** Returns the builder for the settings used for calls to getPartner. */
     public UnaryCallSettings.Builder<GetPartnerRequest, Partner> getPartnerSettings() {
       return getStubSettingsBuilder().getPartnerSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createCustomer. */
-    public UnaryCallSettings.Builder<CreateCustomerRequest, Customer> createCustomerSettings() {
-      return getStubSettingsBuilder().createCustomerSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateCustomer. */
-    public UnaryCallSettings.Builder<UpdateCustomerRequest, Customer> updateCustomerSettings() {
-      return getStubSettingsBuilder().updateCustomerSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCustomer. */
-    public UnaryCallSettings.Builder<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
-      return getStubSettingsBuilder().deleteCustomerSettings();
     }
 
     @Override

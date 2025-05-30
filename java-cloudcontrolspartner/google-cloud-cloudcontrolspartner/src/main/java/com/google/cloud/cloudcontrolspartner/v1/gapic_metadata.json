@@ -10,12 +10,6 @@
         "grpc": {
           "libraryClient": "CloudControlsPartnerCoreClient",
           "rpcs": {
-            "CreateCustomer": {
-              "methods": ["createCustomer", "createCustomer", "createCustomer", "createCustomerCallable"]
-            },
-            "DeleteCustomer": {
-              "methods": ["deleteCustomer", "deleteCustomer", "deleteCustomer", "deleteCustomerCallable"]
-            },
             "GetCustomer": {
               "methods": ["getCustomer", "getCustomer", "getCustomer", "getCustomerCallable"]
             },
@@ -39,9 +33,6 @@
             },
             "ListWorkloads": {
               "methods": ["listWorkloads", "listWorkloads", "listWorkloads", "listWorkloadsPagedCallable", "listWorkloadsCallable"]
-            },
-            "UpdateCustomer": {
-              "methods": ["updateCustomer", "updateCustomer", "updateCustomerCallable"]
             }
           }
         }

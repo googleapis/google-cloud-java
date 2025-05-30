@@ -29,8 +29,6 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Empty;
-import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -276,7 +274,6 @@ public class CloudControlsPartnerCoreClientTest {
             .setDisplayName("displayName1714148973")
             .setCustomerOnboardingState(CustomerOnboardingState.newBuilder().build())
             .setIsOnboarded(true)
-            .setOrganizationDomain("organizationDomain-1403667497")
             .build();
     mockCloudControlsPartnerCore.addResponse(expectedResponse);
 
@@ -318,7 +315,6 @@ public class CloudControlsPartnerCoreClientTest {
             .setDisplayName("displayName1714148973")
             .setCustomerOnboardingState(CustomerOnboardingState.newBuilder().build())
             .setIsOnboarded(true)
-            .setOrganizationDomain("organizationDomain-1403667497")
             .build();
     mockCloudControlsPartnerCore.addResponse(expectedResponse);
 
@@ -788,215 +784,6 @@ public class CloudControlsPartnerCoreClientTest {
     try {
       String name = "name3373707";
       client.getPartner(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createCustomerTest() throws Exception {
-    Customer expectedResponse =
-        Customer.newBuilder()
-            .setName(CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString())
-            .setDisplayName("displayName1714148973")
-            .setCustomerOnboardingState(CustomerOnboardingState.newBuilder().build())
-            .setIsOnboarded(true)
-            .setOrganizationDomain("organizationDomain-1403667497")
-            .build();
-    mockCloudControlsPartnerCore.addResponse(expectedResponse);
-
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-    Customer customer = Customer.newBuilder().build();
-    String customerId = "customerId-1581184615";
-
-    Customer actualResponse = client.createCustomer(parent, customer, customerId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudControlsPartnerCore.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateCustomerRequest actualRequest = ((CreateCustomerRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(customer, actualRequest.getCustomer());
-    Assert.assertEquals(customerId, actualRequest.getCustomerId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createCustomerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudControlsPartnerCore.addException(exception);
-
-    try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-      Customer customer = Customer.newBuilder().build();
-      String customerId = "customerId-1581184615";
-      client.createCustomer(parent, customer, customerId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createCustomerTest2() throws Exception {
-    Customer expectedResponse =
-        Customer.newBuilder()
-            .setName(CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString())
-            .setDisplayName("displayName1714148973")
-            .setCustomerOnboardingState(CustomerOnboardingState.newBuilder().build())
-            .setIsOnboarded(true)
-            .setOrganizationDomain("organizationDomain-1403667497")
-            .build();
-    mockCloudControlsPartnerCore.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    Customer customer = Customer.newBuilder().build();
-    String customerId = "customerId-1581184615";
-
-    Customer actualResponse = client.createCustomer(parent, customer, customerId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudControlsPartnerCore.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateCustomerRequest actualRequest = ((CreateCustomerRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(customer, actualRequest.getCustomer());
-    Assert.assertEquals(customerId, actualRequest.getCustomerId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createCustomerExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudControlsPartnerCore.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      Customer customer = Customer.newBuilder().build();
-      String customerId = "customerId-1581184615";
-      client.createCustomer(parent, customer, customerId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateCustomerTest() throws Exception {
-    Customer expectedResponse =
-        Customer.newBuilder()
-            .setName(CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]").toString())
-            .setDisplayName("displayName1714148973")
-            .setCustomerOnboardingState(CustomerOnboardingState.newBuilder().build())
-            .setIsOnboarded(true)
-            .setOrganizationDomain("organizationDomain-1403667497")
-            .build();
-    mockCloudControlsPartnerCore.addResponse(expectedResponse);
-
-    Customer customer = Customer.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    Customer actualResponse = client.updateCustomer(customer, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudControlsPartnerCore.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateCustomerRequest actualRequest = ((UpdateCustomerRequest) actualRequests.get(0));
-
-    Assert.assertEquals(customer, actualRequest.getCustomer());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void updateCustomerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudControlsPartnerCore.addException(exception);
-
-    try {
-      Customer customer = Customer.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateCustomer(customer, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteCustomerTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCloudControlsPartnerCore.addResponse(expectedResponse);
-
-    CustomerName name = CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]");
-
-    client.deleteCustomer(name);
-
-    List<AbstractMessage> actualRequests = mockCloudControlsPartnerCore.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCustomerRequest actualRequest = ((DeleteCustomerRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteCustomerExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudControlsPartnerCore.addException(exception);
-
-    try {
-      CustomerName name = CustomerName.of("[ORGANIZATION]", "[LOCATION]", "[CUSTOMER]");
-      client.deleteCustomer(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteCustomerTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCloudControlsPartnerCore.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteCustomer(name);
-
-    List<AbstractMessage> actualRequests = mockCloudControlsPartnerCore.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCustomerRequest actualRequest = ((DeleteCustomerRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteCustomerExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockCloudControlsPartnerCore.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteCustomer(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ message Partner {
   };
 
   // Identifier. The resource name of the partner.
-  // Format: `organizations/{organization}/locations/{location}/partner`
+  // Format: organizations/{organization}/locations/{location}/partner
   // Example: "organizations/123456/locations/us-central1/partner"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -67,8 +67,7 @@ message Partner {
 
 // Message for getting a Partner
 message GetPartnerRequest {
-  // Required. Format:
-  // `organizations/{organization}/locations/{location}/partner`
+  // Required. Format: organizations/{organization}/locations/{location}/partner
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -108,8 +107,8 @@ message EkmMetadata {
     // EKM Partner Thales
     THALES = 3;
 
-    // This enum value is never used.
-    VIRTRU = 4 [deprecated = true];
+    // EKM Partner Virtu
+    VIRTRU = 4;
   }
 
   // The Cloud EKM partner.

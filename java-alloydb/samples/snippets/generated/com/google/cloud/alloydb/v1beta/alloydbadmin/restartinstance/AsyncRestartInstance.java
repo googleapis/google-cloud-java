@@ -22,7 +22,6 @@ import com.google.cloud.alloydb.v1beta.AlloyDBAdminClient;
 import com.google.cloud.alloydb.v1beta.InstanceName;
 import com.google.cloud.alloydb.v1beta.RestartInstanceRequest;
 import com.google.longrunning.Operation;
-import java.util.ArrayList;
 
 public class AsyncRestartInstance {
 
@@ -43,7 +42,6 @@ public class AsyncRestartInstance {
                   InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
-              .addAllNodeIds(new ArrayList<String>())
               .build();
       ApiFuture<Operation> future =
           alloyDBAdminClient.restartInstanceCallable().futureCall(request);

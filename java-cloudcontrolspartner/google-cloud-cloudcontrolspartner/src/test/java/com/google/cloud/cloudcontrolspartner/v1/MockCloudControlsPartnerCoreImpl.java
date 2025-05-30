@@ -19,7 +19,6 @@ package com.google.cloud.cloudcontrolspartner.v1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCoreGrpc.CloudControlsPartnerCoreImplBase;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -223,69 +222,6 @@ public class MockCloudControlsPartnerCoreImpl extends CloudControlsPartnerCoreIm
                   "Unrecognized response type %s for method GetPartner, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Partner.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createCustomer(
-      CreateCustomerRequest request, StreamObserver<Customer> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Customer) {
-      requests.add(request);
-      responseObserver.onNext(((Customer) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateCustomer, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Customer.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void updateCustomer(
-      UpdateCustomerRequest request, StreamObserver<Customer> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Customer) {
-      requests.add(request);
-      responseObserver.onNext(((Customer) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateCustomer, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Customer.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteCustomer(
-      DeleteCustomerRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteCustomer, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

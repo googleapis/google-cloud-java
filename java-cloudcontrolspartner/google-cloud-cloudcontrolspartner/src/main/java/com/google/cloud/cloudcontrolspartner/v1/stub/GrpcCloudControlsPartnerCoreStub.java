@@ -27,9 +27,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.cloudcontrolspartner.v1.CreateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Customer;
-import com.google.cloud.cloudcontrolspartner.v1.DeleteCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.EkmConnections;
 import com.google.cloud.cloudcontrolspartner.v1.GetCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.GetEkmConnectionsRequest;
@@ -44,10 +42,8 @@ import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsRequest;
 import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsResponse;
 import com.google.cloud.cloudcontrolspartner.v1.Partner;
 import com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions;
-import com.google.cloud.cloudcontrolspartner.v1.UpdateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Workload;
 import com.google.longrunning.stub.GrpcOperationsStub;
-import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -149,39 +145,6 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
           .setResponseMarshaller(ProtoUtils.marshaller(Partner.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<CreateCustomerRequest, Customer>
-      createCustomerMethodDescriptor =
-          MethodDescriptor.<CreateCustomerRequest, Customer>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/CreateCustomer")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateCustomerRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateCustomerRequest, Customer>
-      updateCustomerMethodDescriptor =
-          MethodDescriptor.<UpdateCustomerRequest, Customer>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/UpdateCustomer")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateCustomerRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteCustomerRequest, Empty>
-      deleteCustomerMethodDescriptor =
-          MethodDescriptor.<DeleteCustomerRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/DeleteCustomer")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteCustomerRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
   private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
@@ -199,9 +162,6 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
           ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable;
   private final UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable;
-  private final UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable;
-  private final UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable;
-  private final UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -331,36 +291,6 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
-        GrpcCallSettings.<CreateCustomerRequest, Customer>newBuilder()
-            .setMethodDescriptor(createCustomerMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
-        GrpcCallSettings.<UpdateCustomerRequest, Customer>newBuilder()
-            .setMethodDescriptor(updateCustomerMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("customer.name", String.valueOf(request.getCustomer().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteCustomerRequest, Empty> deleteCustomerTransportSettings =
-        GrpcCallSettings.<DeleteCustomerRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteCustomerMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
 
     this.getWorkloadCallable =
         callableFactory.createUnaryCallable(
@@ -403,15 +333,6 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
     this.getPartnerCallable =
         callableFactory.createUnaryCallable(
             getPartnerTransportSettings, settings.getPartnerSettings(), clientContext);
-    this.createCustomerCallable =
-        callableFactory.createUnaryCallable(
-            createCustomerTransportSettings, settings.createCustomerSettings(), clientContext);
-    this.updateCustomerCallable =
-        callableFactory.createUnaryCallable(
-            updateCustomerTransportSettings, settings.updateCustomerSettings(), clientContext);
-    this.deleteCustomerCallable =
-        callableFactory.createUnaryCallable(
-            deleteCustomerTransportSettings, settings.deleteCustomerSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -479,21 +400,6 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
   @Override
   public UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable() {
     return getPartnerCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
-    return createCustomerCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
-    return updateCustomerCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
-    return deleteCustomerCallable;
   }
 
   @Override
