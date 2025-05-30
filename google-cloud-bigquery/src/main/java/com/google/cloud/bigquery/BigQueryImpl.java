@@ -40,7 +40,6 @@ import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
@@ -1407,12 +1406,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throws InterruptedException, JobException {
     Job.checkNotDryRun(configuration, "query");
 
-    if (getOptions().isQueryPreviewEnabled()) {
-      configuration =
-          configuration.toBuilder()
-              .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
-              .build();
-    }
+    configuration =
+        configuration.toBuilder()
+            .setJobCreationMode(getOptions().getDefaultJobCreationMode())
+            .build();
 
     // If all parameters passed in configuration are supported by the query() method on the backend,
     // put on fast path

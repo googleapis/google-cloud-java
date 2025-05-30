@@ -26,7 +26,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QueryShortModeIT {
+public class QueryJobOptionalIT {
 
   private final Logger log = Logger.getLogger(this.getClass().getName());
   private ByteArrayOutputStream bout;
@@ -56,7 +56,7 @@ public class QueryShortModeIT {
             + "bigquery-public-data.usa_names.usa_1910_2013 GROUP BY "
             + "name, gender ORDER BY total DESC LIMIT 10";
 
-    QueryShortMode.queryShortMode(query);
+    QueryJobOptional.queryJobOptional(query);
     assertThat(bout.toString()).contains("Query was run");
   }
 }

@@ -97,7 +97,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /** Job Creation Mode provides different options on job creation. */
-  enum JobCreationMode {
+  public enum JobCreationMode {
     /** Unspecified JobCreationMode, defaults to JOB_CREATION_REQUIRED. */
     JOB_CREATION_MODE_UNSPECIFIED,
     /** Default. Job creation is always required. */
@@ -683,7 +683,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Provides different options on job creation. If not specified the job creation mode is assumed
      * to be {@link JobCreationMode#JOB_CREATION_REQUIRED}.
      */
-    Builder setJobCreationMode(JobCreationMode jobCreationMode) {
+    public Builder setJobCreationMode(JobCreationMode jobCreationMode) {
       this.jobCreationMode = jobCreationMode;
       return this;
     }
@@ -959,7 +959,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /** Returns the job creation mode. */
-  JobCreationMode getJobCreationMode() {
+  public JobCreationMode getJobCreationMode() {
     return jobCreationMode;
   }
 

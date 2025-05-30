@@ -111,6 +111,7 @@ import com.google.cloud.bigquery.ParquetOptions;
 import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Range;
@@ -3483,6 +3484,7 @@ public class ITBigQueryTest {
     final int rowLimit = 5000;
     final String QUERY =
         "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
+    bigquery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED);
     // Job timeout is somewhat arbitrary - just ensures that fast query is not used.
     // min result size and page row count ratio ensure that the ReadAPI is used.
     ConnectionSettings connectionSettingsReadAPIEnabledFastQueryDisabled =
@@ -7084,26 +7086,19 @@ public class ITBigQueryTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQuery bigQuery = bigqueryHelper.getOptions().getService();
 
-    // Simulate setting the QUERY_PREVIEW_ENABLED environment variable.
-    bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+    // Stateless query should have no job id.
+    bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
     TableResult tableResult = executeSimpleQuery(bigQuery);
     assertNotNull(tableResult.getQueryId());
     assertNull(tableResult.getJobId());
 
-    // The flag should be case-insensitive.
-    bigQuery.getOptions().setQueryPreviewEnabled("tRuE");
+    // Job creation takes over, no query id is created.
+    bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED);
     tableResult = executeSimpleQuery(bigQuery);
-    assertNotNull(tableResult.getQueryId());
-    assertNull(tableResult.getJobId());
-
-    // Any other values won't enable optional job creation mode.
-    bigQuery.getOptions().setQueryPreviewEnabled("test_value");
-    tableResult = executeSimpleQuery(bigQuery);
-    assertNotNull(tableResult.getQueryId());
+    assertNull(tableResult.getQueryId());
     assertNotNull(tableResult.getJobId());
 
-    // Reset the flag.
-    bigQuery.getOptions().setQueryPreviewEnabled(null);
+    bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_MODE_UNSPECIFIED);
     tableResult = executeSimpleQuery(bigQuery);
     assertNotNull(tableResult.getQueryId());
     assertNotNull(tableResult.getJobId());
@@ -7128,8 +7123,8 @@ public class ITBigQueryTest {
     // Create local BigQuery for test scenario 1 to not contaminate global test parameters.
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQuery bigQuery = bigqueryHelper.getOptions().getService();
-    // Simulate setting the QUERY_PREVIEW_ENABLED environment variable.
-    bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+    // Allow queries to be stateless.
+    bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
     String query = "SELECT 1 as one";
     QueryJobConfiguration configStateless = QueryJobConfiguration.newBuilder(query).build();
     TableResult result = bigQuery.query(configStateless);
@@ -7181,7 +7176,7 @@ public class ITBigQueryTest {
               table.getTableId().getTable());
 
       // Test stateless query when BigQueryOption location matches dataset location.
-      bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+      bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
       TableResult tb = bigQuery.query(QueryJobConfiguration.of(query));
       assertNull(tb.getJobId());
 
@@ -7189,7 +7184,9 @@ public class ITBigQueryTest {
       try {
         BigQuery bigQueryWrongLocation =
             bigqueryHelper.getOptions().toBuilder().setLocation(wrongLocation).build().getService();
-        bigQueryWrongLocation.getOptions().setQueryPreviewEnabled("TRUE");
+        bigQueryWrongLocation
+            .getOptions()
+            .setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
         bigQueryWrongLocation.query(QueryJobConfiguration.of(query));
         fail("querying a table with wrong location shouldn't work");
       } catch (BigQueryException e) {

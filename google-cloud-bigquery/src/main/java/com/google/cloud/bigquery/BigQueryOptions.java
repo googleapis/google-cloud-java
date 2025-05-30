@@ -20,10 +20,10 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.cloud.http.HttpTransportOptions;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
@@ -38,7 +38,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   // set the option ThrowNotFound when you want to throw the exception when the value not found
   private boolean setThrowNotFound;
   private boolean useInt64Timestamps;
-  private String queryPreviewEnabled = System.getenv("QUERY_PREVIEW_ENABLED");
+  private JobCreationMode defaultJobCreationMode = JobCreationMode.JOB_CREATION_MODE_UNSPECIFIED;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -139,8 +139,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return location;
   }
 
+  @Deprecated
   public boolean isQueryPreviewEnabled() {
-    return queryPreviewEnabled != null && queryPreviewEnabled.equalsIgnoreCase("TRUE");
+    return false;
   }
 
   public void setThrowNotFound(boolean setThrowNotFound) {
@@ -151,9 +152,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     this.useInt64Timestamps = useInt64Timestamps;
   }
 
-  @VisibleForTesting
-  public void setQueryPreviewEnabled(String queryPreviewEnabled) {
-    this.queryPreviewEnabled = queryPreviewEnabled;
+  @Deprecated
+  public void setQueryPreviewEnabled(String queryPreviewEnabled) {}
+
+  public void setDefaultJobCreationMode(JobCreationMode jobCreationMode) {
+    this.defaultJobCreationMode = jobCreationMode;
   }
 
   public boolean getThrowNotFound() {
@@ -162,6 +165,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   public boolean getUseInt64Timestamps() {
     return useInt64Timestamps;
+  }
+
+  public JobCreationMode getDefaultJobCreationMode() {
+    return defaultJobCreationMode;
   }
 
   @SuppressWarnings("unchecked")
