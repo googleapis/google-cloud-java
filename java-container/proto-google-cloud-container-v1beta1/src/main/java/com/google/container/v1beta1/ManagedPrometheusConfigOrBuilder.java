@@ -36,4 +36,41 @@ public interface ManagedPrometheusConfigOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   *
+   * @return Whether the autoMonitoringConfig field is set.
+   */
+  boolean hasAutoMonitoringConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   *
+   * @return The autoMonitoringConfig.
+   */
+  com.google.container.v1beta1.AutoMonitoringConfig getAutoMonitoringConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Workload Auto-Monitoring Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutoMonitoringConfig auto_monitoring_config = 2;</code>
+   */
+  com.google.container.v1beta1.AutoMonitoringConfigOrBuilder getAutoMonitoringConfigOrBuilder();
 }

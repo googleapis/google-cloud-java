@@ -121,6 +121,7 @@ public class VertexRagDataServiceClientTest {
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class VertexRagDataServiceClientTest {
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -237,6 +239,7 @@ public class VertexRagDataServiceClientTest {
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -292,6 +295,7 @@ public class VertexRagDataServiceClientTest {
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -339,6 +343,7 @@ public class VertexRagDataServiceClientTest {
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 

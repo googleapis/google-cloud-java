@@ -23,7 +23,8 @@ package com.google.cloud.iap.v1;
  *
  *
  * <pre>
- * Allows customers to configure tenant_id for GCIP instance per-app.
+ * Allows customers to configure tenant IDs for a Cloud Identity Platform (GCIP)
+ * instance for each application.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iap.v1.GcipSettings}
@@ -75,12 +76,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,12 +96,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -115,12 +116,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -136,12 +137,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -395,7 +396,8 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows customers to configure tenant_id for GCIP instance per-app.
+   * Allows customers to configure tenant IDs for a Cloud Identity Platform (GCIP)
+   * instance for each application.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iap.v1.GcipSettings}
@@ -623,12 +625,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -644,12 +646,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -664,12 +666,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -685,12 +687,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -706,12 +708,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,12 +737,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -763,12 +765,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -788,12 +790,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -812,12 +814,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. GCIP tenant ids that are linked to the IAP resource.
-     * tenant_ids could be a string beginning with a number character to indicate
-     * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-     * to indicate authenticating with GCIP agent flow.
-     * If agent flow is used, tenant_ids should only contain one single element,
-     * while for tenant flow, tenant_ids can contain multiple elements.
+     * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+     * could be a string beginning with a number character to indicate
+     * authenticating with GCIP tenant flow, or in the format of
+     * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+     * agent flow is used, `tenant_ids` should only contain one single element,
+     * while for tenant flow, `tenant_ids` can contain multiple elements.
      * </pre>
      *
      * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

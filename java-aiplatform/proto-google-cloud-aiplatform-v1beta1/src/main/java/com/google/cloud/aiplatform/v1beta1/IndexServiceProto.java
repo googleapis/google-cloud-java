@@ -57,6 +57,34 @@ public final class IndexServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UpdateIndexOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_Restrict_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_Restrict_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_NumericRestrict_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_NumericRestrict_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_BigQuerySourceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_BigQuerySourceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ImportIndexOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_fieldAccessorTable;
@@ -134,93 +162,135 @@ public final class IndexServiceProto {
           + ".v1beta1.GenericOperationMetadata\022{\n*nea"
           + "rest_neighbor_search_operation_metadata\030"
           + "\002 \001(\0132G.google.cloud.aiplatform.v1beta1."
-          + "NearestNeighborSearchOperationMetadata\"K"
-          + "\n\022DeleteIndexRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372"
-          + "A!\n\037aiplatform.googleapis.com/Index\"\314\001\n\027"
-          + "UpsertDatapointsRequest\0226\n\005index\030\001 \001(\tB\'"
-          + "\340A\002\372A!\n\037aiplatform.googleapis.com/Index\022"
-          + "C\n\ndatapoints\030\002 \003(\0132/.google.cloud.aipla"
-          + "tform.v1beta1.IndexDatapoint\0224\n\013update_m"
-          + "ask\030\003 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
-          + "A\001\"\032\n\030UpsertDatapointsResponse\"h\n\027Remove"
-          + "DatapointsRequest\0226\n\005index\030\001 \001(\tB\'\340A\002\372A!"
-          + "\n\037aiplatform.googleapis.com/Index\022\025\n\rdat"
-          + "apoint_ids\030\002 \003(\t\"\032\n\030RemoveDatapointsResp"
-          + "onse\"\225\t\n&NearestNeighborSearchOperationM"
-          + "etadata\022\200\001\n\030content_validation_stats\030\001 \003"
-          + "(\0132^.google.cloud.aiplatform.v1beta1.Nea"
-          + "restNeighborSearchOperationMetadata.Cont"
-          + "entValidationStats\022\030\n\020data_bytes_count\030\002"
-          + " \001(\003\032\253\005\n\013RecordError\022w\n\nerror_type\030\001 \001(\016"
-          + "2c.google.cloud.aiplatform.v1beta1.Neare"
-          + "stNeighborSearchOperationMetadata.Record"
-          + "Error.RecordErrorType\022\025\n\rerror_message\030\002"
-          + " \001(\t\022\026\n\016source_gcs_uri\030\003 \001(\t\022\024\n\014embeddin"
-          + "g_id\030\004 \001(\t\022\022\n\nraw_record\030\005 \001(\t\"\311\003\n\017Recor"
-          + "dErrorType\022\032\n\026ERROR_TYPE_UNSPECIFIED\020\000\022\016"
-          + "\n\nEMPTY_LINE\020\001\022\027\n\023INVALID_JSON_SYNTAX\020\002\022"
-          + "\026\n\022INVALID_CSV_SYNTAX\020\003\022\027\n\023INVALID_AVRO_"
-          + "SYNTAX\020\004\022\030\n\024INVALID_EMBEDDING_ID\020\005\022\033\n\027EM"
-          + "BEDDING_SIZE_MISMATCH\020\006\022\025\n\021NAMESPACE_MIS"
-          + "SING\020\007\022\021\n\rPARSING_ERROR\020\010\022\027\n\023DUPLICATE_N"
-          + "AMESPACE\020\t\022\023\n\017OP_IN_DATAPOINT\020\n\022\023\n\017MULTI"
-          + "PLE_VALUES\020\013\022\031\n\025INVALID_NUMERIC_VALUE\020\014\022"
-          + "\024\n\020INVALID_ENCODING\020\r\022\035\n\031INVALID_SPARSE_"
-          + "DIMENSIONS\020\016\022\027\n\023INVALID_TOKEN_VALUE\020\017\022\034\n"
-          + "\030INVALID_SPARSE_EMBEDDING\020\020\022\025\n\021INVALID_E"
-          + "MBEDDING\020\021\032\237\002\n\026ContentValidationStats\022\026\n"
-          + "\016source_gcs_uri\030\001 \001(\t\022\032\n\022valid_record_co"
-          + "unt\030\002 \001(\003\022\034\n\024invalid_record_count\030\003 \001(\003\022"
-          + "k\n\016partial_errors\030\004 \003(\0132S.google.cloud.a"
-          + "iplatform.v1beta1.NearestNeighborSearchO"
-          + "perationMetadata.RecordError\022!\n\031valid_sp"
-          + "arse_record_count\030\005 \001(\003\022#\n\033invalid_spars"
-          + "e_record_count\030\006 \001(\0032\221\014\n\014IndexService\022\331\001"
-          + "\n\013CreateIndex\0223.google.cloud.aiplatform."
-          + "v1beta1.CreateIndexRequest\032\035.google.long"
-          + "running.Operation\"v\312A%\n\005Index\022\034CreateInd"
-          + "exOperationMetadata\332A\014parent,index\202\323\344\223\0029"
-          + "\"0/v1beta1/{parent=projects/*/locations/"
-          + "*}/indexes:\005index\022\245\001\n\010GetIndex\0220.google."
-          + "cloud.aiplatform.v1beta1.GetIndexRequest"
-          + "\032&.google.cloud.aiplatform.v1beta1.Index"
-          + "\"?\332A\004name\202\323\344\223\0022\0220/v1beta1/{name=projects"
-          + "/*/locations/*/indexes/*}\022\273\001\n\013ListIndexe"
-          + "s\0223.google.cloud.aiplatform.v1beta1.List"
-          + "IndexesRequest\0324.google.cloud.aiplatform"
-          + ".v1beta1.ListIndexesResponse\"A\332A\006parent\202"
-          + "\323\344\223\0022\0220/v1beta1/{parent=projects/*/locat"
-          + "ions/*}/indexes\022\345\001\n\013UpdateIndex\0223.google"
-          + ".cloud.aiplatform.v1beta1.UpdateIndexReq"
-          + "uest\032\035.google.longrunning.Operation\"\201\001\312A"
-          + "%\n\005Index\022\034UpdateIndexOperationMetadata\332A"
-          + "\021index,update_mask\202\323\344\223\002?26/v1beta1/{inde"
-          + "x.name=projects/*/locations/*/indexes/*}"
-          + ":\005index\022\325\001\n\013DeleteIndex\0223.google.cloud.a"
-          + "iplatform.v1beta1.DeleteIndexRequest\032\035.g"
-          + "oogle.longrunning.Operation\"r\312A0\n\025google"
-          + ".protobuf.Empty\022\027DeleteOperationMetadata"
-          + "\332A\004name\202\323\344\223\0022*0/v1beta1/{name=projects/*"
-          + "/locations/*/indexes/*}\022\326\001\n\020UpsertDatapo"
-          + "ints\0228.google.cloud.aiplatform.v1beta1.U"
-          + "psertDatapointsRequest\0329.google.cloud.ai"
-          + "platform.v1beta1.UpsertDatapointsRespons"
-          + "e\"M\202\323\344\223\002G\"B/v1beta1/{index=projects/*/lo"
-          + "cations/*/indexes/*}:upsertDatapoints:\001*"
-          + "\022\326\001\n\020RemoveDatapoints\0228.google.cloud.aip"
-          + "latform.v1beta1.RemoveDatapointsRequest\032"
-          + "9.google.cloud.aiplatform.v1beta1.Remove"
-          + "DatapointsResponse\"M\202\323\344\223\002G\"B/v1beta1/{in"
-          + "dex=projects/*/locations/*/indexes/*}:re"
-          + "moveDatapoints:\001*\032M\312A\031aiplatform.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\350\001\n#com.google.cloud.ai"
-          + "platform.v1beta1B\021IndexServiceProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
-          + "rm::V1beta1b\006proto3"
+          + "NearestNeighborSearchOperationMetadata\"\207"
+          + "\n\n\022ImportIndexRequest\0225\n\004name\030\001 \001(\tB\'\340A\002"
+          + "\372A!\n\037aiplatform.googleapis.com/Index\022\"\n\025"
+          + "is_complete_overwrite\030\002 \001(\010B\003\340A\001\022X\n\006conf"
+          + "ig\030\003 \001(\0132C.google.cloud.aiplatform.v1bet"
+          + "a1.ImportIndexRequest.ConnectorConfigB\003\340"
+          + "A\002\032\273\010\n\017ConnectorConfig\022{\n\027big_query_sour"
+          + "ce_config\030\001 \001(\0132X.google.cloud.aiplatfor"
+          + "m.v1beta1.ImportIndexRequest.ConnectorCo"
+          + "nfig.BigQuerySourceConfigH\000\032\355\005\n\025Datapoin"
+          + "tFieldMapping\022\026\n\tid_column\030\001 \001(\tB\003\340A\002\022\035\n"
+          + "\020embedding_column\030\002 \001(\tB\003\340A\002\022z\n\trestrict"
+          + "s\030\003 \003(\0132b.google.cloud.aiplatform.v1beta"
+          + "1.ImportIndexRequest.ConnectorConfig.Dat"
+          + "apointFieldMapping.RestrictB\003\340A\001\022\211\001\n\021num"
+          + "eric_restricts\030\004 \003(\0132i.google.cloud.aipl"
+          + "atform.v1beta1.ImportIndexRequest.Connec"
+          + "torConfig.DatapointFieldMapping.NumericR"
+          + "estrictB\003\340A\001\022\035\n\020metadata_columns\030\005 \003(\tB\003"
+          + "\340A\001\032W\n\010Restrict\022\026\n\tnamespace\030\001 \001(\tB\003\340A\002\022"
+          + "\031\n\014allow_column\030\002 \003(\tB\003\340A\001\022\030\n\013deny_colum"
+          + "n\030\003 \003(\tB\003\340A\001\032\234\002\n\017NumericRestrict\022\026\n\tname"
+          + "space\030\001 \001(\tB\003\340A\002\022\031\n\014value_column\030\002 \001(\tB\003"
+          + "\340A\001\022\214\001\n\nvalue_type\030\003 \001(\0162s.google.cloud."
+          + "aiplatform.v1beta1.ImportIndexRequest.Co"
+          + "nnectorConfig.DatapointFieldMapping.Nume"
+          + "ricRestrict.ValueTypeB\003\340A\002\"G\n\tValueType\022"
+          + "\032\n\026VALUE_TYPE_UNSPECIFIED\020\000\022\007\n\003INT\020\001\022\t\n\005"
+          + "FLOAT\020\002\022\n\n\006DOUBLE\020\003\032\260\001\n\024BigQuerySourceCo"
+          + "nfig\022\027\n\ntable_path\030\001 \001(\tB\003\340A\002\022\177\n\027datapoi"
+          + "nt_field_mapping\030\002 \001(\0132Y.google.cloud.ai"
+          + "platform.v1beta1.ImportIndexRequest.Conn"
+          + "ectorConfig.DatapointFieldMappingB\003\340A\002B\010"
+          + "\n\006source\"s\n\034ImportIndexOperationMetadata"
+          + "\022S\n\020generic_metadata\030\001 \001(\01329.google.clou"
+          + "d.aiplatform.v1beta1.GenericOperationMet"
+          + "adata\"K\n\022DeleteIndexRequest\0225\n\004name\030\001 \001("
+          + "\tB\'\340A\002\372A!\n\037aiplatform.googleapis.com/Ind"
+          + "ex\"\314\001\n\027UpsertDatapointsRequest\0226\n\005index\030"
+          + "\001 \001(\tB\'\340A\002\372A!\n\037aiplatform.googleapis.com"
+          + "/Index\022C\n\ndatapoints\030\002 \003(\0132/.google.clou"
+          + "d.aiplatform.v1beta1.IndexDatapoint\0224\n\013u"
+          + "pdate_mask\030\003 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\001\"\032\n\030UpsertDatapointsResponse\"h\n"
+          + "\027RemoveDatapointsRequest\0226\n\005index\030\001 \001(\tB"
+          + "\'\340A\002\372A!\n\037aiplatform.googleapis.com/Index"
+          + "\022\025\n\rdatapoint_ids\030\002 \003(\t\"\032\n\030RemoveDatapoi"
+          + "ntsResponse\"\340\t\n&NearestNeighborSearchOpe"
+          + "rationMetadata\022\200\001\n\030content_validation_st"
+          + "ats\030\001 \003(\0132^.google.cloud.aiplatform.v1be"
+          + "ta1.NearestNeighborSearchOperationMetada"
+          + "ta.ContentValidationStats\022\030\n\020data_bytes_"
+          + "count\030\002 \001(\003\032\366\005\n\013RecordError\022w\n\nerror_typ"
+          + "e\030\001 \001(\0162c.google.cloud.aiplatform.v1beta"
+          + "1.NearestNeighborSearchOperationMetadata"
+          + ".RecordError.RecordErrorType\022\025\n\rerror_me"
+          + "ssage\030\002 \001(\t\022\026\n\016source_gcs_uri\030\003 \001(\t\022\024\n\014e"
+          + "mbedding_id\030\004 \001(\t\022\022\n\nraw_record\030\005 \001(\t\"\224\004"
+          + "\n\017RecordErrorType\022\032\n\026ERROR_TYPE_UNSPECIF"
+          + "IED\020\000\022\016\n\nEMPTY_LINE\020\001\022\027\n\023INVALID_JSON_SY"
+          + "NTAX\020\002\022\026\n\022INVALID_CSV_SYNTAX\020\003\022\027\n\023INVALI"
+          + "D_AVRO_SYNTAX\020\004\022\030\n\024INVALID_EMBEDDING_ID\020"
+          + "\005\022\033\n\027EMBEDDING_SIZE_MISMATCH\020\006\022\025\n\021NAMESP"
+          + "ACE_MISSING\020\007\022\021\n\rPARSING_ERROR\020\010\022\027\n\023DUPL"
+          + "ICATE_NAMESPACE\020\t\022\023\n\017OP_IN_DATAPOINT\020\n\022\023"
+          + "\n\017MULTIPLE_VALUES\020\013\022\031\n\025INVALID_NUMERIC_V"
+          + "ALUE\020\014\022\024\n\020INVALID_ENCODING\020\r\022\035\n\031INVALID_"
+          + "SPARSE_DIMENSIONS\020\016\022\027\n\023INVALID_TOKEN_VAL"
+          + "UE\020\017\022\034\n\030INVALID_SPARSE_EMBEDDING\020\020\022\025\n\021IN"
+          + "VALID_EMBEDDING\020\021\022\036\n\032INVALID_EMBEDDING_M"
+          + "ETADATA\020\022\022)\n%EMBEDDING_METADATA_EXCEEDS_"
+          + "SIZE_LIMIT\020\023\032\237\002\n\026ContentValidationStats\022"
+          + "\026\n\016source_gcs_uri\030\001 \001(\t\022\032\n\022valid_record_"
+          + "count\030\002 \001(\003\022\034\n\024invalid_record_count\030\003 \001("
+          + "\003\022k\n\016partial_errors\030\004 \003(\0132S.google.cloud"
+          + ".aiplatform.v1beta1.NearestNeighborSearc"
+          + "hOperationMetadata.RecordError\022!\n\031valid_"
+          + "sparse_record_count\030\005 \001(\003\022#\n\033invalid_spa"
+          + "rse_record_count\030\006 \001(\0032\341\r\n\014IndexService\022"
+          + "\331\001\n\013CreateIndex\0223.google.cloud.aiplatfor"
+          + "m.v1beta1.CreateIndexRequest\032\035.google.lo"
+          + "ngrunning.Operation\"v\312A%\n\005Index\022\034CreateI"
+          + "ndexOperationMetadata\332A\014parent,index\202\323\344\223"
+          + "\0029\"0/v1beta1/{parent=projects/*/location"
+          + "s/*}/indexes:\005index\022\245\001\n\010GetIndex\0220.googl"
+          + "e.cloud.aiplatform.v1beta1.GetIndexReque"
+          + "st\032&.google.cloud.aiplatform.v1beta1.Ind"
+          + "ex\"?\332A\004name\202\323\344\223\0022\0220/v1beta1/{name=projec"
+          + "ts/*/locations/*/indexes/*}\022\315\001\n\013ImportIn"
+          + "dex\0223.google.cloud.aiplatform.v1beta1.Im"
+          + "portIndexRequest\032\035.google.longrunning.Op"
+          + "eration\"j\312A%\n\005Index\022\034ImportIndexOperatio"
+          + "nMetadata\202\323\344\223\002<\"7/v1beta1/{name=projects"
+          + "/*/locations/*/indexes/*}:import:\001*\022\273\001\n\013"
+          + "ListIndexes\0223.google.cloud.aiplatform.v1"
+          + "beta1.ListIndexesRequest\0324.google.cloud."
+          + "aiplatform.v1beta1.ListIndexesResponse\"A"
+          + "\332A\006parent\202\323\344\223\0022\0220/v1beta1/{parent=projec"
+          + "ts/*/locations/*}/indexes\022\345\001\n\013UpdateInde"
+          + "x\0223.google.cloud.aiplatform.v1beta1.Upda"
+          + "teIndexRequest\032\035.google.longrunning.Oper"
+          + "ation\"\201\001\312A%\n\005Index\022\034UpdateIndexOperation"
+          + "Metadata\332A\021index,update_mask\202\323\344\223\002?26/v1b"
+          + "eta1/{index.name=projects/*/locations/*/"
+          + "indexes/*}:\005index\022\325\001\n\013DeleteIndex\0223.goog"
+          + "le.cloud.aiplatform.v1beta1.DeleteIndexR"
+          + "equest\032\035.google.longrunning.Operation\"r\312"
+          + "A0\n\025google.protobuf.Empty\022\027DeleteOperati"
+          + "onMetadata\332A\004name\202\323\344\223\0022*0/v1beta1/{name="
+          + "projects/*/locations/*/indexes/*}\022\326\001\n\020Up"
+          + "sertDatapoints\0228.google.cloud.aiplatform"
+          + ".v1beta1.UpsertDatapointsRequest\0329.googl"
+          + "e.cloud.aiplatform.v1beta1.UpsertDatapoi"
+          + "ntsResponse\"M\202\323\344\223\002G\"B/v1beta1/{index=pro"
+          + "jects/*/locations/*/indexes/*}:upsertDat"
+          + "apoints:\001*\022\326\001\n\020RemoveDatapoints\0228.google"
+          + ".cloud.aiplatform.v1beta1.RemoveDatapoin"
+          + "tsRequest\0329.google.cloud.aiplatform.v1be"
+          + "ta1.RemoveDatapointsResponse\"M\202\323\344\223\002G\"B/v"
+          + "1beta1/{index=projects/*/locations/*/ind"
+          + "exes/*}:removeDatapoints:\001*\032M\312A\031aiplatfo"
+          + "rm.googleapis.com\322A.https://www.googleap"
+          + "is.com/auth/cloud-platformB\350\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\021IndexService"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -292,8 +362,74 @@ public final class IndexServiceProto {
             new java.lang.String[] {
               "GenericMetadata", "NearestNeighborSearchOperationMetadata",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "IsCompleteOverwrite", "Config",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_descriptor,
+            new java.lang.String[] {
+              "BigQuerySourceConfig", "Source",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_descriptor,
+            new java.lang.String[] {
+              "IdColumn", "EmbeddingColumn", "Restricts", "NumericRestricts", "MetadataColumns",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_Restrict_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_Restrict_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_Restrict_descriptor,
+            new java.lang.String[] {
+              "Namespace", "AllowColumn", "DenyColumn",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_NumericRestrict_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_NumericRestrict_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_DatapointFieldMapping_NumericRestrict_descriptor,
+            new java.lang.String[] {
+              "Namespace", "ValueColumn", "ValueType",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_BigQuerySourceConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_BigQuerySourceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexRequest_ConnectorConfig_BigQuerySourceConfig_descriptor,
+            new java.lang.String[] {
+              "TablePath", "DatapointFieldMapping",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1beta1_ImportIndexOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ImportIndexOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteIndexRequest_descriptor,
@@ -301,7 +437,7 @@ public final class IndexServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsRequest_descriptor,
@@ -309,13 +445,13 @@ public final class IndexServiceProto {
               "Index", "Datapoints", "UpdateMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpsertDatapointsResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsRequest_descriptor,
@@ -323,13 +459,13 @@ public final class IndexServiceProto {
               "Index", "DatapointIds",
             });
     internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RemoveDatapointsResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborSearchOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborSearchOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborSearchOperationMetadata_descriptor,

@@ -112,7 +112,7 @@ public interface TransferCountersOrBuilder
    *
    *
    * <pre>
-   * Objects that are failed to write to the data destination.
+   * Objects that failed to be written to the data destination.
    * </pre>
    *
    * <code>int64 objects_failed = 7;</code>
@@ -125,7 +125,7 @@ public interface TransferCountersOrBuilder
    *
    *
    * <pre>
-   * Bytes that are failed to write to the data destination.
+   * Bytes that failed to be written to the data destination.
    * </pre>
    *
    * <code>int64 bytes_failed = 8;</code>

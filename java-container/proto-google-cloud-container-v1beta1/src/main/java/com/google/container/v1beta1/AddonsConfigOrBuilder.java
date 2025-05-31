@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1406
+   *     google/container/v1beta1/cluster_service.proto;l=1677
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -146,7 +146,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1406
+   *     google/container/v1beta1/cluster_service.proto;l=1677
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -224,7 +224,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1686
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Deprecated
@@ -241,7 +241,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1686
    * @return The istioConfig.
    */
   @java.lang.Deprecated
@@ -436,7 +436,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1434
+   *     google/container/v1beta1/cluster_service.proto;l=1705
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Deprecated
@@ -453,7 +453,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1434
+   *     google/container/v1beta1/cluster_service.proto;l=1705
    * @return The kalmConfig.
    */
   @java.lang.Deprecated
@@ -637,6 +637,50 @@ public interface AddonsConfigOrBuilder
    *
    *
    * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return Whether the parallelstoreCsiDriverConfig field is set.
+   */
+  boolean hasParallelstoreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return The parallelstoreCsiDriverConfig.
+   */
+  com.google.container.v1beta1.ParallelstoreCsiDriverConfig getParallelstoreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   */
+  com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder
+      getParallelstoreCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Configuration for Ray Operator addon.
    * </pre>
    *
@@ -675,4 +719,48 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1beta1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return Whether the highScaleCheckpointingConfig field is set.
+   */
+  boolean hasHighScaleCheckpointingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return The highScaleCheckpointingConfig.
+   */
+  com.google.container.v1beta1.HighScaleCheckpointingConfig getHighScaleCheckpointingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   */
+  com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder
+      getHighScaleCheckpointingConfigOrBuilder();
 }

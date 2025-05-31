@@ -28,16 +28,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3136
+   *     google/container/v1beta1/cluster_service.proto;l=3634
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -47,16 +46,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3136
+   *     google/container/v1beta1/cluster_service.proto;l=3634
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,16 +64,16 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the parent
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3143
+   *     google/container/v1beta1/cluster_service.proto;l=3640
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -85,16 +83,16 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the parent
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3143
+   *     google/container/v1beta1/cluster_service.proto;l=3640
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

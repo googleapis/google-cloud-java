@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.container.v1beta1;
 
+@java.lang.Deprecated
 public interface TpuConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1beta1.TpuConfig)

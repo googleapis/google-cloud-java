@@ -51,6 +51,8 @@ import com.google.cloud.aiplatform.v1beta1.CreateIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
@@ -167,6 +169,9 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
   private final OperationCallSettings<CreateIndexRequest, Index, CreateIndexOperationMetadata>
       createIndexOperationSettings;
   private final UnaryCallSettings<GetIndexRequest, Index> getIndexSettings;
+  private final UnaryCallSettings<ImportIndexRequest, Operation> importIndexSettings;
+  private final OperationCallSettings<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationSettings;
   private final PagedCallSettings<ListIndexesRequest, ListIndexesResponse, ListIndexesPagedResponse>
       listIndexesSettings;
   private final UnaryCallSettings<UpdateIndexRequest, Operation> updateIndexSettings;
@@ -304,6 +309,17 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
   /** Returns the object with the settings used for calls to getIndex. */
   public UnaryCallSettings<GetIndexRequest, Index> getIndexSettings() {
     return getIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importIndex. */
+  public UnaryCallSettings<ImportIndexRequest, Operation> importIndexSettings() {
+    return importIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importIndex. */
+  public OperationCallSettings<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationSettings() {
+    return importIndexOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listIndexes. */
@@ -457,6 +473,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     createIndexSettings = settingsBuilder.createIndexSettings().build();
     createIndexOperationSettings = settingsBuilder.createIndexOperationSettings().build();
     getIndexSettings = settingsBuilder.getIndexSettings().build();
+    importIndexSettings = settingsBuilder.importIndexSettings().build();
+    importIndexOperationSettings = settingsBuilder.importIndexOperationSettings().build();
     listIndexesSettings = settingsBuilder.listIndexesSettings().build();
     updateIndexSettings = settingsBuilder.updateIndexSettings().build();
     updateIndexOperationSettings = settingsBuilder.updateIndexOperationSettings().build();
@@ -479,6 +497,10 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
             CreateIndexRequest, Index, CreateIndexOperationMetadata>
         createIndexOperationSettings;
     private final UnaryCallSettings.Builder<GetIndexRequest, Index> getIndexSettings;
+    private final UnaryCallSettings.Builder<ImportIndexRequest, Operation> importIndexSettings;
+    private final OperationCallSettings.Builder<
+            ImportIndexRequest, Index, ImportIndexOperationMetadata>
+        importIndexOperationSettings;
     private final PagedCallSettings.Builder<
             ListIndexesRequest, ListIndexesResponse, ListIndexesPagedResponse>
         listIndexesSettings;
@@ -541,6 +563,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
       createIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createIndexOperationSettings = OperationCallSettings.newBuilder();
       getIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importIndexOperationSettings = OperationCallSettings.newBuilder();
       listIndexesSettings = PagedCallSettings.newBuilder(LIST_INDEXES_PAGE_STR_FACT);
       updateIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateIndexOperationSettings = OperationCallSettings.newBuilder();
@@ -558,6 +582,7 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createIndexSettings,
               getIndexSettings,
+              importIndexSettings,
               listIndexesSettings,
               updateIndexSettings,
               deleteIndexSettings,
@@ -577,6 +602,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
       createIndexSettings = settings.createIndexSettings.toBuilder();
       createIndexOperationSettings = settings.createIndexOperationSettings.toBuilder();
       getIndexSettings = settings.getIndexSettings.toBuilder();
+      importIndexSettings = settings.importIndexSettings.toBuilder();
+      importIndexOperationSettings = settings.importIndexOperationSettings.toBuilder();
       listIndexesSettings = settings.listIndexesSettings.toBuilder();
       updateIndexSettings = settings.updateIndexSettings.toBuilder();
       updateIndexOperationSettings = settings.updateIndexOperationSettings.toBuilder();
@@ -594,6 +621,7 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createIndexSettings,
               getIndexSettings,
+              importIndexSettings,
               listIndexesSettings,
               updateIndexSettings,
               deleteIndexSettings,
@@ -628,6 +656,11 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
           .getIndexSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .importIndexSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listIndexesSettings()
@@ -691,6 +724,30 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   CreateIndexOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importIndexOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Index.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportIndexOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -782,6 +839,17 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     /** Returns the builder for the settings used for calls to getIndex. */
     public UnaryCallSettings.Builder<GetIndexRequest, Index> getIndexSettings() {
       return getIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importIndex. */
+    public UnaryCallSettings.Builder<ImportIndexRequest, Operation> importIndexSettings() {
+      return importIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importIndex. */
+    public OperationCallSettings.Builder<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+        importIndexOperationSettings() {
+      return importIndexOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listIndexes. */

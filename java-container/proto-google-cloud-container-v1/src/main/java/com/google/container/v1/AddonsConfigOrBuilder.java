@@ -122,7 +122,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1336
+   *     google/container/v1/cluster_service.proto;l=1544
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1336
+   *     google/container/v1/cluster_service.proto;l=1544
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -611,4 +611,45 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return Whether the highScaleCheckpointingConfig field is set.
+   */
+  boolean hasHighScaleCheckpointingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return The highScaleCheckpointingConfig.
+   */
+  com.google.container.v1.HighScaleCheckpointingConfig getHighScaleCheckpointingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>.google.container.v1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   */
+  com.google.container.v1.HighScaleCheckpointingConfigOrBuilder
+      getHighScaleCheckpointingConfigOrBuilder();
 }

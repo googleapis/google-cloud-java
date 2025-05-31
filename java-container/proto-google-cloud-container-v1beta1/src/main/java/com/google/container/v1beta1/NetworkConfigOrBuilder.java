@@ -494,4 +494,64 @@ public interface NetworkConfigOrBuilder
    * @return The enableCiliumClusterwideNetworkPolicy.
    */
   boolean getEnableCiliumClusterwideNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls whether by default nodes have private IP addresses only.
+   * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+   * and this field at the same time.
+   * To update the default setting, use
+   * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1beta1.ClusterUpdate.desired_default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool default_enable_private_nodes = 22;</code>
+   *
+   * @return Whether the defaultEnablePrivateNodes field is set.
+   */
+  boolean hasDefaultEnablePrivateNodes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls whether by default nodes have private IP addresses only.
+   * It is invalid to specify both [PrivateClusterConfig.enablePrivateNodes][]
+   * and this field at the same time.
+   * To update the default setting, use
+   * [ClusterUpdate.desired_default_enable_private_nodes][google.container.v1beta1.ClusterUpdate.desired_default_enable_private_nodes]
+   * </pre>
+   *
+   * <code>optional bool default_enable_private_nodes = 22;</code>
+   *
+   * @return The defaultEnablePrivateNodes.
+   */
+  boolean getDefaultEnablePrivateNodes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return Whether the disableL4LbFirewallReconciliation field is set.
+   */
+  boolean hasDisableL4LbFirewallReconciliation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return The disableL4LbFirewallReconciliation.
+   */
+  boolean getDisableL4LbFirewallReconciliation();
 }

@@ -258,7 +258,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4620
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5081
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -284,7 +284,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4620
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5081
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -447,7 +447,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Enable or disable Kubelet read only port.
+   * DEPRECATED. Use NodePoolAutoConfig.NodeKubeletConfig instead.
    * </pre>
    *
    * <code>optional bool insecure_kubelet_readonly_port_enabled = 13;</code>
@@ -460,7 +460,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Enable or disable Kubelet read only port.
+   * DEPRECATED. Use NodePoolAutoConfig.NodeKubeletConfig instead.
    * </pre>
    *
    * <code>optional bool insecure_kubelet_readonly_port_enabled = 13;</code>

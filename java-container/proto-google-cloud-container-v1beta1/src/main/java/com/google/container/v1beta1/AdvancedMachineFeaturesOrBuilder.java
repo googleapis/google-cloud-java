@@ -79,4 +79,53 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return The enableNestedVirtualization.
    */
   boolean getEnableNestedVirtualization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return Whether the performanceMonitoringUnit field is set.
+   */
+  boolean hasPerformanceMonitoringUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for performanceMonitoringUnit.
+   */
+  int getPerformanceMonitoringUnitValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return The performanceMonitoringUnit.
+   */
+  com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit
+      getPerformanceMonitoringUnit();
 }

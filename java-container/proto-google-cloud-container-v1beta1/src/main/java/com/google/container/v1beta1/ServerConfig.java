@@ -278,6 +278,32 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the validVersions at the given index.
      */
     com.google.protobuf.ByteString getValidVersionsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The auto upgrade target version for clusters on the channel.
+     * </pre>
+     *
+     * <code>string upgrade_target_version = 5;</code>
+     *
+     * @return The upgradeTargetVersion.
+     */
+    java.lang.String getUpgradeTargetVersion();
+
+    /**
+     *
+     *
+     * <pre>
+     * The auto upgrade target version for clusters on the channel.
+     * </pre>
+     *
+     * <code>string upgrade_target_version = 5;</code>
+     *
+     * @return The bytes for upgradeTargetVersion.
+     */
+    com.google.protobuf.ByteString getUpgradeTargetVersionBytes();
   }
 
   /**
@@ -305,6 +331,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       defaultVersion_ = "";
       availableVersions_ = java.util.Collections.emptyList();
       validVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      upgradeTargetVersion_ = "";
     }
 
     @java.lang.Override
@@ -1505,6 +1532,59 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       return validVersions_.getByteString(index);
     }
 
+    public static final int UPGRADE_TARGET_VERSION_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object upgradeTargetVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The auto upgrade target version for clusters on the channel.
+     * </pre>
+     *
+     * <code>string upgrade_target_version = 5;</code>
+     *
+     * @return The upgradeTargetVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getUpgradeTargetVersion() {
+      java.lang.Object ref = upgradeTargetVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        upgradeTargetVersion_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The auto upgrade target version for clusters on the channel.
+     * </pre>
+     *
+     * <code>string upgrade_target_version = 5;</code>
+     *
+     * @return The bytes for upgradeTargetVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUpgradeTargetVersionBytes() {
+      java.lang.Object ref = upgradeTargetVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        upgradeTargetVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1530,6 +1610,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
       for (int i = 0; i < validVersions_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, validVersions_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeTargetVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upgradeTargetVersion_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1558,6 +1641,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getValidVersionsList().size();
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeTargetVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upgradeTargetVersion_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1578,6 +1664,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getDefaultVersion().equals(other.getDefaultVersion())) return false;
       if (!getAvailableVersionsList().equals(other.getAvailableVersionsList())) return false;
       if (!getValidVersionsList().equals(other.getValidVersionsList())) return false;
+      if (!getUpgradeTargetVersion().equals(other.getUpgradeTargetVersion())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1601,6 +1688,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + VALID_VERSIONS_FIELD_NUMBER;
         hash = (53 * hash) + getValidVersionsList().hashCode();
       }
+      hash = (37 * hash) + UPGRADE_TARGET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeTargetVersion().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1754,6 +1843,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         validVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        upgradeTargetVersion_ = "";
         return this;
       }
 
@@ -1815,6 +1905,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           validVersions_.makeImmutable();
           result.validVersions_ = validVersions_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.upgradeTargetVersion_ = upgradeTargetVersion_;
         }
       }
 
@@ -1913,6 +2006,11 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (!other.getUpgradeTargetVersion().isEmpty()) {
+          upgradeTargetVersion_ = other.upgradeTargetVersion_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1974,6 +2072,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
                   validVersions_.add(s);
                   break;
                 } // case 34
+              case 42:
+                {
+                  upgradeTargetVersion_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2882,6 +2986,117 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         ensureValidVersionsIsMutable();
         validVersions_.add(value);
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object upgradeTargetVersion_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The auto upgrade target version for clusters on the channel.
+       * </pre>
+       *
+       * <code>string upgrade_target_version = 5;</code>
+       *
+       * @return The upgradeTargetVersion.
+       */
+      public java.lang.String getUpgradeTargetVersion() {
+        java.lang.Object ref = upgradeTargetVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          upgradeTargetVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The auto upgrade target version for clusters on the channel.
+       * </pre>
+       *
+       * <code>string upgrade_target_version = 5;</code>
+       *
+       * @return The bytes for upgradeTargetVersion.
+       */
+      public com.google.protobuf.ByteString getUpgradeTargetVersionBytes() {
+        java.lang.Object ref = upgradeTargetVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          upgradeTargetVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The auto upgrade target version for clusters on the channel.
+       * </pre>
+       *
+       * <code>string upgrade_target_version = 5;</code>
+       *
+       * @param value The upgradeTargetVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpgradeTargetVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upgradeTargetVersion_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The auto upgrade target version for clusters on the channel.
+       * </pre>
+       *
+       * <code>string upgrade_target_version = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUpgradeTargetVersion() {
+        upgradeTargetVersion_ = getDefaultInstance().getUpgradeTargetVersion();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The auto upgrade target version for clusters on the channel.
+       * </pre>
+       *
+       * <code>string upgrade_target_version = 5;</code>
+       *
+       * @param value The bytes for upgradeTargetVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpgradeTargetVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        upgradeTargetVersion_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

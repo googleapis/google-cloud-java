@@ -103,7 +103,7 @@ public class HttpJsonLicenseManagementServiceStub extends LicenseManagementServi
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateLicensePoolRequest>newBuilder()
                       .setPath(
-                          "/v1/{licensePool.name=billingAccounts/*/orders/*/licensePool/*}",
+                          "/v1/{licensePool.name=billingAccounts/*/orders/*/licensePool}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateLicensePoolRequest> serializer =

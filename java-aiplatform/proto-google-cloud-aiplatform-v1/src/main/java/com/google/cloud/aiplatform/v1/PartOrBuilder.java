@@ -340,6 +340,60 @@ public interface PartOrBuilder
    *
    *
    * <pre>
+   * Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the thought field is set.
+   */
+  boolean hasThought();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thought.
+   */
+  boolean getThought();
+
+  /**
+   *
+   *
+   * <pre>
+   * An opaque signature for the thought so it can be reused in subsequent
+   * requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the thoughtSignature field is set.
+   */
+  boolean hasThoughtSignature();
+
+  /**
+   *
+   *
+   * <pre>
+   * An opaque signature for the thought so it can be reused in subsequent
+   * requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thoughtSignature.
+   */
+  com.google.protobuf.ByteString getThoughtSignature();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Video metadata. The metadata should only be specified while the
    * video data is presented in inline_data or file_data.
    * </pre>

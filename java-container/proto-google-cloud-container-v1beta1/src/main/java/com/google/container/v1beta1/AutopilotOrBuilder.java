@@ -41,7 +41,7 @@ public interface AutopilotOrBuilder
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -54,7 +54,7 @@ public interface AutopilotOrBuilder
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -67,7 +67,7 @@ public interface AutopilotOrBuilder
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>

@@ -21,6 +21,7 @@ import com.google.cloud.retail.v2alpha.BranchName;
 import com.google.cloud.retail.v2alpha.SearchRequest;
 import com.google.cloud.retail.v2alpha.SearchResponse;
 import com.google.cloud.retail.v2alpha.SearchServiceClient;
+import com.google.cloud.retail.v2alpha.StringList;
 import com.google.cloud.retail.v2alpha.UserInfo;
 import com.google.common.base.Strings;
 import java.util.ArrayList;
@@ -69,6 +70,7 @@ public class AsyncSearchPaged {
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

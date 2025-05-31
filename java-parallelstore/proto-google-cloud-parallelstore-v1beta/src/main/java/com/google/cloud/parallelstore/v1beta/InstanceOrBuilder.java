@@ -287,8 +287,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated 'daos_version' field.
-   * Output only. The version of DAOS software running in the instance.
+   * Output only. Deprecated: The version of DAOS software running in the
+   * instance.
    * </pre>
    *
    * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
@@ -305,8 +305,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated 'daos_version' field.
-   * Output only. The version of DAOS software running in the instance.
+   * Output only. Deprecated: The version of DAOS software running in the
+   * instance.
    * </pre>
    *
    * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];

@@ -75,10 +75,9 @@ public final class CustomJobProto {
           + "e/api/field_behavior.proto\032\031google/api/r"
           + "esource.proto\0320google/cloud/aiplatform/v1/encryption_spec.proto\032(google/cloud/ai"
           + "platform/v1/env_var.proto\032#google/cloud/aiplatform/v1/io.proto\032*google/cloud/aip"
-          + "latform/v1/job_state.proto\0322google/cloud"
-          + "/aiplatform/v1/machine_resources.proto\032\036"
-          + "google/protobuf/duration.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\027google/rpc/status.proto\"\231\007\n"
+          + "latform/v1/job_state.proto\0322google/cloud/aiplatform/v1/machine_resources.proto\0323"
+          + "google/cloud/aiplatform/v1/service_networking.proto\032\036google/protobuf/duration.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\231\007\n"
           + "\tCustomJob\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022@\n"
@@ -95,8 +94,8 @@ public final class CustomJobProto {
           + "\006labels\030\013 \003(\01321.google.cloud.aiplatform.v1.CustomJob.LabelsEntry\022C\n"
           + "\017encryption_spec\030\014"
           + " \001(\0132*.google.cloud.aiplatform.v1.EncryptionSpec\022V\n"
-          + "\017web_access_uris\030\020"
-          + " \003(\01328.google.cloud.aiplatform.v1.CustomJob.WebAccessUrisEntryB\003\340A\003\022\032\n\r"
+          + "\017web_access_uris\030\020 \003(\01328.google.cloud.aiplat"
+          + "form.v1.CustomJob.WebAccessUrisEntryB\003\340A\003\022\032\n\r"
           + "satisfies_pzs\030\022 \001(\010B\003\340A\003\022\032\n\r"
           + "satisfies_pzi\030\023 \001(\010B\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -105,21 +104,23 @@ public final class CustomJobProto {
           + "\022WebAccessUrisEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:i\352Af\n"
-          + "#aiplatform.googleapis.com/CustomJob\022?projects/{p"
-          + "roject}/locations/{location}/customJobs/{custom_job}\"\230\006\n\r"
+          + "#aiplatform.googleapis.com/CustomJob"
+          + "\022?projects/{project}/locations/{location}/customJobs/{custom_job}\"\353\006\n\r"
           + "CustomJobSpec\022T\n"
           + "\026persistent_resource_id\030\016 \001(\tB4\340A\001\372A.\n"
           + ",aiplatform.googleapis.com/PersistentResource\022J\n"
-          + "\021worker_pool_specs\030\001"
-          + " \003(\0132*.google.cloud.aiplatform.v1.WorkerPoolSpecB\003\340A\002\022:\n\n"
+          + "\021worker_pool_specs\030\001 \003(\0132*.g"
+          + "oogle.cloud.aiplatform.v1.WorkerPoolSpecB\003\340A\002\022:\n\n"
           + "scheduling\030\003 \001(\0132&.google.cloud.aiplatform.v1.Scheduling\022\027\n"
           + "\017service_account\030\004 \001(\t\0227\n"
           + "\007network\030\005 \001(\tB&\340A\001\372A \n"
           + "\036compute.googleapis.com/Network\022\037\n"
           + "\022reserved_ip_ranges\030\r"
-          + " \003(\tB\003\340A\001\022I\n"
-          + "\025base_output_directory\030\006 \001(\0132*"
-          + ".google.cloud.aiplatform.v1.GcsDestination\022&\n"
+          + " \003(\tB\003\340A\001\022Q\n"
+          + "\024psc_interface_config\030\025"
+          + " \001(\0132..google.cloud.aiplatform.v1.PscInterfaceConfigB\003\340A\001\022I\n"
+          + "\025base_output_directory\030\006"
+          + " \001(\0132*.google.cloud.aiplatform.v1.GcsDestination\022&\n"
           + "\036protected_artifact_location_id\030\023 \001(\t\022B\n"
           + "\013tensorboard\030\007 \001(\tB-\340A\001\372A\'\n"
           + "%aiplatform.googleapis.com/Tensorboard\022\036\n"
@@ -137,8 +138,8 @@ public final class CustomJobProto {
           + " \001(\0132).google.cloud.aiplatform.v1.ContainerSpecH\000\022L\n"
           + "\023python_package_spec\030\007"
           + " \001(\0132-.google.cloud.aiplatform.v1.PythonPackageSpecH\000\022E\n"
-          + "\014machine_spec\030\001 \001(\0132\'.go"
-          + "ogle.cloud.aiplatform.v1.MachineSpecB\006\340A\001\340A\005\022\032\n\r"
+          + "\014machine_spec\030\001"
+          + " \001(\0132\'.google.cloud.aiplatform.v1.MachineSpecB\006\340A\001\340A\005\022\032\n\r"
           + "replica_count\030\002 \001(\003B\003\340A\001\022=\n\n"
           + "nfs_mounts\030\004"
           + " \003(\0132$.google.cloud.aiplatform.v1.NfsMountB\003\340A\001\0227\n"
@@ -158,8 +159,8 @@ public final class CustomJobProto {
           + "Scheduling\022*\n"
           + "\007timeout\030\001 \001(\0132\031.google.protobuf.Duration\022%\n"
           + "\035restart_job_on_worker_restart\030\003 \001(\010\022F\n"
-          + "\010strategy\030\004"
-          + " \001(\0162/.google.cloud.aiplatform.v1.Scheduling.StrategyB\003\340A\001\022\034\n"
+          + "\010strategy\030\004 \001(\0162/.google.clou"
+          + "d.aiplatform.v1.Scheduling.StrategyB\003\340A\001\022\034\n"
           + "\017disable_retries\030\005 \001(\010B\003\340A\001\0229\n"
           + "\021max_wait_duration\030\006"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"q\n"
@@ -170,11 +171,10 @@ public final class CustomJobProto {
           + "\010STANDARD\020\003\022\010\n"
           + "\004SPOT\020\004\022\016\n\n"
           + "FLEX_START\020\006B\314\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\016CustomJobProtoP"
-          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
-          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\016CustomJobProtoP\001Z>cloud.google.com/go/a"
+          + "iplatform/apiv1/aiplatformpb;aiplatformp"
+          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
+          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -187,6 +187,7 @@ public final class CustomJobProto {
               com.google.cloud.aiplatform.v1.IoProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.JobStateProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.ServiceNetworkingProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -240,6 +241,7 @@ public final class CustomJobProto {
               "ServiceAccount",
               "Network",
               "ReservedIpRanges",
+              "PscInterfaceConfig",
               "BaseOutputDirectory",
               "ProtectedArtifactLocationId",
               "Tensorboard",
@@ -305,6 +307,7 @@ public final class CustomJobProto {
     com.google.cloud.aiplatform.v1.IoProto.getDescriptor();
     com.google.cloud.aiplatform.v1.JobStateProto.getDescriptor();
     com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.ServiceNetworkingProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

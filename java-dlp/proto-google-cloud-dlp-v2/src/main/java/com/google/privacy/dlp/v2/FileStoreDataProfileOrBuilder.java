@@ -979,7 +979,8 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
-   * The file store does not have any files.
+   * The file store does not have any files. If the profiling operation failed,
+   * this is false.
    * </pre>
    *
    * <code>bool file_store_is_empty = 23;</code>

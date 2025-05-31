@@ -199,7 +199,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1406
+   *     google/container/v1beta1/cluster_service.proto;l=1677
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -224,7 +224,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1406
+   *     google/container/v1beta1/cluster_service.proto;l=1677
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -333,7 +333,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1686
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Override
@@ -353,7 +353,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1686
    * @return The istioConfig.
    */
   @java.lang.Override
@@ -627,7 +627,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1434
+   *     google/container/v1beta1/cluster_service.proto;l=1705
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Override
@@ -647,7 +647,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1434
+   *     google/container/v1beta1/cluster_service.proto;l=1705
    * @return The kalmConfig.
    */
   @java.lang.Override
@@ -903,6 +903,67 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : statefulHaConfig_;
   }
 
+  public static final int PARALLELSTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER = 19;
+  private com.google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstoreCsiDriverConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return Whether the parallelstoreCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasParallelstoreCsiDriverConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   *
+   * @return The parallelstoreCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ParallelstoreCsiDriverConfig
+      getParallelstoreCsiDriverConfig() {
+    return parallelstoreCsiDriverConfig_ == null
+        ? com.google.container.v1beta1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+        : parallelstoreCsiDriverConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Parallelstore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder
+      getParallelstoreCsiDriverConfigOrBuilder() {
+    return parallelstoreCsiDriverConfig_ == null
+        ? com.google.container.v1beta1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+        : parallelstoreCsiDriverConfig_;
+  }
+
   public static final int RAY_OPERATOR_CONFIG_FIELD_NUMBER = 21;
   private com.google.container.v1beta1.RayOperatorConfig rayOperatorConfig_;
 
@@ -921,7 +982,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRayOperatorConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -960,6 +1021,67 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return rayOperatorConfig_ == null
         ? com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()
         : rayOperatorConfig_;
+  }
+
+  public static final int HIGH_SCALE_CHECKPOINTING_CONFIG_FIELD_NUMBER = 22;
+  private com.google.container.v1beta1.HighScaleCheckpointingConfig highScaleCheckpointingConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return Whether the highScaleCheckpointingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHighScaleCheckpointingConfig() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   *
+   * @return The highScaleCheckpointingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HighScaleCheckpointingConfig
+      getHighScaleCheckpointingConfig() {
+    return highScaleCheckpointingConfig_ == null
+        ? com.google.container.v1beta1.HighScaleCheckpointingConfig.getDefaultInstance()
+        : highScaleCheckpointingConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the High Scale Checkpointing add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder
+      getHighScaleCheckpointingConfigOrBuilder() {
+    return highScaleCheckpointingConfig_ == null
+        ? com.google.container.v1beta1.HighScaleCheckpointingConfig.getDefaultInstance()
+        : highScaleCheckpointingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1019,7 +1141,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(18, getStatefulHaConfig());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(19, getParallelstoreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(21, getRayOperatorConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(22, getHighScaleCheckpointingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1082,7 +1210,17 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getStatefulHaConfig());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getParallelstoreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getRayOperatorConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, getHighScaleCheckpointingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1159,9 +1297,19 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasStatefulHaConfig()) {
       if (!getStatefulHaConfig().equals(other.getStatefulHaConfig())) return false;
     }
+    if (hasParallelstoreCsiDriverConfig() != other.hasParallelstoreCsiDriverConfig()) return false;
+    if (hasParallelstoreCsiDriverConfig()) {
+      if (!getParallelstoreCsiDriverConfig().equals(other.getParallelstoreCsiDriverConfig()))
+        return false;
+    }
     if (hasRayOperatorConfig() != other.hasRayOperatorConfig()) return false;
     if (hasRayOperatorConfig()) {
       if (!getRayOperatorConfig().equals(other.getRayOperatorConfig())) return false;
+    }
+    if (hasHighScaleCheckpointingConfig() != other.hasHighScaleCheckpointingConfig()) return false;
+    if (hasHighScaleCheckpointingConfig()) {
+      if (!getHighScaleCheckpointingConfig().equals(other.getHighScaleCheckpointingConfig()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1230,9 +1378,17 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATEFUL_HA_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStatefulHaConfig().hashCode();
     }
+    if (hasParallelstoreCsiDriverConfig()) {
+      hash = (37 * hash) + PARALLELSTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getParallelstoreCsiDriverConfig().hashCode();
+    }
     if (hasRayOperatorConfig()) {
       hash = (37 * hash) + RAY_OPERATOR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRayOperatorConfig().hashCode();
+    }
+    if (hasHighScaleCheckpointingConfig()) {
+      hash = (37 * hash) + HIGH_SCALE_CHECKPOINTING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getHighScaleCheckpointingConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1390,7 +1546,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getGkeBackupAgentConfigFieldBuilder();
         getGcsFuseCsiDriverConfigFieldBuilder();
         getStatefulHaConfigFieldBuilder();
+        getParallelstoreCsiDriverConfigFieldBuilder();
         getRayOperatorConfigFieldBuilder();
+        getHighScaleCheckpointingConfigFieldBuilder();
       }
     }
 
@@ -1468,10 +1626,20 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         statefulHaConfigBuilder_.dispose();
         statefulHaConfigBuilder_ = null;
       }
+      parallelstoreCsiDriverConfig_ = null;
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        parallelstoreCsiDriverConfigBuilder_.dispose();
+        parallelstoreCsiDriverConfigBuilder_ = null;
+      }
       rayOperatorConfig_ = null;
       if (rayOperatorConfigBuilder_ != null) {
         rayOperatorConfigBuilder_.dispose();
         rayOperatorConfigBuilder_ = null;
+      }
+      highScaleCheckpointingConfig_ = null;
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        highScaleCheckpointingConfigBuilder_.dispose();
+        highScaleCheckpointingConfigBuilder_ = null;
       }
       return this;
     }
@@ -1598,11 +1766,25 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.parallelstoreCsiDriverConfig_ =
+            parallelstoreCsiDriverConfigBuilder_ == null
+                ? parallelstoreCsiDriverConfig_
+                : parallelstoreCsiDriverConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.rayOperatorConfig_ =
             rayOperatorConfigBuilder_ == null
                 ? rayOperatorConfig_
                 : rayOperatorConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.highScaleCheckpointingConfig_ =
+            highScaleCheckpointingConfigBuilder_ == null
+                ? highScaleCheckpointingConfig_
+                : highScaleCheckpointingConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1694,8 +1876,14 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStatefulHaConfig()) {
         mergeStatefulHaConfig(other.getStatefulHaConfig());
       }
+      if (other.hasParallelstoreCsiDriverConfig()) {
+        mergeParallelstoreCsiDriverConfig(other.getParallelstoreCsiDriverConfig());
+      }
       if (other.hasRayOperatorConfig()) {
         mergeRayOperatorConfig(other.getRayOperatorConfig());
+      }
+      if (other.hasHighScaleCheckpointingConfig()) {
+        mergeHighScaleCheckpointingConfig(other.getHighScaleCheckpointingConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1818,13 +2006,27 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getParallelstoreCsiDriverConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 154
             case 170:
               {
                 input.readMessage(
                     getRayOperatorConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getHighScaleCheckpointingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2299,7 +2501,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1406
+     *     google/container/v1beta1/cluster_service.proto;l=1677
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2323,7 +2525,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1406
+     *     google/container/v1beta1/cluster_service.proto;l=1677
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -2776,7 +2978,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1686
      * @return Whether the istioConfig field is set.
      */
     @java.lang.Deprecated
@@ -2795,7 +2997,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1686
      * @return The istioConfig.
      */
     @java.lang.Deprecated
@@ -3832,7 +4034,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1434
+     *     google/container/v1beta1/cluster_service.proto;l=1705
      * @return Whether the kalmConfig field is set.
      */
     @java.lang.Deprecated
@@ -3851,7 +4053,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1434
+     *     google/container/v1beta1/cluster_service.proto;l=1705
      * @return The kalmConfig.
      */
     @java.lang.Deprecated
@@ -4871,6 +5073,225 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return statefulHaConfigBuilder_;
     }
 
+    private com.google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstoreCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfig,
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder>
+        parallelstoreCsiDriverConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     *
+     * @return Whether the parallelstoreCsiDriverConfig field is set.
+     */
+    public boolean hasParallelstoreCsiDriverConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     *
+     * @return The parallelstoreCsiDriverConfig.
+     */
+    public com.google.container.v1beta1.ParallelstoreCsiDriverConfig
+        getParallelstoreCsiDriverConfig() {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        return parallelstoreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+            : parallelstoreCsiDriverConfig_;
+      } else {
+        return parallelstoreCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder setParallelstoreCsiDriverConfig(
+        com.google.container.v1beta1.ParallelstoreCsiDriverConfig value) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parallelstoreCsiDriverConfig_ = value;
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder setParallelstoreCsiDriverConfig(
+        com.google.container.v1beta1.ParallelstoreCsiDriverConfig.Builder builderForValue) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        parallelstoreCsiDriverConfig_ = builderForValue.build();
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder mergeParallelstoreCsiDriverConfig(
+        com.google.container.v1beta1.ParallelstoreCsiDriverConfig value) {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && parallelstoreCsiDriverConfig_ != null
+            && parallelstoreCsiDriverConfig_
+                != com.google.container.v1beta1.ParallelstoreCsiDriverConfig.getDefaultInstance()) {
+          getParallelstoreCsiDriverConfigBuilder().mergeFrom(value);
+        } else {
+          parallelstoreCsiDriverConfig_ = value;
+        }
+      } else {
+        parallelstoreCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+      if (parallelstoreCsiDriverConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public Builder clearParallelstoreCsiDriverConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      parallelstoreCsiDriverConfig_ = null;
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        parallelstoreCsiDriverConfigBuilder_.dispose();
+        parallelstoreCsiDriverConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public com.google.container.v1beta1.ParallelstoreCsiDriverConfig.Builder
+        getParallelstoreCsiDriverConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getParallelstoreCsiDriverConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    public com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder
+        getParallelstoreCsiDriverConfigOrBuilder() {
+      if (parallelstoreCsiDriverConfigBuilder_ != null) {
+        return parallelstoreCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return parallelstoreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.ParallelstoreCsiDriverConfig.getDefaultInstance()
+            : parallelstoreCsiDriverConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Cloud Storage Parallelstore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ParallelstoreCsiDriverConfig parallelstore_csi_driver_config = 19;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfig,
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder>
+        getParallelstoreCsiDriverConfigFieldBuilder() {
+      if (parallelstoreCsiDriverConfigBuilder_ == null) {
+        parallelstoreCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ParallelstoreCsiDriverConfig,
+                com.google.container.v1beta1.ParallelstoreCsiDriverConfig.Builder,
+                com.google.container.v1beta1.ParallelstoreCsiDriverConfigOrBuilder>(
+                getParallelstoreCsiDriverConfig(), getParentForChildren(), isClean());
+        parallelstoreCsiDriverConfig_ = null;
+      }
+      return parallelstoreCsiDriverConfigBuilder_;
+    }
+
     private com.google.container.v1beta1.RayOperatorConfig rayOperatorConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.RayOperatorConfig,
@@ -4892,7 +5313,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rayOperatorConfig field is set.
      */
     public boolean hasRayOperatorConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4938,7 +5359,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayOperatorConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4961,7 +5382,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         rayOperatorConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4979,7 +5400,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRayOperatorConfig(com.google.container.v1beta1.RayOperatorConfig value) {
       if (rayOperatorConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && rayOperatorConfig_ != null
             && rayOperatorConfig_
                 != com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()) {
@@ -4991,7 +5412,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         rayOperatorConfigBuilder_.mergeFrom(value);
       }
       if (rayOperatorConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5009,7 +5430,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRayOperatorConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       rayOperatorConfig_ = null;
       if (rayOperatorConfigBuilder_ != null) {
         rayOperatorConfigBuilder_.dispose();
@@ -5031,7 +5452,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.container.v1beta1.RayOperatorConfig.Builder getRayOperatorConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getRayOperatorConfigFieldBuilder().getBuilder();
     }
@@ -5083,6 +5504,225 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         rayOperatorConfig_ = null;
       }
       return rayOperatorConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.HighScaleCheckpointingConfig highScaleCheckpointingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HighScaleCheckpointingConfig,
+            com.google.container.v1beta1.HighScaleCheckpointingConfig.Builder,
+            com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder>
+        highScaleCheckpointingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     *
+     * @return Whether the highScaleCheckpointingConfig field is set.
+     */
+    public boolean hasHighScaleCheckpointingConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     *
+     * @return The highScaleCheckpointingConfig.
+     */
+    public com.google.container.v1beta1.HighScaleCheckpointingConfig
+        getHighScaleCheckpointingConfig() {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        return highScaleCheckpointingConfig_ == null
+            ? com.google.container.v1beta1.HighScaleCheckpointingConfig.getDefaultInstance()
+            : highScaleCheckpointingConfig_;
+      } else {
+        return highScaleCheckpointingConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder setHighScaleCheckpointingConfig(
+        com.google.container.v1beta1.HighScaleCheckpointingConfig value) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        highScaleCheckpointingConfig_ = value;
+      } else {
+        highScaleCheckpointingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder setHighScaleCheckpointingConfig(
+        com.google.container.v1beta1.HighScaleCheckpointingConfig.Builder builderForValue) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        highScaleCheckpointingConfig_ = builderForValue.build();
+      } else {
+        highScaleCheckpointingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder mergeHighScaleCheckpointingConfig(
+        com.google.container.v1beta1.HighScaleCheckpointingConfig value) {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && highScaleCheckpointingConfig_ != null
+            && highScaleCheckpointingConfig_
+                != com.google.container.v1beta1.HighScaleCheckpointingConfig.getDefaultInstance()) {
+          getHighScaleCheckpointingConfigBuilder().mergeFrom(value);
+        } else {
+          highScaleCheckpointingConfig_ = value;
+        }
+      } else {
+        highScaleCheckpointingConfigBuilder_.mergeFrom(value);
+      }
+      if (highScaleCheckpointingConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public Builder clearHighScaleCheckpointingConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      highScaleCheckpointingConfig_ = null;
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        highScaleCheckpointingConfigBuilder_.dispose();
+        highScaleCheckpointingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public com.google.container.v1beta1.HighScaleCheckpointingConfig.Builder
+        getHighScaleCheckpointingConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getHighScaleCheckpointingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    public com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder
+        getHighScaleCheckpointingConfigOrBuilder() {
+      if (highScaleCheckpointingConfigBuilder_ != null) {
+        return highScaleCheckpointingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return highScaleCheckpointingConfig_ == null
+            ? com.google.container.v1beta1.HighScaleCheckpointingConfig.getDefaultInstance()
+            : highScaleCheckpointingConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the High Scale Checkpointing add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HighScaleCheckpointingConfig high_scale_checkpointing_config = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HighScaleCheckpointingConfig,
+            com.google.container.v1beta1.HighScaleCheckpointingConfig.Builder,
+            com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder>
+        getHighScaleCheckpointingConfigFieldBuilder() {
+      if (highScaleCheckpointingConfigBuilder_ == null) {
+        highScaleCheckpointingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.HighScaleCheckpointingConfig,
+                com.google.container.v1beta1.HighScaleCheckpointingConfig.Builder,
+                com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder>(
+                getHighScaleCheckpointingConfig(), getParentForChildren(), isClean());
+        highScaleCheckpointingConfig_ = null;
+      }
+      return highScaleCheckpointingConfigBuilder_;
     }
 
     @java.lang.Override

@@ -214,6 +214,16 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>DCGM = 15;</code>
      */
     DCGM(15),
+    /**
+     *
+     *
+     * <pre>
+     * JobSet
+     * </pre>
+     *
+     * <code>JOBSET = 16;</code>
+     */
+    JOBSET(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -371,6 +381,17 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      */
     public static final int DCGM_VALUE = 15;
 
+    /**
+     *
+     *
+     * <pre>
+     * JobSet
+     * </pre>
+     *
+     * <code>JOBSET = 16;</code>
+     */
+    public static final int JOBSET_VALUE = 16;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -423,6 +444,8 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
           return KUBELET;
         case 15:
           return DCGM;
+        case 16:
+          return JOBSET;
         default:
           return null;
       }

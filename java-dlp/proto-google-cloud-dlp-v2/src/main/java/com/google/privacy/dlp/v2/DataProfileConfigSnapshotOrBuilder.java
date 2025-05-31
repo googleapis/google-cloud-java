@@ -79,7 +79,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7493
+   *     google/privacy/dlp/v2/dlp.proto;l=7563
    * @return Whether the dataProfileJob field is set.
    */
   @java.lang.Deprecated
@@ -100,7 +100,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7493
+   *     google/privacy/dlp/v2/dlp.proto;l=7563
    * @return The dataProfileJob.
    */
   @java.lang.Deprecated

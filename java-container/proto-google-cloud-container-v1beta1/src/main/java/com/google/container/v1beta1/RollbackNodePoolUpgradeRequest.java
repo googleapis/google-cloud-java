@@ -24,8 +24,8 @@ package com.google.container.v1beta1;
  *
  * <pre>
  * RollbackNodePoolUpgradeRequest rollbacks the previously Aborted or Failed
- * NodePool upgrade. This will be an no-op if the last upgrade successfully
- * completed.
+ *  NodePool upgrade. This will be an no-op if the last upgrade successfully
+ *  completed.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.RollbackNodePoolUpgradeRequest}
@@ -80,16 +80,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4506
+   *     See google/container/v1beta1/cluster_service.proto;l=4970
    * @return The projectId.
    */
   @java.lang.Override
@@ -110,16 +109,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4506
+   *     See google/container/v1beta1/cluster_service.proto;l=4970
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -145,16 +143,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the name
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4513
+   *     google/container/v1beta1/cluster_service.proto;l=4976
    * @return The zone.
    */
   @java.lang.Override
@@ -175,16 +173,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the name
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4513
+   *     google/container/v1beta1/cluster_service.proto;l=4976
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -210,15 +208,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to rollback.
+   * Deprecated. The name of the cluster to rollback.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4517
+   *     See google/container/v1beta1/cluster_service.proto;l=4980
    * @return The clusterId.
    */
   @java.lang.Override
@@ -239,15 +236,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to rollback.
+   * Deprecated. The name of the cluster to rollback.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4517
+   *     See google/container/v1beta1/cluster_service.proto;l=4980
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -273,15 +269,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to rollback.
+   * Deprecated. The name of the node pool to rollback.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4522
+   *     See google/container/v1beta1/cluster_service.proto;l=4984
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -302,15 +297,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to rollback.
+   * Deprecated. The name of the node pool to rollback.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4522
+   *     See google/container/v1beta1/cluster_service.proto;l=4984
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -615,8 +609,8 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * RollbackNodePoolUpgradeRequest rollbacks the previously Aborted or Failed
-   * NodePool upgrade. This will be an no-op if the last upgrade successfully
-   * completed.
+   *  NodePool upgrade. This will be an no-op if the last upgrade successfully
+   *  completed.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.RollbackNodePoolUpgradeRequest}
@@ -874,16 +868,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4506
+     *     See google/container/v1beta1/cluster_service.proto;l=4970
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -903,16 +896,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4506
+     *     See google/container/v1beta1/cluster_service.proto;l=4970
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -932,16 +924,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4506
+     *     See google/container/v1beta1/cluster_service.proto;l=4970
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -960,16 +951,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4506
+     *     See google/container/v1beta1/cluster_service.proto;l=4970
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -984,16 +974,15 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4506
+     *     See google/container/v1beta1/cluster_service.proto;l=4970
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1015,16 +1004,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the name
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4513
+     *     google/container/v1beta1/cluster_service.proto;l=4976
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1044,16 +1033,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the name
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4513
+     *     google/container/v1beta1/cluster_service.proto;l=4976
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1073,16 +1062,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the name
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4513
+     *     google/container/v1beta1/cluster_service.proto;l=4976
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1101,16 +1090,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the name
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4513
+     *     google/container/v1beta1/cluster_service.proto;l=4976
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1125,16 +1114,16 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the name
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4513
+     *     google/container/v1beta1/cluster_service.proto;l=4976
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1156,15 +1145,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to rollback.
+     * Deprecated. The name of the cluster to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4517
+     *     See google/container/v1beta1/cluster_service.proto;l=4980
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1184,15 +1172,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to rollback.
+     * Deprecated. The name of the cluster to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4517
+     *     See google/container/v1beta1/cluster_service.proto;l=4980
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1212,15 +1199,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to rollback.
+     * Deprecated. The name of the cluster to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4517
+     *     See google/container/v1beta1/cluster_service.proto;l=4980
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1239,15 +1225,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to rollback.
+     * Deprecated. The name of the cluster to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4517
+     *     See google/container/v1beta1/cluster_service.proto;l=4980
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1262,15 +1247,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to rollback.
+     * Deprecated. The name of the cluster to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4517
+     *     See google/container/v1beta1/cluster_service.proto;l=4980
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1292,15 +1276,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool to rollback.
+     * Deprecated. The name of the node pool to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4522
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4984
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -1320,15 +1303,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool to rollback.
+     * Deprecated. The name of the node pool to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4522
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4984
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -1348,15 +1330,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool to rollback.
+     * Deprecated. The name of the node pool to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4522
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4984
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1375,15 +1356,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool to rollback.
+     * Deprecated. The name of the node pool to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4522
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4984
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1398,15 +1378,14 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool to rollback.
+     * Deprecated. The name of the node pool to rollback.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4522
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4984
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */

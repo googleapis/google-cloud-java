@@ -1016,6 +1016,66 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int PSC_INTERFACE_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.aiplatform.v1.PscInterfaceConfig pscInterfaceConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscInterfaceConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PscInterfaceConfig getPscInterfaceConfig() {
+    return pscInterfaceConfig_ == null
+        ? com.google.cloud.aiplatform.v1.PscInterfaceConfig.getDefaultInstance()
+        : pscInterfaceConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder
+      getPscInterfaceConfigOrBuilder() {
+    return pscInterfaceConfig_ == null
+        ? com.google.cloud.aiplatform.v1.PscInterfaceConfig.getDefaultInstance()
+        : pscInterfaceConfig_;
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 12;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
 
@@ -1036,7 +1096,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasEncryptionSpec() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1100,7 +1160,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasResourceRuntimeSpec() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1162,7 +1222,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasResourceRuntime() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1343,17 +1403,20 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, network_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(12, getEncryptionSpec());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(13, getResourceRuntimeSpec());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(14, getResourceRuntime());
     }
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, reservedIpRanges_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getPscInterfaceConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1402,14 +1465,14 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, network_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getEncryptionSpec());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getResourceRuntimeSpec());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getResourceRuntime());
     }
     {
@@ -1419,6 +1482,9 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getPscInterfaceConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1458,6 +1524,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
+    if (hasPscInterfaceConfig() != other.hasPscInterfaceConfig()) return false;
+    if (hasPscInterfaceConfig()) {
+      if (!getPscInterfaceConfig().equals(other.getPscInterfaceConfig())) return false;
+    }
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -1514,6 +1584,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    if (hasPscInterfaceConfig()) {
+      hash = (37 * hash) + PSC_INTERFACE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPscInterfaceConfig().hashCode();
+    }
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
@@ -1701,6 +1775,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         getCreateTimeFieldBuilder();
         getStartTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getPscInterfaceConfigFieldBuilder();
         getEncryptionSpecFieldBuilder();
         getResourceRuntimeSpecFieldBuilder();
         getResourceRuntimeFieldBuilder();
@@ -1743,6 +1818,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       internalGetMutableLabels().clear();
       network_ = "";
+      pscInterfaceConfig_ = null;
+      if (pscInterfaceConfigBuilder_ != null) {
+        pscInterfaceConfigBuilder_.dispose();
+        pscInterfaceConfigBuilder_ = null;
+      }
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -1843,23 +1923,30 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         result.network_ = network_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.encryptionSpec_ =
-            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        result.pscInterfaceConfig_ =
+            pscInterfaceConfigBuilder_ == null
+                ? pscInterfaceConfig_
+                : pscInterfaceConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.resourceRuntimeSpec_ =
             resourceRuntimeSpecBuilder_ == null
                 ? resourceRuntimeSpec_
                 : resourceRuntimeSpecBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.resourceRuntime_ =
-            resourceRuntimeBuilder_ == null ? resourceRuntime_ : resourceRuntimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.resourceRuntime_ =
+            resourceRuntimeBuilder_ == null ? resourceRuntime_ : resourceRuntimeBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         reservedIpRanges_.makeImmutable();
         result.reservedIpRanges_ = reservedIpRanges_;
       }
@@ -1971,6 +2058,9 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.hasPscInterfaceConfig()) {
+        mergePscInterfaceConfig(other.getPscInterfaceConfig());
+      }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
@@ -1983,7 +2073,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -2092,20 +2182,20 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
             case 98:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getResourceRuntimeSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getResourceRuntimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
@@ -2115,6 +2205,13 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
                 reservedIpRanges_.add(s);
                 break;
               } // case 122
+            case 138:
+              {
+                input.readMessage(
+                    getPscInterfaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4119,6 +4216,223 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1.PscInterfaceConfig pscInterfaceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PscInterfaceConfig,
+            com.google.cloud.aiplatform.v1.PscInterfaceConfig.Builder,
+            com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder>
+        pscInterfaceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscInterfaceConfig field is set.
+     */
+    public boolean hasPscInterfaceConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscInterfaceConfig.
+     */
+    public com.google.cloud.aiplatform.v1.PscInterfaceConfig getPscInterfaceConfig() {
+      if (pscInterfaceConfigBuilder_ == null) {
+        return pscInterfaceConfig_ == null
+            ? com.google.cloud.aiplatform.v1.PscInterfaceConfig.getDefaultInstance()
+            : pscInterfaceConfig_;
+      } else {
+        return pscInterfaceConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscInterfaceConfig(com.google.cloud.aiplatform.v1.PscInterfaceConfig value) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pscInterfaceConfig_ = value;
+      } else {
+        pscInterfaceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscInterfaceConfig(
+        com.google.cloud.aiplatform.v1.PscInterfaceConfig.Builder builderForValue) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        pscInterfaceConfig_ = builderForValue.build();
+      } else {
+        pscInterfaceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePscInterfaceConfig(
+        com.google.cloud.aiplatform.v1.PscInterfaceConfig value) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && pscInterfaceConfig_ != null
+            && pscInterfaceConfig_
+                != com.google.cloud.aiplatform.v1.PscInterfaceConfig.getDefaultInstance()) {
+          getPscInterfaceConfigBuilder().mergeFrom(value);
+        } else {
+          pscInterfaceConfig_ = value;
+        }
+      } else {
+        pscInterfaceConfigBuilder_.mergeFrom(value);
+      }
+      if (pscInterfaceConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscInterfaceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      pscInterfaceConfig_ = null;
+      if (pscInterfaceConfigBuilder_ != null) {
+        pscInterfaceConfigBuilder_.dispose();
+        pscInterfaceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PscInterfaceConfig.Builder
+        getPscInterfaceConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getPscInterfaceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigOrBuilder() {
+      if (pscInterfaceConfigBuilder_ != null) {
+        return pscInterfaceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pscInterfaceConfig_ == null
+            ? com.google.cloud.aiplatform.v1.PscInterfaceConfig.getDefaultInstance()
+            : pscInterfaceConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I for PersistentResource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PscInterfaceConfig,
+            com.google.cloud.aiplatform.v1.PscInterfaceConfig.Builder,
+            com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder>
+        getPscInterfaceConfigFieldBuilder() {
+      if (pscInterfaceConfigBuilder_ == null) {
+        pscInterfaceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PscInterfaceConfig,
+                com.google.cloud.aiplatform.v1.PscInterfaceConfig.Builder,
+                com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder>(
+                getPscInterfaceConfig(), getParentForChildren(), isClean());
+        pscInterfaceConfig_ = null;
+      }
+      return pscInterfaceConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.EncryptionSpec,
@@ -4142,7 +4456,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4192,7 +4506,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4217,7 +4531,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4237,7 +4551,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -4249,7 +4563,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4269,7 +4583,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -4293,7 +4607,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -4373,7 +4687,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * @return Whether the resourceRuntimeSpec field is set.
      */
     public boolean hasResourceRuntimeSpec() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4422,7 +4736,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         resourceRuntimeSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4446,7 +4760,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         resourceRuntimeSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4466,7 +4780,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public Builder mergeResourceRuntimeSpec(
         com.google.cloud.aiplatform.v1.ResourceRuntimeSpec value) {
       if (resourceRuntimeSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && resourceRuntimeSpec_ != null
             && resourceRuntimeSpec_
                 != com.google.cloud.aiplatform.v1.ResourceRuntimeSpec.getDefaultInstance()) {
@@ -4478,7 +4792,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         resourceRuntimeSpecBuilder_.mergeFrom(value);
       }
       if (resourceRuntimeSpec_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4497,7 +4811,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearResourceRuntimeSpec() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       resourceRuntimeSpec_ = null;
       if (resourceRuntimeSpecBuilder_ != null) {
         resourceRuntimeSpecBuilder_.dispose();
@@ -4521,7 +4835,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1.ResourceRuntimeSpec.Builder
         getResourceRuntimeSpecBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getResourceRuntimeSpecFieldBuilder().getBuilder();
     }
@@ -4599,7 +4913,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * @return Whether the resourceRuntime field is set.
      */
     public boolean hasResourceRuntime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4645,7 +4959,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         resourceRuntimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4668,7 +4982,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       } else {
         resourceRuntimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4686,7 +5000,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeResourceRuntime(com.google.cloud.aiplatform.v1.ResourceRuntime value) {
       if (resourceRuntimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && resourceRuntime_ != null
             && resourceRuntime_
                 != com.google.cloud.aiplatform.v1.ResourceRuntime.getDefaultInstance()) {
@@ -4698,7 +5012,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
         resourceRuntimeBuilder_.mergeFrom(value);
       }
       if (resourceRuntime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -4716,7 +5030,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearResourceRuntime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       resourceRuntime_ = null;
       if (resourceRuntimeBuilder_ != null) {
         resourceRuntimeBuilder_.dispose();
@@ -4738,7 +5052,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ResourceRuntime.Builder getResourceRuntimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getResourceRuntimeFieldBuilder().getBuilder();
     }
@@ -4799,7 +5113,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
 
     /**
@@ -4924,7 +5238,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4955,7 +5269,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4983,7 +5297,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5009,7 +5323,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearReservedIpRanges() {
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -5042,7 +5356,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

@@ -441,6 +441,154 @@ public interface GenerationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseJsonSchema field is set.
+   */
+  boolean hasResponseJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseJsonSchema.
+   */
+  com.google.protobuf.Value getResponseJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Routing configuration.
    * </pre>
    *

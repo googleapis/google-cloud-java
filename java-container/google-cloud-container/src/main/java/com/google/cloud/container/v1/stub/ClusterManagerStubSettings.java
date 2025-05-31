@@ -52,12 +52,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -73,6 +76,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -204,6 +208,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilitySettings;
+  private final UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings;
+  private final UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings;
 
   private static final PagedListDescriptor<
           ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
@@ -452,6 +460,18 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return checkAutopilotCompatibilitySettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchClusterUpgradeInfo. */
+  public UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings() {
+    return fetchClusterUpgradeInfoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchNodePoolUpgradeInfo. */
+  public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings() {
+    return fetchNodePoolUpgradeInfoSettings;
+  }
+
   public ClusterManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -598,6 +618,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
     checkAutopilotCompatibilitySettings =
         settingsBuilder.checkAutopilotCompatibilitySettings().build();
+    fetchClusterUpgradeInfoSettings = settingsBuilder.fetchClusterUpgradeInfoSettings().build();
+    fetchNodePoolUpgradeInfoSettings = settingsBuilder.fetchNodePoolUpgradeInfoSettings().build();
   }
 
   /** Builder for ClusterManagerStubSettings. */
@@ -663,6 +685,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<
             CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
         checkAutopilotCompatibilitySettings;
+    private final UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings;
+    private final UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -751,6 +777,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listUsableSubnetworksSettings =
           PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
       checkAutopilotCompatibilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchClusterUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchNodePoolUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -787,7 +815,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
-              checkAutopilotCompatibilitySettings);
+              checkAutopilotCompatibilitySettings,
+              fetchClusterUpgradeInfoSettings,
+              fetchNodePoolUpgradeInfoSettings);
       initDefaults(this);
     }
 
@@ -829,6 +859,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
       checkAutopilotCompatibilitySettings =
           settings.checkAutopilotCompatibilitySettings.toBuilder();
+      fetchClusterUpgradeInfoSettings = settings.fetchClusterUpgradeInfoSettings.toBuilder();
+      fetchNodePoolUpgradeInfoSettings = settings.fetchNodePoolUpgradeInfoSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -865,7 +897,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
-              checkAutopilotCompatibilitySettings);
+              checkAutopilotCompatibilitySettings,
+              fetchClusterUpgradeInfoSettings,
+              fetchNodePoolUpgradeInfoSettings);
     }
 
     private static Builder createDefault() {
@@ -1060,6 +1094,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .checkAutopilotCompatibilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchClusterUpgradeInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchNodePoolUpgradeInfoSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1274,6 +1318,18 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
         checkAutopilotCompatibilitySettings() {
       return checkAutopilotCompatibilitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchClusterUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings() {
+      return fetchClusterUpgradeInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchNodePoolUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings() {
+      return fetchNodePoolUpgradeInfoSettings;
     }
 
     @Override

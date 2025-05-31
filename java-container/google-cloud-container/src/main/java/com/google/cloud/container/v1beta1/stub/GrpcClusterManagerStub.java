@@ -30,12 +30,15 @@ import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
+import com.google.container.v1beta1.ClusterUpgradeInfo;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
 import com.google.container.v1beta1.GetJSONWebKeysResponse;
@@ -53,6 +56,7 @@ import com.google.container.v1beta1.ListOperationsResponse;
 import com.google.container.v1beta1.ListUsableSubnetworksRequest;
 import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.NodePoolUpgradeInfo;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1beta1.ServerConfig;
@@ -439,6 +443,27 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/FetchClusterUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchClusterUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ClusterUpgradeInfo.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/FetchNodePoolUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchNodePoolUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NodePoolUpgradeInfo.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -483,6 +508,10 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable;
+  private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -982,6 +1011,28 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchClusterUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchNodePoolUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -1113,6 +1164,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.fetchClusterUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchClusterUpgradeInfoTransportSettings,
+            settings.fetchClusterUpgradeInfoSettings(),
+            clientContext);
+    this.fetchNodePoolUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchNodePoolUpgradeInfoTransportSettings,
+            settings.fetchNodePoolUpgradeInfoSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1304,6 +1365,18 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    return fetchClusterUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    return fetchNodePoolUpgradeInfoCallable;
   }
 
   @Override

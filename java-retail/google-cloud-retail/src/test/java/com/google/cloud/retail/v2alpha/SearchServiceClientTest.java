@@ -122,6 +122,7 @@ public class SearchServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setRegionCode("regionCode-1991004415")
             .setPlaceId("placeId-494224254")
+            .putAllUserAttributes(new HashMap<String, StringList>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -166,6 +167,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
     Assert.assertEquals(request.getRegionCode(), actualRequest.getRegionCode());
     Assert.assertEquals(request.getPlaceId(), actualRequest.getPlaceId());
+    Assert.assertEquals(request.getUserAttributesMap(), actualRequest.getUserAttributesMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -208,6 +210,7 @@ public class SearchServiceClientTest {
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

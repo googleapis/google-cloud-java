@@ -39,7 +39,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private AdvancedMachineFeatures() {}
+  private AdvancedMachineFeatures() {
+    performanceMonitoringUnit_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -60,6 +62,194 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.container.v1beta1.AdvancedMachineFeatures.class,
             com.google.container.v1beta1.AdvancedMachineFeatures.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Level of PMU access
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit}
+   */
+  public enum PerformanceMonitoringUnit implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * PMU not enabled.
+     * </pre>
+     *
+     * <code>PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 0;</code>
+     */
+    PERFORMANCE_MONITORING_UNIT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Architecturally defined non-LLC events.
+     * </pre>
+     *
+     * <code>ARCHITECTURAL = 1;</code>
+     */
+    ARCHITECTURAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 events.
+     * </pre>
+     *
+     * <code>STANDARD = 2;</code>
+     */
+    STANDARD(2),
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 and LLC events.
+     * </pre>
+     *
+     * <code>ENHANCED = 3;</code>
+     */
+    ENHANCED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * PMU not enabled.
+     * </pre>
+     *
+     * <code>PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 0;</code>
+     */
+    public static final int PERFORMANCE_MONITORING_UNIT_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Architecturally defined non-LLC events.
+     * </pre>
+     *
+     * <code>ARCHITECTURAL = 1;</code>
+     */
+    public static final int ARCHITECTURAL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 events.
+     * </pre>
+     *
+     * <code>STANDARD = 2;</code>
+     */
+    public static final int STANDARD_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Most documented core/L2 and LLC events.
+     * </pre>
+     *
+     * <code>ENHANCED = 3;</code>
+     */
+    public static final int ENHANCED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PerformanceMonitoringUnit valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PerformanceMonitoringUnit forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PERFORMANCE_MONITORING_UNIT_UNSPECIFIED;
+        case 1:
+          return ARCHITECTURAL;
+        case 2:
+          return STANDARD;
+        case 3:
+          return ENHANCED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PerformanceMonitoringUnit>() {
+              public PerformanceMonitoringUnit findValueByNumber(int number) {
+                return PerformanceMonitoringUnit.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.AdvancedMachineFeatures.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final PerformanceMonitoringUnit[] VALUES = values();
+
+    public static PerformanceMonitoringUnit valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PerformanceMonitoringUnit(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit)
   }
 
   private int bitField0_;
@@ -137,6 +327,73 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     return enableNestedVirtualization_;
   }
 
+  public static final int PERFORMANCE_MONITORING_UNIT_FIELD_NUMBER = 3;
+  private int performanceMonitoringUnit_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return Whether the performanceMonitoringUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceMonitoringUnit() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for performanceMonitoringUnit.
+   */
+  @java.lang.Override
+  public int getPerformanceMonitoringUnitValue() {
+    return performanceMonitoringUnit_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+   * If unset, PMU will not be available to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+   * </code>
+   *
+   * @return The performanceMonitoringUnit.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit
+      getPerformanceMonitoringUnit() {
+    com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit result =
+        com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit.forNumber(
+            performanceMonitoringUnit_);
+    return result == null
+        ? com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -157,6 +414,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(2, enableNestedVirtualization_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(3, performanceMonitoringUnit_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -171,6 +431,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableNestedVirtualization_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, performanceMonitoringUnit_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -196,6 +459,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (hasEnableNestedVirtualization()) {
       if (getEnableNestedVirtualization() != other.getEnableNestedVirtualization()) return false;
     }
+    if (hasPerformanceMonitoringUnit() != other.hasPerformanceMonitoringUnit()) return false;
+    if (hasPerformanceMonitoringUnit()) {
+      if (performanceMonitoringUnit_ != other.performanceMonitoringUnit_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -215,6 +482,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       hash = (37 * hash) + ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableNestedVirtualization());
+    }
+    if (hasPerformanceMonitoringUnit()) {
+      hash = (37 * hash) + PERFORMANCE_MONITORING_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + performanceMonitoringUnit_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -358,6 +629,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       bitField0_ = 0;
       threadsPerCore_ = 0L;
       enableNestedVirtualization_ = false;
+      performanceMonitoringUnit_ = 0;
       return this;
     }
 
@@ -402,6 +674,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enableNestedVirtualization_ = enableNestedVirtualization_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.performanceMonitoringUnit_ = performanceMonitoringUnit_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -458,6 +734,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       if (other.hasEnableNestedVirtualization()) {
         setEnableNestedVirtualization(other.getEnableNestedVirtualization());
       }
+      if (other.hasPerformanceMonitoringUnit()) {
+        setPerformanceMonitoringUnit(other.getPerformanceMonitoringUnit());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -496,6 +775,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                performanceMonitoringUnit_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -663,6 +948,141 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public Builder clearEnableNestedVirtualization() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enableNestedVirtualization_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int performanceMonitoringUnit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @return Whether the performanceMonitoringUnit field is set.
+     */
+    @java.lang.Override
+    public boolean hasPerformanceMonitoringUnit() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for performanceMonitoringUnit.
+     */
+    @java.lang.Override
+    public int getPerformanceMonitoringUnitValue() {
+      return performanceMonitoringUnit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for performanceMonitoringUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceMonitoringUnitValue(int value) {
+      performanceMonitoringUnit_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @return The performanceMonitoringUnit.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit
+        getPerformanceMonitoringUnit() {
+      com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit result =
+          com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit.forNumber(
+              performanceMonitoringUnit_);
+      return result == null
+          ? com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @param value The performanceMonitoringUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceMonitoringUnit(
+        com.google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      performanceMonitoringUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
+     * If unset, PMU will not be available to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.AdvancedMachineFeatures.PerformanceMonitoringUnit performance_monitoring_unit = 3;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerformanceMonitoringUnit() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      performanceMonitoringUnit_ = 0;
       onChanged();
       return this;
     }

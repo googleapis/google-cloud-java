@@ -110,7 +110,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * Whether master is accessible via Google Compute Engine Public IP addresses.
    * </pre>
    *
    * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
@@ -123,7 +123,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * Whether master is accessible via Google Compute Engine Public IP addresses.
    * </pre>
    *
    * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>

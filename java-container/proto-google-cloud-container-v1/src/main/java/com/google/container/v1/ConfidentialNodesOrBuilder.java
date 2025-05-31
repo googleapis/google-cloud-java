@@ -36,4 +36,34 @@ public interface ConfidentialNodesOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for confidentialInstanceType.
+   */
+  int getConfidentialInstanceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ConfidentialNodes.ConfidentialInstanceType confidential_instance_type = 2;
+   * </code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  com.google.container.v1.ConfidentialNodes.ConfidentialInstanceType getConfidentialInstanceType();
 }

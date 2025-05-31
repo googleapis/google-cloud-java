@@ -84,6 +84,8 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     FUNCTION_RESPONSE(6),
     EXECUTABLE_CODE(8),
     CODE_EXECUTION_RESULT(9),
+    THOUGHT(10),
+    THOUGHT_SIGNATURE(11),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -117,6 +119,10 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
           return EXECUTABLE_CODE;
         case 9:
           return CODE_EXECUTION_RESULT;
+        case 10:
+          return THOUGHT;
+        case 11:
+          return THOUGHT_SIGNATURE;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -629,6 +635,82 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1.CodeExecutionResult.getDefaultInstance();
   }
 
+  public static final int THOUGHT_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the thought field is set.
+   */
+  @java.lang.Override
+  public boolean hasThought() {
+    return dataCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thought.
+   */
+  @java.lang.Override
+  public boolean getThought() {
+    if (dataCase_ == 10) {
+      return (java.lang.Boolean) data_;
+    }
+    return false;
+  }
+
+  public static final int THOUGHT_SIGNATURE_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * An opaque signature for the thought so it can be reused in subsequent
+   * requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the thoughtSignature field is set.
+   */
+  @java.lang.Override
+  public boolean hasThoughtSignature() {
+    return dataCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An opaque signature for the thought so it can be reused in subsequent
+   * requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thoughtSignature.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getThoughtSignature() {
+    if (dataCase_ == 11) {
+      return (com.google.protobuf.ByteString) data_;
+    }
+    return com.google.protobuf.ByteString.EMPTY;
+  }
+
   public static final int VIDEO_METADATA_FIELD_NUMBER = 4;
 
   /**
@@ -730,6 +812,12 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     if (dataCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.aiplatform.v1.CodeExecutionResult) data_);
     }
+    if (dataCase_ == 10) {
+      output.writeBool(10, (boolean) ((java.lang.Boolean) data_));
+    }
+    if (dataCase_ == 11) {
+      output.writeBytes(11, (com.google.protobuf.ByteString) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -777,6 +865,16 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.aiplatform.v1.CodeExecutionResult) data_);
     }
+    if (dataCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              10, (boolean) ((java.lang.Boolean) data_));
+    }
+    if (dataCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              11, (com.google.protobuf.ByteString) data_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -814,6 +912,12 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
         break;
       case 9:
         if (!getCodeExecutionResult().equals(other.getCodeExecutionResult())) return false;
+        break;
+      case 10:
+        if (getThought() != other.getThought()) return false;
+        break;
+      case 11:
+        if (!getThoughtSignature().equals(other.getThoughtSignature())) return false;
         break;
       case 0:
       default:
@@ -865,6 +969,14 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       case 9:
         hash = (37 * hash) + CODE_EXECUTION_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getCodeExecutionResult().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + THOUGHT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThought());
+        break;
+      case 11:
+        hash = (37 * hash) + THOUGHT_SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getThoughtSignature().hashCode();
         break;
       case 0:
       default:
@@ -1196,6 +1308,16 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
             mergeCodeExecutionResult(other.getCodeExecutionResult());
             break;
           }
+        case THOUGHT:
+          {
+            setThought(other.getThought());
+            break;
+          }
+        case THOUGHT_SIGNATURE:
+          {
+            setThoughtSignature(other.getThoughtSignature());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -1289,6 +1411,18 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
                 dataCase_ = 9;
                 break;
               } // case 74
+            case 80:
+              {
+                data_ = input.readBool();
+                dataCase_ = 10;
+                break;
+              } // case 80
+            case 90:
+              {
+                data_ = input.readBytes();
+                dataCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2931,6 +3065,158 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 9;
       onChanged();
       return codeExecutionResultBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the thought field is set.
+     */
+    public boolean hasThought() {
+      return dataCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The thought.
+     */
+    public boolean getThought() {
+      if (dataCase_ == 10) {
+        return (java.lang.Boolean) data_;
+      }
+      return false;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The thought to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThought(boolean value) {
+
+      dataCase_ = 10;
+      data_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThought() {
+      if (dataCase_ == 10) {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque signature for the thought so it can be reused in subsequent
+     * requests.
+     * </pre>
+     *
+     * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the thoughtSignature field is set.
+     */
+    public boolean hasThoughtSignature() {
+      return dataCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque signature for the thought so it can be reused in subsequent
+     * requests.
+     * </pre>
+     *
+     * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The thoughtSignature.
+     */
+    public com.google.protobuf.ByteString getThoughtSignature() {
+      if (dataCase_ == 11) {
+        return (com.google.protobuf.ByteString) data_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque signature for the thought so it can be reused in subsequent
+     * requests.
+     * </pre>
+     *
+     * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The thoughtSignature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThoughtSignature(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dataCase_ = 11;
+      data_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque signature for the thought so it can be reused in subsequent
+     * requests.
+     * </pre>
+     *
+     * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThoughtSignature() {
+      if (dataCase_ == 11) {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+      }
+      return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

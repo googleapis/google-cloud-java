@@ -160,6 +160,14 @@ public final class CommonProto {
       internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_StringList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_StringList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_DoubleList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_DoubleList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -328,7 +336,11 @@ public final class CommonProto {
           + "\020DroppedPinsEntry\022\013\n"
           + "\003key\030\001 \001(\003\022J\n"
           + "\005value\030\002 \001(\0132;.google.cloud."
-          + "retail.v2alpha.PinControlMetadata.ProductPins:\0028\001*\206\001\n"
+          + "retail.v2alpha.PinControlMetadata.ProductPins:\0028\001\"\034\n\n"
+          + "StringList\022\016\n"
+          + "\006values\030\001 \003(\t\"\034\n\n"
+          + "DoubleList\022\016\n"
+          + "\006values\030\001 \003(\001*\206\001\n"
           + "\024AttributeConfigLevel\022&\n"
           + "\"ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED\020\000\022\"\n"
           + "\036PRODUCT_LEVEL_ATTRIBUTE_CONFIG\020\001\022\"\n"
@@ -345,10 +357,11 @@ public final class CommonProto {
           + "$SEARCH_SOLUTION_USE_CASE_UNSPECIFIED\020\000\022#\n"
           + "\037SEARCH_SOLUTION_USE_CASE_SEARCH\020\001\022#\n"
           + "\037SEARCH_SOLUTION_USE_CASE_BROWSE\020\002B\317\001\n"
-          + "\037com.google.cloud.retail.v2alphaB\013CommonProtoP\001Z7cloud.google.com/go/retail/a"
-          + "piv2alpha/retailpb;retailpb\242\002\006RETAIL\252\002\033G"
-          + "oogle.Cloud.Retail.V2Alpha\312\002\033Google\\Clou"
-          + "d\\Retail\\V2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
+          + "\037com.google.cloud.retail.v2alphaB\013CommonProtoP\001Z7cloud.go"
+          + "ogle.com/go/retail/apiv2alpha/retailpb;r"
+          + "etailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
+          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
+          + "oogle::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -650,6 +663,22 @@ public final class CommonProto {
             internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_retail_v2alpha_StringList_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_retail_v2alpha_StringList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_StringList_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_retail_v2alpha_DoubleList_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_retail_v2alpha_DoubleList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_DoubleList_descriptor,
+            new java.lang.String[] {
+              "Values",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

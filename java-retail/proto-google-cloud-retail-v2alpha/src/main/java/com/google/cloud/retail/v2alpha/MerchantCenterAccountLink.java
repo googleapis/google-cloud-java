@@ -268,13 +268,31 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      * <pre>
      * Merchant Center primary feed ID.
+     * Deprecated: use data_source_id instead.
      * </pre>
      *
-     * <code>int64 primary_feed_id = 1;</code>
+     * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter.primary_feed_id
+     *     is deprecated. See google/cloud/retail/v2alpha/merchant_center_account_link.proto;l=44
      * @return The primaryFeedId.
      */
+    @java.lang.Deprecated
     long getPrimaryFeedId();
+
+    /**
+     *
+     *
+     * <pre>
+     * AFM data source ID.
+     * </pre>
+     *
+     * <code>int64 data_source_id = 3;</code>
+     *
+     * @return The dataSourceId.
+     */
+    long getDataSourceId();
 
     /**
      *
@@ -361,15 +379,39 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      * <pre>
      * Merchant Center primary feed ID.
+     * Deprecated: use data_source_id instead.
      * </pre>
      *
-     * <code>int64 primary_feed_id = 1;</code>
+     * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter.primary_feed_id
+     *     is deprecated. See google/cloud/retail/v2alpha/merchant_center_account_link.proto;l=44
      * @return The primaryFeedId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getPrimaryFeedId() {
       return primaryFeedId_;
+    }
+
+    public static final int DATA_SOURCE_ID_FIELD_NUMBER = 3;
+    private long dataSourceId_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * AFM data source ID.
+     * </pre>
+     *
+     * <code>int64 data_source_id = 3;</code>
+     *
+     * @return The dataSourceId.
+     */
+    @java.lang.Override
+    public long getDataSourceId() {
+      return dataSourceId_;
     }
 
     public static final int PRIMARY_FEED_NAME_FIELD_NUMBER = 2;
@@ -447,6 +489,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryFeedName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, primaryFeedName_);
       }
+      if (dataSourceId_ != 0L) {
+        output.writeInt64(3, dataSourceId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -461,6 +506,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryFeedName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, primaryFeedName_);
+      }
+      if (dataSourceId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, dataSourceId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -481,6 +529,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           (com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter) obj;
 
       if (getPrimaryFeedId() != other.getPrimaryFeedId()) return false;
+      if (getDataSourceId() != other.getDataSourceId()) return false;
       if (!getPrimaryFeedName().equals(other.getPrimaryFeedName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -495,6 +544,8 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PRIMARY_FEED_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPrimaryFeedId());
+      hash = (37 * hash) + DATA_SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataSourceId());
       hash = (37 * hash) + PRIMARY_FEED_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPrimaryFeedName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -653,6 +704,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         super.clear();
         bitField0_ = 0;
         primaryFeedId_ = 0L;
+        dataSourceId_ = 0L;
         primaryFeedName_ = "";
         return this;
       }
@@ -702,6 +754,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           result.primaryFeedId_ = primaryFeedId_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dataSourceId_ = dataSourceId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.primaryFeedName_ = primaryFeedName_;
         }
       }
@@ -764,9 +819,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         if (other.getPrimaryFeedId() != 0L) {
           setPrimaryFeedId(other.getPrimaryFeedId());
         }
+        if (other.getDataSourceId() != 0L) {
+          setDataSourceId(other.getDataSourceId());
+        }
         if (!other.getPrimaryFeedName().isEmpty()) {
           primaryFeedName_ = other.primaryFeedName_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -804,9 +862,15 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
               case 18:
                 {
                   primaryFeedName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
+              case 24:
+                {
+                  dataSourceId_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -833,13 +897,18 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
        *
        * <pre>
        * Merchant Center primary feed ID.
+       * Deprecated: use data_source_id instead.
        * </pre>
        *
-       * <code>int64 primary_feed_id = 1;</code>
+       * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter.primary_feed_id
+       *     is deprecated. See google/cloud/retail/v2alpha/merchant_center_account_link.proto;l=44
        * @return The primaryFeedId.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public long getPrimaryFeedId() {
         return primaryFeedId_;
       }
@@ -849,13 +918,18 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
        *
        * <pre>
        * Merchant Center primary feed ID.
+       * Deprecated: use data_source_id instead.
        * </pre>
        *
-       * <code>int64 primary_feed_id = 1;</code>
+       * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter.primary_feed_id
+       *     is deprecated. See google/cloud/retail/v2alpha/merchant_center_account_link.proto;l=44
        * @param value The primaryFeedId to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setPrimaryFeedId(long value) {
 
         primaryFeedId_ = value;
@@ -869,15 +943,76 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
        *
        * <pre>
        * Merchant Center primary feed ID.
+       * Deprecated: use data_source_id instead.
        * </pre>
        *
-       * <code>int64 primary_feed_id = 1;</code>
+       * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.retail.v2alpha.MerchantCenterAccountLink.MerchantCenterFeedFilter.primary_feed_id
+       *     is deprecated. See google/cloud/retail/v2alpha/merchant_center_account_link.proto;l=44
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearPrimaryFeedId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         primaryFeedId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long dataSourceId_;
+
+      /**
+       *
+       *
+       * <pre>
+       * AFM data source ID.
+       * </pre>
+       *
+       * <code>int64 data_source_id = 3;</code>
+       *
+       * @return The dataSourceId.
+       */
+      @java.lang.Override
+      public long getDataSourceId() {
+        return dataSourceId_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AFM data source ID.
+       * </pre>
+       *
+       * <code>int64 data_source_id = 3;</code>
+       *
+       * @param value The dataSourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataSourceId(long value) {
+
+        dataSourceId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AFM data source ID.
+       * </pre>
+       *
+       * <code>int64 data_source_id = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataSourceId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dataSourceId_ = 0L;
         onChanged();
         return this;
       }
@@ -950,7 +1085,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         primaryFeedName_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -969,7 +1104,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
        */
       public Builder clearPrimaryFeedName() {
         primaryFeedName_ = getDefaultInstance().getPrimaryFeedName();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -993,7 +1128,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         }
         checkByteStringIsUtf8(value);
         primaryFeedName_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

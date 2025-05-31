@@ -348,10 +348,11 @@ public final class DlpStorage {
           + "BigQueryTable\022\022\n\n"
           + "project_id\030\001 \001(\t\022\022\n\n"
           + "dataset_id\030\002 \001(\t\022\020\n"
-          + "\010table_id\030\003 \001(\t\"6\n"
+          + "\010table_id\030\003 \001(\t\"J\n"
           + "\016TableReference\022\022\n\n"
           + "dataset_id\030\001 \001(\t\022\020\n"
-          + "\010table_id\030\002 \001(\t\"s\n\r"
+          + "\010table_id\030\002 \001(\t\022\022\n\n"
+          + "project_id\030\003 \001(\t\"s\n\r"
           + "BigQueryField\0223\n"
           + "\005table\030\001 \001(\0132$.google.privacy.dlp.v2.BigQueryTable\022-\n"
           + "\005field\030\002 \001(\0132\036.google.privacy.dlp.v2.FieldId\"9\n"
@@ -379,9 +380,9 @@ public final class DlpStorage {
           + "POWERPOINT\020\013\022\t\n"
           + "\005EXCEL\020\014B\231\001\n"
           + "\031com.google.privacy.dlp.v2B\n"
-          + "DlpStorageP\001Z)cloud.google.com/go/dlp/apiv2/dlppb;dlppb\252\002\023Google.C"
-          + "loud.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Goog"
-          + "le::Cloud::Dlp::V2b\006proto3"
+          + "DlpStorageP\001Z)cloud.google.com/go/dlp/apiv2/dl"
+          + "ppb;dlppb\252\002\023Google.Cloud.Dlp.V2\312\002\023Google"
+          + "\\Cloud\\Dlp\\V2\352\002\026Google::Cloud::Dlp::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -685,7 +686,7 @@ public final class DlpStorage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_TableReference_descriptor,
             new java.lang.String[] {
-              "DatasetId", "TableId",
+              "DatasetId", "TableId", "ProjectId",
             });
     internal_static_google_privacy_dlp_v2_BigQueryField_descriptor =
         getDescriptor().getMessageTypes().get(21);

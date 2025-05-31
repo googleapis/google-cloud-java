@@ -75,4 +75,34 @@ public interface TableReferenceOrBuilder
    * @return The bytes for tableId.
    */
   com.google.protobuf.ByteString getTableIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud project ID of the project containing the table.
+   * If omitted, the project ID is inferred from the parent project. This field
+   * is required if the parent resource is an organization.
+   * </pre>
+   *
+   * <code>string project_id = 3;</code>
+   *
+   * @return The projectId.
+   */
+  java.lang.String getProjectId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud project ID of the project containing the table.
+   * If omitted, the project ID is inferred from the parent project. This field
+   * is required if the parent resource is an organization.
+   * </pre>
+   *
+   * <code>string project_id = 3;</code>
+   *
+   * @return The bytes for projectId.
+   */
+  com.google.protobuf.ByteString getProjectIdBytes();
 }

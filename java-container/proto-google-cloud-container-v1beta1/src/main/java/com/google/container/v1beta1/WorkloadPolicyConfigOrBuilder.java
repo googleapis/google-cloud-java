@@ -49,4 +49,32 @@ public interface WorkloadPolicyConfigOrBuilder
    * @return The allowNetAdmin.
    */
   boolean getAllowNetAdmin();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, enables the GCW Auditor that audits workloads on
+   * standard clusters.
+   * </pre>
+   *
+   * <code>optional bool autopilot_compatibility_auditing_enabled = 2;</code>
+   *
+   * @return Whether the autopilotCompatibilityAuditingEnabled field is set.
+   */
+  boolean hasAutopilotCompatibilityAuditingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, enables the GCW Auditor that audits workloads on
+   * standard clusters.
+   * </pre>
+   *
+   * <code>optional bool autopilot_compatibility_auditing_enabled = 2;</code>
+   *
+   * @return The autopilotCompatibilityAuditingEnabled.
+   */
+  boolean getAutopilotCompatibilityAuditingEnabled();
 }

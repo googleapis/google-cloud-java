@@ -216,7 +216,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -234,7 +234,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -252,7 +252,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -271,7 +271,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -1199,7 +1199,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -1219,7 +1219,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -1239,7 +1239,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -1260,7 +1260,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * <pre>
        * List of fully qualified domain names (FQDN).
        * Specifying port is supported.
-       * Wilcards are NOT supported.
+       * Wildcards are NOT supported.
        * Examples:
        * - my.customdomain.com
        * - 10.0.1.2:5000
@@ -1868,7 +1868,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -1889,7 +1889,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -1909,7 +1909,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -1930,7 +1930,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -1951,7 +1951,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -1980,7 +1980,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -2008,7 +2008,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -2033,7 +2033,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000
@@ -2057,7 +2057,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * <pre>
          * List of fully qualified domain names (FQDN).
          * Specifying port is supported.
-         * Wilcards are NOT supported.
+         * Wildcards are NOT supported.
          * Examples:
          * - my.customdomain.com
          * - 10.0.1.2:5000

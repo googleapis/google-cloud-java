@@ -334,6 +334,77 @@ public class IndexServiceClientTest {
   }
 
   @Test
+  public void importIndexTest() throws Exception {
+    Index expectedResponse =
+        Index.newBuilder()
+            .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .addAllDeployedIndexes(new ArrayList<DeployedIndexRef>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIndexService.addResponse(resultOperation);
+
+    ImportIndexRequest request =
+        ImportIndexRequest.newBuilder()
+            .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+            .setIsCompleteOverwrite(true)
+            .setConfig(ImportIndexRequest.ConnectorConfig.newBuilder().build())
+            .build();
+
+    Index actualResponse = client.importIndexAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIndexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportIndexRequest actualRequest = ((ImportIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getIsCompleteOverwrite(), actualRequest.getIsCompleteOverwrite());
+    Assert.assertEquals(request.getConfig(), actualRequest.getConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importIndexExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIndexService.addException(exception);
+
+    try {
+      ImportIndexRequest request =
+          ImportIndexRequest.newBuilder()
+              .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+              .setIsCompleteOverwrite(true)
+              .setConfig(ImportIndexRequest.ConnectorConfig.newBuilder().build())
+              .build();
+      client.importIndexAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listIndexesTest() throws Exception {
     Index responsesElement = Index.newBuilder().build();
     ListIndexesResponse expectedResponse =
