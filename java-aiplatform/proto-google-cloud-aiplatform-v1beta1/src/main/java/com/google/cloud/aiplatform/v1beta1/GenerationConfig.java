@@ -3567,6 +3567,34 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Indicates whether to include thoughts in the response.
+     * If true, thoughts are returned only when available.
+     * </pre>
+     *
+     * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the includeThoughts field is set.
+     */
+    boolean hasIncludeThoughts();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether to include thoughts in the response.
+     * If true, thoughts are returned only when available.
+     * </pre>
+     *
+     * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeThoughts.
+     */
+    boolean getIncludeThoughts();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Indicates the thinking budget in tokens.
      * This is only applied when enable_thinking is true.
      * </pre>
@@ -3636,6 +3664,43 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    public static final int INCLUDE_THOUGHTS_FIELD_NUMBER = 1;
+    private boolean includeThoughts_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether to include thoughts in the response.
+     * If true, thoughts are returned only when available.
+     * </pre>
+     *
+     * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the includeThoughts field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeThoughts() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether to include thoughts in the response.
+     * If true, thoughts are returned only when available.
+     * </pre>
+     *
+     * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeThoughts.
+     */
+    @java.lang.Override
+    public boolean getIncludeThoughts() {
+      return includeThoughts_;
+    }
+
     public static final int THINKING_BUDGET_FIELD_NUMBER = 3;
     private int thinkingBudget_ = 0;
 
@@ -3653,7 +3718,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasThinkingBudget() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -3688,6 +3753,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, includeThoughts_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(3, thinkingBudget_);
       }
       getUnknownFields().writeTo(output);
@@ -3700,6 +3768,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, includeThoughts_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, thinkingBudget_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -3718,6 +3789,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig other =
           (com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig) obj;
 
+      if (hasIncludeThoughts() != other.hasIncludeThoughts()) return false;
+      if (hasIncludeThoughts()) {
+        if (getIncludeThoughts() != other.getIncludeThoughts()) return false;
+      }
       if (hasThinkingBudget() != other.hasThinkingBudget()) return false;
       if (hasThinkingBudget()) {
         if (getThinkingBudget() != other.getThinkingBudget()) return false;
@@ -3733,6 +3808,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasIncludeThoughts()) {
+        hash = (37 * hash) + INCLUDE_THOUGHTS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeThoughts());
+      }
       if (hasThinkingBudget()) {
         hash = (37 * hash) + THINKING_BUDGET_FIELD_NUMBER;
         hash = (53 * hash) + getThinkingBudget();
@@ -3882,6 +3961,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        includeThoughts_ = false;
         thinkingBudget_ = 0;
         return this;
       }
@@ -3924,8 +4004,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.thinkingBudget_ = thinkingBudget_;
+          result.includeThoughts_ = includeThoughts_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.thinkingBudget_ = thinkingBudget_;
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3981,6 +4065,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         if (other
             == com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
                 .getDefaultInstance()) return this;
+        if (other.hasIncludeThoughts()) {
+          setIncludeThoughts(other.getIncludeThoughts());
+        }
         if (other.hasThinkingBudget()) {
           setThinkingBudget(other.getThinkingBudget());
         }
@@ -4010,10 +4097,16 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               case 0:
                 done = true;
                 break;
+              case 8:
+                {
+                  includeThoughts_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
               case 24:
                 {
                   thinkingBudget_ = input.readInt32();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 24
               default:
@@ -4035,6 +4128,82 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
 
+      private boolean includeThoughts_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether to include thoughts in the response.
+       * If true, thoughts are returned only when available.
+       * </pre>
+       *
+       * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the includeThoughts field is set.
+       */
+      @java.lang.Override
+      public boolean hasIncludeThoughts() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether to include thoughts in the response.
+       * If true, thoughts are returned only when available.
+       * </pre>
+       *
+       * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The includeThoughts.
+       */
+      @java.lang.Override
+      public boolean getIncludeThoughts() {
+        return includeThoughts_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether to include thoughts in the response.
+       * If true, thoughts are returned only when available.
+       * </pre>
+       *
+       * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The includeThoughts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIncludeThoughts(boolean value) {
+
+        includeThoughts_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether to include thoughts in the response.
+       * If true, thoughts are returned only when available.
+       * </pre>
+       *
+       * <code>optional bool include_thoughts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIncludeThoughts() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        includeThoughts_ = false;
+        onChanged();
+        return this;
+      }
+
       private int thinkingBudget_;
 
       /**
@@ -4051,7 +4220,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public boolean hasThinkingBudget() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
 
       /**
@@ -4087,7 +4256,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public Builder setThinkingBudget(int value) {
 
         thinkingBudget_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4105,7 +4274,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearThinkingBudget() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         thinkingBudget_ = 0;
         onChanged();
         return this;

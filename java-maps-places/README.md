@@ -93,6 +93,10 @@ See the [Places API (New) client library docs][javadocs] to learn how to
 use this Places API (New) Client Library.
 
 
+### Client Library Usage Examples
+
+[Client library examples](https://developers.google.com/maps/documentation/places/web-service/client-library-examples#java) of how to use the Places API (New) are available to help you get started.
+
 
 
 
