@@ -115,6 +115,26 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
      * <code>MEMORY = 4;</code>
      */
     MEMORY(4),
+    /**
+     *
+     *
+     * <pre>
+     * No autotuning.
+     * </pre>
+     *
+     * <code>NONE = 5;</code>
+     */
+    NONE(5),
+    /**
+     *
+     *
+     * <pre>
+     * Automatic selection of scenarios.
+     * </pre>
+     *
+     * <code>AUTO = 6;</code>
+     */
+    AUTO(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -162,6 +182,28 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int MEMORY_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * No autotuning.
+     * </pre>
+     *
+     * <code>NONE = 5;</code>
+     */
+    public static final int NONE_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Automatic selection of scenarios.
+     * </pre>
+     *
+     * <code>AUTO = 6;</code>
+     */
+    public static final int AUTO_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -194,6 +236,10 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
           return BROADCAST_HASH_JOIN;
         case 4:
           return MEMORY;
+        case 5:
+          return NONE;
+        case 6:
+          return AUTO;
         default:
           return null;
       }

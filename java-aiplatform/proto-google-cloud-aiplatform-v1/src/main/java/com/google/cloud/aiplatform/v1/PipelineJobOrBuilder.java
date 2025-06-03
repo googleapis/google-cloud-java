@@ -753,6 +753,49 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for PSC-I for PipelineJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  boolean hasPscInterfaceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PipelineJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  com.google.cloud.aiplatform.v1.PscInterfaceConfig getPscInterfaceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PipelineJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PscInterfaceConfig psc_interface_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PscInterfaceConfigOrBuilder getPscInterfaceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A template uri from where the
    * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
    * if empty, will be downloaded. Currently, only uri from Vertex Template

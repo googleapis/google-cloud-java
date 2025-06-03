@@ -115,7 +115,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * Whether master is accessible via Google Compute Engine Public IP addresses.
    * </pre>
    *
    * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
@@ -128,7 +128,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * Whether master is accessible via Google Compute Engine Public IP addresses.
    * </pre>
    *
    * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
@@ -136,4 +136,30 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * @return The gcpPublicCidrsAccessEnabled.
    */
   boolean getGcpPublicCidrsAccessEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return Whether the privateEndpointEnforcementEnabled field is set.
+   */
+  boolean hasPrivateEndpointEnforcementEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return The privateEndpointEnforcementEnabled.
+   */
+  boolean getPrivateEndpointEnforcementEnabled();
 }

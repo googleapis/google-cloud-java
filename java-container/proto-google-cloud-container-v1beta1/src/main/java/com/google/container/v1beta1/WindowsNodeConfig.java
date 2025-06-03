@@ -25,7 +25,7 @@ package com.google.container.v1beta1;
  * <pre>
  * Parameters that can be configured on Windows nodes.
  * Windows Node Config that define the parameters that will be used to
- * configure the Windows node pool settings
+ * configure the Windows node pool settings.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.WindowsNodeConfig}
@@ -90,7 +90,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image
+     * LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image.
      * </pre>
      *
      * <code>OS_VERSION_LTSC2019 = 1;</code>
@@ -100,7 +100,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image
+     * LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image.
      * </pre>
      *
      * <code>OS_VERSION_LTSC2022 = 2;</code>
@@ -124,7 +124,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image
+     * LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image.
      * </pre>
      *
      * <code>OS_VERSION_LTSC2019 = 1;</code>
@@ -135,7 +135,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image
+     * LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image.
      * </pre>
      *
      * <code>OS_VERSION_LTSC2022 = 2;</code>
@@ -232,7 +232,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * OSVersion specifies the Windows node config to be used on the node
+   * OSVersion specifies the Windows node config to be used on the node.
    * </pre>
    *
    * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -248,7 +248,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * OSVersion specifies the Windows node config to be used on the node
+   * OSVersion specifies the Windows node config to be used on the node.
    * </pre>
    *
    * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -434,7 +434,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Parameters that can be configured on Windows nodes.
    * Windows Node Config that define the parameters that will be used to
-   * configure the Windows node pool settings
+   * configure the Windows node pool settings.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.WindowsNodeConfig}
@@ -616,7 +616,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OSVersion specifies the Windows node config to be used on the node
+     * OSVersion specifies the Windows node config to be used on the node.
      * </pre>
      *
      * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -632,7 +632,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OSVersion specifies the Windows node config to be used on the node
+     * OSVersion specifies the Windows node config to be used on the node.
      * </pre>
      *
      * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -651,7 +651,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OSVersion specifies the Windows node config to be used on the node
+     * OSVersion specifies the Windows node config to be used on the node.
      * </pre>
      *
      * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -671,7 +671,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OSVersion specifies the Windows node config to be used on the node
+     * OSVersion specifies the Windows node config to be used on the node.
      * </pre>
      *
      * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>
@@ -693,7 +693,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OSVersion specifies the Windows node config to be used on the node
+     * OSVersion specifies the Windows node config to be used on the node.
      * </pre>
      *
      * <code>.google.container.v1beta1.WindowsNodeConfig.OSVersion os_version = 1;</code>

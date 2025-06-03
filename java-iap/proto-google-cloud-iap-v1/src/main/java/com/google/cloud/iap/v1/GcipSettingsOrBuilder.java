@@ -28,12 +28,12 @@ public interface GcipSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46,12 +46,12 @@ public interface GcipSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -64,12 +64,12 @@ public interface GcipSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -83,12 +83,12 @@ public interface GcipSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. GCIP tenant ids that are linked to the IAP resource.
-   * tenant_ids could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
-   * to indicate authenticating with GCIP agent flow.
-   * If agent flow is used, tenant_ids should only contain one single element,
-   * while for tenant flow, tenant_ids can contain multiple elements.
+   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
+   * could be a string beginning with a number character to indicate
+   * authenticating with GCIP tenant flow, or in the format of
+   * `_&lt;ProjectNumber&gt;` to indicate authenticating with GCIP agent flow. If
+   * agent flow is used, `tenant_ids` should only contain one single element,
+   * while for tenant flow, `tenant_ids` can contain multiple elements.
    * </pre>
    *
    * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

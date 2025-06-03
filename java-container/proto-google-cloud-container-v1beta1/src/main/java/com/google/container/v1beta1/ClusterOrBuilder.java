@@ -107,7 +107,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2027
+   *     google/container/v1beta1/cluster_service.proto;l=2348
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -133,7 +133,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2040
+   *     google/container/v1beta1/cluster_service.proto;l=2361
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -159,7 +159,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2040
+   *     google/container/v1beta1/cluster_service.proto;l=2361
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -289,7 +289,7 @@ public interface ClusterOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -312,7 +312,7 @@ public interface ClusterOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -645,6 +645,68 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @return A list containing the alphaClusterFeatureGates.
+   */
+  java.util.List<java.lang.String> getAlphaClusterFeatureGatesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @return The count of alphaClusterFeatureGates.
+   */
+  int getAlphaClusterFeatureGatesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The alphaClusterFeatureGates at the given index.
+   */
+  java.lang.String getAlphaClusterFeatureGates(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of user specified Kubernetes feature gates.
+   * Each string represents the activation status of a feature gate (e.g.
+   * "featureX=true" or "featureX=false")
+   * </pre>
+   *
+   * <code>repeated string alpha_cluster_feature_gates = 160;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the alphaClusterFeatureGates at the given index.
+   */
+  com.google.protobuf.ByteString getAlphaClusterFeatureGatesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Kubernetes open source beta apis enabled on the cluster. Only beta apis.
    * </pre>
    *
@@ -888,14 +950,21 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1beta1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.master_authorized_networks_config is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=2473
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasMasterAuthorizedNetworksConfig();
 
   /**
@@ -903,14 +972,21 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1beta1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.master_authorized_networks_config is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=2473
    * @return The masterAuthorizedNetworksConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig();
 
   /**
@@ -918,12 +994,17 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1beta1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.MasterAuthorizedNetworksConfigOrBuilder
       getMasterAuthorizedNetworksConfigOrBuilder();
 
@@ -1127,7 +1208,7 @@ public interface ClusterOrBuilder
    * <code>bool private_cluster = 28 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.private_cluster is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2165
+   *     google/container/v1beta1/cluster_service.proto;l=2496
    * @return The privateCluster.
    */
   @java.lang.Deprecated
@@ -1147,7 +1228,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2172
+   *     google/container/v1beta1/cluster_service.proto;l=2503
    * @return The masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1167,7 +1248,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2172
+   *     google/container/v1beta1/cluster_service.proto;l=2503
    * @return The bytes for masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1700,12 +1781,17 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Configuration for Cloud TPU support;
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47;</code>
+   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.tpu_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2558
    * @return Whether the tpuConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasTpuConfig();
 
   /**
@@ -1713,12 +1799,17 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Configuration for Cloud TPU support;
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47;</code>
+   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.tpu_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2558
    * @return The tpuConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.TpuConfig getTpuConfig();
 
   /**
@@ -1726,10 +1817,13 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Configuration for Cloud TPU support;
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47;</code>
+   * <code>.google.container.v1beta1.TpuConfig tpu_config = 47 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.TpuConfigOrBuilder getTpuConfigOrBuilder();
 
   /**
@@ -1884,7 +1978,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2243
+   *     google/container/v1beta1/cluster_service.proto;l=2576
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1902,7 +1996,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2243
+   *     google/container/v1beta1/cluster_service.proto;l=2576
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -2036,7 +2130,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2278
+   *     google/container/v1beta1/cluster_service.proto;l=2611
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -2058,7 +2152,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2278
+   *     google/container/v1beta1/cluster_service.proto;l=2611
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -2136,7 +2230,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2291
+   *     google/container/v1beta1/cluster_service.proto;l=2624
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -2156,7 +2250,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2291
+   *     google/container/v1beta1/cluster_service.proto;l=2624
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -2224,7 +2318,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2308
+   *     google/container/v1beta1/cluster_service.proto;l=2641
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2242,7 +2336,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2308
+   *     google/container/v1beta1/cluster_service.proto;l=2641
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2260,7 +2354,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2308
+   *     google/container/v1beta1/cluster_service.proto;l=2641
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2279,7 +2373,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2308
+   *     google/container/v1beta1/cluster_service.proto;l=2641
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2299,7 +2393,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2313
+   *     google/container/v1beta1/cluster_service.proto;l=2646
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2373,12 +2467,17 @@ public interface ClusterOrBuilder
    * <pre>
    * Enable the ability to use Cloud TPUs in this cluster.
    * This field is deprecated, use tpu_config.enabled instead.
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>bool enable_tpu = 115;</code>
+   * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.enable_tpu is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2664
    * @return The enableTpu.
    */
+  @java.lang.Deprecated
   boolean getEnableTpu();
 
   /**
@@ -2388,12 +2487,19 @@ public interface ClusterOrBuilder
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>string tpu_ipv4_cidr_block = 116 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string tpu_ipv4_cidr_block = 116 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.tpu_ipv4_cidr_block is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2671
    * @return The tpuIpv4CidrBlock.
    */
+  @java.lang.Deprecated
   java.lang.String getTpuIpv4CidrBlock();
 
   /**
@@ -2403,12 +2509,19 @@ public interface ClusterOrBuilder
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
+   * This field is deprecated due to the deprecation of 2VM TPU. The end of life
+   * date for 2VM TPU is 2025-04-25.
    * </pre>
    *
-   * <code>string tpu_ipv4_cidr_block = 116 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string tpu_ipv4_cidr_block = 116 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.tpu_ipv4_cidr_block is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2671
    * @return The bytes for tpuIpv4CidrBlock.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes();
 
   /**
@@ -2771,7 +2884,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2367
+   *     google/container/v1beta1/cluster_service.proto;l=2705
    * @return Whether the protectConfig field is set.
    */
   @java.lang.Deprecated
@@ -2790,7 +2903,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2367
+   *     google/container/v1beta1/cluster_service.proto;l=2705
    * @return The protectConfig.
    */
   @java.lang.Deprecated
@@ -2810,6 +2923,43 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfigOrBuilder getProtectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodAutoscaling pod_autoscaling = 138;</code>
+   *
+   * @return Whether the podAutoscaling field is set.
+   */
+  boolean hasPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodAutoscaling pod_autoscaling = 138;</code>
+   *
+   * @return The podAutoscaling.
+   */
+  com.google.container.v1beta1.PodAutoscaling getPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodAutoscaling pod_autoscaling = 138;</code>
+   */
+  com.google.container.v1beta1.PodAutoscalingOrBuilder getPodAutoscalingOrBuilder();
 
   /**
    *
@@ -2914,6 +3064,50 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
    */
   com.google.container.v1beta1.SecurityPostureConfigOrBuilder getSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return Whether the controlPlaneEndpointsConfig field is set.
+   */
+  boolean hasControlPlaneEndpointsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return The controlPlaneEndpointsConfig.
+   */
+  com.google.container.v1beta1.ControlPlaneEndpointsConfig getControlPlaneEndpointsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   */
+  com.google.container.v1beta1.ControlPlaneEndpointsConfigOrBuilder
+      getControlPlaneEndpointsConfigOrBuilder();
 
   /**
    *
@@ -3078,4 +3272,131 @@ public interface ClusterOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return Whether the userManagedKeysConfig field is set.
+   */
+  boolean hasUserManagedKeysConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return The userManagedKeysConfig.
+   */
+  com.google.container.v1beta1.UserManagedKeysConfig getUserManagedKeysConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   */
+  com.google.container.v1beta1.UserManagedKeysConfigOrBuilder getUserManagedKeysConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return Whether the rbacBindingConfig field is set.
+   */
+  boolean hasRbacBindingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return The rbacBindingConfig.
+   */
+  com.google.container.v1beta1.RBACBindingConfig getRbacBindingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.RBACBindingConfig rbac_binding_config = 156;</code>
+   */
+  com.google.container.v1beta1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   *
+   * @return Whether the anonymousAuthenticationConfig field is set.
+   */
+  boolean hasAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   *
+   * @return The anonymousAuthenticationConfig.
+   */
+  com.google.container.v1beta1.AnonymousAuthenticationConfig getAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AnonymousAuthenticationConfig anonymous_authentication_config = 164;
+   * </code>
+   */
+  com.google.container.v1beta1.AnonymousAuthenticationConfigOrBuilder
+      getAnonymousAuthenticationConfigOrBuilder();
 }

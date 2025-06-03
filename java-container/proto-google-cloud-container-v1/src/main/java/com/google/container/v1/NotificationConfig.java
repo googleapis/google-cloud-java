@@ -113,6 +113,16 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>SECURITY_BULLETIN_EVENT = 3;</code>
      */
     SECURITY_BULLETIN_EVENT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds with UpgradeInfoEvent.
+     * </pre>
+     *
+     * <code>UPGRADE_INFO_EVENT = 4;</code>
+     */
+    UPGRADE_INFO_EVENT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,6 +170,17 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     public static final int SECURITY_BULLETIN_EVENT_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds with UpgradeInfoEvent.
+     * </pre>
+     *
+     * <code>UPGRADE_INFO_EVENT = 4;</code>
+     */
+    public static final int UPGRADE_INFO_EVENT_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -192,6 +213,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return UPGRADE_EVENT;
         case 3:
           return SECURITY_BULLETIN_EVENT;
+        case 4:
+          return UPGRADE_INFO_EVENT;
         default:
           return null;
       }

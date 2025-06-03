@@ -233,5 +233,53 @@ public interface DataProfileActionOrBuilder
    */
   com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder getTagResourcesOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Publishes a portion of each profile to Dataplex Catalog with the aspect
+   * type Sensitive Data Protection Profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog publish_to_dataplex_catalog = 9;
+   * </code>
+   *
+   * @return Whether the publishToDataplexCatalog field is set.
+   */
+  boolean hasPublishToDataplexCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Publishes a portion of each profile to Dataplex Catalog with the aspect
+   * type Sensitive Data Protection Profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog publish_to_dataplex_catalog = 9;
+   * </code>
+   *
+   * @return The publishToDataplexCatalog.
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog
+      getPublishToDataplexCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Publishes a portion of each profile to Dataplex Catalog with the aspect
+   * type Sensitive Data Protection Profile.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog publish_to_dataplex_catalog = 9;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalogOrBuilder
+      getPublishToDataplexCatalogOrBuilder();
+
   com.google.privacy.dlp.v2.DataProfileAction.ActionCase getActionCase();
 }
