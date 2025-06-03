@@ -852,5 +852,7 @@ proto-google-cloud-chronicle-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-chronicle-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudsupport-v2beta:0.47.0:0.48.0-SNAPSHOT
 grpc-google-cloud-cloudsupport-v2beta:0.47.0:0.48.0-SNAPSHOT
+proto-google-cloud-modelarmor-v1beta:0.4.0:0.5.0-SNAPSHOT
+grpc-google-cloud-modelarmor-v1beta:0.4.0:0.5.0-SNAPSHOT
 proto-google-cloud-dataform-v1:0.62.0:0.63.0-SNAPSHOT
 grpc-google-cloud-dataform-v1:0.62.0:0.63.0-SNAPSHOT
