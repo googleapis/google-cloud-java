@@ -852,3 +852,5 @@ proto-google-cloud-chronicle-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-chronicle-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudsupport-v2beta:0.47.0:0.48.0-SNAPSHOT
 grpc-google-cloud-cloudsupport-v2beta:0.47.0:0.48.0-SNAPSHOT
+proto-google-cloud-workspaceevents-v1beta:0.27.0:0.28.0-SNAPSHOT
+grpc-google-cloud-workspaceevents-v1beta:0.27.0:0.28.0-SNAPSHOT
