@@ -1515,6 +1515,105 @@ public final class ClusterManagerGrpc {
     return getCheckAutopilotCompatibilityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchClusterUpgradeInfoRequest,
+          com.google.container.v1.ClusterUpgradeInfo>
+      getFetchClusterUpgradeInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchClusterUpgradeInfo",
+      requestType = com.google.container.v1.FetchClusterUpgradeInfoRequest.class,
+      responseType = com.google.container.v1.ClusterUpgradeInfo.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchClusterUpgradeInfoRequest,
+          com.google.container.v1.ClusterUpgradeInfo>
+      getFetchClusterUpgradeInfoMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.FetchClusterUpgradeInfoRequest,
+            com.google.container.v1.ClusterUpgradeInfo>
+        getFetchClusterUpgradeInfoMethod;
+    if ((getFetchClusterUpgradeInfoMethod = ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getFetchClusterUpgradeInfoMethod = ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod)
+            == null) {
+          ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod =
+              getFetchClusterUpgradeInfoMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.FetchClusterUpgradeInfoRequest,
+                          com.google.container.v1.ClusterUpgradeInfo>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchClusterUpgradeInfo"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.FetchClusterUpgradeInfoRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.ClusterUpgradeInfo.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("FetchClusterUpgradeInfo"))
+                      .build();
+        }
+      }
+    }
+    return getFetchClusterUpgradeInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+          com.google.container.v1.NodePoolUpgradeInfo>
+      getFetchNodePoolUpgradeInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchNodePoolUpgradeInfo",
+      requestType = com.google.container.v1.FetchNodePoolUpgradeInfoRequest.class,
+      responseType = com.google.container.v1.NodePoolUpgradeInfo.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+          com.google.container.v1.NodePoolUpgradeInfo>
+      getFetchNodePoolUpgradeInfoMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+            com.google.container.v1.NodePoolUpgradeInfo>
+        getFetchNodePoolUpgradeInfoMethod;
+    if ((getFetchNodePoolUpgradeInfoMethod = ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getFetchNodePoolUpgradeInfoMethod =
+                ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod)
+            == null) {
+          ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod =
+              getFetchNodePoolUpgradeInfoMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+                          com.google.container.v1.NodePoolUpgradeInfo>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchNodePoolUpgradeInfo"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.FetchNodePoolUpgradeInfoRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.NodePoolUpgradeInfo.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("FetchNodePoolUpgradeInfo"))
+                      .build();
+        }
+      }
+    }
+    return getFetchNodePoolUpgradeInfoMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ClusterManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ClusterManagerStub> factory =
@@ -2085,6 +2184,34 @@ public final class ClusterManagerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCheckAutopilotCompatibilityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    default void fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchClusterUpgradeInfoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    default void fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchNodePoolUpgradeInfoMethod(), responseObserver);
     }
   }
 
@@ -2696,6 +2823,38 @@ public final class ClusterManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public void fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchClusterUpgradeInfoMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public void fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchNodePoolUpgradeInfoMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3187,6 +3346,32 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1.ClusterUpgradeInfo fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchClusterUpgradeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3677,6 +3862,32 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.CheckAutopilotCompatibilityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1.ClusterUpgradeInfo fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchClusterUpgradeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
     }
   }
 
@@ -4176,6 +4387,34 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckAutopilotCompatibilityMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.ClusterUpgradeInfo>
+        fetchClusterUpgradeInfo(com.google.container.v1.FetchClusterUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchClusterUpgradeInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfo(com.google.container.v1.FetchNodePoolUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchNodePoolUpgradeInfoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -4212,6 +4451,8 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_SET_MAINTENANCE_POLICY = 31;
   private static final int METHODID_LIST_USABLE_SUBNETWORKS = 32;
   private static final int METHODID_CHECK_AUTOPILOT_COMPATIBILITY = 33;
+  private static final int METHODID_FETCH_CLUSTER_UPGRADE_INFO = 34;
+  private static final int METHODID_FETCH_NODE_POOL_UPGRADE_INFO = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4405,6 +4646,18 @@ public final class ClusterManagerGrpc {
               (com.google.container.v1.CheckAutopilotCompatibilityRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.container.v1.CheckAutopilotCompatibilityResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_CLUSTER_UPGRADE_INFO:
+          serviceImpl.fetchClusterUpgradeInfo(
+              (com.google.container.v1.FetchClusterUpgradeInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_NODE_POOL_UPGRADE_INFO:
+          serviceImpl.fetchNodePoolUpgradeInfo(
+              (com.google.container.v1.FetchNodePoolUpgradeInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo>)
                   responseObserver);
           break;
         default:
@@ -4636,6 +4889,20 @@ public final class ClusterManagerGrpc {
                     com.google.container.v1.CheckAutopilotCompatibilityRequest,
                     com.google.container.v1.CheckAutopilotCompatibilityResponse>(
                     service, METHODID_CHECK_AUTOPILOT_COMPATIBILITY)))
+        .addMethod(
+            getFetchClusterUpgradeInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.FetchClusterUpgradeInfoRequest,
+                    com.google.container.v1.ClusterUpgradeInfo>(
+                    service, METHODID_FETCH_CLUSTER_UPGRADE_INFO)))
+        .addMethod(
+            getFetchNodePoolUpgradeInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+                    com.google.container.v1.NodePoolUpgradeInfo>(
+                    service, METHODID_FETCH_NODE_POOL_UPGRADE_INFO)))
         .build();
   }
 
@@ -4721,6 +4988,8 @@ public final class ClusterManagerGrpc {
                       .addMethod(getSetMaintenancePolicyMethod())
                       .addMethod(getListUsableSubnetworksMethod())
                       .addMethod(getCheckAutopilotCompatibilityMethod())
+                      .addMethod(getFetchClusterUpgradeInfoMethod())
+                      .addMethod(getFetchNodePoolUpgradeInfoMethod())
                       .build();
         }
       }

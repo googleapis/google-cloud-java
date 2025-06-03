@@ -170,6 +170,100 @@ public interface FunctionDeclarationOrBuilder
    *
    *
    * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parametersJsonSchema field is set.
+   */
+  boolean hasParametersJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parametersJsonSchema.
+   */
+  com.google.protobuf.Value getParametersJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.ValueOrBuilder getParametersJsonSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Describes the output from this function in JSON Schema format.
    * Reflects the Open API 3.03 Response Object. The Schema defines the type
    * used for the response value of the function.
@@ -214,4 +308,56 @@ public interface FunctionDeclarationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SchemaOrBuilder getResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseJsonSchema field is set.
+   */
+  boolean hasResponseJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseJsonSchema.
+   */
+  com.google.protobuf.Value getResponseJsonSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder();
 }

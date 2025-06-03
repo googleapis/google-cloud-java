@@ -52,7 +52,7 @@ public final class MerchantCenterAccountLinkProto {
       "\n"
           + ">google/cloud/retail/v2alpha/merchant_center_account_link.proto\022\033google.cloud.r"
           + "etail.v2alpha\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\333\005\n"
+          + ".proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\367\005\n"
           + "\031MerchantCenterAccountLink\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\005\340A\003\022\022\n"
           + "\002id\030\010 \001(\tB\006\340A\005\340A\003\022\'\n"
@@ -66,26 +66,27 @@ public final class MerchantCenterAccountLinkProto {
           + " \001(\0162<.google.cloud.retail.v2alpha.MerchantCenterAccountLink.StateB\003\340A\003\022\027\n\n"
           + "project_id\030\t \001(\tB\003\340A\003\022\023\n"
           + "\006source\030\n"
-          + " \001(\tB\003\340A\001\032N\n"
-          + "\030MerchantCenterFeedFilter\022\027\n"
-          + "\017primary_feed_id\030\001 \001(\003\022\031\n"
+          + " \001(\tB\003\340A\001\032j\n"
+          + "\030MerchantCenterFeedFilter\022\033\n"
+          + "\017primary_feed_id\030\001 \001(\003B\002\030\001\022\026\n"
+          + "\016data_source_id\030\003 \001(\003\022\031\n"
           + "\021primary_feed_name\030\002 \001(\t\"C\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\n\n"
           + "\006FAILED\020\003:\253\001\352A\247\001\n"
-          + "/retail.googleapis.com/MerchantCenterAccountLi"
-          + "nk\022tprojects/{project}/locations/{location}/catalogs/{catalog}/merchantCenterAcc"
-          + "ountLinks/{merchant_center_account_link}\"\213\001\n"
+          + "/retail.googleapis.com/MerchantCenterAccountLink\022tprojects"
+          + "/{project}/locations/{location}/catalogs"
+          + "/{catalog}/merchantCenterAccountLinks/{merchant_center_account_link}\"\213\001\n"
           + "\'CreateMerchantCenterAccountLinkMetadata\022/\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022/\n"
           + "\013update_time\030\002 \001(\0132\032.google.protobuf.TimestampB\342\001\n"
-          + "\037com.google.cloud.retail.v2alphaB\036MerchantCenterAccoun"
-          + "tLinkProtoP\001Z7cloud.google.com/go/retail"
-          + "/apiv2alpha/retailpb;retailpb\242\002\006RETAIL\252\002"
-          + "\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\Cl"
-          + "oud\\Retail\\V2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
+          + "\037com.google.cloud.retail.v2alphaB\036MerchantCenterAccountLinkProtoP\001"
+          + "Z7cloud.google.com/go/retail/apiv2alpha/"
+          + "retailpb;retailpb\242\002\006RETAIL\252\002\033Google.Clou"
+          + "d.Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V"
+          + "2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,7 +121,7 @@ public final class MerchantCenterAccountLinkProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_MerchantCenterAccountLink_MerchantCenterFeedFilter_descriptor,
             new java.lang.String[] {
-              "PrimaryFeedId", "PrimaryFeedName",
+              "PrimaryFeedId", "DataSourceId", "PrimaryFeedName",
             });
     internal_static_google_cloud_retail_v2alpha_CreateMerchantCenterAccountLinkMetadata_descriptor =
         getDescriptor().getMessageTypes().get(1);

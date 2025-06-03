@@ -28,8 +28,9 @@ public interface CorsSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow HTTP OPTIONS calls to skip authorization. If
-   * undefined, IAP will not apply any special logic to OPTIONS requests.
+   * Configuration to allow HTTP `OPTIONS` calls to skip
+   * authentication and authorization. If undefined, IAP will not apply any
+   * special logic to `OPTIONS` requests.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue allow_http_options = 1;</code>
@@ -42,8 +43,9 @@ public interface CorsSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow HTTP OPTIONS calls to skip authorization. If
-   * undefined, IAP will not apply any special logic to OPTIONS requests.
+   * Configuration to allow HTTP `OPTIONS` calls to skip
+   * authentication and authorization. If undefined, IAP will not apply any
+   * special logic to `OPTIONS` requests.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue allow_http_options = 1;</code>
@@ -56,8 +58,9 @@ public interface CorsSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow HTTP OPTIONS calls to skip authorization. If
-   * undefined, IAP will not apply any special logic to OPTIONS requests.
+   * Configuration to allow HTTP `OPTIONS` calls to skip
+   * authentication and authorization. If undefined, IAP will not apply any
+   * special logic to `OPTIONS` requests.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue allow_http_options = 1;</code>

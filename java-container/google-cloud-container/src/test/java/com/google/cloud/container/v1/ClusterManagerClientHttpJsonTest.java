@@ -31,6 +31,7 @@ import com.google.cloud.container.v1.stub.HttpJsonClusterManagerStub;
 import com.google.common.collect.Lists;
 import com.google.container.v1.AcceleratorConfig;
 import com.google.container.v1.AddonsConfig;
+import com.google.container.v1.AnonymousAuthenticationConfig;
 import com.google.container.v1.AuthenticatorGroupsConfig;
 import com.google.container.v1.Autopilot;
 import com.google.container.v1.AutopilotCompatibilityIssue;
@@ -41,6 +42,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterAutoscaling;
 import com.google.container.v1.ClusterUpdate;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CompliancePostureConfig;
 import com.google.container.v1.ConfidentialNodes;
@@ -85,10 +87,12 @@ import com.google.container.v1.NodePoolAutoConfig;
 import com.google.container.v1.NodePoolAutoscaling;
 import com.google.container.v1.NodePoolDefaults;
 import com.google.container.v1.NodePoolLoggingConfig;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.NodeTaints;
 import com.google.container.v1.NotificationConfig;
 import com.google.container.v1.Operation;
 import com.google.container.v1.OperationProgress;
+import com.google.container.v1.PodAutoscaling;
 import com.google.container.v1.PrivateClusterConfig;
 import com.google.container.v1.RBACBindingConfig;
 import com.google.container.v1.ReleaseChannel;
@@ -106,6 +110,7 @@ import com.google.container.v1.SetNodePoolSizeRequest;
 import com.google.container.v1.ShieldedNodes;
 import com.google.container.v1.StatusCondition;
 import com.google.container.v1.UpdateNodePoolRequest;
+import com.google.container.v1.UpgradeDetails;
 import com.google.container.v1.UsableSubnetwork;
 import com.google.container.v1.UserManagedKeysConfig;
 import com.google.container.v1.VerticalPodAutoscaling;
@@ -113,6 +118,7 @@ import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
 import com.google.container.v1.WorkloadIdentityConfig;
 import com.google.container.v1.WorkloadMetadataConfig;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.rpc.Status;
 import java.io.IOException;
@@ -273,6 +279,7 @@ public class ClusterManagerClientHttpJsonTest {
             .addAllNodePools(new ArrayList<NodePool>())
             .addAllLocations(new ArrayList<String>())
             .setEnableKubernetesAlpha(true)
+            .addAllAlphaClusterFeatureGates(new ArrayList<String>())
             .putAllResourceLabels(new HashMap<String, String>())
             .setLabelFingerprint("labelFingerprint379449680")
             .setLegacyAbac(LegacyAbac.newBuilder().build())
@@ -320,6 +327,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
+            .setPodAutoscaling(PodAutoscaling.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
@@ -332,6 +340,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -389,6 +398,7 @@ public class ClusterManagerClientHttpJsonTest {
             .addAllNodePools(new ArrayList<NodePool>())
             .addAllLocations(new ArrayList<String>())
             .setEnableKubernetesAlpha(true)
+            .addAllAlphaClusterFeatureGates(new ArrayList<String>())
             .putAllResourceLabels(new HashMap<String, String>())
             .setLabelFingerprint("labelFingerprint379449680")
             .setLegacyAbac(LegacyAbac.newBuilder().build())
@@ -436,6 +446,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
+            .setPodAutoscaling(PodAutoscaling.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
@@ -448,6 +459,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -784,6 +796,8 @@ public class ClusterManagerClientHttpJsonTest {
             .setContainerdConfig(ContainerdConfig.newBuilder().build())
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .addAllStoragePools(new ArrayList<String>())
+            .setMaxRunDuration(Duration.newBuilder().build())
+            .setFlexStart(true)
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -847,6 +861,8 @@ public class ClusterManagerClientHttpJsonTest {
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
               .addAllStoragePools(new ArrayList<String>())
+              .setMaxRunDuration(Duration.newBuilder().build())
+              .setFlexStart(true)
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -3708,6 +3724,108 @@ public class ClusterManagerClientHttpJsonTest {
               .setName("projects/project-6537/locations/location-6537/clusters/cluster-6537")
               .build();
       client.checkAutopilotCompatibility(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchClusterUpgradeInfoTest() throws Exception {
+    ClusterUpgradeInfo expectedResponse =
+        ClusterUpgradeInfo.newBuilder()
+            .setMinorTargetVersion("minorTargetVersion222643282")
+            .setPatchTargetVersion("patchTargetVersion371479199")
+            .addAllAutoUpgradeStatus(new ArrayList<ClusterUpgradeInfo.AutoUpgradeStatus>())
+            .addAllPausedReason(new ArrayList<ClusterUpgradeInfo.AutoUpgradePausedReason>())
+            .addAllUpgradeDetails(new ArrayList<UpgradeDetails>())
+            .setEndOfStandardSupportTimestamp("endOfStandardSupportTimestamp-1097416426")
+            .setEndOfExtendedSupportTimestamp("endOfExtendedSupportTimestamp599562130")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+
+    ClusterUpgradeInfo actualResponse = client.fetchClusterUpgradeInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchClusterUpgradeInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      client.fetchClusterUpgradeInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchNodePoolUpgradeInfoTest() throws Exception {
+    NodePoolUpgradeInfo expectedResponse =
+        NodePoolUpgradeInfo.newBuilder()
+            .setMinorTargetVersion("minorTargetVersion222643282")
+            .setPatchTargetVersion("patchTargetVersion371479199")
+            .addAllAutoUpgradeStatus(new ArrayList<NodePoolUpgradeInfo.AutoUpgradeStatus>())
+            .addAllPausedReason(new ArrayList<NodePoolUpgradeInfo.AutoUpgradePausedReason>())
+            .addAllUpgradeDetails(new ArrayList<UpgradeDetails>())
+            .setEndOfStandardSupportTimestamp("endOfStandardSupportTimestamp-1097416426")
+            .setEndOfExtendedSupportTimestamp("endOfExtendedSupportTimestamp599562130")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6330/locations/location-6330/clusters/cluster-6330/nodePools/nodePool-6330";
+
+    NodePoolUpgradeInfo actualResponse = client.fetchNodePoolUpgradeInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchNodePoolUpgradeInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6330/locations/location-6330/clusters/cluster-6330/nodePools/nodePool-6330";
+      client.fetchNodePoolUpgradeInfo(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

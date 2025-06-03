@@ -374,4 +374,47 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support URL context retrieval.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the urlContext field is set.
+   */
+  boolean hasUrlContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support URL context retrieval.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The urlContext.
+   */
+  com.google.cloud.aiplatform.v1beta1.UrlContext getUrlContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support URL context retrieval.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder();
 }

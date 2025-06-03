@@ -276,6 +276,8 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * Suggested answers to the follow-up question.
+     * If it's numerical attribute, only ProductAttributeInterval will be set.
+     * If it's textual attribute, only productAttributeValue will be set.
      * </pre>
      *
      * Protobuf type {@code
@@ -581,6 +583,8 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
        *
        * <pre>
        * Suggested answers to the follow-up question.
+       * If it's numerical attribute, only ProductAttributeInterval will be set.
+       * If it's textual attribute, only productAttributeValue will be set.
        * </pre>
        *
        * Protobuf type {@code

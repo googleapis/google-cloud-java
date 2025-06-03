@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.container.v1beta1.AcceleratorConfig;
 import com.google.container.v1beta1.AddonsConfig;
+import com.google.container.v1beta1.AnonymousAuthenticationConfig;
 import com.google.container.v1beta1.AuthenticatorGroupsConfig;
 import com.google.container.v1beta1.Autopilot;
 import com.google.container.v1beta1.AutopilotCompatibilityIssue;
@@ -40,11 +41,13 @@ import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterAutoscaling;
 import com.google.container.v1beta1.ClusterTelemetry;
 import com.google.container.v1beta1.ClusterUpdate;
+import com.google.container.v1beta1.ClusterUpgradeInfo;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CompliancePostureConfig;
 import com.google.container.v1beta1.ConfidentialNodes;
 import com.google.container.v1beta1.ContainerdConfig;
+import com.google.container.v1beta1.ControlPlaneEndpointsConfig;
 import com.google.container.v1beta1.CostManagementConfig;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
@@ -53,6 +56,8 @@ import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
 import com.google.container.v1beta1.EnterpriseConfig;
 import com.google.container.v1beta1.FastSocket;
+import com.google.container.v1beta1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1beta1.Fleet;
 import com.google.container.v1beta1.GcfsConfig;
 import com.google.container.v1beta1.GetClusterRequest;
@@ -99,13 +104,16 @@ import com.google.container.v1beta1.NodePoolAutoConfig;
 import com.google.container.v1beta1.NodePoolAutoscaling;
 import com.google.container.v1beta1.NodePoolDefaults;
 import com.google.container.v1beta1.NodePoolLoggingConfig;
+import com.google.container.v1beta1.NodePoolUpgradeInfo;
 import com.google.container.v1beta1.NodeTaints;
 import com.google.container.v1beta1.NotificationConfig;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.OperationProgress;
+import com.google.container.v1beta1.PodAutoscaling;
 import com.google.container.v1beta1.PodSecurityPolicyConfig;
 import com.google.container.v1beta1.PrivateClusterConfig;
 import com.google.container.v1beta1.ProtectConfig;
+import com.google.container.v1beta1.RBACBindingConfig;
 import com.google.container.v1beta1.ReleaseChannel;
 import com.google.container.v1beta1.ResourceLabels;
 import com.google.container.v1beta1.ResourceManagerTags;
@@ -133,7 +141,9 @@ import com.google.container.v1beta1.TpuConfig;
 import com.google.container.v1beta1.UpdateClusterRequest;
 import com.google.container.v1beta1.UpdateMasterRequest;
 import com.google.container.v1beta1.UpdateNodePoolRequest;
+import com.google.container.v1beta1.UpgradeDetails;
 import com.google.container.v1beta1.UsableSubnetwork;
+import com.google.container.v1beta1.UserManagedKeysConfig;
 import com.google.container.v1beta1.VerticalPodAutoscaling;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsNodeConfig;
@@ -143,6 +153,7 @@ import com.google.container.v1beta1.WorkloadCertificates;
 import com.google.container.v1beta1.WorkloadIdentityConfig;
 import com.google.container.v1beta1.WorkloadMetadataConfig;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -259,6 +270,7 @@ public class ClusterManagerClientTest {
             .addAllNodePools(new ArrayList<NodePool>())
             .addAllLocations(new ArrayList<String>())
             .setEnableKubernetesAlpha(true)
+            .addAllAlphaClusterFeatureGates(new ArrayList<String>())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setLabelFingerprint("labelFingerprint379449680")
@@ -316,14 +328,19 @@ public class ClusterManagerClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setProtectConfig(ProtectConfig.newBuilder().build())
+            .setPodAutoscaling(PodAutoscaling.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .setControlPlaneEndpointsConfig(ControlPlaneEndpointsConfig.newBuilder().build())
             .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .setSecretManagerConfig(SecretManagerConfig.newBuilder().build())
             .setCompliancePostureConfig(CompliancePostureConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
+            .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -531,6 +548,9 @@ public class ClusterManagerClientTest {
             .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
             .setContainerdConfig(ContainerdConfig.newBuilder().build())
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+            .addAllStoragePools(new ArrayList<String>())
+            .setMaxRunDuration(Duration.newBuilder().build())
+            .setFlexStart(true)
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -572,6 +592,9 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
     Assert.assertEquals(request.getContainerdConfig(), actualRequest.getContainerdConfig());
     Assert.assertEquals(request.getQueuedProvisioning(), actualRequest.getQueuedProvisioning());
+    Assert.assertEquals(request.getStoragePoolsList(), actualRequest.getStoragePoolsList());
+    Assert.assertEquals(request.getMaxRunDuration(), actualRequest.getMaxRunDuration());
+    Assert.assertEquals(request.getFlexStart(), actualRequest.getFlexStart());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -617,6 +640,9 @@ public class ClusterManagerClientTest {
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+              .addAllStoragePools(new ArrayList<String>())
+              .setMaxRunDuration(Duration.newBuilder().build())
+              .setFlexStart(true)
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -2276,6 +2302,96 @@ public class ClusterManagerClientTest {
     try {
       String parent = "parent-995424086";
       client.listLocations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchClusterUpgradeInfoTest() throws Exception {
+    ClusterUpgradeInfo expectedResponse =
+        ClusterUpgradeInfo.newBuilder()
+            .setMinorTargetVersion("minorTargetVersion222643282")
+            .setPatchTargetVersion("patchTargetVersion371479199")
+            .addAllAutoUpgradeStatus(new ArrayList<ClusterUpgradeInfo.AutoUpgradeStatus>())
+            .addAllPausedReason(new ArrayList<ClusterUpgradeInfo.AutoUpgradePausedReason>())
+            .addAllUpgradeDetails(new ArrayList<UpgradeDetails>())
+            .setEndOfStandardSupportTimestamp("endOfStandardSupportTimestamp-1097416426")
+            .setEndOfExtendedSupportTimestamp("endOfExtendedSupportTimestamp599562130")
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ClusterUpgradeInfo actualResponse = client.fetchClusterUpgradeInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchClusterUpgradeInfoRequest actualRequest =
+        ((FetchClusterUpgradeInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchClusterUpgradeInfoExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.fetchClusterUpgradeInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchNodePoolUpgradeInfoTest() throws Exception {
+    NodePoolUpgradeInfo expectedResponse =
+        NodePoolUpgradeInfo.newBuilder()
+            .setMinorTargetVersion("minorTargetVersion222643282")
+            .setPatchTargetVersion("patchTargetVersion371479199")
+            .addAllAutoUpgradeStatus(new ArrayList<NodePoolUpgradeInfo.AutoUpgradeStatus>())
+            .addAllPausedReason(new ArrayList<NodePoolUpgradeInfo.AutoUpgradePausedReason>())
+            .addAllUpgradeDetails(new ArrayList<UpgradeDetails>())
+            .setEndOfStandardSupportTimestamp("endOfStandardSupportTimestamp-1097416426")
+            .setEndOfExtendedSupportTimestamp("endOfExtendedSupportTimestamp599562130")
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    NodePoolUpgradeInfo actualResponse = client.fetchNodePoolUpgradeInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchNodePoolUpgradeInfoRequest actualRequest =
+        ((FetchNodePoolUpgradeInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchNodePoolUpgradeInfoExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.fetchNodePoolUpgradeInfo(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

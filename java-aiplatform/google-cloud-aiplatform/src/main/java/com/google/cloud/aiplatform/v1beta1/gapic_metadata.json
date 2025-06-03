@@ -787,6 +787,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "ImportIndex": {
+              "methods": ["importIndexAsync", "importIndexOperationCallable", "importIndexCallable"]
+            },
             "ListIndexes": {
               "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
             },

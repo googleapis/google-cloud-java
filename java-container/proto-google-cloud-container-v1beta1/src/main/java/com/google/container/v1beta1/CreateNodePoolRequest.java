@@ -77,16 +77,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3843
+   *     google/container/v1beta1/cluster_service.proto;l=4323
    * @return The projectId.
    */
   @java.lang.Override
@@ -107,16 +106,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3843
+   *     google/container/v1beta1/cluster_service.proto;l=4323
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -142,16 +140,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the parent
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3850
+   *     google/container/v1beta1/cluster_service.proto;l=4329
    * @return The zone.
    */
   @java.lang.Override
@@ -172,16 +170,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the parent
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3850
+   *     google/container/v1beta1/cluster_service.proto;l=4329
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -207,15 +205,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster.
+   * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3854
+   *     google/container/v1beta1/cluster_service.proto;l=4333
    * @return The clusterId.
    */
   @java.lang.Override
@@ -236,15 +233,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster.
+   * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3854
+   *     google/container/v1beta1/cluster_service.proto;l=4333
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -841,16 +837,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3843
+     *     google/container/v1beta1/cluster_service.proto;l=4323
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -870,16 +865,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3843
+     *     google/container/v1beta1/cluster_service.proto;l=4323
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -899,16 +893,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3843
+     *     google/container/v1beta1/cluster_service.proto;l=4323
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -927,16 +920,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3843
+     *     google/container/v1beta1/cluster_service.proto;l=4323
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -951,16 +943,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3843
+     *     google/container/v1beta1/cluster_service.proto;l=4323
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -982,16 +973,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the parent
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3850
+     *     google/container/v1beta1/cluster_service.proto;l=4329
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1011,16 +1002,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the parent
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3850
+     *     google/container/v1beta1/cluster_service.proto;l=4329
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1040,16 +1031,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the parent
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3850
+     *     google/container/v1beta1/cluster_service.proto;l=4329
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1068,16 +1059,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the parent
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3850
+     *     google/container/v1beta1/cluster_service.proto;l=4329
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1092,16 +1083,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster resides. This field has been deprecated and replaced by the parent
      * field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3850
+     *     google/container/v1beta1/cluster_service.proto;l=4329
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1123,15 +1114,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3854
+     *     google/container/v1beta1/cluster_service.proto;l=4333
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1151,15 +1141,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3854
+     *     google/container/v1beta1/cluster_service.proto;l=4333
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1179,15 +1168,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3854
+     *     google/container/v1beta1/cluster_service.proto;l=4333
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1206,15 +1194,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3854
+     *     google/container/v1beta1/cluster_service.proto;l=4333
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1229,15 +1216,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.CreateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3854
+     *     google/container/v1beta1/cluster_service.proto;l=4333
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

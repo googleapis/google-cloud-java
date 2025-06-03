@@ -387,14 +387,28 @@ public interface PartOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates if the part is thought from the model.
+   * Indicates if the part is thought from the model.
    * </pre>
    *
-   * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The thought.
    */
   boolean getThought();
+
+  /**
+   *
+   *
+   * <pre>
+   * An opaque signature for the thought so it can be reused in subsequent
+   * requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thoughtSignature.
+   */
+  com.google.protobuf.ByteString getThoughtSignature();
 
   com.google.cloud.aiplatform.v1beta1.Part.DataCase getDataCase();
 

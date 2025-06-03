@@ -369,4 +369,58 @@ public interface SecurityBulletinEventOrBuilder
    * @return The manualStepsRequired.
    */
   boolean getManualStepsRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @return A list containing the mitigatedVersions.
+   */
+  java.util.List<java.lang.String> getMitigatedVersionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @return The count of mitigatedVersions.
+   */
+  int getMitigatedVersionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mitigatedVersions at the given index.
+   */
+  java.lang.String getMitigatedVersions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The GKE versions where this vulnerability is mitigated.
+   * </pre>
+   *
+   * <code>repeated string mitigated_versions = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mitigatedVersions at the given index.
+   */
+  com.google.protobuf.ByteString getMitigatedVersionsBytes(int index);
 }

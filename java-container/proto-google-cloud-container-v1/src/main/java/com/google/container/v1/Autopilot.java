@@ -89,7 +89,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -105,7 +105,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -123,7 +123,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Workload policy configuration for Autopilot.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -587,7 +587,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -602,7 +602,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -623,7 +623,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -646,7 +646,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -667,7 +667,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -696,7 +696,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -716,7 +716,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -731,7 +731,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
@@ -751,7 +751,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workload policy configuration for Autopilot.
+     * WorkloadPolicyConfig is the configuration related to GCW workload policy
      * </pre>
      *
      * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>

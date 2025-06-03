@@ -141,6 +141,17 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
     return ((IndexServiceStubSettings) getStubSettings()).getIndexSettings();
   }
 
+  /** Returns the object with the settings used for calls to importIndex. */
+  public UnaryCallSettings<ImportIndexRequest, Operation> importIndexSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).importIndexSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importIndex. */
+  public OperationCallSettings<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).importIndexOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listIndexes. */
   public PagedCallSettings<ListIndexesRequest, ListIndexesResponse, ListIndexesPagedResponse>
       listIndexesSettings() {
@@ -318,6 +329,17 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
     /** Returns the builder for the settings used for calls to getIndex. */
     public UnaryCallSettings.Builder<GetIndexRequest, Index> getIndexSettings() {
       return getStubSettingsBuilder().getIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIndex. */
+    public UnaryCallSettings.Builder<ImportIndexRequest, Operation> importIndexSettings() {
+      return getStubSettingsBuilder().importIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIndex. */
+    public OperationCallSettings.Builder<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+        importIndexOperationSettings() {
+      return getStubSettingsBuilder().importIndexOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listIndexes. */
