@@ -193,6 +193,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> Update</td>
+ *      <td><p> Updates a License resource in the specified project. &#42;Caution&#42; This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAsync(UpdateLicenseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAsync(String project, String license, License licenseResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOperationCallable()
+ *           <li><p> updateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1080,6 +1099,142 @@ public class LicensesClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a License resource in the specified project. &#42;Caution&#42; This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   String project = "project-309310695";
+   *   String license = "license166757441";
+   *   License licenseResource = License.newBuilder().build();
+   *   Operation response = licensesClient.updateAsync(project, license, licenseResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param license The license name for this request.
+   * @param licenseResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String license, License licenseResource) {
+    UpdateLicenseRequest request =
+        UpdateLicenseRequest.newBuilder()
+            .setProject(project)
+            .setLicense(license)
+            .setLicenseResource(licenseResource)
+            .build();
+    return updateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a License resource in the specified project. &#42;Caution&#42; This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   UpdateLicenseRequest request =
+   *       UpdateLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   Operation response = licensesClient.updateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateLicenseRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a License resource in the specified project. &#42;Caution&#42; This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   UpdateLicenseRequest request =
+   *       UpdateLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       licensesClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateLicenseRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a License resource in the specified project. &#42;Caution&#42; This resource is
+   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   UpdateLicenseRequest request =
+   *       UpdateLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   ApiFuture<Operation> future = licensesClient.updateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLicenseRequest, Operation> updateCallable() {
+    return stub.updateCallable();
   }
 
   @Override
