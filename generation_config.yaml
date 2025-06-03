@@ -1550,6 +1550,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/modelarmor/v1
+  - proto_path: google/cloud/modelarmor/v1beta
   requires_billing: true
 - api_shortname: monitoring
   name_pretty: Stackdriver Monitoring
