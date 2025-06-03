@@ -306,7 +306,7 @@ public class ITSystemTest {
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
       assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
       assertThat(annotation.getSurpriseLikelihood())
-              .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
+          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
     }
   }
 
