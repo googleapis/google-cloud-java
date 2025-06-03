@@ -324,6 +324,8 @@ public class SubnetworksClientTest {
             .setSelfLink("selfLink1191800166")
             .setStackType("stackType1727939042")
             .setState("state109757585")
+            .addAllSystemReservedExternalIpv6Ranges(new ArrayList<String>())
+            .addAllSystemReservedInternalIpv6Ranges(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
