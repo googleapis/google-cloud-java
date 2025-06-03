@@ -41,7 +41,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-firestore</artifactId>
-  <version>3.31.4</version>
+  <version>3.31.5</version>
 </dependency>
 
 ```
