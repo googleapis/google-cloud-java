@@ -34,12 +34,15 @@ import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
+import com.google.container.v1beta1.ClusterUpgradeInfo;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
 import com.google.container.v1beta1.GetJSONWebKeysResponse;
@@ -57,6 +60,7 @@ import com.google.container.v1beta1.ListOperationsResponse;
 import com.google.container.v1beta1.ListUsableSubnetworksRequest;
 import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.NodePoolUpgradeInfo;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1beta1.ServerConfig;
@@ -322,6 +326,18 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   /** Returns the object with the settings used for calls to listLocations. */
   public UnaryCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchClusterUpgradeInfo. */
+  public UnaryCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).fetchClusterUpgradeInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchNodePoolUpgradeInfo. */
+  public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).fetchNodePoolUpgradeInfoSettings();
   }
 
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
@@ -619,6 +635,18 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<ListLocationsRequest, ListLocationsResponse>
         listLocationsSettings() {
       return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchClusterUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoSettings() {
+      return getStubSettingsBuilder().fetchClusterUpgradeInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchNodePoolUpgradeInfo. */
+    public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoSettings() {
+      return getStubSettingsBuilder().fetchNodePoolUpgradeInfoSettings();
     }
 
     @Override

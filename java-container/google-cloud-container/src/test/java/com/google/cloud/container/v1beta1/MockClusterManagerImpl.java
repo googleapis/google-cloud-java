@@ -22,12 +22,15 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterManagerGrpc.ClusterManagerImplBase;
+import com.google.container.v1beta1.ClusterUpgradeInfo;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
 import com.google.container.v1beta1.GetJSONWebKeysResponse;
@@ -45,6 +48,7 @@ import com.google.container.v1beta1.ListOperationsResponse;
 import com.google.container.v1beta1.ListUsableSubnetworksRequest;
 import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.NodePoolUpgradeInfo;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1beta1.ServerConfig;
@@ -843,6 +847,51 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
                   "Unrecognized response type %s for method ListLocations, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLocationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchClusterUpgradeInfo(
+      FetchClusterUpgradeInfoRequest request, StreamObserver<ClusterUpgradeInfo> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ClusterUpgradeInfo) {
+      requests.add(request);
+      responseObserver.onNext(((ClusterUpgradeInfo) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchClusterUpgradeInfo, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ClusterUpgradeInfo.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchNodePoolUpgradeInfo(
+      FetchNodePoolUpgradeInfoRequest request,
+      StreamObserver<NodePoolUpgradeInfo> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NodePoolUpgradeInfo) {
+      requests.add(request);
+      responseObserver.onNext(((NodePoolUpgradeInfo) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchNodePoolUpgradeInfo, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NodePoolUpgradeInfo.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -173,7 +173,7 @@ public interface AutopilotCompatibilityIssueOrBuilder
    *
    *
    * <pre>
-   * A URL to a public documnetation, which addresses resolving this issue.
+   * A URL to a public documentation, which addresses resolving this issue.
    * </pre>
    *
    * <code>string documentation_url = 5;</code>
@@ -186,7 +186,7 @@ public interface AutopilotCompatibilityIssueOrBuilder
    *
    *
    * <pre>
-   * A URL to a public documnetation, which addresses resolving this issue.
+   * A URL to a public documentation, which addresses resolving this issue.
    * </pre>
    *
    * <code>string documentation_url = 5;</code>

@@ -282,6 +282,116 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         : parameters_;
   }
 
+  public static final int PARAMETERS_JSON_SCHEMA_FIELD_NUMBER = 5;
+  private com.google.protobuf.Value parametersJsonSchema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parametersJsonSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasParametersJsonSchema() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parametersJsonSchema.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getParametersJsonSchema() {
+    return parametersJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : parametersJsonSchema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the parameters to the function in JSON Schema format.
+   * The schema must describe an object where the properties are the parameters
+   * to the function. For example:
+   *
+   * ```
+   * {
+   *   "type": "object",
+   *   "properties": {
+   *     "name": { "type": "string" },
+   *     "age": { "type": "integer" }
+   *   },
+   *   "additionalProperties": false,
+   *   "required": ["name", "age"],
+   *   "propertyOrdering": ["name", "age"]
+   * }
+   * ```
+   *
+   * This field is mutually exclusive with `parameters`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getParametersJsonSchemaOrBuilder() {
+    return parametersJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : parametersJsonSchema_;
+  }
+
   public static final int RESPONSE_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.Schema response_;
 
@@ -302,7 +412,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasResponse() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -347,6 +457,74 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         : response_;
   }
 
+  public static final int RESPONSE_JSON_SCHEMA_FIELD_NUMBER = 6;
+  private com.google.protobuf.Value responseJsonSchema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseJsonSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponseJsonSchema() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseJsonSchema.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getResponseJsonSchema() {
+    return responseJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : responseJsonSchema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * The value specified by the schema is the response value of the function.
+   *
+   * This field is mutually exclusive with `response`.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder() {
+    return responseJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : responseJsonSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -370,8 +548,14 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getParameters());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getResponse());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getParametersJsonSchema());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getResponseJsonSchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -391,8 +575,15 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getParameters());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getResponse());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getParametersJsonSchema());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getResponseJsonSchema());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -416,9 +607,17 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (hasParametersJsonSchema() != other.hasParametersJsonSchema()) return false;
+    if (hasParametersJsonSchema()) {
+      if (!getParametersJsonSchema().equals(other.getParametersJsonSchema())) return false;
+    }
     if (hasResponse() != other.hasResponse()) return false;
     if (hasResponse()) {
       if (!getResponse().equals(other.getResponse())) return false;
+    }
+    if (hasResponseJsonSchema() != other.hasResponseJsonSchema()) return false;
+    if (hasResponseJsonSchema()) {
+      if (!getResponseJsonSchema().equals(other.getResponseJsonSchema())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -439,9 +638,17 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    if (hasParametersJsonSchema()) {
+      hash = (37 * hash) + PARAMETERS_JSON_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getParametersJsonSchema().hashCode();
+    }
     if (hasResponse()) {
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
+    }
+    if (hasResponseJsonSchema()) {
+      hash = (37 * hash) + RESPONSE_JSON_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseJsonSchema().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -589,7 +796,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParametersFieldBuilder();
+        getParametersJsonSchemaFieldBuilder();
         getResponseFieldBuilder();
+        getResponseJsonSchemaFieldBuilder();
       }
     }
 
@@ -604,10 +813,20 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
+      parametersJsonSchema_ = null;
+      if (parametersJsonSchemaBuilder_ != null) {
+        parametersJsonSchemaBuilder_.dispose();
+        parametersJsonSchemaBuilder_ = null;
+      }
       response_ = null;
       if (responseBuilder_ != null) {
         responseBuilder_.dispose();
         responseBuilder_ = null;
+      }
+      responseJsonSchema_ = null;
+      if (responseJsonSchemaBuilder_ != null) {
+        responseJsonSchemaBuilder_.dispose();
+        responseJsonSchemaBuilder_ = null;
       }
       return this;
     }
@@ -657,8 +876,22 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.response_ = responseBuilder_ == null ? response_ : responseBuilder_.build();
+        result.parametersJsonSchema_ =
+            parametersJsonSchemaBuilder_ == null
+                ? parametersJsonSchema_
+                : parametersJsonSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.response_ = responseBuilder_ == null ? response_ : responseBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.responseJsonSchema_ =
+            responseJsonSchemaBuilder_ == null
+                ? responseJsonSchema_
+                : responseJsonSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -722,8 +955,14 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
       }
+      if (other.hasParametersJsonSchema()) {
+        mergeParametersJsonSchema(other.getParametersJsonSchema());
+      }
       if (other.hasResponse()) {
         mergeResponse(other.getResponse());
+      }
+      if (other.hasResponseJsonSchema()) {
+        mergeResponseJsonSchema(other.getResponseJsonSchema());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -772,9 +1011,23 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 input.readMessage(getResponseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getParametersJsonSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getResponseJsonSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1365,6 +1618,371 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       return parametersBuilder_;
     }
 
+    private com.google.protobuf.Value parametersJsonSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        parametersJsonSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the parametersJsonSchema field is set.
+     */
+    public boolean hasParametersJsonSchema() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The parametersJsonSchema.
+     */
+    public com.google.protobuf.Value getParametersJsonSchema() {
+      if (parametersJsonSchemaBuilder_ == null) {
+        return parametersJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : parametersJsonSchema_;
+      } else {
+        return parametersJsonSchemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParametersJsonSchema(com.google.protobuf.Value value) {
+      if (parametersJsonSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parametersJsonSchema_ = value;
+      } else {
+        parametersJsonSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParametersJsonSchema(com.google.protobuf.Value.Builder builderForValue) {
+      if (parametersJsonSchemaBuilder_ == null) {
+        parametersJsonSchema_ = builderForValue.build();
+      } else {
+        parametersJsonSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeParametersJsonSchema(com.google.protobuf.Value value) {
+      if (parametersJsonSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && parametersJsonSchema_ != null
+            && parametersJsonSchema_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getParametersJsonSchemaBuilder().mergeFrom(value);
+        } else {
+          parametersJsonSchema_ = value;
+        }
+      } else {
+        parametersJsonSchemaBuilder_.mergeFrom(value);
+      }
+      if (parametersJsonSchema_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearParametersJsonSchema() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      parametersJsonSchema_ = null;
+      if (parametersJsonSchemaBuilder_ != null) {
+        parametersJsonSchemaBuilder_.dispose();
+        parametersJsonSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getParametersJsonSchemaBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getParametersJsonSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getParametersJsonSchemaOrBuilder() {
+      if (parametersJsonSchemaBuilder_ != null) {
+        return parametersJsonSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return parametersJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : parametersJsonSchema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the parameters to the function in JSON Schema format.
+     * The schema must describe an object where the properties are the parameters
+     * to the function. For example:
+     *
+     * ```
+     * {
+     *   "type": "object",
+     *   "properties": {
+     *     "name": { "type": "string" },
+     *     "age": { "type": "integer" }
+     *   },
+     *   "additionalProperties": false,
+     *   "required": ["name", "age"],
+     *   "propertyOrdering": ["name", "age"]
+     * }
+     * ```
+     *
+     * This field is mutually exclusive with `parameters`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value parameters_json_schema = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getParametersJsonSchemaFieldBuilder() {
+      if (parametersJsonSchemaBuilder_ == null) {
+        parametersJsonSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getParametersJsonSchema(), getParentForChildren(), isClean());
+        parametersJsonSchema_ = null;
+      }
+      return parametersJsonSchemaBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.Schema response_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.Schema,
@@ -1388,7 +2006,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
      * @return Whether the response field is set.
      */
     public boolean hasResponse() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1438,7 +2056,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       } else {
         responseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1462,7 +2080,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       } else {
         responseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1482,7 +2100,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeResponse(com.google.cloud.aiplatform.v1.Schema value) {
       if (responseBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && response_ != null
             && response_ != com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()) {
           getResponseBuilder().mergeFrom(value);
@@ -1493,7 +2111,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         responseBuilder_.mergeFrom(value);
       }
       if (response_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1513,7 +2131,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearResponse() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       response_ = null;
       if (responseBuilder_ != null) {
         responseBuilder_.dispose();
@@ -1537,7 +2155,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Schema.Builder getResponseBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getResponseFieldBuilder().getBuilder();
     }
@@ -1593,6 +2211,245 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         response_ = null;
       }
       return responseBuilder_;
+    }
+
+    private com.google.protobuf.Value responseJsonSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        responseJsonSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseJsonSchema field is set.
+     */
+    public boolean hasResponseJsonSchema() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseJsonSchema.
+     */
+    public com.google.protobuf.Value getResponseJsonSchema() {
+      if (responseJsonSchemaBuilder_ == null) {
+        return responseJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : responseJsonSchema_;
+      } else {
+        return responseJsonSchemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseJsonSchema(com.google.protobuf.Value value) {
+      if (responseJsonSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseJsonSchema_ = value;
+      } else {
+        responseJsonSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseJsonSchema(com.google.protobuf.Value.Builder builderForValue) {
+      if (responseJsonSchemaBuilder_ == null) {
+        responseJsonSchema_ = builderForValue.build();
+      } else {
+        responseJsonSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResponseJsonSchema(com.google.protobuf.Value value) {
+      if (responseJsonSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && responseJsonSchema_ != null
+            && responseJsonSchema_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getResponseJsonSchemaBuilder().mergeFrom(value);
+        } else {
+          responseJsonSchema_ = value;
+        }
+      } else {
+        responseJsonSchemaBuilder_.mergeFrom(value);
+      }
+      if (responseJsonSchema_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResponseJsonSchema() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      responseJsonSchema_ = null;
+      if (responseJsonSchemaBuilder_ != null) {
+        responseJsonSchemaBuilder_.dispose();
+        responseJsonSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getResponseJsonSchemaBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getResponseJsonSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder() {
+      if (responseJsonSchemaBuilder_ != null) {
+        return responseJsonSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return responseJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : responseJsonSchema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * The value specified by the schema is the response value of the function.
+     *
+     * This field is mutually exclusive with `response`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value response_json_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getResponseJsonSchemaFieldBuilder() {
+      if (responseJsonSchemaBuilder_ == null) {
+        responseJsonSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getResponseJsonSchema(), getParentForChildren(), isClean());
+        responseJsonSchema_ = null;
+      }
+      return responseJsonSchemaBuilder_;
     }
 
     @java.lang.Override
