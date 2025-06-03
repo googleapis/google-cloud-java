@@ -188,14 +188,18 @@ public final class ToolProto {
           + "\textension\030\001 \001(\tB(\372A%\n"
           + "#aiplatform.googleapis.com/Extension\022\031\n"
           + "\014operation_id\030\002 \001(\tB\003\340A\002B\010\n"
-          + "\006Target\"\304\001\n"
+          + "\006Target\"\274\002\n"
           + "\023FunctionDeclaration\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\022@\n\n"
           + "parameters\030\003 \001(\0132\'.go"
-          + "ogle.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\022>\n"
-          + "\010response\030\004"
-          + " \001(\0132\'.google.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\"^\n"
+          + "ogle.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\022;\n"
+          + "\026parameters_json_schema\030\005"
+          + " \001(\0132\026.google.protobuf.ValueB\003\340A\001\022>\n"
+          + "\010response\030\004 \001(\013"
+          + "2\'.google.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\0229\n"
+          + "\024response_json_schema\030\006"
+          + " \001(\0132\026.google.protobuf.ValueB\003\340A\001\"^\n"
           + "\014FunctionCall\022\017\n"
           + "\002id\030\003 \001(\tB\003\340A\001\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022*\n"
@@ -392,7 +396,12 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FunctionDeclaration_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "Parameters", "Response",
+              "Name",
+              "Description",
+              "Parameters",
+              "ParametersJsonSchema",
+              "Response",
+              "ResponseJsonSchema",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FunctionCall_descriptor =
         getDescriptor().getMessageTypes().get(4);

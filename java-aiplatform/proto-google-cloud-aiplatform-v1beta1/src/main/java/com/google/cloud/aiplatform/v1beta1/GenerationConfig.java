@@ -5769,6 +5769,170 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : responseSchema_;
   }
 
+  public static final int RESPONSE_JSON_SCHEMA_FIELD_NUMBER = 28;
+  private com.google.protobuf.Value responseJsonSchema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseJsonSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponseJsonSchema() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseJsonSchema.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getResponseJsonSchema() {
+    return responseJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : responseJsonSchema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output schema of the generated response. This is an alternative
+   * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+   *
+   * If set, `response_schema` must be omitted, but `response_mime_type` is
+   * required.
+   *
+   * While the full JSON Schema may be sent, not all features are supported.
+   * Specifically, only the following properties are supported:
+   *
+   * - `$id`
+   * - `$defs`
+   * - `$ref`
+   * - `$anchor`
+   * - `type`
+   * - `format`
+   * - `title`
+   * - `description`
+   * - `enum` (for strings and numbers)
+   * - `items`
+   * - `prefixItems`
+   * - `minItems`
+   * - `maxItems`
+   * - `minimum`
+   * - `maximum`
+   * - `anyOf`
+   * - `oneOf` (interpreted the same as `anyOf`)
+   * - `properties`
+   * - `additionalProperties`
+   * - `required`
+   *
+   * The non-standard `propertyOrdering` property may also be set.
+   *
+   * Cyclic references are unrolled to a limited degree and, as such, may only
+   * be used within non-required properties. (Nullable properties are not
+   * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+   * for than those starting as a `$`, may be set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder() {
+    return responseJsonSchema_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : responseJsonSchema_;
+  }
+
   public static final int ROUTING_CONFIG_FIELD_NUMBER = 17;
   private com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig routingConfig_;
 
@@ -5787,7 +5951,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRoutingConfig() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -5846,7 +6010,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAudioTimestamp() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -6002,7 +6166,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMediaResolution() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -6064,7 +6228,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSpeechConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -6125,7 +6289,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasThinkingConfig() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -6189,7 +6353,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasModelConfig() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -6282,13 +6446,13 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(16, getResponseSchema());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(17, getRoutingConfig());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(18, responseLogprobs_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(20, audioTimestamp_);
     }
     if (getResponseModalitiesList().size() > 0) {
@@ -6298,17 +6462,20 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < responseModalities_.size(); i++) {
       output.writeEnumNoTag(responseModalities_.get(i));
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeEnum(22, mediaResolution_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(23, getSpeechConfig());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(25, getThinkingConfig());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(27, getModelConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(28, getResponseJsonSchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6360,13 +6527,13 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getResponseSchema());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getRoutingConfig());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, responseLogprobs_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, audioTimestamp_);
     }
     {
@@ -6382,17 +6549,20 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       responseModalitiesMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, mediaResolution_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getThinkingConfig());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getModelConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getResponseJsonSchema());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6460,6 +6630,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasResponseSchema() != other.hasResponseSchema()) return false;
     if (hasResponseSchema()) {
       if (!getResponseSchema().equals(other.getResponseSchema())) return false;
+    }
+    if (hasResponseJsonSchema() != other.hasResponseJsonSchema()) return false;
+    if (hasResponseJsonSchema()) {
+      if (!getResponseJsonSchema().equals(other.getResponseJsonSchema())) return false;
     }
     if (hasRoutingConfig() != other.hasRoutingConfig()) return false;
     if (hasRoutingConfig()) {
@@ -6546,6 +6720,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasResponseSchema()) {
       hash = (37 * hash) + RESPONSE_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getResponseSchema().hashCode();
+    }
+    if (hasResponseJsonSchema()) {
+      hash = (37 * hash) + RESPONSE_JSON_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseJsonSchema().hashCode();
     }
     if (hasRoutingConfig()) {
       hash = (37 * hash) + ROUTING_CONFIG_FIELD_NUMBER;
@@ -6717,6 +6895,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResponseSchemaFieldBuilder();
+        getResponseJsonSchemaFieldBuilder();
         getRoutingConfigFieldBuilder();
         getSpeechConfigFieldBuilder();
         getThinkingConfigFieldBuilder();
@@ -6745,6 +6924,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         responseSchemaBuilder_.dispose();
         responseSchemaBuilder_ = null;
       }
+      responseJsonSchema_ = null;
+      if (responseJsonSchemaBuilder_ != null) {
+        responseJsonSchemaBuilder_.dispose();
+        responseJsonSchemaBuilder_ = null;
+      }
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -6752,7 +6936,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       audioTimestamp_ = false;
       responseModalities_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       mediaResolution_ = 0;
       speechConfig_ = null;
       if (speechConfigBuilder_ != null) {
@@ -6806,9 +6990,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig result) {
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         responseModalities_ = java.util.Collections.unmodifiableList(responseModalities_);
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.responseModalities_ = responseModalities_;
     }
@@ -6869,32 +7053,39 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.routingConfig_ =
-            routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
+        result.responseJsonSchema_ =
+            responseJsonSchemaBuilder_ == null
+                ? responseJsonSchema_
+                : responseJsonSchemaBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.audioTimestamp_ = audioTimestamp_;
+        result.routingConfig_ =
+            routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.mediaResolution_ = mediaResolution_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.audioTimestamp_ = audioTimestamp_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.speechConfig_ =
-            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
+        result.mediaResolution_ = mediaResolution_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.thinkingConfig_ =
-            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        result.speechConfig_ =
+            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.thinkingConfig_ =
+            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.modelConfig_ =
             modelConfigBuilder_ == null ? modelConfig_ : modelConfigBuilder_.build();
-        to_bitField0_ |= 0x00010000;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6993,6 +7184,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasResponseSchema()) {
         mergeResponseSchema(other.getResponseSchema());
       }
+      if (other.hasResponseJsonSchema()) {
+        mergeResponseJsonSchema(other.getResponseJsonSchema());
+      }
       if (other.hasRoutingConfig()) {
         mergeRoutingConfig(other.getRoutingConfig());
       }
@@ -7002,7 +7196,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (!other.responseModalities_.isEmpty()) {
         if (responseModalities_.isEmpty()) {
           responseModalities_ = other.responseModalities_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureResponseModalitiesIsMutable();
           responseModalities_.addAll(other.responseModalities_);
@@ -7123,7 +7317,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             case 138:
               {
                 input.readMessage(getRoutingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 138
             case 144:
@@ -7135,7 +7329,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             case 160:
               {
                 audioTimestamp_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 160
             case 168:
@@ -7160,27 +7354,34 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             case 176:
               {
                 mediaResolution_ = input.readEnum();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 176
             case 186:
               {
                 input.readMessage(getSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(getThinkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 202
             case 218:
               {
                 input.readMessage(getModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getResponseJsonSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8511,6 +8712,533 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return responseSchemaBuilder_;
     }
 
+    private com.google.protobuf.Value responseJsonSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        responseJsonSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseJsonSchema field is set.
+     */
+    public boolean hasResponseJsonSchema() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseJsonSchema.
+     */
+    public com.google.protobuf.Value getResponseJsonSchema() {
+      if (responseJsonSchemaBuilder_ == null) {
+        return responseJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : responseJsonSchema_;
+      } else {
+        return responseJsonSchemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseJsonSchema(com.google.protobuf.Value value) {
+      if (responseJsonSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseJsonSchema_ = value;
+      } else {
+        responseJsonSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseJsonSchema(com.google.protobuf.Value.Builder builderForValue) {
+      if (responseJsonSchemaBuilder_ == null) {
+        responseJsonSchema_ = builderForValue.build();
+      } else {
+        responseJsonSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResponseJsonSchema(com.google.protobuf.Value value) {
+      if (responseJsonSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && responseJsonSchema_ != null
+            && responseJsonSchema_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getResponseJsonSchemaBuilder().mergeFrom(value);
+        } else {
+          responseJsonSchema_ = value;
+        }
+      } else {
+        responseJsonSchemaBuilder_.mergeFrom(value);
+      }
+      if (responseJsonSchema_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResponseJsonSchema() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      responseJsonSchema_ = null;
+      if (responseJsonSchemaBuilder_ != null) {
+        responseJsonSchemaBuilder_.dispose();
+        responseJsonSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getResponseJsonSchemaBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getResponseJsonSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getResponseJsonSchemaOrBuilder() {
+      if (responseJsonSchemaBuilder_ != null) {
+        return responseJsonSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return responseJsonSchema_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : responseJsonSchema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output schema of the generated response. This is an alternative
+     * to `response_schema` that accepts [JSON Schema](https://json-schema.org/).
+     *
+     * If set, `response_schema` must be omitted, but `response_mime_type` is
+     * required.
+     *
+     * While the full JSON Schema may be sent, not all features are supported.
+     * Specifically, only the following properties are supported:
+     *
+     * - `$id`
+     * - `$defs`
+     * - `$ref`
+     * - `$anchor`
+     * - `type`
+     * - `format`
+     * - `title`
+     * - `description`
+     * - `enum` (for strings and numbers)
+     * - `items`
+     * - `prefixItems`
+     * - `minItems`
+     * - `maxItems`
+     * - `minimum`
+     * - `maximum`
+     * - `anyOf`
+     * - `oneOf` (interpreted the same as `anyOf`)
+     * - `properties`
+     * - `additionalProperties`
+     * - `required`
+     *
+     * The non-standard `propertyOrdering` property may also be set.
+     *
+     * Cyclic references are unrolled to a limited degree and, as such, may only
+     * be used within non-required properties. (Nullable properties are not
+     * sufficient.) If `$ref` is set on a sub-schema, no other properties, except
+     * for than those starting as a `$`, may be set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Value response_json_schema = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getResponseJsonSchemaFieldBuilder() {
+      if (responseJsonSchemaBuilder_ == null) {
+        responseJsonSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getResponseJsonSchema(), getParentForChildren(), isClean());
+        responseJsonSchema_ = null;
+      }
+      return responseJsonSchemaBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig routingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig,
@@ -8532,7 +9260,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -8580,7 +9308,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8604,7 +9332,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8623,7 +9351,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeRoutingConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig
@@ -8636,7 +9364,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigBuilder_.mergeFrom(value);
       }
       if (routingConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -8654,7 +9382,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRoutingConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -8677,7 +9405,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig.Builder
         getRoutingConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }
@@ -8749,7 +9477,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAudioTimestamp() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -8785,7 +9513,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder setAudioTimestamp(boolean value) {
 
       audioTimestamp_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8803,7 +9531,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAudioTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       audioTimestamp_ = false;
       onChanged();
       return this;
@@ -8813,9 +9541,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureResponseModalitiesIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         responseModalities_ = new java.util.ArrayList<java.lang.Integer>(responseModalities_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -8966,7 +9694,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearResponseModalities() {
       responseModalities_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -9089,7 +9817,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMediaResolution() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -9126,7 +9854,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setMediaResolutionValue(int value) {
       mediaResolution_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9174,7 +9902,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       mediaResolution_ = value.getNumber();
       onChanged();
       return this;
@@ -9194,7 +9922,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMediaResolution() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       mediaResolution_ = 0;
       onChanged();
       return this;
@@ -9221,7 +9949,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the speechConfig field is set.
      */
     public boolean hasSpeechConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -9267,7 +9995,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         speechConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9290,7 +10018,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         speechConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9308,7 +10036,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSpeechConfig(com.google.cloud.aiplatform.v1beta1.SpeechConfig value) {
       if (speechConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && speechConfig_ != null
             && speechConfig_
                 != com.google.cloud.aiplatform.v1beta1.SpeechConfig.getDefaultInstance()) {
@@ -9320,7 +10048,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         speechConfigBuilder_.mergeFrom(value);
       }
       if (speechConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -9338,7 +10066,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSpeechConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       speechConfig_ = null;
       if (speechConfigBuilder_ != null) {
         speechConfigBuilder_.dispose();
@@ -9360,7 +10088,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.SpeechConfig.Builder getSpeechConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getSpeechConfigFieldBuilder().getBuilder();
     }
@@ -9437,7 +10165,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the thinkingConfig field is set.
      */
     public boolean hasThinkingConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -9489,7 +10217,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9515,7 +10243,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9536,7 +10264,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeThinkingConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig value) {
       if (thinkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && thinkingConfig_ != null
             && thinkingConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
@@ -9549,7 +10277,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         thinkingConfigBuilder_.mergeFrom(value);
       }
       if (thinkingConfig_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -9569,7 +10297,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearThinkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       thinkingConfig_ = null;
       if (thinkingConfigBuilder_ != null) {
         thinkingConfigBuilder_.dispose();
@@ -9594,7 +10322,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder
         getThinkingConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getThinkingConfigFieldBuilder().getBuilder();
     }
@@ -9675,7 +10403,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the modelConfig field is set.
      */
     public boolean hasModelConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -9722,7 +10450,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         modelConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9745,7 +10473,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         modelConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9764,7 +10492,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeModelConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig value) {
       if (modelConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && modelConfig_ != null
             && modelConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
@@ -9777,7 +10505,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         modelConfigBuilder_.mergeFrom(value);
       }
       if (modelConfig_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -9795,7 +10523,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearModelConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       modelConfig_ = null;
       if (modelConfigBuilder_ != null) {
         modelConfigBuilder_.dispose();
@@ -9818,7 +10546,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder
         getModelConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getModelConfigFieldBuilder().getBuilder();
     }
