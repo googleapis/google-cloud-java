@@ -2677,6 +2677,7 @@ libraries:
   rest_documentation: https://developers.google.com/workspace/events/reference/rest
   GAPICs:
   - proto_path: google/apps/events/subscriptions/v1
+  - proto_path: google/apps/events/subscriptions/v1beta
 
 - api_shortname: workstations
   name_pretty: Cloud Workstations
