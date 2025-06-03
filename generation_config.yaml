@@ -700,6 +700,7 @@ libraries:
   api_description: Help analytics teams manage data inside BigQuery using SQL.
   GAPICs:
   - proto_path: google/cloud/dataform/v1beta1
+  - proto_path: google/cloud/dataform/v1
 
 - api_shortname: datalabeling
   name_pretty: Data Labeling
