@@ -57,7 +57,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * JSON Web Key uri.
    * </pre>
    *
-   * <code>string jwks_uri = 2;</code>
+   * <code>string jwks_uri = 2 [json_name = "jwks_uri"];</code>
    *
    * @return The jwksUri.
    */
@@ -70,7 +70,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * JSON Web Key uri.
    * </pre>
    *
-   * <code>string jwks_uri = 2;</code>
+   * <code>string jwks_uri = 2 [json_name = "jwks_uri"];</code>
    *
    * @return The bytes for jwksUri.
    */
@@ -83,7 +83,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @return A list containing the responseTypesSupported.
    */
@@ -96,7 +97,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @return The count of responseTypesSupported.
    */
@@ -109,7 +111,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The responseTypesSupported at the given index.
@@ -123,7 +126,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the responseTypesSupported at the given index.
@@ -137,7 +141,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @return A list containing the subjectTypesSupported.
    */
@@ -150,7 +155,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @return The count of subjectTypesSupported.
    */
@@ -163,7 +169,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The subjectTypesSupported at the given index.
@@ -177,7 +184,8 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectTypesSupported at the given index.
@@ -191,7 +199,9 @@ public interface GetOpenIDConfigResponseOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @return A list containing the idTokenSigningAlgValuesSupported.
    */
@@ -204,7 +214,9 @@ public interface GetOpenIDConfigResponseOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @return The count of idTokenSigningAlgValuesSupported.
    */
@@ -217,7 +229,9 @@ public interface GetOpenIDConfigResponseOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The idTokenSigningAlgValuesSupported at the given index.
@@ -231,7 +245,9 @@ public interface GetOpenIDConfigResponseOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the idTokenSigningAlgValuesSupported at the given index.
@@ -245,7 +261,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @return A list containing the claimsSupported.
    */
@@ -258,7 +274,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @return The count of claimsSupported.
    */
@@ -271,7 +287,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @param index The index of the element to return.
    * @return The claimsSupported at the given index.
@@ -285,7 +301,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the claimsSupported at the given index.
@@ -299,7 +315,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @return A list containing the grantTypes.
    */
@@ -312,7 +328,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @return The count of grantTypes.
    */
@@ -325,7 +341,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @param index The index of the element to return.
    * @return The grantTypes at the given index.
@@ -339,7 +355,7 @@ public interface GetOpenIDConfigResponseOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the grantTypes at the given index.

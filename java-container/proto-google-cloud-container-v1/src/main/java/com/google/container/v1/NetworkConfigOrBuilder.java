@@ -527,4 +527,30 @@ public interface NetworkConfigOrBuilder
    * @return The defaultEnablePrivateNodes.
    */
   boolean getDefaultEnablePrivateNodes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return Whether the disableL4LbFirewallReconciliation field is set.
+   */
+  boolean hasDisableL4LbFirewallReconciliation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disable L4 load balancer VPC firewalls to enable firewall policies.
+   * </pre>
+   *
+   * <code>optional bool disable_l4_lb_firewall_reconciliation = 24;</code>
+   *
+   * @return The disableL4LbFirewallReconciliation.
+   */
+  boolean getDisableL4LbFirewallReconciliation();
 }

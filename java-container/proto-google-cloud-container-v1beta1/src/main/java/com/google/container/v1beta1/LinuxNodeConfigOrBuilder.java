@@ -37,6 +37,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
+   * net.core.rmem_default
    * net.core.wmem_default
    * net.core.wmem_max
    * net.core.optmem_max
@@ -44,6 +45,16 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.netfilter.nf_conntrack_max
+   * net.netfilter.nf_conntrack_buckets
+   * net.netfilter.nf_conntrack_tcp_timeout_close_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_time_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_established
+   * net.netfilter.nf_conntrack_acct
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
+   * vm.max_map_count
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -63,6 +74,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
+   * net.core.rmem_default
    * net.core.wmem_default
    * net.core.wmem_max
    * net.core.optmem_max
@@ -70,6 +82,16 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.netfilter.nf_conntrack_max
+   * net.netfilter.nf_conntrack_buckets
+   * net.netfilter.nf_conntrack_tcp_timeout_close_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_time_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_established
+   * net.netfilter.nf_conntrack_acct
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
+   * vm.max_map_count
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -93,6 +115,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
+   * net.core.rmem_default
    * net.core.wmem_default
    * net.core.wmem_max
    * net.core.optmem_max
@@ -100,6 +123,16 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.netfilter.nf_conntrack_max
+   * net.netfilter.nf_conntrack_buckets
+   * net.netfilter.nf_conntrack_tcp_timeout_close_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_time_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_established
+   * net.netfilter.nf_conntrack_acct
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
+   * vm.max_map_count
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -119,6 +152,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
+   * net.core.rmem_default
    * net.core.wmem_default
    * net.core.wmem_max
    * net.core.optmem_max
@@ -126,6 +160,16 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.netfilter.nf_conntrack_max
+   * net.netfilter.nf_conntrack_buckets
+   * net.netfilter.nf_conntrack_tcp_timeout_close_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_time_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_established
+   * net.netfilter.nf_conntrack_acct
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
+   * vm.max_map_count
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -149,6 +193,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
+   * net.core.rmem_default
    * net.core.wmem_default
    * net.core.wmem_max
    * net.core.optmem_max
@@ -156,6 +201,16 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.netfilter.nf_conntrack_max
+   * net.netfilter.nf_conntrack_buckets
+   * net.netfilter.nf_conntrack_tcp_timeout_close_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_time_wait
+   * net.netfilter.nf_conntrack_tcp_timeout_established
+   * net.netfilter.nf_conntrack_acct
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
+   * vm.max_map_count
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>

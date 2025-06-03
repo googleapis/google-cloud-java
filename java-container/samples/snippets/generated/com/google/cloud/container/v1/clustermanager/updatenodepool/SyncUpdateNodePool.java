@@ -38,6 +38,7 @@ import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
 import com.google.container.v1.WorkloadMetadataConfig;
+import com.google.protobuf.Duration;
 import java.util.ArrayList;
 
 public class SyncUpdateNodePool {
@@ -87,6 +88,8 @@ public class SyncUpdateNodePool {
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
               .addAllStoragePools(new ArrayList<String>())
+              .setMaxRunDuration(Duration.newBuilder().build())
+              .setFlexStart(true)
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

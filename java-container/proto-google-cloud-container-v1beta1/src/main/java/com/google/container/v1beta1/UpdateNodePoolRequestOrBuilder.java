@@ -28,16 +28,15 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3210
+   *     google/container/v1beta1/cluster_service.proto;l=3703
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -47,16 +46,15 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3210
+   *     google/container/v1beta1/cluster_service.proto;l=3703
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,16 +64,16 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the name
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3217
+   *     google/container/v1beta1/cluster_service.proto;l=3709
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -85,16 +83,16 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster resides. This field has been deprecated and replaced by the name
    * field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3217
+   *     google/container/v1beta1/cluster_service.proto;l=3709
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -104,15 +102,14 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3221
+   *     google/container/v1beta1/cluster_service.proto;l=3713
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,15 +119,14 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3221
+   *     google/container/v1beta1/cluster_service.proto;l=3713
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -140,15 +136,14 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to upgrade.
+   * Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3226
+   *     google/container/v1beta1/cluster_service.proto;l=3717
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -158,15 +153,14 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to upgrade.
+   * Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3226
+   *     google/container/v1beta1/cluster_service.proto;l=3717
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -1221,4 +1215,128 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder
       getQueuedProvisioningOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return A list containing the storagePools.
+   */
+  java.util.List<java.lang.String> getStoragePoolsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return The count of storagePools.
+   */
+  int getStoragePoolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  java.lang.String getStoragePools(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  com.google.protobuf.ByteString getStoragePoolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 45;</code>
+   *
+   * @return Whether the maxRunDuration field is set.
+   */
+  boolean hasMaxRunDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 45;</code>
+   *
+   * @return The maxRunDuration.
+   */
+  com.google.protobuf.Duration getMaxRunDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 45;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getMaxRunDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Flex Start flag for enabling Flex Start VM.
+   * </pre>
+   *
+   * <code>optional bool flex_start = 46;</code>
+   *
+   * @return Whether the flexStart field is set.
+   */
+  boolean hasFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Flex Start flag for enabling Flex Start VM.
+   * </pre>
+   *
+   * <code>optional bool flex_start = 46;</code>
+   *
+   * @return The flexStart.
+   */
+  boolean getFlexStart();
 }

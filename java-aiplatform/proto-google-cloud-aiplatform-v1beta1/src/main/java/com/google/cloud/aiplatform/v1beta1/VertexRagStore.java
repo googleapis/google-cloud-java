@@ -1141,7 +1141,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
    * @return A list containing the ragCorpora.
    */
   @java.lang.Deprecated
@@ -1161,7 +1161,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
    * @return The count of ragCorpora.
    */
   @java.lang.Deprecated
@@ -1181,7 +1181,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
    * @param index The index of the element to return.
    * @return The ragCorpora at the given index.
    */
@@ -1202,7 +1202,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
    * @param index The index of the value to return.
    * @return The bytes of the ragCorpora at the given index.
    */
@@ -1331,7 +1331,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=306
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=340
    * @return Whether the similarityTopK field is set.
    */
   @java.lang.Override
@@ -1352,7 +1352,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=306
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=340
    * @return The similarityTopK.
    */
   @java.lang.Override
@@ -1377,7 +1377,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
    * @return Whether the vectorDistanceThreshold field is set.
    */
   @java.lang.Override
@@ -1399,7 +1399,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
    * @return The vectorDistanceThreshold.
    */
   @java.lang.Override
@@ -1468,6 +1468,31 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         : ragRetrievalConfig_;
   }
 
+  public static final int STORE_CONTEXT_FIELD_NUMBER = 7;
+  private boolean storeContext_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Currently only supported for Gemini Multimodal Live API.
+   *
+   * In Gemini Multimodal Live API, if `store_context` bool is
+   * true, Gemini will leverage it to automatically memorize the
+   * interactions between the client and Gemini, and retrieve context when
+   * needed to augment the response generation for users' ongoing and future
+   * interactions.
+   * </pre>
+   *
+   * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The storeContext.
+   */
+  @java.lang.Override
+  public boolean getStoreContext() {
+    return storeContext_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1497,6 +1522,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getRagRetrievalConfig());
     }
+    if (storeContext_ != false) {
+      output.writeBool(7, storeContext_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1525,6 +1553,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRagRetrievalConfig());
+    }
+    if (storeContext_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, storeContext_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1557,6 +1588,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (hasRagRetrievalConfig()) {
       if (!getRagRetrievalConfig().equals(other.getRagRetrievalConfig())) return false;
     }
+    if (getStoreContext() != other.getStoreContext()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1591,6 +1623,8 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RAG_RETRIEVAL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagRetrievalConfig().hashCode();
     }
+    hash = (37 * hash) + STORE_CONTEXT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStoreContext());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1756,6 +1790,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ragRetrievalConfigBuilder_.dispose();
         ragRetrievalConfigBuilder_ = null;
       }
+      storeContext_ = false;
       return this;
     }
 
@@ -1825,6 +1860,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
                 ? ragRetrievalConfig_
                 : ragRetrievalConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.storeContext_ = storeContext_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1921,6 +1959,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRagRetrievalConfig()) {
         mergeRagRetrievalConfig(other.getRagRetrievalConfig());
       }
+      if (other.getStoreContext() != false) {
+        setStoreContext(other.getStoreContext());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1987,6 +2028,12 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 56:
+              {
+                storeContext_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2028,7 +2075,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @return A list containing the ragCorpora.
      */
     @java.lang.Deprecated
@@ -2049,7 +2096,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @return The count of ragCorpora.
      */
     @java.lang.Deprecated
@@ -2069,7 +2116,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param index The index of the element to return.
      * @return The ragCorpora at the given index.
      */
@@ -2090,7 +2137,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param index The index of the value to return.
      * @return The bytes of the ragCorpora at the given index.
      */
@@ -2111,7 +2158,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param index The index to set the value at.
      * @param value The ragCorpora to set.
      * @return This builder for chaining.
@@ -2140,7 +2187,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param value The ragCorpora to add.
      * @return This builder for chaining.
      */
@@ -2168,7 +2215,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param values The ragCorpora to add.
      * @return This builder for chaining.
      */
@@ -2193,7 +2240,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2217,7 +2264,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/tool.proto;l=290
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=324
      * @param value The bytes of the ragCorpora to add.
      * @return This builder for chaining.
      */
@@ -2723,7 +2770,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=306
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=340
      * @return Whether the similarityTopK field is set.
      */
     @java.lang.Override
@@ -2744,7 +2791,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=306
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=340
      * @return The similarityTopK.
      */
     @java.lang.Override
@@ -2765,7 +2812,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=306
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=340
      * @param value The similarityTopK to set.
      * @return This builder for chaining.
      */
@@ -2790,7 +2837,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=306
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=340
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2816,7 +2863,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
      * @return Whether the vectorDistanceThreshold field is set.
      */
     @java.lang.Override
@@ -2838,7 +2885,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
      * @return The vectorDistanceThreshold.
      */
     @java.lang.Override
@@ -2860,7 +2907,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
      * @param value The vectorDistanceThreshold to set.
      * @return This builder for chaining.
      */
@@ -2886,7 +2933,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=311
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=345
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3113,6 +3160,80 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ragRetrievalConfig_ = null;
       }
       return ragRetrievalConfigBuilder_;
+    }
+
+    private boolean storeContext_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The storeContext.
+     */
+    @java.lang.Override
+    public boolean getStoreContext() {
+      return storeContext_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The storeContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoreContext(boolean value) {
+
+      storeContext_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Currently only supported for Gemini Multimodal Live API.
+     *
+     * In Gemini Multimodal Live API, if `store_context` bool is
+     * true, Gemini will leverage it to automatically memorize the
+     * interactions between the client and Gemini, and retrieve context when
+     * needed to augment the response generation for users' ongoing and future
+     * interactions.
+     * </pre>
+     *
+     * <code>bool store_context = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoreContext() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      storeContext_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

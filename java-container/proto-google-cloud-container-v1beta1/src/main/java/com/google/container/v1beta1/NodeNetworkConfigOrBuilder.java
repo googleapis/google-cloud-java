@@ -149,7 +149,7 @@ public interface NodeNetworkConfigOrBuilder
    * <pre>
    * Whether nodes have internal IP addresses only.
    * If enable_private_nodes is not specified, then the value is derived from
-   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * [Cluster.NetworkConfig.default_enable_private_nodes][]
    * </pre>
    *
    * <code>optional bool enable_private_nodes = 9;</code>
@@ -164,7 +164,7 @@ public interface NodeNetworkConfigOrBuilder
    * <pre>
    * Whether nodes have internal IP addresses only.
    * If enable_private_nodes is not specified, then the value is derived from
-   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * [Cluster.NetworkConfig.default_enable_private_nodes][]
    * </pre>
    *
    * <code>optional bool enable_private_nodes = 9;</code>
