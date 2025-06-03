@@ -558,6 +558,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= InterconnectAttachmentGroupsClient =======================
+ *
+ * <p>Service Description: The InterconnectAttachmentGroups API.
+ *
+ * <p>Sample for InterconnectAttachmentGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InterconnectAttachmentGroupsClient interconnectAttachmentGroupsClient =
+ *     InterconnectAttachmentGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String interconnectAttachmentGroup = "interconnectAttachmentGroup-1652813650";
+ *   InterconnectAttachmentGroup response =
+ *       interconnectAttachmentGroupsClient.get(project, interconnectAttachmentGroup);
+ * }
+ * }</pre>
+ *
  * <p>======================= InterconnectAttachmentsClient =======================
  *
  * <p>Service Description: The InterconnectAttachments API.
@@ -577,6 +598,25 @@
  *   String interconnectAttachment = "interconnectAttachment1869250641";
  *   InterconnectAttachment response =
  *       interconnectAttachmentsClient.get(project, region, interconnectAttachment);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InterconnectGroupsClient =======================
+ *
+ * <p>Service Description: The InterconnectGroups API.
+ *
+ * <p>Sample for InterconnectGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InterconnectGroupsClient interconnectGroupsClient = InterconnectGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String interconnectGroup = "interconnectGroup2103544465";
+ *   InterconnectGroup response = interconnectGroupsClient.get(project, interconnectGroup);
  * }
  * }</pre>
  *

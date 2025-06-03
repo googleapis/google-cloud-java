@@ -172,6 +172,7 @@ public class RoutesClientTest {
             .setNextHopOrigin("nextHopOrigin1908427548")
             .setNextHopPeering("nextHopPeering-456329718")
             .setNextHopVpnTunnel("nextHopVpnTunnel2134841030")
+            .setParams(RouteParams.newBuilder().build())
             .setPriority(-1165461084)
             .setRouteStatus("routeStatus-2113481829")
             .setRouteType("routeType167668003")

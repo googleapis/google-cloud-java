@@ -56,6 +56,7 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateLicenseRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -161,6 +162,9 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
   private final UnaryCallSettings<SetIamPolicyLicenseRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateLicenseRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateLicenseRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<ListLicensesRequest, LicensesListResponse, License>
       LIST_PAGE_STR_DESC =
@@ -262,6 +266,17 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateLicenseRequest, Operation> updateSettings() {
+    return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateLicenseRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   public LicensesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -352,6 +367,8 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for LicensesStubSettings. */
@@ -374,6 +391,9 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
     private final UnaryCallSettings.Builder<
             TestIamPermissionsLicenseRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateLicenseRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateLicenseRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -433,6 +453,8 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -442,7 +464,8 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
               insertSettings,
               listSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
       initDefaults(this);
     }
 
@@ -458,6 +481,8 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
       listSettings = settings.listSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -467,7 +492,8 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
               insertSettings,
               listSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
     }
 
     private static Builder createDefault() {
@@ -519,6 +545,11 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -547,6 +578,30 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertLicenseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateLicenseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -631,6 +686,17 @@ public class LicensesStubSettings extends StubSettings<LicensesStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateLicenseRequest, Operation> updateSettings() {
+      return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateLicenseRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override
