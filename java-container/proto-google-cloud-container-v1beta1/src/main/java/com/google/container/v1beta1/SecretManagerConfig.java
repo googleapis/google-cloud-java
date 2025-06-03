@@ -62,6 +62,960 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
             com.google.container.v1beta1.SecretManagerConfig.Builder.class);
   }
 
+  public interface RotationConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.SecretManagerConfig.RotationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the rotation is enabled.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1;</code>
+     *
+     * @return Whether the enabled field is set.
+     */
+    boolean hasEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the rotation is enabled.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     *
+     * @return Whether the rotationInterval field is set.
+     */
+    boolean hasRotationInterval();
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     *
+     * @return The rotationInterval.
+     */
+    com.google.protobuf.Duration getRotationInterval();
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getRotationIntervalOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * RotationConfig is config for secret manager auto rotation.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.SecretManagerConfig.RotationConfig}
+   */
+  public static final class RotationConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.SecretManagerConfig.RotationConfig)
+      RotationConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RotationConfig.newBuilder() to construct.
+    private RotationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RotationConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RotationConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_SecretManagerConfig_RotationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_SecretManagerConfig_RotationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.SecretManagerConfig.RotationConfig.class,
+              com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the rotation is enabled.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1;</code>
+     *
+     * @return Whether the enabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnabled() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the rotation is enabled.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int ROTATION_INTERVAL_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration rotationInterval_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     *
+     * @return Whether the rotationInterval field is set.
+     */
+    @java.lang.Override
+    public boolean hasRotationInterval() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     *
+     * @return The rotationInterval.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getRotationInterval() {
+      return rotationInterval_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : rotationInterval_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The interval between two consecutive rotations. Default rotation interval
+     * is 2 minutes.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getRotationIntervalOrBuilder() {
+      return rotationInterval_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : rotationInterval_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getRotationInterval());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRotationInterval());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.SecretManagerConfig.RotationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.SecretManagerConfig.RotationConfig other =
+          (com.google.container.v1beta1.SecretManagerConfig.RotationConfig) obj;
+
+      if (hasEnabled() != other.hasEnabled()) return false;
+      if (hasEnabled()) {
+        if (getEnabled() != other.getEnabled()) return false;
+      }
+      if (hasRotationInterval() != other.hasRotationInterval()) return false;
+      if (hasRotationInterval()) {
+        if (!getRotationInterval().equals(other.getRotationInterval())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEnabled()) {
+        hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      }
+      if (hasRotationInterval()) {
+        hash = (37 * hash) + ROTATION_INTERVAL_FIELD_NUMBER;
+        hash = (53 * hash) + getRotationInterval().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RotationConfig is config for secret manager auto rotation.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.SecretManagerConfig.RotationConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.SecretManagerConfig.RotationConfig)
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_SecretManagerConfig_RotationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_SecretManagerConfig_RotationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.SecretManagerConfig.RotationConfig.class,
+                com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.container.v1beta1.SecretManagerConfig.RotationConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getRotationIntervalFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        rotationInterval_ = null;
+        if (rotationIntervalBuilder_ != null) {
+          rotationIntervalBuilder_.dispose();
+          rotationIntervalBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_SecretManagerConfig_RotationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.SecretManagerConfig.RotationConfig build() {
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.SecretManagerConfig.RotationConfig buildPartial() {
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig result =
+            new com.google.container.v1beta1.SecretManagerConfig.RotationConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.SecretManagerConfig.RotationConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rotationInterval_ =
+              rotationIntervalBuilder_ == null
+                  ? rotationInterval_
+                  : rotationIntervalBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.SecretManagerConfig.RotationConfig) {
+          return mergeFrom((com.google.container.v1beta1.SecretManagerConfig.RotationConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.SecretManagerConfig.RotationConfig other) {
+        if (other
+            == com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance())
+          return this;
+        if (other.hasEnabled()) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.hasRotationInterval()) {
+          mergeRotationInterval(other.getRotationInterval());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getRotationIntervalFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether the rotation is enabled.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1;</code>
+       *
+       * @return Whether the enabled field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnabled() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether the rotation is enabled.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1;</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether the rotation is enabled.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1;</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether the rotation is enabled.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Duration rotationInterval_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          rotationIntervalBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       *
+       * @return Whether the rotationInterval field is set.
+       */
+      public boolean hasRotationInterval() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       *
+       * @return The rotationInterval.
+       */
+      public com.google.protobuf.Duration getRotationInterval() {
+        if (rotationIntervalBuilder_ == null) {
+          return rotationInterval_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : rotationInterval_;
+        } else {
+          return rotationIntervalBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public Builder setRotationInterval(com.google.protobuf.Duration value) {
+        if (rotationIntervalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rotationInterval_ = value;
+        } else {
+          rotationIntervalBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public Builder setRotationInterval(com.google.protobuf.Duration.Builder builderForValue) {
+        if (rotationIntervalBuilder_ == null) {
+          rotationInterval_ = builderForValue.build();
+        } else {
+          rotationIntervalBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public Builder mergeRotationInterval(com.google.protobuf.Duration value) {
+        if (rotationIntervalBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && rotationInterval_ != null
+              && rotationInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getRotationIntervalBuilder().mergeFrom(value);
+          } else {
+            rotationInterval_ = value;
+          }
+        } else {
+          rotationIntervalBuilder_.mergeFrom(value);
+        }
+        if (rotationInterval_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public Builder clearRotationInterval() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rotationInterval_ = null;
+        if (rotationIntervalBuilder_ != null) {
+          rotationIntervalBuilder_.dispose();
+          rotationIntervalBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getRotationIntervalBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getRotationIntervalFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getRotationIntervalOrBuilder() {
+        if (rotationIntervalBuilder_ != null) {
+          return rotationIntervalBuilder_.getMessageOrBuilder();
+        } else {
+          return rotationInterval_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : rotationInterval_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interval between two consecutive rotations. Default rotation interval
+       * is 2 minutes.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration rotation_interval = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getRotationIntervalFieldBuilder() {
+        if (rotationIntervalBuilder_ == null) {
+          rotationIntervalBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getRotationInterval(), getParentForChildren(), isClean());
+          rotationInterval_ = null;
+        }
+        return rotationIntervalBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.SecretManagerConfig.RotationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.SecretManagerConfig.RotationConfig)
+    private static final com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.SecretManagerConfig.RotationConfig();
+    }
+
+    public static com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RotationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<RotationConfig>() {
+          @java.lang.Override
+          public RotationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RotationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RotationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
@@ -70,7 +1024,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether the cluster is configured to use secret manager CSI component.
+   * Enable/Disable Secret Manager Config.
    * </pre>
    *
    * <code>optional bool enabled = 1;</code>
@@ -86,7 +1040,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether the cluster is configured to use secret manager CSI component.
+   * Enable/Disable Secret Manager Config.
    * </pre>
    *
    * <code>optional bool enabled = 1;</code>
@@ -96,6 +1050,66 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
+  }
+
+  public static final int ROTATION_CONFIG_FIELD_NUMBER = 2;
+  private com.google.container.v1beta1.SecretManagerConfig.RotationConfig rotationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   *
+   * @return Whether the rotationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRotationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   *
+   * @return The rotationConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfig.RotationConfig getRotationConfig() {
+    return rotationConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance()
+        : rotationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder
+      getRotationConfigOrBuilder() {
+    return rotationConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance()
+        : rotationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -115,6 +1129,9 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(1, enabled_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getRotationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -126,6 +1143,9 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRotationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -147,6 +1167,10 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
     if (hasEnabled()) {
       if (getEnabled() != other.getEnabled()) return false;
     }
+    if (hasRotationConfig() != other.hasRotationConfig()) return false;
+    if (hasRotationConfig()) {
+      if (!getRotationConfig().equals(other.getRotationConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -161,6 +1185,10 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
     if (hasEnabled()) {
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    }
+    if (hasRotationConfig()) {
+      hash = (37 * hash) + ROTATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRotationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -292,10 +1320,19 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.container.v1beta1.SecretManagerConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRotationConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -303,6 +1340,11 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       enabled_ = false;
+      rotationConfig_ = null;
+      if (rotationConfigBuilder_ != null) {
+        rotationConfigBuilder_.dispose();
+        rotationConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -343,6 +1385,11 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rotationConfig_ =
+            rotationConfigBuilder_ == null ? rotationConfig_ : rotationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -396,6 +1443,9 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
       if (other.hasEnabled()) {
         setEnabled(other.getEnabled());
       }
+      if (other.hasRotationConfig()) {
+        mergeRotationConfig(other.getRotationConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -428,6 +1478,12 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(getRotationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -453,7 +1509,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether the cluster is configured to use secret manager CSI component.
+     * Enable/Disable Secret Manager Config.
      * </pre>
      *
      * <code>optional bool enabled = 1;</code>
@@ -469,7 +1525,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether the cluster is configured to use secret manager CSI component.
+     * Enable/Disable Secret Manager Config.
      * </pre>
      *
      * <code>optional bool enabled = 1;</code>
@@ -485,7 +1541,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether the cluster is configured to use secret manager CSI component.
+     * Enable/Disable Secret Manager Config.
      * </pre>
      *
      * <code>optional bool enabled = 1;</code>
@@ -505,7 +1561,7 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether the cluster is configured to use secret manager CSI component.
+     * Enable/Disable Secret Manager Config.
      * </pre>
      *
      * <code>optional bool enabled = 1;</code>
@@ -517,6 +1573,225 @@ public final class SecretManagerConfig extends com.google.protobuf.GeneratedMess
       enabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.SecretManagerConfig.RotationConfig rotationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfig,
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder>
+        rotationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     *
+     * @return Whether the rotationConfig field is set.
+     */
+    public boolean hasRotationConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     *
+     * @return The rotationConfig.
+     */
+    public com.google.container.v1beta1.SecretManagerConfig.RotationConfig getRotationConfig() {
+      if (rotationConfigBuilder_ == null) {
+        return rotationConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance()
+            : rotationConfig_;
+      } else {
+        return rotationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public Builder setRotationConfig(
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig value) {
+      if (rotationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rotationConfig_ = value;
+      } else {
+        rotationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public Builder setRotationConfig(
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder builderForValue) {
+      if (rotationConfigBuilder_ == null) {
+        rotationConfig_ = builderForValue.build();
+      } else {
+        rotationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public Builder mergeRotationConfig(
+        com.google.container.v1beta1.SecretManagerConfig.RotationConfig value) {
+      if (rotationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && rotationConfig_ != null
+            && rotationConfig_
+                != com.google.container.v1beta1.SecretManagerConfig.RotationConfig
+                    .getDefaultInstance()) {
+          getRotationConfigBuilder().mergeFrom(value);
+        } else {
+          rotationConfig_ = value;
+        }
+      } else {
+        rotationConfigBuilder_.mergeFrom(value);
+      }
+      if (rotationConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public Builder clearRotationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rotationConfig_ = null;
+      if (rotationConfigBuilder_ != null) {
+        rotationConfigBuilder_.dispose();
+        rotationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder
+        getRotationConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRotationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder
+        getRotationConfigOrBuilder() {
+      if (rotationConfigBuilder_ != null) {
+        return rotationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return rotationConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.RotationConfig.getDefaultInstance()
+            : rotationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rotation config for secret manager.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig.RotationConfig rotation_config = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfig,
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder>
+        getRotationConfigFieldBuilder() {
+      if (rotationConfigBuilder_ == null) {
+        rotationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SecretManagerConfig.RotationConfig,
+                com.google.container.v1beta1.SecretManagerConfig.RotationConfig.Builder,
+                com.google.container.v1beta1.SecretManagerConfig.RotationConfigOrBuilder>(
+                getRotationConfig(), getParentForChildren(), isClean());
+        rotationConfig_ = null;
+      }
+      return rotationConfigBuilder_;
     }
 
     @java.lang.Override

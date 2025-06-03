@@ -77,7 +77,7 @@ public interface ClusterUpdateOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -100,7 +100,7 @@ public interface ClusterUpdateOrBuilder
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
    *
-   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * * `monitoring.googleapis.com/kubernetes` - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
@@ -583,7 +583,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2741
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -605,7 +605,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2499
+   *     deprecated. See google/container/v1/cluster_service.proto;l=2741
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -850,7 +850,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2779
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -877,7 +877,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2779
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1360,7 +1360,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2582
+   *     See google/container/v1/cluster_service.proto;l=2824
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1381,7 +1381,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2582
+   *     See google/container/v1/cluster_service.proto;l=2824
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -1587,6 +1587,43 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
    */
   com.google.container.v1.NetworkTagsOrBuilder getDesiredNodePoolAutoConfigNetworkTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling desired_pod_autoscaling = 113;</code>
+   *
+   * @return Whether the desiredPodAutoscaling field is set.
+   */
+  boolean hasDesiredPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling desired_pod_autoscaling = 113;</code>
+   *
+   * @return The desiredPodAutoscaling.
+   */
+  com.google.container.v1.PodAutoscaling getDesiredPodAutoscaling();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config for pod autoscaling.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodAutoscaling desired_pod_autoscaling = 113;</code>
+   */
+  com.google.container.v1.PodAutoscalingOrBuilder getDesiredPodAutoscalingOrBuilder();
 
   /**
    *
@@ -1999,7 +2036,7 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired workload policy configuration for the autopilot cluster.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
@@ -2013,7 +2050,7 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired workload policy configuration for the autopilot cluster.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
@@ -2027,7 +2064,7 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired workload policy configuration for the autopilot cluster.
+   * WorkloadPolicyConfig is the configuration related to GCW workload policy
    * </pre>
    *
    * <code>.google.container.v1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
@@ -2540,6 +2577,32 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Enable/Disable L4 LB VPC firewall reconciliation for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_disable_l4_lb_firewall_reconciliation = 149;</code>
+   *
+   * @return Whether the desiredDisableL4LbFirewallReconciliation field is set.
+   */
+  boolean hasDesiredDisableL4LbFirewallReconciliation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable L4 LB VPC firewall reconciliation for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_disable_l4_lb_firewall_reconciliation = 149;</code>
+   *
+   * @return The desiredDisableL4LbFirewallReconciliation.
+   */
+  boolean getDesiredDisableL4LbFirewallReconciliation();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired Linux node config for all auto-provisioned node pools
    * in autopilot clusters and node auto-provisioning enabled clusters.
    *
@@ -2588,4 +2651,51 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1.LinuxNodeConfigOrBuilder
       getDesiredNodePoolAutoConfigLinuxNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AnonymousAuthenticationConfig desired_anonymous_authentication_config = 156;
+   * </code>
+   *
+   * @return Whether the desiredAnonymousAuthenticationConfig field is set.
+   */
+  boolean hasDesiredAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AnonymousAuthenticationConfig desired_anonymous_authentication_config = 156;
+   * </code>
+   *
+   * @return The desiredAnonymousAuthenticationConfig.
+   */
+  com.google.container.v1.AnonymousAuthenticationConfig getDesiredAnonymousAuthenticationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for limiting anonymous access to all endpoints except the
+   * health checks.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AnonymousAuthenticationConfig desired_anonymous_authentication_config = 156;
+   * </code>
+   */
+  com.google.container.v1.AnonymousAuthenticationConfigOrBuilder
+      getDesiredAnonymousAuthenticationConfigOrBuilder();
 }

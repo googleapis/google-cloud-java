@@ -23,7 +23,7 @@ package com.google.container.v1;
  *
  *
  * <pre>
- * GetJSONWebKeysResponse is a valid JSON Web Key Set as specififed in rfc 7517
+ * GetJSONWebKeysResponse is a valid JSON Web Key Set as specified in rfc 7517
  * </pre>
  *
  * Protobuf type {@code google.container.v1.GetJSONWebKeysResponse}
@@ -310,7 +310,7 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * GetJSONWebKeysResponse is a valid JSON Web Key Set as specififed in rfc 7517
+   * GetJSONWebKeysResponse is a valid JSON Web Key Set as specified in rfc 7517
    * </pre>
    *
    * Protobuf type {@code google.container.v1.GetJSONWebKeysResponse}

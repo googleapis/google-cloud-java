@@ -70,7 +70,7 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The UID perservation behavior.
+   * The UID preservation behavior.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.parallelstore.v1beta.TransferMetadataOptions.Uid}

@@ -3017,6 +3017,62 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : secondaryBootDiskUpdateStrategy_;
   }
 
+  public static final int MAX_RUN_DURATION_FIELD_NUMBER = 53;
+  private com.google.protobuf.Duration maxRunDuration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+   *
+   * @return Whether the maxRunDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRunDuration() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+   *
+   * @return The maxRunDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMaxRunDuration() {
+    return maxRunDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRunDuration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum duration for the nodes to exist.
+   * If unspecified, the nodes can exist indefinitely.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMaxRunDurationOrBuilder() {
+    return maxRunDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRunDuration_;
+  }
+
   public static final int LOCAL_SSD_ENCRYPTION_MODE_FIELD_NUMBER = 54;
   private int localSsdEncryptionMode_ = 0;
 
@@ -3025,7 +3081,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies which method should be used for encrypting the
-   * Local SSDs attahced to the node.
+   * Local SSDs attached to the node.
    * </pre>
    *
    * <code>
@@ -3036,7 +3092,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocalSsdEncryptionMode() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -3044,7 +3100,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies which method should be used for encrypting the
-   * Local SSDs attahced to the node.
+   * Local SSDs attached to the node.
    * </pre>
    *
    * <code>
@@ -3063,7 +3119,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies which method should be used for encrypting the
-   * Local SSDs attahced to the node.
+   * Local SSDs attached to the node.
    * </pre>
    *
    * <code>
@@ -3129,6 +3185,41 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.container.v1.NodeConfig.EffectiveCgroupMode.UNRECOGNIZED
         : result;
+  }
+
+  public static final int FLEX_START_FIELD_NUMBER = 56;
+  private boolean flexStart_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Flex Start flag for enabling Flex Start VM.
+   * </pre>
+   *
+   * <code>optional bool flex_start = 56;</code>
+   *
+   * @return Whether the flexStart field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlexStart() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Flex Start flag for enabling Flex Start VM.
+   * </pre>
+   *
+   * <code>optional bool flex_start = 56;</code>
+   *
+   * @return The flexStart.
+   */
+  @java.lang.Override
+  public boolean getFlexStart() {
+    return flexStart_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3263,12 +3354,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(50, getSecondaryBootDiskUpdateStrategy());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(53, getMaxRunDuration());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeEnum(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
         != com.google.container.v1.NodeConfig.EffectiveCgroupMode.EFFECTIVE_CGROUP_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(55, effectiveCgroupMode_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      output.writeBool(56, flexStart_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3449,12 +3546,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               50, getSecondaryBootDiskUpdateStrategy());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getMaxRunDuration());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
         != com.google.container.v1.NodeConfig.EffectiveCgroupMode.EFFECTIVE_CGROUP_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(55, effectiveCgroupMode_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(56, flexStart_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3572,11 +3675,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getSecondaryBootDiskUpdateStrategy().equals(other.getSecondaryBootDiskUpdateStrategy()))
         return false;
     }
+    if (hasMaxRunDuration() != other.hasMaxRunDuration()) return false;
+    if (hasMaxRunDuration()) {
+      if (!getMaxRunDuration().equals(other.getMaxRunDuration())) return false;
+    }
     if (hasLocalSsdEncryptionMode() != other.hasLocalSsdEncryptionMode()) return false;
     if (hasLocalSsdEncryptionMode()) {
       if (localSsdEncryptionMode_ != other.localSsdEncryptionMode_) return false;
     }
     if (effectiveCgroupMode_ != other.effectiveCgroupMode_) return false;
+    if (hasFlexStart() != other.hasFlexStart()) return false;
+    if (hasFlexStart()) {
+      if (getFlexStart() != other.getFlexStart()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3724,12 +3835,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SECONDARY_BOOT_DISK_UPDATE_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryBootDiskUpdateStrategy().hashCode();
     }
+    if (hasMaxRunDuration()) {
+      hash = (37 * hash) + MAX_RUN_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxRunDuration().hashCode();
+    }
     if (hasLocalSsdEncryptionMode()) {
       hash = (37 * hash) + LOCAL_SSD_ENCRYPTION_MODE_FIELD_NUMBER;
       hash = (53 * hash) + localSsdEncryptionMode_;
     }
     hash = (37 * hash) + EFFECTIVE_CGROUP_MODE_FIELD_NUMBER;
     hash = (53 * hash) + effectiveCgroupMode_;
+    if (hasFlexStart()) {
+      hash = (37 * hash) + FLEX_START_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFlexStart());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3927,6 +4046,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getResourceManagerTagsFieldBuilder();
         getSecondaryBootDisksFieldBuilder();
         getSecondaryBootDiskUpdateStrategyFieldBuilder();
+        getMaxRunDurationFieldBuilder();
       }
     }
 
@@ -4069,8 +4189,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
         secondaryBootDiskUpdateStrategyBuilder_ = null;
       }
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
+        maxRunDurationBuilder_ = null;
+      }
       localSsdEncryptionMode_ = 0;
       effectiveCgroupMode_ = 0;
+      flexStart_ = false;
       return this;
     }
 
@@ -4320,11 +4446,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
+        result.maxRunDuration_ =
+            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
+        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField1_ & 0x00000400) != 0)) {
         result.effectiveCgroupMode_ = effectiveCgroupMode_;
+      }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.flexStart_ = flexStart_;
+        to_bitField0_ |= 0x00200000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4598,11 +4733,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSecondaryBootDiskUpdateStrategy()) {
         mergeSecondaryBootDiskUpdateStrategy(other.getSecondaryBootDiskUpdateStrategy());
       }
+      if (other.hasMaxRunDuration()) {
+        mergeMaxRunDuration(other.getMaxRunDuration());
+      }
       if (other.hasLocalSsdEncryptionMode()) {
         setLocalSsdEncryptionMode(other.getLocalSsdEncryptionMode());
       }
       if (other.effectiveCgroupMode_ != 0) {
         setEffectiveCgroupModeValue(other.getEffectiveCgroupModeValue());
+      }
+      if (other.hasFlexStart()) {
+        setFlexStart(other.getFlexStart());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4926,18 +5067,30 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000080;
                 break;
               } // case 402
+            case 426:
+              {
+                input.readMessage(getMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 426
             case 432:
               {
                 localSsdEncryptionMode_ = input.readEnum();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 432
             case 440:
               {
                 effectiveCgroupMode_ = input.readEnum();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 440
+            case 448:
+              {
+                flexStart_ = input.readBool();
+                bitField1_ |= 0x00000800;
+                break;
+              } // case 448
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12684,6 +12837,209 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return secondaryBootDiskUpdateStrategyBuilder_;
     }
 
+    private com.google.protobuf.Duration maxRunDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxRunDurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     *
+     * @return Whether the maxRunDuration field is set.
+     */
+    public boolean hasMaxRunDuration() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     *
+     * @return The maxRunDuration.
+     */
+    public com.google.protobuf.Duration getMaxRunDuration() {
+      if (maxRunDurationBuilder_ == null) {
+        return maxRunDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRunDuration_;
+      } else {
+        return maxRunDurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public Builder setMaxRunDuration(com.google.protobuf.Duration value) {
+      if (maxRunDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxRunDuration_ = value;
+      } else {
+        maxRunDurationBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public Builder setMaxRunDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (maxRunDurationBuilder_ == null) {
+        maxRunDuration_ = builderForValue.build();
+      } else {
+        maxRunDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public Builder mergeMaxRunDuration(com.google.protobuf.Duration value) {
+      if (maxRunDurationBuilder_ == null) {
+        if (((bitField1_ & 0x00000100) != 0)
+            && maxRunDuration_ != null
+            && maxRunDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxRunDurationBuilder().mergeFrom(value);
+        } else {
+          maxRunDuration_ = value;
+        }
+      } else {
+        maxRunDurationBuilder_.mergeFrom(value);
+      }
+      if (maxRunDuration_ != null) {
+        bitField1_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public Builder clearMaxRunDuration() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
+        maxRunDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public com.google.protobuf.Duration.Builder getMaxRunDurationBuilder() {
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return getMaxRunDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaxRunDurationOrBuilder() {
+      if (maxRunDurationBuilder_ != null) {
+        return maxRunDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxRunDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRunDuration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum duration for the nodes to exist.
+     * If unspecified, the nodes can exist indefinitely.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_run_duration = 53;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getMaxRunDurationFieldBuilder() {
+      if (maxRunDurationBuilder_ == null) {
+        maxRunDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxRunDuration(), getParentForChildren(), isClean());
+        maxRunDuration_ = null;
+      }
+      return maxRunDurationBuilder_;
+    }
+
     private int localSsdEncryptionMode_ = 0;
 
     /**
@@ -12691,7 +13047,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12702,7 +13058,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasLocalSsdEncryptionMode() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -12710,7 +13066,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12729,7 +13085,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12741,7 +13097,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setLocalSsdEncryptionModeValue(int value) {
       localSsdEncryptionMode_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12751,7 +13107,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12775,7 +13131,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12790,7 +13146,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       localSsdEncryptionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -12801,7 +13157,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which method should be used for encrypting the
-     * Local SSDs attahced to the node.
+     * Local SSDs attached to the node.
      * </pre>
      *
      * <code>
@@ -12811,7 +13167,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdEncryptionMode() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       localSsdEncryptionMode_ = 0;
       onChanged();
       return this;
@@ -12859,7 +13215,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setEffectiveCgroupModeValue(int value) {
       effectiveCgroupMode_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12911,7 +13267,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       effectiveCgroupMode_ = value.getNumber();
       onChanged();
       return this;
@@ -12934,8 +13290,80 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEffectiveCgroupMode() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       effectiveCgroupMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean flexStart_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start flag for enabling Flex Start VM.
+     * </pre>
+     *
+     * <code>optional bool flex_start = 56;</code>
+     *
+     * @return Whether the flexStart field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlexStart() {
+      return ((bitField1_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start flag for enabling Flex Start VM.
+     * </pre>
+     *
+     * <code>optional bool flex_start = 56;</code>
+     *
+     * @return The flexStart.
+     */
+    @java.lang.Override
+    public boolean getFlexStart() {
+      return flexStart_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start flag for enabling Flex Start VM.
+     * </pre>
+     *
+     * <code>optional bool flex_start = 56;</code>
+     *
+     * @param value The flexStart to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlexStart(boolean value) {
+
+      flexStart_ = value;
+      bitField1_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flex Start flag for enabling Flex Start VM.
+     * </pre>
+     *
+     * <code>optional bool flex_start = 56;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFlexStart() {
+      bitField1_ = (bitField1_ & ~0x00000800);
+      flexStart_ = false;
       onChanged();
       return this;
     }

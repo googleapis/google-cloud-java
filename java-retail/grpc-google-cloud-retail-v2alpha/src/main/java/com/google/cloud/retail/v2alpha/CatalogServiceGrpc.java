@@ -716,34 +716,34 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Set a specified branch id as default branch. API methods such as
-     *  [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
-     *  [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
-     *  [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
-     *  will treat requests using "default_branch" to the actual branch id set as
-     *  default.
-     *  For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
-     *  default, setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is
-     *  equivalent to setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
-     *  Using multiple branches can be useful when developers would like
-     *  to have a staging branch to test and verify for future usage. When it
-     *  becomes ready, developers switch on the staging branch using this API
-     *  while keeping using
-     *  `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to route the traffic to this staging branch.
-     *  CAUTION: If you have live predict/search traffic, switching the default
-     *  branch could potentially cause outages if the ID space of the new branch
-     *  is very different from the old one.
-     *  More specifically:
-     *  * PredictionService will only return product IDs from branch {newBranch}.
-     *  * SearchService will only return product IDs from branch {newBranch}
-     *    (if branch is not explicitly set).
-     *  * UserEventService will only join events with products from branch
-     *    {newBranch}.
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
      * </pre>
      */
     default void setDefaultBranch(
@@ -758,8 +758,8 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Get which branch is currently default branch set by
-     *  [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
-     *  method under a specified parent catalog.
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
      * </pre>
      */
     default void getDefaultBranch(
@@ -989,34 +989,34 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Set a specified branch id as default branch. API methods such as
-     *  [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
-     *  [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
-     *  [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
-     *  will treat requests using "default_branch" to the actual branch id set as
-     *  default.
-     *  For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
-     *  default, setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is
-     *  equivalent to setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
-     *  Using multiple branches can be useful when developers would like
-     *  to have a staging branch to test and verify for future usage. When it
-     *  becomes ready, developers switch on the staging branch using this API
-     *  while keeping using
-     *  `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to route the traffic to this staging branch.
-     *  CAUTION: If you have live predict/search traffic, switching the default
-     *  branch could potentially cause outages if the ID space of the new branch
-     *  is very different from the old one.
-     *  More specifically:
-     *  * PredictionService will only return product IDs from branch {newBranch}.
-     *  * SearchService will only return product IDs from branch {newBranch}
-     *    (if branch is not explicitly set).
-     *  * UserEventService will only join events with products from branch
-     *    {newBranch}.
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
      * </pre>
      */
     public void setDefaultBranch(
@@ -1033,8 +1033,8 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Get which branch is currently default branch set by
-     *  [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
-     *  method under a specified parent catalog.
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
      * </pre>
      */
     public void getDefaultBranch(
@@ -1260,34 +1260,34 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Set a specified branch id as default branch. API methods such as
-     *  [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
-     *  [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
-     *  [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
-     *  will treat requests using "default_branch" to the actual branch id set as
-     *  default.
-     *  For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
-     *  default, setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is
-     *  equivalent to setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
-     *  Using multiple branches can be useful when developers would like
-     *  to have a staging branch to test and verify for future usage. When it
-     *  becomes ready, developers switch on the staging branch using this API
-     *  while keeping using
-     *  `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to route the traffic to this staging branch.
-     *  CAUTION: If you have live predict/search traffic, switching the default
-     *  branch could potentially cause outages if the ID space of the new branch
-     *  is very different from the old one.
-     *  More specifically:
-     *  * PredictionService will only return product IDs from branch {newBranch}.
-     *  * SearchService will only return product IDs from branch {newBranch}
-     *    (if branch is not explicitly set).
-     *  * UserEventService will only join events with products from branch
-     *    {newBranch}.
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
      * </pre>
      */
     public com.google.protobuf.Empty setDefaultBranch(
@@ -1301,8 +1301,8 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Get which branch is currently default branch set by
-     *  [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
-     *  method under a specified parent catalog.
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.GetDefaultBranchResponse getDefaultBranch(
@@ -1492,34 +1492,34 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Set a specified branch id as default branch. API methods such as
-     *  [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
-     *  [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
-     *  [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
-     *  will treat requests using "default_branch" to the actual branch id set as
-     *  default.
-     *  For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
-     *  default, setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is
-     *  equivalent to setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
-     *  Using multiple branches can be useful when developers would like
-     *  to have a staging branch to test and verify for future usage. When it
-     *  becomes ready, developers switch on the staging branch using this API
-     *  while keeping using
-     *  `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to route the traffic to this staging branch.
-     *  CAUTION: If you have live predict/search traffic, switching the default
-     *  branch could potentially cause outages if the ID space of the new branch
-     *  is very different from the old one.
-     *  More specifically:
-     *  * PredictionService will only return product IDs from branch {newBranch}.
-     *  * SearchService will only return product IDs from branch {newBranch}
-     *    (if branch is not explicitly set).
-     *  * UserEventService will only join events with products from branch
-     *    {newBranch}.
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
      * </pre>
      */
     public com.google.protobuf.Empty setDefaultBranch(
@@ -1533,8 +1533,8 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Get which branch is currently default branch set by
-     *  [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
-     *  method under a specified parent catalog.
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.GetDefaultBranchResponse getDefaultBranch(
@@ -1726,34 +1726,34 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Set a specified branch id as default branch. API methods such as
-     *  [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
-     *  [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
-     *  [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
-     *  will treat requests using "default_branch" to the actual branch id set as
-     *  default.
-     *  For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
-     *  default, setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is
-     *  equivalent to setting
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
-     *  Using multiple branches can be useful when developers would like
-     *  to have a staging branch to test and verify for future usage. When it
-     *  becomes ready, developers switch on the staging branch using this API
-     *  while keeping using
-     *  `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
-     *  [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
-     *  to route the traffic to this staging branch.
-     *  CAUTION: If you have live predict/search traffic, switching the default
-     *  branch could potentially cause outages if the ID space of the new branch
-     *  is very different from the old one.
-     *  More specifically:
-     *  * PredictionService will only return product IDs from branch {newBranch}.
-     *  * SearchService will only return product IDs from branch {newBranch}
-     *    (if branch is not explicitly set).
-     *  * UserEventService will only join events with products from branch
-     *    {newBranch}.
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1767,8 +1767,8 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Get which branch is currently default branch set by
-     *  [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
-     *  method under a specified parent catalog.
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
