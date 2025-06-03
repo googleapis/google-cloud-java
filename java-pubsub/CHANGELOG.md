@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.140.0](https://github.com/googleapis/java-pubsub/compare/v1.139.4...v1.140.0) (2025-06-03)
+
+
+### Features
+
+* Add SchemaViolationReason to IngestionFailureEvent ([21cc376](https://github.com/googleapis/java-pubsub/commit/21cc3764aaa6fc05eb4a5078a72dae30694fba91))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.50.1 ([#2435](https://github.com/googleapis/java-pubsub/issues/2435)) ([b37c557](https://github.com/googleapis/java-pubsub/commit/b37c5573e1d0d7eada4ce4ec6a052521ea11cff1))
+* Update dependency com.google.cloud:google-cloud-storage to v2.52.3 ([#2436](https://github.com/googleapis/java-pubsub/issues/2436)) ([4f309d1](https://github.com/googleapis/java-pubsub/commit/4f309d151d4bd584a33a0bb8882d0614a1b9d533))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#2444](https://github.com/googleapis/java-pubsub/issues/2444)) ([a59135c](https://github.com/googleapis/java-pubsub/commit/a59135c6859d0aa5c247a6a1f60872c959123cc7))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#2446](https://github.com/googleapis/java-pubsub/issues/2446)) ([6434be1](https://github.com/googleapis/java-pubsub/commit/6434be16560fdc8797b7c930b06df38c0972c96c))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.31.0 ([#2430](https://github.com/googleapis/java-pubsub/issues/2430)) ([232fac1](https://github.com/googleapis/java-pubsub/commit/232fac1c47e0d3680dcc8d56b69d65ed0d379dde))
+* Update googleapis/sdk-platform-java action to v2.59.0 ([#2445](https://github.com/googleapis/java-pubsub/issues/2445)) ([12d4cfb](https://github.com/googleapis/java-pubsub/commit/12d4cfb7d67dbb163b3a545ea2ebae450e88283d))
+
+
+### Documentation
+
+* **sample:** Update the subscribe with error listener and subscribe with exactly-once samples ([#2437](https://github.com/googleapis/java-pubsub/issues/2437)) ([17c142b](https://github.com/googleapis/java-pubsub/commit/17c142b20efb79f9c71fc6306cb3ee4e15c5e06f))
+
 ## [1.139.4](https://github.com/googleapis/java-pubsub/compare/v1.139.3...v1.139.4) (2025-05-15)
 
 
