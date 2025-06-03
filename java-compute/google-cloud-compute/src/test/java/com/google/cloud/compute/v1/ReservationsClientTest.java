@@ -215,6 +215,8 @@ public class ReservationsClientTest {
             .setAggregateReservation(AllocationAggregateReservation.newBuilder().build())
             .setCommitment("commitment1019005717")
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDeleteAfterDuration(Duration.newBuilder().build())
+            .setDeleteAtTime("deleteAtTime-1276262613")
             .setDeploymentType("deploymentType1588450207")
             .setDescription("description-1724546052")
             .setId(3355)

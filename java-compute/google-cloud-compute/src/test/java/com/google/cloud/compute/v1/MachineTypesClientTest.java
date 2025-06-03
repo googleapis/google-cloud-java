@@ -149,7 +149,6 @@ public class MachineTypesClientTest {
             .setMaximumPersistentDisksSizeGb(-1993209177)
             .setMemoryMb(1726613907)
             .setName("name3373707")
-            .addAllScratchDisks(new ArrayList<ScratchDisks>())
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .build();

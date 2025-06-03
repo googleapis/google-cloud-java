@@ -214,6 +214,7 @@ public class InterconnectAttachmentsClientTest {
     InterconnectAttachment expectedResponse =
         InterconnectAttachment.newBuilder()
             .setAdminEnabled(true)
+            .setAttachmentGroup("attachmentGroup-695211236")
             .setBandwidth("bandwidth-1965768527")
             .addAllCandidateIpv6Subnets(new ArrayList<String>())
             .addAllCandidateSubnets(new ArrayList<String>())
