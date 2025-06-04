@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.15.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.14.1...v3.15.0) (2025-06-04)
+
+
+### Features
+
+* **bigquery:** Integrate Otel Tracing in storage lib ([#2983](https://github.com/googleapis/java-bigquerystorage/issues/2983)) ([c84fad6](https://github.com/googleapis/java-bigquerystorage/commit/c84fad667f6b0dea7135b87ceb15e60cad8dff3d))
+* Provide append() methods that accept com.google.gson objects ([#2985](https://github.com/googleapis/java-bigquerystorage/issues/2985)) ([b8dff57](https://github.com/googleapis/java-bigquerystorage/commit/b8dff570a27b77bdfa0cceccd207e0fbf1d16d65))
+
+
+### Bug Fixes
+
+* **bigquery:** Allow users to supply custom TracerProvider ([#2995](https://github.com/googleapis/java-bigquerystorage/issues/2995)) ([88095e6](https://github.com/googleapis/java-bigquerystorage/commit/88095e60df7ef8686b35c679501fbd3939f994d9))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.58.0 ([45d50bb](https://github.com/googleapis/java-bigquerystorage/commit/45d50bb0f7a6fc2ac226860c5b1f5ac2d27bb3b4))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.59.0 ([104571c](https://github.com/googleapis/java-bigquerystorage/commit/104571c453de7153dc05522fbb69b3be1b612e1e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.50.1 ([#2981](https://github.com/googleapis/java-bigquerystorage/issues/2981)) ([3869181](https://github.com/googleapis/java-bigquerystorage/commit/38691813495485e81b2d7c3d4c7d108d5bfe57dc))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#2989](https://github.com/googleapis/java-bigquerystorage/issues/2989)) ([40a1b95](https://github.com/googleapis/java-bigquerystorage/commit/40a1b9541c1967e9a8f1f647a48fd8484e0783ae))
+
 ## [3.14.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.14.0...v3.14.1) (2025-05-15)
 
 
