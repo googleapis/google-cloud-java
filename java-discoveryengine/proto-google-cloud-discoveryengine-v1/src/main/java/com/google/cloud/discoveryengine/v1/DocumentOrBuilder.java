@@ -210,9 +210,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Document.Content content = 10;</code>
@@ -225,9 +224,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Document.Content content = 10;</code>
@@ -240,9 +238,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Document.Content content = 10;</code>
@@ -328,6 +325,43 @@ public interface DocumentOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return Whether the aclInfo field is set.
+   */
+  boolean hasAclInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return The aclInfo.
+   */
+  com.google.cloud.discoveryengine.v1.Document.AclInfo getAclInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Document.AclInfo acl_info = 11;</code>
+   */
+  com.google.cloud.discoveryengine.v1.Document.AclInfoOrBuilder getAclInfoOrBuilder();
 
   /**
    *

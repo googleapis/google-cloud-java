@@ -5,6 +5,27 @@
   "protoPackage": "google.cloud.discoveryengine.v1",
   "libraryPackage": "com.google.cloud.discoveryengine.v1",
   "services": {
+    "CmekConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CmekConfigServiceClient",
+          "rpcs": {
+            "DeleteCmekConfig": {
+              "methods": ["deleteCmekConfigAsync", "deleteCmekConfigAsync", "deleteCmekConfigAsync", "deleteCmekConfigOperationCallable", "deleteCmekConfigCallable"]
+            },
+            "GetCmekConfig": {
+              "methods": ["getCmekConfig", "getCmekConfig", "getCmekConfig", "getCmekConfigCallable"]
+            },
+            "ListCmekConfigs": {
+              "methods": ["listCmekConfigs", "listCmekConfigs", "listCmekConfigs", "listCmekConfigsCallable"]
+            },
+            "UpdateCmekConfig": {
+              "methods": ["updateCmekConfigAsync", "updateCmekConfigAsync", "updateCmekConfigOperationCallable", "updateCmekConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "CompletionService": {
       "clients": {
         "grpc": {
@@ -203,6 +224,36 @@
         }
       }
     },
+    "IdentityMappingStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityMappingStoreServiceClient",
+          "rpcs": {
+            "CreateIdentityMappingStore": {
+              "methods": ["createIdentityMappingStore", "createIdentityMappingStore", "createIdentityMappingStore", "createIdentityMappingStoreCallable"]
+            },
+            "DeleteIdentityMappingStore": {
+              "methods": ["deleteIdentityMappingStoreAsync", "deleteIdentityMappingStoreAsync", "deleteIdentityMappingStoreAsync", "deleteIdentityMappingStoreOperationCallable", "deleteIdentityMappingStoreCallable"]
+            },
+            "GetIdentityMappingStore": {
+              "methods": ["getIdentityMappingStore", "getIdentityMappingStore", "getIdentityMappingStore", "getIdentityMappingStoreCallable"]
+            },
+            "ImportIdentityMappings": {
+              "methods": ["importIdentityMappingsAsync", "importIdentityMappingsOperationCallable", "importIdentityMappingsCallable"]
+            },
+            "ListIdentityMappingStores": {
+              "methods": ["listIdentityMappingStores", "listIdentityMappingStores", "listIdentityMappingStores", "listIdentityMappingStoresPagedCallable", "listIdentityMappingStoresCallable"]
+            },
+            "ListIdentityMappings": {
+              "methods": ["listIdentityMappings", "listIdentityMappingsPagedCallable", "listIdentityMappingsCallable"]
+            },
+            "PurgeIdentityMappings": {
+              "methods": ["purgeIdentityMappingsAsync", "purgeIdentityMappingsOperationCallable", "purgeIdentityMappingsCallable"]
+            }
+          }
+        }
+      }
+    },
     "ProjectService": {
       "clients": {
         "grpc": {
@@ -375,6 +426,21 @@
             },
             "WriteUserEvent": {
               "methods": ["writeUserEvent", "writeUserEventCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserLicenseServiceClient",
+          "rpcs": {
+            "BatchUpdateUserLicenses": {
+              "methods": ["batchUpdateUserLicensesAsync", "batchUpdateUserLicensesOperationCallable", "batchUpdateUserLicensesCallable"]
+            },
+            "ListUserLicenses": {
+              "methods": ["listUserLicenses", "listUserLicenses", "listUserLicenses", "listUserLicensesPagedCallable", "listUserLicensesCallable"]
             }
           }
         }

@@ -907,7 +907,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
+   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -920,7 +920,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
+   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -933,7 +933,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
+   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>

@@ -865,6 +865,11 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/v1/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
                                 .build())
                         .build())

@@ -84,6 +84,40 @@ public interface SearchLinkPromotionOrBuilder
    *
    *
    * <pre>
+   * Optional. The [Document][google.cloud.discoveryengine.v1.Document] the user
+   * wants to promote. For site search, leave unset and only populate uri. Can
+   * be set along with uri.
+   * </pre>
+   *
+   * <code>
+   * string document = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The document.
+   */
+  java.lang.String getDocument();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [Document][google.cloud.discoveryengine.v1.Document] the user
+   * wants to promote. For site search, leave unset and only populate uri. Can
+   * be set along with uri.
+   * </pre>
+   *
+   * <code>
+   * string document = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for document.
+   */
+  com.google.protobuf.ByteString getDocumentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The promotion thumbnail image url.
    * </pre>
    *

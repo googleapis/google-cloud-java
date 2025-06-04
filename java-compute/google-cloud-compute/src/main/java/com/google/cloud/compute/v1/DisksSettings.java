@@ -142,6 +142,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     return ((DisksStubSettings) getStubSettings()).bulkInsertOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public UnaryCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+    return ((DisksStubSettings) getStubSettings()).bulkSetLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public OperationCallSettings<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).bulkSetLabelsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createSnapshot. */
   public UnaryCallSettings<CreateSnapshotDiskRequest, Operation> createSnapshotSettings() {
     return ((DisksStubSettings) getStubSettings()).createSnapshotSettings();
@@ -402,6 +413,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public OperationCallSettings.Builder<BulkInsertDiskRequest, Operation, Operation>
         bulkInsertOperationSettings() {
       return getStubSettingsBuilder().bulkInsertOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public UnaryCallSettings.Builder<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+      return getStubSettingsBuilder().bulkSetLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public OperationCallSettings.Builder<BulkSetLabelsDiskRequest, Operation, Operation>
+        bulkSetLabelsOperationSettings() {
+      return getStubSettingsBuilder().bulkSetLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */

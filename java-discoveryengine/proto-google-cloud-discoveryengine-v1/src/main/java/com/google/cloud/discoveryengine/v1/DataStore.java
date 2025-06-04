@@ -46,6 +46,8 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     solutionTypes_ = java.util.Collections.emptyList();
     defaultSchemaId_ = "";
     contentConfig_ = 0;
+    kmsKeyName_ = "";
+    identityMappingStore_ = "";
   }
 
   @java.lang.Override
@@ -2053,7 +2055,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -2061,7 +2063,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -2082,7 +2086,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -2090,7 +2094,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -2560,6 +2566,132 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         : advancedSiteSearchConfig_;
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CMEK_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.discoveryengine.v1.CmekConfig cmekConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cmekConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCmekConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cmekConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.CmekConfig getCmekConfig() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
   public static final int BILLING_ESTIMATION_FIELD_NUMBER = 23;
   private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
 
@@ -2578,7 +2710,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBillingEstimation() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -2620,6 +2752,41 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         : billingEstimation_;
   }
 
+  public static final int ACL_ENABLED_FIELD_NUMBER = 24;
+  private boolean aclEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether data in the
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] has ACL information.
+   * If set to `true`, the source data must have ACL. ACL will be ingested when
+   * data is ingested by
+   * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1.DocumentService.ImportDocuments]
+   * methods.
+   *
+   * When ACL is enabled for the
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore],
+   * [Document][google.cloud.discoveryengine.v1.Document] can't be accessed by
+   * calling
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1.DocumentService.ListDocuments].
+   *
+   * Currently ACL is only supported in `GENERIC` industry vertical with
+   * non-`PUBLIC_WEBSITE` content config.
+   * </pre>
+   *
+   * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The aclEnabled.
+   */
+  @java.lang.Override
+  public boolean getAclEnabled() {
+    return aclEnabled_;
+  }
+
   public static final int WORKSPACE_CONFIG_FIELD_NUMBER = 25;
   private com.google.cloud.discoveryengine.v1.WorkspaceConfig workspaceConfig_;
 
@@ -2640,7 +2807,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWorkspaceConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -2704,7 +2871,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -2779,7 +2946,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -2848,6 +3015,131 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         : startingSchema_;
   }
 
+  public static final int HEALTHCARE_FHIR_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcareFhirConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the healthcareFhirConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthcareFhirConfig() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The healthcareFhirConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.HealthcareFhirConfig getHealthcareFhirConfig() {
+    return healthcareFhirConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()
+        : healthcareFhirConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.HealthcareFhirConfigOrBuilder
+      getHealthcareFhirConfigOrBuilder() {
+    return healthcareFhirConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()
+        : healthcareFhirConfig_;
+  }
+
+  public static final int IDENTITY_MAPPING_STORE_FIELD_NUMBER = 31;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityMappingStore_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The identityMappingStore.
+   */
+  @java.lang.Override
+  public java.lang.String getIdentityMappingStore() {
+    java.lang.Object ref = identityMappingStore_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      identityMappingStore_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for identityMappingStore.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdentityMappingStoreBytes() {
+    java.lang.Object ref = identityMappingStore_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      identityMappingStore_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2896,16 +3188,31 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(12, getAdvancedSiteSearchConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(23, getBillingEstimation());
+      output.writeMessage(18, getCmekConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(25, getWorkspaceConfig());
+      output.writeMessage(23, getBillingEstimation());
+    }
+    if (aclEnabled_ != false) {
+      output.writeBool(24, aclEnabled_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
+      output.writeMessage(25, getWorkspaceConfig());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(28, getStartingSchema());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(29, getHealthcareFhirConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityMappingStore_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 31, identityMappingStore_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 32, kmsKeyName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2957,18 +3264,34 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               12, getAdvancedSiteSearchConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCmekConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
+    }
+    if (aclEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, aclEnabled_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(29, getHealthcareFhirConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityMappingStore_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, identityMappingStore_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, kmsKeyName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3000,10 +3323,16 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSiteSearchConfig()) {
       if (!getAdvancedSiteSearchConfig().equals(other.getAdvancedSiteSearchConfig())) return false;
     }
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (hasCmekConfig() != other.hasCmekConfig()) return false;
+    if (hasCmekConfig()) {
+      if (!getCmekConfig().equals(other.getCmekConfig())) return false;
+    }
     if (hasBillingEstimation() != other.hasBillingEstimation()) return false;
     if (hasBillingEstimation()) {
       if (!getBillingEstimation().equals(other.getBillingEstimation())) return false;
     }
+    if (getAclEnabled() != other.getAclEnabled()) return false;
     if (hasWorkspaceConfig() != other.hasWorkspaceConfig()) return false;
     if (hasWorkspaceConfig()) {
       if (!getWorkspaceConfig().equals(other.getWorkspaceConfig())) return false;
@@ -3016,6 +3345,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasStartingSchema()) {
       if (!getStartingSchema().equals(other.getStartingSchema())) return false;
     }
+    if (hasHealthcareFhirConfig() != other.hasHealthcareFhirConfig()) return false;
+    if (hasHealthcareFhirConfig()) {
+      if (!getHealthcareFhirConfig().equals(other.getHealthcareFhirConfig())) return false;
+    }
+    if (!getIdentityMappingStore().equals(other.getIdentityMappingStore())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3049,10 +3383,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSiteSearchConfig().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    if (hasCmekConfig()) {
+      hash = (37 * hash) + CMEK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCmekConfig().hashCode();
+    }
     if (hasBillingEstimation()) {
       hash = (37 * hash) + BILLING_ESTIMATION_FIELD_NUMBER;
       hash = (53 * hash) + getBillingEstimation().hashCode();
     }
+    hash = (37 * hash) + ACL_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAclEnabled());
     if (hasWorkspaceConfig()) {
       hash = (37 * hash) + WORKSPACE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspaceConfig().hashCode();
@@ -3065,6 +3407,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STARTING_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getStartingSchema().hashCode();
     }
+    if (hasHealthcareFhirConfig()) {
+      hash = (37 * hash) + HEALTHCARE_FHIR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getHealthcareFhirConfig().hashCode();
+    }
+    hash = (37 * hash) + IDENTITY_MAPPING_STORE_FIELD_NUMBER;
+    hash = (53 * hash) + getIdentityMappingStore().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3208,10 +3556,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getAdvancedSiteSearchConfigFieldBuilder();
+        getCmekConfigFieldBuilder();
         getBillingEstimationFieldBuilder();
         getWorkspaceConfigFieldBuilder();
         getDocumentProcessingConfigFieldBuilder();
         getStartingSchemaFieldBuilder();
+        getHealthcareFhirConfigFieldBuilder();
       }
     }
 
@@ -3236,11 +3586,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         advancedSiteSearchConfigBuilder_.dispose();
         advancedSiteSearchConfigBuilder_ = null;
       }
+      kmsKeyName_ = "";
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
         billingEstimationBuilder_ = null;
       }
+      aclEnabled_ = false;
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -3256,6 +3613,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.dispose();
         startingSchemaBuilder_ = null;
       }
+      healthcareFhirConfig_ = null;
+      if (healthcareFhirConfigBuilder_ != null) {
+        healthcareFhirConfigBuilder_.dispose();
+        healthcareFhirConfigBuilder_ = null;
+      }
+      identityMappingStore_ = "";
       return this;
     }
 
@@ -3329,28 +3692,48 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.cmekConfig_ = cmekConfigBuilder_ == null ? cmekConfig_ : cmekConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.billingEstimation_ =
             billingEstimationBuilder_ == null
                 ? billingEstimation_
                 : billingEstimationBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.workspaceConfig_ =
-            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.aclEnabled_ = aclEnabled_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.workspaceConfig_ =
+            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.healthcareFhirConfig_ =
+            healthcareFhirConfigBuilder_ == null
+                ? healthcareFhirConfig_
+                : healthcareFhirConfigBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.identityMappingStore_ = identityMappingStore_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3437,8 +3820,19 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdvancedSiteSearchConfig()) {
         mergeAdvancedSiteSearchConfig(other.getAdvancedSiteSearchConfig());
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.hasCmekConfig()) {
+        mergeCmekConfig(other.getCmekConfig());
+      }
       if (other.hasBillingEstimation()) {
         mergeBillingEstimation(other.getBillingEstimation());
+      }
+      if (other.getAclEnabled() != false) {
+        setAclEnabled(other.getAclEnabled());
       }
       if (other.hasWorkspaceConfig()) {
         mergeWorkspaceConfig(other.getWorkspaceConfig());
@@ -3448,6 +3842,14 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStartingSchema()) {
         mergeStartingSchema(other.getStartingSchema());
+      }
+      if (other.hasHealthcareFhirConfig()) {
+        mergeHealthcareFhirConfig(other.getHealthcareFhirConfig());
+      }
+      if (!other.getIdentityMappingStore().isEmpty()) {
+        identityMappingStore_ = other.identityMappingStore_;
+        bitField0_ |= 0x00010000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3537,32 +3939,63 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 98
+            case 146:
+              {
+                input.readMessage(getCmekConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 146
             case 186:
               {
                 input.readMessage(
                     getBillingEstimationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 186
+            case 192:
+              {
+                aclEnabled_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 192
             case 202:
               {
                 input.readMessage(getWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 202
             case 218:
               {
                 input.readMessage(
                     getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 226
+            case 234:
+              {
+                input.readMessage(
+                    getHealthcareFhirConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 234
+            case 250:
+              {
+                identityMappingStore_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 250
+            case 258:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3588,7 +4021,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -3596,7 +4029,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -3616,7 +4051,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -3624,7 +4059,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -3644,7 +4081,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -3652,7 +4089,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3671,7 +4110,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -3679,7 +4118,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3694,7 +4135,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -3702,7 +4143,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4925,6 +5368,365 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return advancedSiteSearchConfigBuilder_;
     }
 
+    private java.lang.Object kmsKeyName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.CmekConfig cmekConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.CmekConfig,
+            com.google.cloud.discoveryengine.v1.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder>
+        cmekConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cmekConfig field is set.
+     */
+    public boolean hasCmekConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cmekConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.CmekConfig getCmekConfig() {
+      if (cmekConfigBuilder_ == null) {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      } else {
+        return cmekConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(com.google.cloud.discoveryengine.v1.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cmekConfig_ = value;
+      } else {
+        cmekConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(
+        com.google.cloud.discoveryengine.v1.CmekConfig.Builder builderForValue) {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfig_ = builderForValue.build();
+      } else {
+        cmekConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCmekConfig(com.google.cloud.discoveryengine.v1.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && cmekConfig_ != null
+            && cmekConfig_ != com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()) {
+          getCmekConfigBuilder().mergeFrom(value);
+        } else {
+          cmekConfig_ = value;
+        }
+      } else {
+        cmekConfigBuilder_.mergeFrom(value);
+      }
+      if (cmekConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCmekConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.CmekConfig.Builder getCmekConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getCmekConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+      if (cmekConfigBuilder_ != null) {
+        return cmekConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.CmekConfig,
+            com.google.cloud.discoveryengine.v1.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder>
+        getCmekConfigFieldBuilder() {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.CmekConfig,
+                com.google.cloud.discoveryengine.v1.CmekConfig.Builder,
+                com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder>(
+                getCmekConfig(), getParentForChildren(), isClean());
+        cmekConfig_ = null;
+      }
+      return cmekConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation,
@@ -4946,7 +5748,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the billingEstimation field is set.
      */
     public boolean hasBillingEstimation() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -4993,7 +5795,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         billingEstimationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5016,7 +5818,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         billingEstimationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5035,7 +5837,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBillingEstimation(
         com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation value) {
       if (billingEstimationBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && billingEstimation_ != null
             && billingEstimation_
                 != com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
@@ -5048,7 +5850,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         billingEstimationBuilder_.mergeFrom(value);
       }
       if (billingEstimation_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -5066,7 +5868,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBillingEstimation() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
@@ -5089,7 +5891,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder
         getBillingEstimationBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getBillingEstimationFieldBuilder().getBuilder();
     }
@@ -5144,6 +5946,110 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return billingEstimationBuilder_;
     }
 
+    private boolean aclEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] has ACL information.
+     * If set to `true`, the source data must have ACL. ACL will be ingested when
+     * data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore],
+     * [Document][google.cloud.discoveryengine.v1.Document] can't be accessed by
+     * calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The aclEnabled.
+     */
+    @java.lang.Override
+    public boolean getAclEnabled() {
+      return aclEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] has ACL information.
+     * If set to `true`, the source data must have ACL. ACL will be ingested when
+     * data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore],
+     * [Document][google.cloud.discoveryengine.v1.Document] can't be accessed by
+     * calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The aclEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclEnabled(boolean value) {
+
+      aclEnabled_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] has ACL information.
+     * If set to `true`, the source data must have ACL. ACL will be ingested when
+     * data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore],
+     * [Document][google.cloud.discoveryengine.v1.Document] can't be accessed by
+     * calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAclEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      aclEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1.WorkspaceConfig workspaceConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.WorkspaceConfig,
@@ -5167,7 +6073,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the workspaceConfig field is set.
      */
     public boolean hasWorkspaceConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5217,7 +6123,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5242,7 +6148,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5262,7 +6168,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWorkspaceConfig(com.google.cloud.discoveryengine.v1.WorkspaceConfig value) {
       if (workspaceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && workspaceConfig_ != null
             && workspaceConfig_
                 != com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()) {
@@ -5274,7 +6180,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         workspaceConfigBuilder_.mergeFrom(value);
       }
       if (workspaceConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5294,7 +6200,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public Builder clearWorkspaceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -5318,7 +6224,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder getWorkspaceConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getWorkspaceConfigFieldBuilder().getBuilder();
     }
@@ -5398,7 +6304,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5446,7 +6352,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5469,7 +6375,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5488,7 +6394,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
@@ -5501,7 +6407,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5519,7 +6425,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -5542,7 +6448,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -5632,7 +6538,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5706,7 +6612,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5743,7 +6649,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5775,7 +6681,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && startingSchema_ != null
             && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
           getStartingSchemaBuilder().mergeFrom(value);
@@ -5786,7 +6692,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5818,7 +6724,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -5854,7 +6760,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }
@@ -5934,6 +6840,365 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchema_ = null;
       }
       return startingSchemaBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcareFhirConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfig,
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder,
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfigOrBuilder>
+        healthcareFhirConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the healthcareFhirConfig field is set.
+     */
+    public boolean hasHealthcareFhirConfig() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The healthcareFhirConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.HealthcareFhirConfig getHealthcareFhirConfig() {
+      if (healthcareFhirConfigBuilder_ == null) {
+        return healthcareFhirConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()
+            : healthcareFhirConfig_;
+      } else {
+        return healthcareFhirConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1.HealthcareFhirConfig value) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        healthcareFhirConfig_ = value;
+      } else {
+        healthcareFhirConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder builderForValue) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        healthcareFhirConfig_ = builderForValue.build();
+      } else {
+        healthcareFhirConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1.HealthcareFhirConfig value) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && healthcareFhirConfig_ != null
+            && healthcareFhirConfig_
+                != com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()) {
+          getHealthcareFhirConfigBuilder().mergeFrom(value);
+        } else {
+          healthcareFhirConfig_ = value;
+        }
+      } else {
+        healthcareFhirConfigBuilder_.mergeFrom(value);
+      }
+      if (healthcareFhirConfig_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHealthcareFhirConfig() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      healthcareFhirConfig_ = null;
+      if (healthcareFhirConfigBuilder_ != null) {
+        healthcareFhirConfigBuilder_.dispose();
+        healthcareFhirConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder
+        getHealthcareFhirConfigBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getHealthcareFhirConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.HealthcareFhirConfigOrBuilder
+        getHealthcareFhirConfigOrBuilder() {
+      if (healthcareFhirConfigBuilder_ != null) {
+        return healthcareFhirConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return healthcareFhirConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()
+            : healthcareFhirConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfig,
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder,
+            com.google.cloud.discoveryengine.v1.HealthcareFhirConfigOrBuilder>
+        getHealthcareFhirConfigFieldBuilder() {
+      if (healthcareFhirConfigBuilder_ == null) {
+        healthcareFhirConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.HealthcareFhirConfig,
+                com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder,
+                com.google.cloud.discoveryengine.v1.HealthcareFhirConfigOrBuilder>(
+                getHealthcareFhirConfig(), getParentForChildren(), isClean());
+        healthcareFhirConfig_ = null;
+      }
+      return healthcareFhirConfigBuilder_;
+    }
+
+    private java.lang.Object identityMappingStore_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The identityMappingStore.
+     */
+    public java.lang.String getIdentityMappingStore() {
+      java.lang.Object ref = identityMappingStore_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identityMappingStore_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for identityMappingStore.
+     */
+    public com.google.protobuf.ByteString getIdentityMappingStoreBytes() {
+      java.lang.Object ref = identityMappingStore_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identityMappingStore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The identityMappingStore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityMappingStore(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      identityMappingStore_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityMappingStore() {
+      identityMappingStore_ = getDefaultInstance().getIdentityMappingStore();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for identityMappingStore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityMappingStoreBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      identityMappingStore_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

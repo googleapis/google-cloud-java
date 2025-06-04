@@ -56,68 +56,78 @@ public final class DataStoreProto {
       "\n0google/cloud/discoveryengine/v1/data_s"
           + "tore.proto\022\037google.cloud.discoveryengine"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032,google/cloud/di"
-          + "scoveryengine/v1/common.proto\032@google/cl"
-          + "oud/discoveryengine/v1/document_processi"
-          + "ng_config.proto\032,google/cloud/discoverye"
-          + "ngine/v1/schema.proto\032\037google/protobuf/t"
-          + "imestamp.proto\"\257\013\n\tDataStore\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\005\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022Q\n\021in"
-          + "dustry_vertical\030\003 \001(\01621.google.cloud.dis"
-          + "coveryengine.v1.IndustryVerticalB\003\340A\005\022E\n"
-          + "\016solution_types\030\005 \003(\0162-.google.cloud.dis"
-          + "coveryengine.v1.SolutionType\022\036\n\021default_"
-          + "schema_id\030\007 \001(\tB\003\340A\003\022U\n\016content_config\030\006"
-          + " \001(\01628.google.cloud.discoveryengine.v1.D"
-          + "ataStore.ContentConfigB\003\340A\005\0224\n\013create_ti"
-          + "me\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022c\n\033advanced_site_search_config\030\014 \001(\01329"
-          + ".google.cloud.discoveryengine.v1.Advance"
-          + "dSiteSearchConfigB\003\340A\001\022]\n\022billing_estima"
+          + "ogle/api/resource.proto\0329google/cloud/di"
+          + "scoveryengine/v1/cmek_config_service.pro"
+          + "to\032,google/cloud/discoveryengine/v1/comm"
+          + "on.proto\032@google/cloud/discoveryengine/v"
+          + "1/document_processing_config.proto\032,goog"
+          + "le/cloud/discoveryengine/v1/schema.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\347\r\n\tDa"
+          + "taStore\022\024\n\004name\030\001 \001(\tB\006\340A\005\340A\010\022\031\n\014display"
+          + "_name\030\002 \001(\tB\003\340A\002\022Q\n\021industry_vertical\030\003 "
+          + "\001(\01621.google.cloud.discoveryengine.v1.In"
+          + "dustryVerticalB\003\340A\005\022E\n\016solution_types\030\005 "
+          + "\003(\0162-.google.cloud.discoveryengine.v1.So"
+          + "lutionType\022\036\n\021default_schema_id\030\007 \001(\tB\003\340"
+          + "A\003\022U\n\016content_config\030\006 \001(\01628.google.clou"
+          + "d.discoveryengine.v1.DataStore.ContentCo"
+          + "nfigB\003\340A\005\0224\n\013create_time\030\004 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\022c\n\033advanced_site"
+          + "_search_config\030\014 \001(\01329.google.cloud.disc"
+          + "overyengine.v1.AdvancedSiteSearchConfigB"
+          + "\003\340A\001\022\031\n\014kms_key_name\030  \001(\tB\003\340A\004\022E\n\013cmek_"
+          + "config\030\022 \001(\0132+.google.cloud.discoveryeng"
+          + "ine.v1.CmekConfigB\003\340A\003\022]\n\022billing_estima"
           + "tion\030\027 \001(\0132<.google.cloud.discoveryengin"
-          + "e.v1.DataStore.BillingEstimationB\003\340A\003\022J\n"
-          + "\020workspace_config\030\031 \001(\01320.google.cloud.d"
-          + "iscoveryengine.v1.WorkspaceConfig\022]\n\032doc"
-          + "ument_processing_config\030\033 \001(\01329.google.c"
-          + "loud.discoveryengine.v1.DocumentProcessi"
-          + "ngConfig\022@\n\017starting_schema\030\034 \001(\0132\'.goog"
-          + "le.cloud.discoveryengine.v1.Schema\032\256\002\n\021B"
-          + "illingEstimation\022\034\n\024structured_data_size"
-          + "\030\001 \001(\003\022\036\n\026unstructured_data_size\030\002 \001(\003\022\031"
-          + "\n\021website_data_size\030\003 \001(\003\022?\n\033structured_"
-          + "data_update_time\030\004 \001(\0132\032.google.protobuf"
-          + ".Timestamp\022A\n\035unstructured_data_update_t"
-          + "ime\030\005 \001(\0132\032.google.protobuf.Timestamp\022<\n"
-          + "\030website_data_update_time\030\006 \001(\0132\032.google"
-          + ".protobuf.Timestamp\"\177\n\rContentConfig\022\036\n\032"
-          + "CONTENT_CONFIG_UNSPECIFIED\020\000\022\016\n\nNO_CONTE"
-          + "NT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n\016PUBLIC_WEB"
-          + "SITE\020\003\022\024\n\020GOOGLE_WORKSPACE\020\004:\311\001\352A\305\001\n(dis"
-          + "coveryengine.googleapis.com/DataStore\022?p"
-          + "rojects/{project}/locations/{location}/d"
-          + "ataStores/{data_store}\022Xprojects/{projec"
-          + "t}/locations/{location}/collections/{col"
-          + "lection}/dataStores/{data_store}\"\236\001\n\030Adv"
-          + "ancedSiteSearchConfig\022\"\n\025disable_initial"
-          + "_index\030\003 \001(\010H\000\210\001\001\022&\n\031disable_automatic_r"
-          + "efresh\030\004 \001(\010H\001\210\001\001B\030\n\026_disable_initial_in"
-          + "dexB\034\n\032_disable_automatic_refresh\"\365\002\n\017Wo"
-          + "rkspaceConfig\022C\n\004type\030\001 \001(\01625.google.clo"
-          + "ud.discoveryengine.v1.WorkspaceConfig.Ty"
-          + "pe\022\032\n\022dasher_customer_id\030\002 \001(\t\022(\n\033super_"
-          + "admin_service_account\030\004 \001(\tB\003\340A\001\022&\n\031supe"
-          + "r_admin_email_address\030\005 \001(\tB\003\340A\001\"\256\001\n\004Typ"
-          + "e\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014GOOGLE_DRIVE\020"
-          + "\001\022\017\n\013GOOGLE_MAIL\020\002\022\020\n\014GOOGLE_SITES\020\003\022\023\n\017"
-          + "GOOGLE_CALENDAR\020\004\022\017\n\013GOOGLE_CHAT\020\005\022\021\n\rGO"
-          + "OGLE_GROUPS\020\006\022\017\n\013GOOGLE_KEEP\020\007\022\021\n\rGOOGLE"
-          + "_PEOPLE\020\010B\201\002\n#com.google.cloud.discovery"
-          + "engine.v1B\016DataStoreProtoP\001ZMcloud.googl"
-          + "e.com/go/discoveryengine/apiv1/discovery"
-          + "enginepb;discoveryenginepb\242\002\017DISCOVERYEN"
-          + "GINE\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002"
-          + "\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\"Googl"
-          + "e::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "e.v1.DataStore.BillingEstimationB\003\340A\003\022\030\n"
+          + "\013acl_enabled\030\030 \001(\010B\003\340A\005\022J\n\020workspace_con"
+          + "fig\030\031 \001(\01320.google.cloud.discoveryengine"
+          + ".v1.WorkspaceConfig\022]\n\032document_processi"
+          + "ng_config\030\033 \001(\01329.google.cloud.discovery"
+          + "engine.v1.DocumentProcessingConfig\022@\n\017st"
+          + "arting_schema\030\034 \001(\0132\'.google.cloud.disco"
+          + "veryengine.v1.Schema\022Z\n\026healthcare_fhir_"
+          + "config\030\035 \001(\01325.google.cloud.discoveryeng"
+          + "ine.v1.HealthcareFhirConfigB\003\340A\001\022[\n\026iden"
+          + "tity_mapping_store\030\037 \001(\tB;\340A\005\372A5\n3discov"
+          + "eryengine.googleapis.com/IdentityMapping"
+          + "Store\032\256\002\n\021BillingEstimation\022\034\n\024structure"
+          + "d_data_size\030\001 \001(\003\022\036\n\026unstructured_data_s"
+          + "ize\030\002 \001(\003\022\031\n\021website_data_size\030\003 \001(\003\022?\n\033"
+          + "structured_data_update_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022A\n\035unstructured_da"
+          + "ta_update_time\030\005 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022<\n\030website_data_update_time\030\006 \001"
+          + "(\0132\032.google.protobuf.Timestamp\"\177\n\rConten"
+          + "tConfig\022\036\n\032CONTENT_CONFIG_UNSPECIFIED\020\000\022"
+          + "\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n"
+          + "\016PUBLIC_WEBSITE\020\003\022\024\n\020GOOGLE_WORKSPACE\020\004:"
+          + "\311\001\352A\305\001\n(discoveryengine.googleapis.com/D"
+          + "ataStore\022?projects/{project}/locations/{"
+          + "location}/dataStores/{data_store}\022Xproje"
+          + "cts/{project}/locations/{location}/colle"
+          + "ctions/{collection}/dataStores/{data_sto"
+          + "re}\"\236\001\n\030AdvancedSiteSearchConfig\022\"\n\025disa"
+          + "ble_initial_index\030\003 \001(\010H\000\210\001\001\022&\n\031disable_"
+          + "automatic_refresh\030\004 \001(\010H\001\210\001\001B\030\n\026_disable"
+          + "_initial_indexB\034\n\032_disable_automatic_ref"
+          + "resh\"\365\002\n\017WorkspaceConfig\022C\n\004type\030\001 \001(\01625"
+          + ".google.cloud.discoveryengine.v1.Workspa"
+          + "ceConfig.Type\022\032\n\022dasher_customer_id\030\002 \001("
+          + "\t\022(\n\033super_admin_service_account\030\004 \001(\tB\003"
+          + "\340A\001\022&\n\031super_admin_email_address\030\005 \001(\tB\003"
+          + "\340A\001\"\256\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014GO"
+          + "OGLE_DRIVE\020\001\022\017\n\013GOOGLE_MAIL\020\002\022\020\n\014GOOGLE_"
+          + "SITES\020\003\022\023\n\017GOOGLE_CALENDAR\020\004\022\017\n\013GOOGLE_C"
+          + "HAT\020\005\022\021\n\rGOOGLE_GROUPS\020\006\022\017\n\013GOOGLE_KEEP\020"
+          + "\007\022\021\n\rGOOGLE_PEOPLE\020\010B\201\002\n#com.google.clou"
+          + "d.discoveryengine.v1B\016DataStoreProtoP\001ZM"
+          + "cloud.google.com/go/discoveryengine/apiv"
+          + "1/discoveryenginepb;discoveryenginepb\242\002\017"
+          + "DISCOVERYENGINE\252\002\037Google.Cloud.Discovery"
+          + "Engine.V1\312\002\037Google\\Cloud\\DiscoveryEngine"
+          + "\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -125,6 +135,7 @@ public final class DataStoreProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.CmekConfigServiceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.SchemaProto.getDescriptor(),
@@ -144,10 +155,15 @@ public final class DataStoreProto {
               "ContentConfig",
               "CreateTime",
               "AdvancedSiteSearchConfig",
+              "KmsKeyName",
+              "CmekConfig",
               "BillingEstimation",
+              "AclEnabled",
               "WorkspaceConfig",
               "DocumentProcessingConfig",
               "StartingSchema",
+              "HealthcareFhirConfig",
+              "IdentityMappingStore",
             });
     internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_descriptor =
         internal_static_google_cloud_discoveryengine_v1_DataStore_descriptor
@@ -184,10 +200,12 @@ public final class DataStoreProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.CmekConfigServiceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.SchemaProto.getDescriptor();

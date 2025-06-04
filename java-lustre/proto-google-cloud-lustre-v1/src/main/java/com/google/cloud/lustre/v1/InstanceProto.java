@@ -94,7 +94,7 @@ public final class InstanceProto {
           + "\013description\030\010 \001(\tB\003\340A\001\022A\n"
           + "\006labels\030\t \003"
           + "(\0132,.google.cloud.lustre.v1.Instance.LabelsEntryB\003\340A\001\022(\n"
-          + "\033per_unit_storage_throughput\030\013 \001(\003B\003\340A\001\022 \n"
+          + "\033per_unit_storage_throughput\030\013 \001(\003B\003\340A\002\022 \n"
           + "\023gke_support_enabled\030\014 \001(\010B\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"

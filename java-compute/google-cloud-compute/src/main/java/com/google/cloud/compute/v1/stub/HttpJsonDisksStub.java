@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
 import com.google.cloud.compute.v1.BulkInsertDiskRequest;
+import com.google.cloud.compute.v1.BulkSetLabelsDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DeleteDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -240,6 +241,65 @@ public class HttpJsonDisksStub extends DisksStub {
                       .build())
               .setOperationSnapshotFactory(
                   (BulkInsertDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<BulkSetLabelsDiskRequest, Operation>
+      bulkSetLabelsMethodDescriptor =
+          ApiMethodDescriptor.<BulkSetLabelsDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Disks/BulkSetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkSetLabelsDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/disks/bulkSetLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkSetLabelsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkSetLabelsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasResource()) {
+                              serializer.putQueryParam(fields, "resource", request.getResource());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "bulkZoneSetLabelsRequestResource",
+                                      request.getBulkZoneSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkSetLabelsDiskRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getZone());
@@ -1026,6 +1086,9 @@ public class HttpJsonDisksStub extends DisksStub {
   private final UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable;
   private final OperationCallable<BulkInsertDiskRequest, Operation, Operation>
       bulkInsertOperationCallable;
+  private final UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable;
+  private final OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable;
   private final UnaryCallable<CreateSnapshotDiskRequest, Operation> createSnapshotCallable;
   private final OperationCallable<CreateSnapshotDiskRequest, Operation, Operation>
       createSnapshotOperationCallable;
@@ -1134,6 +1197,18 @@ public class HttpJsonDisksStub extends DisksStub {
     HttpJsonCallSettings<BulkInsertDiskRequest, Operation> bulkInsertTransportSettings =
         HttpJsonCallSettings.<BulkInsertDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(bulkInsertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsTransportSettings =
+        HttpJsonCallSettings.<BulkSetLabelsDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(bulkSetLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1368,6 +1443,15 @@ public class HttpJsonDisksStub extends DisksStub {
             settings.bulkInsertOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.bulkSetLabelsCallable =
+        callableFactory.createUnaryCallable(
+            bulkSetLabelsTransportSettings, settings.bulkSetLabelsSettings(), clientContext);
+    this.bulkSetLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkSetLabelsTransportSettings,
+            settings.bulkSetLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createSnapshotCallable =
         callableFactory.createUnaryCallable(
             createSnapshotTransportSettings, settings.createSnapshotSettings(), clientContext);
@@ -1497,6 +1581,7 @@ public class HttpJsonDisksStub extends DisksStub {
     methodDescriptors.add(addResourcePoliciesMethodDescriptor);
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(bulkInsertMethodDescriptor);
+    methodDescriptors.add(bulkSetLabelsMethodDescriptor);
     methodDescriptors.add(createSnapshotMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
@@ -1546,6 +1631,17 @@ public class HttpJsonDisksStub extends DisksStub {
   public OperationCallable<BulkInsertDiskRequest, Operation, Operation>
       bulkInsertOperationCallable() {
     return bulkInsertOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable() {
+    return bulkSetLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable() {
+    return bulkSetLabelsOperationCallable;
   }
 
   @Override

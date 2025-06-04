@@ -62,21 +62,25 @@ public final class GroundingProto {
           + ">.google.cloud.discoveryengine.v1.GroundingFact.AttributesEntry\0321\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\316\001\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\372\001\n"
           + "\tFactChunk\022\022\n\n"
           + "chunk_text\030\001 \001(\t\022\016\n"
           + "\006source\030\002 \001(\t\022\r\n"
           + "\005index\030\004 \001(\005\022W\n"
           + "\017source_metadata\030\003"
-          + " \003(\0132>.google.cloud.discoveryengine.v1.FactChunk.SourceMetadataEntry\0325\n"
+          + " \003(\0132>.google.cloud.discoveryengine.v1.FactChunk.SourceMetadataEntry\022\013\n"
+          + "\003uri\030\005 \001(\t\022\r\n"
+          + "\005title\030\006 \001(\t\022\016\n"
+          + "\006domain\030\007 \001(\t\0325\n"
           + "\023SourceMetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\201\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\016GroundingProtoP\001ZMcloud.google.com/"
-          + "go/discoveryengine/apiv1/discoveryengine"
-          + "pb;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002"
-          + "\037Google.Cloud.DiscoveryEngine.V1\312\002\037Googl"
-          + "e\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "#com.google.cloud.discoveryengine.v1B\016GroundingProtoP\001ZMcloud.google."
+          + "com/go/discoveryengine/apiv1/discoveryen"
+          + "ginepb;discoveryenginepb\242\002\017DISCOVERYENGI"
+          + "NE\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037G"
+          + "oogle\\Cloud\\DiscoveryEngine\\V1\352\002\"Google:"
+          + ":Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -109,7 +113,7 @@ public final class GroundingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_FactChunk_descriptor,
             new java.lang.String[] {
-              "ChunkText", "Source", "Index", "SourceMetadata",
+              "ChunkText", "Source", "Index", "SourceMetadata", "Uri", "Title", "Domain",
             });
     internal_static_google_cloud_discoveryengine_v1_FactChunk_SourceMetadataEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1_FactChunk_descriptor

@@ -96,11 +96,15 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             ProtoRestSerializer<CreateDataStoreRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
+                                fields, "cmekConfigName", request.getCmekConfigName());
+                            serializer.putQueryParam(
                                 fields,
                                 "createAdvancedSiteSearch",
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields, "disableCmek", request.getDisableCmek());
                             serializer.putQueryParam(
                                 fields,
                                 "skipDefaultSchemaCreation",
@@ -346,6 +350,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             HttpRule.newBuilder()
                                 .setPost(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

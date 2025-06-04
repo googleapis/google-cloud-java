@@ -68,6 +68,170 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
+  private int cmekOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object cmekOptions_;
+
+  public enum CmekOptionsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CMEK_CONFIG_NAME(5),
+    DISABLE_CMEK(6),
+    CMEKOPTIONS_NOT_SET(0);
+    private final int value;
+
+    private CmekOptionsCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CmekOptionsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CmekOptionsCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return CMEK_CONFIG_NAME;
+        case 6:
+          return DISABLE_CMEK;
+        case 0:
+          return CMEKOPTIONS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CmekOptionsCase getCmekOptionsCase() {
+    return CmekOptionsCase.forNumber(cmekOptionsCase_);
+  }
+
+  public static final int CMEK_CONFIG_NAME_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the cmekConfigName field is set.
+   */
+  public boolean hasCmekConfigName() {
+    return cmekOptionsCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The cmekConfigName.
+   */
+  public java.lang.String getCmekConfigName() {
+    java.lang.Object ref = "";
+    if (cmekOptionsCase_ == 5) {
+      ref = cmekOptions_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (cmekOptionsCase_ == 5) {
+        cmekOptions_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for cmekConfigName.
+   */
+  public com.google.protobuf.ByteString getCmekConfigNameBytes() {
+    java.lang.Object ref = "";
+    if (cmekOptionsCase_ == 5) {
+      ref = cmekOptions_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (cmekOptionsCase_ == 5) {
+        cmekOptions_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISABLE_CMEK_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * DataStore without CMEK protections. If a default CmekConfig is set for
+   * the project, setting this field will override the default CmekConfig as
+   * well.
+   * </pre>
+   *
+   * <code>bool disable_cmek = 6;</code>
+   *
+   * @return Whether the disableCmek field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableCmek() {
+    return cmekOptionsCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DataStore without CMEK protections. If a default CmekConfig is set for
+   * the project, setting this field will override the default CmekConfig as
+   * well.
+   * </pre>
+   *
+   * <code>bool disable_cmek = 6;</code>
+   *
+   * @return The disableCmek.
+   */
+  @java.lang.Override
+  public boolean getDisableCmek() {
+    if (cmekOptionsCase_ == 6) {
+      return (java.lang.Boolean) cmekOptions_;
+    }
+    return false;
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -331,6 +495,12 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     if (createAdvancedSiteSearch_ != false) {
       output.writeBool(4, createAdvancedSiteSearch_);
     }
+    if (cmekOptionsCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, cmekOptions_);
+    }
+    if (cmekOptionsCase_ == 6) {
+      output.writeBool(6, (boolean) ((java.lang.Boolean) cmekOptions_));
+    }
     if (skipDefaultSchemaCreation_ != false) {
       output.writeBool(7, skipDefaultSchemaCreation_);
     }
@@ -354,6 +524,14 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
     if (createAdvancedSiteSearch_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, createAdvancedSiteSearch_);
+    }
+    if (cmekOptionsCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, cmekOptions_);
+    }
+    if (cmekOptionsCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              6, (boolean) ((java.lang.Boolean) cmekOptions_));
     }
     if (skipDefaultSchemaCreation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, skipDefaultSchemaCreation_);
@@ -382,6 +560,17 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     if (!getDataStoreId().equals(other.getDataStoreId())) return false;
     if (getCreateAdvancedSiteSearch() != other.getCreateAdvancedSiteSearch()) return false;
     if (getSkipDefaultSchemaCreation() != other.getSkipDefaultSchemaCreation()) return false;
+    if (!getCmekOptionsCase().equals(other.getCmekOptionsCase())) return false;
+    switch (cmekOptionsCase_) {
+      case 5:
+        if (!getCmekConfigName().equals(other.getCmekConfigName())) return false;
+        break;
+      case 6:
+        if (getDisableCmek() != other.getDisableCmek()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -405,6 +594,18 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCreateAdvancedSiteSearch());
     hash = (37 * hash) + SKIP_DEFAULT_SCHEMA_CREATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipDefaultSchemaCreation());
+    switch (cmekOptionsCase_) {
+      case 5:
+        hash = (37 * hash) + CMEK_CONFIG_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getCmekConfigName().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + DISABLE_CMEK_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableCmek());
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -566,6 +767,8 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       dataStoreId_ = "";
       createAdvancedSiteSearch_ = false;
       skipDefaultSchemaCreation_ = false;
+      cmekOptionsCase_ = 0;
+      cmekOptions_ = null;
       return this;
     }
 
@@ -596,30 +799,37 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.CreateDataStoreRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.dataStore_ = dataStoreBuilder_ == null ? dataStore_ : dataStoreBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.dataStoreId_ = dataStoreId_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.createAdvancedSiteSearch_ = createAdvancedSiteSearch_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.skipDefaultSchemaCreation_ = skipDefaultSchemaCreation_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.discoveryengine.v1.CreateDataStoreRequest result) {
+      result.cmekOptionsCase_ = cmekOptionsCase_;
+      result.cmekOptions_ = this.cmekOptions_;
     }
 
     @java.lang.Override
@@ -670,7 +880,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDataStore()) {
@@ -678,7 +888,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getDataStoreId().isEmpty()) {
         dataStoreId_ = other.dataStoreId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getCreateAdvancedSiteSearch() != false) {
@@ -686,6 +896,24 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       if (other.getSkipDefaultSchemaCreation() != false) {
         setSkipDefaultSchemaCreation(other.getSkipDefaultSchemaCreation());
+      }
+      switch (other.getCmekOptionsCase()) {
+        case CMEK_CONFIG_NAME:
+          {
+            cmekOptionsCase_ = 5;
+            cmekOptions_ = other.cmekOptions_;
+            onChanged();
+            break;
+          }
+        case DISABLE_CMEK:
+          {
+            setDisableCmek(other.getDisableCmek());
+            break;
+          }
+        case CMEKOPTIONS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -716,31 +944,44 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDataStoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 dataStoreId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 32:
               {
                 createAdvancedSiteSearch_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                cmekOptionsCase_ = 5;
+                cmekOptions_ = s;
+                break;
+              } // case 42
+            case 48:
+              {
+                cmekOptions_ = input.readBool();
+                cmekOptionsCase_ = 6;
+                break;
+              } // case 48
             case 56:
               {
                 skipDefaultSchemaCreation_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -760,7 +1001,241 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int cmekOptionsCase_ = 0;
+    private java.lang.Object cmekOptions_;
+
+    public CmekOptionsCase getCmekOptionsCase() {
+      return CmekOptionsCase.forNumber(cmekOptionsCase_);
+    }
+
+    public Builder clearCmekOptions() {
+      cmekOptionsCase_ = 0;
+      cmekOptions_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the cmekConfigName field is set.
+     */
+    @java.lang.Override
+    public boolean hasCmekConfigName() {
+      return cmekOptionsCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The cmekConfigName.
+     */
+    @java.lang.Override
+    public java.lang.String getCmekConfigName() {
+      java.lang.Object ref = "";
+      if (cmekOptionsCase_ == 5) {
+        ref = cmekOptions_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (cmekOptionsCase_ == 5) {
+          cmekOptions_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for cmekConfigName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCmekConfigNameBytes() {
+      java.lang.Object ref = "";
+      if (cmekOptionsCase_ == 5) {
+        ref = cmekOptions_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (cmekOptionsCase_ == 5) {
+          cmekOptions_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The cmekConfigName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekConfigName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cmekOptionsCase_ = 5;
+      cmekOptions_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCmekConfigName() {
+      if (cmekOptionsCase_ == 5) {
+        cmekOptionsCase_ = 0;
+        cmekOptions_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the CmekConfig to use for protecting this DataStore.
+     * </pre>
+     *
+     * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for cmekConfigName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekConfigNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cmekOptionsCase_ = 5;
+      cmekOptions_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DataStore without CMEK protections. If a default CmekConfig is set for
+     * the project, setting this field will override the default CmekConfig as
+     * well.
+     * </pre>
+     *
+     * <code>bool disable_cmek = 6;</code>
+     *
+     * @return Whether the disableCmek field is set.
+     */
+    public boolean hasDisableCmek() {
+      return cmekOptionsCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DataStore without CMEK protections. If a default CmekConfig is set for
+     * the project, setting this field will override the default CmekConfig as
+     * well.
+     * </pre>
+     *
+     * <code>bool disable_cmek = 6;</code>
+     *
+     * @return The disableCmek.
+     */
+    public boolean getDisableCmek() {
+      if (cmekOptionsCase_ == 6) {
+        return (java.lang.Boolean) cmekOptions_;
+      }
+      return false;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DataStore without CMEK protections. If a default CmekConfig is set for
+     * the project, setting this field will override the default CmekConfig as
+     * well.
+     * </pre>
+     *
+     * <code>bool disable_cmek = 6;</code>
+     *
+     * @param value The disableCmek to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableCmek(boolean value) {
+
+      cmekOptionsCase_ = 6;
+      cmekOptions_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DataStore without CMEK protections. If a default CmekConfig is set for
+     * the project, setting this field will override the default CmekConfig as
+     * well.
+     * </pre>
+     *
+     * <code>bool disable_cmek = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableCmek() {
+      if (cmekOptionsCase_ == 6) {
+        cmekOptionsCase_ = 0;
+        cmekOptions_ = null;
+        onChanged();
+      }
+      return this;
+    }
 
     private java.lang.Object parent_ = "";
 
@@ -836,7 +1311,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -857,7 +1332,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -883,7 +1358,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -910,7 +1385,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      * @return Whether the dataStore field is set.
      */
     public boolean hasDataStore() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -958,7 +1433,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       } else {
         dataStoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -982,7 +1457,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       } else {
         dataStoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1001,7 +1476,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeDataStore(com.google.cloud.discoveryengine.v1.DataStore value) {
       if (dataStoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && dataStore_ != null
             && dataStore_ != com.google.cloud.discoveryengine.v1.DataStore.getDefaultInstance()) {
           getDataStoreBuilder().mergeFrom(value);
@@ -1012,7 +1487,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         dataStoreBuilder_.mergeFrom(value);
       }
       if (dataStore_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1031,7 +1506,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearDataStore() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       dataStore_ = null;
       if (dataStoreBuilder_ != null) {
         dataStoreBuilder_.dispose();
@@ -1054,7 +1529,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.discoveryengine.v1.DataStore.Builder getDataStoreBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDataStoreFieldBuilder().getBuilder();
     }
@@ -1196,7 +1671,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       dataStoreId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1221,7 +1696,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearDataStoreId() {
       dataStoreId_ = getDefaultInstance().getDataStoreId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1251,7 +1726,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       dataStoreId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1297,7 +1772,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public Builder setCreateAdvancedSiteSearch(boolean value) {
 
       createAdvancedSiteSearch_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1318,7 +1793,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCreateAdvancedSiteSearch() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       createAdvancedSiteSearch_ = false;
       onChanged();
       return this;
@@ -1371,7 +1846,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public Builder setSkipDefaultSchemaCreation(boolean value) {
 
       skipDefaultSchemaCreation_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1395,7 +1870,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSkipDefaultSchemaCreation() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       skipDefaultSchemaCreation_ = false;
       onChanged();
       return this;

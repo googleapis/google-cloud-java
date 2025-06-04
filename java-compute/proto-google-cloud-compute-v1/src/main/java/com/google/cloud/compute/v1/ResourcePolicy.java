@@ -1072,6 +1072,48 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int WORKLOAD_POLICY_FIELD_NUMBER = 114721530;
+  private com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workloadPolicy_;
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   *
+   * @return Whether the workloadPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadPolicy() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   *
+   * @return The workloadPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy getWorkloadPolicy() {
+    return workloadPolicy_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDefaultInstance()
+        : workloadPolicy_;
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder
+      getWorkloadPolicyOrBuilder() {
+    return workloadPolicy_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDefaultInstance()
+        : workloadPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1100,6 +1142,9 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(114721530, getWorkloadPolicy());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -1151,6 +1196,10 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(114721530, getWorkloadPolicy());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -1252,6 +1301,10 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
     }
+    if (hasWorkloadPolicy() != other.hasWorkloadPolicy()) return false;
+    if (hasWorkloadPolicy()) {
+      if (!getWorkloadPolicy().equals(other.getWorkloadPolicy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1314,6 +1367,10 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+    }
+    if (hasWorkloadPolicy()) {
+      hash = (37 * hash) + WORKLOAD_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadPolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1461,6 +1518,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         getInstanceSchedulePolicyFieldBuilder();
         getResourceStatusFieldBuilder();
         getSnapshotSchedulePolicyFieldBuilder();
+        getWorkloadPolicyFieldBuilder();
       }
     }
 
@@ -1501,6 +1559,11 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         snapshotSchedulePolicyBuilder_ = null;
       }
       status_ = "";
+      workloadPolicy_ = null;
+      if (workloadPolicyBuilder_ != null) {
+        workloadPolicyBuilder_.dispose();
+        workloadPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -1603,6 +1666,11 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         result.status_ = status_;
         to_bitField0_ |= 0x00001000;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.workloadPolicy_ =
+            workloadPolicyBuilder_ == null ? workloadPolicy_ : workloadPolicyBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1704,6 +1772,9 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasWorkloadPolicy()) {
+        mergeWorkloadPolicy(other.getWorkloadPolicy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1761,6 +1832,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 244202930
+            case 917772242:
+              {
+                input.readMessage(getWorkloadPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 917772242
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
@@ -3821,6 +3898,170 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workloadPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy,
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder,
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder>
+        workloadPolicyBuilder_;
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     *
+     * @return Whether the workloadPolicy field is set.
+     */
+    public boolean hasWorkloadPolicy() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     *
+     * @return The workloadPolicy.
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy getWorkloadPolicy() {
+      if (workloadPolicyBuilder_ == null) {
+        return workloadPolicy_ == null
+            ? com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDefaultInstance()
+            : workloadPolicy_;
+      } else {
+        return workloadPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public Builder setWorkloadPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy value) {
+      if (workloadPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadPolicy_ = value;
+      } else {
+        workloadPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public Builder setWorkloadPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder builderForValue) {
+      if (workloadPolicyBuilder_ == null) {
+        workloadPolicy_ = builderForValue.build();
+      } else {
+        workloadPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public Builder mergeWorkloadPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy value) {
+      if (workloadPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && workloadPolicy_ != null
+            && workloadPolicy_
+                != com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDefaultInstance()) {
+          getWorkloadPolicyBuilder().mergeFrom(value);
+        } else {
+          workloadPolicy_ = value;
+        }
+      } else {
+        workloadPolicyBuilder_.mergeFrom(value);
+      }
+      if (workloadPolicy_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public Builder clearWorkloadPolicy() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      workloadPolicy_ = null;
+      if (workloadPolicyBuilder_ != null) {
+        workloadPolicyBuilder_.dispose();
+        workloadPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder
+        getWorkloadPolicyBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getWorkloadPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder
+        getWorkloadPolicyOrBuilder() {
+      if (workloadPolicyBuilder_ != null) {
+        return workloadPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadPolicy_ == null
+            ? com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDefaultInstance()
+            : workloadPolicy_;
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy,
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder,
+            com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder>
+        getWorkloadPolicyFieldBuilder() {
+      if (workloadPolicyBuilder_ == null) {
+        workloadPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy,
+                com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder,
+                com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder>(
+                getWorkloadPolicy(), getParentForChildren(), isClean());
+        workloadPolicy_ = null;
+      }
+      return workloadPolicyBuilder_;
     }
 
     @java.lang.Override

@@ -57,4 +57,30 @@ public interface CheckGroundingSpecOrBuilder
    * @return The citationThreshold.
    */
   double getCitationThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * The control flag that enables claim-level grounding score in the response.
+   * </pre>
+   *
+   * <code>optional bool enable_claim_level_score = 4;</code>
+   *
+   * @return Whether the enableClaimLevelScore field is set.
+   */
+  boolean hasEnableClaimLevelScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * The control flag that enables claim-level grounding score in the response.
+   * </pre>
+   *
+   * <code>optional bool enable_claim_level_score = 4;</code>
+   *
+   * @return The enableClaimLevelScore.
+   */
+  boolean getEnableClaimLevelScore();
 }
