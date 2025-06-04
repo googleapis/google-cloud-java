@@ -1,6 +1,6 @@
-gapic_generator_version: 2.58.0
-googleapis_commitish: fa3a7b6b12a521d51592417c1dca174dbb17cfe2
-libraries_bom_version: 26.60.0
+gapic_generator_version: 2.59.0
+googleapis_commitish: f1859b90227eb09ecd2fa85c96e89b60dbf688b5
+libraries_bom_version: 26.61.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -700,6 +700,7 @@ libraries:
   api_description: Help analytics teams manage data inside BigQuery using SQL.
   GAPICs:
   - proto_path: google/cloud/dataform/v1beta1
+  - proto_path: google/cloud/dataform/v1
 
 - api_shortname: datalabeling
   name_pretty: Data Labeling
@@ -1549,6 +1550,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/modelarmor/v1
+  - proto_path: google/cloud/modelarmor/v1beta
   requires_billing: true
 - api_shortname: monitoring
   name_pretty: Stackdriver Monitoring

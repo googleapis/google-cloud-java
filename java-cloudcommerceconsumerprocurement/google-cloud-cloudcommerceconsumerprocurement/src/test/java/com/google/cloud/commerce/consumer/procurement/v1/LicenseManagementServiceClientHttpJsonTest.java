@@ -137,7 +137,7 @@ public class LicenseManagementServiceClientHttpJsonTest {
 
     LicensePool licensePool =
         LicensePool.newBuilder()
-            .setName("billingAccounts/billingAccount-9/orders/order-9/licensePool/licensePoo-9")
+            .setName("billingAccounts/billingAccount-2660/orders/order-2660/licensePool")
             .setLicenseAssignmentProtocol(AssignmentProtocol.newBuilder().build())
             .setAvailableLicenseCount(387091611)
             .setTotalLicenseCount(-834147882)
@@ -172,7 +172,7 @@ public class LicenseManagementServiceClientHttpJsonTest {
     try {
       LicensePool licensePool =
           LicensePool.newBuilder()
-              .setName("billingAccounts/billingAccount-9/orders/order-9/licensePool/licensePoo-9")
+              .setName("billingAccounts/billingAccount-2660/orders/order-2660/licensePool")
               .setLicenseAssignmentProtocol(AssignmentProtocol.newBuilder().build())
               .setAvailableLicenseCount(387091611)
               .setTotalLicenseCount(-834147882)

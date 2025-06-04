@@ -166,6 +166,7 @@ public class InterconnectsClientTest {
             .setGoogleReferenceId("googleReferenceId600178125")
             .setId(3355)
             .addAllInterconnectAttachments(new ArrayList<String>())
+            .addAllInterconnectGroups(new ArrayList<String>())
             .setInterconnectType("interconnectType1730818280")
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")

@@ -221,6 +221,9 @@ public class ForwardingRulesClientTest {
             .setBaseForwardingRule("baseForwardingRule124102858")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setExternalManagedBackendBucketMigrationState(
+                "externalManagedBackendBucketMigrationState1136502957")
+            .setExternalManagedBackendBucketMigrationTestingPercentage(1716289328)
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setIpCollection("ipCollection1525846821")
@@ -241,6 +244,7 @@ public class ForwardingRulesClientTest {
             .setPscConnectionStatus("pscConnectionStatus2068878160")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSelfLinkWithId("selfLinkWithId-776809081")
             .addAllServiceDirectoryRegistrations(
                 new ArrayList<ForwardingRuleServiceDirectoryRegistration>())
             .setServiceLabel("serviceLabel341946687")

@@ -19,6 +19,24 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= CmekConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for managing CMEK related tasks
+ *
+ * <p>Sample for CmekConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CmekConfigServiceClient cmekConfigServiceClient = CmekConfigServiceClient.create()) {
+ *   CmekConfigName name = CmekConfigName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
+ *   CmekConfig response = cmekConfigServiceClient.getCmekConfig(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CompletionServiceClient =======================
  *
  * <p>Service Description: Service for Auto-Completion.
@@ -179,6 +197,29 @@
  *           .build();
  *   GenerateGroundedContentResponse response =
  *       groundedGenerationServiceClient.generateGroundedContent(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= IdentityMappingStoreServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Identity Mapping Stores.
+ *
+ * <p>Sample for IdentityMappingStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (IdentityMappingStoreServiceClient identityMappingStoreServiceClient =
+ *     IdentityMappingStoreServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   IdentityMappingStore identityMappingStore = IdentityMappingStore.newBuilder().build();
+ *   String identityMappingStoreId = "identityMappingStoreId677904780";
+ *   IdentityMappingStore response =
+ *       identityMappingStoreServiceClient.createIdentityMappingStore(
+ *           parent, identityMappingStore, identityMappingStoreId);
  * }
  * }</pre>
  *
@@ -430,6 +471,26 @@
  *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= UserLicenseServiceClient =======================
+ *
+ * <p>Service Description: Service for managing User Licenses.
+ *
+ * <p>Sample for UserLicenseServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+ *   UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+ *   for (UserLicense element : userLicenseServiceClient.listUserLicenses(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  */

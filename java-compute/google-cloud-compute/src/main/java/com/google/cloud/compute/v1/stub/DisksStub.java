@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
 import com.google.cloud.compute.v1.BulkInsertDiskRequest;
+import com.google.cloud.compute.v1.BulkSetLabelsDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DeleteDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -83,6 +84,15 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable() {
     throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
+  }
+
+  public OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkSetLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkSetLabelsCallable()");
   }
 
   public OperationCallable<CreateSnapshotDiskRequest, Operation, Operation>

@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.modelarmor.v1beta",
+  "libraryPackage": "com.google.cloud.modelarmor.v1beta",
+  "services": {
+    "ModelArmor": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelArmorClient",
+          "rpcs": {
+            "CreateTemplate": {
+              "methods": ["createTemplate", "createTemplate", "createTemplate", "createTemplateCallable"]
+            },
+            "DeleteTemplate": {
+              "methods": ["deleteTemplate", "deleteTemplate", "deleteTemplate", "deleteTemplateCallable"]
+            },
+            "GetFloorSetting": {
+              "methods": ["getFloorSetting", "getFloorSetting", "getFloorSetting", "getFloorSettingCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTemplate": {
+              "methods": ["getTemplate", "getTemplate", "getTemplate", "getTemplateCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTemplates": {
+              "methods": ["listTemplates", "listTemplates", "listTemplates", "listTemplatesPagedCallable", "listTemplatesCallable"]
+            },
+            "SanitizeModelResponse": {
+              "methods": ["sanitizeModelResponse", "sanitizeModelResponseCallable"]
+            },
+            "SanitizeUserPrompt": {
+              "methods": ["sanitizeUserPrompt", "sanitizeUserPromptCallable"]
+            },
+            "UpdateFloorSetting": {
+              "methods": ["updateFloorSetting", "updateFloorSetting", "updateFloorSettingCallable"]
+            },
+            "UpdateTemplate": {
+              "methods": ["updateTemplate", "updateTemplate", "updateTemplateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -314,6 +314,7 @@ public class SubnetworksClientTest {
             .setLogConfig(SubnetworkLogConfig.newBuilder().build())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setParams(SubnetworkParams.newBuilder().build())
             .setPrivateIpGoogleAccess(true)
             .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setPurpose("purpose-220463842")
@@ -324,6 +325,8 @@ public class SubnetworksClientTest {
             .setSelfLink("selfLink1191800166")
             .setStackType("stackType1727939042")
             .setState("state109757585")
+            .addAllSystemReservedExternalIpv6Ranges(new ArrayList<String>())
+            .addAllSystemReservedInternalIpv6Ranges(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 

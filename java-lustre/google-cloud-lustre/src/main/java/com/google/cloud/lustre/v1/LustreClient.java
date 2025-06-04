@@ -1114,7 +1114,8 @@ public class LustreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource.
+   * @param name Required. The name of the Managed Lustre instance in the format
+   *     `projects/{project}/locations/{location}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataMetadata> importDataAsync(
@@ -1142,7 +1143,8 @@ public class LustreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource.
+   * @param name Required. The name of the Managed Lustre instance in the format
+   *     `projects/{project}/locations/{location}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataMetadata> importDataAsync(
