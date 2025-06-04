@@ -94,6 +94,7 @@ public class GrantViewAccessIT {
     DeleteTable.deleteTable(viewDatasetName, viewName);
     DeleteTable.deleteTable(viewDatasetName, tableName);
     DeleteDataset.deleteDataset(PROJECT_ID, datasetName);
+    DeleteDataset.deleteDataset(PROJECT_ID, viewDatasetName);
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);

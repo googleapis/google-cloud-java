@@ -441,9 +441,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           && createException.getCause() != null
           && createException.getCause().getMessage() != null) {
 
-        /*GoogleJsonResponseException createExceptionCause =
-        (GoogleJsonResponseException) createException.getCause();*/
-
         Pattern pattern = Pattern.compile(".*Already.*Exists:.*Job.*", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(createException.getCause().getMessage());
 

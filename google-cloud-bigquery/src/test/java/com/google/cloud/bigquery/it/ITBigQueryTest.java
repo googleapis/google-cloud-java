@@ -1334,7 +1334,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testUpdateDatabaseWithAccessPolicyVersion() throws IOException {
+  public void testUpdateDatasetWithAccessPolicyVersion() throws IOException {
     String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
     ServiceAccountCredentials credentials =
         (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
@@ -1827,7 +1827,7 @@ public class ITBigQueryTest {
   }
 
   @Test(expected = BigQueryException.class)
-  public void testCreateDatabaseWithInvalidAccessPolicyVersion() throws IOException {
+  public void testCreateDatasetWithInvalidAccessPolicyVersion() throws IOException {
     String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
     ServiceAccountCredentials credentials =
         (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
@@ -4040,8 +4040,7 @@ public class ITBigQueryTest {
     assertEquals(300000, cnt); // total 300000 rows should be read
   }
 
-  // @Test - Temporarily disabling till https://github.com/googleapis/gax-java/issues/1712 or
-  // b/235591056 are resolved
+  @Test
   public void testReadAPIIterationAndOrder()
       throws SQLException { // use read API to read 300K records and check the order
     String query =
@@ -4240,8 +4239,7 @@ public class ITBigQueryTest {
     assertTrue(connection.close());
   }
 
-  // @Test - Temporarily disabling till https://github.com/googleapis/gax-java/issues/1712 or
-  // b/235591056 are resolved
+  @Test
   public void testReadAPIConnectionMultiClose()
       throws
           SQLException { // use read API to read 300K records, then closes the connection. This test

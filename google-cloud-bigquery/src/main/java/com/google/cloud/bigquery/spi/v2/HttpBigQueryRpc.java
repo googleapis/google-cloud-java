@@ -208,10 +208,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .insert(dataset.getDatasetReference().getProjectId(), dataset)
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
-    for (Map.Entry<Option, ?> entry : options.entrySet()) {
-      if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
-        bqCreateRequest.setAccessPolicyVersion((Integer) entry.getValue());
-      }
+    if (options.containsKey(Option.ACCESS_POLICY_VERSION)) {
+      bqCreateRequest.setAccessPolicyVersion((Integer) options.get(Option.ACCESS_POLICY_VERSION));
     }
     return bqCreateRequest.execute();
   }

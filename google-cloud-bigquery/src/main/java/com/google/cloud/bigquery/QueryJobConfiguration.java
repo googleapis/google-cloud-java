@@ -187,7 +187,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this();
       JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
-      // Allows to get undeclaredqueryparameters in jobstatistics2
+      // Allows to get undeclared query parameters in jobstatistics
       if (queryConfigurationPb.getQueryParameters() == null
           && queryConfigurationPb.getParameterMode() != null) {
         parameterMode = queryConfigurationPb.getParameterMode();
