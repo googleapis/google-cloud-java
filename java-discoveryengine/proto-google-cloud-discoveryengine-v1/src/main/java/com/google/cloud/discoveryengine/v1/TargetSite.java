@@ -294,6 +294,26 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     DELETING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The target site change is pending but cancellable.
+     * </pre>
+     *
+     * <code>CANCELLABLE = 5;</code>
+     */
+    CANCELLABLE(5),
+    /**
+     *
+     *
+     * <pre>
+     * The target site change is cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 6;</code>
+     */
+    CANCELLED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -356,6 +376,28 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int DELETING_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * The target site change is pending but cancellable.
+     * </pre>
+     *
+     * <code>CANCELLABLE = 5;</code>
+     */
+    public static final int CANCELLABLE_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * The target site change is cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 6;</code>
+     */
+    public static final int CANCELLED_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -390,6 +432,10 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           return SUCCEEDED;
         case 4:
           return DELETING;
+        case 5:
+          return CANCELLABLE;
+        case 6:
+          return CANCELLED;
         default:
           return null;
       }

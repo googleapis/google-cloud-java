@@ -1570,6 +1570,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= ReservationSubBlocksClient =======================
+ *
+ * <p>Service Description: The ReservationSubBlocks API.
+ *
+ * <p>Sample for ReservationSubBlocksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReservationSubBlocksClient reservationSubBlocksClient =
+ *     ReservationSubBlocksClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String parentName = "parentName-244870571";
+ *   String reservationSubBlock = "reservationSubBlock-1816847847";
+ *   ReservationSubBlocksGetResponse response =
+ *       reservationSubBlocksClient.get(project, zone, parentName, reservationSubBlock);
+ * }
+ * }</pre>
+ *
  * <p>======================= ReservationsClient =======================
  *
  * <p>Service Description: The Reservations API.

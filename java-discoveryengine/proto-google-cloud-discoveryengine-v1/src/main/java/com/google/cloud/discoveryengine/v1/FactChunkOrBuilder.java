@@ -157,4 +157,82 @@ public interface FactChunkOrBuilder
    * <code>map&lt;string, string&gt; source_metadata = 3;</code>
    */
   java.lang.String getSourceMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the source.
+   * </pre>
+   *
+   * <code>string uri = 5;</code>
+   *
+   * @return The uri.
+   */
+  java.lang.String getUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the source.
+   * </pre>
+   *
+   * <code>string uri = 5;</code>
+   *
+   * @return The bytes for uri.
+   */
+  com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The title of the source.
+   * </pre>
+   *
+   * <code>string title = 6;</code>
+   *
+   * @return The title.
+   */
+  java.lang.String getTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The title of the source.
+   * </pre>
+   *
+   * <code>string title = 6;</code>
+   *
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString getTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The domain of the source.
+   * </pre>
+   *
+   * <code>string domain = 7;</code>
+   *
+   * @return The domain.
+   */
+  java.lang.String getDomain();
+
+  /**
+   *
+   *
+   * <pre>
+   * The domain of the source.
+   * </pre>
+   *
+   * <code>string domain = 7;</code>
+   *
+   * @return The bytes for domain.
+   */
+  com.google.protobuf.ByteString getDomainBytes();
 }

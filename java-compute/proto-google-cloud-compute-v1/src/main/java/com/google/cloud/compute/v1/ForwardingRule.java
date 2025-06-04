@@ -62,6 +62,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     pscConnectionStatus_ = "";
     region_ = "";
     selfLink_ = "";
+    selfLinkWithId_ = "";
     serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
     serviceLabel_ = "";
     serviceName_ = "";
@@ -1142,6 +1143,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int bitField1_;
   public static final int I_P_ADDRESS_FIELD_NUMBER = 42976943;
 
   @SuppressWarnings("serial")
@@ -3075,6 +3077,75 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SELF_LINK_WITH_ID_FIELD_NUMBER = 44520962;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLinkWithId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLinkWithId() {
+    return ((bitField0_ & 0x10000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  @java.lang.Override
+  public java.lang.String getSelfLinkWithId() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      selfLinkWithId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      selfLinkWithId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SERVICE_DIRECTORY_REGISTRATIONS_FIELD_NUMBER = 223549694;
 
   @SuppressWarnings("serial")
@@ -3184,7 +3255,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServiceLabel() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -3253,7 +3324,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServiceName() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
 
   /**
@@ -3390,7 +3461,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
 
   /**
@@ -3459,7 +3530,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTarget() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
 
   /**
@@ -3539,6 +3610,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42976943, iPAddress_);
     }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
+    }
     if (((bitField0_ & 0x00400000) != 0)) {
       output.writeBool(64546991, noAutomateDnsZone_);
     }
@@ -3571,7 +3645,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
@@ -3598,16 +3672,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -3661,6 +3735,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42976943, iPAddress_);
     }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
+    }
     if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(64546991, noAutomateDnsZone_);
     }
@@ -3708,7 +3785,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
@@ -3738,17 +3815,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -3925,6 +4002,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasSelfLinkWithId() != other.hasSelfLinkWithId()) return false;
+    if (hasSelfLinkWithId()) {
+      if (!getSelfLinkWithId().equals(other.getSelfLinkWithId())) return false;
+    }
     if (!getServiceDirectoryRegistrationsList()
         .equals(other.getServiceDirectoryRegistrationsList())) return false;
     if (hasServiceLabel() != other.hasServiceLabel()) return false;
@@ -4082,6 +4163,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSelfLinkWithId()) {
+      hash = (37 * hash) + SELF_LINK_WITH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLinkWithId().hashCode();
     }
     if (getServiceDirectoryRegistrationsCount() > 0) {
       hash = (37 * hash) + SERVICE_DIRECTORY_REGISTRATIONS_FIELD_NUMBER;
@@ -4307,13 +4392,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       pscConnectionStatus_ = "";
       region_ = "";
       selfLink_ = "";
+      selfLinkWithId_ = "";
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
       } else {
         serviceDirectoryRegistrations_ = null;
         serviceDirectoryRegistrationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       serviceLabel_ = "";
       serviceName_ = "";
       sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -4368,10 +4454,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
       if (serviceDirectoryRegistrationsBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)) {
+        if (((bitField1_ & 0x00000001) != 0)) {
           serviceDirectoryRegistrations_ =
               java.util.Collections.unmodifiableList(serviceDirectoryRegistrations_);
-          bitField0_ = (bitField0_ & ~0x80000000);
+          bitField1_ = (bitField1_ & ~0x00000001);
         }
         result.serviceDirectoryRegistrations_ = serviceDirectoryRegistrations_;
       } else {
@@ -4504,33 +4590,39 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x08000000;
       }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.selfLinkWithId_ = selfLinkWithId_;
+        to_bitField0_ |= 0x10000000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartial1(com.google.cloud.compute.v1.ForwardingRule result) {
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.serviceLabel_ = serviceLabel_;
-        to_bitField0_ |= 0x10000000;
-      }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.serviceName_ = serviceName_;
+        result.serviceLabel_ = serviceLabel_;
         to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.serviceName_ = serviceName_;
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         sourceIpRanges_.makeImmutable();
         result.sourceIpRanges_ = sourceIpRanges_;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.subnetwork_ = subnetwork_;
-        to_bitField0_ |= 0x40000000;
-      }
       if (((from_bitField1_ & 0x00000010) != 0)) {
-        result.target_ = target_;
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x80000000;
       }
+      int to_bitField1_ = 0;
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.target_ = target_;
+        to_bitField1_ |= 0x00000001;
+      }
       result.bitField0_ |= to_bitField0_;
+      result.bitField1_ |= to_bitField1_;
     }
 
     @java.lang.Override
@@ -4743,11 +4835,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x40000000;
         onChanged();
       }
+      if (other.hasSelfLinkWithId()) {
+        selfLinkWithId_ = other.selfLinkWithId_;
+        bitField0_ |= 0x80000000;
+        onChanged();
+      }
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         if (!other.serviceDirectoryRegistrations_.isEmpty()) {
           if (serviceDirectoryRegistrations_.isEmpty()) {
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField1_ = (bitField1_ & ~0x00000001);
           } else {
             ensureServiceDirectoryRegistrationsIsMutable();
             serviceDirectoryRegistrations_.addAll(other.serviceDirectoryRegistrations_);
@@ -4760,7 +4857,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             serviceDirectoryRegistrationsBuilder_.dispose();
             serviceDirectoryRegistrationsBuilder_ = null;
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField1_ = (bitField1_ & ~0x00000001);
             serviceDirectoryRegistrationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceDirectoryRegistrationsFieldBuilder()
@@ -4773,18 +4870,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasServiceLabel()) {
         serviceLabel_ = other.serviceLabel_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (other.hasServiceName()) {
         serviceName_ = other.serviceName_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       if (!other.sourceIpRanges_.isEmpty()) {
         if (sourceIpRanges_.isEmpty()) {
           sourceIpRanges_ = other.sourceIpRanges_;
-          bitField1_ |= 0x00000004;
+          bitField1_ |= 0x00000008;
         } else {
           ensureSourceIpRangesIsMutable();
           sourceIpRanges_.addAll(other.sourceIpRanges_);
@@ -4793,12 +4890,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTarget()) {
         target_ = other.target_;
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4857,6 +4954,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 343815546
+            case 356167698:
+              {
+                selfLinkWithId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 356167698
             case 516375928:
               {
                 noAutomateDnsZone_ = input.readBool();
@@ -4922,7 +5025,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             case 1542687882:
               {
                 target_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 1542687882
             case 1740144634:
@@ -4985,13 +5088,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000010;
                 break;
               } // case -1832345742
             case -1415926102:
               {
                 serviceName_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case -1415926102
             case -1383845342:
@@ -5003,7 +5106,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             case -958896302:
               {
                 serviceLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -958896302
             case -911466526:
@@ -8962,16 +9065,142 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object selfLinkWithId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return Whether the selfLinkWithId field is set.
+     */
+    public boolean hasSelfLinkWithId() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The selfLinkWithId.
+     */
+    public java.lang.String getSelfLinkWithId() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        selfLinkWithId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The bytes for selfLinkWithId.
+     */
+    public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        selfLinkWithId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      selfLinkWithId_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSelfLinkWithId() {
+      selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
+      bitField0_ = (bitField0_ & ~0x80000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The bytes for selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      selfLinkWithId_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
 
     private void ensureServiceDirectoryRegistrationsIsMutable() {
-      if (!((bitField0_ & 0x80000000) != 0)) {
+      if (!((bitField1_ & 0x00000001) != 0)) {
         serviceDirectoryRegistrations_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>(
                 serviceDirectoryRegistrations_);
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
       }
     }
 
@@ -9232,7 +9461,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceDirectoryRegistrations() {
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x00000001);
         onChanged();
       } else {
         serviceDirectoryRegistrationsBuilder_.clear();
@@ -9388,7 +9617,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration.Builder,
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistrationOrBuilder>(
                 serviceDirectoryRegistrations_,
-                ((bitField0_ & 0x80000000) != 0),
+                ((bitField1_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         serviceDirectoryRegistrations_ = null;
@@ -9410,7 +9639,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceLabel field is set.
      */
     public boolean hasServiceLabel() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -9476,7 +9705,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceLabel_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9494,7 +9723,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceLabel() {
       serviceLabel_ = getDefaultInstance().getServiceLabel();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9517,7 +9746,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceLabel_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9536,7 +9765,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceName field is set.
      */
     public boolean hasServiceName() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -9602,7 +9831,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceName_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9620,7 +9849,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceName() {
       serviceName_ = getDefaultInstance().getServiceName();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -9643,7 +9872,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceName_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9655,7 +9884,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (!sourceIpRanges_.isModifiable()) {
         sourceIpRanges_ = new com.google.protobuf.LazyStringArrayList(sourceIpRanges_);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
     }
 
     /**
@@ -9740,7 +9969,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.set(index, value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9763,7 +9992,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9783,7 +10012,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSourceIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSourceIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceIpRanges_);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9801,7 +10030,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceIpRanges() {
       sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -9826,7 +10055,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9845,7 +10074,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -9911,7 +10140,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9929,7 +10158,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -9952,7 +10181,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9971,7 +10200,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
 
     /**
@@ -10037,7 +10266,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       target_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10055,7 +10284,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTarget() {
       target_ = getDefaultInstance().getTarget();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -10078,7 +10307,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       target_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }

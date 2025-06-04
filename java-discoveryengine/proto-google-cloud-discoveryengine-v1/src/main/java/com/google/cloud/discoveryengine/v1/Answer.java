@@ -410,6 +410,34 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_GROUNDED_ANSWER = 9;</code>
      */
     LOW_GROUNDED_ANSWER(9),
+    /**
+     *
+     *
+     * <pre>
+     * The user defined query classification ignored case.
+     *
+     * Google skips the answer if the query is classified as a user defined
+     * query classification.
+     * </pre>
+     *
+     * <code>USER_DEFINED_CLASSIFICATION_QUERY_IGNORED = 10;</code>
+     */
+    USER_DEFINED_CLASSIFICATION_QUERY_IGNORED(10),
+    /**
+     *
+     *
+     * <pre>
+     * The unhelpful answer case.
+     *
+     * Google skips the answer if the answer is not helpful. This can be due to
+     * a variety of factors, including but not limited to: the query is not
+     * answerable, the answer is not relevant to the query, or the answer is
+     * not well-formatted.
+     * </pre>
+     *
+     * <code>UNHELPFUL_ANSWER = 11;</code>
+     */
+    UNHELPFUL_ANSWER(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -545,6 +573,36 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int LOW_GROUNDED_ANSWER_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * The user defined query classification ignored case.
+     *
+     * Google skips the answer if the query is classified as a user defined
+     * query classification.
+     * </pre>
+     *
+     * <code>USER_DEFINED_CLASSIFICATION_QUERY_IGNORED = 10;</code>
+     */
+    public static final int USER_DEFINED_CLASSIFICATION_QUERY_IGNORED_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unhelpful answer case.
+     *
+     * Google skips the answer if the answer is not helpful. This can be due to
+     * a variety of factors, including but not limited to: the query is not
+     * answerable, the answer is not relevant to the query, or the answer is
+     * not well-formatted.
+     * </pre>
+     *
+     * <code>UNHELPFUL_ANSWER = 11;</code>
+     */
+    public static final int UNHELPFUL_ANSWER_VALUE = 11;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -589,6 +647,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return NON_ANSWER_SEEKING_QUERY_IGNORED_V2;
         case 9:
           return LOW_GROUNDED_ANSWER;
+        case 10:
+          return USER_DEFINED_CLASSIFICATION_QUERY_IGNORED;
+        case 11:
+          return UNHELPFUL_ANSWER;
         default:
           return null;
       }
@@ -24187,6 +24249,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
          */
         NON_ANSWER_SEEKING_QUERY_V2(4),
+        /**
+         *
+         *
+         * <pre>
+         * User defined query classification type.
+         * </pre>
+         *
+         * <code>USER_DEFINED_CLASSIFICATION_QUERY = 5;</code>
+         */
+        USER_DEFINED_CLASSIFICATION_QUERY(5),
         UNRECOGNIZED(-1),
         ;
 
@@ -24245,6 +24317,17 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          */
         public static final int NON_ANSWER_SEEKING_QUERY_V2_VALUE = 4;
 
+        /**
+         *
+         *
+         * <pre>
+         * User defined query classification type.
+         * </pre>
+         *
+         * <code>USER_DEFINED_CLASSIFICATION_QUERY = 5;</code>
+         */
+        public static final int USER_DEFINED_CLASSIFICATION_QUERY_VALUE = 5;
+
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
             throw new java.lang.IllegalArgumentException(
@@ -24279,6 +24362,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               return JAIL_BREAKING_QUERY;
             case 4:
               return NON_ANSWER_SEEKING_QUERY_V2;
+            case 5:
+              return USER_DEFINED_CLASSIFICATION_QUERY;
             default:
               return null;
           }

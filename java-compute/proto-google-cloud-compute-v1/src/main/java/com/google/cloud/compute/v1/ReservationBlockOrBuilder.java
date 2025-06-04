@@ -310,6 +310,58 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+   *
+   * @return Whether the reservationSubBlockCount field is set.
+   */
+  boolean hasReservationSubBlockCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+   *
+   * @return The reservationSubBlockCount.
+   */
+  int getReservationSubBlockCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+   *
+   * @return Whether the reservationSubBlockInUseCount field is set.
+   */
+  boolean hasReservationSubBlockInUseCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+   *
+   * @return The reservationSubBlockInUseCount.
+   */
+  int getReservationSubBlockInUseCount();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *

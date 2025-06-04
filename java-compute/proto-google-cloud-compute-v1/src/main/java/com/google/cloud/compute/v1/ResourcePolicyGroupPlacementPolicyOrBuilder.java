@@ -96,6 +96,45 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    *
    * <pre>
+   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * </pre>
+   *
+   * <code>optional string gpu_topology = 247948450;</code>
+   *
+   * @return Whether the gpuTopology field is set.
+   */
+  boolean hasGpuTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * </pre>
+   *
+   * <code>optional string gpu_topology = 247948450;</code>
+   *
+   * @return The gpuTopology.
+   */
+  java.lang.String getGpuTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * </pre>
+   *
+   * <code>optional string gpu_topology = 247948450;</code>
+   *
+   * @return The bytes for gpuTopology.
+   */
+  com.google.protobuf.ByteString getGpuTopologyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
    * </pre>
    *

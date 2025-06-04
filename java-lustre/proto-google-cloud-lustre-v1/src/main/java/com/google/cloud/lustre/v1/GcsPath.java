@@ -23,7 +23,7 @@ package com.google.cloud.lustre.v1;
  *
  *
  * <pre>
- * Cloud Storage as the source of a data transfer.
+ * Specifies a Cloud Storage bucket and, optionally, a path inside the bucket.
  * </pre>
  *
  * Protobuf type {@code google.cloud.lustre.v1.GcsPath}
@@ -73,8 +73,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URI to a Cloud Storage path in the format:
-   * `gs://&lt;bucket_name&gt;`.
+   * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+   * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,8 +100,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URI to a Cloud Storage path in the format:
-   * `gs://&lt;bucket_name&gt;`.
+   * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+   * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -281,7 +285,7 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage as the source of a data transfer.
+   * Specifies a Cloud Storage bucket and, optionally, a path inside the bucket.
    * </pre>
    *
    * Protobuf type {@code google.cloud.lustre.v1.GcsPath}
@@ -464,8 +468,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI to a Cloud Storage path in the format:
-     * `gs://&lt;bucket_name&gt;`.
+     * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+     * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -488,8 +494,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI to a Cloud Storage path in the format:
-     * `gs://&lt;bucket_name&gt;`.
+     * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+     * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -512,8 +520,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI to a Cloud Storage path in the format:
-     * `gs://&lt;bucket_name&gt;`.
+     * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+     * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -535,8 +545,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI to a Cloud Storage path in the format:
-     * `gs://&lt;bucket_name&gt;`.
+     * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+     * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -554,8 +566,10 @@ public final class GcsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI to a Cloud Storage path in the format:
-     * `gs://&lt;bucket_name&gt;`.
+     * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+     * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

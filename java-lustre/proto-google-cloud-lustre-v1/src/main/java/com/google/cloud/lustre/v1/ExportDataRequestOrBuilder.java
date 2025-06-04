@@ -28,7 +28,8 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -41,7 +42,8 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -54,7 +56,8 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -65,7 +68,10 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -78,7 +84,10 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -91,7 +100,10 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -102,7 +114,8 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -117,7 +130,8 @@ public interface ExportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>

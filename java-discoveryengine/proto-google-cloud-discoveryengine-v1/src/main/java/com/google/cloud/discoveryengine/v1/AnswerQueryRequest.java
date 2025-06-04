@@ -23411,6 +23411,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
          */
         NON_ANSWER_SEEKING_QUERY_V2(4),
+        /**
+         *
+         *
+         * <pre>
+         * User defined query classification type.
+         * </pre>
+         *
+         * <code>USER_DEFINED_CLASSIFICATION_QUERY = 5;</code>
+         */
+        USER_DEFINED_CLASSIFICATION_QUERY(5),
         UNRECOGNIZED(-1),
         ;
 
@@ -23469,6 +23479,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          */
         public static final int NON_ANSWER_SEEKING_QUERY_V2_VALUE = 4;
 
+        /**
+         *
+         *
+         * <pre>
+         * User defined query classification type.
+         * </pre>
+         *
+         * <code>USER_DEFINED_CLASSIFICATION_QUERY = 5;</code>
+         */
+        public static final int USER_DEFINED_CLASSIFICATION_QUERY_VALUE = 5;
+
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
             throw new java.lang.IllegalArgumentException(
@@ -23503,6 +23524,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return JAIL_BREAKING_QUERY;
             case 4:
               return NON_ANSWER_SEEKING_QUERY_V2;
+            case 5:
+              return USER_DEFINED_CLASSIFICATION_QUERY;
             default:
               return null;
           }
@@ -32353,7 +32376,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is deprecated.
-   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
+   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
    * @return The asynchronousMode.
    */
   @java.lang.Override
@@ -35244,7 +35267,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is
-     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
+     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
      * @return The asynchronousMode.
      */
     @java.lang.Override
@@ -35274,7 +35297,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is
-     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
+     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
      * @param value The asynchronousMode to set.
      * @return This builder for chaining.
      */
@@ -35308,7 +35331,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is
-     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
+     *     deprecated. See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

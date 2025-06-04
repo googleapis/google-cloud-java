@@ -106,7 +106,7 @@ public interface HttpHeaderOptionOrBuilder
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is true, unless a variable is present in headerValue, in which case the default value is false. .
    * </pre>
    *
    * <code>optional bool replace = 20755124;</code>
@@ -119,7 +119,7 @@ public interface HttpHeaderOptionOrBuilder
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is true, unless a variable is present in headerValue, in which case the default value is false. .
    * </pre>
    *
    * <code>optional bool replace = 20755124;</code>

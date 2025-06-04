@@ -180,8 +180,6 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -195,8 +193,6 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -210,8 +206,6 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>

@@ -187,6 +187,7 @@ public class GlobalForwardingRulesClientTest {
             .setPscConnectionStatus("pscConnectionStatus2068878160")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSelfLinkWithId("selfLinkWithId-776809081")
             .addAllServiceDirectoryRegistrations(
                 new ArrayList<ForwardingRuleServiceDirectoryRegistration>())
             .setServiceLabel("serviceLabel341946687")

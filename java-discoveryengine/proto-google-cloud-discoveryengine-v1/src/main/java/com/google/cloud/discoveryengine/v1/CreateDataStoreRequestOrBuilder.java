@@ -28,6 +28,75 @@ public interface CreateDataStoreRequestOrBuilder
    *
    *
    * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the cmekConfigName field is set.
+   */
+  boolean hasCmekConfigName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The cmekConfigName.
+   */
+  java.lang.String getCmekConfigName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the CmekConfig to use for protecting this DataStore.
+   * </pre>
+   *
+   * <code>string cmek_config_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for cmekConfigName.
+   */
+  com.google.protobuf.ByteString getCmekConfigNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * DataStore without CMEK protections. If a default CmekConfig is set for
+   * the project, setting this field will override the default CmekConfig as
+   * well.
+   * </pre>
+   *
+   * <code>bool disable_cmek = 6;</code>
+   *
+   * @return Whether the disableCmek field is set.
+   */
+  boolean hasDisableCmek();
+
+  /**
+   *
+   *
+   * <pre>
+   * DataStore without CMEK protections. If a default CmekConfig is set for
+   * the project, setting this field will override the default CmekConfig as
+   * well.
+   * </pre>
+   *
+   * <code>bool disable_cmek = 6;</code>
+   *
+   * @return The disableCmek.
+   */
+  boolean getDisableCmek();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent resource name, such as
    * `projects/{project}/locations/{location}/collections/{collection}`.
    * </pre>
@@ -178,4 +247,6 @@ public interface CreateDataStoreRequestOrBuilder
    * @return The skipDefaultSchemaCreation.
    */
   boolean getSkipDefaultSchemaCreation();
+
+  com.google.cloud.discoveryengine.v1.CreateDataStoreRequest.CmekOptionsCase getCmekOptionsCase();
 }
