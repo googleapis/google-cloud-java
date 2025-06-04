@@ -246,6 +246,7 @@ public class NetworksClientTest {
             .setNetworkFirewallPolicyEnforcementOrder(
                 "networkFirewallPolicyEnforcementOrder1610545966")
             .setNetworkProfile("networkProfile-2013096037")
+            .setParams(NetworkParams.newBuilder().build())
             .addAllPeerings(new ArrayList<NetworkPeering>())
             .setRoutingConfig(NetworkRoutingConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")

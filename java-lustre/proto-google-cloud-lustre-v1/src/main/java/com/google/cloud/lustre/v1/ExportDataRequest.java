@@ -23,7 +23,7 @@ package com.google.cloud.lustre.v1;
  *
  *
  * <pre>
- * Message for exporting data from Lustre.
+ * Export data from Managed Lustre to a Cloud Storage bucket.
  * </pre>
  *
  * Protobuf type {@code google.cloud.lustre.v1.ExportDataRequest}
@@ -166,7 +166,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -182,7 +183,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -201,7 +203,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Lustre path source.
+   * The root directory path to the Managed Lustre file system. Must start
+   * with `/`. Default is `/`.
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -220,7 +223,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -236,7 +242,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -255,7 +264,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage destination.
+   * The URI to a Cloud Storage bucket, or a path within a bucket, using
+   * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -277,7 +289,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -303,7 +316,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -671,7 +685,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Message for exporting data from Lustre.
+   * Export data from Managed Lustre to a Cloud Storage bucket.
    * </pre>
    *
    * Protobuf type {@code google.cloud.lustre.v1.ExportDataRequest}
@@ -975,7 +989,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -991,7 +1006,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1017,7 +1033,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1040,7 +1057,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1060,7 +1078,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1093,7 +1112,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1119,7 +1139,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1132,7 +1153,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1153,7 +1175,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Lustre path source.
+     * The root directory path to the Managed Lustre file system. Must start
+     * with `/`. Default is `/`.
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.LustrePath lustre_path = 2;</code>
@@ -1190,7 +1213,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1206,7 +1232,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1232,7 +1261,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1255,7 +1287,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1275,7 +1310,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1308,7 +1346,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1334,7 +1375,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1347,7 +1391,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1368,7 +1415,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage destination.
+     * The URI to a Cloud Storage bucket, or a path within a bucket, using
+     * the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+     * path inside the bucket is specified, it must end with a forward slash
+     * (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 3;</code>
@@ -1403,7 +1453,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1428,7 +1479,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1453,7 +1505,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1477,7 +1530,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1497,7 +1551,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>

@@ -1043,6 +1043,59 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.NetworkParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int PEERINGS_FIELD_NUMBER = 69883187;
 
   @SuppressWarnings("serial")
@@ -1135,7 +1188,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRoutingConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1190,7 +1243,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1259,7 +1312,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1411,7 +1464,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1419,6 +1472,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < peerings_.size(); i++) {
       output.writeMessage(69883187, peerings_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(78313862, getParams());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 173112472, networkProfile_);
@@ -1441,13 +1497,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(423757720, enableUlaInternalIpv6_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(523556059, getRoutingConfig());
     }
     getUnknownFields().writeTo(output);
@@ -1480,7 +1536,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1488,6 +1544,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < peerings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(69883187, peerings_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173112472, networkProfile_);
@@ -1518,13 +1577,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(423757720, enableUlaInternalIpv6_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(523556059, getRoutingConfig());
     }
@@ -1600,6 +1659,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkProfile() != other.hasNetworkProfile()) return false;
     if (hasNetworkProfile()) {
       if (!getNetworkProfile().equals(other.getNetworkProfile())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (!getPeeringsList().equals(other.getPeeringsList())) return false;
     if (hasRoutingConfig() != other.hasRoutingConfig()) return false;
@@ -1681,6 +1744,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkProfile()) {
       hash = (37 * hash) + NETWORK_PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkProfile().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (getPeeringsCount() > 0) {
       hash = (37 * hash) + PEERINGS_FIELD_NUMBER;
@@ -1842,6 +1909,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getParamsFieldBuilder();
         getPeeringsFieldBuilder();
         getRoutingConfigFieldBuilder();
       }
@@ -1865,13 +1933,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       networkFirewallPolicyEnforcementOrder_ = "";
       networkProfile_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
       } else {
         peerings_ = null;
         peeringsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -1916,9 +1989,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Network result) {
       if (peeringsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           peerings_ = java.util.Collections.unmodifiableList(peerings_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.peerings_ = peerings_;
       } else {
@@ -1985,20 +2058,24 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         result.networkProfile_ = networkProfile_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.routingConfig_ =
-            routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.routingConfig_ =
+            routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.selfLinkWithId_ = selfLinkWithId_;
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         subnetworks_.makeImmutable();
         result.subnetworks_ = subnetworks_;
       }
@@ -2112,11 +2189,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (peeringsBuilder_ == null) {
         if (!other.peerings_.isEmpty()) {
           if (peerings_.isEmpty()) {
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensurePeeringsIsMutable();
             peerings_.addAll(other.peerings_);
@@ -2129,7 +2209,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             peeringsBuilder_.dispose();
             peeringsBuilder_ = null;
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             peeringsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPeeringsFieldBuilder()
@@ -2144,18 +2224,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00080000;
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -2227,7 +2307,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 356167698
             case 473874866:
@@ -2249,6 +2329,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 559065498
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 626510898
             case 1384899778:
               {
                 networkProfile_ = input.readStringRequireUtf8();
@@ -2295,7 +2381,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -645248918
             case -309581174:
@@ -2307,7 +2393,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case -106518822:
               {
                 input.readMessage(getRoutingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -106518822
             default:
@@ -3885,13 +3971,207 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.NetworkParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkParams,
+            com.google.cloud.compute.v1.NetworkParams.Builder,
+            com.google.cloud.compute.v1.NetworkParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.NetworkParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.NetworkParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.NetworkParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.NetworkParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.NetworkParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.NetworkParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkParams,
+            com.google.cloud.compute.v1.NetworkParams.Builder,
+            com.google.cloud.compute.v1.NetworkParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.NetworkParams,
+                com.google.cloud.compute.v1.NetworkParams.Builder,
+                com.google.cloud.compute.v1.NetworkParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.NetworkPeering> peerings_ =
         java.util.Collections.emptyList();
 
     private void ensurePeeringsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>(peerings_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -4116,7 +4396,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPeerings() {
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         peeringsBuilder_.clear();
@@ -4245,7 +4525,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.NetworkPeering,
                 com.google.cloud.compute.v1.NetworkPeering.Builder,
                 com.google.cloud.compute.v1.NetworkPeeringOrBuilder>(
-                peerings_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                peerings_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         peerings_ = null;
       }
       return peeringsBuilder_;
@@ -4271,7 +4551,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4315,7 +4595,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4337,7 +4617,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4354,7 +4634,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()) {
@@ -4366,7 +4646,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         routingConfigBuilder_.mergeFrom(value);
       }
       if (routingConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4383,7 +4663,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRoutingConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -4404,7 +4684,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfig.Builder getRoutingConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }
@@ -4470,7 +4750,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4536,7 +4816,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4554,7 +4834,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4577,7 +4857,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4596,7 +4876,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -4662,7 +4942,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4680,7 +4960,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4703,7 +4983,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4715,7 +4995,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (!subnetworks_.isModifiable()) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
     }
 
     /**
@@ -4800,7 +5080,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubnetworksIsMutable();
       subnetworks_.set(index, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4823,7 +5103,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4843,7 +5123,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSubnetworks(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworks_);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4861,7 +5141,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubnetworks() {
       subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       ;
       onChanged();
       return this;
@@ -4886,7 +5166,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

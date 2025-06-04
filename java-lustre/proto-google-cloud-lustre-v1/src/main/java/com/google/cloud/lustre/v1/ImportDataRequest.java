@@ -167,6 +167,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Cloud Storage source bucket and, optionally, path inside the bucket.
+   * If a path inside the bucket is specified, it must end with a forward
+   * slash (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -183,6 +185,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Cloud Storage source bucket and, optionally, path inside the bucket.
+   * If a path inside the bucket is specified, it must end with a forward
+   * slash (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -202,6 +206,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Cloud Storage source bucket and, optionally, path inside the bucket.
+   * If a path inside the bucket is specified, it must end with a forward
+   * slash (`/`).
    * </pre>
    *
    * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -277,7 +283,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -303,7 +310,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Name of the resource.
+   * Required. The name of the Managed Lustre instance in the format
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -392,7 +400,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. User-specified service account used to perform the transfer.
-   * If unspecified, the default Lustre P4 service account will be used.
+   * If unspecified, the default Managed Lustre service agent will be used.
    * </pre>
    *
    * <code>
@@ -419,7 +427,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. User-specified service account used to perform the transfer.
-   * If unspecified, the default Lustre P4 service account will be used.
+   * If unspecified, the default Managed Lustre service agent will be used.
    * </pre>
    *
    * <code>
@@ -976,6 +984,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -992,6 +1002,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1018,6 +1030,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1041,6 +1055,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1061,6 +1077,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1094,6 +1112,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1120,6 +1140,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1133,6 +1155,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1154,6 +1178,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Cloud Storage source bucket and, optionally, path inside the bucket.
+     * If a path inside the bucket is specified, it must end with a forward
+     * slash (`/`).
      * </pre>
      *
      * <code>.google.cloud.lustre.v1.GcsPath gcs_path = 2;</code>
@@ -1403,7 +1429,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1428,7 +1455,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1453,7 +1481,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1477,7 +1506,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1497,7 +1527,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Name of the resource.
+     * Required. The name of the Managed Lustre instance in the format
+     * `projects/{project}/locations/{location}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -1646,7 +1677,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-specified service account used to perform the transfer.
-     * If unspecified, the default Lustre P4 service account will be used.
+     * If unspecified, the default Managed Lustre service agent will be used.
      * </pre>
      *
      * <code>
@@ -1672,7 +1703,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-specified service account used to perform the transfer.
-     * If unspecified, the default Lustre P4 service account will be used.
+     * If unspecified, the default Managed Lustre service agent will be used.
      * </pre>
      *
      * <code>
@@ -1698,7 +1729,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-specified service account used to perform the transfer.
-     * If unspecified, the default Lustre P4 service account will be used.
+     * If unspecified, the default Managed Lustre service agent will be used.
      * </pre>
      *
      * <code>
@@ -1723,7 +1754,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-specified service account used to perform the transfer.
-     * If unspecified, the default Lustre P4 service account will be used.
+     * If unspecified, the default Managed Lustre service agent will be used.
      * </pre>
      *
      * <code>
@@ -1744,7 +1775,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-specified service account used to perform the transfer.
-     * If unspecified, the default Lustre P4 service account will be used.
+     * If unspecified, the default Managed Lustre service agent will be used.
      * </pre>
      *
      * <code>

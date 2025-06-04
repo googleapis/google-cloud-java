@@ -48,6 +48,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
 import com.google.cloud.compute.v1.BulkInsertDiskRequest;
+import com.google.cloud.compute.v1.BulkSetLabelsDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DeleteDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -173,6 +174,9 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
   private final UnaryCallSettings<BulkInsertDiskRequest, Operation> bulkInsertSettings;
   private final OperationCallSettings<BulkInsertDiskRequest, Operation, Operation>
       bulkInsertOperationSettings;
+  private final UnaryCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings;
+  private final OperationCallSettings<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationSettings;
   private final UnaryCallSettings<CreateSnapshotDiskRequest, Operation> createSnapshotSettings;
   private final OperationCallSettings<CreateSnapshotDiskRequest, Operation, Operation>
       createSnapshotOperationSettings;
@@ -352,6 +356,17 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
   public OperationCallSettings<BulkInsertDiskRequest, Operation, Operation>
       bulkInsertOperationSettings() {
     return bulkInsertOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public UnaryCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+    return bulkSetLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkSetLabels. */
+  public OperationCallSettings<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationSettings() {
+    return bulkSetLabelsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createSnapshot. */
@@ -577,6 +592,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     bulkInsertSettings = settingsBuilder.bulkInsertSettings().build();
     bulkInsertOperationSettings = settingsBuilder.bulkInsertOperationSettings().build();
+    bulkSetLabelsSettings = settingsBuilder.bulkSetLabelsSettings().build();
+    bulkSetLabelsOperationSettings = settingsBuilder.bulkSetLabelsOperationSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
     createSnapshotOperationSettings = settingsBuilder.createSnapshotOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
@@ -622,6 +639,10 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     private final UnaryCallSettings.Builder<BulkInsertDiskRequest, Operation> bulkInsertSettings;
     private final OperationCallSettings.Builder<BulkInsertDiskRequest, Operation, Operation>
         bulkInsertOperationSettings;
+    private final UnaryCallSettings.Builder<BulkSetLabelsDiskRequest, Operation>
+        bulkSetLabelsSettings;
+    private final OperationCallSettings.Builder<BulkSetLabelsDiskRequest, Operation, Operation>
+        bulkSetLabelsOperationSettings;
     private final UnaryCallSettings.Builder<CreateSnapshotDiskRequest, Operation>
         createSnapshotSettings;
     private final OperationCallSettings.Builder<CreateSnapshotDiskRequest, Operation, Operation>
@@ -723,6 +744,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       bulkInsertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       bulkInsertOperationSettings = OperationCallSettings.newBuilder();
+      bulkSetLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      bulkSetLabelsOperationSettings = OperationCallSettings.newBuilder();
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSnapshotOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -754,6 +777,7 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               addResourcePoliciesSettings,
               aggregatedListSettings,
               bulkInsertSettings,
+              bulkSetLabelsSettings,
               createSnapshotSettings,
               deleteSettings,
               getSettings,
@@ -781,6 +805,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       bulkInsertSettings = settings.bulkInsertSettings.toBuilder();
       bulkInsertOperationSettings = settings.bulkInsertOperationSettings.toBuilder();
+      bulkSetLabelsSettings = settings.bulkSetLabelsSettings.toBuilder();
+      bulkSetLabelsOperationSettings = settings.bulkSetLabelsOperationSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
       createSnapshotOperationSettings = settings.createSnapshotOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
@@ -816,6 +842,7 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               addResourcePoliciesSettings,
               aggregatedListSettings,
               bulkInsertSettings,
+              bulkSetLabelsSettings,
               createSnapshotSettings,
               deleteSettings,
               getSettings,
@@ -858,6 +885,11 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
 
       builder
           .bulkInsertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .bulkSetLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -965,6 +997,30 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BulkInsertDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .bulkSetLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BulkSetLabelsDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1269,6 +1325,17 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     public OperationCallSettings.Builder<BulkInsertDiskRequest, Operation, Operation>
         bulkInsertOperationSettings() {
       return bulkInsertOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public UnaryCallSettings.Builder<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsSettings() {
+      return bulkSetLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkSetLabels. */
+    public OperationCallSettings.Builder<BulkSetLabelsDiskRequest, Operation, Operation>
+        bulkSetLabelsOperationSettings() {
+      return bulkSetLabelsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */

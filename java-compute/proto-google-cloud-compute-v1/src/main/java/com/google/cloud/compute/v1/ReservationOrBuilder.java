@@ -307,6 +307,32 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * </pre>
+   *
+   * <code>optional bool enable_emergent_maintenance = 353759497;</code>
+   *
+   * @return Whether the enableEmergentMaintenance field is set.
+   */
+  boolean hasEnableEmergentMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * </pre>
+   *
+   * <code>optional bool enable_emergent_maintenance = 353759497;</code>
+   *
+   * @return The enableEmergentMaintenance.
+   */
+  boolean getEnableEmergentMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *

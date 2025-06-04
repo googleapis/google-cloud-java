@@ -23,7 +23,7 @@ package com.google.cloud.lustre.v1;
  *
  *
  * <pre>
- * LustrePath represents a path in the Lustre file system.
+ * The root directory path to the Lustre file system.
  * </pre>
  *
  * Protobuf type {@code google.cloud.lustre.v1.LustrePath}
@@ -73,8 +73,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Root directory path to the Managed Lustre file system, starting
-   * with `/`. Defaults to `/` if unset.
+   * Optional. The root directory path to the Managed Lustre file system. Must
+   * start with
+   * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+   * path other than the default must already exist on the file system.
    * </pre>
    *
    * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +100,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Root directory path to the Managed Lustre file system, starting
-   * with `/`. Defaults to `/` if unset.
+   * Optional. The root directory path to the Managed Lustre file system. Must
+   * start with
+   * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+   * path other than the default must already exist on the file system.
    * </pre>
    *
    * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -281,7 +285,7 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * LustrePath represents a path in the Lustre file system.
+   * The root directory path to the Lustre file system.
    * </pre>
    *
    * Protobuf type {@code google.cloud.lustre.v1.LustrePath}
@@ -465,8 +469,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Root directory path to the Managed Lustre file system, starting
-     * with `/`. Defaults to `/` if unset.
+     * Optional. The root directory path to the Managed Lustre file system. Must
+     * start with
+     * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+     * path other than the default must already exist on the file system.
      * </pre>
      *
      * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -489,8 +495,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Root directory path to the Managed Lustre file system, starting
-     * with `/`. Defaults to `/` if unset.
+     * Optional. The root directory path to the Managed Lustre file system. Must
+     * start with
+     * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+     * path other than the default must already exist on the file system.
      * </pre>
      *
      * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -513,8 +521,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Root directory path to the Managed Lustre file system, starting
-     * with `/`. Defaults to `/` if unset.
+     * Optional. The root directory path to the Managed Lustre file system. Must
+     * start with
+     * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+     * path other than the default must already exist on the file system.
      * </pre>
      *
      * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -536,8 +546,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Root directory path to the Managed Lustre file system, starting
-     * with `/`. Defaults to `/` if unset.
+     * Optional. The root directory path to the Managed Lustre file system. Must
+     * start with
+     * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+     * path other than the default must already exist on the file system.
      * </pre>
      *
      * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -555,8 +567,10 @@ public final class LustrePath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Root directory path to the Managed Lustre file system, starting
-     * with `/`. Defaults to `/` if unset.
+     * Optional. The root directory path to the Managed Lustre file system. Must
+     * start with
+     * `/`. Default is `/`. If you're importing data into Managed Lustre, any
+     * path other than the default must already exist on the file system.
      * </pre>
      *
      * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

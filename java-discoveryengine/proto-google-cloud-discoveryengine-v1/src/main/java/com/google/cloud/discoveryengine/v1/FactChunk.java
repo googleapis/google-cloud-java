@@ -42,6 +42,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
   private FactChunk() {
     chunkText_ = "";
     source_ = "";
+    uri_ = "";
+    title_ = "";
+    domain_ = "";
   }
 
   @java.lang.Override
@@ -317,6 +320,165 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int URI_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the source.
+   * </pre>
+   *
+   * <code>string uri = 5;</code>
+   *
+   * @return The uri.
+   */
+  @java.lang.Override
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the source.
+   * </pre>
+   *
+   * <code>string uri = 5;</code>
+   *
+   * @return The bytes for uri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TITLE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The title of the source.
+   * </pre>
+   *
+   * <code>string title = 6;</code>
+   *
+   * @return The title.
+   */
+  @java.lang.Override
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      title_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The title of the source.
+   * </pre>
+   *
+   * <code>string title = 6;</code>
+   *
+   * @return The bytes for title.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTitleBytes() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      title_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DOMAIN_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The domain of the source.
+   * </pre>
+   *
+   * <code>string domain = 7;</code>
+   *
+   * @return The domain.
+   */
+  @java.lang.Override
+  public java.lang.String getDomain() {
+    java.lang.Object ref = domain_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      domain_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The domain of the source.
+   * </pre>
+   *
+   * <code>string domain = 7;</code>
+   *
+   * @return The bytes for domain.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDomainBytes() {
+    java.lang.Object ref = domain_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      domain_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -341,6 +503,15 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         output, internalGetSourceMetadata(), SourceMetadataDefaultEntryHolder.defaultEntry, 3);
     if (index_ != 0) {
       output.writeInt32(4, index_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, uri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, title_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, domain_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -370,6 +541,15 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     if (index_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, index_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, uri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, title_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, domain_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -390,6 +570,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     if (!getSource().equals(other.getSource())) return false;
     if (getIndex() != other.getIndex()) return false;
     if (!internalGetSourceMetadata().equals(other.internalGetSourceMetadata())) return false;
+    if (!getUri().equals(other.getUri())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
+    if (!getDomain().equals(other.getDomain())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -411,6 +594,12 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSourceMetadata().hashCode();
     }
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
+    hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getDomain().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -577,6 +766,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       source_ = "";
       index_ = 0;
       internalGetMutableSourceMetadata().clear();
+      uri_ = "";
+      title_ = "";
+      domain_ = "";
       return this;
     }
 
@@ -625,6 +817,15 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.sourceMetadata_ = internalGetSourceMetadata();
         result.sourceMetadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.domain_ = domain_;
       }
     }
 
@@ -688,6 +889,21 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSourceMetadata().mergeFrom(other.internalGetSourceMetadata());
       bitField0_ |= 0x00000008;
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getTitle().isEmpty()) {
+        title_ = other.title_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getDomain().isEmpty()) {
+        domain_ = other.domain_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -744,6 +960,24 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 32
+            case 42:
+              {
+                uri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                domain_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1228,6 +1462,339 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllSourceMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSourceMetadata().getMutableMap().putAll(values);
       bitField0_ |= 0x00000008;
+      return this;
+    }
+
+    private java.lang.Object uri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the source.
+     * </pre>
+     *
+     * <code>string uri = 5;</code>
+     *
+     * @return The uri.
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the source.
+     * </pre>
+     *
+     * <code>string uri = 5;</code>
+     *
+     * @return The bytes for uri.
+     */
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the source.
+     * </pre>
+     *
+     * <code>string uri = 5;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the source.
+     * </pre>
+     *
+     * <code>string uri = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUri() {
+      uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the source.
+     * </pre>
+     *
+     * <code>string uri = 5;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object title_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The title of the source.
+     * </pre>
+     *
+     * <code>string title = 6;</code>
+     *
+     * @return The title.
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The title of the source.
+     * </pre>
+     *
+     * <code>string title = 6;</code>
+     *
+     * @return The bytes for title.
+     */
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The title of the source.
+     * </pre>
+     *
+     * <code>string title = 6;</code>
+     *
+     * @param value The title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      title_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The title of the source.
+     * </pre>
+     *
+     * <code>string title = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTitle() {
+      title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The title of the source.
+     * </pre>
+     *
+     * <code>string title = 6;</code>
+     *
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      title_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object domain_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the source.
+     * </pre>
+     *
+     * <code>string domain = 7;</code>
+     *
+     * @return The domain.
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the source.
+     * </pre>
+     *
+     * <code>string domain = 7;</code>
+     *
+     * @return The bytes for domain.
+     */
+    public com.google.protobuf.ByteString getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the source.
+     * </pre>
+     *
+     * <code>string domain = 7;</code>
+     *
+     * @param value The domain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomain(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      domain_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the source.
+     * </pre>
+     *
+     * <code>string domain = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDomain() {
+      domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the source.
+     * </pre>
+     *
+     * <code>string domain = 7;</code>
+     *
+     * @param value The bytes for domain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomainBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      domain_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
 

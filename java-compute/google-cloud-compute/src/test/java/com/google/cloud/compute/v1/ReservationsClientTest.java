@@ -219,6 +219,7 @@ public class ReservationsClientTest {
             .setDeleteAtTime("deleteAtTime-1276262613")
             .setDeploymentType("deploymentType1588450207")
             .setDescription("description-1724546052")
+            .setEnableEmergentMaintenance(true)
             .setId(3355)
             .setKind("kind3292052")
             .addAllLinkedCommitments(new ArrayList<String>())

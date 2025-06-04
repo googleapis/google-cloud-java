@@ -509,4 +509,29 @@ public interface ResourcePolicyOrBuilder
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString getStatusBytes();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   *
+   * @return Whether the workloadPolicy field is set.
+   */
+  boolean hasWorkloadPolicy();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   *
+   * @return The workloadPolicy.
+   */
+  com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy getWorkloadPolicy();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicyOrBuilder getWorkloadPolicyOrBuilder();
 }

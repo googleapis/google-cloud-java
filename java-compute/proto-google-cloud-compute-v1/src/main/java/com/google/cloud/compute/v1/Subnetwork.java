@@ -2467,6 +2467,59 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.SubnetworkParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.SubnetworkParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.SubnetworkParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
   private boolean privateIpGoogleAccess_ = false;
 
@@ -2483,7 +2536,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrivateIpGoogleAccess() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -2521,7 +2574,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrivateIpv6GoogleAccess() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -2593,7 +2646,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPurpose() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -2664,7 +2717,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -2733,7 +2786,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasReservedInternalRange() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -2803,7 +2856,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRole() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -2962,7 +3015,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -3032,7 +3085,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3104,7 +3157,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -3316,13 +3369,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 48277006, privateIpv6GoogleAccess_);
     }
@@ -3330,16 +3383,19 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 65324129, systemReservedExternalIpv6Ranges_.getRaw(i));
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(136658915, secondaryIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3360,10 +3416,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 273141258, ipv6CidrRange_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 286248754, reservedInternalRange_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
@@ -3372,20 +3428,20 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeBool(421491790, privateIpGoogleAccess_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < systemReservedInternalIpv6Ranges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 432294995, systemReservedInternalIpv6Ranges_.getRaw(i));
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3415,14 +3471,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               48277006, privateIpv6GoogleAccess_);
@@ -3435,10 +3491,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSystemReservedExternalIpv6RangesList().size();
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
@@ -3446,7 +3505,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               136658915, secondaryIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3468,12 +3527,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(273141258, ipv6CidrRange_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               286248754, reservedInternalRange_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
@@ -3482,14 +3541,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(421491790, privateIpGoogleAccess_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     {
@@ -3500,7 +3559,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSystemReservedInternalIpv6RangesList().size();
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3595,6 +3654,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasPrivateIpGoogleAccess() != other.hasPrivateIpGoogleAccess()) return false;
     if (hasPrivateIpGoogleAccess()) {
@@ -3715,6 +3778,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasNetwork()) {
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasPrivateIpGoogleAccess()) {
       hash = (37 * hash) + PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER;
@@ -3906,6 +3973,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLogConfigFieldBuilder();
+        getParamsFieldBuilder();
         getSecondaryIpRangesFieldBuilder();
       }
     }
@@ -3935,6 +4003,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       name_ = "";
       network_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       privateIpGoogleAccess_ = false;
       privateIpv6GoogleAccess_ = "";
       purpose_ = "";
@@ -3947,7 +4020,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         secondaryIpRanges_ = null;
         secondaryIpRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       selfLink_ = "";
       stackType_ = "";
       state_ = "";
@@ -3990,9 +4063,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Subnetwork result) {
       if (secondaryIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)) {
+        if (((bitField0_ & 0x01000000) != 0)) {
           secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00800000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.secondaryIpRanges_ = secondaryIpRanges_;
       } else {
@@ -4072,46 +4145,50 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+        result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.purpose_ = purpose_;
+        result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.region_ = region_;
+        result.purpose_ = purpose_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.reservedInternalRange_ = reservedInternalRange_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.role_ = role_;
+        result.reservedInternalRange_ = reservedInternalRange_;
         to_bitField0_ |= 0x00400000;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.role_ = role_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.stackType_ = stackType_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x01000000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.state_ = state_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         systemReservedExternalIpv6Ranges_.makeImmutable();
         result.systemReservedExternalIpv6Ranges_ = systemReservedExternalIpv6Ranges_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         systemReservedInternalIpv6Ranges_.makeImmutable();
         result.systemReservedInternalIpv6Ranges_ = systemReservedInternalIpv6Ranges_;
       }
@@ -4242,39 +4319,42 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00010000;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasPrivateIpGoogleAccess()) {
         setPrivateIpGoogleAccess(other.getPrivateIpGoogleAccess());
       }
       if (other.hasPrivateIpv6GoogleAccess()) {
         privateIpv6GoogleAccess_ = other.privateIpv6GoogleAccess_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasPurpose()) {
         purpose_ = other.purpose_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasReservedInternalRange()) {
         reservedInternalRange_ = other.reservedInternalRange_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasRole()) {
         role_ = other.role_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (secondaryIpRangesBuilder_ == null) {
         if (!other.secondaryIpRanges_.isEmpty()) {
           if (secondaryIpRanges_.isEmpty()) {
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00800000);
+            bitField0_ = (bitField0_ & ~0x01000000);
           } else {
             ensureSecondaryIpRangesIsMutable();
             secondaryIpRanges_.addAll(other.secondaryIpRanges_);
@@ -4287,7 +4367,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             secondaryIpRangesBuilder_.dispose();
             secondaryIpRangesBuilder_ = null;
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00800000);
+            bitField0_ = (bitField0_ & ~0x01000000);
             secondaryIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecondaryIpRangesFieldBuilder()
@@ -4299,23 +4379,23 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.systemReservedExternalIpv6Ranges_.isEmpty()) {
         if (systemReservedExternalIpv6Ranges_.isEmpty()) {
           systemReservedExternalIpv6Ranges_ = other.systemReservedExternalIpv6Ranges_;
-          bitField0_ |= 0x08000000;
+          bitField0_ |= 0x10000000;
         } else {
           ensureSystemReservedExternalIpv6RangesIsMutable();
           systemReservedExternalIpv6Ranges_.addAll(other.systemReservedExternalIpv6Ranges_);
@@ -4325,7 +4405,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (!other.systemReservedInternalIpv6Ranges_.isEmpty()) {
         if (systemReservedInternalIpv6Ranges_.isEmpty()) {
           systemReservedInternalIpv6Ranges_ = other.systemReservedInternalIpv6Ranges_;
-          bitField0_ |= 0x10000000;
+          bitField0_ |= 0x20000000;
         } else {
           ensureSystemReservedInternalIpv6RangesIsMutable();
           systemReservedInternalIpv6Ranges_.addAll(other.systemReservedInternalIpv6Ranges_);
@@ -4379,7 +4459,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 28050354:
               {
                 role_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 28050354
             case 244202930:
@@ -4391,7 +4471,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 386216050:
               {
                 privateIpv6GoogleAccess_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 386216050
             case 522593034:
@@ -4401,6 +4481,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 systemReservedExternalIpv6Ranges_.add(s);
                 break;
               } // case 522593034
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 626510898
             case 784938578:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
@@ -4410,7 +4496,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 878060682
             case 1093271322:
@@ -4430,7 +4516,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 1111570338
             case 1114393522:
@@ -4472,13 +4558,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case -2004977262:
               {
                 reservedInternalRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -2004977262
             case -1763710734:
               {
                 purpose_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -1763710734
             case -1731908838:
@@ -4496,7 +4582,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case -923032976:
               {
                 privateIpGoogleAccess_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -923032976
             case -911466526:
@@ -4508,7 +4594,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case -887696246
             case -836607334:
@@ -4521,7 +4607,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case -645248918
             case -616028214:
@@ -6676,6 +6762,200 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.SubnetworkParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkParams,
+            com.google.cloud.compute.v1.SubnetworkParams.Builder,
+            com.google.cloud.compute.v1.SubnetworkParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.SubnetworkParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.SubnetworkParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.SubnetworkParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.SubnetworkParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.SubnetworkParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.SubnetworkParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.SubnetworkParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkParams,
+            com.google.cloud.compute.v1.SubnetworkParams.Builder,
+            com.google.cloud.compute.v1.SubnetworkParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SubnetworkParams,
+                com.google.cloud.compute.v1.SubnetworkParams.Builder,
+                com.google.cloud.compute.v1.SubnetworkParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
     private boolean privateIpGoogleAccess_;
 
     /**
@@ -6691,7 +6971,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPrivateIpGoogleAccess() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6725,7 +7005,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrivateIpGoogleAccess(boolean value) {
 
       privateIpGoogleAccess_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6742,7 +7022,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpGoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       privateIpGoogleAccess_ = false;
       onChanged();
       return this;
@@ -6763,7 +7043,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the privateIpv6GoogleAccess field is set.
      */
     public boolean hasPrivateIpv6GoogleAccess() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6832,7 +7112,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       privateIpv6GoogleAccess_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6851,7 +7131,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrivateIpv6GoogleAccess() {
       privateIpv6GoogleAccess_ = getDefaultInstance().getPrivateIpv6GoogleAccess();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6875,7 +7155,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       privateIpv6GoogleAccess_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6895,7 +7175,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the purpose field is set.
      */
     public boolean hasPurpose() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6964,7 +7244,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       purpose_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6983,7 +7263,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPurpose() {
       purpose_ = getDefaultInstance().getPurpose();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7007,7 +7287,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       purpose_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7026,7 +7306,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7092,7 +7372,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7110,7 +7390,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7133,7 +7413,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7152,7 +7432,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reservedInternalRange field is set.
      */
     public boolean hasReservedInternalRange() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -7218,7 +7498,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       reservedInternalRange_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7236,7 +7516,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReservedInternalRange() {
       reservedInternalRange_ = getDefaultInstance().getReservedInternalRange();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7259,7 +7539,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       reservedInternalRange_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7279,7 +7559,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -7348,7 +7628,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       role_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7367,7 +7647,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRole() {
       role_ = getDefaultInstance().getRole();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7391,7 +7671,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       role_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7400,11 +7680,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         secondaryIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureSecondaryIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00800000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         secondaryIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SubnetworkSecondaryRange>(
                 secondaryIpRanges_);
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
       }
     }
 
@@ -7656,7 +7936,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecondaryIpRanges() {
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
       } else {
         secondaryIpRangesBuilder_.clear();
@@ -7805,7 +8085,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange.Builder,
                 com.google.cloud.compute.v1.SubnetworkSecondaryRangeOrBuilder>(
                 secondaryIpRanges_,
-                ((bitField0_ & 0x00800000) != 0),
+                ((bitField0_ & 0x01000000) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryIpRanges_ = null;
@@ -7827,7 +8107,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -7893,7 +8173,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7911,7 +8191,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7934,7 +8214,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7954,7 +8234,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -8023,7 +8303,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8042,7 +8322,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -8066,7 +8346,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8086,7 +8366,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -8155,7 +8435,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8174,7 +8454,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -8198,7 +8478,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8211,7 +8491,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         systemReservedExternalIpv6Ranges_ =
             new com.google.protobuf.LazyStringArrayList(systemReservedExternalIpv6Ranges_);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
     }
 
     /**
@@ -8296,7 +8576,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.set(index, value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8319,7 +8599,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8341,7 +8621,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       ensureSystemReservedExternalIpv6RangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, systemReservedExternalIpv6Ranges_);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8359,7 +8639,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSystemReservedExternalIpv6Ranges() {
       systemReservedExternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -8384,7 +8664,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8397,7 +8677,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         systemReservedInternalIpv6Ranges_ =
             new com.google.protobuf.LazyStringArrayList(systemReservedInternalIpv6Ranges_);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
     }
 
     /**
@@ -8482,7 +8762,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.set(index, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8505,7 +8785,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8527,7 +8807,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       ensureSystemReservedInternalIpv6RangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, systemReservedInternalIpv6Ranges_);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8545,7 +8825,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSystemReservedInternalIpv6Ranges() {
       systemReservedInternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       ;
       onChanged();
       return this;
@@ -8570,7 +8850,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
