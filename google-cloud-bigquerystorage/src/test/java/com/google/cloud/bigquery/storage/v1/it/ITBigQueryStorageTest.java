@@ -1598,11 +1598,13 @@ public class ITBigQueryStorageTest {
             .addSpanProcessor(SimpleSpanProcessor.create(new TestSpanExporter()))
             .setSampler(Sampler.alwaysOn())
             .build();
-    OpenTelemetry otel =
-        OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+    OpenTelemetry otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
 
     BigQueryReadSettings otelSettings =
-        BigQueryReadSettings.newBuilder().setEnableOpenTelemetryTracing(true).build();
+        BigQueryReadSettings.newBuilder()
+            .setEnableOpenTelemetryTracing(true)
+            .setOpenTelemetryTracerProvider(tracerProvider)
+            .build();
     BigQueryReadClient otelClient = BigQueryReadClient.create(otelSettings);
 
     String table =

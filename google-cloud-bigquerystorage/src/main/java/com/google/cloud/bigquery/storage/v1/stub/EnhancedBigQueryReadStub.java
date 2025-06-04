@@ -44,6 +44,7 @@ import com.google.cloud.bigquery.storage.v1.stub.readrows.ReadRowsRetryingCallab
 import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.util.Map;
@@ -73,13 +74,14 @@ public class EnhancedBigQueryReadStub implements BackgroundResource {
       EnhancedBigQueryReadStubSettings settings,
       BigQueryReadSettings.RetryAttemptListener readRowsRetryAttemptListener)
       throws IOException {
-    return create(settings, readRowsRetryAttemptListener, false);
+    return create(settings, readRowsRetryAttemptListener, false, null);
   }
 
   public static EnhancedBigQueryReadStub create(
       EnhancedBigQueryReadStubSettings settings,
       BigQueryReadSettings.RetryAttemptListener readRowsRetryAttemptListener,
-      boolean enableOpenTelemetryTracing)
+      boolean enableOpenTelemetryTracing,
+      TracerProvider openTelemetryTracerProvider)
       throws IOException {
     // Configure the base settings.
     BigQueryReadStubSettings.Builder baseSettingsBuilder =
@@ -118,7 +120,8 @@ public class EnhancedBigQueryReadStub implements BackgroundResource {
         baseSettings,
         readRowsRetryAttemptListener,
         clientContext,
-        enableOpenTelemetryTracing);
+        enableOpenTelemetryTracing,
+        openTelemetryTracerProvider);
   }
 
   @InternalApi("Visible for testing")
@@ -127,18 +130,26 @@ public class EnhancedBigQueryReadStub implements BackgroundResource {
       BigQueryReadStubSettings stubSettings,
       BigQueryReadSettings.RetryAttemptListener readRowsRetryAttemptListener,
       ClientContext context,
-      boolean enableOpenTelemetryTracing) {
+      boolean enableOpenTelemetryTracing,
+      TracerProvider openTelemetryTracerProvider) {
     this.stub = stub;
     this.stubSettings = stubSettings;
     this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
     this.context = context;
     this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
     if (enableOpenTelemetryTracing) {
-      this.openTelemetryTracer =
-          Singletons.getOpenTelemetry()
-              .getTracerProvider()
-              .tracerBuilder("com.google.cloud.bigquery.storage.v1.read.stub")
-              .build();
+      if (openTelemetryTracerProvider == null) {
+        this.openTelemetryTracer =
+            Singletons.getOpenTelemetry()
+                .getTracerProvider()
+                .tracerBuilder("com.google.cloud.bigquery.storage.v1.read.stub")
+                .build();
+      } else {
+        this.openTelemetryTracer =
+            openTelemetryTracerProvider
+                .tracerBuilder("com.google.cloud.bigquery.storage.v1.read.stub")
+                .build();
+      }
     }
   }
 

@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.storage.v1.stub.EnhancedBigQueryReadStub;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -133,7 +134,8 @@ public class BigQueryReadClient implements BackgroundResource {
         EnhancedBigQueryReadStub.create(
             settings.getTypedStubSettings(),
             settings.getReadRowsRetryAttemptListener(),
-            settings.isOpenTelemetryEnabled());
+            settings.isOpenTelemetryEnabled(),
+            settings.getOpenTelemetryTracerProvider());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -527,11 +529,15 @@ public class BigQueryReadClient implements BackgroundResource {
   }
 
   public void disableOpenTelemetryTracing() {
-    settings.setEnableOpenTelemetryTracing(false);
+    settings.setEnableOpenTelemetryTracing(false, null);
   }
 
-  public void enableOpenTelemetryTracing() {
-    settings.setEnableOpenTelemetryTracing(true);
+  public void enableDefaultOpenTelemetryTracing() {
+    settings.setEnableOpenTelemetryTracing(true, null);
+  }
+
+  public void enableOpenTelemetryTracing(TracerProvider tracerProvider) {
+    settings.setEnableOpenTelemetryTracing(true, tracerProvider);
   }
 
   private static String getFieldAsString(Object field) {

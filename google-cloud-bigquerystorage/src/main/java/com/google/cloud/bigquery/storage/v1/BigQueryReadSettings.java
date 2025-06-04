@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.storage.v1.stub.EnhancedBigQueryReadStubSetting
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
 import java.io.IOException;
 import java.util.List;
 
@@ -79,6 +80,7 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
   private RetryAttemptListener readRowsRetryAttemptListener = null;
   private boolean enableOpenTelemetryTracing = false;
   private Tracer openTelemetryTracer = null;
+  private TracerProvider openTelemetryTracerProvider = null;
 
   /**
    * If a non null readRowsRetryAttemptListener is provided, client will call onRetryAttempt
@@ -90,14 +92,23 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
     this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
   }
 
-  public void setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
+  public void setEnableOpenTelemetryTracing(
+      boolean enableOpenTelemetryTracing, TracerProvider openTelemetryTracerProvider) {
     this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
     if (enableOpenTelemetryTracing) {
-      this.openTelemetryTracer =
-          Singletons.getOpenTelemetry()
-              .getTracerProvider()
-              .tracerBuilder("com.google.cloud.bigquery.storage.v1.read")
-              .build();
+      if (openTelemetryTracerProvider == null) {
+        this.openTelemetryTracer =
+            Singletons.getOpenTelemetry()
+                .getTracerProvider()
+                .tracerBuilder("com.google.cloud.bigquery.storage.v1.read")
+                .build();
+      } else {
+        this.openTelemetryTracerProvider = openTelemetryTracerProvider;
+        this.openTelemetryTracer =
+            openTelemetryTracerProvider
+                .tracerBuilder("com.google.cloud.bigquery.storage.v1.read")
+                .build();
+      }
     }
   }
 
@@ -111,6 +122,10 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
 
   public Tracer getOpenTelemetryTracer() {
     return this.openTelemetryTracer;
+  }
+
+  public TracerProvider getOpenTelemetryTracerProvider() {
+    return this.openTelemetryTracerProvider;
   }
 
   /** Returns the object with the settings used for calls to splitReadStream. */
@@ -222,6 +237,7 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
 
     private RetryAttemptListener readRowsRetryAttemptListener = null;
     private boolean enableOpenTelemetryTracing = false;
+    private TracerProvider openTelemetryTracerProvider = null;
 
     public Builder setReadRowsRetryAttemptListener(
         RetryAttemptListener readRowsRetryAttemptListener) {
@@ -231,6 +247,11 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
 
     public Builder setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
       this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
+      return this;
+    }
+
+    public Builder setOpenTelemetryTracerProvider(TracerProvider tracerProvider) {
+      this.openTelemetryTracerProvider = tracerProvider;
       return this;
     }
 
@@ -256,7 +277,8 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
     public BigQueryReadSettings build() throws IOException {
       BigQueryReadSettings settings = new BigQueryReadSettings(this);
       settings.setReadRowsRetryAttemptListener(readRowsRetryAttemptListener);
-      settings.setEnableOpenTelemetryTracing(enableOpenTelemetryTracing);
+      settings.setEnableOpenTelemetryTracing(
+          enableOpenTelemetryTracing, openTelemetryTracerProvider);
       return settings;
     }
   }
