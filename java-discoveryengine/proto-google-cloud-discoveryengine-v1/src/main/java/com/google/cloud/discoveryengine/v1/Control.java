@@ -8873,8 +8873,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -8891,8 +8889,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -8912,8 +8908,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Promote certain links based on predefined trigger queries.
-   *
-   * This now only supports basic site search.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11076,8 +11070,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11094,8 +11086,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11122,8 +11112,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11148,8 +11136,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11171,8 +11157,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11208,8 +11192,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11236,8 +11218,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11252,8 +11232,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
@@ -11276,8 +11254,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Promote certain links based on predefined trigger queries.
-     *
-     * This now only supports basic site search.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>

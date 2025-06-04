@@ -73,7 +73,7 @@ public final class DocumentProcessingConfigProto {
           + "nt_processing_config.proto\022\037google.cloud"
           + ".discoveryengine.v1\032\037google/api/field_be"
           + "havior.proto\032\031google/api/resource.proto\""
-          + "\252\014\n\030DocumentProcessingConfig\022\014\n\004name\030\001 \001"
+          + "\204\016\n\030DocumentProcessingConfig\022\014\n\004name\030\001 \001"
           + "(\t\022a\n\017chunking_config\030\003 \001(\0132H.google.clo"
           + "ud.discoveryengine.v1.DocumentProcessing"
           + "Config.ChunkingConfig\022g\n\026default_parsing"
@@ -88,7 +88,7 @@ public final class DocumentProcessingConfigProto {
           + "nfig.ChunkingConfig.LayoutBasedChunkingC"
           + "onfigH\000\032R\n\031LayoutBasedChunkingConfig\022\022\n\n"
           + "chunk_size\030\001 \001(\005\022!\n\031include_ancestor_hea"
-          + "dings\030\002 \001(\010B\014\n\nchunk_mode\032\242\004\n\rParsingCon"
+          + "dings\030\002 \001(\010B\014\n\nchunk_mode\032\374\005\n\rParsingCon"
           + "fig\022~\n\026digital_parsing_config\030\001 \001(\0132\\.go"
           + "ogle.cloud.discoveryengine.v1.DocumentPr"
           + "ocessingConfig.ParsingConfig.DigitalPars"
@@ -101,25 +101,31 @@ public final class DocumentProcessingConfigProto {
           + "utParsingConfigH\000\032\026\n\024DigitalParsingConfi"
           + "g\032S\n\020OcrParsingConfig\022&\n\032enhanced_docume"
           + "nt_elements\030\001 \003(\tB\002\030\001\022\027\n\017use_native_text"
-          + "\030\002 \001(\010\032\025\n\023LayoutParsingConfigB\027\n\025type_de"
-          + "dicated_config\032\206\001\n\033ParsingConfigOverride"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022V\n\005value\030\002 \001(\0132G.goo"
-          + "gle.cloud.discoveryengine.v1.DocumentPro"
-          + "cessingConfig.ParsingConfig:\0028\001:\212\002\352A\206\002\n7"
-          + "discoveryengine.googleapis.com/DocumentP"
-          + "rocessingConfig\022Xprojects/{project}/loca"
-          + "tions/{location}/dataStores/{data_store}"
-          + "/documentProcessingConfig\022qprojects/{pro"
-          + "ject}/locations/{location}/collections/{"
-          + "collection}/dataStores/{data_store}/docu"
-          + "mentProcessingConfigB\220\002\n#com.google.clou"
-          + "d.discoveryengine.v1B\035DocumentProcessing"
-          + "ConfigProtoP\001ZMcloud.google.com/go/disco"
-          + "veryengine/apiv1/discoveryenginepb;disco"
-          + "veryenginepb\242\002\017DISCOVERYENGINE\252\002\037Google."
-          + "Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\"
-          + "DiscoveryEngine\\V1\352\002\"Google::Cloud::Disc"
-          + "overyEngine::V1b\006proto3"
+          + "\030\002 \001(\010\032\356\001\n\023LayoutParsingConfig\022$\n\027enable"
+          + "_table_annotation\030\001 \001(\010B\003\340A\001\022$\n\027enable_i"
+          + "mage_annotation\030\002 \001(\010B\003\340A\001\022%\n\030structured"
+          + "_content_types\030\t \003(\tB\003\340A\001\022\"\n\025exclude_htm"
+          + "l_elements\030\n \003(\tB\003\340A\001\022!\n\024exclude_html_cl"
+          + "asses\030\013 \003(\tB\003\340A\001\022\035\n\020exclude_html_ids\030\014 \003"
+          + "(\tB\003\340A\001B\027\n\025type_dedicated_config\032\206\001\n\033Par"
+          + "singConfigOverridesEntry\022\013\n\003key\030\001 \001(\t\022V\n"
+          + "\005value\030\002 \001(\0132G.google.cloud.discoveryeng"
+          + "ine.v1.DocumentProcessingConfig.ParsingC"
+          + "onfig:\0028\001:\212\002\352A\206\002\n7discoveryengine.google"
+          + "apis.com/DocumentProcessingConfig\022Xproje"
+          + "cts/{project}/locations/{location}/dataS"
+          + "tores/{data_store}/documentProcessingCon"
+          + "fig\022qprojects/{project}/locations/{locat"
+          + "ion}/collections/{collection}/dataStores"
+          + "/{data_store}/documentProcessingConfigB\220"
+          + "\002\n#com.google.cloud.discoveryengine.v1B\035"
+          + "DocumentProcessingConfigProtoP\001ZMcloud.g"
+          + "oogle.com/go/discoveryengine/apiv1/disco"
+          + "veryenginepb;discoveryenginepb\242\002\017DISCOVE"
+          + "RYENGINE\252\002\037Google.Cloud.DiscoveryEngine."
+          + "V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\"G"
+          + "oogle::Cloud::DiscoveryEngine::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -194,7 +200,14 @@ public final class DocumentProcessingConfigProto {
     internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "EnableTableAnnotation",
+              "EnableImageAnnotation",
+              "StructuredContentTypes",
+              "ExcludeHtmlElements",
+              "ExcludeHtmlClasses",
+              "ExcludeHtmlIds",
+            });
     internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfigOverridesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_descriptor
             .getNestedTypes()
@@ -207,6 +220,7 @@ public final class DocumentProcessingConfigProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

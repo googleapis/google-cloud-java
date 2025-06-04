@@ -455,7 +455,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-   * values are from `18000` to `936000`, in increments of 9000.
+   * values are from `18000` to `954000`, in increments of 9000.
    * </pre>
    *
    * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -895,12 +895,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The throughput of the instance in MB/s/TiB.
-   * Valid values are 250, 500, 1000.
-   * Default value is 1000.
+   * Required. The throughput of the instance in MB/s/TiB.
+   * Valid values are 125, 250, 500, 1000.
    * </pre>
    *
-   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The perUnitStorageThroughput.
    */
@@ -1835,7 +1834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `936000`, in increments of 9000.
+     * values are from `18000` to `954000`, in increments of 9000.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1852,7 +1851,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `936000`, in increments of 9000.
+     * values are from `18000` to `954000`, in increments of 9000.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1873,7 +1872,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `936000`, in increments of 9000.
+     * values are from `18000` to `954000`, in increments of 9000.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2952,12 +2951,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The throughput of the instance in MB/s/TiB.
-     * Valid values are 250, 500, 1000.
-     * Default value is 1000.
+     * Required. The throughput of the instance in MB/s/TiB.
+     * Valid values are 125, 250, 500, 1000.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The perUnitStorageThroughput.
@@ -2971,12 +2969,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The throughput of the instance in MB/s/TiB.
-     * Valid values are 250, 500, 1000.
-     * Default value is 1000.
+     * Required. The throughput of the instance in MB/s/TiB.
+     * Valid values are 125, 250, 500, 1000.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The perUnitStorageThroughput to set.
@@ -2994,12 +2991,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The throughput of the instance in MB/s/TiB.
-     * Valid values are 250, 500, 1000.
-     * Default value is 1000.
+     * Required. The throughput of the instance in MB/s/TiB.
+     * Valid values are 125, 250, 500, 1000.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.

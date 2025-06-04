@@ -28,8 +28,10 @@ public interface GcsPathOrBuilder
    *
    *
    * <pre>
-   * Required. URI to a Cloud Storage path in the format:
-   * `gs://&lt;bucket_name&gt;`.
+   * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+   * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +44,10 @@ public interface GcsPathOrBuilder
    *
    *
    * <pre>
-   * Required. URI to a Cloud Storage path in the format:
-   * `gs://&lt;bucket_name&gt;`.
+   * Required. The URI to a Cloud Storage bucket, or a path within a bucket,
+   * using the format `gs://&lt;bucket_name&gt;/&lt;optional_path_inside_bucket&gt;/`. If a
+   * path inside the bucket is specified, it must end with a forward slash
+   * (`/`).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

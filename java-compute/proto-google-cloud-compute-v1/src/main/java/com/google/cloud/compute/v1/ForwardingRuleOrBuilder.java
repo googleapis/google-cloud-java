@@ -1209,6 +1209,45 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  boolean hasSelfLinkWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  java.lang.String getSelfLinkWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  com.google.protobuf.ByteString getSelfLinkWithIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *

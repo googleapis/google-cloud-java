@@ -692,6 +692,76 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         : reservationMaintenance_;
   }
 
+  public static final int RESERVATION_SUB_BLOCK_COUNT_FIELD_NUMBER = 330782955;
+  private int reservationSubBlockCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+   *
+   * @return Whether the reservationSubBlockCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationSubBlockCount() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+   *
+   * @return The reservationSubBlockCount.
+   */
+  @java.lang.Override
+  public int getReservationSubBlockCount() {
+    return reservationSubBlockCount_;
+  }
+
+  public static final int RESERVATION_SUB_BLOCK_IN_USE_COUNT_FIELD_NUMBER = 186007137;
+  private int reservationSubBlockInUseCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+   *
+   * @return Whether the reservationSubBlockInUseCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationSubBlockInUseCount() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * </pre>
+   *
+   * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+   *
+   * @return The reservationSubBlockInUseCount.
+   */
+  @java.lang.Override
+  public int getReservationSubBlockInUseCount() {
+    return reservationSubBlockInUseCount_;
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
 
   @SuppressWarnings("serial")
@@ -710,7 +780,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -779,7 +849,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -849,7 +919,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -920,7 +990,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -994,28 +1064,34 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(94851343, count_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(186007137, reservationSubBlockInUseCount_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(279778519, getPhysicalTopology());
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(330782955, reservationSubBlockCount_);
+    }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(340607776, getReservationMaintenance());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1039,33 +1115,43 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(94851343, count_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              186007137, reservationSubBlockInUseCount_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               279778519, getPhysicalTopology());
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              330782955, reservationSubBlockCount_);
+    }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               340607776, getReservationMaintenance());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1118,6 +1204,16 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     if (hasReservationMaintenance() != other.hasReservationMaintenance()) return false;
     if (hasReservationMaintenance()) {
       if (!getReservationMaintenance().equals(other.getReservationMaintenance())) return false;
+    }
+    if (hasReservationSubBlockCount() != other.hasReservationSubBlockCount()) return false;
+    if (hasReservationSubBlockCount()) {
+      if (getReservationSubBlockCount() != other.getReservationSubBlockCount()) return false;
+    }
+    if (hasReservationSubBlockInUseCount() != other.hasReservationSubBlockInUseCount())
+      return false;
+    if (hasReservationSubBlockInUseCount()) {
+      if (getReservationSubBlockInUseCount() != other.getReservationSubBlockInUseCount())
+        return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1177,6 +1273,14 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     if (hasReservationMaintenance()) {
       hash = (37 * hash) + RESERVATION_MAINTENANCE_FIELD_NUMBER;
       hash = (53 * hash) + getReservationMaintenance().hashCode();
+    }
+    if (hasReservationSubBlockCount()) {
+      hash = (37 * hash) + RESERVATION_SUB_BLOCK_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationSubBlockCount();
+    }
+    if (hasReservationSubBlockInUseCount()) {
+      hash = (37 * hash) + RESERVATION_SUB_BLOCK_IN_USE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationSubBlockInUseCount();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1360,6 +1464,8 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         reservationMaintenanceBuilder_.dispose();
         reservationMaintenanceBuilder_ = null;
       }
+      reservationSubBlockCount_ = 0;
+      reservationSubBlockInUseCount_ = 0;
       selfLink_ = "";
       selfLinkWithId_ = "";
       status_ = "";
@@ -1438,20 +1544,28 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.reservationSubBlockCount_ = reservationSubBlockCount_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.reservationSubBlockInUseCount_ = reservationSubBlockInUseCount_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.zone_ = zone_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1531,24 +1645,30 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       if (other.hasReservationMaintenance()) {
         mergeReservationMaintenance(other.getReservationMaintenance());
       }
+      if (other.hasReservationSubBlockCount()) {
+        setReservationSubBlockCount(other.getReservationSubBlockCount());
+      }
+      if (other.hasReservationSubBlockInUseCount()) {
+        setReservationSubBlockInUseCount(other.getReservationSubBlockInUseCount());
+      }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1598,7 +1718,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 29957474
             case 244202930:
@@ -1610,7 +1730,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 356167698
             case 758810744:
@@ -1622,9 +1742,15 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
+            case 1488057096:
+              {
+                reservationSubBlockInUseCount_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1488057096
             case -2056739142:
               {
                 input.readMessage(
@@ -1632,6 +1758,12 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case -2056739142
+            case -1648703656:
+              {
+                reservationSubBlockCount_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case -1648703656
             case -1570105086:
               {
                 input.readMessage(
@@ -1642,7 +1774,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -645248918
             case -347296280:
@@ -2701,6 +2833,150 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return reservationMaintenanceBuilder_;
     }
 
+    private int reservationSubBlockCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of reservation subBlocks associated with this reservation block.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+     *
+     * @return Whether the reservationSubBlockCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationSubBlockCount() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of reservation subBlocks associated with this reservation block.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+     *
+     * @return The reservationSubBlockCount.
+     */
+    @java.lang.Override
+    public int getReservationSubBlockCount() {
+      return reservationSubBlockCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of reservation subBlocks associated with this reservation block.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+     *
+     * @param value The reservationSubBlockCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationSubBlockCount(int value) {
+
+      reservationSubBlockCount_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of reservation subBlocks associated with this reservation block.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_count = 330782955;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationSubBlockCount() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      reservationSubBlockCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int reservationSubBlockInUseCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+     *
+     * @return Whether the reservationSubBlockInUseCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationSubBlockInUseCount() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+     *
+     * @return The reservationSubBlockInUseCount.
+     */
+    @java.lang.Override
+    public int getReservationSubBlockInUseCount() {
+      return reservationSubBlockInUseCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+     *
+     * @param value The reservationSubBlockInUseCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationSubBlockInUseCount(int value) {
+
+      reservationSubBlockInUseCount_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+     * </pre>
+     *
+     * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationSubBlockInUseCount() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      reservationSubBlockInUseCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
 
     /**
@@ -2715,7 +2991,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2781,7 +3057,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2799,7 +3075,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2822,7 +3098,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2841,7 +3117,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2907,7 +3183,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2925,7 +3201,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2948,7 +3224,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2968,7 +3244,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3037,7 +3313,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3056,7 +3332,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3080,7 +3356,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3099,7 +3375,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3165,7 +3441,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3183,7 +3459,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3206,7 +3482,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

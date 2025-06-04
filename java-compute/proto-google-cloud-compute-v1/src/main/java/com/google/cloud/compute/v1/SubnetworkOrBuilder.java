@@ -669,6 +669,43 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.SubnetworkParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.SubnetworkParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *

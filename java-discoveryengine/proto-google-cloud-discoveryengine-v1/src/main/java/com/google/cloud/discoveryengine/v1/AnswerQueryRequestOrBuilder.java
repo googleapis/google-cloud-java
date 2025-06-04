@@ -419,7 +419,7 @@ public interface AnswerQueryRequestOrBuilder
    * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is deprecated.
-   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
+   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
    * @return The asynchronousMode.
    */
   @java.lang.Deprecated

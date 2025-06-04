@@ -217,6 +217,9 @@
             "BulkInsert": {
               "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
             },
+            "BulkSetLabels": {
+              "methods": ["bulkSetLabelsAsync", "bulkSetLabelsAsync", "bulkSetLabelsOperationCallable", "bulkSetLabelsCallable"]
+            },
             "CreateSnapshot": {
               "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
             },
@@ -2526,6 +2529,21 @@
             },
             "PerformMaintenance": {
               "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReservationSubBlocks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReservationSubBlocksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }
