@@ -135,6 +135,10 @@
           <groupId>io.opentelemetry.semconv</groupId>
           <artifactId>opentelemetry-semconv</artifactId>
         </exclusion>
+        <exclusion>
+          <groupId>com.google.re2j</groupId>
+          <artifactId>re2j</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <!-- END OpenTelemetry -->
