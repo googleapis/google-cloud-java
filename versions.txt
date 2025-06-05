@@ -856,6 +856,6 @@ proto-google-cloud-modelarmor-v1beta:0.5.0:0.6.0-SNAPSHOT
 grpc-google-cloud-modelarmor-v1beta:0.5.0:0.6.0-SNAPSHOT
 proto-google-cloud-dataform-v1:0.63.0:0.64.0-SNAPSHOT
 grpc-google-cloud-dataform-v1:0.63.0:0.64.0-SNAPSHOT
-google-cloud-spanneradapter:0.0.0:0.0.1-SNAPSHOT
-proto-google-cloud-spanneradapter-v1:0.0.0:0.0.1-SNAPSHOT
-grpc-google-cloud-spanneradapter-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-spanneradapter:0.0.1:0.1.0-SNAPSHOT
+proto-google-cloud-spanneradapter-v1:0.0.1:0.1.0-SNAPSHOT
+grpc-google-cloud-spanneradapter-v1:0.0.1:0.1.0-SNAPSHOT
