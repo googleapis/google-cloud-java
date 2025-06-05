@@ -128,7 +128,6 @@ public final class PathElement implements Serializable {
 
   public static PathElement of(String kind, String name) {
     checkArgument(!Strings.isNullOrEmpty(name), "name must not be empty or null");
-    checkArgument(name.length() <= 500, "name must not exceed 500 characters");
     return new PathElement(kind, name, null);
   }
 
