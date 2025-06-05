@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-privilegedaccessmanager</artifactId>
-  <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-privilegedaccessmanager:current} -->
+  <version>0.18.0</version><!-- {x-version-update:google-cloud-privilegedaccessmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Privileged Access Manager API</name>
   <description>Privileged Access Manager API Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse or abuse.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-privilegedaccessmanager-parent</artifactId>
-    <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-privilegedaccessmanager:current} -->
+    <version>0.18.0</version><!-- {x-version-update:google-cloud-privilegedaccessmanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-privilegedaccessmanager</site.installationModule>
