@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-issue-resolution-bom</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+  <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.58.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.59.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+        <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-issue-resolution-v1beta</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:grpc-google-shopping-merchant-issue-resolution-v1beta:current} -->
+        <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-issue-resolution-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-issue-resolution-v1beta</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:proto-google-shopping-merchant-issue-resolution-v1beta:current} -->
+        <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-issue-resolution-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
