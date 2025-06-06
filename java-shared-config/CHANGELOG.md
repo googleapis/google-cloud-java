@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.1](https://github.com/googleapis/java-shared-config/compare/v1.16.0...v1.16.1) (2025-06-06)
+
+
+### Dependencies
+
+* Latest maven-deploy-plugin 3.1.4 ([#1026](https://github.com/googleapis/java-shared-config/issues/1026)) ([6f83f0b](https://github.com/googleapis/java-shared-config/commit/6f83f0bab04c01f577e42d2b8076f4d557675a57))
+
 ## [1.16.0](https://github.com/googleapis/java-shared-config/compare/v1.15.4...v1.16.0) (2025-05-27)
 
 
