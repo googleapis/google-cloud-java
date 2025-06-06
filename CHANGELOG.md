@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.29.0](https://github.com/googleapis/java-datastore/compare/v2.28.2...v2.29.0) (2025-06-06)
+
+
+### Features
+
+* Add getNumber to AggregationResult (https://github.com/googleapis/java-datastore/issues/1851) ([#1861](https://github.com/googleapis/java-datastore/issues/1861)) ([b9c2c3f](https://github.com/googleapis/java-datastore/commit/b9c2c3ff775f7123d701ccacff9bd2ea3718243b))
+
+
+### Bug Fixes
+
+* Remove 500 char path name limit ([#1865](https://github.com/googleapis/java-datastore/issues/1865)) ([1097175](https://github.com/googleapis/java-datastore/commit/10971752310d8b1794c8e77041b582707142b328))
+
+
+### Dependencies
+
+* Update dependency org.easymock:easymock to v5.6.0 ([#1858](https://github.com/googleapis/java-datastore/issues/1858)) ([acc1513](https://github.com/googleapis/java-datastore/commit/acc1513ad90e8da6743e618322bae075bac4ac46))
+
 ## [2.28.2](https://github.com/googleapis/java-datastore/compare/v2.28.1...v2.28.2) (2025-05-16)
 
 
