@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notebooks</artifactId>
-  <version>1.58.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+  <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   <packaging>jar</packaging>
   <name>Google AI Platform Notebooks</name>
   <description>is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-notebooks-parent</artifactId>
-    <version>1.58.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+    <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-notebooks</site.installationModule>
@@ -27,35 +27,55 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-common-protos</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>com.google.protobuf</groupId>-->
+    <!--      <artifactId>protobuf-java</artifactId>-->
+    <!--    </dependency>-->
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
+      <groupId>org.example</groupId>
+      <artifactId>protobuf-api</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v2</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v1beta1</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -64,10 +84,12 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -83,36 +105,43 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-notebooks-v1beta1</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-notebooks-v2</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-notebooks-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <version>protobuf-shading-within-module</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
@@ -120,24 +149,28 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+      <version>protobuf-shading-within-module</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <version>protobuf-shading-within-module</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>protobuf-shading-within-module</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <version>protobuf-shading-within-module</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
