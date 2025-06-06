@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 (2025-06-04)
+
+### Bug Fixes
+
+* Changed field behavior for an existing field per_unit_storage_throughput. It is now required ([3a36735](https://github.com/googleapis/google-cloud-java/commit/3a36735d7e80e4b0212d464122b95aa79c39c9d9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+
+
 ## 0.2.0 (2025-05-06)
 
 ### Dependencies

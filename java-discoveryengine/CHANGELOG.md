@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.60.0 (2025-06-04)
+
+### Features
+
+* add CMEK config service ([3a36735](https://github.com/googleapis/google-cloud-java/commit/3a36735d7e80e4b0212d464122b95aa79c39c9d9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+
+
 ## 0.58.0 (2025-05-06)
 
 ### Dependencies

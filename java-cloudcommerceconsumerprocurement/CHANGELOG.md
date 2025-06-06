@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.62.0 (2025-06-04)
+
+### ⚠ BREAKING CHANGES
+
+* An existing google.api.http annotation `http_uri` is changed for method `UpdateLicensePool` in service `LicenseManagementService`
+
+### Bug Fixes
+
+* An existing google.api.http annotation `http_uri` is changed for method `UpdateLicensePool` in service `LicenseManagementService` ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+
+
 ## 0.60.0 (2025-05-06)
 
 ### Dependencies
