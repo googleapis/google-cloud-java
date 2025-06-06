@@ -1118,6 +1118,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-spanneradapter-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
         <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-speech:current} -->
         <type>pom</type>
