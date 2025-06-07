@@ -28,9 +28,10 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the configuration, in the following format:
-   *   `projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings`.
-   * Replace PROJECT_NUMBER with the project number for your project.
+   * Identifier. Name of the config would be of the format:
+   *   projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings
+   *   folders/FOLDER_NUMBER/locations/global/quotaAdjusterSettings
+   *   organizations/ORGANIZATION_NUMBER/locations/global/quotaAdjusterSettings
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -43,9 +44,10 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the configuration, in the following format:
-   *   `projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings`.
-   * Replace PROJECT_NUMBER with the project number for your project.
+   * Identifier. Name of the config would be of the format:
+   *   projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings
+   *   folders/FOLDER_NUMBER/locations/global/quotaAdjusterSettings
+   *   organizations/ORGANIZATION_NUMBER/locations/global/quotaAdjusterSettings
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -58,11 +60,11 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The configured value of the enablement at the given resource.
+   * Optional. The configured value of the enablement at the given resource.
    * </pre>
    *
    * <code>
-   * .google.api.cloudquotas.v1beta.QuotaAdjusterSettings.Enablement enablement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.api.cloudquotas.v1beta.QuotaAdjusterSettings.Enablement enablement = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for enablement.
@@ -73,11 +75,11 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The configured value of the enablement at the given resource.
+   * Optional. The configured value of the enablement at the given resource.
    * </pre>
    *
    * <code>
-   * .google.api.cloudquotas.v1beta.QuotaAdjusterSettings.Enablement enablement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.api.cloudquotas.v1beta.QuotaAdjusterSettings.Enablement enablement = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enablement.
@@ -158,4 +160,54 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the setting is inherited or explicitly
+   * specified.
+   * </pre>
+   *
+   * <code>bool inherited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The inherited.
+   */
+  boolean getInherited();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource container from which the setting is inherited.
+   * This refers to the  nearest ancestor with enablement set (either ENABLED or
+   * DISABLED). The value can be an organizations/{organization_id},
+   * folders/{folder_id}, or can be 'default' if no ancestor exists with
+   * enablement set. The value will be empty when enablement is directly set on
+   * this container.
+   * </pre>
+   *
+   * <code>string inherited_from = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The inheritedFrom.
+   */
+  java.lang.String getInheritedFrom();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource container from which the setting is inherited.
+   * This refers to the  nearest ancestor with enablement set (either ENABLED or
+   * DISABLED). The value can be an organizations/{organization_id},
+   * folders/{folder_id}, or can be 'default' if no ancestor exists with
+   * enablement set. The value will be empty when enablement is directly set on
+   * this container.
+   * </pre>
+   *
+   * <code>string inherited_from = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for inheritedFrom.
+   */
+  com.google.protobuf.ByteString getInheritedFromBytes();
 }

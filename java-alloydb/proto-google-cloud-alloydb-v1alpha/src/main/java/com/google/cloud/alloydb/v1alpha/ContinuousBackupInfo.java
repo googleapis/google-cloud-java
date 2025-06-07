@@ -203,8 +203,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Days of the week on which a continuous backup is taken. Output
-   * only field. Ignored if passed into the request.
+   * Output only. Days of the week on which a continuous backup is taken.
    * </pre>
    *
    * <code>
@@ -223,8 +222,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Days of the week on which a continuous backup is taken. Output
-   * only field. Ignored if passed into the request.
+   * Output only. Days of the week on which a continuous backup is taken.
    * </pre>
    *
    * <code>
@@ -242,8 +240,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Days of the week on which a continuous backup is taken. Output
-   * only field. Ignored if passed into the request.
+   * Output only. Days of the week on which a continuous backup is taken.
    * </pre>
    *
    * <code>
@@ -262,8 +259,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Days of the week on which a continuous backup is taken. Output
-   * only field. Ignored if passed into the request.
+   * Output only. Days of the week on which a continuous backup is taken.
    * </pre>
    *
    * <code>
@@ -281,8 +277,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Days of the week on which a continuous backup is taken. Output
-   * only field. Ignored if passed into the request.
+   * Output only. Days of the week on which a continuous backup is taken.
    * </pre>
    *
    * <code>
@@ -306,8 +301,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The earliest restorable time that can be restored to. Output
-   * only field.
+   * Output only. The earliest restorable time that can be restored to. If
+   * continuous backups and recovery was recently enabled, the earliest
+   * restorable time is the creation time of the earliest eligible backup within
+   * this cluster's continuous backup recovery window. After a cluster has had
+   * continuous backups enabled for the duration of its recovery window, the
+   * earliest restorable time becomes "now minus the recovery window". For
+   * example, assuming a point in time recovery is attempted at 04/16/2025
+   * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+   * 04/02/2025 3:23:00PM. This field is only visible if the
+   * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
    * </pre>
    *
    * <code>
@@ -325,8 +328,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The earliest restorable time that can be restored to. Output
-   * only field.
+   * Output only. The earliest restorable time that can be restored to. If
+   * continuous backups and recovery was recently enabled, the earliest
+   * restorable time is the creation time of the earliest eligible backup within
+   * this cluster's continuous backup recovery window. After a cluster has had
+   * continuous backups enabled for the duration of its recovery window, the
+   * earliest restorable time becomes "now minus the recovery window". For
+   * example, assuming a point in time recovery is attempted at 04/16/2025
+   * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+   * 04/02/2025 3:23:00PM. This field is only visible if the
+   * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
    * </pre>
    *
    * <code>
@@ -346,8 +357,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The earliest restorable time that can be restored to. Output
-   * only field.
+   * Output only. The earliest restorable time that can be restored to. If
+   * continuous backups and recovery was recently enabled, the earliest
+   * restorable time is the creation time of the earliest eligible backup within
+   * this cluster's continuous backup recovery window. After a cluster has had
+   * continuous backups enabled for the duration of its recovery window, the
+   * earliest restorable time becomes "now minus the recovery window". For
+   * example, assuming a point in time recovery is attempted at 04/16/2025
+   * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+   * 04/02/2025 3:23:00PM. This field is only visible if the
+   * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
    * </pre>
    *
    * <code>
@@ -1321,8 +1340,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1340,8 +1358,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1358,8 +1375,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1377,8 +1393,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1403,8 +1418,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1428,8 +1442,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1452,8 +1465,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1473,8 +1485,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1491,8 +1502,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1510,8 +1520,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1533,8 +1542,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1555,8 +1563,7 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Days of the week on which a continuous backup is taken. Output
-     * only field. Ignored if passed into the request.
+     * Output only. Days of the week on which a continuous backup is taken.
      * </pre>
      *
      * <code>
@@ -1586,8 +1593,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1604,8 +1619,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1628,8 +1651,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1654,8 +1685,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1678,8 +1717,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1709,8 +1756,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1732,8 +1787,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1750,8 +1813,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
@@ -1772,8 +1843,16 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The earliest restorable time that can be restored to. Output
-     * only field.
+     * Output only. The earliest restorable time that can be restored to. If
+     * continuous backups and recovery was recently enabled, the earliest
+     * restorable time is the creation time of the earliest eligible backup within
+     * this cluster's continuous backup recovery window. After a cluster has had
+     * continuous backups enabled for the duration of its recovery window, the
+     * earliest restorable time becomes "now minus the recovery window". For
+     * example, assuming a point in time recovery is attempted at 04/16/2025
+     * 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+     * 04/02/2025 3:23:00PM. This field is only visible if the
+     * CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
      * </pre>
      *
      * <code>
