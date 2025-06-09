@@ -54,6 +54,7 @@ public class ResourceCleanUp {
               || datasetName.contains("gcloud_test_")
               || datasetName.contains("SHARED_DATASET_TEST_")
               || datasetName.contains("WRITE_STREAM_TEST"))
+              || datasetName.contains("MY_VIEW_DATASET_NAME_TEST_")
           && dataset.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Dataset: %s\n", datasetName);
         bigquery.delete(
