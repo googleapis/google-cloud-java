@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.DatasetReference;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -83,5 +84,12 @@ public final class DatasetId implements Serializable {
 
   static DatasetId fromPb(DatasetReference datasetRef) {
     return new DatasetId(datasetRef.getProjectId(), datasetRef.getDatasetId());
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .put("bq.dataset.project", this.getProject())
+        .put("bq.dataset.id", this.getDataset())
+        .build();
   }
 }

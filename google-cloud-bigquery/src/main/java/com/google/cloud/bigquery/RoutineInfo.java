@@ -24,6 +24,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
@@ -543,5 +544,18 @@ public class RoutineInfo implements Serializable {
 
   static RoutineInfo fromPb(Routine routinePb) {
     return new BuilderImpl(routinePb).build();
+  }
+
+  private static String getFieldAsString(Object field) {
+    return field == null ? "null" : field.toString();
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .putAll(this.getRoutineId().getOtelAttributes())
+        .put("bq.routine.type", getFieldAsString(this.getRoutineType()))
+        .put("bq.routine.creation_time", getFieldAsString(this.getCreationTime()))
+        .put("bq.routine.last_modified_time", getFieldAsString(this.getLastModifiedTime()))
+        .build();
   }
 }

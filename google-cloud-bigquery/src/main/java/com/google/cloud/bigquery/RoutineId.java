@@ -21,6 +21,7 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.common.base.Function;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -107,5 +108,13 @@ public final class RoutineId implements Serializable {
   static RoutineId fromPb(RoutineReference routineRef) {
     return new RoutineId(
         routineRef.getProjectId(), routineRef.getDatasetId(), routineRef.getRoutineId());
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .put("bq.routine.project", this.getProject())
+        .put("bq.routine.dataset", this.getDataset())
+        .put("bq.routine.id", this.getRoutine())
+        .build();
   }
 }

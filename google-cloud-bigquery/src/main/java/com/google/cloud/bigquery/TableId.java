@@ -22,6 +22,7 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -113,5 +114,13 @@ public final class TableId implements Serializable {
 
   static TableId fromPb(TableReference tableRef) {
     return new TableId(tableRef.getProjectId(), tableRef.getDatasetId(), tableRef.getTableId());
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .put("bq.table.project", this.getProject())
+        .put("bq.table.dataset", this.getDataset())
+        .put("bq.table.id", this.getTable())
+        .build();
   }
 }

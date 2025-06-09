@@ -27,6 +27,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -744,6 +745,18 @@ public class DatasetInfo implements Serializable {
   /** Returns a {@code DatasetInfo} object given it's user-defined id. */
   public static DatasetInfo of(String datasetId) {
     return newBuilder(datasetId).build();
+  }
+
+  private static String getFieldAsString(Object field) {
+    return field == null ? "null" : field.toString();
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .putAll(this.getDatasetId().getOtelAttributes())
+        .put("bq.dataset.last_modified", getFieldAsString(this.getLastModified()))
+        .put("bq.dataset.location", getFieldAsString(this.getLocation()))
+        .build();
   }
 
   static DatasetInfo fromPb(Dataset datasetPb) {

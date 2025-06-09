@@ -21,6 +21,7 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.JobReference;
 import com.google.auto.value.AutoValue;
+import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.annotation.Nullable;
@@ -121,6 +122,18 @@ public abstract class JobId implements Serializable {
         .setProject(jobRef.getProjectId())
         .setJob(jobRef.getJobId())
         .setLocation(jobRef.getLocation())
+        .build();
+  }
+
+  private static String getFieldAsString(Object field) {
+    return field == null ? "null" : field.toString();
+  }
+
+  protected Attributes getOtelAttributes() {
+    return Attributes.builder()
+        .put("bq.job.id", getFieldAsString(this.getJob()))
+        .put("bq.job.location", getFieldAsString(this.getLocation()))
+        .put("bq.job.project", getFieldAsString(this.getProject()))
         .build();
   }
 }
