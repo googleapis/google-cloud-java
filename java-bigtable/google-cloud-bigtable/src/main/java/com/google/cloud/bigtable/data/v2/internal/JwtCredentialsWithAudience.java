@@ -76,4 +76,9 @@ public class JwtCredentialsWithAudience extends Credentials {
   public void refresh() throws IOException {
     delegate.refresh();
   }
+
+  @Override
+  public String getUniverseDomain() {
+    return delegate.getUniverseDomain();
+  }
 }
