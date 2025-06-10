@@ -52,6 +52,7 @@
                   <pattern>com.google.protobuf</pattern>
                   <shadedPattern>com.shaded.google.protobuf.proto</shadedPattern>
                   <excludes>
+                    <exclude>com.google.protobuf.AbstractMessageInternal</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite</exclude>
                     <exclude>com.google.protobuf.AbstractParser</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList</exclude>
@@ -117,7 +118,9 @@
                     <exclude>com.google.protobuf.FloatValue</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory</exclude>
+                    <exclude>com.google.protobuf.GeneratedMessageInternal</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite</exclude>
+                    <exclude>com.google.protobuf.GeneratedMessageV3Internal</exclude>
                     <exclude>com.google.protobuf.InlineMe</exclude>
                     <exclude>com.google.protobuf.Int32Value</exclude>
                     <exclude>com.google.protobuf.Int32ValueOrBuilder</exclude>
@@ -180,13 +183,13 @@
                     <exclude>com.google.protobuf.ProtoSyntax</exclude>
                     <exclude>com.google.protobuf.RawMessageInfo</exclude>
                     <exclude>com.google.protobuf.Reader</exclude>
-                    <exclude>com.google.protobuf.RepeatedFieldBuilderV3</exclude>
+                    <exclude>com.google.protobuf.RepeatedFieldBuilderV3Internal</exclude>
                     <exclude>com.google.protobuf.RopeByteString</exclude>
                     <exclude>com.google.protobuf.Schema</exclude>
                     <exclude>com.google.protobuf.SchemaFactory</exclude>
                     <exclude>com.google.protobuf.SchemaUtil</exclude>
                     <exclude>com.google.protobuf.SerializedForm</exclude>
-                    <exclude>com.google.protobuf.SingleFieldBuilderV3</exclude>
+                    <exclude>com.google.protobuf.SingleFieldBuilderV3Internal</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap</exclude>
                     <exclude>com.google.protobuf.SourceContext</exclude>
                     <exclude>com.google.protobuf.SourceContextOrBuilder</exclude>
@@ -225,6 +228,7 @@
                     <exclude>com.google.protobuf.WrappersProto</exclude>
                     <exclude>com.google.protobuf.Writer</exclude>
 
+                    <exclude>com.google.protobuf.AbstractMessageInternal$*</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite$*</exclude>
                     <exclude>com.google.protobuf.AbstractParser$*</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList$*</exclude>
@@ -290,7 +294,9 @@
                     <exclude>com.google.protobuf.FloatValue$*</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory$*</exclude>
+                    <exclude>com.google.protobuf.GeneratedMessageInternal$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite$*</exclude>
+                    <exclude>com.google.protobuf.GeneratedMessageV3Internal$*</exclude>
                     <exclude>com.google.protobuf.InlineMe$*</exclude>
                     <exclude>com.google.protobuf.Int32Value$*</exclude>
                     <exclude>com.google.protobuf.Int32ValueOrBuilder$*</exclude>
@@ -353,13 +359,13 @@
                     <exclude>com.google.protobuf.ProtoSyntax$*</exclude>
                     <exclude>com.google.protobuf.RawMessageInfo$*</exclude>
                     <exclude>com.google.protobuf.Reader$*</exclude>
-                    <exclude>com.google.protobuf.RepeatedFieldBuilderV3$*</exclude>
+                    <exclude>com.google.protobuf.RepeatedFieldBuilderV3Internal$*</exclude>
                     <exclude>com.google.protobuf.RopeByteString$*</exclude>
                     <exclude>com.google.protobuf.Schema$*</exclude>
                     <exclude>com.google.protobuf.SchemaFactory$*</exclude>
                     <exclude>com.google.protobuf.SchemaUtil$*</exclude>
                     <exclude>com.google.protobuf.SerializedForm$*</exclude>
-                    <exclude>com.google.protobuf.SingleFieldBuilderV3$*</exclude>
+                    <exclude>com.google.protobuf.SingleFieldBuilderV3Internal$*</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap$*</exclude>
                     <exclude>com.google.protobuf.SourceContext$*</exclude>
                     <exclude>com.google.protobuf.SourceContextOrBuilder$*</exclude>
