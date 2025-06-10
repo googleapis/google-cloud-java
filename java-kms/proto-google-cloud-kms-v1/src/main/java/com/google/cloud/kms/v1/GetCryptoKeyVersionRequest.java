@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyVersionRequest}
  */
-public final class GetCryptoKeyVersionRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetCryptoKeyVersionRequest extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GetCryptoKeyVersionRequest)
     GetCryptoKeyVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use GetCryptoKeyVersionRequest.newBuilder() to construct.
-  private GetCryptoKeyVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private GetCryptoKeyVersionRequest(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -55,7 +55,7 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_GetCryptoKeyVersionRequest_fieldAccessorTable
@@ -135,8 +135,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 1, name_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -147,8 +147,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(1, name_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -222,38 +222,38 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.GetCryptoKeyVersionRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -276,7 +276,7 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -290,7 +290,7 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
    *
    * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyVersionRequest}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.GetCryptoKeyVersionRequest)
       com.google.cloud.kms.v1.GetCryptoKeyVersionRequestOrBuilder {
@@ -300,7 +300,7 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
           .internal_static_google_cloud_kms_v1_GetCryptoKeyVersionRequest_fieldAccessorTable
@@ -312,7 +312,7 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
     // Construct using com.google.cloud.kms.v1.GetCryptoKeyVersionRequest.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
     }
 

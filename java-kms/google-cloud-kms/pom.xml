@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kms:current} -->
+  <version>protoc-runtime-breaking-change</version><!-- {x-version-update:google-cloud-kms:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud KMS</name>
   <description>Java idiomatic client for Google Cloud KMS</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-kms-parent</artifactId>
-    <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kms:current} -->
+    <version>protoc-runtime-breaking-change</version><!-- {x-version-update:google-cloud-kms:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-kms</site.installationModule>
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.example</groupId>
       <artifactId>protobuf-api</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>protoc-runtime-breaking-change</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -65,7 +65,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-kms-v1</artifactId>
-      <version>protobuf-shading-within-module</version>
+      <version>protoc-runtime-breaking-change</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -127,7 +127,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-kms-v1</artifactId>
-      <version>protobuf-shading-within-module</version>
+      <version>protoc-runtime-breaking-change</version>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

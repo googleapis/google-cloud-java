@@ -28,13 +28,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.ChecksummedData}
  */
-public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV3
+public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ChecksummedData)
     ChecksummedDataOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use ChecksummedData.newBuilder() to construct.
-  private ChecksummedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ChecksummedData(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -54,7 +54,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_ChecksummedData_fieldAccessorTable
@@ -285,38 +285,38 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
 
   public static com.google.cloud.kms.v1.ChecksummedData parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ChecksummedData parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.ChecksummedData parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ChecksummedData parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.ChecksummedData parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ChecksummedData parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -339,7 +339,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -352,7 +352,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
    *
    * Protobuf type {@code google.cloud.kms.v1.ChecksummedData}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ChecksummedData)
       com.google.cloud.kms.v1.ChecksummedDataOrBuilder {
@@ -362,7 +362,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsResourcesProto
           .internal_static_google_cloud_kms_v1_ChecksummedData_fieldAccessorTable
@@ -376,13 +376,13 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getCrc32CChecksumFieldBuilder();
       }
     }

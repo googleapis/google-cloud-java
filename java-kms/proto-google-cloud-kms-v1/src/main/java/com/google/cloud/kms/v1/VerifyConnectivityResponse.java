@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.VerifyConnectivityResponse}
  */
-public final class VerifyConnectivityResponse extends com.google.protobuf.GeneratedMessageV3
+public final class VerifyConnectivityResponse extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.VerifyConnectivityResponse)
     VerifyConnectivityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use VerifyConnectivityResponse.newBuilder() to construct.
-  private VerifyConnectivityResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private VerifyConnectivityResponse(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -53,7 +53,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.EkmServiceProto
         .internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable
@@ -154,38 +154,38 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.VerifyConnectivityResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -208,7 +208,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -222,7 +222,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
    *
    * Protobuf type {@code google.cloud.kms.v1.VerifyConnectivityResponse}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.VerifyConnectivityResponse)
       com.google.cloud.kms.v1.VerifyConnectivityResponseOrBuilder {
@@ -232,7 +232,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.EkmServiceProto
           .internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable
@@ -244,7 +244,7 @@ public final class VerifyConnectivityResponse extends com.google.protobuf.Genera
     // Construct using com.google.cloud.kms.v1.VerifyConnectivityResponse.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
     }
 

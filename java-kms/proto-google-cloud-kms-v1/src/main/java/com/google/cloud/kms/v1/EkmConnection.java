@@ -35,13 +35,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.EkmConnection}
  */
-public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
+public final class EkmConnection extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EkmConnection)
     EkmConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use EkmConnection.newBuilder() to construct.
-  private EkmConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private EkmConnection(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -65,7 +65,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.EkmServiceProto
         .internal_static_google_cloud_kms_v1_EkmConnection_fieldAccessorTable
@@ -469,13 +469,13 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.kms.v1.EkmConnection.ServiceResolver}
    */
-  public static final class ServiceResolver extends com.google.protobuf.GeneratedMessageV3
+  public static final class ServiceResolver extends com.google.protobuf.GeneratedMessageV4
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EkmConnection.ServiceResolver)
       ServiceResolverOrBuilder {
     private static final long serialVersionUID = 0L;
     // Use ServiceResolver.newBuilder() to construct.
-    private ServiceResolver(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private ServiceResolver(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
       super(builder);
     }
 
@@ -498,7 +498,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.EkmServiceProto
           .internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_fieldAccessorTable
@@ -783,14 +783,14 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceDirectoryService_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceDirectoryService_);
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(serviceDirectoryService_)) {
+        com.google.protobuf.GeneratedMessageV4.writeString(output, 1, serviceDirectoryService_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointFilter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, endpointFilter_);
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(endpointFilter_)) {
+        com.google.protobuf.GeneratedMessageV4.writeString(output, 2, endpointFilter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, hostname_);
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(hostname_)) {
+        com.google.protobuf.GeneratedMessageV4.writeString(output, 3, hostname_);
       }
       for (int i = 0; i < serverCertificates_.size(); i++) {
         output.writeMessage(4, serverCertificates_.get(i));
@@ -804,15 +804,15 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceDirectoryService_)) {
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(serviceDirectoryService_)) {
         size +=
-            com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceDirectoryService_);
+            com.google.protobuf.GeneratedMessageV4.computeStringSize(1, serviceDirectoryService_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointFilter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, endpointFilter_);
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(endpointFilter_)) {
+        size += com.google.protobuf.GeneratedMessageV4.computeStringSize(2, endpointFilter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, hostname_);
+      if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(hostname_)) {
+        size += com.google.protobuf.GeneratedMessageV4.computeStringSize(3, hostname_);
       }
       for (int i = 0; i < serverCertificates_.size(); i++) {
         size +=
@@ -901,38 +901,38 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseFrom(
         java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseFrom(
         java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseDelimitedFrom(
         java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseDelimitedFrom(
         java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+      return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseFrom(
         com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.kms.v1.EkmConnection.ServiceResolver parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
@@ -957,7 +957,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -973,7 +973,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * Protobuf type {@code google.cloud.kms.v1.EkmConnection.ServiceResolver}
      */
     public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
         implements
         // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.EkmConnection.ServiceResolver)
         com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder {
@@ -983,7 +983,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.kms.v1.EkmServiceProto
             .internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_fieldAccessorTable
@@ -995,7 +995,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       // Construct using com.google.cloud.kms.v1.EkmConnection.ServiceResolver.newBuilder()
       private Builder() {}
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
         super(parent);
       }
 
@@ -1156,7 +1156,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
               serverCertificates_ = other.serverCertificates_;
               bitField0_ = (bitField0_ & ~0x00000008);
               serverCertificatesBuilder_ =
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                  com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders
                       ? getServerCertificatesFieldBuilder()
                       : null;
             } else {
@@ -2481,8 +2481,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getCreateTime());
@@ -2490,16 +2490,16 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < serviceResolvers_.size(); i++) {
       output.writeMessage(3, serviceResolvers_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, etag_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 5, etag_);
     }
     if (keyManagementMode_
         != com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.KEY_MANAGEMENT_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(6, keyManagementMode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoSpacePath_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cryptoSpacePath_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(cryptoSpacePath_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 7, cryptoSpacePath_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2510,8 +2510,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCreateTime());
@@ -2519,16 +2519,16 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < serviceResolvers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, serviceResolvers_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, etag_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(5, etag_);
     }
     if (keyManagementMode_
         != com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.KEY_MANAGEMENT_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, keyManagementMode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoSpacePath_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cryptoSpacePath_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(cryptoSpacePath_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(7, cryptoSpacePath_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2622,38 +2622,38 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
 
   public static com.google.cloud.kms.v1.EkmConnection parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.EkmConnection parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.EkmConnection parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.EkmConnection parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.EkmConnection parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.EkmConnection parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -2676,7 +2676,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -2696,7 +2696,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.kms.v1.EkmConnection}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.EkmConnection)
       com.google.cloud.kms.v1.EkmConnectionOrBuilder {
@@ -2706,7 +2706,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.EkmServiceProto
           .internal_static_google_cloud_kms_v1_EkmConnection_fieldAccessorTable
@@ -2720,13 +2720,13 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getServiceResolversFieldBuilder();
       }
@@ -2893,7 +2893,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             serviceResolvers_ = other.serviceResolvers_;
             bitField0_ = (bitField0_ & ~0x00000004);
             serviceResolversBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders
                     ? getServiceResolversFieldBuilder()
                     : null;
           } else {

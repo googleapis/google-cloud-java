@@ -38,13 +38,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
  */
-public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessageV3
+public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CryptoKeyVersion)
     CryptoKeyVersionOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use CryptoKeyVersion.newBuilder() to construct.
-  private CryptoKeyVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private CryptoKeyVersion(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -71,7 +71,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable
@@ -2514,8 +2514,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 1, name_);
     }
     if (state_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState
@@ -2548,14 +2548,14 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getGenerateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, importJob_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(importJob_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 14, importJob_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(15, getImportTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importFailureReason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, importFailureReason_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(importFailureReason_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 16, importFailureReason_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(17, getExternalProtectionLevelOptions());
@@ -2563,11 +2563,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       output.writeBool(18, reimportEligible_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generationFailureReason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, generationFailureReason_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(generationFailureReason_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 19, generationFailureReason_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalDestructionFailureReason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(externalDestructionFailureReason_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(
           output, 20, externalDestructionFailureReason_);
     }
     getUnknownFields().writeTo(output);
@@ -2579,8 +2579,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(1, name_);
     }
     if (state_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState
@@ -2613,14 +2613,14 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getGenerateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, importJob_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(importJob_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(14, importJob_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getImportTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importFailureReason_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, importFailureReason_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(importFailureReason_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(16, importFailureReason_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
@@ -2630,13 +2630,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, reimportEligible_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generationFailureReason_)) {
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(generationFailureReason_)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(19, generationFailureReason_);
+          com.google.protobuf.GeneratedMessageV4.computeStringSize(19, generationFailureReason_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalDestructionFailureReason_)) {
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(externalDestructionFailureReason_)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+          com.google.protobuf.GeneratedMessageV4.computeStringSize(
               20, externalDestructionFailureReason_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -2793,38 +2793,38 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersion parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -2847,7 +2847,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -2870,7 +2870,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.CryptoKeyVersion)
       com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder {
@@ -2880,7 +2880,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsResourcesProto
           .internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable
@@ -2894,13 +2894,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getAttestationFieldBuilder();
         getCreateTimeFieldBuilder();
         getGenerateTimeFieldBuilder();

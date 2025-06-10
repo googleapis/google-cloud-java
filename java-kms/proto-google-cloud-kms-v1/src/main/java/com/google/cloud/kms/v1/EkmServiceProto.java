@@ -30,55 +30,55 @@ public final class EkmServiceProto {
 
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ListEkmConnectionsRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ListEkmConnectionsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ListEkmConnectionsResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ListEkmConnectionsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_GetEkmConnectionRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_GetEkmConnectionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CreateEkmConnectionRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CreateEkmConnectionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_GetEkmConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_Certificate_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_EkmConnection_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EkmConnection_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_EkmConfig_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EkmConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
@@ -214,7 +214,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_ListEkmConnectionsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_kms_v1_ListEkmConnectionsRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListEkmConnectionsRequest_descriptor,
             new java.lang.String[] {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
@@ -222,7 +222,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_ListEkmConnectionsResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_kms_v1_ListEkmConnectionsResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListEkmConnectionsResponse_descriptor,
             new java.lang.String[] {
               "EkmConnections", "NextPageToken", "TotalSize",
@@ -230,7 +230,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_GetEkmConnectionRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_kms_v1_GetEkmConnectionRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_GetEkmConnectionRequest_descriptor,
             new java.lang.String[] {
               "Name",
@@ -238,7 +238,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_CreateEkmConnectionRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_kms_v1_CreateEkmConnectionRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CreateEkmConnectionRequest_descriptor,
             new java.lang.String[] {
               "Parent", "EkmConnectionId", "EkmConnection",
@@ -246,7 +246,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_descriptor,
             new java.lang.String[] {
               "EkmConnection", "UpdateMask",
@@ -254,7 +254,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_kms_v1_GetEkmConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor,
             new java.lang.String[] {
               "Name",
@@ -262,7 +262,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor,
             new java.lang.String[] {
               "EkmConfig", "UpdateMask",
@@ -270,7 +270,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_Certificate_descriptor =
         getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_Certificate_descriptor,
             new java.lang.String[] {
               "RawDer",
@@ -286,7 +286,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_EkmConnection_descriptor =
         getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_kms_v1_EkmConnection_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_EkmConnection_descriptor,
             new java.lang.String[] {
               "Name",
@@ -299,7 +299,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor =
         internal_static_google_cloud_kms_v1_EkmConnection_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor,
             new java.lang.String[] {
               "ServiceDirectoryService", "EndpointFilter", "Hostname", "ServerCertificates",
@@ -307,7 +307,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_EkmConfig_descriptor =
         getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_kms_v1_EkmConfig_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_EkmConfig_descriptor,
             new java.lang.String[] {
               "Name", "DefaultEkmConnection",
@@ -315,7 +315,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor =
         getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor,
             new java.lang.String[] {
               "Name",
@@ -323,7 +323,7 @@ public final class EkmServiceProto {
     internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor =
         getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor,
             new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =

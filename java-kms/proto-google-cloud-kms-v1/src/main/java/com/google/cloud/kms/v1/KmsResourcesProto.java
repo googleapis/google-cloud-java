@@ -30,55 +30,55 @@ public final class KmsResourcesProto {
 
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_KeyRing_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyRing_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CryptoKey_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CryptoKey_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CryptoKey_LabelsEntry_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CryptoKey_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_KeyOperationAttestation_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyOperationAttestation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ChecksummedData_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ChecksummedData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_PublicKey_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_PublicKey_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ImportJob_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ImportJob_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
@@ -285,7 +285,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_KeyRing_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_kms_v1_KeyRing_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_KeyRing_descriptor,
             new java.lang.String[] {
               "Name", "CreateTime",
@@ -293,7 +293,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_CryptoKey_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_kms_v1_CryptoKey_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CryptoKey_descriptor,
             new java.lang.String[] {
               "Name",
@@ -313,7 +313,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_CryptoKey_LabelsEntry_descriptor =
         internal_static_google_cloud_kms_v1_CryptoKey_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_kms_v1_CryptoKey_LabelsEntry_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CryptoKey_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
@@ -321,7 +321,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_descriptor,
             new java.lang.String[] {
               "ProtectionLevel", "Algorithm",
@@ -329,7 +329,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_KeyOperationAttestation_descriptor =
         getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_kms_v1_KeyOperationAttestation_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_KeyOperationAttestation_descriptor,
             new java.lang.String[] {
               "Format", "Content", "CertChains",
@@ -339,7 +339,7 @@ public final class KmsResourcesProto {
             .getNestedTypes()
             .get(0);
     internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_descriptor,
             new java.lang.String[] {
               "CaviumCerts", "GoogleCardCerts", "GooglePartitionCerts",
@@ -347,7 +347,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor,
             new java.lang.String[] {
               "Name",
@@ -370,7 +370,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_ChecksummedData_descriptor =
         getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_kms_v1_ChecksummedData_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ChecksummedData_descriptor,
             new java.lang.String[] {
               "Data", "Crc32CChecksum",
@@ -378,7 +378,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_PublicKey_descriptor =
         getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_kms_v1_PublicKey_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_PublicKey_descriptor,
             new java.lang.String[] {
               "Pem",
@@ -392,7 +392,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_ImportJob_descriptor =
         getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_kms_v1_ImportJob_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ImportJob_descriptor,
             new java.lang.String[] {
               "Name",
@@ -409,7 +409,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor =
         internal_static_google_cloud_kms_v1_ImportJob_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor,
             new java.lang.String[] {
               "Pem",
@@ -417,7 +417,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_descriptor =
         getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_descriptor,
             new java.lang.String[] {
               "ExternalKeyUri", "EkmConnectionKeyPath",
@@ -425,7 +425,7 @@ public final class KmsResourcesProto {
     internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor =
         getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor,
             new java.lang.String[] {
               "AllowedAccessReasons",

@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.Certificate}
  */
-public final class Certificate extends com.google.protobuf.GeneratedMessageV3
+public final class Certificate extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.Certificate)
     CertificateOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use Certificate.newBuilder() to construct.
-  private Certificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private Certificate(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -60,7 +60,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.EkmServiceProto
         .internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable
@@ -532,14 +532,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (parsed_ != false) {
       output.writeBool(2, parsed_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, issuer_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(issuer_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 3, issuer_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subject_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(subject_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 4, subject_);
     }
     for (int i = 0; i < subjectAlternativeDnsNames_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+      com.google.protobuf.GeneratedMessageV4.writeString(
           output, 5, subjectAlternativeDnsNames_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -548,11 +548,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getNotAfterTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, serialNumber_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(serialNumber_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 8, serialNumber_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Fingerprint_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, sha256Fingerprint_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(sha256Fingerprint_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 9, sha256Fingerprint_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -569,11 +569,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (parsed_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, parsed_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, issuer_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(issuer_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(3, issuer_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subject_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(subject_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(4, subject_);
     }
     {
       int dataSize = 0;
@@ -589,11 +589,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getNotAfterTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serialNumber_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(serialNumber_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(8, serialNumber_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Fingerprint_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, sha256Fingerprint_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(sha256Fingerprint_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(9, sha256Fingerprint_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -702,38 +702,38 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   public static com.google.cloud.kms.v1.Certificate parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.Certificate parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.Certificate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.Certificate parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.Certificate parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.Certificate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -756,7 +756,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -770,7 +770,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.kms.v1.Certificate}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.Certificate)
       com.google.cloud.kms.v1.CertificateOrBuilder {
@@ -780,7 +780,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.EkmServiceProto
           .internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable
@@ -794,13 +794,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getNotBeforeTimeFieldBuilder();
         getNotAfterTimeFieldBuilder();
       }

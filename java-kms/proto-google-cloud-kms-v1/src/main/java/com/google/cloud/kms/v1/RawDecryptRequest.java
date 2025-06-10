@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.RawDecryptRequest}
  */
-public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessageV3
+public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.RawDecryptRequest)
     RawDecryptRequestOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use RawDecryptRequest.newBuilder() to construct.
-  private RawDecryptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private RawDecryptRequest(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -58,7 +58,7 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_RawDecryptRequest_fieldAccessorTable
@@ -514,8 +514,8 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 1, name_);
     }
     if (!ciphertext_.isEmpty()) {
       output.writeBytes(2, ciphertext_);
@@ -547,8 +547,8 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(1, name_);
     }
     if (!ciphertext_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, ciphertext_);
@@ -688,38 +688,38 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawDecryptRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -742,7 +742,7 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -756,7 +756,7 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
    *
    * Protobuf type {@code google.cloud.kms.v1.RawDecryptRequest}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.RawDecryptRequest)
       com.google.cloud.kms.v1.RawDecryptRequestOrBuilder {
@@ -766,7 +766,7 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
           .internal_static_google_cloud_kms_v1_RawDecryptRequest_fieldAccessorTable
@@ -780,13 +780,13 @@ public final class RawDecryptRequest extends com.google.protobuf.GeneratedMessag
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getCiphertextCrc32CFieldBuilder();
         getAdditionalAuthenticatedDataCrc32CFieldBuilder();
         getInitializationVectorCrc32CFieldBuilder();

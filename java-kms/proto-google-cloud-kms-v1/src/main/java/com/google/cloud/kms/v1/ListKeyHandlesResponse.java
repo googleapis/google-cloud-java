@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.ListKeyHandlesResponse}
  */
-public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedMessageV3
+public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListKeyHandlesResponse)
     ListKeyHandlesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use ListKeyHandlesResponse.newBuilder() to construct.
-  private ListKeyHandlesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ListKeyHandlesResponse(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -56,7 +56,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.AutokeyProto
         .internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_fieldAccessorTable
@@ -208,8 +208,8 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < keyHandles_.size(); i++) {
       output.writeMessage(1, keyHandles_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 2, nextPageToken_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -223,8 +223,8 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < keyHandles_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keyHandles_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(2, nextPageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -303,38 +303,38 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.ListKeyHandlesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -357,7 +357,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -371,7 +371,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
    *
    * Protobuf type {@code google.cloud.kms.v1.ListKeyHandlesResponse}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.ListKeyHandlesResponse)
       com.google.cloud.kms.v1.ListKeyHandlesResponseOrBuilder {
@@ -381,7 +381,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.AutokeyProto
           .internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_fieldAccessorTable
@@ -393,7 +393,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
     // Construct using com.google.cloud.kms.v1.ListKeyHandlesResponse.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
     }
 
@@ -527,7 +527,7 @@ public final class ListKeyHandlesResponse extends com.google.protobuf.GeneratedM
             keyHandles_ = other.keyHandles_;
             bitField0_ = (bitField0_ & ~0x00000001);
             keyHandlesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders
                     ? getKeyHandlesFieldBuilder()
                     : null;
           } else {

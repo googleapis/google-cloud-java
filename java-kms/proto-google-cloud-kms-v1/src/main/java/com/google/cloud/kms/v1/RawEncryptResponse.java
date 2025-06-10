@@ -29,13 +29,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.RawEncryptResponse}
  */
-public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessageV3
+public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.RawEncryptResponse)
     RawEncryptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use RawEncryptResponse.newBuilder() to construct.
-  private RawEncryptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private RawEncryptResponse(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -58,7 +58,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_RawEncryptResponse_fieldAccessorTable
@@ -504,8 +504,8 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     if (verifiedAdditionalAuthenticatedDataCrc32C_ != false) {
       output.writeBool(7, verifiedAdditionalAuthenticatedDataCrc32C_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 8, name_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
@@ -548,8 +548,8 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               7, verifiedAdditionalAuthenticatedDataCrc32C_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(8, name_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
@@ -677,38 +677,38 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.RawEncryptResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -731,7 +731,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -745,7 +745,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
    *
    * Protobuf type {@code google.cloud.kms.v1.RawEncryptResponse}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.RawEncryptResponse)
       com.google.cloud.kms.v1.RawEncryptResponseOrBuilder {
@@ -755,7 +755,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
           .internal_static_google_cloud_kms_v1_RawEncryptResponse_fieldAccessorTable
@@ -769,13 +769,13 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV4.alwaysUseFieldBuilders) {
         getCiphertextCrc32CFieldBuilder();
         getInitializationVectorCrc32CFieldBuilder();
       }

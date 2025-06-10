@@ -30,23 +30,23 @@ public final class AutokeyAdminProto {
 
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_UpdateAutokeyConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_UpdateAutokeyConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_GetAutokeyConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_GetAutokeyConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_AutokeyConfig_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_AutokeyConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
@@ -115,7 +115,7 @@ public final class AutokeyAdminProto {
     internal_static_google_cloud_kms_v1_UpdateAutokeyConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_kms_v1_UpdateAutokeyConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_UpdateAutokeyConfigRequest_descriptor,
             new java.lang.String[] {
               "AutokeyConfig", "UpdateMask",
@@ -123,7 +123,7 @@ public final class AutokeyAdminProto {
     internal_static_google_cloud_kms_v1_GetAutokeyConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_kms_v1_GetAutokeyConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_GetAutokeyConfigRequest_descriptor,
             new java.lang.String[] {
               "Name",
@@ -131,7 +131,7 @@ public final class AutokeyAdminProto {
     internal_static_google_cloud_kms_v1_AutokeyConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_kms_v1_AutokeyConfig_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_AutokeyConfig_descriptor,
             new java.lang.String[] {
               "Name", "KeyProject", "State",
@@ -139,7 +139,7 @@ public final class AutokeyAdminProto {
     internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigRequest_descriptor,
             new java.lang.String[] {
               "Parent",
@@ -147,7 +147,7 @@ public final class AutokeyAdminProto {
     internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigResponse_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ShowEffectiveAutokeyConfigResponse_descriptor,
             new java.lang.String[] {
               "KeyProject",

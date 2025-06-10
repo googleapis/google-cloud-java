@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms-parent</artifactId>
   <packaging>pom</packaging>
-  <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kms:current} -->
+  <version>protoc-runtime-breaking-change</version><!-- {x-version-update:google-cloud-kms:current} -->
   <name>Google Cloud KMS Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -30,22 +30,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
-        <version>protobuf-shading-within-module</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+        <version>protoc-runtime-breaking-change</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-kms-v1</artifactId>
-        <version>protobuf-shading-within-module</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
+        <version>protoc-runtime-breaking-change</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms</artifactId>
-        <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>protoc-runtime-breaking-change</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms-bom</artifactId>
-        <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>protoc-runtime-breaking-change</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

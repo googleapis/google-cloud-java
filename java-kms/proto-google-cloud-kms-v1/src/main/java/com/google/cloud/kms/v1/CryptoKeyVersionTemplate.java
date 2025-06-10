@@ -33,13 +33,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersionTemplate}
  */
-public final class CryptoKeyVersionTemplate extends com.google.protobuf.GeneratedMessageV3
+public final class CryptoKeyVersionTemplate extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CryptoKeyVersionTemplate)
     CryptoKeyVersionTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use CryptoKeyVersionTemplate.newBuilder() to construct.
-  private CryptoKeyVersionTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private CryptoKeyVersionTemplate(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -60,7 +60,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_fieldAccessorTable
@@ -287,38 +287,38 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.CryptoKeyVersionTemplate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -341,7 +341,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -359,7 +359,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersionTemplate}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.CryptoKeyVersionTemplate)
       com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder {
@@ -369,7 +369,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsResourcesProto
           .internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_fieldAccessorTable
@@ -381,7 +381,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     // Construct using com.google.cloud.kms.v1.CryptoKeyVersionTemplate.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
     }
 

@@ -28,13 +28,13 @@ package com.google.cloud.kms.v1;
  *
  * Protobuf type {@code google.cloud.kms.v1.AutokeyConfig}
  */
-public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
+public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV4
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AutokeyConfig)
     AutokeyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
   // Use AutokeyConfig.newBuilder() to construct.
-  private AutokeyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AutokeyConfig(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
   }
 
@@ -56,7 +56,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.AutokeyAdminProto
         .internal_static_google_cloud_kms_v1_AutokeyConfig_fieldAccessorTable
@@ -425,11 +425,11 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyProject_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyProject_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(keyProject_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 2, keyProject_);
     }
     if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, state_);
@@ -443,11 +443,11 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyProject_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyProject_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(keyProject_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(2, keyProject_);
     }
     if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
@@ -528,38 +528,38 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.kms.v1.AutokeyConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessageV4.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -582,7 +582,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -595,7 +595,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.kms.v1.AutokeyConfig}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV4.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.AutokeyConfig)
       com.google.cloud.kms.v1.AutokeyConfigOrBuilder {
@@ -605,7 +605,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.AutokeyAdminProto
           .internal_static_google_cloud_kms_v1_AutokeyConfig_fieldAccessorTable
@@ -617,7 +617,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     // Construct using com.google.cloud.kms.v1.AutokeyConfig.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV4.BuilderParent parent) {
       super(parent);
     }
 

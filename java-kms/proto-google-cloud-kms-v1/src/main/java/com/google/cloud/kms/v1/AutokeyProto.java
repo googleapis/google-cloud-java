@@ -30,27 +30,27 @@ public final class AutokeyProto {
 
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CreateKeyHandleRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CreateKeyHandleRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_GetKeyHandleRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_GetKeyHandleRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_KeyHandle_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyHandle_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_CreateKeyHandleMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_CreateKeyHandleMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  static final com.google.protobuf.GeneratedMessageV4.FieldAccessorTable
       internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
@@ -120,7 +120,7 @@ public final class AutokeyProto {
     internal_static_google_cloud_kms_v1_CreateKeyHandleRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_kms_v1_CreateKeyHandleRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CreateKeyHandleRequest_descriptor,
             new java.lang.String[] {
               "Parent", "KeyHandleId", "KeyHandle",
@@ -128,7 +128,7 @@ public final class AutokeyProto {
     internal_static_google_cloud_kms_v1_GetKeyHandleRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_kms_v1_GetKeyHandleRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_GetKeyHandleRequest_descriptor,
             new java.lang.String[] {
               "Name",
@@ -136,7 +136,7 @@ public final class AutokeyProto {
     internal_static_google_cloud_kms_v1_KeyHandle_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_kms_v1_KeyHandle_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_KeyHandle_descriptor,
             new java.lang.String[] {
               "Name", "KmsKey", "ResourceTypeSelector",
@@ -144,13 +144,13 @@ public final class AutokeyProto {
     internal_static_google_cloud_kms_v1_CreateKeyHandleMetadata_descriptor =
         getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_kms_v1_CreateKeyHandleMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_CreateKeyHandleMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListKeyHandlesRequest_descriptor,
             new java.lang.String[] {
               "Parent", "PageSize", "PageToken", "Filter",
@@ -158,7 +158,7 @@ public final class AutokeyProto {
     internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_descriptor =
         getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new com.google.protobuf.GeneratedMessageV4.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ListKeyHandlesResponse_descriptor,
             new java.lang.String[] {
               "KeyHandles", "NextPageToken",
