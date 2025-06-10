@@ -17,12 +17,15 @@
 package com.google.cloud.networkservices.v1;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
 
@@ -431,6 +434,18 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
         .createServiceBindingOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public UnaryCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateServiceBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public OperationCallSettings<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .updateServiceBindingOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteServiceBinding. */
   public UnaryCallSettings<DeleteServiceBindingRequest, Operation> deleteServiceBindingSettings() {
     return ((NetworkServicesStubSettings) getStubSettings()).deleteServiceBindingSettings();
@@ -485,6 +500,87 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
   public OperationCallSettings<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationSettings() {
     return ((NetworkServicesStubSettings) getStubSettings()).deleteMeshOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listServiceLbPolicies. */
+  public PagedCallSettings<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listServiceLbPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getServiceLbPolicy. */
+  public UnaryCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public UnaryCallSettings<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public OperationCallSettings<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .createServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public UnaryCallSettings<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public OperationCallSettings<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .updateServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public UnaryCallSettings<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public OperationCallSettings<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .deleteServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGatewayRouteView. */
+  public UnaryCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getGatewayRouteViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMeshRouteView. */
+  public UnaryCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getMeshRouteViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGatewayRouteViews. */
+  public PagedCallSettings<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listGatewayRouteViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMeshRouteViews. */
+  public PagedCallSettings<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listMeshRouteViewsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -932,6 +1028,19 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
       return getStubSettingsBuilder().createServiceBindingOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public UnaryCallSettings.Builder<UpdateServiceBindingRequest, Operation>
+        updateServiceBindingSettings() {
+      return getStubSettingsBuilder().updateServiceBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public OperationCallSettings.Builder<
+            UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+        updateServiceBindingOperationSettings() {
+      return getStubSettingsBuilder().updateServiceBindingOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteServiceBinding. */
     public UnaryCallSettings.Builder<DeleteServiceBindingRequest, Operation>
         deleteServiceBindingSettings() {
@@ -986,6 +1095,87 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
     public OperationCallSettings.Builder<DeleteMeshRequest, Empty, OperationMetadata>
         deleteMeshOperationSettings() {
       return getStubSettingsBuilder().deleteMeshOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listServiceLbPolicies. */
+    public PagedCallSettings.Builder<
+            ListServiceLbPoliciesRequest,
+            ListServiceLbPoliciesResponse,
+            ListServiceLbPoliciesPagedResponse>
+        listServiceLbPoliciesSettings() {
+      return getStubSettingsBuilder().listServiceLbPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getServiceLbPolicy. */
+    public UnaryCallSettings.Builder<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicySettings() {
+      return getStubSettingsBuilder().getServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public UnaryCallSettings.Builder<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicySettings() {
+      return getStubSettingsBuilder().createServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        createServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().createServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public UnaryCallSettings.Builder<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicySettings() {
+      return getStubSettingsBuilder().updateServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        updateServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public UnaryCallSettings.Builder<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicySettings() {
+      return getStubSettingsBuilder().deleteServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public OperationCallSettings.Builder<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+        deleteServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewayRouteView. */
+    public UnaryCallSettings.Builder<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewSettings() {
+      return getStubSettingsBuilder().getGatewayRouteViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMeshRouteView. */
+    public UnaryCallSettings.Builder<GetMeshRouteViewRequest, MeshRouteView>
+        getMeshRouteViewSettings() {
+      return getStubSettingsBuilder().getMeshRouteViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewayRouteViews. */
+    public PagedCallSettings.Builder<
+            ListGatewayRouteViewsRequest,
+            ListGatewayRouteViewsResponse,
+            ListGatewayRouteViewsPagedResponse>
+        listGatewayRouteViewsSettings() {
+      return getStubSettingsBuilder().listGatewayRouteViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMeshRouteViews. */
+    public PagedCallSettings.Builder<
+            ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+        listMeshRouteViewsSettings() {
+      return getStubSettingsBuilder().listMeshRouteViewsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

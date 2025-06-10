@@ -28,11 +28,11 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Gateway resource. It matches pattern
+   * Identifier. Name of the Gateway resource. It matches pattern
    * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +42,11 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Gateway resource. It matches pattern
+   * Identifier. Name of the Gateway resource. It matches pattern
    * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -285,9 +285,93 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the addresses.
+   */
+  java.util.List<java.lang.String> getAddressesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of addresses.
+   */
+  int getAddressesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The addresses at the given index.
+   */
+  java.lang.String getAddresses(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the addresses at the given index.
+   */
+  com.google.protobuf.ByteString getAddressesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -300,9 +384,11 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -315,9 +401,11 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -331,19 +419,17 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Scope determines how configuration across multiple
-   * Gateway instances are merged. The configuration for multiple Gateway
-   * instances with the same scope will be merged as presented as a single
-   * coniguration to the proxy/load balancer.
+   * Optional. Scope determines how configuration across multiple Gateway
+   * instances are merged. The configuration for multiple Gateway instances with
+   * the same scope will be merged as presented as a single configuration to the
+   * proxy/load balancer.
    *
    * Max length 64 characters.
    * Scope should start with a letter and can only have letters, numbers,
    * hyphens.
    * </pre>
    *
-   * <code>
-   * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scope.
    */
@@ -353,19 +439,17 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Scope determines how configuration across multiple
-   * Gateway instances are merged. The configuration for multiple Gateway
-   * instances with the same scope will be merged as presented as a single
-   * coniguration to the proxy/load balancer.
+   * Optional. Scope determines how configuration across multiple Gateway
+   * instances are merged. The configuration for multiple Gateway instances with
+   * the same scope will be merged as presented as a single configuration to the
+   * proxy/load balancer.
    *
    * Max length 64 characters.
    * Scope should start with a letter and can only have letters, numbers,
    * hyphens.
    * </pre>
    *
-   * <code>
-   * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for scope.
    */
@@ -379,7 +463,9 @@ public interface GatewayOrBuilder
    * TLS traffic is terminated. If empty, TLS termination is disabled.
    * </pre>
    *
-   * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The serverTlsPolicy.
    */
@@ -393,9 +479,318 @@ public interface GatewayOrBuilder
    * TLS traffic is terminated. If empty, TLS termination is disabled.
    * </pre>
    *
-   * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for serverTlsPolicy.
    */
   com.google.protobuf.ByteString getServerTlsPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the certificateUrls.
+   */
+  java.util.List<java.lang.String> getCertificateUrlsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of certificateUrls.
+   */
+  int getCertificateUrlsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The certificateUrls at the given index.
+   */
+  java.lang.String getCertificateUrls(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the certificateUrls at the given index.
+   */
+  com.google.protobuf.ByteString getCertificateUrlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+   * Defines how a server should apply security policy to inbound
+   * (VM to Proxy) initiated connections.
+   *
+   * For example:
+   * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+   *
+   * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The gatewaySecurityPolicy.
+   */
+  java.lang.String getGatewaySecurityPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+   * Defines how a server should apply security policy to inbound
+   * (VM to Proxy) initiated connections.
+   *
+   * For example:
+   * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+   *
+   * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for gatewaySecurityPolicy.
+   */
+  com.google.protobuf.ByteString getGatewaySecurityPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying the VPC network that is
+   * using this configuration. For example:
+   * `projects/&#42;&#47;global/networks/network-1`.
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The network.
+   */
+  java.lang.String getNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying the VPC network that is
+   * using this configuration. For example:
+   * `projects/&#42;&#47;global/networks/network-1`.
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for network.
+   */
+  com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying  the subnetwork in which
+   * this SWG is allocated. For example:
+   * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+   * </pre>
+   *
+   * <code>
+   * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The subnetwork.
+   */
+  java.lang.String getSubnetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying  the subnetwork in which
+   * this SWG is allocated. For example:
+   * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+   * </pre>
+   *
+   * <code>
+   * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for subnetwork.
+   */
+  com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP Version that will be used by this gateway. Valid options
+   * are IPV4 or IPV6. Default is IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ipVersion.
+   */
+  int getIpVersionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP Version that will be used by this gateway. Valid options
+   * are IPV4 or IPV6. Default is IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ipVersion.
+   */
+  com.google.cloud.networkservices.v1.Gateway.IpVersion getIpVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the envoyHeaders field is set.
+   */
+  boolean hasEnvoyHeaders();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for envoyHeaders.
+   */
+  int getEnvoyHeadersValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The envoyHeaders.
+   */
+  com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The routing mode of the Gateway.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * This field is required for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for routingMode.
+   */
+  int getRoutingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The routing mode of the Gateway.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * This field is required for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingMode.
+   */
+  com.google.cloud.networkservices.v1.Gateway.RoutingMode getRoutingMode();
 }
