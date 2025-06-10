@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.45.2-SNAPSHOT</version>
+    <version>protobuf-shading-within-module</version>
     <relativePath/>
   </parent>
 
