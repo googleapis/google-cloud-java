@@ -504,8 +504,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV4
     if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, state_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV4.writeString(output, 6, etag_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -525,8 +525,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV4
     if (state_ != com.google.cloud.kms.v1.AutokeyConfig.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
+    if (!com.google.protobuf.GeneratedMessageV4.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV4.computeStringSize(6, etag_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
