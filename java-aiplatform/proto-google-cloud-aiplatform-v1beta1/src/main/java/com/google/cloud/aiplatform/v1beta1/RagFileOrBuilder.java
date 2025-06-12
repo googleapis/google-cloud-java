@@ -521,5 +521,33 @@ public interface RagFileOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FileStatusOrBuilder getFileStatusOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The metadata for metadata search. The contents will be
+   * be in JSON format.
+   * </pre>
+   *
+   * <code>string user_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The userMetadata.
+   */
+  java.lang.String getUserMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The metadata for metadata search. The contents will be
+   * be in JSON format.
+   * </pre>
+   *
+   * <code>string user_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for userMetadata.
+   */
+  com.google.protobuf.ByteString getUserMetadataBytes();
+
   com.google.cloud.aiplatform.v1beta1.RagFile.RagFileSourceCase getRagFileSourceCase();
 }

@@ -79,7 +79,7 @@ public interface RagFileChunkingConfigOrBuilder
    * <code>int32 chunk_size = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=503
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=507
    * @return The chunkSize.
    */
   @java.lang.Deprecated
@@ -95,7 +95,7 @@ public interface RagFileChunkingConfigOrBuilder
    * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=506
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=510
    * @return The chunkOverlap.
    */
   @java.lang.Deprecated
