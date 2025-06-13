@@ -565,6 +565,74 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         : corpusStatus_;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -603,6 +671,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (backendConfigCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(12, getEncryptionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -640,6 +711,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -669,6 +743,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusStatus() != other.hasCorpusStatus()) return false;
     if (hasCorpusStatus()) {
       if (!getCorpusStatus().equals(other.getCorpusStatus())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!getBackendConfigCase().equals(other.getBackendConfigCase())) return false;
     switch (backendConfigCase_) {
@@ -709,6 +787,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusStatus()) {
       hash = (37 * hash) + CORPUS_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getCorpusStatus().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     switch (backendConfigCase_) {
       case 9:
@@ -867,6 +949,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getCorpusStatusFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -897,6 +980,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (corpusStatusBuilder_ != null) {
         corpusStatusBuilder_.dispose();
         corpusStatusBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       backendConfigCase_ = 0;
       backendConfig_ = null;
@@ -959,6 +1047,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         result.corpusStatus_ =
             corpusStatusBuilder_ == null ? corpusStatus_ : corpusStatusBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1042,6 +1135,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCorpusStatus()) {
         mergeCorpusStatus(other.getCorpusStatus());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       switch (other.getBackendConfigCase()) {
         case VECTOR_DB_CONFIG:
@@ -1134,6 +1230,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 backendConfigCase_ = 10;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2623,6 +2725,247 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         corpusStatus_ = null;
       }
       return corpusStatusBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+     * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+     * field can only be set at corpus creation time, and cannot be updated or
+     * deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

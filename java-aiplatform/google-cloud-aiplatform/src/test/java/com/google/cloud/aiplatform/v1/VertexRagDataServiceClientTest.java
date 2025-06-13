@@ -117,6 +117,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -171,6 +172,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -225,6 +227,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -276,6 +279,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -319,6 +323,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
