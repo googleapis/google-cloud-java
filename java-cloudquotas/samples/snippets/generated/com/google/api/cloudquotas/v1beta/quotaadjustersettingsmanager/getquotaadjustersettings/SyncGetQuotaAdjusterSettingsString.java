@@ -35,7 +35,8 @@ public class SyncGetQuotaAdjusterSettingsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (QuotaAdjusterSettingsManagerClient quotaAdjusterSettingsManagerClient =
         QuotaAdjusterSettingsManagerClient.create()) {
-      String name = QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]").toString();
+      String name =
+          QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString();
       QuotaAdjusterSettings response =
           quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettings(name);
     }

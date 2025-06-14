@@ -28,11 +28,11 @@ public interface ServiceBindingOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the ServiceBinding resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/serviceBindings/service_binding_name`.
+   * Identifier. Name of the ServiceBinding resource. It matches pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;serviceBindings/&lt;service_binding_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +42,11 @@ public interface ServiceBindingOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the ServiceBinding resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/serviceBindings/service_binding_name`.
+   * Identifier. Name of the ServiceBinding resource. It matches pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;serviceBindings/&lt;service_binding_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -164,29 +164,85 @@ public interface ServiceBindingOrBuilder
    *
    *
    * <pre>
-   * Required. The full service directory service name of the format
-   * /projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;
+   * Optional. The full Service Directory Service name of the format
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
+   * This field is for Service Directory integration which will be deprecated
+   * soon.
    * </pre>
    *
-   * <code>string service = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string service = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.networkservices.v1.ServiceBinding.service is deprecated. See
+   *     google/cloud/networkservices/v1/service_binding.proto;l=69
    * @return The service.
    */
+  @java.lang.Deprecated
   java.lang.String getService();
 
   /**
    *
    *
    * <pre>
-   * Required. The full service directory service name of the format
-   * /projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;
+   * Optional. The full Service Directory Service name of the format
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
+   * This field is for Service Directory integration which will be deprecated
+   * soon.
    * </pre>
    *
-   * <code>string service = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string service = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.networkservices.v1.ServiceBinding.service is deprecated. See
+   *     google/cloud/networkservices/v1/service_binding.proto;l=69
    * @return The bytes for service.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique identifier of the Service Directory Service against
+   * which the ServiceBinding resource is validated. This is populated when the
+   * Service Binding resource is used in another resource (like Backend
+   * Service). This is of the UUID4 format. This field is for Service Directory
+   * integration which will be deprecated soon.
+   * </pre>
+   *
+   * <code>string service_id = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.cloud.networkservices.v1.ServiceBinding.service_id is deprecated. See
+   *     google/cloud/networkservices/v1/service_binding.proto;l=82
+   * @return The serviceId.
+   */
+  @java.lang.Deprecated
+  java.lang.String getServiceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique identifier of the Service Directory Service against
+   * which the ServiceBinding resource is validated. This is populated when the
+   * Service Binding resource is used in another resource (like Backend
+   * Service). This is of the UUID4 format. This field is for Service Directory
+   * integration which will be deprecated soon.
+   * </pre>
+   *
+   * <code>string service_id = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.cloud.networkservices.v1.ServiceBinding.service_id is deprecated. See
+   *     google/cloud/networkservices/v1/service_binding.proto;l=82
+   * @return The bytes for serviceId.
+   */
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getServiceIdBytes();
 
   /**
    *

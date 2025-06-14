@@ -17,12 +17,15 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
 
@@ -39,6 +42,7 @@ import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.CreateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateMeshRequest;
 import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
@@ -47,39 +51,52 @@ import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteHttpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteMeshRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
+import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
+import com.google.cloud.networkservices.v1.GatewayRouteView;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
+import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.GetHttpRouteRequest;
 import com.google.cloud.networkservices.v1.GetMeshRequest;
+import com.google.cloud.networkservices.v1.GetMeshRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
+import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListGatewaysRequest;
 import com.google.cloud.networkservices.v1.ListGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesRequest;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesResponse;
 import com.google.cloud.networkservices.v1.ListHttpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListHttpRoutesResponse;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListMeshesRequest;
 import com.google.cloud.networkservices.v1.ListMeshesResponse;
 import com.google.cloud.networkservices.v1.ListServiceBindingsRequest;
 import com.google.cloud.networkservices.v1.ListServiceBindingsResponse;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
 import com.google.cloud.networkservices.v1.Mesh;
+import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.ServiceBinding;
+import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
@@ -87,6 +104,8 @@ import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateMeshRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -383,6 +402,16 @@ public abstract class NetworkServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createServiceBindingCallable()");
   }
 
+  public OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateServiceBindingOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateServiceBindingCallable()");
+  }
+
   public OperationCallable<DeleteServiceBindingRequest, Empty, OperationMetadata>
       deleteServiceBindingOperationCallable() {
     throw new UnsupportedOperationException(
@@ -430,6 +459,80 @@ public abstract class NetworkServicesStub implements BackgroundResource {
 
   public UnaryCallable<DeleteMeshRequest, Operation> deleteMeshCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteMeshCallable()");
+  }
+
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listServiceLbPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listServiceLbPoliciesCallable()");
+  }
+
+  public UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy> getServiceLbPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getServiceLbPolicyCallable()");
+  }
+
+  public OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createServiceLbPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<CreateServiceLbPolicyRequest, Operation> createServiceLbPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createServiceLbPolicyCallable()");
+  }
+
+  public OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateServiceLbPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateServiceLbPolicyRequest, Operation> updateServiceLbPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateServiceLbPolicyCallable()");
+  }
+
+  public OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteServiceLbPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteServiceLbPolicyRequest, Operation> deleteServiceLbPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteServiceLbPolicyCallable()");
+  }
+
+  public UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView> getGatewayRouteViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGatewayRouteViewCallable()");
+  }
+
+  public UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMeshRouteViewCallable()");
+  }
+
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listGatewayRouteViewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listGatewayRouteViewsCallable()");
+  }
+
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMeshRouteViewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMeshRouteViewsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

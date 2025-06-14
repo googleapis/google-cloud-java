@@ -234,7 +234,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Deprecated
@@ -253,7 +253,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
    * @return The partialFailureGcsSink.
    */
   @java.lang.Deprecated
@@ -292,7 +292,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Deprecated
@@ -316,7 +316,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Deprecated
@@ -448,7 +448,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
@@ -466,7 +466,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated
@@ -577,6 +577,50 @@ public interface ImportRagFilesConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
       getRagFileParsingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   *
+   * @return Whether the ragFileMetadataConfig field is set.
+   */
+  boolean hasRagFileMetadataConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   *
+   * @return The ragFileMetadataConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
+      getRagFileMetadataConfigOrBuilder();
 
   /**
    *

@@ -98,4 +98,19 @@ public interface ListTcpRoutesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, allow partial responses for multi-regional Aggregated
+   * List requests. Otherwise if one of the locations is down or unreachable,
+   * the Aggregated List request will fail.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

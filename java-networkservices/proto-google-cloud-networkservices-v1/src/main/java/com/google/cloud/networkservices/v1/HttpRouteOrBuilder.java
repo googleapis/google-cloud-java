@@ -28,11 +28,11 @@ public interface HttpRouteOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the HttpRoute resource. It matches pattern
+   * Identifier. Name of the HttpRoute resource. It matches pattern
    * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +42,11 @@ public interface HttpRouteOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the HttpRoute resource. It matches pattern
+   * Identifier. Name of the HttpRoute resource. It matches pattern
    * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

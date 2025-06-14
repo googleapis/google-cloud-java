@@ -82,6 +82,9 @@
             "CreateServiceBinding": {
               "methods": ["createServiceBindingAsync", "createServiceBindingAsync", "createServiceBindingAsync", "createServiceBindingOperationCallable", "createServiceBindingCallable"]
             },
+            "CreateServiceLbPolicy": {
+              "methods": ["createServiceLbPolicyAsync", "createServiceLbPolicyAsync", "createServiceLbPolicyAsync", "createServiceLbPolicyOperationCallable", "createServiceLbPolicyCallable"]
+            },
             "CreateTcpRoute": {
               "methods": ["createTcpRouteAsync", "createTcpRouteAsync", "createTcpRouteAsync", "createTcpRouteOperationCallable", "createTcpRouteCallable"]
             },
@@ -106,6 +109,9 @@
             "DeleteServiceBinding": {
               "methods": ["deleteServiceBindingAsync", "deleteServiceBindingAsync", "deleteServiceBindingAsync", "deleteServiceBindingOperationCallable", "deleteServiceBindingCallable"]
             },
+            "DeleteServiceLbPolicy": {
+              "methods": ["deleteServiceLbPolicyAsync", "deleteServiceLbPolicyAsync", "deleteServiceLbPolicyAsync", "deleteServiceLbPolicyOperationCallable", "deleteServiceLbPolicyCallable"]
+            },
             "DeleteTcpRoute": {
               "methods": ["deleteTcpRouteAsync", "deleteTcpRouteAsync", "deleteTcpRouteAsync", "deleteTcpRouteOperationCallable", "deleteTcpRouteCallable"]
             },
@@ -117,6 +123,9 @@
             },
             "GetGateway": {
               "methods": ["getGateway", "getGateway", "getGateway", "getGatewayCallable"]
+            },
+            "GetGatewayRouteView": {
+              "methods": ["getGatewayRouteView", "getGatewayRouteView", "getGatewayRouteView", "getGatewayRouteViewCallable"]
             },
             "GetGrpcRoute": {
               "methods": ["getGrpcRoute", "getGrpcRoute", "getGrpcRoute", "getGrpcRouteCallable"]
@@ -133,8 +142,14 @@
             "GetMesh": {
               "methods": ["getMesh", "getMesh", "getMesh", "getMeshCallable"]
             },
+            "GetMeshRouteView": {
+              "methods": ["getMeshRouteView", "getMeshRouteView", "getMeshRouteView", "getMeshRouteViewCallable"]
+            },
             "GetServiceBinding": {
               "methods": ["getServiceBinding", "getServiceBinding", "getServiceBinding", "getServiceBindingCallable"]
+            },
+            "GetServiceLbPolicy": {
+              "methods": ["getServiceLbPolicy", "getServiceLbPolicy", "getServiceLbPolicy", "getServiceLbPolicyCallable"]
             },
             "GetTcpRoute": {
               "methods": ["getTcpRoute", "getTcpRoute", "getTcpRoute", "getTcpRouteCallable"]
@@ -144,6 +159,9 @@
             },
             "ListEndpointPolicies": {
               "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
+            },
+            "ListGatewayRouteViews": {
+              "methods": ["listGatewayRouteViews", "listGatewayRouteViews", "listGatewayRouteViews", "listGatewayRouteViewsPagedCallable", "listGatewayRouteViewsCallable"]
             },
             "ListGateways": {
               "methods": ["listGateways", "listGateways", "listGateways", "listGatewaysPagedCallable", "listGatewaysCallable"]
@@ -157,11 +175,17 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListMeshRouteViews": {
+              "methods": ["listMeshRouteViews", "listMeshRouteViews", "listMeshRouteViews", "listMeshRouteViewsPagedCallable", "listMeshRouteViewsCallable"]
+            },
             "ListMeshes": {
               "methods": ["listMeshes", "listMeshes", "listMeshes", "listMeshesPagedCallable", "listMeshesCallable"]
             },
             "ListServiceBindings": {
               "methods": ["listServiceBindings", "listServiceBindings", "listServiceBindings", "listServiceBindingsPagedCallable", "listServiceBindingsCallable"]
+            },
+            "ListServiceLbPolicies": {
+              "methods": ["listServiceLbPolicies", "listServiceLbPolicies", "listServiceLbPolicies", "listServiceLbPoliciesPagedCallable", "listServiceLbPoliciesCallable"]
             },
             "ListTcpRoutes": {
               "methods": ["listTcpRoutes", "listTcpRoutes", "listTcpRoutes", "listTcpRoutesPagedCallable", "listTcpRoutesCallable"]
@@ -189,6 +213,12 @@
             },
             "UpdateMesh": {
               "methods": ["updateMeshAsync", "updateMeshAsync", "updateMeshOperationCallable", "updateMeshCallable"]
+            },
+            "UpdateServiceBinding": {
+              "methods": ["updateServiceBindingAsync", "updateServiceBindingAsync", "updateServiceBindingOperationCallable", "updateServiceBindingCallable"]
+            },
+            "UpdateServiceLbPolicy": {
+              "methods": ["updateServiceLbPolicyAsync", "updateServiceLbPolicyAsync", "updateServiceLbPolicyOperationCallable", "updateServiceLbPolicyCallable"]
             },
             "UpdateTcpRoute": {
               "methods": ["updateTcpRouteAsync", "updateTcpRouteAsync", "updateTcpRouteOperationCallable", "updateTcpRouteCallable"]

@@ -23,7 +23,7 @@ package com.google.cloud.speech.v2;
  *
  *
  * <pre>
- * Representes a singular feature of a model. If the feature is `recognizer`,
+ * Represents a singular feature of a model. If the feature is `recognizer`,
  * the release_state of the feature represents the release_state of the model
  * </pre>
  *
@@ -344,7 +344,7 @@ public final class ModelFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representes a singular feature of a model. If the feature is `recognizer`,
+   * Represents a singular feature of a model. If the feature is `recognizer`,
    * the release_state of the feature represents the release_state of the model
    * </pre>
    *

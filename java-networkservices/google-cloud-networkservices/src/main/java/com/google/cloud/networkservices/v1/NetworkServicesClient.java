@@ -727,6 +727,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateServiceBinding</td>
+ *      <td><p> Updates the parameters of a single ServiceBinding.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateServiceBindingAsync(UpdateServiceBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateServiceBindingAsync(ServiceBinding serviceBinding, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateServiceBindingOperationCallable()
+ *           <li><p> updateServiceBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteServiceBinding</td>
  *      <td><p> Deletes a single ServiceBinding.</td>
  *      <td>
@@ -841,6 +860,182 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteMeshOperationCallable()
  *           <li><p> deleteMeshCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListServiceLbPolicies</td>
+ *      <td><p> Lists ServiceLbPolicies in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listServiceLbPolicies(ListServiceLbPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listServiceLbPolicies(LocationName parent)
+ *           <li><p> listServiceLbPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listServiceLbPoliciesPagedCallable()
+ *           <li><p> listServiceLbPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetServiceLbPolicy</td>
+ *      <td><p> Gets details of a single ServiceLbPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getServiceLbPolicy(GetServiceLbPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getServiceLbPolicy(ServiceLbPolicyName name)
+ *           <li><p> getServiceLbPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getServiceLbPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateServiceLbPolicy</td>
+ *      <td><p> Creates a new ServiceLbPolicy in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createServiceLbPolicyAsync(CreateServiceLbPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createServiceLbPolicyAsync(LocationName parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId)
+ *           <li><p> createServiceLbPolicyAsync(String parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createServiceLbPolicyOperationCallable()
+ *           <li><p> createServiceLbPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateServiceLbPolicy</td>
+ *      <td><p> Updates the parameters of a single ServiceLbPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateServiceLbPolicyAsync(UpdateServiceLbPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateServiceLbPolicyAsync(ServiceLbPolicy serviceLbPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateServiceLbPolicyOperationCallable()
+ *           <li><p> updateServiceLbPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteServiceLbPolicy</td>
+ *      <td><p> Deletes a single ServiceLbPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteServiceLbPolicyAsync(DeleteServiceLbPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteServiceLbPolicyAsync(ServiceLbPolicyName name)
+ *           <li><p> deleteServiceLbPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteServiceLbPolicyOperationCallable()
+ *           <li><p> deleteServiceLbPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGatewayRouteView</td>
+ *      <td><p> Get a single RouteView of a Gateway.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGatewayRouteView(GetGatewayRouteViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGatewayRouteView(GatewayRouteViewName name)
+ *           <li><p> getGatewayRouteView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGatewayRouteViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMeshRouteView</td>
+ *      <td><p> Get a single RouteView of a Mesh.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMeshRouteView(GetMeshRouteViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMeshRouteView(MeshRouteViewName name)
+ *           <li><p> getMeshRouteView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMeshRouteViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListGatewayRouteViews</td>
+ *      <td><p> Lists RouteViews</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listGatewayRouteViews(ListGatewayRouteViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listGatewayRouteViews(GatewayName parent)
+ *           <li><p> listGatewayRouteViews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listGatewayRouteViewsPagedCallable()
+ *           <li><p> listGatewayRouteViewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMeshRouteViews</td>
+ *      <td><p> Lists RouteViews</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMeshRouteViews(ListMeshRouteViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMeshRouteViews(MeshName parent)
+ *           <li><p> listMeshRouteViews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMeshRouteViewsPagedCallable()
+ *           <li><p> listMeshRouteViewsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1132,6 +1327,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (EndpointPolicy element :
    *       networkServicesClient.listEndpointPolicies(request).iterateAll()) {
@@ -1166,6 +1362,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<EndpointPolicy> future =
    *       networkServicesClient.listEndpointPoliciesPagedCallable().futureCall(request);
@@ -1199,6 +1396,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListEndpointPoliciesResponse response =
@@ -2573,6 +2771,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (GrpcRoute element : networkServicesClient.listGrpcRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2605,6 +2804,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<GrpcRoute> future =
    *       networkServicesClient.listGrpcRoutesPagedCallable().futureCall(request);
@@ -2638,6 +2838,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListGrpcRoutesResponse response =
@@ -3284,6 +3485,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (HttpRoute element : networkServicesClient.listHttpRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -3316,6 +3518,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<HttpRoute> future =
    *       networkServicesClient.listHttpRoutesPagedCallable().futureCall(request);
@@ -3349,6 +3552,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListHttpRoutesResponse response =
@@ -3995,6 +4199,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (TcpRoute element : networkServicesClient.listTcpRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -4027,6 +4232,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<TcpRoute> future =
    *       networkServicesClient.listTcpRoutesPagedCallable().futureCall(request);
@@ -4060,6 +4266,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListTcpRoutesResponse response =
@@ -4701,6 +4908,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (TlsRoute element : networkServicesClient.listTlsRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -4733,6 +4941,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<TlsRoute> future =
    *       networkServicesClient.listTlsRoutesPagedCallable().futureCall(request);
@@ -4766,6 +4975,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListTlsRoutesResponse response =
@@ -5350,7 +5560,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the ServiceBindings should be
-   *     listed, specified in the format `projects/&#42;/locations/global`.
+   *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceBindingsPagedResponse listServiceBindings(LocationName parent) {
@@ -5383,7 +5593,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the ServiceBindings should be
-   *     listed, specified in the format `projects/&#42;/locations/global`.
+   *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceBindingsPagedResponse listServiceBindings(String parent) {
@@ -5519,7 +5729,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the ServiceBinding to get. Must be in the format
-   *     `projects/&#42;/locations/global/serviceBindings/&#42;`.
+   *     `projects/&#42;/locations/&#42;/serviceBindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceBinding getServiceBinding(ServiceBindingName name) {
@@ -5550,7 +5760,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the ServiceBinding to get. Must be in the format
-   *     `projects/&#42;/locations/global/serviceBindings/&#42;`.
+   *     `projects/&#42;/locations/&#42;/serviceBindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceBinding getServiceBinding(String name) {
@@ -5640,7 +5850,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the ServiceBinding. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param serviceBinding Required. ServiceBinding resource to be created.
    * @param serviceBindingId Required. Short name of the ServiceBinding resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5680,7 +5890,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the ServiceBinding. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param serviceBinding Required. ServiceBinding resource to be created.
    * @param serviceBindingId Required. Short name of the ServiceBinding resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5791,6 +6001,133 @@ public class NetworkServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the parameters of a single ServiceBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ServiceBinding serviceBinding = ServiceBinding.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ServiceBinding response =
+   *       networkServicesClient.updateServiceBindingAsync(serviceBinding, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param serviceBinding Required. Updated ServiceBinding resource.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     ServiceBinding resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceBinding, OperationMetadata> updateServiceBindingAsync(
+      ServiceBinding serviceBinding, FieldMask updateMask) {
+    UpdateServiceBindingRequest request =
+        UpdateServiceBindingRequest.newBuilder()
+            .setServiceBinding(serviceBinding)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateServiceBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceBindingRequest request =
+   *       UpdateServiceBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceBinding(ServiceBinding.newBuilder().build())
+   *           .build();
+   *   ServiceBinding response = networkServicesClient.updateServiceBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceBinding, OperationMetadata> updateServiceBindingAsync(
+      UpdateServiceBindingRequest request) {
+    return updateServiceBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceBindingRequest request =
+   *       UpdateServiceBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceBinding(ServiceBinding.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ServiceBinding, OperationMetadata> future =
+   *       networkServicesClient.updateServiceBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable() {
+    return stub.updateServiceBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceBindingRequest request =
+   *       UpdateServiceBindingRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceBinding(ServiceBinding.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.updateServiceBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateServiceBindingRequest, Operation>
+      updateServiceBindingCallable() {
+    return stub.updateServiceBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single ServiceBinding.
    *
    * <p>Sample code:
@@ -5809,7 +6146,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the ServiceBinding to delete. Must be in the format
-   *     `projects/&#42;/locations/global/serviceBindings/&#42;`.
+   *     `projects/&#42;/locations/&#42;/serviceBindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceBindingAsync(
@@ -5841,7 +6178,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the ServiceBinding to delete. Must be in the format
-   *     `projects/&#42;/locations/global/serviceBindings/&#42;`.
+   *     `projects/&#42;/locations/&#42;/serviceBindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceBindingAsync(String name) {
@@ -6017,6 +6354,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Mesh element : networkServicesClient.listMeshes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -6049,6 +6387,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Mesh> future = networkServicesClient.listMeshesPagedCallable().futureCall(request);
    *   // Do something.
@@ -6080,6 +6419,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListMeshesResponse response = networkServicesClient.listMeshesCallable().call(request);
@@ -6628,6 +6968,1336 @@ public class NetworkServicesClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteMeshRequest, Operation> deleteMeshCallable() {
     return stub.deleteMeshCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ServiceLbPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ServiceLbPolicy element :
+   *       networkServicesClient.listServiceLbPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the ServiceLbPolicies should be
+   *     listed, specified in the format `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServiceLbPoliciesPagedResponse listServiceLbPolicies(LocationName parent) {
+    ListServiceLbPoliciesRequest request =
+        ListServiceLbPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listServiceLbPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ServiceLbPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ServiceLbPolicy element :
+   *       networkServicesClient.listServiceLbPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the ServiceLbPolicies should be
+   *     listed, specified in the format `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServiceLbPoliciesPagedResponse listServiceLbPolicies(String parent) {
+    ListServiceLbPoliciesRequest request =
+        ListServiceLbPoliciesRequest.newBuilder().setParent(parent).build();
+    return listServiceLbPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ServiceLbPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListServiceLbPoliciesRequest request =
+   *       ListServiceLbPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ServiceLbPolicy element :
+   *       networkServicesClient.listServiceLbPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServiceLbPoliciesPagedResponse listServiceLbPolicies(
+      ListServiceLbPoliciesRequest request) {
+    return listServiceLbPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ServiceLbPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListServiceLbPoliciesRequest request =
+   *       ListServiceLbPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ServiceLbPolicy> future =
+   *       networkServicesClient.listServiceLbPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ServiceLbPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable() {
+    return stub.listServiceLbPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ServiceLbPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListServiceLbPoliciesRequest request =
+   *       ListServiceLbPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListServiceLbPoliciesResponse response =
+   *         networkServicesClient.listServiceLbPoliciesCallable().call(request);
+   *     for (ServiceLbPolicy element : response.getServiceLbPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable() {
+    return stub.listServiceLbPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ServiceLbPolicyName name =
+   *       ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+   *   ServiceLbPolicy response = networkServicesClient.getServiceLbPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the ServiceLbPolicy to get. Must be in the format
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServiceLbPolicy getServiceLbPolicy(ServiceLbPolicyName name) {
+    GetServiceLbPolicyRequest request =
+        GetServiceLbPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getServiceLbPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString();
+   *   ServiceLbPolicy response = networkServicesClient.getServiceLbPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the ServiceLbPolicy to get. Must be in the format
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServiceLbPolicy getServiceLbPolicy(String name) {
+    GetServiceLbPolicyRequest request =
+        GetServiceLbPolicyRequest.newBuilder().setName(name).build();
+    return getServiceLbPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetServiceLbPolicyRequest request =
+   *       GetServiceLbPolicyRequest.newBuilder()
+   *           .setName(
+   *               ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   ServiceLbPolicy response = networkServicesClient.getServiceLbPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServiceLbPolicy getServiceLbPolicy(GetServiceLbPolicyRequest request) {
+    return getServiceLbPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetServiceLbPolicyRequest request =
+   *       GetServiceLbPolicyRequest.newBuilder()
+   *           .setName(
+   *               ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ServiceLbPolicy> future =
+   *       networkServicesClient.getServiceLbPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceLbPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyCallable() {
+    return stub.getServiceLbPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ServiceLbPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+   *   String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+   *   ServiceLbPolicy response =
+   *       networkServicesClient
+   *           .createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the ServiceLbPolicy. Must be in the format
+   *     `projects/{project}/locations/{location}`.
+   * @param serviceLbPolicy Required. ServiceLbPolicy resource to be created.
+   * @param serviceLbPolicyId Required. Short name of the ServiceLbPolicy resource to be created.
+   *     E.g. for resource name
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`. the
+   *     id is value of {service_lb_policy_name}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceLbPolicy, OperationMetadata> createServiceLbPolicyAsync(
+      LocationName parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId) {
+    CreateServiceLbPolicyRequest request =
+        CreateServiceLbPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setServiceLbPolicy(serviceLbPolicy)
+            .setServiceLbPolicyId(serviceLbPolicyId)
+            .build();
+    return createServiceLbPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ServiceLbPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+   *   String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+   *   ServiceLbPolicy response =
+   *       networkServicesClient
+   *           .createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the ServiceLbPolicy. Must be in the format
+   *     `projects/{project}/locations/{location}`.
+   * @param serviceLbPolicy Required. ServiceLbPolicy resource to be created.
+   * @param serviceLbPolicyId Required. Short name of the ServiceLbPolicy resource to be created.
+   *     E.g. for resource name
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`. the
+   *     id is value of {service_lb_policy_name}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceLbPolicy, OperationMetadata> createServiceLbPolicyAsync(
+      String parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId) {
+    CreateServiceLbPolicyRequest request =
+        CreateServiceLbPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setServiceLbPolicy(serviceLbPolicy)
+            .setServiceLbPolicyId(serviceLbPolicyId)
+            .build();
+    return createServiceLbPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ServiceLbPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateServiceLbPolicyRequest request =
+   *       CreateServiceLbPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceLbPolicyId("serviceLbPolicyId1391086104")
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   ServiceLbPolicy response = networkServicesClient.createServiceLbPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceLbPolicy, OperationMetadata> createServiceLbPolicyAsync(
+      CreateServiceLbPolicyRequest request) {
+    return createServiceLbPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ServiceLbPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateServiceLbPolicyRequest request =
+   *       CreateServiceLbPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceLbPolicyId("serviceLbPolicyId1391086104")
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ServiceLbPolicy, OperationMetadata> future =
+   *       networkServicesClient.createServiceLbPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceLbPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable() {
+    return stub.createServiceLbPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ServiceLbPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateServiceLbPolicyRequest request =
+   *       CreateServiceLbPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceLbPolicyId("serviceLbPolicyId1391086104")
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.createServiceLbPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyCallable() {
+    return stub.createServiceLbPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ServiceLbPolicy response =
+   *       networkServicesClient.updateServiceLbPolicyAsync(serviceLbPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param serviceLbPolicy Required. Updated ServiceLbPolicy resource.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     ServiceLbPolicy resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceLbPolicy, OperationMetadata> updateServiceLbPolicyAsync(
+      ServiceLbPolicy serviceLbPolicy, FieldMask updateMask) {
+    UpdateServiceLbPolicyRequest request =
+        UpdateServiceLbPolicyRequest.newBuilder()
+            .setServiceLbPolicy(serviceLbPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateServiceLbPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceLbPolicyRequest request =
+   *       UpdateServiceLbPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   ServiceLbPolicy response = networkServicesClient.updateServiceLbPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ServiceLbPolicy, OperationMetadata> updateServiceLbPolicyAsync(
+      UpdateServiceLbPolicyRequest request) {
+    return updateServiceLbPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceLbPolicyRequest request =
+   *       UpdateServiceLbPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ServiceLbPolicy, OperationMetadata> future =
+   *       networkServicesClient.updateServiceLbPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceLbPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable() {
+    return stub.updateServiceLbPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateServiceLbPolicyRequest request =
+   *       UpdateServiceLbPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setServiceLbPolicy(ServiceLbPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.updateServiceLbPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyCallable() {
+    return stub.updateServiceLbPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ServiceLbPolicyName name =
+   *       ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+   *   networkServicesClient.deleteServiceLbPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the ServiceLbPolicy to delete. Must be in the format
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceLbPolicyAsync(
+      ServiceLbPolicyName name) {
+    DeleteServiceLbPolicyRequest request =
+        DeleteServiceLbPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteServiceLbPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString();
+   *   networkServicesClient.deleteServiceLbPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the ServiceLbPolicy to delete. Must be in the format
+   *     `projects/{project}/locations/{location}/serviceLbPolicies/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceLbPolicyAsync(String name) {
+    DeleteServiceLbPolicyRequest request =
+        DeleteServiceLbPolicyRequest.newBuilder().setName(name).build();
+    return deleteServiceLbPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteServiceLbPolicyRequest request =
+   *       DeleteServiceLbPolicyRequest.newBuilder()
+   *           .setName(
+   *               ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   networkServicesClient.deleteServiceLbPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceLbPolicyAsync(
+      DeleteServiceLbPolicyRequest request) {
+    return deleteServiceLbPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteServiceLbPolicyRequest request =
+   *       DeleteServiceLbPolicyRequest.newBuilder()
+   *           .setName(
+   *               ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       networkServicesClient.deleteServiceLbPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable() {
+    return stub.deleteServiceLbPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ServiceLbPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteServiceLbPolicyRequest request =
+   *       DeleteServiceLbPolicyRequest.newBuilder()
+   *           .setName(
+   *               ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.deleteServiceLbPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyCallable() {
+    return stub.deleteServiceLbPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GatewayRouteViewName name =
+   *       GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]");
+   *   GatewayRouteView response = networkServicesClient.getGatewayRouteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the GatewayRouteView resource. Formats:
+   *     projects/{project}/locations/{location}/gateways/{gateway}/routeViews/{route_view}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayRouteView getGatewayRouteView(GatewayRouteViewName name) {
+    GetGatewayRouteViewRequest request =
+        GetGatewayRouteViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getGatewayRouteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]")
+   *           .toString();
+   *   GatewayRouteView response = networkServicesClient.getGatewayRouteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the GatewayRouteView resource. Formats:
+   *     projects/{project}/locations/{location}/gateways/{gateway}/routeViews/{route_view}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayRouteView getGatewayRouteView(String name) {
+    GetGatewayRouteViewRequest request =
+        GetGatewayRouteViewRequest.newBuilder().setName(name).build();
+    return getGatewayRouteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetGatewayRouteViewRequest request =
+   *       GetGatewayRouteViewRequest.newBuilder()
+   *           .setName(
+   *               GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   GatewayRouteView response = networkServicesClient.getGatewayRouteView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayRouteView getGatewayRouteView(GetGatewayRouteViewRequest request) {
+    return getGatewayRouteViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetGatewayRouteViewRequest request =
+   *       GetGatewayRouteViewRequest.newBuilder()
+   *           .setName(
+   *               GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<GatewayRouteView> future =
+   *       networkServicesClient.getGatewayRouteViewCallable().futureCall(request);
+   *   // Do something.
+   *   GatewayRouteView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewCallable() {
+    return stub.getGatewayRouteViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Mesh.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   MeshRouteViewName name =
+   *       MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]");
+   *   MeshRouteView response = networkServicesClient.getMeshRouteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the MeshRouteView resource. Format:
+   *     projects/{project}/locations/{location}/meshes/{mesh}/routeViews/{route_view}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeshRouteView getMeshRouteView(MeshRouteViewName name) {
+    GetMeshRouteViewRequest request =
+        GetMeshRouteViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMeshRouteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Mesh.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]").toString();
+   *   MeshRouteView response = networkServicesClient.getMeshRouteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the MeshRouteView resource. Format:
+   *     projects/{project}/locations/{location}/meshes/{mesh}/routeViews/{route_view}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeshRouteView getMeshRouteView(String name) {
+    GetMeshRouteViewRequest request = GetMeshRouteViewRequest.newBuilder().setName(name).build();
+    return getMeshRouteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Mesh.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetMeshRouteViewRequest request =
+   *       GetMeshRouteViewRequest.newBuilder()
+   *           .setName(
+   *               MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   MeshRouteView response = networkServicesClient.getMeshRouteView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeshRouteView getMeshRouteView(GetMeshRouteViewRequest request) {
+    return getMeshRouteViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single RouteView of a Mesh.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetMeshRouteViewRequest request =
+   *       GetMeshRouteViewRequest.newBuilder()
+   *           .setName(
+   *               MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MeshRouteView> future =
+   *       networkServicesClient.getMeshRouteViewCallable().futureCall(request);
+   *   // Do something.
+   *   MeshRouteView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable() {
+    return stub.getMeshRouteViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GatewayName parent = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
+   *   for (GatewayRouteView element :
+   *       networkServicesClient.listGatewayRouteViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Gateway to which a Route is associated. Formats:
+   *     projects/{project}/locations/{location}/gateways/{gateway}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayRouteViewsPagedResponse listGatewayRouteViews(GatewayName parent) {
+    ListGatewayRouteViewsRequest request =
+        ListGatewayRouteViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listGatewayRouteViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString();
+   *   for (GatewayRouteView element :
+   *       networkServicesClient.listGatewayRouteViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Gateway to which a Route is associated. Formats:
+   *     projects/{project}/locations/{location}/gateways/{gateway}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayRouteViewsPagedResponse listGatewayRouteViews(String parent) {
+    ListGatewayRouteViewsRequest request =
+        ListGatewayRouteViewsRequest.newBuilder().setParent(parent).build();
+    return listGatewayRouteViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListGatewayRouteViewsRequest request =
+   *       ListGatewayRouteViewsRequest.newBuilder()
+   *           .setParent(GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (GatewayRouteView element :
+   *       networkServicesClient.listGatewayRouteViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayRouteViewsPagedResponse listGatewayRouteViews(
+      ListGatewayRouteViewsRequest request) {
+    return listGatewayRouteViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListGatewayRouteViewsRequest request =
+   *       ListGatewayRouteViewsRequest.newBuilder()
+   *           .setParent(GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<GatewayRouteView> future =
+   *       networkServicesClient.listGatewayRouteViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GatewayRouteView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable() {
+    return stub.listGatewayRouteViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListGatewayRouteViewsRequest request =
+   *       ListGatewayRouteViewsRequest.newBuilder()
+   *           .setParent(GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListGatewayRouteViewsResponse response =
+   *         networkServicesClient.listGatewayRouteViewsCallable().call(request);
+   *     for (GatewayRouteView element : response.getGatewayRouteViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable() {
+    return stub.listGatewayRouteViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   MeshName parent = MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]");
+   *   for (MeshRouteView element : networkServicesClient.listMeshRouteViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Mesh to which a Route is associated. Format:
+   *     projects/{project}/locations/{location}/meshes/{mesh}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeshRouteViewsPagedResponse listMeshRouteViews(MeshName parent) {
+    ListMeshRouteViewsRequest request =
+        ListMeshRouteViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMeshRouteViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]").toString();
+   *   for (MeshRouteView element : networkServicesClient.listMeshRouteViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Mesh to which a Route is associated. Format:
+   *     projects/{project}/locations/{location}/meshes/{mesh}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeshRouteViewsPagedResponse listMeshRouteViews(String parent) {
+    ListMeshRouteViewsRequest request =
+        ListMeshRouteViewsRequest.newBuilder().setParent(parent).build();
+    return listMeshRouteViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListMeshRouteViewsRequest request =
+   *       ListMeshRouteViewsRequest.newBuilder()
+   *           .setParent(MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MeshRouteView element : networkServicesClient.listMeshRouteViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeshRouteViewsPagedResponse listMeshRouteViews(
+      ListMeshRouteViewsRequest request) {
+    return listMeshRouteViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListMeshRouteViewsRequest request =
+   *       ListMeshRouteViewsRequest.newBuilder()
+   *           .setParent(MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MeshRouteView> future =
+   *       networkServicesClient.listMeshRouteViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MeshRouteView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable() {
+    return stub.listMeshRouteViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RouteViews
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListMeshRouteViewsRequest request =
+   *       ListMeshRouteViewsRequest.newBuilder()
+   *           .setParent(MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMeshRouteViewsResponse response =
+   *         networkServicesClient.listMeshRouteViewsCallable().call(request);
+   *     for (MeshRouteView element : response.getMeshRouteViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable() {
+    return stub.listMeshRouteViewsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -7630,6 +9300,254 @@ public class NetworkServicesClient implements BackgroundResource {
     protected ListMeshesFixedSizeCollection createCollection(
         List<ListMeshesPage> pages, int collectionSize) {
       return new ListMeshesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListServiceLbPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ServiceLbPolicy,
+          ListServiceLbPoliciesPage,
+          ListServiceLbPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListServiceLbPoliciesPagedResponse> createAsync(
+        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+            context,
+        ApiFuture<ListServiceLbPoliciesResponse> futureResponse) {
+      ApiFuture<ListServiceLbPoliciesPage> futurePage =
+          ListServiceLbPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListServiceLbPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListServiceLbPoliciesPagedResponse(ListServiceLbPoliciesPage page) {
+      super(page, ListServiceLbPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListServiceLbPoliciesPage
+      extends AbstractPage<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ServiceLbPolicy,
+          ListServiceLbPoliciesPage> {
+
+    private ListServiceLbPoliciesPage(
+        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+            context,
+        ListServiceLbPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListServiceLbPoliciesPage createEmptyPage() {
+      return new ListServiceLbPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListServiceLbPoliciesPage createPage(
+        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+            context,
+        ListServiceLbPoliciesResponse response) {
+      return new ListServiceLbPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListServiceLbPoliciesPage> createPageAsync(
+        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+            context,
+        ApiFuture<ListServiceLbPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListServiceLbPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ServiceLbPolicy,
+          ListServiceLbPoliciesPage,
+          ListServiceLbPoliciesFixedSizeCollection> {
+
+    private ListServiceLbPoliciesFixedSizeCollection(
+        List<ListServiceLbPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListServiceLbPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListServiceLbPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListServiceLbPoliciesFixedSizeCollection createCollection(
+        List<ListServiceLbPoliciesPage> pages, int collectionSize) {
+      return new ListServiceLbPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListGatewayRouteViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          GatewayRouteView,
+          ListGatewayRouteViewsPage,
+          ListGatewayRouteViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListGatewayRouteViewsPagedResponse> createAsync(
+        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+            context,
+        ApiFuture<ListGatewayRouteViewsResponse> futureResponse) {
+      ApiFuture<ListGatewayRouteViewsPage> futurePage =
+          ListGatewayRouteViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListGatewayRouteViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListGatewayRouteViewsPagedResponse(ListGatewayRouteViewsPage page) {
+      super(page, ListGatewayRouteViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGatewayRouteViewsPage
+      extends AbstractPage<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          GatewayRouteView,
+          ListGatewayRouteViewsPage> {
+
+    private ListGatewayRouteViewsPage(
+        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+            context,
+        ListGatewayRouteViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGatewayRouteViewsPage createEmptyPage() {
+      return new ListGatewayRouteViewsPage(null, null);
+    }
+
+    @Override
+    protected ListGatewayRouteViewsPage createPage(
+        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+            context,
+        ListGatewayRouteViewsResponse response) {
+      return new ListGatewayRouteViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGatewayRouteViewsPage> createPageAsync(
+        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+            context,
+        ApiFuture<ListGatewayRouteViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGatewayRouteViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          GatewayRouteView,
+          ListGatewayRouteViewsPage,
+          ListGatewayRouteViewsFixedSizeCollection> {
+
+    private ListGatewayRouteViewsFixedSizeCollection(
+        List<ListGatewayRouteViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGatewayRouteViewsFixedSizeCollection createEmptyCollection() {
+      return new ListGatewayRouteViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGatewayRouteViewsFixedSizeCollection createCollection(
+        List<ListGatewayRouteViewsPage> pages, int collectionSize) {
+      return new ListGatewayRouteViewsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMeshRouteViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMeshRouteViewsRequest,
+          ListMeshRouteViewsResponse,
+          MeshRouteView,
+          ListMeshRouteViewsPage,
+          ListMeshRouteViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListMeshRouteViewsPagedResponse> createAsync(
+        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
+        ApiFuture<ListMeshRouteViewsResponse> futureResponse) {
+      ApiFuture<ListMeshRouteViewsPage> futurePage =
+          ListMeshRouteViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMeshRouteViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMeshRouteViewsPagedResponse(ListMeshRouteViewsPage page) {
+      super(page, ListMeshRouteViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMeshRouteViewsPage
+      extends AbstractPage<
+          ListMeshRouteViewsRequest,
+          ListMeshRouteViewsResponse,
+          MeshRouteView,
+          ListMeshRouteViewsPage> {
+
+    private ListMeshRouteViewsPage(
+        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
+        ListMeshRouteViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMeshRouteViewsPage createEmptyPage() {
+      return new ListMeshRouteViewsPage(null, null);
+    }
+
+    @Override
+    protected ListMeshRouteViewsPage createPage(
+        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
+        ListMeshRouteViewsResponse response) {
+      return new ListMeshRouteViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMeshRouteViewsPage> createPageAsync(
+        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
+        ApiFuture<ListMeshRouteViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMeshRouteViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMeshRouteViewsRequest,
+          ListMeshRouteViewsResponse,
+          MeshRouteView,
+          ListMeshRouteViewsPage,
+          ListMeshRouteViewsFixedSizeCollection> {
+
+    private ListMeshRouteViewsFixedSizeCollection(
+        List<ListMeshRouteViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMeshRouteViewsFixedSizeCollection createEmptyCollection() {
+      return new ListMeshRouteViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMeshRouteViewsFixedSizeCollection createCollection(
+        List<ListMeshRouteViewsPage> pages, int collectionSize) {
+      return new ListMeshRouteViewsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
@@ -1176,6 +1177,30 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).submitUserDeletionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubpropertySyncConfigs. */
+  public PagedCallSettings<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listSubpropertySyncConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertySyncConfig. */
+  public UnaryCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateSubpropertySyncConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertySyncConfig. */
+  public UnaryCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getSubpropertySyncConfigSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -2357,6 +2382,27 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
         submitUserDeletionSettings() {
       return getStubSettingsBuilder().submitUserDeletionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertySyncConfigs. */
+    public PagedCallSettings.Builder<
+            ListSubpropertySyncConfigsRequest,
+            ListSubpropertySyncConfigsResponse,
+            ListSubpropertySyncConfigsPagedResponse>
+        listSubpropertySyncConfigsSettings() {
+      return getStubSettingsBuilder().listSubpropertySyncConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigSettings() {
+      return getStubSettingsBuilder().updateSubpropertySyncConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigSettings() {
+      return getStubSettingsBuilder().getSubpropertySyncConfigSettings();
     }
 
     @Override

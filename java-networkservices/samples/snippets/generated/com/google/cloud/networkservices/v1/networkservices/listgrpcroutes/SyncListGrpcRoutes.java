@@ -40,6 +40,7 @@ public class SyncListGrpcRoutes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       for (GrpcRoute element : networkServicesClient.listGrpcRoutes(request).iterateAll()) {
         // doThingsWith(element);

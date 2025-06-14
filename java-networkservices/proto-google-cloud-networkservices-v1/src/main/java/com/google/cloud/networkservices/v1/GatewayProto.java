@@ -71,60 +71,98 @@ public final class GatewayProto {
     java.lang.String[] descriptorData = {
       "\n"
           + "-google/cloud/networkservices/v1/gateway.proto\022\037google.cloud.networkservices.v1"
-          + "\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\357\004\n"
+          + "\032\037google/api/field_behavior.proto\032\031googl"
+          + "e/api/resource.proto\032,google/cloud/networkservices/v1/common.proto\032 google/proto"
+          + "buf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\204\013\n"
           + "\007Gateway\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\026\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\tself_link\030\r"
           + " \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
-          + "\006labels\030\004 \003(\01324.google.clou"
-          + "d.networkservices.v1.Gateway.LabelsEntryB\003\340A\001\022\030\n"
+          + "\006labels\030\004 \003(\01324.googl"
+          + "e.cloud.networkservices.v1.Gateway.LabelsEntryB\003\340A\001\022\030\n"
           + "\013description\030\005 \001(\tB\003\340A\001\022@\n"
           + "\004type\030\006"
-          + " \001(\0162-.google.cloud.networkservices.v1.Gateway.TypeB\003\340A\005\022\022\n"
-          + "\005ports\030\013 \003(\005B\003\340A\002\022\025\n"
-          + "\005scope\030\010 \001(\tB\006\340A\002\340A\005\022\036\n"
-          + "\021server_tls_policy\030\t \001(\tB\003\340A\001\032-\n"
+          + " \001(\0162-.google.cloud.networkservices.v1.Gateway.TypeB\003\340A\005\0229\n"
+          + "\taddresses\030\007 \003(\tB&\340A\001\372A \n"
+          + "\036compute.googleapis.com/Address\022\022\n"
+          + "\005ports\030\013 \003(\005B\003\340A\002\022\022\n"
+          + "\005scope\030\010 \001(\tB\003\340A\001\022Q\n"
+          + "\021server_tls_policy\030\t \001(\tB6\340A\001\372A0\n"
+          + ".networksecurity.googleapis.com/ServerTlsPolicy\022O\n"
+          + "\020certificate_urls\030\016 \003(\tB5\340A\001\372A/\n"
+          + "-certificatemanager.googleapis.com/Certificate\022]\n"
+          + "\027gateway_security_policy\030\022 \001(\tB<\340A\001\372A6\n"
+          + "4networksecurity.googleapis.com/GatewaySecurityPolicy\0227\n"
+          + "\007network\030\020 \001(\tB&\340A\001\372A \n"
+          + "\036compute.googleapis.com/Network\022=\n\n"
+          + "subnetwork\030\021 \001(\tB)\340A\001\372A#\n"
+          + "!compute.googleapis.com/Subnetwork\022K\n\n"
+          + "ip_version\030\025 \001("
+          + "\01622.google.cloud.networkservices.v1.Gateway.IpVersionB\003\340A\001\022N\n\r"
+          + "envoy_headers\030\034 \001("
+          + "\0162-.google.cloud.networkservices.v1.EnvoyHeadersB\003\340A\001H\000\210\001\001\022O\n"
+          + "\014routing_mode\030  \001(\016"
+          + "24.google.cloud.networkservices.v1.Gateway.RoutingModeB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"C\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tOPEN_MESH\020\001\022\026\n"
-          + "\022SECURE_WEB_GATEWAY\020\002:g\352Ad\n"
-          + "&networkservices.googleapi"
-          + "s.com/Gateway\022:projects/{project}/locations/{location}/gateways/{gateway}\"|\n"
+          + "\022SECURE_WEB_GATEWAY\020\002\";\n"
+          + "\tIpVersion\022\032\n"
+          + "\026IP_VERSION_UNSPECIFIED\020\000\022\010\n"
+          + "\004IPV4\020\001\022\010\n"
+          + "\004IPV6\020\002\"C\n"
+          + "\013RoutingMode\022\031\n"
+          + "\025EXPLICIT_ROUTING_MODE\020\000\022\031\n"
+          + "\025NEXT_HOP_ROUTING_MODE\020\001:g\352Ad\n"
+          + "&networkservices.googleapis.com/Gateway\022:projects"
+          + "/{project}/locations/{location}/gateways/{gateway}B\020\n"
+          + "\016_envoy_headers\"|\n"
           + "\023ListGatewaysRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340A\002\372A("
-          + "\022&networkservices.googleapis.com/Gateway\022\021\n"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&networkservices.googleapis.com/Gateway\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"k\n"
+          + "page_token\030\003 \001(\t\"\200\001\n"
           + "\024ListGatewaysResponse\022:\n"
           + "\010gateways\030\001 \003(\0132(.google.cloud.networkservices.v1.Gateway\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"Q\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"Q\n"
           + "\021GetGatewayRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&networkservices.googleapis.com/Gateway\"\257\001\n"
           + "\024CreateGatewayRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340A\002\372A("
-          + "\022&networkservices.googleapis.com/Gateway\022\027\n\n"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&networkservices.googleapis.com/Gateway\022\027\n\n"
           + "gateway_id\030\002 \001(\tB\003\340A\002\022>\n"
-          + "\007gateway\030\003 \001"
-          + "(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"\214\001\n"
+          + "\007gateway\030\003"
+          + " \001(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"\214\001\n"
           + "\024UpdateGatewayRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022>\n"
-          + "\007gateway\030\002"
-          + " \001(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"T\n"
+          + "\007gateway\030\002 \001"
+          + "(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"T\n"
           + "\024DeleteGatewayRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&networkservices.googleapis.com/GatewayB\355\001\n"
-          + "#com.google.cloud.networkservices.v1B\014GatewayProtoP\001ZMcloud.google.com/go/netw"
-          + "orkservices/apiv1/networkservicespb;netw"
-          + "orkservicespb\252\002\037Google.Cloud.NetworkServ"
-          + "ices.V1\312\002\037Google\\Cloud\\NetworkServices\\V"
-          + "1\352\002\"Google::Cloud::NetworkServices::V1b\006proto3"
+          + "&networkservices.googleapis.com/GatewayB\211\006\n"
+          + "#com.google.cloud.networkservices.v1B\014GatewayProtoP\001ZMcloud.g"
+          + "oogle.com/go/networkservices/apiv1/netwo"
+          + "rkservicespb;networkservicespb\252\002\037Google."
+          + "Cloud.NetworkServices.V1\312\002\037Google\\Cloud\\"
+          + "NetworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1\352A\221\001\n"
+          + "4networksecurity.googleapis.com/GatewaySecurityPolicy\022Yproje"
+          + "cts/{project}/locations/{location}/gatew"
+          + "aySecurityPolicies/{gateway_security_policy}\352Aa\n"
+          + "!compute.googleapis.com/Subnetwo"
+          + "rk\022<projects/{project}/regions/{region}/subnetworks/{subnetwork}\352AN\n"
+          + "\036compute.goo"
+          + "gleapis.com/Network\022,projects/{project}/global/networks/{network}\352AY\n"
+          + "\036compute.googleapis.com/Address\0227projects/{project}"
+          + "/regions/{region}/addresses/{address}\352As\n"
+          + "-certificatemanager.googleapis.com/Certificate\022Bprojects/{project}/locations/{l"
+          + "ocation}/certificates/{certificate}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -132,6 +170,7 @@ public final class GatewayProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.networkservices.v1.CommonProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -148,9 +187,17 @@ public final class GatewayProto {
               "Labels",
               "Description",
               "Type",
+              "Addresses",
               "Ports",
               "Scope",
               "ServerTlsPolicy",
+              "CertificateUrls",
+              "GatewaySecurityPolicy",
+              "Network",
+              "Subnetwork",
+              "IpVersion",
+              "EnvoyHeaders",
+              "RoutingMode",
             });
     internal_static_google_cloud_networkservices_v1_Gateway_LabelsEntry_descriptor =
         internal_static_google_cloud_networkservices_v1_Gateway_descriptor.getNestedTypes().get(0);
@@ -174,7 +221,7 @@ public final class GatewayProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListGatewaysResponse_descriptor,
             new java.lang.String[] {
-              "Gateways", "NextPageToken",
+              "Gateways", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkservices_v1_GetGatewayRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -212,11 +259,13 @@ public final class GatewayProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.networkservices.v1.CommonProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

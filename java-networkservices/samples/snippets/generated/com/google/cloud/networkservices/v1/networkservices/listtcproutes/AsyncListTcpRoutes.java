@@ -41,6 +41,7 @@ public class AsyncListTcpRoutes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<TcpRoute> future =
           networkServicesClient.listTcpRoutesPagedCallable().futureCall(request);

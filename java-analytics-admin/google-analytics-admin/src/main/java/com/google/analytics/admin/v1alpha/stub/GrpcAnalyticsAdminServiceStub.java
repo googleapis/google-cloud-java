@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -170,6 +171,7 @@ import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -230,6 +232,8 @@ import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -250,6 +254,7 @@ import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResp
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
+import com.google.analytics.admin.v1alpha.SubpropertySyncConfig;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
@@ -277,6 +282,7 @@ import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -2207,6 +2213,44 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(SubmitUserDeletionResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSubpropertySyncConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertySyncConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertySyncConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigMethodDescriptor =
+          MethodDescriptor.<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSubpropertySyncConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSubpropertySyncConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertySyncConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigMethodDescriptor =
+          MethodDescriptor.<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSubpropertySyncConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSubpropertySyncConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertySyncConfig.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -2555,6 +2599,15 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       deleteReportingDataAnnotationCallable;
   private final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionCallable;
+  private final UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable;
+  private final UnaryCallable<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable;
+  private final UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable;
+  private final UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -4315,6 +4368,42 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+        listSubpropertySyncConfigsTransportSettings =
+            GrpcCallSettings
+                .<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>newBuilder()
+                .setMethodDescriptor(listSubpropertySyncConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigTransportSettings =
+            GrpcCallSettings.<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+                .setMethodDescriptor(updateSubpropertySyncConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subproperty_sync_config.name",
+                          String.valueOf(request.getSubpropertySyncConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigTransportSettings =
+            GrpcCallSettings.<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+                .setMethodDescriptor(getSubpropertySyncConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -5157,6 +5246,26 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             submitUserDeletionTransportSettings,
             settings.submitUserDeletionSettings(),
+            clientContext);
+    this.listSubpropertySyncConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listSubpropertySyncConfigsTransportSettings,
+            settings.listSubpropertySyncConfigsSettings(),
+            clientContext);
+    this.listSubpropertySyncConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubpropertySyncConfigsTransportSettings,
+            settings.listSubpropertySyncConfigsSettings(),
+            clientContext);
+    this.updateSubpropertySyncConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateSubpropertySyncConfigTransportSettings,
+            settings.updateSubpropertySyncConfigSettings(),
+            clientContext);
+    this.getSubpropertySyncConfigCallable =
+        callableFactory.createUnaryCallable(
+            getSubpropertySyncConfigTransportSettings,
+            settings.getSubpropertySyncConfigSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -6224,6 +6333,30 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionCallable() {
     return submitUserDeletionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    return listSubpropertySyncConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    return listSubpropertySyncConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    return updateSubpropertySyncConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    return getSubpropertySyncConfigCallable;
   }
 
   @Override

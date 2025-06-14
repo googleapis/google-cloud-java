@@ -47,9 +47,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     selfLink_ = "";
     description_ = "";
     type_ = 0;
+    addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ports_ = emptyIntList();
     scope_ = "";
     serverTlsPolicy_ = "";
+    certificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    gatewaySecurityPolicy_ = "";
+    network_ = "";
+    subnetwork_ = "";
+    ipVersion_ = 0;
+    envoyHeaders_ = 0;
+    routingMode_ = 0;
   }
 
   @java.lang.Override
@@ -249,6 +257,316 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.Gateway.Type)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The types of IP version for the gateway.
+   * Possible values are:
+   * * IPV4
+   * * IPV6
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkservices.v1.Gateway.IpVersion}
+   */
+  public enum IpVersion implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The type when IP version is not specified. Defaults to IPV4.
+     * </pre>
+     *
+     * <code>IP_VERSION_UNSPECIFIED = 0;</code>
+     */
+    IP_VERSION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The type for IP version 4.
+     * </pre>
+     *
+     * <code>IPV4 = 1;</code>
+     */
+    IPV4(1),
+    /**
+     *
+     *
+     * <pre>
+     * The type for IP version 6.
+     * </pre>
+     *
+     * <code>IPV6 = 2;</code>
+     */
+    IPV6(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type when IP version is not specified. Defaults to IPV4.
+     * </pre>
+     *
+     * <code>IP_VERSION_UNSPECIFIED = 0;</code>
+     */
+    public static final int IP_VERSION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type for IP version 4.
+     * </pre>
+     *
+     * <code>IPV4 = 1;</code>
+     */
+    public static final int IPV4_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type for IP version 6.
+     * </pre>
+     *
+     * <code>IPV6 = 2;</code>
+     */
+    public static final int IPV6_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IpVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IpVersion forNumber(int value) {
+      switch (value) {
+        case 0:
+          return IP_VERSION_UNSPECIFIED;
+        case 1:
+          return IPV4;
+        case 2:
+          return IPV6;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IpVersion>() {
+          public IpVersion findValueByNumber(int number) {
+            return IpVersion.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.Gateway.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final IpVersion[] VALUES = values();
+
+    public static IpVersion valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IpVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.Gateway.IpVersion)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The routing mode of the Gateway, to determine how the Gateway routes
+   * traffic. Today, this field only applies to Gateways of type
+   * SECURE_WEB_GATEWAY. Possible values are:
+   * * EXPLICIT_ROUTING_MODE
+   * * NEXT_HOP_ROUTING_MODE
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkservices.v1.Gateway.RoutingMode}
+   */
+  public enum RoutingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The routing mode is explicit; clients are configured to send
+     * traffic through the gateway. This is the default routing mode.
+     * </pre>
+     *
+     * <code>EXPLICIT_ROUTING_MODE = 0;</code>
+     */
+    EXPLICIT_ROUTING_MODE(0),
+    /**
+     *
+     *
+     * <pre>
+     * The routing mode is next-hop. Clients are unaware of the gateway,
+     * and a route (advanced route or other route type)
+     * can be configured to direct traffic from client to gateway.
+     * The gateway then acts as a next-hop to the destination.
+     * </pre>
+     *
+     * <code>NEXT_HOP_ROUTING_MODE = 1;</code>
+     */
+    NEXT_HOP_ROUTING_MODE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The routing mode is explicit; clients are configured to send
+     * traffic through the gateway. This is the default routing mode.
+     * </pre>
+     *
+     * <code>EXPLICIT_ROUTING_MODE = 0;</code>
+     */
+    public static final int EXPLICIT_ROUTING_MODE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The routing mode is next-hop. Clients are unaware of the gateway,
+     * and a route (advanced route or other route type)
+     * can be configured to direct traffic from client to gateway.
+     * The gateway then acts as a next-hop to the destination.
+     * </pre>
+     *
+     * <code>NEXT_HOP_ROUTING_MODE = 1;</code>
+     */
+    public static final int NEXT_HOP_ROUTING_MODE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RoutingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RoutingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXPLICIT_ROUTING_MODE;
+        case 1:
+          return NEXT_HOP_ROUTING_MODE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RoutingMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RoutingMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RoutingMode>() {
+          public RoutingMode findValueByNumber(int number) {
+            return RoutingMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.Gateway.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final RoutingMode[] VALUES = values();
+
+    public static RoutingMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RoutingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.Gateway.RoutingMode)
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -259,11 +577,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Gateway resource. It matches pattern
+   * Identifier. Name of the Gateway resource. It matches pattern
    * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -284,11 +602,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Gateway resource. It matches pattern
+   * Identifier. Name of the Gateway resource. It matches pattern
    * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -667,6 +985,102 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.networkservices.v1.Gateway.Type.UNRECOGNIZED : result;
   }
 
+  public static final int ADDRESSES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList addresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the addresses.
+   */
+  public com.google.protobuf.ProtocolStringList getAddressesList() {
+    return addresses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of addresses.
+   */
+  public int getAddressesCount() {
+    return addresses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The addresses at the given index.
+   */
+  public java.lang.String getAddresses(int index) {
+    return addresses_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+   * receive the traffic. When no address is provided, an IP from the subnetwork
+   * is allocated
+   *
+   * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+   * </pre>
+   *
+   * <code>
+   * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the addresses at the given index.
+   */
+  public com.google.protobuf.ByteString getAddressesBytes(int index) {
+    return addresses_.getByteString(index);
+  }
+
   public static final int PORTS_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -676,9 +1090,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -694,9 +1110,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -711,9 +1129,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. One or more ports that the Gateway must receive traffic on. The
-   * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-   * specified below.
+   * Required. One or more port numbers (1-65535), on which the Gateway will
+   * receive traffic. The proxy binds to the specified ports.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+   * support multiple ports.
    * </pre>
    *
    * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -736,19 +1156,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. Scope determines how configuration across multiple
-   * Gateway instances are merged. The configuration for multiple Gateway
-   * instances with the same scope will be merged as presented as a single
-   * coniguration to the proxy/load balancer.
+   * Optional. Scope determines how configuration across multiple Gateway
+   * instances are merged. The configuration for multiple Gateway instances with
+   * the same scope will be merged as presented as a single configuration to the
+   * proxy/load balancer.
    *
    * Max length 64 characters.
    * Scope should start with a letter and can only have letters, numbers,
    * hyphens.
    * </pre>
    *
-   * <code>
-   * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scope.
    */
@@ -769,19 +1187,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. Scope determines how configuration across multiple
-   * Gateway instances are merged. The configuration for multiple Gateway
-   * instances with the same scope will be merged as presented as a single
-   * coniguration to the proxy/load balancer.
+   * Optional. Scope determines how configuration across multiple Gateway
+   * instances are merged. The configuration for multiple Gateway instances with
+   * the same scope will be merged as presented as a single configuration to the
+   * proxy/load balancer.
    *
    * Max length 64 characters.
    * Scope should start with a letter and can only have letters, numbers,
    * hyphens.
    * </pre>
    *
-   * <code>
-   * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for scope.
    */
@@ -811,7 +1227,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    * TLS traffic is terminated. If empty, TLS termination is disabled.
    * </pre>
    *
-   * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The serverTlsPolicy.
    */
@@ -836,7 +1254,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
    * TLS traffic is terminated. If empty, TLS termination is disabled.
    * </pre>
    *
-   * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for serverTlsPolicy.
    */
@@ -851,6 +1271,448 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CERTIFICATE_URLS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList certificateUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the certificateUrls.
+   */
+  public com.google.protobuf.ProtocolStringList getCertificateUrlsList() {
+    return certificateUrls_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of certificateUrls.
+   */
+  public int getCertificateUrlsCount() {
+    return certificateUrls_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The certificateUrls at the given index.
+   */
+  public java.lang.String getCertificateUrls(int index) {
+    return certificateUrls_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified Certificates URL reference. The proxy presents
+   * a Certificate (selected based on SNI) when establishing a TLS connection.
+   * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the certificateUrls at the given index.
+   */
+  public com.google.protobuf.ByteString getCertificateUrlsBytes(int index) {
+    return certificateUrls_.getByteString(index);
+  }
+
+  public static final int GATEWAY_SECURITY_POLICY_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gatewaySecurityPolicy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+   * Defines how a server should apply security policy to inbound
+   * (VM to Proxy) initiated connections.
+   *
+   * For example:
+   * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+   *
+   * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The gatewaySecurityPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getGatewaySecurityPolicy() {
+    java.lang.Object ref = gatewaySecurityPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gatewaySecurityPolicy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+   * Defines how a server should apply security policy to inbound
+   * (VM to Proxy) initiated connections.
+   *
+   * For example:
+   * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+   *
+   * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for gatewaySecurityPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGatewaySecurityPolicyBytes() {
+    java.lang.Object ref = gatewaySecurityPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gatewaySecurityPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying the VPC network that is
+   * using this configuration. For example:
+   * `projects/&#42;&#47;global/networks/network-1`.
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The network.
+   */
+  @java.lang.Override
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying the VPC network that is
+   * using this configuration. For example:
+   * `projects/&#42;&#47;global/networks/network-1`.
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>
+   * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for network.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkBytes() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      network_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUBNETWORK_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying  the subnetwork in which
+   * this SWG is allocated. For example:
+   * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+   * </pre>
+   *
+   * <code>
+   * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The subnetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getSubnetwork() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subnetwork_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relative resource name identifying  the subnetwork in which
+   * this SWG is allocated. For example:
+   * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+   *
+   * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+   * </pre>
+   *
+   * <code>
+   * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for subnetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSubnetworkBytes() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      subnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IP_VERSION_FIELD_NUMBER = 21;
+  private int ipVersion_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP Version that will be used by this gateway. Valid options
+   * are IPV4 or IPV6. Default is IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ipVersion.
+   */
+  @java.lang.Override
+  public int getIpVersionValue() {
+    return ipVersion_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IP Version that will be used by this gateway. Valid options
+   * are IPV4 or IPV6. Default is IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ipVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.Gateway.IpVersion getIpVersion() {
+    com.google.cloud.networkservices.v1.Gateway.IpVersion result =
+        com.google.cloud.networkservices.v1.Gateway.IpVersion.forNumber(ipVersion_);
+    return result == null
+        ? com.google.cloud.networkservices.v1.Gateway.IpVersion.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ENVOY_HEADERS_FIELD_NUMBER = 28;
+  private int envoyHeaders_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the envoyHeaders field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvoyHeaders() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for envoyHeaders.
+   */
+  @java.lang.Override
+  public int getEnvoyHeadersValue() {
+    return envoyHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The envoyHeaders.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders() {
+    com.google.cloud.networkservices.v1.EnvoyHeaders result =
+        com.google.cloud.networkservices.v1.EnvoyHeaders.forNumber(envoyHeaders_);
+    return result == null ? com.google.cloud.networkservices.v1.EnvoyHeaders.UNRECOGNIZED : result;
+  }
+
+  public static final int ROUTING_MODE_FIELD_NUMBER = 32;
+  private int routingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The routing mode of the Gateway.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * This field is required for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for routingMode.
+   */
+  @java.lang.Override
+  public int getRoutingModeValue() {
+    return routingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The routing mode of the Gateway.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * This field is required for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.Gateway.RoutingMode getRoutingMode() {
+    com.google.cloud.networkservices.v1.Gateway.RoutingMode result =
+        com.google.cloud.networkservices.v1.Gateway.RoutingMode.forNumber(routingMode_);
+    return result == null
+        ? com.google.cloud.networkservices.v1.Gateway.RoutingMode.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -885,6 +1747,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.networkservices.v1.Gateway.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, type_);
     }
+    for (int i = 0; i < addresses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, addresses_.getRaw(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, scope_);
     }
@@ -900,6 +1765,31 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, selfLink_);
+    }
+    for (int i = 0; i < certificateUrls_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, certificateUrls_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, network_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, subnetwork_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewaySecurityPolicy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, gatewaySecurityPolicy_);
+    }
+    if (ipVersion_
+        != com.google.cloud.networkservices.v1.Gateway.IpVersion.IP_VERSION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(21, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(28, envoyHeaders_);
+    }
+    if (routingMode_
+        != com.google.cloud.networkservices.v1.Gateway.RoutingMode.EXPLICIT_ROUTING_MODE
+            .getNumber()) {
+      output.writeEnum(32, routingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -935,6 +1825,14 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.networkservices.v1.Gateway.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, type_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < addresses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(addresses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAddressesList().size();
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, scope_);
     }
@@ -955,6 +1853,36 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, selfLink_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < certificateUrls_.size(); i++) {
+        dataSize += computeStringSizeNoTag(certificateUrls_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCertificateUrlsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, network_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, subnetwork_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewaySecurityPolicy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, gatewaySecurityPolicy_);
+    }
+    if (ipVersion_
+        != com.google.cloud.networkservices.v1.Gateway.IpVersion.IP_VERSION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, envoyHeaders_);
+    }
+    if (routingMode_
+        != com.google.cloud.networkservices.v1.Gateway.RoutingMode.EXPLICIT_ROUTING_MODE
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(32, routingMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -985,9 +1913,20 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (type_ != other.type_) return false;
+    if (!getAddressesList().equals(other.getAddressesList())) return false;
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!getScope().equals(other.getScope())) return false;
     if (!getServerTlsPolicy().equals(other.getServerTlsPolicy())) return false;
+    if (!getCertificateUrlsList().equals(other.getCertificateUrlsList())) return false;
+    if (!getGatewaySecurityPolicy().equals(other.getGatewaySecurityPolicy())) return false;
+    if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    if (ipVersion_ != other.ipVersion_) return false;
+    if (hasEnvoyHeaders() != other.hasEnvoyHeaders()) return false;
+    if (hasEnvoyHeaders()) {
+      if (envoyHeaders_ != other.envoyHeaders_) return false;
+    }
+    if (routingMode_ != other.routingMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1019,6 +1958,10 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (getAddressesCount() > 0) {
+      hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressesList().hashCode();
+    }
     if (getPortsCount() > 0) {
       hash = (37 * hash) + PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getPortsList().hashCode();
@@ -1027,6 +1970,24 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getScope().hashCode();
     hash = (37 * hash) + SERVER_TLS_POLICY_FIELD_NUMBER;
     hash = (53 * hash) + getServerTlsPolicy().hashCode();
+    if (getCertificateUrlsCount() > 0) {
+      hash = (37 * hash) + CERTIFICATE_URLS_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificateUrlsList().hashCode();
+    }
+    hash = (37 * hash) + GATEWAY_SECURITY_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getGatewaySecurityPolicy().hashCode();
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getSubnetwork().hashCode();
+    hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + ipVersion_;
+    if (hasEnvoyHeaders()) {
+      hash = (37 * hash) + ENVOY_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + envoyHeaders_;
+    }
+    hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + routingMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1217,9 +2178,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       description_ = "";
       type_ = 0;
+      addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ports_ = emptyIntList();
       scope_ = "";
       serverTlsPolicy_ = "";
+      certificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      gatewaySecurityPolicy_ = "";
+      network_ = "";
+      subnetwork_ = "";
+      ipVersion_ = 0;
+      envoyHeaders_ = 0;
+      routingMode_ = 0;
       return this;
     }
 
@@ -1282,14 +2251,41 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
         result.type_ = type_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        addresses_.makeImmutable();
+        result.addresses_ = addresses_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         ports_.makeImmutable();
         result.ports_ = ports_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.scope_ = scope_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.serverTlsPolicy_ = serverTlsPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        certificateUrls_.makeImmutable();
+        result.certificateUrls_ = certificateUrls_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.gatewaySecurityPolicy_ = gatewaySecurityPolicy_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.ipVersion_ = ipVersion_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.envoyHeaders_ = envoyHeaders_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.routingMode_ = routingMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1365,11 +2361,21 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (!other.addresses_.isEmpty()) {
+        if (addresses_.isEmpty()) {
+          addresses_ = other.addresses_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureAddressesIsMutable();
+          addresses_.addAll(other.addresses_);
+        }
+        onChanged();
+      }
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
           ports_.makeImmutable();
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -1378,13 +2384,47 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getServerTlsPolicy().isEmpty()) {
         serverTlsPolicy_ = other.serverTlsPolicy_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (!other.certificateUrls_.isEmpty()) {
+        if (certificateUrls_.isEmpty()) {
+          certificateUrls_ = other.certificateUrls_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureCertificateUrlsIsMutable();
+          certificateUrls_.addAll(other.certificateUrls_);
+        }
+        onChanged();
+      }
+      if (!other.getGatewaySecurityPolicy().isEmpty()) {
+        gatewaySecurityPolicy_ = other.gatewaySecurityPolicy_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (!other.getSubnetwork().isEmpty()) {
+        subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (other.ipVersion_ != 0) {
+        setIpVersionValue(other.getIpVersionValue());
+      }
+      if (other.hasEnvoyHeaders()) {
+        setEnvoyHeaders(other.getEnvoyHeaders());
+      }
+      if (other.routingMode_ != 0) {
+        setRoutingModeValue(other.getRoutingModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1454,16 +2494,23 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 48
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAddressesIsMutable();
+                addresses_.add(s);
+                break;
+              } // case 58
             case 66:
               {
                 scope_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 serverTlsPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 88:
@@ -1490,6 +2537,49 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCertificateUrlsIsMutable();
+                certificateUrls_.add(s);
+                break;
+              } // case 114
+            case 130:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
+            case 138:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
+            case 146:
+              {
+                gatewaySecurityPolicy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 146
+            case 168:
+              {
+                ipVersion_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 168
+            case 224:
+              {
+                envoyHeaders_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 224
+            case 256:
+              {
+                routingMode_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 256
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1515,11 +2605,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Gateway resource. It matches pattern
+     * Identifier. Name of the Gateway resource. It matches pattern
      * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1539,11 +2629,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Gateway resource. It matches pattern
+     * Identifier. Name of the Gateway resource. It matches pattern
      * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1563,11 +2653,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Gateway resource. It matches pattern
+     * Identifier. Name of the Gateway resource. It matches pattern
      * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1586,11 +2676,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Gateway resource. It matches pattern
+     * Identifier. Name of the Gateway resource. It matches pattern
      * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1605,11 +2695,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Gateway resource. It matches pattern
+     * Identifier. Name of the Gateway resource. It matches pattern
      * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2560,11 +3650,12 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Internal.IntList ports_ = emptyIntList();
+    private com.google.protobuf.LazyStringArrayList addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
-    private void ensurePortsIsMutable() {
-      if (!ports_.isModifiable()) {
-        ports_ = makeMutableCopy(ports_);
+    private void ensureAddressesIsMutable() {
+      if (!addresses_.isModifiable()) {
+        addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
       }
       bitField0_ |= 0x00000080;
     }
@@ -2573,9 +3664,256 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the addresses.
+     */
+    public com.google.protobuf.ProtocolStringList getAddressesList() {
+      addresses_.makeImmutable();
+      return addresses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of addresses.
+     */
+    public int getAddressesCount() {
+      return addresses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
+     */
+    public java.lang.String getAddresses(int index) {
+      return addresses_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
+     */
+    public com.google.protobuf.ByteString getAddressesBytes(int index) {
+      return addresses_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The addresses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAddresses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAddressesIsMutable();
+      addresses_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddresses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAddressesIsMutable();
+      addresses_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAddresses(java.lang.Iterable<java.lang.String> values) {
+      ensureAddressesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, addresses_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAddresses() {
+      addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Zero or one IPv4 or IPv6 address on which the Gateway will
+     * receive the traffic. When no address is provided, an IP from the subnetwork
+     * is allocated
+     *
+     * This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+     * </pre>
+     *
+     * <code>
+     * repeated string addresses = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the addresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddressesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAddressesIsMutable();
+      addresses_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList ports_ = emptyIntList();
+
+    private void ensurePortsIsMutable() {
+      if (!ports_.isModifiable()) {
+        ports_ = makeMutableCopy(ports_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2591,9 +3929,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2608,9 +3948,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2626,9 +3968,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2641,7 +3985,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
 
       ensurePortsIsMutable();
       ports_.setInt(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2650,9 +3994,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2664,7 +4010,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
 
       ensurePortsIsMutable();
       ports_.addInt(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2673,9 +4019,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2686,7 +4034,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPorts(java.lang.Iterable<? extends java.lang.Integer> values) {
       ensurePortsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ports_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2695,9 +4043,11 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. One or more ports that the Gateway must receive traffic on. The
-     * proxy binds to the ports specified. Gateway listen on 0.0.0.0 on the ports
-     * specified below.
+     * Required. One or more port numbers (1-65535), on which the Gateway will
+     * receive traffic. The proxy binds to the specified ports.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
+     * support multiple ports.
      * </pre>
      *
      * <code>repeated int32 ports = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2706,7 +4056,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPorts() {
       ports_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2717,19 +4067,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Scope determines how configuration across multiple
-     * Gateway instances are merged. The configuration for multiple Gateway
-     * instances with the same scope will be merged as presented as a single
-     * coniguration to the proxy/load balancer.
+     * Optional. Scope determines how configuration across multiple Gateway
+     * instances are merged. The configuration for multiple Gateway instances with
+     * the same scope will be merged as presented as a single configuration to the
+     * proxy/load balancer.
      *
      * Max length 64 characters.
      * Scope should start with a letter and can only have letters, numbers,
      * hyphens.
      * </pre>
      *
-     * <code>
-     * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The scope.
      */
@@ -2749,19 +4097,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Scope determines how configuration across multiple
-     * Gateway instances are merged. The configuration for multiple Gateway
-     * instances with the same scope will be merged as presented as a single
-     * coniguration to the proxy/load balancer.
+     * Optional. Scope determines how configuration across multiple Gateway
+     * instances are merged. The configuration for multiple Gateway instances with
+     * the same scope will be merged as presented as a single configuration to the
+     * proxy/load balancer.
      *
      * Max length 64 characters.
      * Scope should start with a letter and can only have letters, numbers,
      * hyphens.
      * </pre>
      *
-     * <code>
-     * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for scope.
      */
@@ -2781,19 +4127,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Scope determines how configuration across multiple
-     * Gateway instances are merged. The configuration for multiple Gateway
-     * instances with the same scope will be merged as presented as a single
-     * coniguration to the proxy/load balancer.
+     * Optional. Scope determines how configuration across multiple Gateway
+     * instances are merged. The configuration for multiple Gateway instances with
+     * the same scope will be merged as presented as a single configuration to the
+     * proxy/load balancer.
      *
      * Max length 64 characters.
      * Scope should start with a letter and can only have letters, numbers,
      * hyphens.
      * </pre>
      *
-     * <code>
-     * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The scope to set.
      * @return This builder for chaining.
@@ -2803,7 +4147,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       scope_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2812,25 +4156,23 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Scope determines how configuration across multiple
-     * Gateway instances are merged. The configuration for multiple Gateway
-     * instances with the same scope will be merged as presented as a single
-     * coniguration to the proxy/load balancer.
+     * Optional. Scope determines how configuration across multiple Gateway
+     * instances are merged. The configuration for multiple Gateway instances with
+     * the same scope will be merged as presented as a single configuration to the
+     * proxy/load balancer.
      *
      * Max length 64 characters.
      * Scope should start with a letter and can only have letters, numbers,
      * hyphens.
      * </pre>
      *
-     * <code>
-     * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearScope() {
       scope_ = getDefaultInstance().getScope();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2839,19 +4181,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Scope determines how configuration across multiple
-     * Gateway instances are merged. The configuration for multiple Gateway
-     * instances with the same scope will be merged as presented as a single
-     * coniguration to the proxy/load balancer.
+     * Optional. Scope determines how configuration across multiple Gateway
+     * instances are merged. The configuration for multiple Gateway instances with
+     * the same scope will be merged as presented as a single configuration to the
+     * proxy/load balancer.
      *
      * Max length 64 characters.
      * Scope should start with a letter and can only have letters, numbers,
      * hyphens.
      * </pre>
      *
-     * <code>
-     * string scope = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string scope = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for scope to set.
      * @return This builder for chaining.
@@ -2862,7 +4202,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       scope_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2877,7 +4217,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      * TLS traffic is terminated. If empty, TLS termination is disabled.
      * </pre>
      *
-     * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The serverTlsPolicy.
      */
@@ -2901,7 +4243,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      * TLS traffic is terminated. If empty, TLS termination is disabled.
      * </pre>
      *
-     * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for serverTlsPolicy.
      */
@@ -2925,7 +4269,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      * TLS traffic is terminated. If empty, TLS termination is disabled.
      * </pre>
      *
-     * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The serverTlsPolicy to set.
      * @return This builder for chaining.
@@ -2935,7 +4281,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serverTlsPolicy_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2948,13 +4294,15 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      * TLS traffic is terminated. If empty, TLS termination is disabled.
      * </pre>
      *
-     * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServerTlsPolicy() {
       serverTlsPolicy_ = getDefaultInstance().getServerTlsPolicy();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2967,7 +4315,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
      * TLS traffic is terminated. If empty, TLS termination is disabled.
      * </pre>
      *
-     * <code>string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string server_tls_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for serverTlsPolicy to set.
      * @return This builder for chaining.
@@ -2978,7 +4328,1030 @@ public final class Gateway extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serverTlsPolicy_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList certificateUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCertificateUrlsIsMutable() {
+      if (!certificateUrls_.isModifiable()) {
+        certificateUrls_ = new com.google.protobuf.LazyStringArrayList(certificateUrls_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the certificateUrls.
+     */
+    public com.google.protobuf.ProtocolStringList getCertificateUrlsList() {
+      certificateUrls_.makeImmutable();
+      return certificateUrls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of certificateUrls.
+     */
+    public int getCertificateUrlsCount() {
+      return certificateUrls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The certificateUrls at the given index.
+     */
+    public java.lang.String getCertificateUrls(int index) {
+      return certificateUrls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the certificateUrls at the given index.
+     */
+    public com.google.protobuf.ByteString getCertificateUrlsBytes(int index) {
+      return certificateUrls_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The certificateUrls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificateUrls(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCertificateUrlsIsMutable();
+      certificateUrls_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The certificateUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCertificateUrls(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCertificateUrlsIsMutable();
+      certificateUrls_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The certificateUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCertificateUrls(java.lang.Iterable<java.lang.String> values) {
+      ensureCertificateUrlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, certificateUrls_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCertificateUrls() {
+      certificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified Certificates URL reference. The proxy presents
+     * a Certificate (selected based on SNI) when establishing a TLS connection.
+     * This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * repeated string certificate_urls = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the certificateUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCertificateUrlsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCertificateUrlsIsMutable();
+      certificateUrls_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gatewaySecurityPolicy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+     * Defines how a server should apply security policy to inbound
+     * (VM to Proxy) initiated connections.
+     *
+     * For example:
+     * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+     *
+     * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The gatewaySecurityPolicy.
+     */
+    public java.lang.String getGatewaySecurityPolicy() {
+      java.lang.Object ref = gatewaySecurityPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gatewaySecurityPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+     * Defines how a server should apply security policy to inbound
+     * (VM to Proxy) initiated connections.
+     *
+     * For example:
+     * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+     *
+     * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for gatewaySecurityPolicy.
+     */
+    public com.google.protobuf.ByteString getGatewaySecurityPolicyBytes() {
+      java.lang.Object ref = gatewaySecurityPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gatewaySecurityPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+     * Defines how a server should apply security policy to inbound
+     * (VM to Proxy) initiated connections.
+     *
+     * For example:
+     * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+     *
+     * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The gatewaySecurityPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewaySecurityPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gatewaySecurityPolicy_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+     * Defines how a server should apply security policy to inbound
+     * (VM to Proxy) initiated connections.
+     *
+     * For example:
+     * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+     *
+     * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGatewaySecurityPolicy() {
+      gatewaySecurityPolicy_ = getDefaultInstance().getGatewaySecurityPolicy();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A fully-qualified GatewaySecurityPolicy URL reference.
+     * Defines how a server should apply security policy to inbound
+     * (VM to Proxy) initiated connections.
+     *
+     * For example:
+     * `projects/&#42;&#47;locations/&#42;&#47;gatewaySecurityPolicies/swg-policy`.
+     *
+     * This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string gateway_security_policy = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for gatewaySecurityPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewaySecurityPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gatewaySecurityPolicy_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object network_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying the VPC network that is
+     * using this configuration. For example:
+     * `projects/&#42;&#47;global/networks/network-1`.
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying the VPC network that is
+     * using this configuration. For example:
+     * `projects/&#42;&#47;global/networks/network-1`.
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying the VPC network that is
+     * using this configuration. For example:
+     * `projects/&#42;&#47;global/networks/network-1`.
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      network_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying the VPC network that is
+     * using this configuration. For example:
+     * `projects/&#42;&#47;global/networks/network-1`.
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+      network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying the VPC network that is
+     * using this configuration. For example:
+     * `projects/&#42;&#47;global/networks/network-1`.
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>
+     * string network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      network_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object subnetwork_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying  the subnetwork in which
+     * this SWG is allocated. For example:
+     * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+     * </pre>
+     *
+     * <code>
+     * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The subnetwork.
+     */
+    public java.lang.String getSubnetwork() {
+      java.lang.Object ref = subnetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying  the subnetwork in which
+     * this SWG is allocated. For example:
+     * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+     * </pre>
+     *
+     * <code>
+     * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for subnetwork.
+     */
+    public com.google.protobuf.ByteString getSubnetworkBytes() {
+      java.lang.Object ref = subnetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying  the subnetwork in which
+     * this SWG is allocated. For example:
+     * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+     * </pre>
+     *
+     * <code>
+     * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      subnetwork_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying  the subnetwork in which
+     * this SWG is allocated. For example:
+     * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+     * </pre>
+     *
+     * <code>
+     * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubnetwork() {
+      subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relative resource name identifying  the subnetwork in which
+     * this SWG is allocated. For example:
+     * `projects/&#42;&#47;regions/us-central1/subnetworks/network-1`
+     *
+     * Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
+     * </pre>
+     *
+     * <code>
+     * string subnetwork = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      subnetwork_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private int ipVersion_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP Version that will be used by this gateway. Valid options
+     * are IPV4 or IPV6. Default is IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for ipVersion.
+     */
+    @java.lang.Override
+    public int getIpVersionValue() {
+      return ipVersion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP Version that will be used by this gateway. Valid options
+     * are IPV4 or IPV6. Default is IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersionValue(int value) {
+      ipVersion_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP Version that will be used by this gateway. Valid options
+     * are IPV4 or IPV6. Default is IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ipVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.Gateway.IpVersion getIpVersion() {
+      com.google.cloud.networkservices.v1.Gateway.IpVersion result =
+          com.google.cloud.networkservices.v1.Gateway.IpVersion.forNumber(ipVersion_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.Gateway.IpVersion.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP Version that will be used by this gateway. Valid options
+     * are IPV4 or IPV6. Default is IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersion(com.google.cloud.networkservices.v1.Gateway.IpVersion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      ipVersion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The IP Version that will be used by this gateway. Valid options
+     * are IPV4 or IPV6. Default is IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.IpVersion ip_version = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpVersion() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      ipVersion_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int envoyHeaders_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the envoyHeaders field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnvoyHeaders() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for envoyHeaders.
+     */
+    @java.lang.Override
+    public int getEnvoyHeadersValue() {
+      return envoyHeaders_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for envoyHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvoyHeadersValue(int value) {
+      envoyHeaders_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The envoyHeaders.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders() {
+      com.google.cloud.networkservices.v1.EnvoyHeaders result =
+          com.google.cloud.networkservices.v1.EnvoyHeaders.forNumber(envoyHeaders_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.EnvoyHeaders.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The envoyHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvoyHeaders(com.google.cloud.networkservices.v1.EnvoyHeaders value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      envoyHeaders_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvoyHeaders() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      envoyHeaders_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int routingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The routing mode of the Gateway.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * This field is required for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for routingMode.
+     */
+    @java.lang.Override
+    public int getRoutingModeValue() {
+      return routingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The routing mode of the Gateway.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * This field is required for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for routingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutingModeValue(int value) {
+      routingMode_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The routing mode of the Gateway.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * This field is required for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.Gateway.RoutingMode getRoutingMode() {
+      com.google.cloud.networkservices.v1.Gateway.RoutingMode result =
+          com.google.cloud.networkservices.v1.Gateway.RoutingMode.forNumber(routingMode_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.Gateway.RoutingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The routing mode of the Gateway.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * This field is required for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The routingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutingMode(com.google.cloud.networkservices.v1.Gateway.RoutingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      routingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The routing mode of the Gateway.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * This field is required for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.Gateway.RoutingMode routing_mode = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRoutingMode() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      routingMode_ = 0;
       onChanged();
       return this;
     }

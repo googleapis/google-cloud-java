@@ -17,12 +17,15 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
 
@@ -44,6 +47,7 @@ import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.CreateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateMeshRequest;
 import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
@@ -52,39 +56,52 @@ import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteHttpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteMeshRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
+import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
+import com.google.cloud.networkservices.v1.GatewayRouteView;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
+import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.GetHttpRouteRequest;
 import com.google.cloud.networkservices.v1.GetMeshRequest;
+import com.google.cloud.networkservices.v1.GetMeshRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
+import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListGatewaysRequest;
 import com.google.cloud.networkservices.v1.ListGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesRequest;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesResponse;
 import com.google.cloud.networkservices.v1.ListHttpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListHttpRoutesResponse;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListMeshesRequest;
 import com.google.cloud.networkservices.v1.ListMeshesResponse;
 import com.google.cloud.networkservices.v1.ListServiceBindingsRequest;
 import com.google.cloud.networkservices.v1.ListServiceBindingsResponse;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
 import com.google.cloud.networkservices.v1.Mesh;
+import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.ServiceBinding;
+import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
@@ -92,6 +109,8 @@ import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateMeshRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -452,6 +471,17 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateServiceBindingRequest, Operation>
+      updateServiceBindingMethodDescriptor =
+          MethodDescriptor.<UpdateServiceBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateServiceBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteServiceBindingRequest, Operation>
       deleteServiceBindingMethodDescriptor =
           MethodDescriptor.<DeleteServiceBindingRequest, Operation>newBuilder()
@@ -503,6 +533,107 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesMethodDescriptor =
+          MethodDescriptor.<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListServiceLbPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListServiceLbPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListServiceLbPoliciesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServiceLbPolicy.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewMethodDescriptor =
+          MethodDescriptor.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetGatewayRouteView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGatewayRouteViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GatewayRouteView.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetMeshRouteViewRequest, MeshRouteView>
+      getMeshRouteViewMethodDescriptor =
+          MethodDescriptor.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetMeshRouteView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMeshRouteViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MeshRouteView.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsMethodDescriptor =
+          MethodDescriptor.<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListGatewayRouteViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGatewayRouteViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGatewayRouteViewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsMethodDescriptor =
+          MethodDescriptor.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListMeshRouteViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMeshRouteViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMeshRouteViewsResponse.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -637,6 +768,9 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<CreateServiceBindingRequest, Operation> createServiceBindingCallable;
   private final OperationCallable<CreateServiceBindingRequest, ServiceBinding, OperationMetadata>
       createServiceBindingOperationCallable;
+  private final UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable;
+  private final OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable;
   private final UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable;
   private final OperationCallable<DeleteServiceBindingRequest, Empty, OperationMetadata>
       deleteServiceBindingOperationCallable;
@@ -652,6 +786,35 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteMeshRequest, Operation> deleteMeshCallable;
   private final OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable;
+  private final UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyCallable;
+  private final UnaryCallable<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyCallable;
+  private final OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable;
+  private final UnaryCallable<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyCallable;
+  private final OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable;
+  private final UnaryCallable<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyCallable;
+  private final OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable;
+  private final UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewCallable;
+  private final UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1041,6 +1204,18 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingTransportSettings =
+        GrpcCallSettings.<UpdateServiceBindingRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateServiceBindingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "service_binding.name",
+                      String.valueOf(request.getServiceBinding().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteServiceBindingRequest, Operation> deleteServiceBindingTransportSettings =
         GrpcCallSettings.<DeleteServiceBindingRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteServiceBindingMethodDescriptor)
@@ -1101,6 +1276,108 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+        listServiceLbPoliciesTransportSettings =
+            GrpcCallSettings
+                .<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listServiceLbPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+                .setMethodDescriptor(getServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "service_lb_policy.name",
+                          String.valueOf(request.getServiceLbPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewTransportSettings =
+            GrpcCallSettings.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+                .setMethodDescriptor(getGatewayRouteViewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewTransportSettings =
+        GrpcCallSettings.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+            .setMethodDescriptor(getMeshRouteViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+        listGatewayRouteViewsTransportSettings =
+            GrpcCallSettings
+                .<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listGatewayRouteViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+        listMeshRouteViewsTransportSettings =
+            GrpcCallSettings.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listMeshRouteViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1407,6 +1684,17 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             settings.createServiceBindingOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateServiceBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingSettings(),
+            clientContext);
+    this.updateServiceBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteServiceBindingCallable =
         callableFactory.createUnaryCallable(
             deleteServiceBindingTransportSettings,
@@ -1454,6 +1742,82 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             settings.deleteMeshOperationSettings(),
             clientContext,
             operationsStub);
+    this.listServiceLbPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.listServiceLbPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.getServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getServiceLbPolicyTransportSettings,
+            settings.getServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicySettings(),
+            clientContext);
+    this.updateServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicySettings(),
+            clientContext);
+    this.deleteServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getGatewayRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getGatewayRouteViewTransportSettings,
+            settings.getGatewayRouteViewSettings(),
+            clientContext);
+    this.getMeshRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getMeshRouteViewTransportSettings, settings.getMeshRouteViewSettings(), clientContext);
+    this.listGatewayRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listGatewayRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1806,6 +2170,17 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   }
 
   @Override
+  public UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable() {
+    return updateServiceBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable() {
+    return updateServiceBindingOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable() {
     return deleteServiceBindingCallable;
   }
@@ -1862,6 +2237,90 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable() {
     return deleteMeshOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable() {
+    return listServiceLbPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable() {
+    return listServiceLbPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy> getServiceLbPolicyCallable() {
+    return getServiceLbPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateServiceLbPolicyRequest, Operation> createServiceLbPolicyCallable() {
+    return createServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable() {
+    return createServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateServiceLbPolicyRequest, Operation> updateServiceLbPolicyCallable() {
+    return updateServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable() {
+    return updateServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServiceLbPolicyRequest, Operation> deleteServiceLbPolicyCallable() {
+    return deleteServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable() {
+    return deleteServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView> getGatewayRouteViewCallable() {
+    return getGatewayRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable() {
+    return getMeshRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable() {
+    return listGatewayRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable() {
+    return listGatewayRouteViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable() {
+    return listMeshRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable() {
+    return listMeshRouteViewsPagedCallable;
   }
 
   @Override

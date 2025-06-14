@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -10878,6 +10879,9 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(request.getSubproperty(), actualRequest.getSubproperty());
     Assert.assertEquals(
         request.getSubpropertyEventFilter(), actualRequest.getSubpropertyEventFilter());
+    Assert.assertEquals(
+        request.getCustomDimensionAndMetricSynchronizationMode(),
+        actualRequest.getCustomDimensionAndMetricSynchronizationMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -11768,6 +11772,227 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String name = "name3373707";
       client.submitUserDeletion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsTest() throws Exception {
+    SubpropertySyncConfig responsesElement = SubpropertySyncConfig.newBuilder().build();
+    ListSubpropertySyncConfigsResponse expectedResponse =
+        ListSubpropertySyncConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertySyncConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListSubpropertySyncConfigsPagedResponse pagedListResponse =
+        client.listSubpropertySyncConfigs(parent);
+
+    List<SubpropertySyncConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertySyncConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubpropertySyncConfigsRequest actualRequest =
+        ((ListSubpropertySyncConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listSubpropertySyncConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsTest2() throws Exception {
+    SubpropertySyncConfig responsesElement = SubpropertySyncConfig.newBuilder().build();
+    ListSubpropertySyncConfigsResponse expectedResponse =
+        ListSubpropertySyncConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertySyncConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSubpropertySyncConfigsPagedResponse pagedListResponse =
+        client.listSubpropertySyncConfigs(parent);
+
+    List<SubpropertySyncConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertySyncConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubpropertySyncConfigsRequest actualRequest =
+        ((ListSubpropertySyncConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSubpropertySyncConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubpropertySyncConfigTest() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SubpropertySyncConfig subpropertySyncConfig = SubpropertySyncConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SubpropertySyncConfig actualResponse =
+        client.updateSubpropertySyncConfig(subpropertySyncConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSubpropertySyncConfigRequest actualRequest =
+        ((UpdateSubpropertySyncConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(subpropertySyncConfig, actualRequest.getSubpropertySyncConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSubpropertySyncConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SubpropertySyncConfig subpropertySyncConfig = SubpropertySyncConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubpropertySyncConfig(subpropertySyncConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertySyncConfigTest() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SubpropertySyncConfigName name =
+        SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+
+    SubpropertySyncConfig actualResponse = client.getSubpropertySyncConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubpropertySyncConfigRequest actualRequest =
+        ((GetSubpropertySyncConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubpropertySyncConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SubpropertySyncConfigName name =
+          SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+      client.getSubpropertySyncConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertySyncConfigTest2() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SubpropertySyncConfig actualResponse = client.getSubpropertySyncConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubpropertySyncConfigRequest actualRequest =
+        ((GetSubpropertySyncConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubpropertySyncConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSubpropertySyncConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

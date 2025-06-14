@@ -7959,6 +7959,165 @@ public final class AnalyticsAdminServiceGrpc {
     return getSubmitUserDeletionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+      getListSubpropertySyncConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubpropertySyncConfigs",
+      requestType = com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+      getListSubpropertySyncConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+        getListSubpropertySyncConfigsMethod;
+    if ((getListSubpropertySyncConfigsMethod =
+            AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSubpropertySyncConfigsMethod =
+                AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod =
+              getListSubpropertySyncConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+                          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSubpropertySyncConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSubpropertySyncConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListSubpropertySyncConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getUpdateSubpropertySyncConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubpropertySyncConfig",
+      requestType = com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertySyncConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getUpdateSubpropertySyncConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getUpdateSubpropertySyncConfigMethod;
+    if ((getUpdateSubpropertySyncConfigMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSubpropertySyncConfigMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod =
+              getUpdateSubpropertySyncConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSubpropertySyncConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertySyncConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSubpropertySyncConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubpropertySyncConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getGetSubpropertySyncConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubpropertySyncConfig",
+      requestType = com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertySyncConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getGetSubpropertySyncConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getGetSubpropertySyncConfigMethod;
+    if ((getGetSubpropertySyncConfigMethod =
+            AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSubpropertySyncConfigMethod =
+                AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod =
+              getGetSubpropertySyncConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSubpropertySyncConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertySyncConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetSubpropertySyncConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubpropertySyncConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -10459,6 +10618,52 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSubmitUserDeletionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Subproperty Sync Configs on a property.
+     * </pre>
+     */
+    default void listSubpropertySyncConfigs(
+        com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubpropertySyncConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Subproperty Sync Config.
+     * </pre>
+     */
+    default void updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubpropertySyncConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Subproperty Sync Config.
+     * </pre>
+     */
+    default void getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSubpropertySyncConfigMethod(), responseObserver);
     }
   }
 
@@ -13252,6 +13457,58 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Subproperty Sync Configs on a property.
+     * </pre>
+     */
+    public void listSubpropertySyncConfigs(
+        com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubpropertySyncConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Subproperty Sync Config.
+     * </pre>
+     */
+    public void updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubpropertySyncConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Subproperty Sync Config.
+     * </pre>
+     */
+    public void getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubpropertySyncConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -15474,6 +15731,46 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Subproperty Sync Configs on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertySyncConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -17695,6 +17992,46 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Subproperty Sync Configs on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertySyncConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertySyncConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -20112,6 +20449,51 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Subproperty Sync Configs on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubpropertySyncConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        updateSubpropertySyncConfig(
+            com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubpropertySyncConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Subproperty Sync Config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getSubpropertySyncConfig(
+            com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubpropertySyncConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -20270,6 +20652,9 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_UPDATE_REPORTING_DATA_ANNOTATION = 153;
   private static final int METHODID_DELETE_REPORTING_DATA_ANNOTATION = 154;
   private static final int METHODID_SUBMIT_USER_DELETION = 155;
+  private static final int METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS = 156;
+  private static final int METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG = 157;
+  private static final int METHODID_GET_SUBPROPERTY_SYNC_CONFIG = 158;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21291,6 +21676,27 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS:
+          serviceImpl.listSubpropertySyncConfigs(
+              (com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG:
+          serviceImpl.updateSubpropertySyncConfig(
+              (com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertySyncConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SUBPROPERTY_SYNC_CONFIG:
+          serviceImpl.getSubpropertySyncConfig(
+              (com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertySyncConfig>)
                   responseObserver);
           break;
         default:
@@ -22388,6 +22794,27 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
                     com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>(
                     service, METHODID_SUBMIT_USER_DELETION)))
+        .addMethod(
+            getListSubpropertySyncConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+                    com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>(
+                    service, METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS)))
+        .addMethod(
+            getUpdateSubpropertySyncConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertySyncConfig>(
+                    service, METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG)))
+        .addMethod(
+            getGetSubpropertySyncConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertySyncConfig>(
+                    service, METHODID_GET_SUBPROPERTY_SYNC_CONFIG)))
         .build();
   }
 
@@ -22595,6 +23022,9 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateReportingDataAnnotationMethod())
                       .addMethod(getDeleteReportingDataAnnotationMethod())
                       .addMethod(getSubmitUserDeletionMethod())
+                      .addMethod(getListSubpropertySyncConfigsMethod())
+                      .addMethod(getUpdateSubpropertySyncConfigMethod())
+                      .addMethod(getGetSubpropertySyncConfigMethod())
                       .build();
         }
       }

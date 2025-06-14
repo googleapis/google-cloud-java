@@ -7947,6 +7947,115 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      * @return The weight.
      */
     int getWeight();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestHeaderModifier field is set.
+     */
+    boolean hasRequestHeaderModifier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestHeaderModifier.
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier getRequestHeaderModifier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+        getRequestHeaderModifierOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseHeaderModifier field is set.
+     */
+    boolean hasResponseHeaderModifier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseHeaderModifier.
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier getResponseHeaderModifier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+        getResponseHeaderModifierOrBuilder();
   }
 
   /**
@@ -7994,6 +8103,7 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkservices.v1.HttpRoute.Destination.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SERVICE_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -8079,6 +8189,148 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       return weight_;
     }
 
+    public static final int REQUEST_HEADER_MODIFIER_FIELD_NUMBER = 3;
+    private com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier requestHeaderModifier_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestHeaderModifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequestHeaderModifier() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestHeaderModifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier getRequestHeaderModifier() {
+      return requestHeaderModifier_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+          : requestHeaderModifier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a matching
+     * request prior to delivery of the request to the destination. If
+     * HeaderModifiers are set on both the Destination and the RouteAction, they
+     * will be merged. Conflicts between the two will not be resolved on the
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+        getRequestHeaderModifierOrBuilder() {
+      return requestHeaderModifier_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+          : requestHeaderModifier_;
+    }
+
+    public static final int RESPONSE_HEADER_MODIFIER_FIELD_NUMBER = 4;
+    private com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier responseHeaderModifier_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseHeaderModifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasResponseHeaderModifier() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseHeaderModifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier
+        getResponseHeaderModifier() {
+      return responseHeaderModifier_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+          : responseHeaderModifier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for modifying the headers of a response prior
+     * to sending the response back to the client. If HeaderModifiers are set on
+     * both the Destination and the RouteAction, they will be merged. Conflicts
+     * between the two will not be resolved on the configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+        getResponseHeaderModifierOrBuilder() {
+      return responseHeaderModifier_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+          : responseHeaderModifier_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8099,6 +8351,12 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (weight_ != 0) {
         output.writeInt32(2, weight_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getRequestHeaderModifier());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getResponseHeaderModifier());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8113,6 +8371,15 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       }
       if (weight_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, weight_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRequestHeaderModifier());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, getResponseHeaderModifier());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8132,6 +8399,14 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
 
       if (!getServiceName().equals(other.getServiceName())) return false;
       if (getWeight() != other.getWeight()) return false;
+      if (hasRequestHeaderModifier() != other.hasRequestHeaderModifier()) return false;
+      if (hasRequestHeaderModifier()) {
+        if (!getRequestHeaderModifier().equals(other.getRequestHeaderModifier())) return false;
+      }
+      if (hasResponseHeaderModifier() != other.hasResponseHeaderModifier()) return false;
+      if (hasResponseHeaderModifier()) {
+        if (!getResponseHeaderModifier().equals(other.getResponseHeaderModifier())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8147,6 +8422,14 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getServiceName().hashCode();
       hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getWeight();
+      if (hasRequestHeaderModifier()) {
+        hash = (37 * hash) + REQUEST_HEADER_MODIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getRequestHeaderModifier().hashCode();
+      }
+      if (hasResponseHeaderModifier()) {
+        hash = (37 * hash) + RESPONSE_HEADER_MODIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getResponseHeaderModifier().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8280,10 +8563,20 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.networkservices.v1.HttpRoute.Destination.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getRequestHeaderModifierFieldBuilder();
+          getResponseHeaderModifierFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -8292,6 +8585,16 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         serviceName_ = "";
         weight_ = 0;
+        requestHeaderModifier_ = null;
+        if (requestHeaderModifierBuilder_ != null) {
+          requestHeaderModifierBuilder_.dispose();
+          requestHeaderModifierBuilder_ = null;
+        }
+        responseHeaderModifier_ = null;
+        if (responseHeaderModifierBuilder_ != null) {
+          responseHeaderModifierBuilder_.dispose();
+          responseHeaderModifierBuilder_ = null;
+        }
         return this;
       }
 
@@ -8334,6 +8637,22 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.weight_ = weight_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.requestHeaderModifier_ =
+              requestHeaderModifierBuilder_ == null
+                  ? requestHeaderModifier_
+                  : requestHeaderModifierBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.responseHeaderModifier_ =
+              responseHeaderModifierBuilder_ == null
+                  ? responseHeaderModifier_
+                  : responseHeaderModifierBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -8392,6 +8711,12 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         if (other.getWeight() != 0) {
           setWeight(other.getWeight());
         }
+        if (other.hasRequestHeaderModifier()) {
+          mergeRequestHeaderModifier(other.getRequestHeaderModifier());
+        }
+        if (other.hasResponseHeaderModifier()) {
+          mergeResponseHeaderModifier(other.getResponseHeaderModifier());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -8430,6 +8755,20 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(
+                      getRequestHeaderModifierFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getResponseHeaderModifierFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8653,6 +8992,509 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         weight_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier requestHeaderModifier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>
+          requestHeaderModifierBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the requestHeaderModifier field is set.
+       */
+      public boolean hasRequestHeaderModifier() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The requestHeaderModifier.
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier
+          getRequestHeaderModifier() {
+        if (requestHeaderModifierBuilder_ == null) {
+          return requestHeaderModifier_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+              : requestHeaderModifier_;
+        } else {
+          return requestHeaderModifierBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRequestHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier value) {
+        if (requestHeaderModifierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestHeaderModifier_ = value;
+        } else {
+          requestHeaderModifierBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRequestHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder builderForValue) {
+        if (requestHeaderModifierBuilder_ == null) {
+          requestHeaderModifier_ = builderForValue.build();
+        } else {
+          requestHeaderModifierBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRequestHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier value) {
+        if (requestHeaderModifierBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && requestHeaderModifier_ != null
+              && requestHeaderModifier_
+                  != com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier
+                      .getDefaultInstance()) {
+            getRequestHeaderModifierBuilder().mergeFrom(value);
+          } else {
+            requestHeaderModifier_ = value;
+          }
+        } else {
+          requestHeaderModifierBuilder_.mergeFrom(value);
+        }
+        if (requestHeaderModifier_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRequestHeaderModifier() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        requestHeaderModifier_ = null;
+        if (requestHeaderModifierBuilder_ != null) {
+          requestHeaderModifierBuilder_.dispose();
+          requestHeaderModifierBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder
+          getRequestHeaderModifierBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getRequestHeaderModifierFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+          getRequestHeaderModifierOrBuilder() {
+        if (requestHeaderModifierBuilder_ != null) {
+          return requestHeaderModifierBuilder_.getMessageOrBuilder();
+        } else {
+          return requestHeaderModifier_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+              : requestHeaderModifier_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a matching
+       * request prior to delivery of the request to the destination. If
+       * HeaderModifiers are set on both the Destination and the RouteAction, they
+       * will be merged. Conflicts between the two will not be resolved on the
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier request_header_modifier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>
+          getRequestHeaderModifierFieldBuilder() {
+        if (requestHeaderModifierBuilder_ == null) {
+          requestHeaderModifierBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>(
+                  getRequestHeaderModifier(), getParentForChildren(), isClean());
+          requestHeaderModifier_ = null;
+        }
+        return requestHeaderModifierBuilder_;
+      }
+
+      private com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier responseHeaderModifier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>
+          responseHeaderModifierBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the responseHeaderModifier field is set.
+       */
+      public boolean hasResponseHeaderModifier() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The responseHeaderModifier.
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier
+          getResponseHeaderModifier() {
+        if (responseHeaderModifierBuilder_ == null) {
+          return responseHeaderModifier_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+              : responseHeaderModifier_;
+        } else {
+          return responseHeaderModifierBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setResponseHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier value) {
+        if (responseHeaderModifierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseHeaderModifier_ = value;
+        } else {
+          responseHeaderModifierBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setResponseHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder builderForValue) {
+        if (responseHeaderModifierBuilder_ == null) {
+          responseHeaderModifier_ = builderForValue.build();
+        } else {
+          responseHeaderModifierBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeResponseHeaderModifier(
+          com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier value) {
+        if (responseHeaderModifierBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && responseHeaderModifier_ != null
+              && responseHeaderModifier_
+                  != com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier
+                      .getDefaultInstance()) {
+            getResponseHeaderModifierBuilder().mergeFrom(value);
+          } else {
+            responseHeaderModifier_ = value;
+          }
+        } else {
+          responseHeaderModifierBuilder_.mergeFrom(value);
+        }
+        if (responseHeaderModifier_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearResponseHeaderModifier() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        responseHeaderModifier_ = null;
+        if (responseHeaderModifierBuilder_ != null) {
+          responseHeaderModifierBuilder_.dispose();
+          responseHeaderModifierBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder
+          getResponseHeaderModifierBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getResponseHeaderModifierFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder
+          getResponseHeaderModifierOrBuilder() {
+        if (responseHeaderModifierBuilder_ != null) {
+          return responseHeaderModifierBuilder_.getMessageOrBuilder();
+        } else {
+          return responseHeaderModifier_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.getDefaultInstance()
+              : responseHeaderModifier_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for modifying the headers of a response prior
+       * to sending the response back to the client. If HeaderModifiers are set on
+       * both the Destination and the RouteAction, they will be merged. Conflicts
+       * between the two will not be resolved on the configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HeaderModifier response_header_modifier = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>
+          getResponseHeaderModifierFieldBuilder() {
+        if (responseHeaderModifierBuilder_ == null) {
+          responseHeaderModifierBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier,
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.Builder,
+                  com.google.cloud.networkservices.v1.HttpRoute.HeaderModifierOrBuilder>(
+                  getResponseHeaderModifier(), getParentForChildren(), isClean());
+          responseHeaderModifier_ = null;
+        }
+        return responseHeaderModifierBuilder_;
       }
 
       @java.lang.Override
@@ -13439,6 +14281,884 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface StatefulSessionAffinityPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the cookieTtl field is set.
+     */
+    boolean hasCookieTtl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The cookieTtl.
+     */
+    com.google.protobuf.Duration getCookieTtl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getCookieTtlOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The specification for cookie-based stateful session affinity where the
+   * date plane supplies a “session cookie”  with the name "GSSA" which encodes
+   * a specific destination host and each request containing that cookie will
+   * be directed to that host as long as the destination host remains up and
+   * healthy.
+   *
+   * The gRPC proxyless mesh library or sidecar proxy will manage the session
+   * cookie but the client application code is responsible for copying the
+   * cookie from each RPC in the session to the next.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy}
+   */
+  public static final class StatefulSessionAffinityPolicy
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)
+      StatefulSessionAffinityPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use StatefulSessionAffinityPolicy.newBuilder() to construct.
+    private StatefulSessionAffinityPolicy(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StatefulSessionAffinityPolicy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StatefulSessionAffinityPolicy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.HttpRouteProto
+          .internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkservices.v1.HttpRouteProto
+          .internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.class,
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int COOKIE_TTL_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration cookieTtl_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the cookieTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasCookieTtl() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The cookieTtl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getCookieTtl() {
+      return cookieTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : cookieTtl_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The cookie TTL value for the Set-Cookie header generated by
+     * the data plane. The lifetime of the cookie may be set to a value from 0
+     * to 86400 seconds (24 hours) inclusive.
+     *
+     * Set this to 0s to use a session cookie and disable cookie expiration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getCookieTtlOrBuilder() {
+      return cookieTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : cookieTtl_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getCookieTtl());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCookieTtl());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy other =
+          (com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy) obj;
+
+      if (hasCookieTtl() != other.hasCookieTtl()) return false;
+      if (hasCookieTtl()) {
+        if (!getCookieTtl().equals(other.getCookieTtl())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCookieTtl()) {
+        hash = (37 * hash) + COOKIE_TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getCookieTtl().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specification for cookie-based stateful session affinity where the
+     * date plane supplies a “session cookie”  with the name "GSSA" which encodes
+     * a specific destination host and each request containing that cookie will
+     * be directed to that host as long as the destination host remains up and
+     * healthy.
+     *
+     * The gRPC proxyless mesh library or sidecar proxy will manage the session
+     * cookie but the client application code is responsible for copying the
+     * cookie from each RPC in the session to the next.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)
+        com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.class,
+                com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getCookieTtlFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        cookieTtl_ = null;
+        if (cookieTtlBuilder_ != null) {
+          cookieTtlBuilder_.dispose();
+          cookieTtlBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy build() {
+        com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+          buildPartial() {
+        com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy result =
+            new com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cookieTtl_ = cookieTtlBuilder_ == null ? cookieTtl_ : cookieTtlBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy) {
+          return mergeFrom(
+              (com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy other) {
+        if (other
+            == com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+                .getDefaultInstance()) return this;
+        if (other.hasCookieTtl()) {
+          mergeCookieTtl(other.getCookieTtl());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getCookieTtlFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration cookieTtl_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          cookieTtlBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the cookieTtl field is set.
+       */
+      public boolean hasCookieTtl() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The cookieTtl.
+       */
+      public com.google.protobuf.Duration getCookieTtl() {
+        if (cookieTtlBuilder_ == null) {
+          return cookieTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : cookieTtl_;
+        } else {
+          return cookieTtlBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setCookieTtl(com.google.protobuf.Duration value) {
+        if (cookieTtlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cookieTtl_ = value;
+        } else {
+          cookieTtlBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setCookieTtl(com.google.protobuf.Duration.Builder builderForValue) {
+        if (cookieTtlBuilder_ == null) {
+          cookieTtl_ = builderForValue.build();
+        } else {
+          cookieTtlBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeCookieTtl(com.google.protobuf.Duration value) {
+        if (cookieTtlBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && cookieTtl_ != null
+              && cookieTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getCookieTtlBuilder().mergeFrom(value);
+          } else {
+            cookieTtl_ = value;
+          }
+        } else {
+          cookieTtlBuilder_.mergeFrom(value);
+        }
+        if (cookieTtl_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearCookieTtl() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cookieTtl_ = null;
+        if (cookieTtlBuilder_ != null) {
+          cookieTtlBuilder_.dispose();
+          cookieTtlBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getCookieTtlBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getCookieTtlFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getCookieTtlOrBuilder() {
+        if (cookieTtlBuilder_ != null) {
+          return cookieTtlBuilder_.getMessageOrBuilder();
+        } else {
+          return cookieTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : cookieTtl_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The cookie TTL value for the Set-Cookie header generated by
+       * the data plane. The lifetime of the cookie may be set to a value from 0
+       * to 86400 seconds (24 hours) inclusive.
+       *
+       * Set this to 0s to use a session cookie and disable cookie expiration.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration cookie_ttl = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getCookieTtlFieldBuilder() {
+        if (cookieTtlBuilder_ == null) {
+          cookieTtlBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getCookieTtl(), getParentForChildren(), isClean());
+          cookieTtl_ = null;
+        }
+        return cookieTtlBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy)
+    private static final com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy();
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StatefulSessionAffinityPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<StatefulSessionAffinityPolicy>() {
+          @java.lang.Override
+          public StatefulSessionAffinityPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StatefulSessionAffinityPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StatefulSessionAffinityPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface HeaderModifierOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.HttpRoute.HeaderModifier)
@@ -17566,6 +19286,20 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkservices.v1.HttpRoute.Destination destination = 1;</code>
      */
     com.google.cloud.networkservices.v1.HttpRoute.DestinationOrBuilder getDestinationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of requests to get mirrored to the desired
+     * destination.
+     * </pre>
+     *
+     * <code>float mirror_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mirrorPercent.
+     */
+    float getMirrorPercent();
   }
 
   /**
@@ -17576,6 +19310,7 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
    * destination service. The proxy does not wait for responses from the
    * shadow service. Prior to sending traffic to the shadow service, the
    * host/authority header is suffixed with -shadow.
+   * Mirroring is currently not supported for Cloud Run destinations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy}
@@ -17672,6 +19407,26 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           : destination_;
     }
 
+    public static final int MIRROR_PERCENT_FIELD_NUMBER = 2;
+    private float mirrorPercent_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of requests to get mirrored to the desired
+     * destination.
+     * </pre>
+     *
+     * <code>float mirror_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mirrorPercent.
+     */
+    @java.lang.Override
+    public float getMirrorPercent() {
+      return mirrorPercent_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -17689,6 +19444,9 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getDestination());
       }
+      if (java.lang.Float.floatToRawIntBits(mirrorPercent_) != 0) {
+        output.writeFloat(2, mirrorPercent_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -17700,6 +19458,9 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDestination());
+      }
+      if (java.lang.Float.floatToRawIntBits(mirrorPercent_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, mirrorPercent_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -17721,6 +19482,8 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (hasDestination()) {
         if (!getDestination().equals(other.getDestination())) return false;
       }
+      if (java.lang.Float.floatToIntBits(getMirrorPercent())
+          != java.lang.Float.floatToIntBits(other.getMirrorPercent())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -17736,6 +19499,8 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
         hash = (53 * hash) + getDestination().hashCode();
       }
+      hash = (37 * hash) + MIRROR_PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMirrorPercent());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17848,6 +19613,7 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      * destination service. The proxy does not wait for responses from the
      * shadow service. Prior to sending traffic to the shadow service, the
      * host/authority header is suffixed with -shadow.
+     * Mirroring is currently not supported for Cloud Run destinations.
      * </pre>
      *
      * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy}
@@ -17898,6 +19664,7 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           destinationBuilder_.dispose();
           destinationBuilder_ = null;
         }
+        mirrorPercent_ = 0F;
         return this;
       }
 
@@ -17942,6 +19709,9 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           result.destination_ =
               destinationBuilder_ == null ? destination_ : destinationBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mirrorPercent_ = mirrorPercent_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -18000,6 +19770,9 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDestination()) {
           mergeDestination(other.getDestination());
         }
+        if (other.getMirrorPercent() != 0F) {
+          setMirrorPercent(other.getMirrorPercent());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -18032,6 +19805,12 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 21:
+                {
+                  mirrorPercent_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 21
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18259,6 +20038,65 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           destination_ = null;
         }
         return destinationBuilder_;
+      }
+
+      private float mirrorPercent_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of requests to get mirrored to the desired
+       * destination.
+       * </pre>
+       *
+       * <code>float mirror_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mirrorPercent.
+       */
+      @java.lang.Override
+      public float getMirrorPercent() {
+        return mirrorPercent_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of requests to get mirrored to the desired
+       * destination.
+       * </pre>
+       *
+       * <code>float mirror_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The mirrorPercent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMirrorPercent(float value) {
+
+        mirrorPercent_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The percentage of requests to get mirrored to the desired
+       * destination.
+       * </pre>
+       *
+       * <code>float mirror_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMirrorPercent() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        mirrorPercent_ = 0F;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -21024,6 +22862,1113 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface HttpDirectResponseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the stringBody field is set.
+     */
+    boolean hasStringBody();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The stringBody.
+     */
+    java.lang.String getStringBody();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for stringBody.
+     */
+    com.google.protobuf.ByteString getStringBodyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as bytes. Maximum body size is 4096B.
+     * </pre>
+     *
+     * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the bytesBody field is set.
+     */
+    boolean hasBytesBody();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as bytes. Maximum body size is 4096B.
+     * </pre>
+     *
+     * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytesBody.
+     */
+    com.google.protobuf.ByteString getBytesBody();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Status to return as part of HTTP Response. Must be a positive
+     * integer.
+     * </pre>
+     *
+     * <code>int32 status = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The status.
+     */
+    int getStatus();
+
+    com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.HttpBodyCase getHttpBodyCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Static HTTP response object to be returned.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse}
+   */
+  public static final class HttpDirectResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)
+      HttpDirectResponseOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use HttpDirectResponse.newBuilder() to construct.
+    private HttpDirectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HttpDirectResponse() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HttpDirectResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.HttpRouteProto
+          .internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkservices.v1.HttpRouteProto
+          .internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.class,
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder.class);
+    }
+
+    private int httpBodyCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object httpBody_;
+
+    public enum HttpBodyCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STRING_BODY(2),
+      BYTES_BODY(3),
+      HTTPBODY_NOT_SET(0);
+      private final int value;
+
+      private HttpBodyCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static HttpBodyCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static HttpBodyCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return STRING_BODY;
+          case 3:
+            return BYTES_BODY;
+          case 0:
+            return HTTPBODY_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public HttpBodyCase getHttpBodyCase() {
+      return HttpBodyCase.forNumber(httpBodyCase_);
+    }
+
+    public static final int STRING_BODY_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the stringBody field is set.
+     */
+    public boolean hasStringBody() {
+      return httpBodyCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The stringBody.
+     */
+    public java.lang.String getStringBody() {
+      java.lang.Object ref = "";
+      if (httpBodyCase_ == 2) {
+        ref = httpBody_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (httpBodyCase_ == 2) {
+          httpBody_ = s;
+        }
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as a string. Maximum body length is 1024
+     * characters.
+     * </pre>
+     *
+     * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for stringBody.
+     */
+    public com.google.protobuf.ByteString getStringBodyBytes() {
+      java.lang.Object ref = "";
+      if (httpBodyCase_ == 2) {
+        ref = httpBody_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (httpBodyCase_ == 2) {
+          httpBody_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BYTES_BODY_FIELD_NUMBER = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as bytes. Maximum body size is 4096B.
+     * </pre>
+     *
+     * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the bytesBody field is set.
+     */
+    @java.lang.Override
+    public boolean hasBytesBody() {
+      return httpBodyCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response body as bytes. Maximum body size is 4096B.
+     * </pre>
+     *
+     * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytesBody.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBytesBody() {
+      if (httpBodyCase_ == 3) {
+        return (com.google.protobuf.ByteString) httpBody_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Status to return as part of HTTP Response. Must be a positive
+     * integer.
+     * </pre>
+     *
+     * <code>int32 status = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public int getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (status_ != 0) {
+        output.writeInt32(1, status_);
+      }
+      if (httpBodyCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, httpBody_);
+      }
+      if (httpBodyCase_ == 3) {
+        output.writeBytes(3, (com.google.protobuf.ByteString) httpBody_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, status_);
+      }
+      if (httpBodyCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, httpBody_);
+      }
+      if (httpBodyCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBytesSize(
+                3, (com.google.protobuf.ByteString) httpBody_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse other =
+          (com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse) obj;
+
+      if (getStatus() != other.getStatus()) return false;
+      if (!getHttpBodyCase().equals(other.getHttpBodyCase())) return false;
+      switch (httpBodyCase_) {
+        case 2:
+          if (!getStringBody().equals(other.getStringBody())) return false;
+          break;
+        case 3:
+          if (!getBytesBody().equals(other.getBytesBody())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      switch (httpBodyCase_) {
+        case 2:
+          hash = (37 * hash) + STRING_BODY_FIELD_NUMBER;
+          hash = (53 * hash) + getStringBody().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + BYTES_BODY_FIELD_NUMBER;
+          hash = (53 * hash) + getBytesBody().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Static HTTP response object to be returned.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)
+        com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.class,
+                com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = 0;
+        httpBodyCase_ = 0;
+        httpBody_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkservices.v1.HttpRouteProto
+            .internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse build() {
+        com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse buildPartial() {
+        com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse result =
+            new com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.status_ = status_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse result) {
+        result.httpBodyCase_ = httpBodyCase_;
+        result.httpBody_ = this.httpBody_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse) {
+          return mergeFrom(
+              (com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse other) {
+        if (other
+            == com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+                .getDefaultInstance()) return this;
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        switch (other.getHttpBodyCase()) {
+          case STRING_BODY:
+            {
+              httpBodyCase_ = 2;
+              httpBody_ = other.httpBody_;
+              onChanged();
+              break;
+            }
+          case BYTES_BODY:
+            {
+              setBytesBody(other.getBytesBody());
+              break;
+            }
+          case HTTPBODY_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  status_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  httpBodyCase_ = 2;
+                  httpBody_ = s;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  httpBody_ = input.readBytes();
+                  httpBodyCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int httpBodyCase_ = 0;
+      private java.lang.Object httpBody_;
+
+      public HttpBodyCase getHttpBodyCase() {
+        return HttpBodyCase.forNumber(httpBodyCase_);
+      }
+
+      public Builder clearHttpBody() {
+        httpBodyCase_ = 0;
+        httpBody_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the stringBody field is set.
+       */
+      @java.lang.Override
+      public boolean hasStringBody() {
+        return httpBodyCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The stringBody.
+       */
+      @java.lang.Override
+      public java.lang.String getStringBody() {
+        java.lang.Object ref = "";
+        if (httpBodyCase_ == 2) {
+          ref = httpBody_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (httpBodyCase_ == 2) {
+            httpBody_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for stringBody.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getStringBodyBytes() {
+        java.lang.Object ref = "";
+        if (httpBodyCase_ == 2) {
+          ref = httpBody_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (httpBodyCase_ == 2) {
+            httpBody_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The stringBody to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStringBody(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        httpBodyCase_ = 2;
+        httpBody_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStringBody() {
+        if (httpBodyCase_ == 2) {
+          httpBodyCase_ = 0;
+          httpBody_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as a string. Maximum body length is 1024
+       * characters.
+       * </pre>
+       *
+       * <code>string string_body = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for stringBody to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStringBodyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        httpBodyCase_ = 2;
+        httpBody_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as bytes. Maximum body size is 4096B.
+       * </pre>
+       *
+       * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the bytesBody field is set.
+       */
+      public boolean hasBytesBody() {
+        return httpBodyCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as bytes. Maximum body size is 4096B.
+       * </pre>
+       *
+       * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytesBody.
+       */
+      public com.google.protobuf.ByteString getBytesBody() {
+        if (httpBodyCase_ == 3) {
+          return (com.google.protobuf.ByteString) httpBody_;
+        }
+        return com.google.protobuf.ByteString.EMPTY;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as bytes. Maximum body size is 4096B.
+       * </pre>
+       *
+       * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytesBody to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBytesBody(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        httpBodyCase_ = 3;
+        httpBody_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Response body as bytes. Maximum body size is 4096B.
+       * </pre>
+       *
+       * <code>bytes bytes_body = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBytesBody() {
+        if (httpBodyCase_ == 3) {
+          httpBodyCase_ = 0;
+          httpBody_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      private int status_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Status to return as part of HTTP Response. Must be a positive
+       * integer.
+       * </pre>
+       *
+       * <code>int32 status = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The status.
+       */
+      @java.lang.Override
+      public int getStatus() {
+        return status_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Status to return as part of HTTP Response. Must be a positive
+       * integer.
+       * </pre>
+       *
+       * <code>int32 status = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(int value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Status to return as part of HTTP Response. Must be a positive
+       * integer.
+       * </pre>
+       *
+       * <code>int32 status = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse)
+    private static final com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse();
+    }
+
+    public static com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HttpDirectResponse> PARSER =
+        new com.google.protobuf.AbstractParser<HttpDirectResponse>() {
+          @java.lang.Override
+          public HttpDirectResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HttpDirectResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HttpDirectResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface RouteActionOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.HttpRoute.RouteAction)
@@ -21508,6 +24453,150 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkservices.v1.HttpRoute.CorsPolicy cors_policy = 11;</code>
      */
     com.google.cloud.networkservices.v1.HttpRoute.CorsPolicyOrBuilder getCorsPolicyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the statefulSessionAffinity field is set.
+     */
+    boolean hasStatefulSessionAffinity();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The statefulSessionAffinity.
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        getStatefulSessionAffinity();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder
+        getStatefulSessionAffinityOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the directResponse field is set.
+     */
+    boolean hasDirectResponse();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The directResponse.
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse getDirectResponse();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder
+        getDirectResponseOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idleTimeout field is set.
+     */
+    boolean hasIdleTimeout();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idleTimeout.
+     */
+    com.google.protobuf.Duration getIdleTimeout();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder();
   }
 
   /**
@@ -22205,6 +25294,201 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           : corsPolicy_;
     }
 
+    public static final int STATEFUL_SESSION_AFFINITY_FIELD_NUMBER = 12;
+    private com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        statefulSessionAffinity_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the statefulSessionAffinity field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatefulSessionAffinity() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The statefulSessionAffinity.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+        getStatefulSessionAffinity() {
+      return statefulSessionAffinity_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+              .getDefaultInstance()
+          : statefulSessionAffinity_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies cookie-based stateful session affinity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder
+        getStatefulSessionAffinityOrBuilder() {
+      return statefulSessionAffinity_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+              .getDefaultInstance()
+          : statefulSessionAffinity_;
+    }
+
+    public static final int DIRECT_RESPONSE_FIELD_NUMBER = 13;
+    private com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse directResponse_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the directResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectResponse() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The directResponse.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse getDirectResponse() {
+      return directResponse_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.getDefaultInstance()
+          : directResponse_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Static HTTP Response object to be returned regardless of the
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder
+        getDirectResponseOrBuilder() {
+      return directResponse_ == null
+          ? com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.getDefaultInstance()
+          : directResponse_;
+    }
+
+    public static final int IDLE_TIMEOUT_FIELD_NUMBER = 14;
+    private com.google.protobuf.Duration idleTimeout_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idleTimeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasIdleTimeout() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idleTimeout.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getIdleTimeout() {
+      return idleTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : idleTimeout_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the idle timeout for the selected route. The idle
+     * timeout is defined as the period in which there are no bytes sent or
+     * received on either the upstream or downstream connection. If not set, the
+     * default idle timeout is 1 hour. If set to 0s, the timeout will be
+     * disabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder() {
+      return idleTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : idleTimeout_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -22249,6 +25533,15 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000100) != 0)) {
         output.writeMessage(11, getCorsPolicy());
       }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeMessage(12, getStatefulSessionAffinity());
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        output.writeMessage(13, getDirectResponse());
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeMessage(14, getIdleTimeout());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -22292,6 +25585,17 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCorsPolicy());
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                12, getStatefulSessionAffinity());
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDirectResponse());
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getIdleTimeout());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -22346,6 +25650,18 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (hasCorsPolicy()) {
         if (!getCorsPolicy().equals(other.getCorsPolicy())) return false;
       }
+      if (hasStatefulSessionAffinity() != other.hasStatefulSessionAffinity()) return false;
+      if (hasStatefulSessionAffinity()) {
+        if (!getStatefulSessionAffinity().equals(other.getStatefulSessionAffinity())) return false;
+      }
+      if (hasDirectResponse() != other.hasDirectResponse()) return false;
+      if (hasDirectResponse()) {
+        if (!getDirectResponse().equals(other.getDirectResponse())) return false;
+      }
+      if (hasIdleTimeout() != other.hasIdleTimeout()) return false;
+      if (hasIdleTimeout()) {
+        if (!getIdleTimeout().equals(other.getIdleTimeout())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -22396,6 +25712,18 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
       if (hasCorsPolicy()) {
         hash = (37 * hash) + CORS_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getCorsPolicy().hashCode();
+      }
+      if (hasStatefulSessionAffinity()) {
+        hash = (37 * hash) + STATEFUL_SESSION_AFFINITY_FIELD_NUMBER;
+        hash = (53 * hash) + getStatefulSessionAffinity().hashCode();
+      }
+      if (hasDirectResponse()) {
+        hash = (37 * hash) + DIRECT_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectResponse().hashCode();
+      }
+      if (hasIdleTimeout()) {
+        hash = (37 * hash) + IDLE_TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getIdleTimeout().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -22551,6 +25879,9 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           getRetryPolicyFieldBuilder();
           getRequestMirrorPolicyFieldBuilder();
           getCorsPolicyFieldBuilder();
+          getStatefulSessionAffinityFieldBuilder();
+          getDirectResponseFieldBuilder();
+          getIdleTimeoutFieldBuilder();
         }
       }
 
@@ -22609,6 +25940,21 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         if (corsPolicyBuilder_ != null) {
           corsPolicyBuilder_.dispose();
           corsPolicyBuilder_ = null;
+        }
+        statefulSessionAffinity_ = null;
+        if (statefulSessionAffinityBuilder_ != null) {
+          statefulSessionAffinityBuilder_.dispose();
+          statefulSessionAffinityBuilder_ = null;
+        }
+        directResponse_ = null;
+        if (directResponseBuilder_ != null) {
+          directResponseBuilder_.dispose();
+          directResponseBuilder_ = null;
+        }
+        idleTimeout_ = null;
+        if (idleTimeoutBuilder_ != null) {
+          idleTimeoutBuilder_.dispose();
+          idleTimeoutBuilder_ = null;
         }
         return this;
       }
@@ -22711,6 +26057,23 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
           result.corsPolicy_ =
               corsPolicyBuilder_ == null ? corsPolicy_ : corsPolicyBuilder_.build();
           to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.statefulSessionAffinity_ =
+              statefulSessionAffinityBuilder_ == null
+                  ? statefulSessionAffinity_
+                  : statefulSessionAffinityBuilder_.build();
+          to_bitField0_ |= 0x00000200;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.directResponse_ =
+              directResponseBuilder_ == null ? directResponse_ : directResponseBuilder_.build();
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.idleTimeout_ =
+              idleTimeoutBuilder_ == null ? idleTimeout_ : idleTimeoutBuilder_.build();
+          to_bitField0_ |= 0x00000800;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -22817,6 +26180,15 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         if (other.hasCorsPolicy()) {
           mergeCorsPolicy(other.getCorsPolicy());
         }
+        if (other.hasStatefulSessionAffinity()) {
+          mergeStatefulSessionAffinity(other.getStatefulSessionAffinity());
+        }
+        if (other.hasDirectResponse()) {
+          mergeDirectResponse(other.getDirectResponse());
+        }
+        if (other.hasIdleTimeout()) {
+          mergeIdleTimeout(other.getIdleTimeout());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -22915,6 +26287,26 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000200;
                   break;
                 } // case 90
+              case 98:
+                {
+                  input.readMessage(
+                      getStatefulSessionAffinityFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 98
+              case 106:
+                {
+                  input.readMessage(
+                      getDirectResponseFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 106
+              case 114:
+                {
+                  input.readMessage(getIdleTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 114
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -25404,6 +28796,711 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
         return corsPolicyBuilder_;
       }
 
+      private com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+          statefulSessionAffinity_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy,
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder>
+          statefulSessionAffinityBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the statefulSessionAffinity field is set.
+       */
+      public boolean hasStatefulSessionAffinity() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The statefulSessionAffinity.
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+          getStatefulSessionAffinity() {
+        if (statefulSessionAffinityBuilder_ == null) {
+          return statefulSessionAffinity_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+                  .getDefaultInstance()
+              : statefulSessionAffinity_;
+        } else {
+          return statefulSessionAffinityBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStatefulSessionAffinity(
+          com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy value) {
+        if (statefulSessionAffinityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          statefulSessionAffinity_ = value;
+        } else {
+          statefulSessionAffinityBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStatefulSessionAffinity(
+          com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder
+              builderForValue) {
+        if (statefulSessionAffinityBuilder_ == null) {
+          statefulSessionAffinity_ = builderForValue.build();
+        } else {
+          statefulSessionAffinityBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeStatefulSessionAffinity(
+          com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy value) {
+        if (statefulSessionAffinityBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) != 0)
+              && statefulSessionAffinity_ != null
+              && statefulSessionAffinity_
+                  != com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+                      .getDefaultInstance()) {
+            getStatefulSessionAffinityBuilder().mergeFrom(value);
+          } else {
+            statefulSessionAffinity_ = value;
+          }
+        } else {
+          statefulSessionAffinityBuilder_.mergeFrom(value);
+        }
+        if (statefulSessionAffinity_ != null) {
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearStatefulSessionAffinity() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        statefulSessionAffinity_ = null;
+        if (statefulSessionAffinityBuilder_ != null) {
+          statefulSessionAffinityBuilder_.dispose();
+          statefulSessionAffinityBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder
+          getStatefulSessionAffinityBuilder() {
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return getStatefulSessionAffinityFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder
+          getStatefulSessionAffinityOrBuilder() {
+        if (statefulSessionAffinityBuilder_ != null) {
+          return statefulSessionAffinityBuilder_.getMessageOrBuilder();
+        } else {
+          return statefulSessionAffinity_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+                  .getDefaultInstance()
+              : statefulSessionAffinity_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies cookie-based stateful session affinity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy stateful_session_affinity = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy,
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicyOrBuilder>
+          getStatefulSessionAffinityFieldBuilder() {
+        if (statefulSessionAffinityBuilder_ == null) {
+          statefulSessionAffinityBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy,
+                  com.google.cloud.networkservices.v1.HttpRoute.StatefulSessionAffinityPolicy
+                      .Builder,
+                  com.google.cloud.networkservices.v1.HttpRoute
+                      .StatefulSessionAffinityPolicyOrBuilder>(
+                  getStatefulSessionAffinity(), getParentForChildren(), isClean());
+          statefulSessionAffinity_ = null;
+        }
+        return statefulSessionAffinityBuilder_;
+      }
+
+      private com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse directResponse_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse,
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder>
+          directResponseBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the directResponse field is set.
+       */
+      public boolean hasDirectResponse() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The directResponse.
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse getDirectResponse() {
+        if (directResponseBuilder_ == null) {
+          return directResponse_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+                  .getDefaultInstance()
+              : directResponse_;
+        } else {
+          return directResponseBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDirectResponse(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse value) {
+        if (directResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          directResponse_ = value;
+        } else {
+          directResponseBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDirectResponse(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder
+              builderForValue) {
+        if (directResponseBuilder_ == null) {
+          directResponse_ = builderForValue.build();
+        } else {
+          directResponseBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDirectResponse(
+          com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse value) {
+        if (directResponseBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)
+              && directResponse_ != null
+              && directResponse_
+                  != com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+                      .getDefaultInstance()) {
+            getDirectResponseBuilder().mergeFrom(value);
+          } else {
+            directResponse_ = value;
+          }
+        } else {
+          directResponseBuilder_.mergeFrom(value);
+        }
+        if (directResponse_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDirectResponse() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        directResponse_ = null;
+        if (directResponseBuilder_ != null) {
+          directResponseBuilder_.dispose();
+          directResponseBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder
+          getDirectResponseBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getDirectResponseFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder
+          getDirectResponseOrBuilder() {
+        if (directResponseBuilder_ != null) {
+          return directResponseBuilder_.getMessageOrBuilder();
+        } else {
+          return directResponse_ == null
+              ? com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse
+                  .getDefaultInstance()
+              : directResponse_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Static HTTP Response object to be returned regardless of the
+       * request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse direct_response = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse,
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder,
+              com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder>
+          getDirectResponseFieldBuilder() {
+        if (directResponseBuilder_ == null) {
+          directResponseBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse,
+                  com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponse.Builder,
+                  com.google.cloud.networkservices.v1.HttpRoute.HttpDirectResponseOrBuilder>(
+                  getDirectResponse(), getParentForChildren(), isClean());
+          directResponse_ = null;
+        }
+        return directResponseBuilder_;
+      }
+
+      private com.google.protobuf.Duration idleTimeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          idleTimeoutBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the idleTimeout field is set.
+       */
+      public boolean hasIdleTimeout() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The idleTimeout.
+       */
+      public com.google.protobuf.Duration getIdleTimeout() {
+        if (idleTimeoutBuilder_ == null) {
+          return idleTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : idleTimeout_;
+        } else {
+          return idleTimeoutBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIdleTimeout(com.google.protobuf.Duration value) {
+        if (idleTimeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          idleTimeout_ = value;
+        } else {
+          idleTimeoutBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIdleTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+        if (idleTimeoutBuilder_ == null) {
+          idleTimeout_ = builderForValue.build();
+        } else {
+          idleTimeoutBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeIdleTimeout(com.google.protobuf.Duration value) {
+        if (idleTimeoutBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0)
+              && idleTimeout_ != null
+              && idleTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getIdleTimeoutBuilder().mergeFrom(value);
+          } else {
+            idleTimeout_ = value;
+          }
+        } else {
+          idleTimeoutBuilder_.mergeFrom(value);
+        }
+        if (idleTimeout_ != null) {
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearIdleTimeout() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        idleTimeout_ = null;
+        if (idleTimeoutBuilder_ != null) {
+          idleTimeoutBuilder_.dispose();
+          idleTimeoutBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getIdleTimeoutBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getIdleTimeoutFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder() {
+        if (idleTimeoutBuilder_ != null) {
+          return idleTimeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return idleTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : idleTimeout_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the idle timeout for the selected route. The idle
+       * timeout is defined as the period in which there are no bytes sent or
+       * received on either the upstream or downstream connection. If not set, the
+       * default idle timeout is 1 hour. If set to 0s, the timeout will be
+       * disabled.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_timeout = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getIdleTimeoutFieldBuilder() {
+        if (idleTimeoutBuilder_ == null) {
+          idleTimeoutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getIdleTimeout(), getParentForChildren(), isClean());
+          idleTimeout_ = null;
+        }
+        return idleTimeoutBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -27067,11 +31164,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the HttpRoute resource. It matches pattern
+   * Identifier. Name of the HttpRoute resource. It matches pattern
    * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -27092,11 +31189,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the HttpRoute resource. It matches pattern
+   * Identifier. Name of the HttpRoute resource. It matches pattern
    * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -28603,11 +32700,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the HttpRoute resource. It matches pattern
+     * Identifier. Name of the HttpRoute resource. It matches pattern
      * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -28627,11 +32724,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the HttpRoute resource. It matches pattern
+     * Identifier. Name of the HttpRoute resource. It matches pattern
      * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -28651,11 +32748,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the HttpRoute resource. It matches pattern
+     * Identifier. Name of the HttpRoute resource. It matches pattern
      * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -28674,11 +32771,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the HttpRoute resource. It matches pattern
+     * Identifier. Name of the HttpRoute resource. It matches pattern
      * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -28693,11 +32790,11 @@ public final class HttpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the HttpRoute resource. It matches pattern
+     * Identifier. Name of the HttpRoute resource. It matches pattern
      * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

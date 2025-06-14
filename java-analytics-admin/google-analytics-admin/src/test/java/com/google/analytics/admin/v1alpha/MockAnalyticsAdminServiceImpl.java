@@ -3483,4 +3483,73 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listSubpropertySyncConfigs(
+      ListSubpropertySyncConfigsRequest request,
+      StreamObserver<ListSubpropertySyncConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSubpropertySyncConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubpropertySyncConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubpropertySyncConfigs, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSubpropertySyncConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSubpropertySyncConfig(
+      UpdateSubpropertySyncConfigRequest request,
+      StreamObserver<SubpropertySyncConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertySyncConfig) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertySyncConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSubpropertySyncConfig, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertySyncConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSubpropertySyncConfig(
+      GetSubpropertySyncConfigRequest request,
+      StreamObserver<SubpropertySyncConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertySyncConfig) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertySyncConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSubpropertySyncConfig, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertySyncConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

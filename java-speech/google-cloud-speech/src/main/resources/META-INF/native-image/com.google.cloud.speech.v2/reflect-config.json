@@ -900,6 +900,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.speech.v2.DenoiserConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.speech.v2.DenoiserConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.speech.v2.ExplicitDecodingConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -75,7 +75,7 @@ public final class EndpointPolicyProto {
           + "o\032\031google/api/resource.proto\032,google/cloud/networkservices/v1/common.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\214\010\n"
           + "\016EndpointPolicy\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\0224\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022P\n"
           + "\006labels\030\004 \003(\0132;.google.cloud.n"
@@ -102,16 +102,18 @@ public final class EndpointPolicyProto {
           + "SIDECAR_PROXY\020\001\022\017\n"
           + "\013GRPC_SERVER\020\002:~\352A{\n"
           + "-networkservices.googleapis.com/EndpointPolicy\022Jprojects/{proj"
-          + "ect}/locations/{location}/endpointPolicies/{endpoint_policy}\"\213\001\n"
+          + "ect}/locations/{location}/endpointPolicies/{endpoint_policy}\"\260\001\n"
           + "\033ListEndpointPoliciesRequest\022E\n"
           + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-ne"
           + "tworkservices.googleapis.com/EndpointPolicy\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"\203\001\n"
+          + "page_token\030\003 \001(\t\022#\n"
+          + "\026return_partial_success\030\004 \001(\010B\003\340A\001\"\230\001\n"
           + "\034ListEndpointPoliciesResponse\022J\n"
           + "\021endpoint_policies\030\001"
           + " \003(\0132/.google.cloud.networkservices.v1.EndpointPolicy\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"_\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"_\n"
           + "\030GetEndpointPolicyRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-networkservices.googleapis.com/EndpointPolicy\"\324\001\n"
@@ -119,27 +121,27 @@ public final class EndpointPolicyProto {
           + "\006parent\030\001 \001("
           + "\tB5\340A\002\372A/\022-networkservices.googleapis.com/EndpointPolicy\022\037\n"
           + "\022endpoint_policy_id\030\002 \001(\tB\003\340A\002\022M\n"
-          + "\017endpoint_policy\030\003 \001(\0132/.goo"
-          + "gle.cloud.networkservices.v1.EndpointPolicyB\003\340A\002\"\242\001\n"
+          + "\017endpoint_policy\030\003"
+          + " \001(\0132/.google.cloud.networkservices.v1.EndpointPolicyB\003\340A\002\"\242\001\n"
           + "\033UpdateEndpointPolicyRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022M\n"
-          + "\017endpoint_policy\030\002 \001(\0132"
-          + "/.google.cloud.networkservices.v1.EndpointPolicyB\003\340A\002\"b\n"
+          + "\017endpoint_policy\030\002"
+          + " \001(\0132/.google.cloud.networkservices.v1.EndpointPolicyB\003\340A\002\"b\n"
           + "\033DeleteEndpointPolicyRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-networkservices.googleapis.com/EndpointPolicyB\206\005\n"
-          + "#com.google.cloud.networkservices.v1B\023Endpo"
-          + "intPolicyProtoP\001ZMcloud.google.com/go/networkservices/apiv1/networkservicespb;ne"
-          + "tworkservicespb\252\002\037Google.Cloud.NetworkSe"
-          + "rvices.V1\312\002\037Google\\Cloud\\NetworkServices"
-          + "\\V1\352\002\"Google::Cloud::NetworkServices::V1\352A\212\001\n"
-          + "2networksecurity.googleapis.com/AuthorizationPolicy\022Tprojects/{project}/loc"
-          + "ations/{location}/authorizationPolicies/{authorization_policy}\352A\177\n"
-          + ".networksecurity.googleapis.com/ServerTlsPolicy\022Mproje"
-          + "cts/{project}/locations/{location}/serverTlsPolicies/{server_tls_policy}\352A\177\n"
-          + ".networksecurity.googleapis.com/ClientTlsPol"
-          + "icy\022Mprojects/{project}/locations/{location}/clientTlsPolicies/{client_tls_polic"
-          + "y}b\006proto3"
+          + "#com.google.cloud.networkservices.v1B\023EndpointPolicyProtoP\001ZMclou"
+          + "d.google.com/go/networkservices/apiv1/ne"
+          + "tworkservicespb;networkservicespb\252\002\037Goog"
+          + "le.Cloud.NetworkServices.V1\312\002\037Google\\Clo"
+          + "ud\\NetworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1\352A\212\001\n"
+          + "2networksecurity.googleapis.com/AuthorizationPolicy\022Tproj"
+          + "ects/{project}/locations/{location}/auth"
+          + "orizationPolicies/{authorization_policy}\352A\177\n"
+          + ".networksecurity.googleapis.com/ServerTlsPolicy\022Mprojects/{project}/location"
+          + "s/{location}/serverTlsPolicies/{server_tls_policy}\352A\177\n"
+          + ".networksecurity.googleapis.com/ClientTlsPolicy\022Mprojects/{project"
+          + "}/locations/{location}/clientTlsPolicies/{client_tls_policy}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -185,7 +187,7 @@ public final class EndpointPolicyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListEndpointPoliciesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_networkservices_v1_ListEndpointPoliciesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -193,7 +195,7 @@ public final class EndpointPolicyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListEndpointPoliciesResponse_descriptor,
             new java.lang.String[] {
-              "EndpointPolicies", "NextPageToken",
+              "EndpointPolicies", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkservices_v1_GetEndpointPolicyRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);

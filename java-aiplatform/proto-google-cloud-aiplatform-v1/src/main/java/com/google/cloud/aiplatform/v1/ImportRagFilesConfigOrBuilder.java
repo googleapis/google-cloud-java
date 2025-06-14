@@ -234,7 +234,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=453
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=463
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Deprecated
@@ -253,7 +253,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=453
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=463
    * @return The partialFailureGcsSink.
    */
   @java.lang.Deprecated
@@ -292,7 +292,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=462
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=472
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Deprecated
@@ -316,7 +316,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=462
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=472
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Deprecated

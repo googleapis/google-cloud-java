@@ -41,6 +41,7 @@ public class AsyncListTlsRoutes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<TlsRoute> future =
           networkServicesClient.listTlsRoutesPagedCallable().futureCall(request);

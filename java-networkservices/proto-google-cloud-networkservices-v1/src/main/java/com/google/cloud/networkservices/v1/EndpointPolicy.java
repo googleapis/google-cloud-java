@@ -258,11 +258,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the EndpointPolicy resource. It matches pattern
+   * Identifier. Name of the EndpointPolicy resource. It matches pattern
    * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -283,11 +283,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the EndpointPolicy resource. It matches pattern
+   * Identifier. Name of the EndpointPolicy resource. It matches pattern
    * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1622,11 +1622,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the EndpointPolicy resource. It matches pattern
+     * Identifier. Name of the EndpointPolicy resource. It matches pattern
      * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1646,11 +1646,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the EndpointPolicy resource. It matches pattern
+     * Identifier. Name of the EndpointPolicy resource. It matches pattern
      * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1670,11 +1670,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the EndpointPolicy resource. It matches pattern
+     * Identifier. Name of the EndpointPolicy resource. It matches pattern
      * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1693,11 +1693,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the EndpointPolicy resource. It matches pattern
+     * Identifier. Name of the EndpointPolicy resource. It matches pattern
      * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1712,11 +1712,11 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the EndpointPolicy resource. It matches pattern
+     * Identifier. Name of the EndpointPolicy resource. It matches pattern
      * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

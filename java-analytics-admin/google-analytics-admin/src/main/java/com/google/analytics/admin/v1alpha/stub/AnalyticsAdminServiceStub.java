@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -170,6 +171,7 @@ import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -230,6 +232,8 @@ import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -250,6 +254,7 @@ import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResp
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
+import com.google.analytics.admin.v1alpha.SubpropertySyncConfig;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
@@ -277,6 +282,7 @@ import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -1224,6 +1230,29 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionCallable() {
     throw new UnsupportedOperationException("Not implemented: submitUserDeletionCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertySyncConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertySyncConfigsCallable()");
+  }
+
+  public UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSubpropertySyncConfigCallable()");
+  }
+
+  public UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubpropertySyncConfigCallable()");
   }
 
   @Override

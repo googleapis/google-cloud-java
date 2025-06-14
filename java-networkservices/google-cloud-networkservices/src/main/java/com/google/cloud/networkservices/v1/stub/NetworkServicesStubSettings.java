@@ -17,12 +17,15 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
 
@@ -66,6 +69,7 @@ import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.CreateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateMeshRequest;
 import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
@@ -74,39 +78,52 @@ import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteHttpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteMeshRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
+import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
+import com.google.cloud.networkservices.v1.GatewayRouteView;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
+import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.GetHttpRouteRequest;
 import com.google.cloud.networkservices.v1.GetMeshRequest;
+import com.google.cloud.networkservices.v1.GetMeshRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
+import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListGatewaysRequest;
 import com.google.cloud.networkservices.v1.ListGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesRequest;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesResponse;
 import com.google.cloud.networkservices.v1.ListHttpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListHttpRoutesResponse;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListMeshesRequest;
 import com.google.cloud.networkservices.v1.ListMeshesResponse;
 import com.google.cloud.networkservices.v1.ListServiceBindingsRequest;
 import com.google.cloud.networkservices.v1.ListServiceBindingsResponse;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
 import com.google.cloud.networkservices.v1.Mesh;
+import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.ServiceBinding;
+import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
@@ -114,6 +131,8 @@ import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateMeshRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
 import com.google.common.collect.ImmutableList;
@@ -311,6 +330,11 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
   private final OperationCallSettings<
           CreateServiceBindingRequest, ServiceBinding, OperationMetadata>
       createServiceBindingOperationSettings;
+  private final UnaryCallSettings<UpdateServiceBindingRequest, Operation>
+      updateServiceBindingSettings;
+  private final OperationCallSettings<
+          UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationSettings;
   private final UnaryCallSettings<DeleteServiceBindingRequest, Operation>
       deleteServiceBindingSettings;
   private final OperationCallSettings<DeleteServiceBindingRequest, Empty, OperationMetadata>
@@ -327,6 +351,38 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
   private final UnaryCallSettings<DeleteMeshRequest, Operation> deleteMeshSettings;
   private final OperationCallSettings<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationSettings;
+  private final PagedCallSettings<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesSettings;
+  private final UnaryCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicySettings;
+  private final UnaryCallSettings<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicySettings;
+  private final OperationCallSettings<
+          CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationSettings;
+  private final UnaryCallSettings<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicySettings;
+  private final OperationCallSettings<
+          UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicySettings;
+  private final OperationCallSettings<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationSettings;
+  private final UnaryCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewSettings;
+  private final UnaryCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewSettings;
+  private final PagedCallSettings<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsSettings;
+  private final PagedCallSettings<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -618,6 +674,122 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+      LIST_SERVICE_LB_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServiceLbPoliciesRequest injectToken(
+                ListServiceLbPoliciesRequest payload, String token) {
+              return ListServiceLbPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListServiceLbPoliciesRequest injectPageSize(
+                ListServiceLbPoliciesRequest payload, int pageSize) {
+              return ListServiceLbPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServiceLbPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServiceLbPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ServiceLbPolicy> extractResources(
+                ListServiceLbPoliciesResponse payload) {
+              return payload.getServiceLbPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+      LIST_GATEWAY_ROUTE_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGatewayRouteViewsRequest injectToken(
+                ListGatewayRouteViewsRequest payload, String token) {
+              return ListGatewayRouteViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGatewayRouteViewsRequest injectPageSize(
+                ListGatewayRouteViewsRequest payload, int pageSize) {
+              return ListGatewayRouteViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGatewayRouteViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGatewayRouteViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GatewayRouteView> extractResources(
+                ListGatewayRouteViewsResponse payload) {
+              return payload.getGatewayRouteViewsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>
+      LIST_MESH_ROUTE_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMeshRouteViewsRequest injectToken(
+                ListMeshRouteViewsRequest payload, String token) {
+              return ListMeshRouteViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMeshRouteViewsRequest injectPageSize(
+                ListMeshRouteViewsRequest payload, int pageSize) {
+              return ListMeshRouteViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMeshRouteViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMeshRouteViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MeshRouteView> extractResources(ListMeshRouteViewsResponse payload) {
+              return payload.getMeshRouteViewsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -795,6 +967,75 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> pageContext =
                   PageContext.create(callable, LIST_MESHES_PAGE_STR_DESC, request, context);
               return ListMeshesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ListServiceLbPoliciesPagedResponse>
+      LIST_SERVICE_LB_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServiceLbPoliciesRequest,
+              ListServiceLbPoliciesResponse,
+              ListServiceLbPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListServiceLbPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse> callable,
+                ListServiceLbPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServiceLbPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SERVICE_LB_POLICIES_PAGE_STR_DESC, request, context);
+              return ListServiceLbPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          ListGatewayRouteViewsPagedResponse>
+      LIST_GATEWAY_ROUTE_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGatewayRouteViewsRequest,
+              ListGatewayRouteViewsResponse,
+              ListGatewayRouteViewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListGatewayRouteViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse> callable,
+                ListGatewayRouteViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGatewayRouteViewsResponse> futureResponse) {
+              PageContext<
+                      ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GATEWAY_ROUTE_VIEWS_PAGE_STR_DESC, request, context);
+              return ListGatewayRouteViewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+      LIST_MESH_ROUTE_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMeshRouteViewsRequest,
+              ListMeshRouteViewsResponse,
+              ListMeshRouteViewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMeshRouteViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse> callable,
+                ListMeshRouteViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMeshRouteViewsResponse> futureResponse) {
+              PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MESH_ROUTE_VIEWS_PAGE_STR_DESC, request, context);
+              return ListMeshRouteViewsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1107,6 +1348,17 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     return createServiceBindingOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public UnaryCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingSettings() {
+    return updateServiceBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public OperationCallSettings<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationSettings() {
+    return updateServiceBindingOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteServiceBinding. */
   public UnaryCallSettings<DeleteServiceBindingRequest, Operation> deleteServiceBindingSettings() {
     return deleteServiceBindingSettings;
@@ -1160,6 +1412,84 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
   public OperationCallSettings<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationSettings() {
     return deleteMeshOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listServiceLbPolicies. */
+  public PagedCallSettings<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesSettings() {
+    return listServiceLbPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getServiceLbPolicy. */
+  public UnaryCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicySettings() {
+    return getServiceLbPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public UnaryCallSettings<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicySettings() {
+    return createServiceLbPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public OperationCallSettings<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationSettings() {
+    return createServiceLbPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public UnaryCallSettings<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicySettings() {
+    return updateServiceLbPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public OperationCallSettings<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationSettings() {
+    return updateServiceLbPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public UnaryCallSettings<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicySettings() {
+    return deleteServiceLbPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public OperationCallSettings<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationSettings() {
+    return deleteServiceLbPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGatewayRouteView. */
+  public UnaryCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewSettings() {
+    return getGatewayRouteViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMeshRouteView. */
+  public UnaryCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewSettings() {
+    return getMeshRouteViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGatewayRouteViews. */
+  public PagedCallSettings<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsSettings() {
+    return listGatewayRouteViewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMeshRouteViews. */
+  public PagedCallSettings<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsSettings() {
+    return listMeshRouteViewsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1356,6 +1686,9 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     createServiceBindingSettings = settingsBuilder.createServiceBindingSettings().build();
     createServiceBindingOperationSettings =
         settingsBuilder.createServiceBindingOperationSettings().build();
+    updateServiceBindingSettings = settingsBuilder.updateServiceBindingSettings().build();
+    updateServiceBindingOperationSettings =
+        settingsBuilder.updateServiceBindingOperationSettings().build();
     deleteServiceBindingSettings = settingsBuilder.deleteServiceBindingSettings().build();
     deleteServiceBindingOperationSettings =
         settingsBuilder.deleteServiceBindingOperationSettings().build();
@@ -1367,6 +1700,21 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     updateMeshOperationSettings = settingsBuilder.updateMeshOperationSettings().build();
     deleteMeshSettings = settingsBuilder.deleteMeshSettings().build();
     deleteMeshOperationSettings = settingsBuilder.deleteMeshOperationSettings().build();
+    listServiceLbPoliciesSettings = settingsBuilder.listServiceLbPoliciesSettings().build();
+    getServiceLbPolicySettings = settingsBuilder.getServiceLbPolicySettings().build();
+    createServiceLbPolicySettings = settingsBuilder.createServiceLbPolicySettings().build();
+    createServiceLbPolicyOperationSettings =
+        settingsBuilder.createServiceLbPolicyOperationSettings().build();
+    updateServiceLbPolicySettings = settingsBuilder.updateServiceLbPolicySettings().build();
+    updateServiceLbPolicyOperationSettings =
+        settingsBuilder.updateServiceLbPolicyOperationSettings().build();
+    deleteServiceLbPolicySettings = settingsBuilder.deleteServiceLbPolicySettings().build();
+    deleteServiceLbPolicyOperationSettings =
+        settingsBuilder.deleteServiceLbPolicyOperationSettings().build();
+    getGatewayRouteViewSettings = settingsBuilder.getGatewayRouteViewSettings().build();
+    getMeshRouteViewSettings = settingsBuilder.getMeshRouteViewSettings().build();
+    listGatewayRouteViewsSettings = settingsBuilder.listGatewayRouteViewsSettings().build();
+    listMeshRouteViewsSettings = settingsBuilder.listMeshRouteViewsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1492,6 +1840,11 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     private final OperationCallSettings.Builder<
             CreateServiceBindingRequest, ServiceBinding, OperationMetadata>
         createServiceBindingOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateServiceBindingRequest, Operation>
+        updateServiceBindingSettings;
+    private final OperationCallSettings.Builder<
+            UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+        updateServiceBindingOperationSettings;
     private final UnaryCallSettings.Builder<DeleteServiceBindingRequest, Operation>
         deleteServiceBindingSettings;
     private final OperationCallSettings.Builder<
@@ -1510,6 +1863,40 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     private final UnaryCallSettings.Builder<DeleteMeshRequest, Operation> deleteMeshSettings;
     private final OperationCallSettings.Builder<DeleteMeshRequest, Empty, OperationMetadata>
         deleteMeshOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListServiceLbPoliciesRequest,
+            ListServiceLbPoliciesResponse,
+            ListServiceLbPoliciesPagedResponse>
+        listServiceLbPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicySettings;
+    private final UnaryCallSettings.Builder<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        createServiceLbPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        updateServiceLbPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+        deleteServiceLbPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewSettings;
+    private final UnaryCallSettings.Builder<GetMeshRouteViewRequest, MeshRouteView>
+        getMeshRouteViewSettings;
+    private final PagedCallSettings.Builder<
+            ListGatewayRouteViewsRequest,
+            ListGatewayRouteViewsResponse,
+            ListGatewayRouteViewsPagedResponse>
+        listGatewayRouteViewsSettings;
+    private final PagedCallSettings.Builder<
+            ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+        listMeshRouteViewsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1606,6 +1993,8 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       getServiceBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceBindingOperationSettings = OperationCallSettings.newBuilder();
+      updateServiceBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateServiceBindingOperationSettings = OperationCallSettings.newBuilder();
       deleteServiceBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteServiceBindingOperationSettings = OperationCallSettings.newBuilder();
       listMeshesSettings = PagedCallSettings.newBuilder(LIST_MESHES_PAGE_STR_FACT);
@@ -1616,6 +2005,21 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       updateMeshOperationSettings = OperationCallSettings.newBuilder();
       deleteMeshSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMeshOperationSettings = OperationCallSettings.newBuilder();
+      listServiceLbPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_SERVICE_LB_POLICIES_PAGE_STR_FACT);
+      getServiceLbPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createServiceLbPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createServiceLbPolicyOperationSettings = OperationCallSettings.newBuilder();
+      updateServiceLbPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateServiceLbPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteServiceLbPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteServiceLbPolicyOperationSettings = OperationCallSettings.newBuilder();
+      getGatewayRouteViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMeshRouteViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listGatewayRouteViewsSettings =
+          PagedCallSettings.newBuilder(LIST_GATEWAY_ROUTE_VIEWS_PAGE_STR_FACT);
+      listMeshRouteViewsSettings =
+          PagedCallSettings.newBuilder(LIST_MESH_ROUTE_VIEWS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1657,12 +2061,22 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               listServiceBindingsSettings,
               getServiceBindingSettings,
               createServiceBindingSettings,
+              updateServiceBindingSettings,
               deleteServiceBindingSettings,
               listMeshesSettings,
               getMeshSettings,
               createMeshSettings,
               updateMeshSettings,
               deleteMeshSettings,
+              listServiceLbPoliciesSettings,
+              getServiceLbPolicySettings,
+              createServiceLbPolicySettings,
+              updateServiceLbPolicySettings,
+              deleteServiceLbPolicySettings,
+              getGatewayRouteViewSettings,
+              getMeshRouteViewSettings,
+              listGatewayRouteViewsSettings,
+              listMeshRouteViewsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1730,6 +2144,9 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       createServiceBindingSettings = settings.createServiceBindingSettings.toBuilder();
       createServiceBindingOperationSettings =
           settings.createServiceBindingOperationSettings.toBuilder();
+      updateServiceBindingSettings = settings.updateServiceBindingSettings.toBuilder();
+      updateServiceBindingOperationSettings =
+          settings.updateServiceBindingOperationSettings.toBuilder();
       deleteServiceBindingSettings = settings.deleteServiceBindingSettings.toBuilder();
       deleteServiceBindingOperationSettings =
           settings.deleteServiceBindingOperationSettings.toBuilder();
@@ -1741,6 +2158,21 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       updateMeshOperationSettings = settings.updateMeshOperationSettings.toBuilder();
       deleteMeshSettings = settings.deleteMeshSettings.toBuilder();
       deleteMeshOperationSettings = settings.deleteMeshOperationSettings.toBuilder();
+      listServiceLbPoliciesSettings = settings.listServiceLbPoliciesSettings.toBuilder();
+      getServiceLbPolicySettings = settings.getServiceLbPolicySettings.toBuilder();
+      createServiceLbPolicySettings = settings.createServiceLbPolicySettings.toBuilder();
+      createServiceLbPolicyOperationSettings =
+          settings.createServiceLbPolicyOperationSettings.toBuilder();
+      updateServiceLbPolicySettings = settings.updateServiceLbPolicySettings.toBuilder();
+      updateServiceLbPolicyOperationSettings =
+          settings.updateServiceLbPolicyOperationSettings.toBuilder();
+      deleteServiceLbPolicySettings = settings.deleteServiceLbPolicySettings.toBuilder();
+      deleteServiceLbPolicyOperationSettings =
+          settings.deleteServiceLbPolicyOperationSettings.toBuilder();
+      getGatewayRouteViewSettings = settings.getGatewayRouteViewSettings.toBuilder();
+      getMeshRouteViewSettings = settings.getMeshRouteViewSettings.toBuilder();
+      listGatewayRouteViewsSettings = settings.listGatewayRouteViewsSettings.toBuilder();
+      listMeshRouteViewsSettings = settings.listMeshRouteViewsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1782,12 +2214,22 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               listServiceBindingsSettings,
               getServiceBindingSettings,
               createServiceBindingSettings,
+              updateServiceBindingSettings,
               deleteServiceBindingSettings,
               listMeshesSettings,
               getMeshSettings,
               createMeshSettings,
               updateMeshSettings,
               deleteMeshSettings,
+              listServiceLbPoliciesSettings,
+              getServiceLbPolicySettings,
+              createServiceLbPolicySettings,
+              updateServiceLbPolicySettings,
+              deleteServiceLbPolicySettings,
+              getGatewayRouteViewSettings,
+              getMeshRouteViewSettings,
+              listGatewayRouteViewsSettings,
+              listMeshRouteViewsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1986,6 +2428,11 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .updateServiceBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .deleteServiceBindingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -2012,6 +2459,51 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
       builder
           .deleteMeshSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listServiceLbPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getServiceLbPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createServiceLbPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateServiceLbPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteServiceLbPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getGatewayRouteViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getMeshRouteViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listGatewayRouteViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listMeshRouteViewsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2497,6 +2989,30 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
                       .build()));
 
       builder
+          .updateServiceBindingOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateServiceBindingRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ServiceBinding.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteServiceBindingOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2568,6 +3084,78 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
           .deleteMeshOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteMeshRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createServiceLbPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateServiceLbPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ServiceLbPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateServiceLbPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateServiceLbPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ServiceLbPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteServiceLbPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteServiceLbPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
                   .build())
@@ -2911,6 +3499,19 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       return createServiceBindingOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public UnaryCallSettings.Builder<UpdateServiceBindingRequest, Operation>
+        updateServiceBindingSettings() {
+      return updateServiceBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public OperationCallSettings.Builder<
+            UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+        updateServiceBindingOperationSettings() {
+      return updateServiceBindingOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteServiceBinding. */
     public UnaryCallSettings.Builder<DeleteServiceBindingRequest, Operation>
         deleteServiceBindingSettings() {
@@ -2965,6 +3566,87 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     public OperationCallSettings.Builder<DeleteMeshRequest, Empty, OperationMetadata>
         deleteMeshOperationSettings() {
       return deleteMeshOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listServiceLbPolicies. */
+    public PagedCallSettings.Builder<
+            ListServiceLbPoliciesRequest,
+            ListServiceLbPoliciesResponse,
+            ListServiceLbPoliciesPagedResponse>
+        listServiceLbPoliciesSettings() {
+      return listServiceLbPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getServiceLbPolicy. */
+    public UnaryCallSettings.Builder<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicySettings() {
+      return getServiceLbPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public UnaryCallSettings.Builder<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicySettings() {
+      return createServiceLbPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        createServiceLbPolicyOperationSettings() {
+      return createServiceLbPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public UnaryCallSettings.Builder<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicySettings() {
+      return updateServiceLbPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        updateServiceLbPolicyOperationSettings() {
+      return updateServiceLbPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public UnaryCallSettings.Builder<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicySettings() {
+      return deleteServiceLbPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public OperationCallSettings.Builder<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+        deleteServiceLbPolicyOperationSettings() {
+      return deleteServiceLbPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewayRouteView. */
+    public UnaryCallSettings.Builder<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewSettings() {
+      return getGatewayRouteViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMeshRouteView. */
+    public UnaryCallSettings.Builder<GetMeshRouteViewRequest, MeshRouteView>
+        getMeshRouteViewSettings() {
+      return getMeshRouteViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewayRouteViews. */
+    public PagedCallSettings.Builder<
+            ListGatewayRouteViewsRequest,
+            ListGatewayRouteViewsResponse,
+            ListGatewayRouteViewsPagedResponse>
+        listGatewayRouteViewsSettings() {
+      return listGatewayRouteViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMeshRouteViews. */
+    public PagedCallSettings.Builder<
+            ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+        listMeshRouteViewsSettings() {
+      return listMeshRouteViewsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

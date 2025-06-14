@@ -39,7 +39,9 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
     super(builder);
   }
 
-  private ProvisionSubpropertyRequest() {}
+  private ProvisionSubpropertyRequest() {
+    customDimensionAndMetricSynchronizationMode_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -182,6 +184,53 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
         : subpropertyEventFilter_;
   }
 
+  public static final int CUSTOM_DIMENSION_AND_METRIC_SYNCHRONIZATION_MODE_FIELD_NUMBER = 4;
+  private int customDimensionAndMetricSynchronizationMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subproperty feature synchronization mode for Custom
+   * Dimensions and Metrics
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for customDimensionAndMetricSynchronizationMode.
+   */
+  @java.lang.Override
+  public int getCustomDimensionAndMetricSynchronizationModeValue() {
+    return customDimensionAndMetricSynchronizationMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subproperty feature synchronization mode for Custom
+   * Dimensions and Metrics
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customDimensionAndMetricSynchronizationMode.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+      getCustomDimensionAndMetricSynchronizationMode() {
+    com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode result =
+        com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode.forNumber(
+            customDimensionAndMetricSynchronizationMode_);
+    return result == null
+        ? com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -202,6 +251,12 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getSubpropertyEventFilter());
     }
+    if (customDimensionAndMetricSynchronizationMode_
+        != com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+            .SYNCHRONIZATION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, customDimensionAndMetricSynchronizationMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -217,6 +272,14 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSubpropertyEventFilter());
+    }
+    if (customDimensionAndMetricSynchronizationMode_
+        != com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+            .SYNCHRONIZATION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              4, customDimensionAndMetricSynchronizationMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -242,6 +305,8 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
     if (hasSubpropertyEventFilter()) {
       if (!getSubpropertyEventFilter().equals(other.getSubpropertyEventFilter())) return false;
     }
+    if (customDimensionAndMetricSynchronizationMode_
+        != other.customDimensionAndMetricSynchronizationMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -261,6 +326,8 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
       hash = (37 * hash) + SUBPROPERTY_EVENT_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getSubpropertyEventFilter().hashCode();
     }
+    hash = (37 * hash) + CUSTOM_DIMENSION_AND_METRIC_SYNCHRONIZATION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + customDimensionAndMetricSynchronizationMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +489,7 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
         subpropertyEventFilterBuilder_.dispose();
         subpropertyEventFilterBuilder_ = null;
       }
+      customDimensionAndMetricSynchronizationMode_ = 0;
       return this;
     }
 
@@ -472,6 +540,10 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
                 ? subpropertyEventFilter_
                 : subpropertyEventFilterBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customDimensionAndMetricSynchronizationMode_ =
+            customDimensionAndMetricSynchronizationMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -529,6 +601,10 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
       if (other.hasSubpropertyEventFilter()) {
         mergeSubpropertyEventFilter(other.getSubpropertyEventFilter());
       }
+      if (other.customDimensionAndMetricSynchronizationMode_ != 0) {
+        setCustomDimensionAndMetricSynchronizationModeValue(
+            other.getCustomDimensionAndMetricSynchronizationModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -568,6 +644,12 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 32:
+              {
+                customDimensionAndMetricSynchronizationMode_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1016,6 +1098,123 @@ public final class ProvisionSubpropertyRequest extends com.google.protobuf.Gener
         subpropertyEventFilter_ = null;
       }
       return subpropertyEventFilterBuilder_;
+    }
+
+    private int customDimensionAndMetricSynchronizationMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subproperty feature synchronization mode for Custom
+     * Dimensions and Metrics
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for customDimensionAndMetricSynchronizationMode.
+     */
+    @java.lang.Override
+    public int getCustomDimensionAndMetricSynchronizationModeValue() {
+      return customDimensionAndMetricSynchronizationMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subproperty feature synchronization mode for Custom
+     * Dimensions and Metrics
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for
+     *     customDimensionAndMetricSynchronizationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomDimensionAndMetricSynchronizationModeValue(int value) {
+      customDimensionAndMetricSynchronizationMode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subproperty feature synchronization mode for Custom
+     * Dimensions and Metrics
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customDimensionAndMetricSynchronizationMode.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+        getCustomDimensionAndMetricSynchronizationMode() {
+      com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode result =
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode.forNumber(
+              customDimensionAndMetricSynchronizationMode_);
+      return result == null
+          ? com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subproperty feature synchronization mode for Custom
+     * Dimensions and Metrics
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The customDimensionAndMetricSynchronizationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomDimensionAndMetricSynchronizationMode(
+        com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      customDimensionAndMetricSynchronizationMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subproperty feature synchronization mode for Custom
+     * Dimensions and Metrics
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomDimensionAndMetricSynchronizationMode() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      customDimensionAndMetricSynchronizationMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

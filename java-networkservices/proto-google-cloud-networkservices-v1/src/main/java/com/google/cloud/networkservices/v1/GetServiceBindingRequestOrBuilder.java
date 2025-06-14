@@ -29,7 +29,7 @@ public interface GetServiceBindingRequestOrBuilder
    *
    * <pre>
    * Required. A name of the ServiceBinding to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/serviceBindings/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;serviceBindings/&#42;`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetServiceBindingRequestOrBuilder
    *
    * <pre>
    * Required. A name of the ServiceBinding to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/serviceBindings/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;serviceBindings/&#42;`.
    * </pre>
    *
    * <code>

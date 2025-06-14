@@ -50,7 +50,7 @@ public final class CustomersProto {
           + "o\022\027google.cloud.channel.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032$google/cloud/channel/v1/common.proto\032\037google/protobuf/timestamp.proto\032"
-          + " google/type/postal_address.proto\"\356\004\n"
+          + " google/type/postal_address.proto\"\311\006\n"
           + "\010Customer\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\035\n"
           + "\020org_display_name\030\002 \001(\tB\003\340A\002\022;\n"
@@ -70,9 +70,14 @@ public final class CustomersProto {
           + " \001(\0132*.google.cloud.channel.v1.CloudIdentityInfoB\003\340A\003\022\032\n"
           + "\022channel_partner_id\030\r"
           + " \001(\t\022\033\n"
-          + "\016correlation_id\030\016 \001(\tB\003\340A\001:R\352AO\n"
-          + "$cloudchannel.googleap"
-          + "is.com/Customer\022\'accounts/{account}/customers/{customer}\"\201\001\n"
+          + "\016correlation_id\030\016 \001(\tB\003\340A\001\022c\n"
+          + "\032customer_attestation_state\030\020"
+          + " \001(\0162:.google.cloud.channel.v1.Customer.CustomerAttestationStateB\003\340A\001\"t\n"
+          + "\030CustomerAttestationState\022*\n"
+          + "&CUSTOMER_ATTESTATION_STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006EXEMPT\020\001\022 \n"
+          + "\034NON_EXEMPT_AND_INFO_VERIFIED\020\002:R\352AO\n"
+          + "$cloudchannel.googleapis.com/Customer\022\'accounts/{account}/customers/{customer}\"\201\001\n"
           + "\013ContactInfo\022\022\n\n"
           + "first_name\030\001 \001(\t\022\021\n"
           + "\tlast_name\030\002 \001(\t\022\031\n"
@@ -80,8 +85,8 @@ public final class CustomersProto {
           + "\005email\030\005 \001(\t\022\022\n"
           + "\005title\030\006 \001(\tB\003\340A\001\022\r\n"
           + "\005phone\030\007 \001(\tBf\n"
-          + "\033com.google.cloud.channel.v1B\016CustomersProtoP\001Z5c"
-          + "loud.google.com/go/channel/apiv1/channelpb;channelpbb\006proto3"
+          + "\033com.google.cloud.channel.v1B\016CustomersProtoP\001Z5cloud.google.com/go/ch"
+          + "annel/apiv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -112,6 +117,7 @@ public final class CustomersProto {
               "CloudIdentityInfo",
               "ChannelPartnerId",
               "CorrelationId",
+              "CustomerAttestationState",
             });
     internal_static_google_cloud_channel_v1_ContactInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
