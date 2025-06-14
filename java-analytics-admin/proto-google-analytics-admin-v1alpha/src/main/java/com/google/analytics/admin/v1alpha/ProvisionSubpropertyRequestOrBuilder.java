@@ -110,4 +110,37 @@ public interface ProvisionSubpropertyRequestOrBuilder
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterOrBuilder
       getSubpropertyEventFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subproperty feature synchronization mode for Custom
+   * Dimensions and Metrics
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for customDimensionAndMetricSynchronizationMode.
+   */
+  int getCustomDimensionAndMetricSynchronizationModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subproperty feature synchronization mode for Custom
+   * Dimensions and Metrics
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode custom_dimension_and_metric_synchronization_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customDimensionAndMetricSynchronizationMode.
+   */
+  com.google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode
+      getCustomDimensionAndMetricSynchronizationMode();
 }

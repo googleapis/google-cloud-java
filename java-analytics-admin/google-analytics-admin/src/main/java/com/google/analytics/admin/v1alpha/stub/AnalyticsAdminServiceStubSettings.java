@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -172,6 +173,7 @@ import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -232,6 +234,8 @@ import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -252,6 +256,7 @@ import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResp
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
+import com.google.analytics.admin.v1alpha.SubpropertySyncConfig;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
@@ -279,6 +284,7 @@ import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -734,6 +740,15 @@ public class AnalyticsAdminServiceStubSettings
       deleteReportingDataAnnotationSettings;
   private final UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionSettings;
+  private final PagedCallSettings<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsSettings;
+  private final UnaryCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigSettings;
+  private final UnaryCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1861,6 +1876,53 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig>
+      LIST_SUBPROPERTY_SYNC_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubpropertySyncConfigsRequest,
+              ListSubpropertySyncConfigsResponse,
+              SubpropertySyncConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubpropertySyncConfigsRequest injectToken(
+                ListSubpropertySyncConfigsRequest payload, String token) {
+              return ListSubpropertySyncConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSubpropertySyncConfigsRequest injectPageSize(
+                ListSubpropertySyncConfigsRequest payload, int pageSize) {
+              return ListSubpropertySyncConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubpropertySyncConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubpropertySyncConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SubpropertySyncConfig> extractResources(
+                ListSubpropertySyncConfigsResponse payload) {
+              return payload.getSubpropertySyncConfigsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -2531,6 +2593,34 @@ public class AnalyticsAdminServiceStubSettings
                           request,
                           context);
               return ListReportingDataAnnotationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          ListSubpropertySyncConfigsPagedResponse>
+      LIST_SUBPROPERTY_SYNC_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubpropertySyncConfigsRequest,
+              ListSubpropertySyncConfigsResponse,
+              ListSubpropertySyncConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubpropertySyncConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+                    callable,
+                ListSubpropertySyncConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+              PageContext<
+                      ListSubpropertySyncConfigsRequest,
+                      ListSubpropertySyncConfigsResponse,
+                      SubpropertySyncConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBPROPERTY_SYNC_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListSubpropertySyncConfigsPagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -3542,6 +3632,27 @@ public class AnalyticsAdminServiceStubSettings
     return submitUserDeletionSettings;
   }
 
+  /** Returns the object with the settings used for calls to listSubpropertySyncConfigs. */
+  public PagedCallSettings<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsSettings() {
+    return listSubpropertySyncConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertySyncConfig. */
+  public UnaryCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigSettings() {
+    return updateSubpropertySyncConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertySyncConfig. */
+  public UnaryCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigSettings() {
+    return getSubpropertySyncConfigSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -3851,6 +3962,11 @@ public class AnalyticsAdminServiceStubSettings
     deleteReportingDataAnnotationSettings =
         settingsBuilder.deleteReportingDataAnnotationSettings().build();
     submitUserDeletionSettings = settingsBuilder.submitUserDeletionSettings().build();
+    listSubpropertySyncConfigsSettings =
+        settingsBuilder.listSubpropertySyncConfigsSettings().build();
+    updateSubpropertySyncConfigSettings =
+        settingsBuilder.updateSubpropertySyncConfigSettings().build();
+    getSubpropertySyncConfigSettings = settingsBuilder.getSubpropertySyncConfigSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -4254,6 +4370,16 @@ public class AnalyticsAdminServiceStubSettings
         deleteReportingDataAnnotationSettings;
     private final UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
         submitUserDeletionSettings;
+    private final PagedCallSettings.Builder<
+            ListSubpropertySyncConfigsRequest,
+            ListSubpropertySyncConfigsResponse,
+            ListSubpropertySyncConfigsPagedResponse>
+        listSubpropertySyncConfigsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigSettings;
+    private final UnaryCallSettings.Builder<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -4487,6 +4613,10 @@ public class AnalyticsAdminServiceStubSettings
       updateReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       submitUserDeletionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubpropertySyncConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_SUBPROPERTY_SYNC_CONFIGS_PAGE_STR_FACT);
+      updateSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4645,7 +4775,10 @@ public class AnalyticsAdminServiceStubSettings
               listReportingDataAnnotationsSettings,
               updateReportingDataAnnotationSettings,
               deleteReportingDataAnnotationSettings,
-              submitUserDeletionSettings);
+              submitUserDeletionSettings,
+              listSubpropertySyncConfigsSettings,
+              updateSubpropertySyncConfigSettings,
+              getSubpropertySyncConfigSettings);
       initDefaults(this);
     }
 
@@ -4849,6 +4982,10 @@ public class AnalyticsAdminServiceStubSettings
       deleteReportingDataAnnotationSettings =
           settings.deleteReportingDataAnnotationSettings.toBuilder();
       submitUserDeletionSettings = settings.submitUserDeletionSettings.toBuilder();
+      listSubpropertySyncConfigsSettings = settings.listSubpropertySyncConfigsSettings.toBuilder();
+      updateSubpropertySyncConfigSettings =
+          settings.updateSubpropertySyncConfigSettings.toBuilder();
+      getSubpropertySyncConfigSettings = settings.getSubpropertySyncConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -5007,7 +5144,10 @@ public class AnalyticsAdminServiceStubSettings
               listReportingDataAnnotationsSettings,
               updateReportingDataAnnotationSettings,
               deleteReportingDataAnnotationSettings,
-              submitUserDeletionSettings);
+              submitUserDeletionSettings,
+              listSubpropertySyncConfigsSettings,
+              updateSubpropertySyncConfigSettings,
+              getSubpropertySyncConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -5812,6 +5952,21 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .submitUserDeletionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSubpropertySyncConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSubpropertySyncConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSubpropertySyncConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -6899,6 +7054,27 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
         submitUserDeletionSettings() {
       return submitUserDeletionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertySyncConfigs. */
+    public PagedCallSettings.Builder<
+            ListSubpropertySyncConfigsRequest,
+            ListSubpropertySyncConfigsResponse,
+            ListSubpropertySyncConfigsPagedResponse>
+        listSubpropertySyncConfigsSettings() {
+      return listSubpropertySyncConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigSettings() {
+      return updateSubpropertySyncConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertySyncConfig. */
+    public UnaryCallSettings.Builder<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigSettings() {
+      return getSubpropertySyncConfigSettings;
     }
 
     @Override

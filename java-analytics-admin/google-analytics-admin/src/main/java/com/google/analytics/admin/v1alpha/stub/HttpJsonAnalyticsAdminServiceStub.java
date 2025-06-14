@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -170,6 +171,7 @@ import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -230,6 +232,8 @@ import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
 import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -250,6 +254,7 @@ import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResp
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
+import com.google.analytics.admin.v1alpha.SubpropertySyncConfig;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
@@ -277,6 +282,7 @@ import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -6358,6 +6364,127 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSubpropertySyncConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSubpropertySyncConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/subpropertySyncConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubpropertySyncConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubpropertySyncConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSubpropertySyncConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListSubpropertySyncConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSubpropertySyncConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSubpropertySyncConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{subpropertySyncConfig.name=properties/*/subpropertySyncConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubpropertySyncConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "subpropertySyncConfig.name",
+                                request.getSubpropertySyncConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubpropertySyncConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "subpropertySyncConfig",
+                                      request.getSubpropertySyncConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SubpropertySyncConfig>newBuilder()
+                      .setDefaultInstance(SubpropertySyncConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSubpropertySyncConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSubpropertySyncConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/subpropertySyncConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSubpropertySyncConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSubpropertySyncConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SubpropertySyncConfig>newBuilder()
+                      .setDefaultInstance(SubpropertySyncConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -6706,6 +6833,15 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       deleteReportingDataAnnotationCallable;
   private final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionCallable;
+  private final UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable;
+  private final UnaryCallable<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable;
+  private final UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable;
+  private final UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -8661,6 +8797,47 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+        listSubpropertySyncConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>newBuilder()
+                .setMethodDescriptor(listSubpropertySyncConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        updateSubpropertySyncConfigTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+                .setMethodDescriptor(updateSubpropertySyncConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subproperty_sync_config.name",
+                          String.valueOf(request.getSubpropertySyncConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+        getSubpropertySyncConfigTransportSettings =
+            HttpJsonCallSettings
+                .<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>newBuilder()
+                .setMethodDescriptor(getSubpropertySyncConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -9504,6 +9681,26 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             submitUserDeletionTransportSettings,
             settings.submitUserDeletionSettings(),
             clientContext);
+    this.listSubpropertySyncConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listSubpropertySyncConfigsTransportSettings,
+            settings.listSubpropertySyncConfigsSettings(),
+            clientContext);
+    this.listSubpropertySyncConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubpropertySyncConfigsTransportSettings,
+            settings.listSubpropertySyncConfigsSettings(),
+            clientContext);
+    this.updateSubpropertySyncConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateSubpropertySyncConfigTransportSettings,
+            settings.updateSubpropertySyncConfigSettings(),
+            clientContext);
+    this.getSubpropertySyncConfigCallable =
+        callableFactory.createUnaryCallable(
+            getSubpropertySyncConfigTransportSettings,
+            settings.getSubpropertySyncConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -9668,6 +9865,9 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(updateReportingDataAnnotationMethodDescriptor);
     methodDescriptors.add(deleteReportingDataAnnotationMethodDescriptor);
     methodDescriptors.add(submitUserDeletionMethodDescriptor);
+    methodDescriptors.add(listSubpropertySyncConfigsMethodDescriptor);
+    methodDescriptors.add(updateSubpropertySyncConfigMethodDescriptor);
+    methodDescriptors.add(getSubpropertySyncConfigMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -10728,6 +10928,30 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
       submitUserDeletionCallable() {
     return submitUserDeletionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    return listSubpropertySyncConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    return listSubpropertySyncConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    return updateSubpropertySyncConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    return getSubpropertySyncConfigCallable;
   }
 
   @Override
