@@ -96,11 +96,34 @@ case ${JOB_TYPE} in
     git checkout "${BASE_BRANCH}"
     git checkout "${HEAD_BRANCH}"
     changed_file_list="$(git diff --name-only "${BASE_BRANCH}" HEAD)"
-    printf "Running linter checks against \n%s\n" "${changed_file_list}"
+    declare -A java_modules_map
+    java_modules=""
+    while IFS= read -r changed_file; do
+        if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+            echo "Processing file: ${changed_file}"
+            first_dir=$(echo "${changed_file}" | cut -d '/' -f1)
+            if [[ "${first_dir}" == java-* ]]; then
+                if [ -z "${java_modules_map[${first_dir}]}" ]; then
+                    java_modules_map["${first_dir}"]=1
+                    echo "Found new Java module: ${first_dir}"
+                    java_modules="${java_modules}${first_dir}|"
+                fi
+            fi
+        fi
+    done <<< "${changed_file_list}"
+    if [ "${java_modules}" == "" ]; then
+        printf "No java modules affected."
+        exit 0
+    elif [[ "${java_modules}" == .*\|$ ]]; then
+        # Remove the tailing "|"
+        java_modules="${java_modules%?}"
+        java_modules="(${java_modules})"
+    fi
+    printf "Running linter checks against \n%s\n" "${java_modules}"
     mvn -B -ntp \
       com.spotify.fmt:fmt-maven-plugin:check \
       -T 1.5C \
-      -DfilesNamePattern="${changed_file_list}"
+      -DfilesNamePattern="${java_modules}"
     mvn -B -ntp checkstyle:check@checkstyle
     ;;
   *) ;;
