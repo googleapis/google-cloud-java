@@ -1393,9 +1393,6 @@ public class CloudChannelServiceClient implements BackgroundResource {
     return new CloudChannelServiceClient(settings);
   }
 
-
-
-
   /**
    * Constructs an instance of CloudChannelServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(CloudChannelServiceSettings).
