@@ -18,6 +18,13 @@
       "matchPackageNames": [
         "/^com.google.cloud:sdk-platform-java-config/"
       ]
+    },
+    {
+      "matchPackagePatterns": [
+        "^com.google.cloud:google-cloud-storage",
+        "^com.google.apis:google-api-services-storage"
+      ],
+      "groupName": "First-party storage dependencies"
     }
   ],
   "includePaths": [
