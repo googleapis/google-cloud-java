@@ -78,6 +78,7 @@ jobs:
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
+        fetch-depth: 0
     - run: java -version
     - run: .kokoro/build.sh
       env:
