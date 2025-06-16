@@ -82,6 +82,7 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
+        TARGET_BRANCH: ${{ github.base_ref }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
