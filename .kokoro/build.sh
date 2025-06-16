@@ -106,7 +106,7 @@ case ${JOB_TYPE} in
                 if [ -z "${java_modules_map[${first_dir}]}" ]; then
                     java_modules_map["${first_dir}"]=1
                     echo "Found new Java module: ${first_dir}"
-                    java_modules="${java_modules}${first_dir}|"
+                    java_modules="${java_modules}.*${first_dir}/.*|"
                 fi
             fi
         fi
@@ -114,11 +114,10 @@ case ${JOB_TYPE} in
     if [ "${java_modules}" == "" ]; then
         printf "No java modules affected."
         exit 0
-    elif [[ "${java_modules}" == .*\|$ ]]; then
-        # Remove the tailing "|"
-        java_modules="${java_modules%?}"
-        java_modules="(${java_modules})"
     fi
+    # Remove the tailing "|"
+    java_modules="${java_modules%|}"
+    java_modules="(${java_modules})"
     printf "Running linter checks against \n%s\n" "${java_modules}"
     mvn -B -ntp \
       com.spotify.fmt:fmt-maven-plugin:check \
