@@ -40,6 +40,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   // Use ErrorContext.newBuilder() to construct.
   private ErrorContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
+
   }
 
   private ErrorContext() {

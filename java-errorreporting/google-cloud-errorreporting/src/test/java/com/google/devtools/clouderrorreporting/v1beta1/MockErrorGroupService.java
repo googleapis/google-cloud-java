@@ -55,5 +55,6 @@ public class MockErrorGroupService implements MockGrpcService {
   @Override
   public void reset() {
     serviceImpl.reset();
+
   }
 }

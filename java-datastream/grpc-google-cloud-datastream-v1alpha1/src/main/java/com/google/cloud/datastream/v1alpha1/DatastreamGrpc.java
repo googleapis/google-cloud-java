@@ -30,7 +30,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatastreamGrpc {
 
-  private DatastreamGrpc() {}
+  private DatastreamGrpc() {
+
+  }
 
   public static final java.lang.String SERVICE_NAME = "google.cloud.datastream.v1alpha1.Datastream";
 
