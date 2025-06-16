@@ -100,7 +100,7 @@ case ${JOB_TYPE} in
     mvn -B -ntp \
       com.spotify.fmt:fmt-maven-plugin:check \
       -T 1.5C \
-      -Dfmt.filesNamePattern="${changed_file_list}"
+      -DfilesNamePattern="${changed_file_list}"
     mvn -B -ntp checkstyle:check@checkstyle
     ;;
   *) ;;
