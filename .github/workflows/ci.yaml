@@ -79,8 +79,9 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: java -version
-    - run: mvn -B -ntp com.spotify.fmt:fmt-maven-plugin:check -T 1.5C
-    - run: mvn -B -ntp checkstyle:check@checkstyle
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: lint
   enforcer:
     runs-on: ubuntu-latest
     steps:

@@ -92,6 +92,15 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
+  lint)
+    changed_file_list="$(git diff --name-only main HEAD)"
+    printf "Running linter checks against \n%s\n" "${changed_file_list}"
+    mvn -B -ntp \
+      com.spotify.fmt:fmt-maven-plugin:check \
+      -T 1.5C \
+      -Dfmt.filesNamePattern="${changed_file_list}"
+    mvn -B -ntp checkstyle:check@checkstyle
+    ;;
   *) ;;
 
 esac
