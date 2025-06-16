@@ -119,7 +119,7 @@ case ${JOB_TYPE} in
     java_modules="${java_modules%|}"
     java_modules="(${java_modules})"
     printf "Running linter checks against \n%s\n" "${java_modules}"
-    mvn -B -ntp -X\
+    mvn -B -ntp \
       com.spotify.fmt:fmt-maven-plugin:check \
       -T 1.5C \
       -DfilesNamePattern="${java_modules}"
