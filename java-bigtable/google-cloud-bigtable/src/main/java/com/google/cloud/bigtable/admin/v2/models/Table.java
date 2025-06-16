@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -128,8 +129,10 @@ public final class Table {
 
     /** Returns policy config contents as a string. */
     public String viewConfig() {
-      AutomatedBackupPolicy config = fromProto(proto);
-      return config.proto.getAllFields().toString();
+      return MoreObjects.toStringHelper(this)
+          .add(proto.getClass().getName() + ".retention_period", proto.getRetentionPeriod())
+          .add(proto.getClass().getName() + ".frequency", proto.getFrequency())
+          .toString();
     }
   }
 
