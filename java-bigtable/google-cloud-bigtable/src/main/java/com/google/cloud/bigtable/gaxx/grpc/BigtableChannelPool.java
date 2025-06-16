@@ -46,14 +46,13 @@ import javax.annotation.Nullable;
 /**
  * A {@link ManagedChannel} that will send requests round-robin via a set of channels.
  *
- * <p>In addition to spreading requests over a set of child connections, the pool will also actively
- * manage the lifecycle of the channels. Currently lifecycle management is limited to pre-emptively
- * replacing channels every hour. In the future it will dynamically size the pool based on number of
- * outstanding requests.
+ * <p>Spreads over a set of child connections, and actively manages lifecycle of connections.
+ * Dynamically resizes pool based on number of outstanding connections.
  *
- * <p>Package-private for internal use.
+ * <p>Internal API
  */
-class BigtableChannelPool extends ManagedChannel {
+@InternalApi
+public class BigtableChannelPool extends ManagedChannel {
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(BigtableChannelPool.class.getName());
 
@@ -68,7 +67,7 @@ class BigtableChannelPool extends ManagedChannel {
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
-  static BigtableChannelPool create(
+  public static BigtableChannelPool create(
       BigtableChannelPoolSettings settings, ChannelFactory channelFactory) throws IOException {
     return new BigtableChannelPool(
         settings, channelFactory, Executors.newSingleThreadScheduledExecutor());
