@@ -93,7 +93,9 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
-    changed_file_list="$(git diff --name-only "${TARGET_BRANCH}" HEAD)"
+    git checkout "${BASE_BRANCH}"
+    git checkout "${HEAD_BRANCH}"
+    changed_file_list="$(git diff --name-only "${BASE_BRANCH}" HEAD)"
     printf "Running linter checks against \n%s\n" "${changed_file_list}"
     mvn -B -ntp \
       com.spotify.fmt:fmt-maven-plugin:check \
