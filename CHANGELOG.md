@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.15.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.0...v3.15.1) (2025-06-16)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud.opentelemetry:exporter-metrics to v0.35.0 ([#2988](https://github.com/googleapis/java-bigquerystorage/issues/2988)) ([c16eefd](https://github.com/googleapis/java-bigquerystorage/commit/c16eefd3d4225b3f7eaff32134658a87be2f63a2))
+* Update dependency com.google.code.gson:gson to v2.13.1 ([#2990](https://github.com/googleapis/java-bigquerystorage/issues/2990)) ([c7ea5a8](https://github.com/googleapis/java-bigquerystorage/commit/c7ea5a898f4803850d2a7d23c5e20949b2f98967))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.25.8 ([#2987](https://github.com/googleapis/java-bigquerystorage/issues/2987)) ([7e8829e](https://github.com/googleapis/java-bigquerystorage/commit/7e8829e277e6cfa49d5f01f956afb42ba4c74350))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.51.0 ([#2992](https://github.com/googleapis/java-bigquerystorage/issues/2992)) ([d746ad8](https://github.com/googleapis/java-bigquerystorage/commit/d746ad89e8273d71003b9ba7add73e2ae3d87ced))
+* Update dependency io.opentelemetry:opentelemetry-exporter-logging to v1.51.0 ([#3005](https://github.com/googleapis/java-bigquerystorage/issues/3005)) ([896956c](https://github.com/googleapis/java-bigquerystorage/commit/896956c7a18099eb0ea2fb4f3f22c688e31bf84c))
+* Update dependency org.json:json to v20250517 ([#2980](https://github.com/googleapis/java-bigquerystorage/issues/2980)) ([57b944e](https://github.com/googleapis/java-bigquerystorage/commit/57b944e165ae80eb75a7634190a62e4030ab93d8))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.13.1 ([#2998](https://github.com/googleapis/java-bigquerystorage/issues/2998)) ([9cf104b](https://github.com/googleapis/java-bigquerystorage/commit/9cf104b53b6752488d82170e57fbb46a720a25cc))
+
 ## [3.15.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.14.1...v3.15.0) (2025-06-04)
 
 
