@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.0](https://github.com/googleapis/google-cloud-java/compare/v1.58.0...v1.59.0) (2025-06-16)
+
+
+### Features
+
+* [spanneradapter] new module for spanneradapter ([#11617](https://github.com/googleapis/google-cloud-java/issues/11617)) ([8a849a6](https://github.com/googleapis/google-cloud-java/commit/8a849a6f00579081dfff6e5dc7cf3e517b1b1718))
+
 ## [1.58.0](https://github.com/googleapis/google-cloud-java/compare/v1.57.0...v1.58.0) (2025-06-04)
 
 
