@@ -29,6 +29,7 @@ import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.DeleteRagCorpusRequest;
 import com.google.cloud.aiplatform.v1.DeleteRagFileRequest;
 import com.google.cloud.aiplatform.v1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.GetRagFileRequest;
 import com.google.cloud.aiplatform.v1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1.ImportRagFilesRequest;
@@ -38,9 +39,12 @@ import com.google.cloud.aiplatform.v1.ListRagCorporaResponse;
 import com.google.cloud.aiplatform.v1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1.RagCorpus;
+import com.google.cloud.aiplatform.v1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1.RagFile;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -143,6 +147,21 @@ public abstract class VertexRagDataServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRagFileRequest, Operation> deleteRagFileCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRagFileCallable()");
+  }
+
+  public OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateRagEngineConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRagEngineConfigRequest, Operation> updateRagEngineConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRagEngineConfigCallable()");
+  }
+
+  public UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig> getRagEngineConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRagEngineConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

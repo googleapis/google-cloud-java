@@ -274,6 +274,44 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateRagEngineConfig</td>
+ *      <td><p> Updates a RagEngineConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRagEngineConfigAsync(UpdateRagEngineConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRagEngineConfigAsync(RagEngineConfig ragEngineConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRagEngineConfigOperationCallable()
+ *           <li><p> updateRagEngineConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRagEngineConfig</td>
+ *      <td><p> Gets a RagEngineConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRagEngineConfig(GetRagEngineConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRagEngineConfig(RagEngineConfigName name)
+ *           <li><p> getRagEngineConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRagEngineConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1915,6 +1953,249 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRagFileRequest, Operation> deleteRagFileCallable() {
     return stub.deleteRagFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagEngineConfig ragEngineConfig = RagEngineConfig.newBuilder().build();
+   *   RagEngineConfig response =
+   *       vertexRagDataServiceClient.updateRagEngineConfigAsync(ragEngineConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param ragEngineConfig Required. The updated RagEngineConfig.
+   *     <p>NOTE: Downgrading your RagManagedDb's ComputeTier could temporarily increase request
+   *     latencies until the operation is fully complete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigAsync(RagEngineConfig ragEngineConfig) {
+    UpdateRagEngineConfigRequest request =
+        UpdateRagEngineConfigRequest.newBuilder().setRagEngineConfig(ragEngineConfig).build();
+    return updateRagEngineConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagEngineConfigRequest request =
+   *       UpdateRagEngineConfigRequest.newBuilder()
+   *           .setRagEngineConfig(RagEngineConfig.newBuilder().build())
+   *           .build();
+   *   RagEngineConfig response =
+   *       vertexRagDataServiceClient.updateRagEngineConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigAsync(UpdateRagEngineConfigRequest request) {
+    return updateRagEngineConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagEngineConfigRequest request =
+   *       UpdateRagEngineConfigRequest.newBuilder()
+   *           .setRagEngineConfig(RagEngineConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<RagEngineConfig, UpdateRagEngineConfigOperationMetadata> future =
+   *       vertexRagDataServiceClient.updateRagEngineConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RagEngineConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable() {
+    return stub.updateRagEngineConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagEngineConfigRequest request =
+   *       UpdateRagEngineConfigRequest.newBuilder()
+   *           .setRagEngineConfig(RagEngineConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.updateRagEngineConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigCallable() {
+    return stub.updateRagEngineConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagEngineConfigName name = RagEngineConfigName.of("[PROJECT]", "[LOCATION]");
+   *   RagEngineConfig response = vertexRagDataServiceClient.getRagEngineConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagEngineConfig resource. Format:
+   *     `projects/{project}/locations/{location}/ragEngineConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagEngineConfig getRagEngineConfig(RagEngineConfigName name) {
+    GetRagEngineConfigRequest request =
+        GetRagEngineConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRagEngineConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String name = RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   RagEngineConfig response = vertexRagDataServiceClient.getRagEngineConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagEngineConfig resource. Format:
+   *     `projects/{project}/locations/{location}/ragEngineConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagEngineConfig getRagEngineConfig(String name) {
+    GetRagEngineConfigRequest request =
+        GetRagEngineConfigRequest.newBuilder().setName(name).build();
+    return getRagEngineConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagEngineConfigRequest request =
+   *       GetRagEngineConfigRequest.newBuilder()
+   *           .setName(RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   RagEngineConfig response = vertexRagDataServiceClient.getRagEngineConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagEngineConfig getRagEngineConfig(GetRagEngineConfigRequest request) {
+    return getRagEngineConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagEngineConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagEngineConfigRequest request =
+   *       GetRagEngineConfigRequest.newBuilder()
+   *           .setName(RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<RagEngineConfig> future =
+   *       vertexRagDataServiceClient.getRagEngineConfigCallable().futureCall(request);
+   *   // Do something.
+   *   RagEngineConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigCallable() {
+    return stub.getRagEngineConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

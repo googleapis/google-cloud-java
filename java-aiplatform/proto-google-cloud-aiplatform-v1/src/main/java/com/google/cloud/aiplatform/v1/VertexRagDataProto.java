@@ -120,6 +120,26 @@ public final class VertexRagDataProto {
       internal_static_google_cloud_aiplatform_v1_ImportRagFilesConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ImportRagFilesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Scaled_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Scaled_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Basic_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Basic_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Unprovisioned_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Unprovisioned_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagEngineConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagEngineConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -293,12 +313,29 @@ public final class VertexRagDataProto {
           + "\021rebuild_ann_index\030\023 \001(\010B\017\n\r"
           + "import_sourceB\026\n"
           + "\024partial_failure_sinkB\024\n"
-          + "\022import_result_sinkB\320\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\022VertexRagDataProtoP\001Z>clou"
-          + "d.google.com/go/aiplatform/apiv1/aiplatf"
-          + "ormpb;aiplatformpb\252\002\032Google.Cloud.AIPlat"
-          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
-          + "oogle::Cloud::AIPlatform::V1b\006proto3"
+          + "\022import_result_sink\"\247\002\n"
+          + "\022RagManagedDbConfig\022G\n"
+          + "\006scaled\030\004"
+          + " \001(\01325.google.cloud.aiplatform.v1.RagManagedDbConfig.ScaledH\000\022E\n"
+          + "\005basic\030\002"
+          + " \001(\01324.google.cloud.aiplatform.v1.RagManagedDbConfig.BasicH\000\022U\n\r"
+          + "unprovisioned\030\003"
+          + " \001(\0132<.google.cloud.aiplatform.v1.RagManagedDbConfig.UnprovisionedH\000\032\010\n"
+          + "\006Scaled\032\007\n"
+          + "\005Basic\032\017\n\r"
+          + "UnprovisionedB\006\n"
+          + "\004tier\"\201\002\n"
+          + "\017RagEngineConfig\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022M\n"
+          + "\025rag_managed_db_config\030\002 \001(\0132..google.cloud"
+          + ".aiplatform.v1.RagManagedDbConfig:\213\001\352A\207\001\n"
+          + ")aiplatform.googleapis.com/RagEngineConfig\0227projects/{project}/locations/{locat"
+          + "ion}/ragEngineConfig*\020ragEngineConfigs2\017ragEngineConfigB\320\001\n"
+          + "\036com.google.cloud.aiplatform.v1B\022VertexRagDataProtoP\001Z>cloud."
+          + "google.com/go/aiplatform/apiv1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
+          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
+          + "gle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -551,6 +588,46 @@ public final class VertexRagDataProto {
               "ImportSource",
               "PartialFailureSink",
               "ImportResultSink",
+            });
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor,
+            new java.lang.String[] {
+              "Scaled", "Basic", "Unprovisioned", "Tier",
+            });
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Scaled_descriptor =
+        internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Scaled_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Scaled_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Basic_descriptor =
+        internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Basic_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Basic_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Unprovisioned_descriptor =
+        internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Unprovisioned_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagManagedDbConfig_Unprovisioned_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_RagEngineConfig_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1_RagEngineConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagEngineConfig_descriptor,
+            new java.lang.String[] {
+              "Name", "RagManagedDbConfig",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

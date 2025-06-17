@@ -52,6 +52,7 @@ import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.DeleteRagCorpusRequest;
 import com.google.cloud.aiplatform.v1.DeleteRagFileRequest;
 import com.google.cloud.aiplatform.v1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.GetRagFileRequest;
 import com.google.cloud.aiplatform.v1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1.ImportRagFilesRequest;
@@ -61,9 +62,12 @@ import com.google.cloud.aiplatform.v1.ListRagCorporaResponse;
 import com.google.cloud.aiplatform.v1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1.RagCorpus;
+import com.google.cloud.aiplatform.v1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1.RagFile;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -198,6 +202,13 @@ public class VertexRagDataServiceStubSettings
   private final UnaryCallSettings<DeleteRagFileRequest, Operation> deleteRagFileSettings;
   private final OperationCallSettings<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationSettings;
+  private final UnaryCallSettings<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigSettings;
+  private final OperationCallSettings<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationSettings;
+  private final UnaryCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -445,6 +456,25 @@ public class VertexRagDataServiceStubSettings
     return deleteRagFileOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public UnaryCallSettings<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigSettings() {
+    return updateRagEngineConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public OperationCallSettings<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationSettings() {
+    return updateRagEngineConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRagEngineConfig. */
+  public UnaryCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigSettings() {
+    return getRagEngineConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -568,6 +598,10 @@ public class VertexRagDataServiceStubSettings
     listRagFilesSettings = settingsBuilder.listRagFilesSettings().build();
     deleteRagFileSettings = settingsBuilder.deleteRagFileSettings().build();
     deleteRagFileOperationSettings = settingsBuilder.deleteRagFileOperationSettings().build();
+    updateRagEngineConfigSettings = settingsBuilder.updateRagEngineConfigSettings().build();
+    updateRagEngineConfigOperationSettings =
+        settingsBuilder.updateRagEngineConfigOperationSettings().build();
+    getRagEngineConfigSettings = settingsBuilder.getRagEngineConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -613,6 +647,13 @@ public class VertexRagDataServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteRagFileRequest, Empty, DeleteOperationMetadata>
         deleteRagFileOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+        updateRagEngineConfigOperationSettings;
+    private final UnaryCallSettings.Builder<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -663,6 +704,9 @@ public class VertexRagDataServiceStubSettings
       listRagFilesSettings = PagedCallSettings.newBuilder(LIST_RAG_FILES_PAGE_STR_FACT);
       deleteRagFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRagFileOperationSettings = OperationCallSettings.newBuilder();
+      updateRagEngineConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRagEngineConfigOperationSettings = OperationCallSettings.newBuilder();
+      getRagEngineConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -681,6 +725,8 @@ public class VertexRagDataServiceStubSettings
               getRagFileSettings,
               listRagFilesSettings,
               deleteRagFileSettings,
+              updateRagEngineConfigSettings,
+              getRagEngineConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -707,6 +753,10 @@ public class VertexRagDataServiceStubSettings
       listRagFilesSettings = settings.listRagFilesSettings.toBuilder();
       deleteRagFileSettings = settings.deleteRagFileSettings.toBuilder();
       deleteRagFileOperationSettings = settings.deleteRagFileOperationSettings.toBuilder();
+      updateRagEngineConfigSettings = settings.updateRagEngineConfigSettings.toBuilder();
+      updateRagEngineConfigOperationSettings =
+          settings.updateRagEngineConfigOperationSettings.toBuilder();
+      getRagEngineConfigSettings = settings.getRagEngineConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -725,6 +775,8 @@ public class VertexRagDataServiceStubSettings
               getRagFileSettings,
               listRagFilesSettings,
               deleteRagFileSettings,
+              updateRagEngineConfigSettings,
+              getRagEngineConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -792,6 +844,16 @@ public class VertexRagDataServiceStubSettings
 
       builder
           .deleteRagFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateRagEngineConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getRagEngineConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -943,6 +1005,31 @@ public class VertexRagDataServiceStubSettings
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .updateRagEngineConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRagEngineConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RagEngineConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateRagEngineConfigOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1047,6 +1134,25 @@ public class VertexRagDataServiceStubSettings
     public OperationCallSettings.Builder<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
         deleteRagFileOperationSettings() {
       return deleteRagFileOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public UnaryCallSettings.Builder<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigSettings() {
+      return updateRagEngineConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public OperationCallSettings.Builder<
+            UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+        updateRagEngineConfigOperationSettings() {
+      return updateRagEngineConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRagEngineConfig. */
+    public UnaryCallSettings.Builder<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigSettings() {
+      return getRagEngineConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
