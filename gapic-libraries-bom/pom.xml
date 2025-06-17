@@ -21,82 +21,27 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- Copying the content of the com.google.analytics:google-analytics-admin-bom so that this artifact can be
-          released before com.google.analytics release. -->
       <dependency>
         <groupId>com.google.analytics</groupId>
-        <artifactId>google-analytics-admin</artifactId>
+        <artifactId>google-analytics-admin-bom</artifactId>
         <version>0.75.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-analytics-admin-v1alpha</artifactId>
-        <version>0.75.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
-        <version>0.75.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-admin-v1alpha</artifactId>
-        <version>0.75.0-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-admin-v1beta</artifactId>
-        <version>0.75.0-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
-      </dependency>
-      <!-- End of google-analytics-admin-bom -->
-      <!-- Copying the content of the com.google.analytics:google-analytics-data-bom so that this artifact can be
-          released before com.google.analytics release. -->
       <dependency>
         <groupId>com.google.analytics</groupId>
-        <artifactId>google-analytics-data</artifactId>
+        <artifactId>google-analytics-data-bom</artifactId>
         <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-data-v1alpha</artifactId>
-        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-analytics-data-v1alpha</artifactId>
-        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-data-v1beta</artifactId>
-        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-analytics-data-v1beta</artifactId>
-        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
-      </dependency>
-      <!-- End of google-analytics-data-bom -->
-
-      <!-- Copying the content of the com.google.area120:google-area120-tables-bom so that this artifact can be
-          released before com.google.area120 release. -->
       <dependency>
         <groupId>com.google.area120</groupId>
-        <artifactId>google-area120-tables</artifactId>
+        <artifactId>google-area120-tables-bom</artifactId>
         <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
-        <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
-        <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
-      </dependency>
-      <!-- End of google-area120-tables-bom -->
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-accessapproval-bom</artifactId>
