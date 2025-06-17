@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.15.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.1...v3.15.2) (2025-06-17)
+
+
+### Dependencies
+
+* Remove version declaration of gson and open-telemetry-bom ([#3012](https://github.com/googleapis/java-bigquerystorage/issues/3012)) ([c57ef03](https://github.com/googleapis/java-bigquerystorage/commit/c57ef0385c1415506d15bc1b6b2e787725d3cefb))
+
 ## [3.15.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.0...v3.15.1) (2025-06-16)
 
 
