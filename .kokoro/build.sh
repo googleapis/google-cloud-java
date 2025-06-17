@@ -92,6 +92,27 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
+  lint)
+    git checkout "${BASE_BRANCH}"
+    git checkout "${HEAD_BRANCH}"
+    changed_file_list="$(git diff --name-only "${BASE_BRANCH}" HEAD)"
+    has_code_change="false"
+    while IFS= read -r changed_file; do
+        if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+            has_code_change="true"
+            break
+        fi
+    done <<< "${changed_file_list}"
+    if [ "${has_code_change}" == "false" ]; then
+        echo "No java modules affected. Skipping linter check."
+        exit 0
+    fi
+
+    mvn -B -ntp \
+      -T 1.5C \
+      com.spotify.fmt:fmt-maven-plugin:check
+    mvn -B -ntp checkstyle:check@checkstyle
+    ;;
   *) ;;
 
 esac
