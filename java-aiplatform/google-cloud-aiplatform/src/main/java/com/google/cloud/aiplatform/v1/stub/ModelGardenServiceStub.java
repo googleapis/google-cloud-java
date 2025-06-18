@@ -19,7 +19,11 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.ModelGardenServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.DeployOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeployRequest;
+import com.google.cloud.aiplatform.v1.DeployResponse;
 import com.google.cloud.aiplatform.v1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1.PublisherModel;
 import com.google.cloud.location.GetLocationRequest;
@@ -31,6 +35,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -42,8 +48,21 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class ModelGardenServiceStub implements BackgroundResource {
 
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublisherModelCallable()");
+  }
+
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployOperationCallable()");
+  }
+
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

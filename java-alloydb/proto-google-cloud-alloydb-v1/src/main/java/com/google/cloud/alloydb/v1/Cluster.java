@@ -6317,7 +6317,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=624
+   *     google/cloud/alloydb/v1/resources.proto;l=658
    * @return The network.
    */
   @java.lang.Override
@@ -6350,7 +6350,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=624
+   *     google/cloud/alloydb/v1/resources.proto;l=658
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6706,7 +6706,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=659
+   *     google/cloud/alloydb/v1/resources.proto;l=693
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6725,7 +6725,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=659
+   *     google/cloud/alloydb/v1/resources.proto;l=693
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -11425,7 +11425,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=624
+     *     google/cloud/alloydb/v1/resources.proto;l=658
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11457,7 +11457,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=624
+     *     google/cloud/alloydb/v1/resources.proto;l=658
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11489,7 +11489,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=624
+     *     google/cloud/alloydb/v1/resources.proto;l=658
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11520,7 +11520,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=624
+     *     google/cloud/alloydb/v1/resources.proto;l=658
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11547,7 +11547,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=624
+     *     google/cloud/alloydb/v1/resources.proto;l=658
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12424,7 +12424,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=659
+     *     google/cloud/alloydb/v1/resources.proto;l=693
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12442,7 +12442,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1/resources.proto;l=659
+     *     google/cloud/alloydb/v1/resources.proto;l=693
      * @return The sslConfig.
      */
     @java.lang.Deprecated

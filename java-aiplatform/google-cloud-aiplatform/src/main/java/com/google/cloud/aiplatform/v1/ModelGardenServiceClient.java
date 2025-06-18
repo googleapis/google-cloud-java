@@ -19,9 +19,11 @@ package com.google.cloud.aiplatform.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.stub.ModelGardenServiceStub;
@@ -36,6 +38,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -87,6 +91,21 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getPublisherModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Deploy</td>
+ *      <td><p> Deploys a model to a new endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployAsync(DeployRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployOperationCallable()
+ *           <li><p> deployCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -210,6 +229,7 @@ import javax.annotation.Generated;
 public class ModelGardenServiceClient implements BackgroundResource {
   private final ModelGardenServiceSettings settings;
   private final ModelGardenServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ModelGardenServiceClient with default settings. */
   public static final ModelGardenServiceClient create() throws IOException {
@@ -241,11 +261,13 @@ public class ModelGardenServiceClient implements BackgroundResource {
   protected ModelGardenServiceClient(ModelGardenServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ModelGardenServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected ModelGardenServiceClient(ModelGardenServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final ModelGardenServiceSettings getSettings() {
@@ -254,6 +276,14 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
   public ModelGardenServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -375,6 +405,100 @@ public class ModelGardenServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     return stub.getPublisherModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   DeployResponse response = modelGardenServiceClient.deployAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployResponse, DeployOperationMetadata> deployAsync(
+      DeployRequest request) {
+    return deployOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DeployResponse, DeployOperationMetadata> future =
+   *       modelGardenServiceClient.deployOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return stub.deployOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = modelGardenServiceClient.deployCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return stub.deployCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

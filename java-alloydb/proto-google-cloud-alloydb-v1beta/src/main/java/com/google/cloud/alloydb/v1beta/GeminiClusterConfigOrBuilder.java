@@ -28,15 +28,16 @@ public interface GeminiClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether the Gemini in Databases add-on is enabled for the
-   * cluster. It will be true only if the add-on has been enabled for the
-   * billing account corresponding to the cluster. Its status is toggled from
-   * the Admin Control Center (ACC) and cannot be toggled using AlloyDB's APIs.
+   * Output only. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
-   * <code>bool entitled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool entitled = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.GeminiClusterConfig.entitled is deprecated. See
+   *     google/cloud/alloydb/v1beta/gemini.proto;l=41
    * @return The entitled.
    */
+  @java.lang.Deprecated
   boolean getEntitled();
 }

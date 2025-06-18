@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -38,6 +39,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -49,6 +51,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -183,6 +186,73 @@ public class ModelGardenServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deployTest() throws Exception {
+    DeployResponse expectedResponse =
+        DeployResponse.newBuilder()
+            .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deployTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelGardenService.addResponse(resultOperation);
+
+    DeployRequest request =
+        DeployRequest.newBuilder()
+            .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+            .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+            .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+            .build();
+
+    DeployResponse actualResponse = client.deployAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeployRequest actualRequest = ((DeployRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getPublisherModelName(), actualRequest.getPublisherModelName());
+    Assert.assertEquals(request.getHuggingFaceModelId(), actualRequest.getHuggingFaceModelId());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getModelConfig(), actualRequest.getModelConfig());
+    Assert.assertEquals(request.getEndpointConfig(), actualRequest.getEndpointConfig());
+    Assert.assertEquals(request.getDeployConfig(), actualRequest.getDeployConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deployExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      DeployRequest request =
+          DeployRequest.newBuilder()
+              .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+              .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+              .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+              .build();
+      client.deployAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
