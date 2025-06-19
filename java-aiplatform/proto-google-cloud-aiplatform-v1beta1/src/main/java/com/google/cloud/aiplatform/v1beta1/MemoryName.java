@@ -28,32 +28,29 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class SessionEventName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT =
+public class MemoryName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_REASONING_ENGINE_MEMORY =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}");
+          "projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
   private final String reasoningEngine;
-  private final String session;
-  private final String event;
+  private final String memory;
 
   @Deprecated
-  protected SessionEventName() {
+  protected MemoryName() {
     project = null;
     location = null;
     reasoningEngine = null;
-    session = null;
-    event = null;
+    memory = null;
   }
 
-  private SessionEventName(Builder builder) {
+  private MemoryName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     reasoningEngine = Preconditions.checkNotNull(builder.getReasoningEngine());
-    session = Preconditions.checkNotNull(builder.getSession());
-    event = Preconditions.checkNotNull(builder.getEvent());
+    memory = Preconditions.checkNotNull(builder.getMemory());
   }
 
   public String getProject() {
@@ -68,12 +65,8 @@ public class SessionEventName implements ResourceName {
     return reasoningEngine;
   }
 
-  public String getSession() {
-    return session;
-  }
-
-  public String getEvent() {
-    return event;
+  public String getMemory() {
+    return memory;
   }
 
   public static Builder newBuilder() {
@@ -84,55 +77,52 @@ public class SessionEventName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SessionEventName of(
-      String project, String location, String reasoningEngine, String session, String event) {
+  public static MemoryName of(
+      String project, String location, String reasoningEngine, String memory) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setReasoningEngine(reasoningEngine)
-        .setSession(session)
-        .setEvent(event)
+        .setMemory(memory)
         .build();
   }
 
   public static String format(
-      String project, String location, String reasoningEngine, String session, String event) {
+      String project, String location, String reasoningEngine, String memory) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setReasoningEngine(reasoningEngine)
-        .setSession(session)
-        .setEvent(event)
+        .setMemory(memory)
         .build()
         .toString();
   }
 
-  public static SessionEventName parse(String formattedString) {
+  public static MemoryName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.validatedMatch(
-            formattedString, "SessionEventName.parse: formattedString not in valid format");
+        PROJECT_LOCATION_REASONING_ENGINE_MEMORY.validatedMatch(
+            formattedString, "MemoryName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
         matchMap.get("location"),
         matchMap.get("reasoning_engine"),
-        matchMap.get("session"),
-        matchMap.get("event"));
+        matchMap.get("memory"));
   }
 
-  public static List<SessionEventName> parseList(List<String> formattedStrings) {
-    List<SessionEventName> list = new ArrayList<>(formattedStrings.size());
+  public static List<MemoryName> parseList(List<String> formattedStrings) {
+    List<MemoryName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<SessionEventName> values) {
+  public static List<String> toStringList(List<MemoryName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (SessionEventName value : values) {
+    for (MemoryName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -143,7 +133,7 @@ public class SessionEventName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.matches(formattedString);
+    return PROJECT_LOCATION_REASONING_ENGINE_MEMORY.matches(formattedString);
   }
 
   @Override
@@ -161,11 +151,8 @@ public class SessionEventName implements ResourceName {
           if (reasoningEngine != null) {
             fieldMapBuilder.put("reasoning_engine", reasoningEngine);
           }
-          if (session != null) {
-            fieldMapBuilder.put("session", session);
-          }
-          if (event != null) {
-            fieldMapBuilder.put("event", event);
+          if (memory != null) {
+            fieldMapBuilder.put("memory", memory);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -180,17 +167,15 @@ public class SessionEventName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.instantiate(
+    return PROJECT_LOCATION_REASONING_ENGINE_MEMORY.instantiate(
         "project",
         project,
         "location",
         location,
         "reasoning_engine",
         reasoningEngine,
-        "session",
-        session,
-        "event",
-        event);
+        "memory",
+        memory);
   }
 
   @Override
@@ -199,12 +184,11 @@ public class SessionEventName implements ResourceName {
       return true;
     }
     if (o != null && getClass() == o.getClass()) {
-      SessionEventName that = ((SessionEventName) o);
+      MemoryName that = ((MemoryName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.reasoningEngine, that.reasoningEngine)
-          && Objects.equals(this.session, that.session)
-          && Objects.equals(this.event, that.event);
+          && Objects.equals(this.memory, that.memory);
     }
     return false;
   }
@@ -219,22 +203,19 @@ public class SessionEventName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(reasoningEngine);
     h *= 1000003;
-    h ^= Objects.hashCode(session);
-    h *= 1000003;
-    h ^= Objects.hashCode(event);
+    h ^= Objects.hashCode(memory);
     return h;
   }
 
   /**
    * Builder for
-   * projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}.
+   * projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}.
    */
   public static class Builder {
     private String project;
     private String location;
     private String reasoningEngine;
-    private String session;
-    private String event;
+    private String memory;
 
     protected Builder() {}
 
@@ -250,12 +231,8 @@ public class SessionEventName implements ResourceName {
       return reasoningEngine;
     }
 
-    public String getSession() {
-      return session;
-    }
-
-    public String getEvent() {
-      return event;
+    public String getMemory() {
+      return memory;
     }
 
     public Builder setProject(String project) {
@@ -273,26 +250,20 @@ public class SessionEventName implements ResourceName {
       return this;
     }
 
-    public Builder setSession(String session) {
-      this.session = session;
+    public Builder setMemory(String memory) {
+      this.memory = memory;
       return this;
     }
 
-    public Builder setEvent(String event) {
-      this.event = event;
-      return this;
+    private Builder(MemoryName memoryName) {
+      this.project = memoryName.project;
+      this.location = memoryName.location;
+      this.reasoningEngine = memoryName.reasoningEngine;
+      this.memory = memoryName.memory;
     }
 
-    private Builder(SessionEventName sessionEventName) {
-      this.project = sessionEventName.project;
-      this.location = sessionEventName.location;
-      this.reasoningEngine = sessionEventName.reasoningEngine;
-      this.session = sessionEventName.session;
-      this.event = sessionEventName.event;
-    }
-
-    public SessionEventName build() {
-      return new SessionEventName(this);
+    public MemoryName build() {
+      return new MemoryName(this);
     }
   }
 }
