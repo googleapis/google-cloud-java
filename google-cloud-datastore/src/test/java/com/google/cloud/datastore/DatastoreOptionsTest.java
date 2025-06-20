@@ -41,6 +41,7 @@ public class DatastoreOptionsTest {
   private static final String PROJECT_ID = "project-id";
   private static final String DATABASE_ID = "database-id";
   private static final int PORT = 8080;
+  private static final int DEFAULT_MAX_CHANNEL_COUNT = 200;
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
@@ -119,7 +120,7 @@ public class DatastoreOptionsTest {
             .getChannelPoolSettings();
     assertEquals(channelPoolSettings.getInitialChannelCount(), DatastoreOptions.INIT_CHANNEL_COUNT);
     assertEquals(channelPoolSettings.getMinChannelCount(), DatastoreOptions.MIN_CHANNEL_COUNT);
-    assertEquals(channelPoolSettings.getMaxChannelCount(), DatastoreOptions.MAX_CHANNEL_COUNT);
+    assertEquals(channelPoolSettings.getMaxChannelCount(), DEFAULT_MAX_CHANNEL_COUNT);
   }
 
   @Test

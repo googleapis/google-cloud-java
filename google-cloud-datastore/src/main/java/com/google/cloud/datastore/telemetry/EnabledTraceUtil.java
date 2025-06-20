@@ -35,6 +35,8 @@ import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.TracerProvider;
+import io.opentelemetry.instrumentation.grpc.v1_6.GrpcTelemetry;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -66,14 +68,30 @@ public class EnabledTraceUtil implements TraceUtil {
     return openTelemetry;
   }
 
+  // The gRPC channel configurator that intercepts gRPC calls for tracing purposes.
+  public class OpenTelemetryGrpcChannelConfigurator
+      implements ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> {
+
+    @Override
+    public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
+      GrpcTelemetry grpcTelemetry = GrpcTelemetry.create(getOpenTelemetry());
+      return managedChannelBuilder.intercept(grpcTelemetry.newClientInterceptor());
+    }
+  }
+
   @Override
   @Nullable
   public ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
-    // TODO(jimit) Update this to return a gRPC Channel Configurator after gRPC upgrade.
-    return null;
+    // Note: using `==` rather than `.equals` since OpenTelemetry has only 1 static instance of
+    // `TracerProvider.noop`.
+    if (openTelemetry.getTracerProvider() == TracerProvider.noop()) {
+      return null;
+    }
+    return new OpenTelemetryGrpcChannelConfigurator();
   }
 
   static class Span implements TraceUtil.Span {
+
     private final io.opentelemetry.api.trace.Span span;
     private final String spanName;
 
@@ -198,6 +216,7 @@ public class EnabledTraceUtil implements TraceUtil {
   }
 
   static class Scope implements TraceUtil.Scope {
+
     private final io.opentelemetry.context.Scope scope;
 
     Scope(io.opentelemetry.context.Scope scope) {
@@ -211,6 +230,7 @@ public class EnabledTraceUtil implements TraceUtil {
   }
 
   static class Context implements TraceUtil.Context {
+
     private final io.opentelemetry.context.Context context;
 
     Context(io.opentelemetry.context.Context context) {

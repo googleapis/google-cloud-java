@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -35,6 +36,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
@@ -222,20 +224,37 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       throw new IllegalArgumentException(
           "Only gRPC transport allows setting of channel provider or credentials provider");
     } else if (getTransportOptions() instanceof GrpcTransportOptions) {
-      // For grpc transport options, configure default gRPC Connection pool with minChannelCount = 1
-      // and maxChannelCount = 4
-      this.channelProvider =
-          builder.channelProvider != null
-              ? builder.channelProvider
-              : GrpcTransportOptions.setUpChannelProvider(
+      if (builder.channelProvider == null) {
+        /*
+         The default gRPC connection pool is configured with a minimum of 1 channel.
+         The maximum channel count automatically defaults to 200 (Defined in gax-grpc).
+        */
+        ChannelPoolSettings datastoreChannelPoolSettings =
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(INIT_CHANNEL_COUNT)
+                .setMinChannelCount(MIN_CHANNEL_COUNT)
+                .build();
+
+        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
+            this.traceUtil.getChannelConfigurator();
+        if (channelConfigurator == null) {
+          this.channelProvider =
+              GrpcTransportOptions.setUpChannelProvider(
                   DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                      .setChannelPoolSettings(
-                          ChannelPoolSettings.builder()
-                              .setInitialChannelCount(INIT_CHANNEL_COUNT)
-                              .setMinChannelCount(MIN_CHANNEL_COUNT)
-                              .setMaxChannelCount(MAX_CHANNEL_COUNT)
-                              .build()),
+                      .setChannelPoolSettings(datastoreChannelPoolSettings),
                   this);
+        } else {
+          // Intercept the grpc channel calls to add telemetry info.
+          this.channelProvider =
+              GrpcTransportOptions.setUpChannelProvider(
+                  DatastoreSettings.defaultGrpcTransportProviderBuilder()
+                      .setChannelPoolSettings(datastoreChannelPoolSettings)
+                      .setChannelConfigurator(channelConfigurator),
+                  this);
+        }
+      } else {
+        this.channelProvider = builder.channelProvider;
+      }
     }
   }
 
@@ -256,6 +275,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   }
 
   private static class DatastoreDefaults implements ServiceDefaults<Datastore, DatastoreOptions> {
+
     private final TransportOptions TRANSPORT_OPTIONS = getDefaultTransportOptionsBuilder().build();
 
     @Override

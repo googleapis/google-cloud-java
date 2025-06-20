@@ -147,6 +147,10 @@
       <artifactId>opentelemetry-context</artifactId>
       <version>${opentelemetry.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry.instrumentation</groupId>
+      <artifactId>opentelemetry-grpc-1.6</artifactId>
+    </dependency>
     <!-- END OpenTelemetry -->
 
     <!-- Test dependencies -->
