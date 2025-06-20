@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-area-insights-bom</artifactId>
-  <version>0.16.0</version><!-- {x-version-update:google-maps-area-insights:current} -->
+  <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-maps-area-insights:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.59.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.60.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-area-insights</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:google-maps-area-insights:current} -->
+        <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-maps-area-insights:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-area-insights-v1</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:grpc-google-maps-area-insights-v1:current} -->
+        <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-area-insights-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>proto-google-maps-area-insights-v1</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:proto-google-maps-area-insights-v1:current} -->
+        <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-area-insights-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
