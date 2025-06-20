@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.60.0](https://github.com/googleapis/google-cloud-java/compare/v1.59.0...v1.60.0) (2025-06-20)
+
+
+### Features
+
+* [aiplatform] add DnsPeeringConfig in service_networking.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add DnsPeeringConfig in service_networking.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add EncryptionSpec field for RagCorpus CMEK feature to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add invoke_route_prefix to ModelContainerSpec in aiplatform v1beta1 models.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add Model Garden deploy OSS model API ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add RagEngineConfig update/get APIs to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add Scaled tier for RagEngineConfig to v1beta, equivalent to Enterprise ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Expose UrlContextMetadata API to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Expose UrlContextMetadata API to v1beta1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Introduce RagFileMetadataConfig for importing metadata to Rag ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Reasoning Engine v1beta1 subresource updates ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [analytics-admin] add the `GetSubpropertySyncConfigRequest` method ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [channel] A new enum `CustomerAttestationState` is added ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [cloudquotas] Added support for hierarchical enrollment in Quota Adjuster consumer API ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [dataproc] Added support for DELTA, ICEBERG, PIG components ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [dlp] add SaveToGcsFindingsOutput ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [java-shopping-merchant-issue-resolution] add AggregateProductStatuses ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [maps-area-insights] Places Aggregate API v1 is now Generally Available (GA) ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [networkservices] update NetworkServices protos ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [secretmanager] update secret manager protos for tags ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [shopping-merchant-product-studio] Publish Python client libraries for Product studio APIs ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+
+
+### Documentation
+
+* [speech] updated description of sample_rate_hertz ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+
 ## [1.59.0](https://github.com/googleapis/google-cloud-java/compare/v1.58.0...v1.59.0) (2025-06-16)
 
 
