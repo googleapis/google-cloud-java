@@ -69,53 +69,54 @@ public final class MeshProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "*google/cloud/networkservices/v1/mesh.p"
+      "\n*google/cloud/networkservices/v1/mesh.p"
           + "roto\022\037google.cloud.networkservices.v1\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\257\003\n"
-          + "\004Mesh\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\026\n"
-          + "\tself_link\030\t \001(\tB\003\340A\003\0224\n"
-          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022F\n"
-          + "\006labels\030\004"
-          + " \003(\01321.google.cloud.networkservices.v1.Mesh.LabelsEntryB\003\340A\001\022\030\n"
-          + "\013description\030\005 \001(\tB\003\340A\001\022\036\n"
-          + "\021interception_port\030\010 \001(\005B\003\340A\001\032-\n"
-          + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:_\352A\\\n"
-          + "#networkservices.googleapis.com/Mesh\0225projects/{proje"
-          + "ct}/locations/{location}/meshes/{mesh}\"w\n"
-          + "\021ListMeshesRequest\022;\n"
-          + "\006parent\030\001 \001(\tB+\340A\002"
-          + "\372A%\022#networkservices.googleapis.com/Mesh\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"d\n"
-          + "\022ListMeshesResponse\0225\n"
-          + "\006meshes\030\001 \003(\0132%.google.cloud.networkservices.v1.Mesh\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"K\n"
-          + "\016GetMeshRequest\0229\n"
-          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
-          + "#networkservices.googleapis.com/Mesh\"\240\001\n"
-          + "\021CreateMeshRequest\022;\n"
-          + "\006parent\030\001 \001("
-          + "\tB+\340A\002\372A%\022#networkservices.googleapis.com/Mesh\022\024\n"
-          + "\007mesh_id\030\002 \001(\tB\003\340A\002\0228\n"
-          + "\004mesh\030\003"
-          + " \001(\0132%.google.cloud.networkservices.v1.MeshB\003\340A\002\"\203\001\n"
-          + "\021UpdateMeshRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0228\n"
-          + "\004mesh\030\002 \001(\0132%.google.cloud.networkservices.v1.MeshB\003\340A\002\"N\n"
-          + "\021DeleteMeshRequest\0229\n"
-          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
-          + "#networkservices.googleapis.com/MeshB\352\001\n"
-          + "#com.google.cloud.networkservices.v1B\tMeshProtoP\001ZMcloud.google.com/go/networkser"
-          + "vices/apiv1/networkservicespb;networkser"
-          + "vicespb\252\002\037Google.Cloud.NetworkServices.V"
-          + "1\312\002\037Google\\Cloud\\NetworkServices\\V1\352\002\"Go"
-          + "ogle::Cloud::NetworkServices::V1b\006proto3"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032,google/cloud/networks"
+          + "ervices/v1/common.proto\032 google/protobuf"
+          + "/field_mask.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\221\004\n\004Mesh\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\026"
+          + "\n\tself_link\030\t \001(\tB\003\340A\003\0224\n\013create_time\030\002 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
+          + "update_time\030\003 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\022F\n\006labels\030\004 \003(\01321.google.clou"
+          + "d.networkservices.v1.Mesh.LabelsEntryB\003\340"
+          + "A\001\022\030\n\013description\030\005 \001(\tB\003\340A\001\022\036\n\021intercep"
+          + "tion_port\030\010 \001(\005B\003\340A\001\022N\n\renvoy_headers\030\020 "
+          + "\001(\0162-.google.cloud.networkservices.v1.En"
+          + "voyHeadersB\003\340A\001H\000\210\001\001\032-\n\013LabelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:_\352A\\\n#networ"
+          + "kservices.googleapis.com/Mesh\0225projects/"
+          + "{project}/locations/{location}/meshes/{m"
+          + "esh}B\020\n\016_envoy_headers\"\234\001\n\021ListMeshesReq"
+          + "uest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#networkser"
+          + "vices.googleapis.com/Mesh\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\022#\n\026return_parti"
+          + "al_success\030\004 \001(\010B\003\340A\001\"y\n\022ListMeshesRespo"
+          + "nse\0225\n\006meshes\030\001 \003(\0132%.google.cloud.netwo"
+          + "rkservices.v1.Mesh\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"K\n\016GetMeshReque"
+          + "st\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#networkservice"
+          + "s.googleapis.com/Mesh\"\240\001\n\021CreateMeshRequ"
+          + "est\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#networkserv"
+          + "ices.googleapis.com/Mesh\022\024\n\007mesh_id\030\002 \001("
+          + "\tB\003\340A\002\0228\n\004mesh\030\003 \001(\0132%.google.cloud.netw"
+          + "orkservices.v1.MeshB\003\340A\002\"\203\001\n\021UpdateMeshR"
+          + "equest\0224\n\013update_mask\030\001 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\003\340A\001\0228\n\004mesh\030\002 \001(\0132%.goo"
+          + "gle.cloud.networkservices.v1.MeshB\003\340A\002\"N"
+          + "\n\021DeleteMeshRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A"
+          + "%\n#networkservices.googleapis.com/MeshB\344"
+          + "\002\n#com.google.cloud.networkservices.v1B\t"
+          + "MeshProtoP\001ZMcloud.google.com/go/network"
+          + "services/apiv1/networkservicespb;network"
+          + "servicespb\252\002\037Google.Cloud.NetworkService"
+          + "s.V1\312\002\037Google\\Cloud\\NetworkServices\\V1\352\002"
+          + "\"Google::Cloud::NetworkServices::V1\352Aw\n("
+          + "compute.googleapis.com/ServiceAttachment"
+          + "\022Kprojects/{project}/regions/{region}/se"
+          + "rviceAttachments/{service_attachment}b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +124,7 @@ public final class MeshProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.networkservices.v1.CommonProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -139,6 +141,7 @@ public final class MeshProto {
               "Labels",
               "Description",
               "InterceptionPort",
+              "EnvoyHeaders",
             });
     internal_static_google_cloud_networkservices_v1_Mesh_LabelsEntry_descriptor =
         internal_static_google_cloud_networkservices_v1_Mesh_descriptor.getNestedTypes().get(0);
@@ -154,7 +157,7 @@ public final class MeshProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListMeshesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_networkservices_v1_ListMeshesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -162,7 +165,7 @@ public final class MeshProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListMeshesResponse_descriptor,
             new java.lang.String[] {
-              "Meshes", "NextPageToken",
+              "Meshes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkservices_v1_GetMeshRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -200,11 +203,13 @@ public final class MeshProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.networkservices.v1.CommonProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

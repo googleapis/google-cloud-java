@@ -224,6 +224,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -291,6 +292,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -358,6 +360,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -439,6 +442,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -520,6 +524,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1020,6 +1025,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1095,6 +1101,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1170,6 +1177,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1245,6 +1253,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1320,6 +1329,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1416,6 +1426,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1498,6 +1509,7 @@ public class AlloyDBAdminClientTest {
             .setSubscriptionType(SubscriptionType.forNumber(0))
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1666,6 +1678,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
@@ -1732,6 +1745,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
@@ -1798,6 +1812,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1878,6 +1893,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1958,6 +1974,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2040,6 +2057,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2181,6 +2199,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2342,6 +2361,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2416,6 +2436,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2490,6 +2511,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2567,6 +2589,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2644,6 +2667,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2718,6 +2742,7 @@ public class AlloyDBAdminClientTest {
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .setGeminiConfig(GeminiInstanceConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .setGcaConfig(GCAInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -2962,6 +2987,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -3020,6 +3046,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -3078,6 +3105,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -3150,6 +3178,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -3222,6 +3251,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")

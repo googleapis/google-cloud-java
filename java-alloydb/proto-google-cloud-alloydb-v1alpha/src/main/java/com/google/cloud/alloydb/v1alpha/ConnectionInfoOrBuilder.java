@@ -131,7 +131,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1227
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1360
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -150,7 +150,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1227
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1360
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -169,7 +169,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1227
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1360
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -189,7 +189,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1227
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1360
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */

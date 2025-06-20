@@ -241,6 +241,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -295,6 +296,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -349,6 +351,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -505,6 +508,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -553,6 +557,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -601,6 +606,7 @@ public class SecretManagerServiceClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 

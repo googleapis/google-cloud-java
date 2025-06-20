@@ -97,7 +97,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      *
      * If there is more than one best match, (for example, if a
      * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-     * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+     * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
      * </pre>
      *
      * <code>
@@ -137,7 +137,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      *
      * If there is more than one best match, (for example, if a
      * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-     * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+     * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
      * </pre>
      *
      * <code>
@@ -1433,7 +1433,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      *
      * If there is more than one best match, (for example, if a
      * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-     * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+     * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
      * </pre>
      *
      * <code>
@@ -1476,7 +1476,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
      *
      * If there is more than one best match, (for example, if a
      * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-     * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+     * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
      * </pre>
      *
      * <code>
@@ -2094,7 +2094,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        *
        * If there is more than one best match, (for example, if a
        * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-       * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+       * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
        * </pre>
        *
        * <code>
@@ -2137,7 +2137,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        *
        * If there is more than one best match, (for example, if a
        * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-       * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+       * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
        * </pre>
        *
        * <code>
@@ -2183,7 +2183,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        *
        * If there is more than one best match, (for example, if a
        * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-       * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+       * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
        * </pre>
        *
        * <code>
@@ -2236,7 +2236,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        *
        * If there is more than one best match, (for example, if a
        * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-       * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+       * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
        * </pre>
        *
        * <code>
@@ -2288,7 +2288,7 @@ public final class EndpointMatcher extends com.google.protobuf.GeneratedMessageV
        *
        * If there is more than one best match, (for example, if a
        * config P4 with selector &lt;A:1,D:1&gt; exists and if a client with
-       * label &lt;A:1,B:1,D:1&gt; connects), an error will be thrown.
+       * label &lt;A:1,B:1,D:1&gt; connects), pick up the one with older creation time.
        * </pre>
        *
        * <code>

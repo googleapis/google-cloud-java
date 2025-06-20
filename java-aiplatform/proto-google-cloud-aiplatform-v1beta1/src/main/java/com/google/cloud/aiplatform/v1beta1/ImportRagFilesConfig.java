@@ -523,7 +523,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -545,7 +545,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -599,7 +599,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -626,7 +626,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -808,7 +808,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -829,7 +829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -985,6 +985,66 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         : ragFileParsingConfig_;
   }
 
+  public static final int RAG_FILE_METADATA_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig ragFileMetadataConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   *
+   * @return Whether the ragFileMetadataConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagFileMetadataConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   *
+   * @return The ragFileMetadataConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
+    return ragFileMetadataConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
+        : ragFileMetadataConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
+      getRagFileMetadataConfigOrBuilder() {
+    return ragFileMetadataConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
+        : ragFileMetadataConfig_;
+  }
+
   public static final int MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 5;
   private int maxEmbeddingRequestsPerMin_ = 0;
 
@@ -1118,6 +1178,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(16, getRagFileTransformationConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(17, getRagFileMetadataConfig());
+    }
     if (globalMaxEmbeddingRequestsPerMin_ != 0) {
       output.writeInt32(18, globalMaxEmbeddingRequestsPerMin_);
     }
@@ -1195,6 +1258,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, getRagFileTransformationConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(17, getRagFileMetadataConfig());
+    }
     if (globalMaxEmbeddingRequestsPerMin_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
@@ -1231,6 +1298,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileParsingConfig() != other.hasRagFileParsingConfig()) return false;
     if (hasRagFileParsingConfig()) {
       if (!getRagFileParsingConfig().equals(other.getRagFileParsingConfig())) return false;
+    }
+    if (hasRagFileMetadataConfig() != other.hasRagFileMetadataConfig()) return false;
+    if (hasRagFileMetadataConfig()) {
+      if (!getRagFileMetadataConfig().equals(other.getRagFileMetadataConfig())) return false;
     }
     if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
     if (getGlobalMaxEmbeddingRequestsPerMin() != other.getGlobalMaxEmbeddingRequestsPerMin())
@@ -1302,6 +1373,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileParsingConfig()) {
       hash = (37 * hash) + RAG_FILE_PARSING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagFileParsingConfig().hashCode();
+    }
+    if (hasRagFileMetadataConfig()) {
+      hash = (37 * hash) + RAG_FILE_METADATA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagFileMetadataConfig().hashCode();
     }
     hash = (37 * hash) + MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
     hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
@@ -1502,6 +1577,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getRagFileChunkingConfigFieldBuilder();
         getRagFileTransformationConfigFieldBuilder();
         getRagFileParsingConfigFieldBuilder();
+        getRagFileMetadataConfigFieldBuilder();
       }
     }
 
@@ -1550,6 +1626,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (ragFileParsingConfigBuilder_ != null) {
         ragFileParsingConfigBuilder_.dispose();
         ragFileParsingConfigBuilder_ = null;
+      }
+      ragFileMetadataConfig_ = null;
+      if (ragFileMetadataConfigBuilder_ != null) {
+        ragFileMetadataConfigBuilder_.dispose();
+        ragFileMetadataConfigBuilder_ = null;
       }
       maxEmbeddingRequestsPerMin_ = 0;
       globalMaxEmbeddingRequestsPerMin_ = 0;
@@ -1620,12 +1701,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
+        result.ragFileMetadataConfig_ =
+            ragFileMetadataConfigBuilder_ == null
+                ? ragFileMetadataConfig_
+                : ragFileMetadataConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.globalMaxEmbeddingRequestsPerMin_ = globalMaxEmbeddingRequestsPerMin_;
+        result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.globalMaxEmbeddingRequestsPerMin_ = globalMaxEmbeddingRequestsPerMin_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.rebuildAnnIndex_ = rebuildAnnIndex_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1722,6 +1810,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (other.hasRagFileParsingConfig()) {
         mergeRagFileParsingConfig(other.getRagFileParsingConfig());
+      }
+      if (other.hasRagFileMetadataConfig()) {
+        mergeRagFileMetadataConfig(other.getRagFileMetadataConfig());
       }
       if (other.getMaxEmbeddingRequestsPerMin() != 0) {
         setMaxEmbeddingRequestsPerMin(other.getMaxEmbeddingRequestsPerMin());
@@ -1844,7 +1935,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 40
             case 50:
@@ -1908,16 +1999,23 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000400;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    getRagFileMetadataConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 138
             case 144:
               {
                 globalMaxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 144
             case 152:
               {
                 rebuildAnnIndex_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 152
             default:
@@ -3141,7 +3239,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -3163,7 +3261,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=632
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=689
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -3410,7 +3508,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -3438,7 +3536,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=641
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=698
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -4216,7 +4314,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -4236,7 +4334,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=660
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=717
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
@@ -4875,6 +4973,224 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return ragFileParsingConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig ragFileMetadataConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder>
+        ragFileMetadataConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     *
+     * @return Whether the ragFileMetadataConfig field is set.
+     */
+    public boolean hasRagFileMetadataConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     *
+     * @return The ragFileMetadataConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
+      if (ragFileMetadataConfigBuilder_ == null) {
+        return ragFileMetadataConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
+            : ragFileMetadataConfig_;
+      } else {
+        return ragFileMetadataConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public Builder setRagFileMetadataConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
+      if (ragFileMetadataConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileMetadataConfig_ = value;
+      } else {
+        ragFileMetadataConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public Builder setRagFileMetadataConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder builderForValue) {
+      if (ragFileMetadataConfigBuilder_ == null) {
+        ragFileMetadataConfig_ = builderForValue.build();
+      } else {
+        ragFileMetadataConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public Builder mergeRagFileMetadataConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
+      if (ragFileMetadataConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && ragFileMetadataConfig_ != null
+            && ragFileMetadataConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()) {
+          getRagFileMetadataConfigBuilder().mergeFrom(value);
+        } else {
+          ragFileMetadataConfig_ = value;
+        }
+      } else {
+        ragFileMetadataConfigBuilder_.mergeFrom(value);
+      }
+      if (ragFileMetadataConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public Builder clearRagFileMetadataConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ragFileMetadataConfig_ = null;
+      if (ragFileMetadataConfigBuilder_ != null) {
+        ragFileMetadataConfigBuilder_.dispose();
+        ragFileMetadataConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder
+        getRagFileMetadataConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getRagFileMetadataConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
+        getRagFileMetadataConfigOrBuilder() {
+      if (ragFileMetadataConfigBuilder_ != null) {
+        return ragFileMetadataConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragFileMetadataConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
+            : ragFileMetadataConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the metadata config for RagFiles.
+     * Including paths for metadata schema and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder>
+        getRagFileMetadataConfigFieldBuilder() {
+      if (ragFileMetadataConfigBuilder_ == null) {
+        ragFileMetadataConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig,
+                com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder>(
+                getRagFileMetadataConfig(), getParentForChildren(), isClean());
+        ragFileMetadataConfig_ = null;
+      }
+      return ragFileMetadataConfigBuilder_;
+    }
+
     private int maxEmbeddingRequestsPerMin_;
 
     /**
@@ -4918,7 +5234,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4940,7 +5256,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       maxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;
@@ -4993,7 +5309,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setGlobalMaxEmbeddingRequestsPerMin(int value) {
 
       globalMaxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5017,7 +5333,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearGlobalMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       globalMaxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;
@@ -5068,7 +5384,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setRebuildAnnIndex(boolean value) {
 
       rebuildAnnIndex_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5091,7 +5407,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRebuildAnnIndex() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       rebuildAnnIndex_ = false;
       onChanged();
       return this;

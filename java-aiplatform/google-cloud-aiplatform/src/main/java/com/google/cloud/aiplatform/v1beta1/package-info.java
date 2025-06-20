@@ -399,6 +399,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= MemoryBankServiceClient =======================
+ *
+ * <p>Service Description: A service for managing memories for LLM applications.
+ *
+ * <p>Sample for MemoryBankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
+ *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+ *   Memory response = memoryBankServiceClient.getMemory(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetadataServiceClient =======================
  *
  * <p>Service Description: Service for reading and writing metadata entries.

@@ -183,7 +183,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * <code>string uri = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1462
    * @return The uri.
    */
   @java.lang.Deprecated
@@ -199,7 +199,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * <code>string uri = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1462
    * @return The bytes for uri.
    */
   @java.lang.Deprecated
@@ -215,7 +215,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1465
    * @return Whether the transcript field is set.
    */
   @java.lang.Deprecated
@@ -231,7 +231,7 @@ public interface BatchRecognizeFileResultOrBuilder
    * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1465
    * @return The transcript.
    */
   @java.lang.Deprecated

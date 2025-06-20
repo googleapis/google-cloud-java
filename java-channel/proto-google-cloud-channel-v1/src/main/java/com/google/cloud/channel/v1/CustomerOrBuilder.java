@@ -468,4 +468,36 @@ public interface CustomerOrBuilder
    * @return The bytes for correlationId.
    */
   com.google.protobuf.ByteString getCorrelationIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicate whether a customer is attesting about the correctness of
+   * provided information. Only required if creating a GCP Entitlement.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.channel.v1.Customer.CustomerAttestationState customer_attestation_state = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for customerAttestationState.
+   */
+  int getCustomerAttestationStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicate whether a customer is attesting about the correctness of
+   * provided information. Only required if creating a GCP Entitlement.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.channel.v1.Customer.CustomerAttestationState customer_attestation_state = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerAttestationState.
+   */
+  com.google.cloud.channel.v1.Customer.CustomerAttestationState getCustomerAttestationState();
 }

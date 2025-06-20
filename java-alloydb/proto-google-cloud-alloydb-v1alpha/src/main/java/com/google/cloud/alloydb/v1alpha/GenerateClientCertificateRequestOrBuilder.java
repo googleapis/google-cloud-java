@@ -117,7 +117,7 @@ public interface GenerateClientCertificateRequestOrBuilder
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1879
    * @return The pemCsr.
    */
   @java.lang.Deprecated
@@ -134,7 +134,7 @@ public interface GenerateClientCertificateRequestOrBuilder
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1879
    * @return The bytes for pemCsr.
    */
   @java.lang.Deprecated

@@ -75,6 +75,9 @@ public class HttpJsonQuotaAdjusterSettingsManagerStub extends QuotaAdjusterSetti
                                 request.getQuotaAdjusterSettings().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta/{quotaAdjusterSettings.name=folders/*/locations/*/quotaAdjusterSettings}",
+                          "/v1beta/{quotaAdjusterSettings.name=organizations/*/locations/*/quotaAdjusterSettings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -119,6 +122,9 @@ public class HttpJsonQuotaAdjusterSettingsManagerStub extends QuotaAdjusterSetti
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta/{name=folders/*/locations/*/quotaAdjusterSettings}",
+                          "/v1beta/{name=organizations/*/locations/*/quotaAdjusterSettings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

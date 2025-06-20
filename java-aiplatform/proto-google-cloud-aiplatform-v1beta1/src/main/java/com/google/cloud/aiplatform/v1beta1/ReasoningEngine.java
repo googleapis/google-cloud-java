@@ -79,6 +79,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -103,6 +105,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -446,6 +450,69 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int CONTEXT_SPEC_FIELD_NUMBER = 9;
+  private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec contextSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contextSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasContextSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contextSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec getContextSpec() {
+    return contextSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+        : contextSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder
+      getContextSpecOrBuilder() {
+    return contextSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+        : contextSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -481,6 +548,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getContextSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -510,6 +580,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getContextSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -543,6 +616,10 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasContextSpec() != other.hasContextSpec()) return false;
+    if (hasContextSpec()) {
+      if (!getContextSpec().equals(other.getContextSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -574,6 +651,10 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasContextSpec()) {
+      hash = (37 * hash) + CONTEXT_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getContextSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -719,6 +800,7 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         getSpecFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getContextSpecFieldBuilder();
       }
     }
 
@@ -745,6 +827,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         updateTimeBuilder_ = null;
       }
       etag_ = "";
+      contextSpec_ = null;
+      if (contextSpecBuilder_ != null) {
+        contextSpecBuilder_.dispose();
+        contextSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -805,6 +892,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.contextSpec_ =
+            contextSpecBuilder_ == null ? contextSpec_ : contextSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -884,6 +976,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasContextSpec()) {
+        mergeContextSpec(other.getContextSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -952,6 +1047,12 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(getContextSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -978,6 +1079,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1001,6 +1104,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1024,6 +1129,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1046,6 +1153,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1064,6 +1173,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2056,6 +2167,234 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec contextSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>
+        contextSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the contextSpec field is set.
+     */
+    public boolean hasContextSpec() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec getContextSpec() {
+      if (contextSpecBuilder_ == null) {
+        return contextSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+            : contextSpec_;
+      } else {
+        return contextSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec value) {
+      if (contextSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contextSpec_ = value;
+      } else {
+        contextSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder builderForValue) {
+      if (contextSpecBuilder_ == null) {
+        contextSpec_ = builderForValue.build();
+      } else {
+        contextSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec value) {
+      if (contextSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && contextSpec_ != null
+            && contextSpec_
+                != com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                    .getDefaultInstance()) {
+          getContextSpecBuilder().mergeFrom(value);
+        } else {
+          contextSpec_ = value;
+        }
+      } else {
+        contextSpecBuilder_.mergeFrom(value);
+      }
+      if (contextSpec_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContextSpec() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      contextSpec_ = null;
+      if (contextSpecBuilder_ != null) {
+        contextSpecBuilder_.dispose();
+        contextSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder
+        getContextSpecBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getContextSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder
+        getContextSpecOrBuilder() {
+      if (contextSpecBuilder_ != null) {
+        return contextSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return contextSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+            : contextSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>
+        getContextSpecFieldBuilder() {
+      if (contextSpecBuilder_ == null) {
+        contextSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>(
+                getContextSpec(), getParentForChildren(), isClean());
+        contextSpec_ = null;
+      }
+      return contextSpecBuilder_;
     }
 
     @java.lang.Override

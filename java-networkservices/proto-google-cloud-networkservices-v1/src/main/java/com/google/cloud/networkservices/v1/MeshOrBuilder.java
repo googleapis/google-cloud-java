@@ -28,11 +28,11 @@ public interface MeshOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Mesh resource. It matches pattern
+   * Identifier. Name of the Mesh resource. It matches pattern
    * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +42,11 @@ public interface MeshOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Mesh resource. It matches pattern
+   * Identifier. Name of the Mesh resource. It matches pattern
    * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -266,4 +266,55 @@ public interface MeshOrBuilder
    * @return The interceptionPort.
    */
   int getInterceptionPort();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the envoyHeaders field is set.
+   */
+  boolean hasEnvoyHeaders();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for envoyHeaders.
+   */
+  int getEnvoyHeadersValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The envoyHeaders.
+   */
+  com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders();
 }
