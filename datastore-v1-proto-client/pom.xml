@@ -28,6 +28,7 @@
   </parent>
 
   <packaging>jar</packaging>
+  <name>datastore-v1-proto-client</name>
   <description>
     Low level client for accessing Google Cloud Datastore v1.
   </description>
