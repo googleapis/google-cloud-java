@@ -28,42 +28,95 @@ public interface RagManagedDbConfigOrBuilder
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
    * @return Whether the enterprise field is set.
    */
+  @java.lang.Deprecated
   boolean hasEnterprise();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
    * @return The enterprise.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise getEnterprise();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.EnterpriseOrBuilder
       getEnterpriseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   *
+   * @return Whether the scaled field is set.
+   */
+  boolean hasScaled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   *
+   * @return The scaled.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled getScaled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder getScaledOrBuilder();
 
   /**
    *
@@ -101,6 +154,47 @@ public interface RagManagedDbConfigOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.BasicOrBuilder getBasicOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   *
+   * @return Whether the unprovisioned field is set.
+   */
+  boolean hasUnprovisioned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   *
+   * @return The unprovisioned.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned getUnprovisioned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder
+      getUnprovisionedOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.TierCase getTierCase();
 }

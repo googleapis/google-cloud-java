@@ -315,5 +315,57 @@ public interface RagCorpusOrBuilder
    */
   com.google.cloud.aiplatform.v1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
   com.google.cloud.aiplatform.v1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }

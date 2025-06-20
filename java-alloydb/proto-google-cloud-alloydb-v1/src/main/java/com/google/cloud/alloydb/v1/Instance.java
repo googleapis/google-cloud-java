@@ -53,6 +53,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     publicIpAddress_ = "";
     etag_ = "";
     outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    activationPolicy_ = 0;
   }
 
   @java.lang.Override
@@ -757,6 +758,167 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1.Instance.AvailabilityType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether an instance needs to spin up.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.alloydb.v1.Instance.ActivationPolicy}
+   */
+  public enum ActivationPolicy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The policy is not specified.
+     * </pre>
+     *
+     * <code>ACTIVATION_POLICY_UNSPECIFIED = 0;</code>
+     */
+    ACTIVATION_POLICY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>ALWAYS = 1;</code>
+     */
+    ALWAYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is not running.
+     * </pre>
+     *
+     * <code>NEVER = 2;</code>
+     */
+    NEVER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The policy is not specified.
+     * </pre>
+     *
+     * <code>ACTIVATION_POLICY_UNSPECIFIED = 0;</code>
+     */
+    public static final int ACTIVATION_POLICY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>ALWAYS = 1;</code>
+     */
+    public static final int ALWAYS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance is not running.
+     * </pre>
+     *
+     * <code>NEVER = 2;</code>
+     */
+    public static final int NEVER_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ActivationPolicy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ActivationPolicy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ACTIVATION_POLICY_UNSPECIFIED;
+        case 1:
+          return ALWAYS;
+        case 2:
+          return NEVER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ActivationPolicy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ActivationPolicy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ActivationPolicy>() {
+              public ActivationPolicy findValueByNumber(int number) {
+                return ActivationPolicy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1.Instance.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final ActivationPolicy[] VALUES = values();
+
+    public static ActivationPolicy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ActivationPolicy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1.Instance.ActivationPolicy)
   }
 
   public interface MachineConfigOrBuilder
@@ -8042,6 +8204,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the PSC service automation connection.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+     *   "ACTIVE" - The connection has been created successfully.
+     *   "FAILED" - The connection is not functional since some resources on the
+     * connection fail to be created.
+     *   "CREATING" - The connection is being created.
+     *   "DELETING" - The connection is being deleted.
+     *   "CREATE_REPAIRING" - The connection is being repaired to complete
+     * creation.
+     *   "DELETE_REPAIRING" - The connection is being repaired to complete
+     * deletion.
      * </pre>
      *
      * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8055,6 +8228,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the PSC service automation connection.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+     *   "ACTIVE" - The connection has been created successfully.
+     *   "FAILED" - The connection is not functional since some resources on the
+     * connection fail to be created.
+     *   "CREATING" - The connection is being created.
+     *   "DELETING" - The connection is being deleted.
+     *   "CREATE_REPAIRING" - The connection is being repaired to complete
+     * creation.
+     *   "DELETE_REPAIRING" - The connection is being repaired to complete
+     * deletion.
      * </pre>
      *
      * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8068,6 +8252,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the service connection policy.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+     * initially.
+     *   "VALID" - Set when policy and map configuration is valid, and their
+     * matching can lead to allowing creation of PSC Connections subject to
+     * other constraints like connections limit.
+     *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+     * this network and Service Class
+     *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+     *   this network and Service Class
+     *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+     * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+     * matching ServiceConnectionPolicy.
      * </pre>
      *
      * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8081,6 +8278,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the service connection policy.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+     * initially.
+     *   "VALID" - Set when policy and map configuration is valid, and their
+     * matching can lead to allowing creation of PSC Connections subject to
+     * other constraints like connections limit.
+     *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+     * this network and Service Class
+     *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+     *   this network and Service Class
+     *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+     * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+     * matching ServiceConnectionPolicy.
      * </pre>
      *
      * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8321,6 +8531,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the PSC service automation connection.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+     *   "ACTIVE" - The connection has been created successfully.
+     *   "FAILED" - The connection is not functional since some resources on the
+     * connection fail to be created.
+     *   "CREATING" - The connection is being created.
+     *   "DELETING" - The connection is being deleted.
+     *   "CREATE_REPAIRING" - The connection is being repaired to complete
+     * creation.
+     *   "DELETE_REPAIRING" - The connection is being repaired to complete
+     * deletion.
      * </pre>
      *
      * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8345,6 +8566,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the PSC service automation connection.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+     *   "ACTIVE" - The connection has been created successfully.
+     *   "FAILED" - The connection is not functional since some resources on the
+     * connection fail to be created.
+     *   "CREATING" - The connection is being created.
+     *   "DELETING" - The connection is being deleted.
+     *   "CREATE_REPAIRING" - The connection is being repaired to complete
+     * creation.
+     *   "DELETE_REPAIRING" - The connection is being repaired to complete
+     * deletion.
      * </pre>
      *
      * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8374,6 +8606,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the service connection policy.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+     * initially.
+     *   "VALID" - Set when policy and map configuration is valid, and their
+     * matching can lead to allowing creation of PSC Connections subject to
+     * other constraints like connections limit.
+     *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+     * this network and Service Class
+     *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+     *   this network and Service Class
+     *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+     * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+     * matching ServiceConnectionPolicy.
      * </pre>
      *
      * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8398,6 +8643,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the service connection policy.
+     * Possible values:
+     *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+     * initially.
+     *   "VALID" - Set when policy and map configuration is valid, and their
+     * matching can lead to allowing creation of PSC Connections subject to
+     * other constraints like connections limit.
+     *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+     * this network and Service Class
+     *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+     *   this network and Service Class
+     *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+     * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+     * matching ServiceConnectionPolicy.
      * </pre>
      *
      * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9235,6 +9493,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the PSC service automation connection.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+       *   "ACTIVE" - The connection has been created successfully.
+       *   "FAILED" - The connection is not functional since some resources on the
+       * connection fail to be created.
+       *   "CREATING" - The connection is being created.
+       *   "DELETING" - The connection is being deleted.
+       *   "CREATE_REPAIRING" - The connection is being repaired to complete
+       * creation.
+       *   "DELETE_REPAIRING" - The connection is being repaired to complete
+       * deletion.
        * </pre>
        *
        * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9258,6 +9527,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the PSC service automation connection.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+       *   "ACTIVE" - The connection has been created successfully.
+       *   "FAILED" - The connection is not functional since some resources on the
+       * connection fail to be created.
+       *   "CREATING" - The connection is being created.
+       *   "DELETING" - The connection is being deleted.
+       *   "CREATE_REPAIRING" - The connection is being repaired to complete
+       * creation.
+       *   "DELETE_REPAIRING" - The connection is being repaired to complete
+       * deletion.
        * </pre>
        *
        * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9281,6 +9561,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the PSC service automation connection.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+       *   "ACTIVE" - The connection has been created successfully.
+       *   "FAILED" - The connection is not functional since some resources on the
+       * connection fail to be created.
+       *   "CREATING" - The connection is being created.
+       *   "DELETING" - The connection is being deleted.
+       *   "CREATE_REPAIRING" - The connection is being repaired to complete
+       * creation.
+       *   "DELETE_REPAIRING" - The connection is being repaired to complete
+       * deletion.
        * </pre>
        *
        * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9303,6 +9594,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the PSC service automation connection.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+       *   "ACTIVE" - The connection has been created successfully.
+       *   "FAILED" - The connection is not functional since some resources on the
+       * connection fail to be created.
+       *   "CREATING" - The connection is being created.
+       *   "DELETING" - The connection is being deleted.
+       *   "CREATE_REPAIRING" - The connection is being repaired to complete
+       * creation.
+       *   "DELETE_REPAIRING" - The connection is being repaired to complete
+       * deletion.
        * </pre>
        *
        * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9321,6 +9623,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the PSC service automation connection.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - An invalid state as the default case.
+       *   "ACTIVE" - The connection has been created successfully.
+       *   "FAILED" - The connection is not functional since some resources on the
+       * connection fail to be created.
+       *   "CREATING" - The connection is being created.
+       *   "DELETING" - The connection is being deleted.
+       *   "CREATE_REPAIRING" - The connection is being repaired to complete
+       * creation.
+       *   "DELETE_REPAIRING" - The connection is being repaired to complete
+       * deletion.
        * </pre>
        *
        * <code>string status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9346,6 +9659,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the service connection policy.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+       * initially.
+       *   "VALID" - Set when policy and map configuration is valid, and their
+       * matching can lead to allowing creation of PSC Connections subject to
+       * other constraints like connections limit.
+       *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+       * this network and Service Class
+       *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+       *   this network and Service Class
+       *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+       * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+       * matching ServiceConnectionPolicy.
        * </pre>
        *
        * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -9370,6 +9696,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the service connection policy.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+       * initially.
+       *   "VALID" - Set when policy and map configuration is valid, and their
+       * matching can lead to allowing creation of PSC Connections subject to
+       * other constraints like connections limit.
+       *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+       * this network and Service Class
+       *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+       *   this network and Service Class
+       *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+       * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+       * matching ServiceConnectionPolicy.
        * </pre>
        *
        * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -9394,6 +9733,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the service connection policy.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+       * initially.
+       *   "VALID" - Set when policy and map configuration is valid, and their
+       * matching can lead to allowing creation of PSC Connections subject to
+       * other constraints like connections limit.
+       *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+       * this network and Service Class
+       *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+       *   this network and Service Class
+       *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+       * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+       * matching ServiceConnectionPolicy.
        * </pre>
        *
        * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -9417,6 +9769,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the service connection policy.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+       * initially.
+       *   "VALID" - Set when policy and map configuration is valid, and their
+       * matching can lead to allowing creation of PSC Connections subject to
+       * other constraints like connections limit.
+       *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+       * this network and Service Class
+       *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+       *   this network and Service Class
+       *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+       * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+       * matching ServiceConnectionPolicy.
        * </pre>
        *
        * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -9436,6 +9801,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The status of the service connection policy.
+       * Possible values:
+       *   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+       * initially.
+       *   "VALID" - Set when policy and map configuration is valid, and their
+       * matching can lead to allowing creation of PSC Connections subject to
+       * other constraints like connections limit.
+       *   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+       * this network and Service Class
+       *   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+       *   this network and Service Class
+       *   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+       * project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+       * matching ServiceConnectionPolicy.
        * </pre>
        *
        * <code>string consumer_network_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -12330,6 +12708,84 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The enableOutboundPublicIp.
      */
     boolean getEnableOutboundPublicIp();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource link for the VPC network in which instance
+     * resources are created and from which they are accessible via Private IP.
+     * This will be the same value as the parent cluster's network. It is
+     * specified in the form: //
+     * `projects/{project_number}/global/networks/{network_id}`.
+     * </pre>
+     *
+     * <code>
+     * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    java.lang.String getNetwork();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource link for the VPC network in which instance
+     * resources are created and from which they are accessible via Private IP.
+     * This will be the same value as the parent cluster's network. It is
+     * specified in the form: //
+     * `projects/{project_number}/global/networks/{network_id}`.
+     * </pre>
+     *
+     * <code>
+     * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    com.google.protobuf.ByteString getNetworkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * instance, for example: "google-managed-services-default". If set, the
+     * instance IPs will be created from this allocated range and will override
+     * the IP range used by the parent cluster. The range name must comply with
+     * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+     * the name must be 1-63 characters long and match the regular expression
+     * [a-z]([-a-z0-9]*[a-z0-9])?.
+     * </pre>
+     *
+     * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allocatedIpRangeOverride.
+     */
+    java.lang.String getAllocatedIpRangeOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * instance, for example: "google-managed-services-default". If set, the
+     * instance IPs will be created from this allocated range and will override
+     * the IP range used by the parent cluster. The range name must comply with
+     * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+     * the name must be 1-63 characters long and match the regular expression
+     * [a-z]([-a-z0-9]*[a-z0-9])?.
+     * </pre>
+     *
+     * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for allocatedIpRangeOverride.
+     */
+    com.google.protobuf.ByteString getAllocatedIpRangeOverrideBytes();
   }
 
   /**
@@ -12354,6 +12810,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     private InstanceNetworkConfig() {
       authorizedExternalNetworks_ = java.util.Collections.emptyList();
+      network_ = "";
+      allocatedIpRangeOverride_ = "";
     }
 
     @java.lang.Override
@@ -13198,6 +13656,138 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return enableOutboundPublicIp_;
     }
 
+    public static final int NETWORK_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource link for the VPC network in which instance
+     * resources are created and from which they are accessible via Private IP.
+     * This will be the same value as the parent cluster's network. It is
+     * specified in the form: //
+     * `projects/{project_number}/global/networks/{network_id}`.
+     * </pre>
+     *
+     * <code>
+     * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    @java.lang.Override
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource link for the VPC network in which instance
+     * resources are created and from which they are accessible via Private IP.
+     * This will be the same value as the parent cluster's network. It is
+     * specified in the form: //
+     * `projects/{project_number}/global/networks/{network_id}`.
+     * </pre>
+     *
+     * <code>
+     * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOCATED_IP_RANGE_OVERRIDE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object allocatedIpRangeOverride_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * instance, for example: "google-managed-services-default". If set, the
+     * instance IPs will be created from this allocated range and will override
+     * the IP range used by the parent cluster. The range name must comply with
+     * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+     * the name must be 1-63 characters long and match the regular expression
+     * [a-z]([-a-z0-9]*[a-z0-9])?.
+     * </pre>
+     *
+     * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allocatedIpRangeOverride.
+     */
+    @java.lang.Override
+    public java.lang.String getAllocatedIpRangeOverride() {
+      java.lang.Object ref = allocatedIpRangeOverride_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allocatedIpRangeOverride_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * instance, for example: "google-managed-services-default". If set, the
+     * instance IPs will be created from this allocated range and will override
+     * the IP range used by the parent cluster. The range name must comply with
+     * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+     * the name must be 1-63 characters long and match the regular expression
+     * [a-z]([-a-z0-9]*[a-z0-9])?.
+     * </pre>
+     *
+     * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for allocatedIpRangeOverride.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAllocatedIpRangeOverrideBytes() {
+      java.lang.Object ref = allocatedIpRangeOverride_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        allocatedIpRangeOverride_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -13221,6 +13811,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (enableOutboundPublicIp_ != false) {
         output.writeBool(3, enableOutboundPublicIp_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRangeOverride_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, allocatedIpRangeOverride_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -13240,6 +13836,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (enableOutboundPublicIp_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableOutboundPublicIp_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRangeOverride_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(5, allocatedIpRangeOverride_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -13261,6 +13864,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return false;
       if (getEnablePublicIp() != other.getEnablePublicIp()) return false;
       if (getEnableOutboundPublicIp() != other.getEnableOutboundPublicIp()) return false;
+      if (!getNetwork().equals(other.getNetwork())) return false;
+      if (!getAllocatedIpRangeOverride().equals(other.getAllocatedIpRangeOverride())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -13280,6 +13885,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePublicIp());
       hash = (37 * hash) + ENABLE_OUTBOUND_PUBLIC_IP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableOutboundPublicIp());
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+      hash = (37 * hash) + ALLOCATED_IP_RANGE_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getAllocatedIpRangeOverride().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13432,6 +14041,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
         enablePublicIp_ = false;
         enableOutboundPublicIp_ = false;
+        network_ = "";
+        allocatedIpRangeOverride_ = "";
         return this;
       }
 
@@ -13490,6 +14101,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.enableOutboundPublicIp_ = enableOutboundPublicIp_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.network_ = network_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.allocatedIpRangeOverride_ = allocatedIpRangeOverride_;
         }
       }
 
@@ -13575,6 +14192,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (other.getEnableOutboundPublicIp() != false) {
           setEnableOutboundPublicIp(other.getEnableOutboundPublicIp());
         }
+        if (!other.getNetwork().isEmpty()) {
+          network_ = other.network_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getAllocatedIpRangeOverride().isEmpty()) {
+          allocatedIpRangeOverride_ = other.allocatedIpRangeOverride_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -13628,6 +14255,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 34:
+                {
+                  network_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  allocatedIpRangeOverride_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14200,6 +14839,293 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public Builder clearEnableOutboundPublicIp() {
         bitField0_ = (bitField0_ & ~0x00000004);
         enableOutboundPublicIp_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object network_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource link for the VPC network in which instance
+       * resources are created and from which they are accessible via Private IP.
+       * This will be the same value as the parent cluster's network. It is
+       * specified in the form: //
+       * `projects/{project_number}/global/networks/{network_id}`.
+       * </pre>
+       *
+       * <code>
+       * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The network.
+       */
+      public java.lang.String getNetwork() {
+        java.lang.Object ref = network_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          network_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource link for the VPC network in which instance
+       * resources are created and from which they are accessible via Private IP.
+       * This will be the same value as the parent cluster's network. It is
+       * specified in the form: //
+       * `projects/{project_number}/global/networks/{network_id}`.
+       * </pre>
+       *
+       * <code>
+       * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for network.
+       */
+      public com.google.protobuf.ByteString getNetworkBytes() {
+        java.lang.Object ref = network_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          network_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource link for the VPC network in which instance
+       * resources are created and from which they are accessible via Private IP.
+       * This will be the same value as the parent cluster's network. It is
+       * specified in the form: //
+       * `projects/{project_number}/global/networks/{network_id}`.
+       * </pre>
+       *
+       * <code>
+       * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetwork(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        network_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource link for the VPC network in which instance
+       * resources are created and from which they are accessible via Private IP.
+       * This will be the same value as the parent cluster's network. It is
+       * specified in the form: //
+       * `projects/{project_number}/global/networks/{network_id}`.
+       * </pre>
+       *
+       * <code>
+       * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetwork() {
+        network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource link for the VPC network in which instance
+       * resources are created and from which they are accessible via Private IP.
+       * This will be the same value as the parent cluster's network. It is
+       * specified in the form: //
+       * `projects/{project_number}/global/networks/{network_id}`.
+       * </pre>
+       *
+       * <code>
+       * string network = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        network_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object allocatedIpRangeOverride_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * instance, for example: "google-managed-services-default". If set, the
+       * instance IPs will be created from this allocated range and will override
+       * the IP range used by the parent cluster. The range name must comply with
+       * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+       * the name must be 1-63 characters long and match the regular expression
+       * [a-z]([-a-z0-9]*[a-z0-9])?.
+       * </pre>
+       *
+       * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The allocatedIpRangeOverride.
+       */
+      public java.lang.String getAllocatedIpRangeOverride() {
+        java.lang.Object ref = allocatedIpRangeOverride_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          allocatedIpRangeOverride_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * instance, for example: "google-managed-services-default". If set, the
+       * instance IPs will be created from this allocated range and will override
+       * the IP range used by the parent cluster. The range name must comply with
+       * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+       * the name must be 1-63 characters long and match the regular expression
+       * [a-z]([-a-z0-9]*[a-z0-9])?.
+       * </pre>
+       *
+       * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for allocatedIpRangeOverride.
+       */
+      public com.google.protobuf.ByteString getAllocatedIpRangeOverrideBytes() {
+        java.lang.Object ref = allocatedIpRangeOverride_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          allocatedIpRangeOverride_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * instance, for example: "google-managed-services-default". If set, the
+       * instance IPs will be created from this allocated range and will override
+       * the IP range used by the parent cluster. The range name must comply with
+       * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+       * the name must be 1-63 characters long and match the regular expression
+       * [a-z]([-a-z0-9]*[a-z0-9])?.
+       * </pre>
+       *
+       * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The allocatedIpRangeOverride to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedIpRangeOverride(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        allocatedIpRangeOverride_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * instance, for example: "google-managed-services-default". If set, the
+       * instance IPs will be created from this allocated range and will override
+       * the IP range used by the parent cluster. The range name must comply with
+       * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+       * the name must be 1-63 characters long and match the regular expression
+       * [a-z]([-a-z0-9]*[a-z0-9])?.
+       * </pre>
+       *
+       * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedIpRangeOverride() {
+        allocatedIpRangeOverride_ = getDefaultInstance().getAllocatedIpRangeOverride();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * instance, for example: "google-managed-services-default". If set, the
+       * instance IPs will be created from this allocated range and will override
+       * the IP range used by the parent cluster. The range name must comply with
+       * [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+       * the name must be 1-63 characters long and match the regular expression
+       * [a-z]([-a-z0-9]*[a-z0-9])?.
+       * </pre>
+       *
+       * <code>string allocated_ip_range_override = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for allocatedIpRangeOverride to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedIpRangeOverrideBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        allocatedIpRangeOverride_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -16038,6 +16964,61 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return outboundPublicIpAddresses_.getByteString(index);
   }
 
+  public static final int ACTIVATION_POLICY_FIELD_NUMBER = 35;
+  private int activationPolicy_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether an instance needs to spin up. Once the instance
+   * is active, the activation policy can be updated to the `NEVER` to stop the
+   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+   * start the instance.
+   * There are restrictions around when an instance can/cannot be activated (for
+   * example, a read pool instance should be stopped before stopping primary
+   * etc.). Please refer to the API documentation for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for activationPolicy.
+   */
+  @java.lang.Override
+  public int getActivationPolicyValue() {
+    return activationPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether an instance needs to spin up. Once the instance
+   * is active, the activation policy can be updated to the `NEVER` to stop the
+   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+   * start the instance.
+   * There are restrictions around when an instance can/cannot be activated (for
+   * example, a read pool instance should be stopped before stopping primary
+   * etc.). Please refer to the API documentation for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The activationPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Instance.ActivationPolicy getActivationPolicy() {
+    com.google.cloud.alloydb.v1.Instance.ActivationPolicy result =
+        com.google.cloud.alloydb.v1.Instance.ActivationPolicy.forNumber(activationPolicy_);
+    return result == null
+        ? com.google.cloud.alloydb.v1.Instance.ActivationPolicy.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -16137,6 +17118,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < outboundPublicIpAddresses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 34, outboundPublicIpAddresses_.getRaw(i));
+    }
+    if (activationPolicy_
+        != com.google.cloud.alloydb.v1.Instance.ActivationPolicy.ACTIVATION_POLICY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(35, activationPolicy_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -16264,6 +17250,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getOutboundPublicIpAddressesList().size();
     }
+    if (activationPolicy_
+        != com.google.cloud.alloydb.v1.Instance.ActivationPolicy.ACTIVATION_POLICY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, activationPolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -16341,6 +17332,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getOutboundPublicIpAddressesList().equals(other.getOutboundPublicIpAddressesList()))
       return false;
+    if (activationPolicy_ != other.activationPolicy_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -16440,6 +17432,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + OUTBOUND_PUBLIC_IP_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getOutboundPublicIpAddressesList().hashCode();
     }
+    hash = (37 * hash) + ACTIVATION_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + activationPolicy_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -16708,6 +17702,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_ = null;
       }
       outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      activationPolicy_ = 0;
       return this;
     }
 
@@ -16868,6 +17863,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x08000000) != 0)) {
         outboundPublicIpAddresses_.makeImmutable();
         result.outboundPublicIpAddresses_ = outboundPublicIpAddresses_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.activationPolicy_ = activationPolicy_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -17042,6 +18040,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           outboundPublicIpAddresses_.addAll(other.outboundPublicIpAddresses_);
         }
         onChanged();
+      }
+      if (other.activationPolicy_ != 0) {
+        setActivationPolicyValue(other.getActivationPolicyValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -17267,6 +18268,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 outboundPublicIpAddresses_.add(s);
                 break;
               } // case 274
+            case 280:
+              {
+                activationPolicy_ = input.readEnum();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 280
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -22249,6 +23256,144 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       ensureOutboundPublicIpAddressesIsMutable();
       outboundPublicIpAddresses_.add(value);
       bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private int activationPolicy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether an instance needs to spin up. Once the instance
+     * is active, the activation policy can be updated to the `NEVER` to stop the
+     * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+     * start the instance.
+     * There are restrictions around when an instance can/cannot be activated (for
+     * example, a read pool instance should be stopped before stopping primary
+     * etc.). Please refer to the API documentation for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for activationPolicy.
+     */
+    @java.lang.Override
+    public int getActivationPolicyValue() {
+      return activationPolicy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether an instance needs to spin up. Once the instance
+     * is active, the activation policy can be updated to the `NEVER` to stop the
+     * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+     * start the instance.
+     * There are restrictions around when an instance can/cannot be activated (for
+     * example, a read pool instance should be stopped before stopping primary
+     * etc.). Please refer to the API documentation for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for activationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivationPolicyValue(int value) {
+      activationPolicy_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether an instance needs to spin up. Once the instance
+     * is active, the activation policy can be updated to the `NEVER` to stop the
+     * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+     * start the instance.
+     * There are restrictions around when an instance can/cannot be activated (for
+     * example, a read pool instance should be stopped before stopping primary
+     * etc.). Please refer to the API documentation for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The activationPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.Instance.ActivationPolicy getActivationPolicy() {
+      com.google.cloud.alloydb.v1.Instance.ActivationPolicy result =
+          com.google.cloud.alloydb.v1.Instance.ActivationPolicy.forNumber(activationPolicy_);
+      return result == null
+          ? com.google.cloud.alloydb.v1.Instance.ActivationPolicy.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether an instance needs to spin up. Once the instance
+     * is active, the activation policy can be updated to the `NEVER` to stop the
+     * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+     * start the instance.
+     * There are restrictions around when an instance can/cannot be activated (for
+     * example, a read pool instance should be stopped before stopping primary
+     * etc.). Please refer to the API documentation for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The activationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivationPolicy(
+        com.google.cloud.alloydb.v1.Instance.ActivationPolicy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x10000000;
+      activationPolicy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether an instance needs to spin up. Once the instance
+     * is active, the activation policy can be updated to the `NEVER` to stop the
+     * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+     * start the instance.
+     * There are restrictions around when an instance can/cannot be activated (for
+     * example, a read pool instance should be stopped before stopping primary
+     * etc.). Please refer to the API documentation for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActivationPolicy() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      activationPolicy_ = 0;
       onChanged();
       return this;
     }

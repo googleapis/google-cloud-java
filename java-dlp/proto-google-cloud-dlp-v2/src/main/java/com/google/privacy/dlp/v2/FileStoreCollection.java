@@ -23,7 +23,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Match file stores (e.g. buckets) using regex filters.
+ * Match file stores (e.g. buckets) using filters.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.FileStoreCollection}
@@ -351,7 +351,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Match file stores (e.g. buckets) using regex filters.
+   * Match file stores (e.g. buckets) using filters.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.FileStoreCollection}

@@ -1234,46 +1234,53 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1300
    * @return Whether the geminiConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasGeminiConfig();
 
   /**
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1300
    * @return The geminiConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1beta.GeminiInstanceConfig getGeminiConfig();
 
   /**
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiInstanceConfig gemini_config = 33 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1beta.GeminiInstanceConfigOrBuilder getGeminiConfigOrBuilder();
 
   /**
@@ -1337,6 +1344,92 @@ public interface InstanceOrBuilder
    * @return The bytes of the outboundPublicIpAddresses at the given index.
    */
   com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether an instance needs to spin up. Once the instance
+   * is active, the activation policy can be updated to the `NEVER` to stop the
+   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+   * start the instance.
+   * There are restrictions around when an instance can/cannot be activated (for
+   * example, a read pool instance should be stopped before stopping primary
+   * etc.). Please refer to the API documentation for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for activationPolicy.
+   */
+  int getActivationPolicyValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether an instance needs to spin up. Once the instance
+   * is active, the activation policy can be updated to the `NEVER` to stop the
+   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
+   * start the instance.
+   * There are restrictions around when an instance can/cannot be activated (for
+   * example, a read pool instance should be stopped before stopping primary
+   * etc.). Please refer to the API documentation for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ActivationPolicy activation_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The activationPolicy.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ActivationPolicy getActivationPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the connectionPoolConfig field is set.
+   */
+  boolean hasConnectionPoolConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectionPoolConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ConnectionPoolConfig getConnectionPoolConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ConnectionPoolConfigOrBuilder
+      getConnectionPoolConfigOrBuilder();
 
   /**
    *

@@ -757,6 +757,28 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
   }
 
   @Override
+  public void updateServiceBinding(
+      UpdateServiceBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateServiceBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteServiceBinding(
       DeleteServiceBindingRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -875,6 +897,203 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
                   "Unrecognized response type %s for method DeleteMesh, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listServiceLbPolicies(
+      ListServiceLbPoliciesRequest request,
+      StreamObserver<ListServiceLbPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListServiceLbPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListServiceLbPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceLbPolicies, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListServiceLbPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getServiceLbPolicy(
+      GetServiceLbPolicyRequest request, StreamObserver<ServiceLbPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ServiceLbPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((ServiceLbPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceLbPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ServiceLbPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createServiceLbPolicy(
+      CreateServiceLbPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceLbPolicy, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateServiceLbPolicy(
+      UpdateServiceLbPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateServiceLbPolicy, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteServiceLbPolicy(
+      DeleteServiceLbPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteServiceLbPolicy, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGatewayRouteView(
+      GetGatewayRouteViewRequest request, StreamObserver<GatewayRouteView> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GatewayRouteView) {
+      requests.add(request);
+      responseObserver.onNext(((GatewayRouteView) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGatewayRouteView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GatewayRouteView.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMeshRouteView(
+      GetMeshRouteViewRequest request, StreamObserver<MeshRouteView> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MeshRouteView) {
+      requests.add(request);
+      responseObserver.onNext(((MeshRouteView) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMeshRouteView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MeshRouteView.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGatewayRouteViews(
+      ListGatewayRouteViewsRequest request,
+      StreamObserver<ListGatewayRouteViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGatewayRouteViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGatewayRouteViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGatewayRouteViews, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGatewayRouteViewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMeshRouteViews(
+      ListMeshRouteViewsRequest request,
+      StreamObserver<ListMeshRouteViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMeshRouteViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMeshRouteViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMeshRouteViews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMeshRouteViewsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

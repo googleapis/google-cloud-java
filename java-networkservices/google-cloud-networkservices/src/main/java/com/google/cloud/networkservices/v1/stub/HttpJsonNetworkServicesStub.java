@@ -17,12 +17,15 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
 
@@ -52,6 +55,7 @@ import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.CreateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateMeshRequest;
 import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
@@ -60,39 +64,52 @@ import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteHttpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteMeshRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
+import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
+import com.google.cloud.networkservices.v1.GatewayRouteView;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
+import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.GetHttpRouteRequest;
 import com.google.cloud.networkservices.v1.GetMeshRequest;
+import com.google.cloud.networkservices.v1.GetMeshRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
+import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListGatewaysRequest;
 import com.google.cloud.networkservices.v1.ListGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesRequest;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesResponse;
 import com.google.cloud.networkservices.v1.ListHttpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListHttpRoutesResponse;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListMeshesRequest;
 import com.google.cloud.networkservices.v1.ListMeshesResponse;
 import com.google.cloud.networkservices.v1.ListServiceBindingsRequest;
 import com.google.cloud.networkservices.v1.ListServiceBindingsResponse;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
 import com.google.cloud.networkservices.v1.Mesh;
+import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.ServiceBinding;
+import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
@@ -100,6 +117,8 @@ import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateMeshRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
 import com.google.common.collect.ImmutableMap;
@@ -135,6 +154,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
           .add(Gateway.getDescriptor())
           .add(TcpRoute.getDescriptor())
           .add(HttpRoute.getDescriptor())
+          .add(ServiceLbPolicy.getDescriptor())
           .add(TlsRoute.getDescriptor())
           .add(Mesh.getDescriptor())
           .add(GrpcRoute.getDescriptor())
@@ -168,6 +188,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -554,6 +576,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -745,6 +769,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -936,6 +962,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1126,6 +1154,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1407,6 +1437,51 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateServiceBindingRequest, Operation>
+      updateServiceBindingMethodDescriptor =
+          ApiMethodDescriptor.<UpdateServiceBindingRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceBinding")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateServiceBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{serviceBinding.name=projects/*/locations/*/serviceBindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateServiceBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "serviceBinding.name",
+                                request.getServiceBinding().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateServiceBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("serviceBinding", request.getServiceBinding(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateServiceBindingRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteServiceBindingRequest, Operation>
       deleteServiceBindingMethodDescriptor =
           ApiMethodDescriptor.<DeleteServiceBindingRequest, Operation>newBuilder()
@@ -1469,6 +1544,8 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1630,6 +1707,351 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
               .setOperationSnapshotFactory(
                   (DeleteMeshRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListServiceLbPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListServiceLbPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/serviceLbPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListServiceLbPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListServiceLbPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListServiceLbPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListServiceLbPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetServiceLbPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetServiceLbPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/serviceLbPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ServiceLbPolicy>newBuilder()
+                      .setDefaultInstance(ServiceLbPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateServiceLbPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateServiceLbPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/serviceLbPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "serviceLbPolicyId", request.getServiceLbPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("serviceLbPolicy", request.getServiceLbPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateServiceLbPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceLbPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateServiceLbPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{serviceLbPolicy.name=projects/*/locations/*/serviceLbPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "serviceLbPolicy.name",
+                                request.getServiceLbPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("serviceLbPolicy", request.getServiceLbPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateServiceLbPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteServiceLbPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteServiceLbPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/serviceLbPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServiceLbPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteServiceLbPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewMethodDescriptor =
+          ApiMethodDescriptor.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetGatewayRouteView")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetGatewayRouteViewRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/gateways/*/routeViews/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGatewayRouteViewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGatewayRouteViewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GatewayRouteView>newBuilder()
+                      .setDefaultInstance(GatewayRouteView.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetMeshRouteViewRequest, MeshRouteView>
+      getMeshRouteViewMethodDescriptor =
+          ApiMethodDescriptor.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetMeshRouteView")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMeshRouteViewRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/meshes/*/routeViews/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMeshRouteViewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMeshRouteViewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MeshRouteView>newBuilder()
+                      .setDefaultInstance(MeshRouteView.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListGatewayRouteViews")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGatewayRouteViewsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/gateways/*}/routeViews",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGatewayRouteViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGatewayRouteViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGatewayRouteViewsResponse>newBuilder()
+                      .setDefaultInstance(ListGatewayRouteViewsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsMethodDescriptor =
+          ApiMethodDescriptor.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListMeshRouteViews")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMeshRouteViewsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/meshes/*}/routeViews",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMeshRouteViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMeshRouteViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMeshRouteViewsResponse>newBuilder()
+                      .setDefaultInstance(ListMeshRouteViewsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -1916,6 +2338,9 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<CreateServiceBindingRequest, Operation> createServiceBindingCallable;
   private final OperationCallable<CreateServiceBindingRequest, ServiceBinding, OperationMetadata>
       createServiceBindingOperationCallable;
+  private final UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable;
+  private final OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable;
   private final UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable;
   private final OperationCallable<DeleteServiceBindingRequest, Empty, OperationMetadata>
       deleteServiceBindingOperationCallable;
@@ -1931,6 +2356,35 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteMeshRequest, Operation> deleteMeshCallable;
   private final OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable;
+  private final UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyCallable;
+  private final UnaryCallable<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyCallable;
+  private final OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable;
+  private final UnaryCallable<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyCallable;
+  private final OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable;
+  private final UnaryCallable<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyCallable;
+  private final OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable;
+  private final UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewCallable;
+  private final UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2389,6 +2843,20 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<UpdateServiceBindingRequest, Operation>
+        updateServiceBindingTransportSettings =
+            HttpJsonCallSettings.<UpdateServiceBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateServiceBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "service_binding.name",
+                          String.valueOf(request.getServiceBinding().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteServiceBindingRequest, Operation>
         deleteServiceBindingTransportSettings =
             HttpJsonCallSettings.<DeleteServiceBindingRequest, Operation>newBuilder()
@@ -2456,6 +2924,117 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+        listServiceLbPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listServiceLbPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicyTransportSettings =
+            HttpJsonCallSettings.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+                .setMethodDescriptor(getServiceLbPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicyTransportSettings =
+            HttpJsonCallSettings.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createServiceLbPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicyTransportSettings =
+            HttpJsonCallSettings.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateServiceLbPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "service_lb_policy.name",
+                          String.valueOf(request.getServiceLbPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicyTransportSettings =
+            HttpJsonCallSettings.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteServiceLbPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewTransportSettings =
+            HttpJsonCallSettings.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+                .setMethodDescriptor(getGatewayRouteViewMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewTransportSettings =
+        HttpJsonCallSettings.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+            .setMethodDescriptor(getMeshRouteViewMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+        listGatewayRouteViewsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listGatewayRouteViewsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+        listMeshRouteViewsTransportSettings =
+            HttpJsonCallSettings.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listMeshRouteViewsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2768,6 +3347,17 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
             settings.createServiceBindingOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateServiceBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingSettings(),
+            clientContext);
+    this.updateServiceBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteServiceBindingCallable =
         callableFactory.createUnaryCallable(
             deleteServiceBindingTransportSettings,
@@ -2815,6 +3405,82 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
             settings.deleteMeshOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listServiceLbPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.listServiceLbPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.getServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getServiceLbPolicyTransportSettings,
+            settings.getServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicySettings(),
+            clientContext);
+    this.updateServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicySettings(),
+            clientContext);
+    this.deleteServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getGatewayRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getGatewayRouteViewTransportSettings,
+            settings.getGatewayRouteViewSettings(),
+            clientContext);
+    this.getMeshRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getMeshRouteViewTransportSettings, settings.getMeshRouteViewSettings(), clientContext);
+    this.listGatewayRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listGatewayRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2876,12 +3542,22 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
     methodDescriptors.add(listServiceBindingsMethodDescriptor);
     methodDescriptors.add(getServiceBindingMethodDescriptor);
     methodDescriptors.add(createServiceBindingMethodDescriptor);
+    methodDescriptors.add(updateServiceBindingMethodDescriptor);
     methodDescriptors.add(deleteServiceBindingMethodDescriptor);
     methodDescriptors.add(listMeshesMethodDescriptor);
     methodDescriptors.add(getMeshMethodDescriptor);
     methodDescriptors.add(createMeshMethodDescriptor);
     methodDescriptors.add(updateMeshMethodDescriptor);
     methodDescriptors.add(deleteMeshMethodDescriptor);
+    methodDescriptors.add(listServiceLbPoliciesMethodDescriptor);
+    methodDescriptors.add(getServiceLbPolicyMethodDescriptor);
+    methodDescriptors.add(createServiceLbPolicyMethodDescriptor);
+    methodDescriptors.add(updateServiceLbPolicyMethodDescriptor);
+    methodDescriptors.add(deleteServiceLbPolicyMethodDescriptor);
+    methodDescriptors.add(getGatewayRouteViewMethodDescriptor);
+    methodDescriptors.add(getMeshRouteViewMethodDescriptor);
+    methodDescriptors.add(listGatewayRouteViewsMethodDescriptor);
+    methodDescriptors.add(listMeshRouteViewsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -3217,6 +3893,17 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   }
 
   @Override
+  public UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable() {
+    return updateServiceBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable() {
+    return updateServiceBindingOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable() {
     return deleteServiceBindingCallable;
   }
@@ -3273,6 +3960,90 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable() {
     return deleteMeshOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable() {
+    return listServiceLbPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable() {
+    return listServiceLbPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy> getServiceLbPolicyCallable() {
+    return getServiceLbPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateServiceLbPolicyRequest, Operation> createServiceLbPolicyCallable() {
+    return createServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable() {
+    return createServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateServiceLbPolicyRequest, Operation> updateServiceLbPolicyCallable() {
+    return updateServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable() {
+    return updateServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServiceLbPolicyRequest, Operation> deleteServiceLbPolicyCallable() {
+    return deleteServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable() {
+    return deleteServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView> getGatewayRouteViewCallable() {
+    return getGatewayRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable() {
+    return getMeshRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable() {
+    return listGatewayRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable() {
+    return listGatewayRouteViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable() {
+    return listMeshRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable() {
+    return listMeshRouteViewsPagedCallable;
   }
 
   @Override

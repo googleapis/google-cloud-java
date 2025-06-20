@@ -30,7 +30,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * Resource name of this QuotaInfo.
    * The ID component following "locations/" must be "global".
-   * Example:
+   * For example,
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * Resource name of this QuotaInfo.
    * The ID component following "locations/" must be "global".
-   * Example:
+   * For example,
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
@@ -61,7 +61,7 @@ public interface QuotaInfoOrBuilder
    *
    * <pre>
    * The id of the quota, which is unquie within the service.
-   * Example: `CpusPerProjectPerRegion`
+   * For example, `CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>string quota_id = 2;</code>
@@ -75,7 +75,7 @@ public interface QuotaInfoOrBuilder
    *
    * <pre>
    * The id of the quota, which is unquie within the service.
-   * Example: `CpusPerProjectPerRegion`
+   * For example, `CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>string quota_id = 2;</code>
@@ -90,7 +90,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The metric of the quota. It specifies the resources consumption the quota
    * is defined for.
-   * Example: `compute.googleapis.com/cpus`
+   * For example, `compute.googleapis.com/cpus`
    * </pre>
    *
    * <code>string metric = 3;</code>
@@ -105,7 +105,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The metric of the quota. It specifies the resources consumption the quota
    * is defined for.
-   * Example: `compute.googleapis.com/cpus`
+   * For example, `compute.googleapis.com/cpus`
    * </pre>
    *
    * <code>string metric = 3;</code>
@@ -119,7 +119,7 @@ public interface QuotaInfoOrBuilder
    *
    * <pre>
    * The name of the service in which the quota is defined.
-   * Example: `compute.googleapis.com`
+   * For example, `compute.googleapis.com`
    * </pre>
    *
    * <code>string service = 4;</code>
@@ -133,7 +133,7 @@ public interface QuotaInfoOrBuilder
    *
    * <pre>
    * The name of the service in which the quota is defined.
-   * Example: `compute.googleapis.com`
+   * For example, `compute.googleapis.com`
    * </pre>
    *
    * <code>string service = 4;</code>
@@ -162,8 +162,8 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The reset time interval for the quota. Refresh interval applies to rate
    * quota only.
-   * Example: "minute" for per minute, "day" for per day, or "10 seconds" for
-   * every 10 seconds.
+   * For example, "minute" for per minute, "day" for per day, or "10 seconds"
+   * for every 10 seconds.
    * </pre>
    *
    * <code>string refresh_interval = 6;</code>
@@ -178,8 +178,8 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The reset time interval for the quota. Refresh interval applies to rate
    * quota only.
-   * Example: "minute" for per minute, "day" for per day, or "10 seconds" for
-   * every 10 seconds.
+   * For example, "minute" for per minute, "day" for per day, or "10 seconds"
+   * for every 10 seconds.
    * </pre>
    *
    * <code>string refresh_interval = 6;</code>

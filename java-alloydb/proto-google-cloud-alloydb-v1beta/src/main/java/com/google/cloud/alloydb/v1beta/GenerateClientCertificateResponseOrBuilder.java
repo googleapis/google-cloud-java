@@ -36,7 +36,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1902
    * @return The pemCertificate.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface GenerateClientCertificateResponseOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1902
    * @return The bytes for pemCertificate.
    */
   @java.lang.Deprecated

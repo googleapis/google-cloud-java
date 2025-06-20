@@ -36,7 +36,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=597
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=597
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated
@@ -118,4 +118,98 @@ public interface UploadRagFileConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
       getRagFileTransformationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * Alteratively, inline metadata schema and metadata can be provided.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * </code>
+   *
+   * @return Whether the ragFileMetadataConfig field is set.
+   */
+  boolean hasRagFileMetadataConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * Alteratively, inline metadata schema and metadata can be provided.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * </code>
+   *
+   * @return The ragFileMetadataConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the metadata config for RagFiles.
+   * Including paths for metadata schema and metadata.
+   * Alteratively, inline metadata schema and metadata can be provided.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
+      getRagFileMetadataConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragFileParsingConfig field is set.
+   */
+  boolean hasRagFileParsingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragFileParsingConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig getRagFileParsingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
+      getRagFileParsingConfigOrBuilder();
 }

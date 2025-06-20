@@ -40,6 +40,7 @@ public class SyncListMeshes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       for (Mesh element : networkServicesClient.listMeshes(request).iterateAll()) {
         // doThingsWith(element);

@@ -51,6 +51,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     etag_ = "";
     subscriptionType_ = 0;
+    serviceAccountEmail_ = "";
   }
 
   @java.lang.Override
@@ -6323,7 +6324,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=625
+   *     google/cloud/alloydb/v1beta/resources.proto;l=659
    * @return The network.
    */
   @java.lang.Override
@@ -6356,7 +6357,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=625
+   *     google/cloud/alloydb/v1beta/resources.proto;l=659
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6712,7 +6713,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=660
+   *     google/cloud/alloydb/v1beta/resources.proto;l=694
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6731,7 +6732,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=660
+   *     google/cloud/alloydb/v1beta/resources.proto;l=694
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -7337,17 +7338,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=741
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasGeminiConfig() {
     return ((bitField0_ & 0x00010000) != 0);
   }
@@ -7356,17 +7360,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=741
    * @return The geminiConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig() {
     return geminiConfig_ == null
         ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
@@ -7377,15 +7384,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder() {
     return geminiConfig_ == null
         ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
@@ -7628,6 +7636,65 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 46;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB per-cluster service agent email. This service account
+   * is created per-cluster per-project, and is different from that of the
+   * primary service agent which is created per-project. The service account
+   * naming format is subject to change.
+   * </pre>
+   *
+   * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccountEmail() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountEmail_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB per-cluster service agent email. This service account
+   * is created per-cluster per-project, and is different from that of the
+   * primary service agent which is created per-project. The service account
+   * naming format is subject to change.
+   * </pre>
+   *
+   * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7749,6 +7816,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 41);
     if (sourceCase_ == 42) {
       output.writeMessage(42, (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 46, serviceAccountEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -7903,6 +7973,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42, (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46, serviceAccountEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8004,6 +8077,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!getTrialMetadata().equals(other.getTrialMetadata())) return false;
     }
     if (!internalGetTags().equals(other.internalGetTags())) return false;
+    if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -8135,6 +8209,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTags().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountEmail().hashCode();
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -8463,6 +8539,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         trialMetadataBuilder_ = null;
       }
       internalGetMutableTags().clear();
+      serviceAccountEmail_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -8652,6 +8729,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
       }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -8817,6 +8897,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
       bitField1_ |= 0x00000004;
+      if (!other.getServiceAccountEmail().isEmpty()) {
+        serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
           {
@@ -9096,6 +9181,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 sourceCase_ = 42;
                 break;
               } // case 338
+            case 370:
+              {
+                serviceAccountEmail_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11540,7 +11631,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=625
+     *     google/cloud/alloydb/v1beta/resources.proto;l=659
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11572,7 +11663,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=625
+     *     google/cloud/alloydb/v1beta/resources.proto;l=659
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11604,7 +11695,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=625
+     *     google/cloud/alloydb/v1beta/resources.proto;l=659
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11635,7 +11726,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=625
+     *     google/cloud/alloydb/v1beta/resources.proto;l=659
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11662,7 +11753,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=625
+     *     google/cloud/alloydb/v1beta/resources.proto;l=659
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12539,7 +12630,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=660
+     *     google/cloud/alloydb/v1beta/resources.proto;l=694
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12557,7 +12648,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=660
+     *     google/cloud/alloydb/v1beta/resources.proto;l=694
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -14788,16 +14879,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+     *     google/cloud/alloydb/v1beta/resources.proto;l=741
      * @return Whether the geminiConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasGeminiConfig() {
       return ((bitField0_ & 0x80000000) != 0);
     }
@@ -14806,16 +14900,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+     *     google/cloud/alloydb/v1beta/resources.proto;l=741
      * @return The geminiConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig() {
       if (geminiConfigBuilder_ == null) {
         return geminiConfig_ == null
@@ -14830,14 +14927,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setGeminiConfig(com.google.cloud.alloydb.v1beta.GeminiClusterConfig value) {
       if (geminiConfigBuilder_ == null) {
         if (value == null) {
@@ -14856,14 +14954,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setGeminiConfig(
         com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder builderForValue) {
       if (geminiConfigBuilder_ == null) {
@@ -14880,14 +14979,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeGeminiConfig(com.google.cloud.alloydb.v1beta.GeminiClusterConfig value) {
       if (geminiConfigBuilder_ == null) {
         if (((bitField0_ & 0x80000000) != 0)
@@ -14912,14 +15012,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearGeminiConfig() {
       bitField0_ = (bitField0_ & ~0x80000000);
       geminiConfig_ = null;
@@ -14935,14 +15036,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder getGeminiConfigBuilder() {
       bitField0_ |= 0x80000000;
       onChanged();
@@ -14953,14 +15055,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder() {
       if (geminiConfigBuilder_ != null) {
         return geminiConfigBuilder_.getMessageOrBuilder();
@@ -14975,12 +15078,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration parameters related to the Gemini in Databases
-     * add-on.
+     * Optional. Deprecated and unused. This field will be removed in the near
+     * future.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -15540,6 +15643,132 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap().putAll(values);
       bitField1_ |= 0x00000004;
+      return this;
+    }
+
+    private java.lang.Object serviceAccountEmail_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB per-cluster service agent email. This service account
+     * is created per-cluster per-project, and is different from that of the
+     * primary service agent which is created per-project. The service account
+     * naming format is subject to change.
+     * </pre>
+     *
+     * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAccountEmail.
+     */
+    public java.lang.String getServiceAccountEmail() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB per-cluster service agent email. This service account
+     * is created per-cluster per-project, and is different from that of the
+     * primary service agent which is created per-project. The service account
+     * naming format is subject to change.
+     * </pre>
+     *
+     * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAccountEmail.
+     */
+    public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB per-cluster service agent email. This service account
+     * is created per-cluster per-project, and is different from that of the
+     * primary service agent which is created per-project. The service account
+     * naming format is subject to change.
+     * </pre>
+     *
+     * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmail(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccountEmail_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB per-cluster service agent email. This service account
+     * is created per-cluster per-project, and is different from that of the
+     * primary service agent which is created per-project. The service account
+     * naming format is subject to change.
+     * </pre>
+     *
+     * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountEmail() {
+      serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField1_ = (bitField1_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB per-cluster service agent email. This service account
+     * is created per-cluster per-project, and is different from that of the
+     * primary service agent which is created per-project. The service account
+     * naming format is subject to change.
+     * </pre>
+     *
+     * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccountEmail_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
       return this;
     }
 

@@ -330,7 +330,8 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (QuotaAdjusterSettingsManagerClient quotaAdjusterSettingsManagerClient =
    *     QuotaAdjusterSettingsManagerClient.create()) {
-   *   QuotaAdjusterSettingsName name = QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]");
+   *   QuotaAdjusterSettingsName name =
+   *       QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
    *   QuotaAdjusterSettings response =
    *       quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettings(name);
    * }
@@ -362,7 +363,8 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (QuotaAdjusterSettingsManagerClient quotaAdjusterSettingsManagerClient =
    *     QuotaAdjusterSettingsManagerClient.create()) {
-   *   String name = QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String name =
+   *       QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString();
    *   QuotaAdjusterSettings response =
    *       quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettings(name);
    * }
@@ -394,7 +396,9 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    *     QuotaAdjusterSettingsManagerClient.create()) {
    *   GetQuotaAdjusterSettingsRequest request =
    *       GetQuotaAdjusterSettingsRequest.newBuilder()
-   *           .setName(QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setName(
+   *               QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]")
+   *                   .toString())
    *           .build();
    *   QuotaAdjusterSettings response =
    *       quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettings(request);
@@ -425,7 +429,9 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    *     QuotaAdjusterSettingsManagerClient.create()) {
    *   GetQuotaAdjusterSettingsRequest request =
    *       GetQuotaAdjusterSettingsRequest.newBuilder()
-   *           .setName(QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setName(
+   *               QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<QuotaAdjusterSettings> future =
    *       quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettingsCallable().futureCall(request);

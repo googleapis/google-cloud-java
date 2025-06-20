@@ -415,5 +415,51 @@ public interface RecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v2.TranslationConfigOrBuilder getTranslationConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the denoiserConfig field is set.
+   */
+  boolean hasDenoiserConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The denoiserConfig.
+   */
+  com.google.cloud.speech.v2.DenoiserConfig getDenoiserConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v2.DenoiserConfigOrBuilder getDenoiserConfigOrBuilder();
+
   com.google.cloud.speech.v2.RecognitionConfig.DecodingConfigCase getDecodingConfigCase();
 }

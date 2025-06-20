@@ -69,6 +69,10 @@ public final class HttpRouteProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkservices_v1_HttpRoute_FaultInjectionPolicy_Abort_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_fieldAccessorTable;
@@ -96,6 +100,10 @@ public final class HttpRouteProto {
       internal_static_google_cloud_networkservices_v1_HttpRoute_CorsPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkservices_v1_HttpRoute_CorsPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkservices_v1_HttpRoute_RouteAction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -145,9 +153,9 @@ public final class HttpRouteProto {
           + "0google/cloud/networkservices/v1/http_route.proto\022\037google.cloud.networkservices"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
           + "ogle/api/resource.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\346\036\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\217$\n"
           + "\tHttpRoute\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\026\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\tself_link\030\013 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -192,17 +200,21 @@ public final class HttpRouteProto {
           + "google.cloud.networkservices.v1.HttpRoute.HeaderMatch\022X\n"
           + "\020query_parameters\030\006 \003(\0132"
           + ">.google.cloud.networkservices.v1.HttpRoute.QueryParameterMatchB\013\n"
-          + "\tPathMatch\032_\n"
+          + "\tPathMatch\032\242\002\n"
           + "\013Destination\022@\n"
           + "\014service_name\030\001 \001(\tB*\372A\'\n"
           + "%compute.googleapis.com/BackendService\022\016\n"
-          + "\006weight\030\002 \001(\005\032\206\003\n"
+          + "\006weight\030\002 \001(\005\022_\n"
+          + "\027request_header_modifier\030\003"
+          + " \001(\01329.google.cloud.networkservices.v1.HttpRoute.HeaderModifierB\003\340A\001\022`\n"
+          + "\030response_header_modifier\030\004 \001(\01329.google.cloud"
+          + ".networkservices.v1.HttpRoute.HeaderModifierB\003\340A\001\032\206\003\n"
           + "\010Redirect\022\025\n\r"
           + "host_redirect\030\001 \001(\t\022\025\n\r"
           + "path_redirect\030\002 \001(\t\022\026\n"
           + "\016prefix_rewrite\030\003 \001(\t\022W\n\r"
-          + "response_code\030\004 \001(\0162"
-          + "@.google.cloud.networkservices.v1.HttpRoute.Redirect.ResponseCode\022\026\n"
+          + "response_code\030\004 \001(\0162@.go"
+          + "ogle.cloud.networkservices.v1.HttpRoute.Redirect.ResponseCode\022\026\n"
           + "\016https_redirect\030\005 \001(\010\022\023\n"
           + "\013strip_query\030\006 \001(\010\022\025\n\r"
           + "port_redirect\030\007 \001(\005\"\226\001\n"
@@ -214,21 +226,23 @@ public final class HttpRouteProto {
           + "\022TEMPORARY_REDIRECT\020\004\022\026\n"
           + "\022PERMANENT_REDIRECT\020\005\032\301\002\n"
           + "\024FaultInjectionPolicy\022T\n"
-          + "\005delay\030\001"
-          + " \001(\0132E.google.cloud.networkservices.v1.HttpRoute.FaultInjectionPolicy.Delay\022T\n"
-          + "\005abort\030\002 \001(\0132E.google.cloud.networkservi"
-          + "ces.v1.HttpRoute.FaultInjectionPolicy.Abort\032K\n"
+          + "\005delay\030\001 \001"
+          + "(\0132E.google.cloud.networkservices.v1.HttpRoute.FaultInjectionPolicy.Delay\022T\n"
+          + "\005abort\030\002 \001(\0132E.google.cloud.networkservices."
+          + "v1.HttpRoute.FaultInjectionPolicy.Abort\032K\n"
           + "\005Delay\022.\n"
           + "\013fixed_delay\030\001 \001(\0132\031.google.protobuf.Duration\022\022\n\n"
           + "percentage\030\002 \001(\005\0320\n"
           + "\005Abort\022\023\n"
           + "\013http_status\030\001 \001(\005\022\022\n\n"
-          + "percentage\030\002 \001(\005\032\232\002\n"
+          + "percentage\030\002 \001(\005\032S\n"
+          + "\035StatefulSessionAffinityPolicy\0222\n\n"
+          + "cookie_ttl\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\002\032\232\002\n"
           + "\016HeaderModifier\022O\n"
-          + "\003set\030\001 \003"
-          + "(\0132B.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.SetEntry\022O\n"
-          + "\003add\030\002 "
-          + "\003(\0132B.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.AddEntry\022\016\n"
+          + "\003set\030\001 "
+          + "\003(\0132B.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.SetEntry\022O\n"
+          + "\003add\030\002"
+          + " \003(\0132B.google.cloud.networkservices.v1.HttpRoute.HeaderModifier.AddEntry\022\016\n"
           + "\006remove\030\003 \003(\t\032*\n"
           + "\010SetEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -242,10 +256,11 @@ public final class HttpRouteProto {
           + "\013RetryPolicy\022\030\n"
           + "\020retry_conditions\030\001 \003(\t\022\023\n"
           + "\013num_retries\030\002 \001(\005\0222\n"
-          + "\017per_try_timeout\030\003 \001(\0132\031.google.protobuf.Duration\032b\n"
+          + "\017per_try_timeout\030\003 \001(\0132\031.google.protobuf.Duration\032\177\n"
           + "\023RequestMirrorPolicy\022K\n"
-          + "\013destination\030\001 \001(\01326"
-          + ".google.cloud.networkservices.v1.HttpRoute.Destination\032\305\001\n\n"
+          + "\013destination\030\001 \001(\0132"
+          + "6.google.cloud.networkservices.v1.HttpRoute.Destination\022\033\n"
+          + "\016mirror_percent\030\002 \001(\002B\003\340A\001\032\305\001\n\n"
           + "CorsPolicy\022\025\n\r"
           + "allow_origins\030\001 \003(\t\022\034\n"
           + "\024allow_origin_regexes\030\002 \003(\t\022\025\n\r"
@@ -254,27 +269,39 @@ public final class HttpRouteProto {
           + "\016expose_headers\030\005 \003(\t\022\017\n"
           + "\007max_age\030\006 \001(\t\022\031\n"
           + "\021allow_credentials\030\007 \001(\010\022\020\n"
-          + "\010disabled\030\010 \001(\010\032\255\006\n"
+          + "\010disabled\030\010 \001(\010\032l\n"
+          + "\022HttpDirectResponse\022\032\n"
+          + "\013string_body\030\002 \001(\tB\003\340A\001H\000\022\031\n\n"
+          + "bytes_body\030\003 \001(\014B\003\340A\001H\000\022\023\n"
+          + "\006status\030\001 \001(\005B\003\340A\002B\n\n"
+          + "\010HttpBody\032\262\010\n"
           + "\013RouteAction\022L\n"
-          + "\014destinations\030\001"
-          + " \003(\01326.google.cloud.networkservices.v1.HttpRoute.Destination\022E\n"
-          + "\010redirect\030\002"
-          + " \001(\01323.google.cloud.networkservices.v1.HttpRoute.Redirect\022_\n"
-          + "\026fault_injection_policy\030\004"
-          + " \001(\0132?.google.cloud.networkservices.v1.HttpRoute.FaultInjectionPolicy\022Z\n"
-          + "\027request_header_modifier\030\005 \001(\01329.google.c"
-          + "loud.networkservices.v1.HttpRoute.HeaderModifier\022[\n"
-          + "\030response_header_modifier\030\006 \001"
-          + "(\01329.google.cloud.networkservices.v1.HttpRoute.HeaderModifier\022J\n"
-          + "\013url_rewrite\030\007 \001"
-          + "(\01325.google.cloud.networkservices.v1.HttpRoute.URLRewrite\022*\n"
+          + "\014destinations\030\001 \003(\01326.googl"
+          + "e.cloud.networkservices.v1.HttpRoute.Destination\022E\n"
+          + "\010redirect\030\002 \001(\01323.google.clou"
+          + "d.networkservices.v1.HttpRoute.Redirect\022_\n"
+          + "\026fault_injection_policy\030\004 \001(\0132?.google"
+          + ".cloud.networkservices.v1.HttpRoute.FaultInjectionPolicy\022Z\n"
+          + "\027request_header_modifier\030\005"
+          + " \001(\01329.google.cloud.networkservices.v1.HttpRoute.HeaderModifier\022[\n"
+          + "\030response_header_modifier\030\006 \001(\01329.google.cloud.ne"
+          + "tworkservices.v1.HttpRoute.HeaderModifier\022J\n"
+          + "\013url_rewrite\030\007"
+          + " \001(\01325.google.cloud.networkservices.v1.HttpRoute.URLRewrite\022*\n"
           + "\007timeout\030\010 \001(\0132\031.google.protobuf.Duration\022L\n"
-          + "\014retry_policy\030\t "
-          + "\001(\01326.google.cloud.networkservices.v1.HttpRoute.RetryPolicy\022]\n"
+          + "\014retry_policy\030\t \001(\01326.google.cloud.n"
+          + "etworkservices.v1.HttpRoute.RetryPolicy\022]\n"
           + "\025request_mirror_policy\030\n"
           + " \001(\0132>.google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy\022J\n"
-          + "\013cors_policy\030\013"
-          + " \001(\01325.google.cloud.networkservices.v1.HttpRoute.CorsPolicy\032\233\001\n"
+          + "\013cors_policy\030\013 \001(\01325.go"
+          + "ogle.cloud.networkservices.v1.HttpRoute.CorsPolicy\022p\n"
+          + "\031stateful_session_affinity\030\014 \001(\0132H.google.cloud.networkservices.v1."
+          + "HttpRoute.StatefulSessionAffinityPolicyB\003\340A\001\022[\n"
+          + "\017direct_response\030\r"
+          + " \001(\0132=.google.c"
+          + "loud.networkservices.v1.HttpRoute.HttpDirectResponseB\003\340A\001\0224\n"
+          + "\014idle_timeout\030\016"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\032\233\001\n"
           + "\tRouteRule\022F\n"
           + "\007matches\030\001"
           + " \003(\01325.google.cloud.networkservices.v1.HttpRoute.RouteMatch\022F\n"
@@ -283,17 +310,19 @@ public final class HttpRouteProto {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:n\352Ak\n"
-          + "(networkservices.googleapis.com/HttpRou"
-          + "te\022?projects/{project}/locations/{location}/httpRoutes/{http_route}\"\200\001\n"
+          + "(networkservices.googleapis.com/HttpRo"
+          + "ute\022?projects/{project}/locations/{location}/httpRoutes/{http_route}\"\245\001\n"
           + "\025ListHttpRoutesRequest\022@\n"
-          + "\006parent\030\001 \001(\tB0\340A\002\372A*\022(n"
-          + "etworkservices.googleapis.com/HttpRoute\022\021\n"
+          + "\006parent\030\001 \001(\tB0\340A\002\372A*\022("
+          + "networkservices.googleapis.com/HttpRoute\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"r\n"
+          + "page_token\030\003 \001(\t\022#\n"
+          + "\026return_partial_success\030\004 \001(\010B\003\340A\001\"\207\001\n"
           + "\026ListHttpRoutesResponse\022?\n"
           + "\013http_routes\030\001"
           + " \003(\0132*.google.cloud.networkservices.v1.HttpRoute\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"U\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"U\n"
           + "\023GetHttpRouteRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(networkservices.googleapis.com/HttpRoute\"\273\001\n"
@@ -301,21 +330,21 @@ public final class HttpRouteProto {
           + "\006parent\030\001 \001("
           + "\tB0\340A\002\372A*\022(networkservices.googleapis.com/HttpRoute\022\032\n\r"
           + "http_route_id\030\002 \001(\tB\003\340A\002\022C\n\n"
-          + "http_route\030\003"
-          + " \001(\0132*.google.cloud.networkservices.v1.HttpRouteB\003\340A\002\"\223\001\n"
+          + "http_route\030\003 \001"
+          + "(\0132*.google.cloud.networkservices.v1.HttpRouteB\003\340A\002\"\223\001\n"
           + "\026UpdateHttpRouteRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022C\n\n"
-          + "http_route\030\002"
-          + " \001(\0132*.google.cloud.networkservices.v1.HttpRouteB\003\340A\002\"X\n"
+          + "http_route\030\002 \001(\0132*.googl"
+          + "e.cloud.networkservices.v1.HttpRouteB\003\340A\002\"X\n"
           + "\026DeleteHttpRouteRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(networkservices.googleapis.com/HttpRouteB\357\001\n"
-          + "#com.google.cloud.networkservices.v1B\016HttpRou"
-          + "teProtoP\001ZMcloud.google.com/go/networkservices/apiv1/networkservicespb;networkse"
-          + "rvicespb\252\002\037Google.Cloud.NetworkServices."
-          + "V1\312\002\037Google\\Cloud\\NetworkServices\\V1\352\002\"G"
-          + "oogle::Cloud::NetworkServices::V1b\006proto3"
+          + "#com.google.cloud.networkservices.v1B\016HttpRouteProtoP\001ZMcloud.goo"
+          + "gle.com/go/networkservices/apiv1/network"
+          + "servicespb;networkservicespb\252\002\037Google.Cl"
+          + "oud.NetworkServices.V1\312\002\037Google\\Cloud\\Ne"
+          + "tworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -406,7 +435,7 @@ public final class HttpRouteProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_Destination_descriptor,
             new java.lang.String[] {
-              "ServiceName", "Weight",
+              "ServiceName", "Weight", "RequestHeaderModifier", "ResponseHeaderModifier",
             });
     internal_static_google_cloud_networkservices_v1_HttpRoute_Redirect_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
@@ -454,10 +483,20 @@ public final class HttpRouteProto {
             new java.lang.String[] {
               "HttpStatus", "Percentage",
             });
-    internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_descriptor =
+    internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
             .get(6);
+    internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_HttpRoute_StatefulSessionAffinityPolicy_descriptor,
+            new java.lang.String[] {
+              "CookieTtl",
+            });
+    internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_descriptor =
+        internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
+            .getNestedTypes()
+            .get(7);
     internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_HeaderModifier_descriptor,
@@ -487,7 +526,7 @@ public final class HttpRouteProto {
     internal_static_google_cloud_networkservices_v1_HttpRoute_URLRewrite_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(7);
+            .get(8);
     internal_static_google_cloud_networkservices_v1_HttpRoute_URLRewrite_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_URLRewrite_descriptor,
@@ -497,7 +536,7 @@ public final class HttpRouteProto {
     internal_static_google_cloud_networkservices_v1_HttpRoute_RetryPolicy_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(8);
+            .get(9);
     internal_static_google_cloud_networkservices_v1_HttpRoute_RetryPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_RetryPolicy_descriptor,
@@ -507,17 +546,17 @@ public final class HttpRouteProto {
     internal_static_google_cloud_networkservices_v1_HttpRoute_RequestMirrorPolicy_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(9);
+            .get(10);
     internal_static_google_cloud_networkservices_v1_HttpRoute_RequestMirrorPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_RequestMirrorPolicy_descriptor,
             new java.lang.String[] {
-              "Destination",
+              "Destination", "MirrorPercent",
             });
     internal_static_google_cloud_networkservices_v1_HttpRoute_CorsPolicy_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(10);
+            .get(11);
     internal_static_google_cloud_networkservices_v1_HttpRoute_CorsPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_CorsPolicy_descriptor,
@@ -531,10 +570,20 @@ public final class HttpRouteProto {
               "AllowCredentials",
               "Disabled",
             });
+    internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor =
+        internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
+            .getNestedTypes()
+            .get(12);
+    internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_HttpRoute_HttpDirectResponse_descriptor,
+            new java.lang.String[] {
+              "StringBody", "BytesBody", "Status", "HttpBody",
+            });
     internal_static_google_cloud_networkservices_v1_HttpRoute_RouteAction_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(11);
+            .get(13);
     internal_static_google_cloud_networkservices_v1_HttpRoute_RouteAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_RouteAction_descriptor,
@@ -549,11 +598,14 @@ public final class HttpRouteProto {
               "RetryPolicy",
               "RequestMirrorPolicy",
               "CorsPolicy",
+              "StatefulSessionAffinity",
+              "DirectResponse",
+              "IdleTimeout",
             });
     internal_static_google_cloud_networkservices_v1_HttpRoute_RouteRule_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(12);
+            .get(14);
     internal_static_google_cloud_networkservices_v1_HttpRoute_RouteRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_RouteRule_descriptor,
@@ -563,7 +615,7 @@ public final class HttpRouteProto {
     internal_static_google_cloud_networkservices_v1_HttpRoute_LabelsEntry_descriptor =
         internal_static_google_cloud_networkservices_v1_HttpRoute_descriptor
             .getNestedTypes()
-            .get(13);
+            .get(15);
     internal_static_google_cloud_networkservices_v1_HttpRoute_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_HttpRoute_LabelsEntry_descriptor,
@@ -576,7 +628,7 @@ public final class HttpRouteProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListHttpRoutesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_networkservices_v1_ListHttpRoutesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -584,7 +636,7 @@ public final class HttpRouteProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListHttpRoutesResponse_descriptor,
             new java.lang.String[] {
-              "HttpRoutes", "NextPageToken",
+              "HttpRoutes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkservices_v1_GetHttpRouteRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);

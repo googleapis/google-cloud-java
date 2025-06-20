@@ -38,7 +38,9 @@ public class SyncGetQuotaAdjusterSettings {
         QuotaAdjusterSettingsManagerClient.create()) {
       GetQuotaAdjusterSettingsRequest request =
           GetQuotaAdjusterSettingsRequest.newBuilder()
-              .setName(QuotaAdjusterSettingsName.of("[PROJECT]", "[LOCATION]").toString())
+              .setName(
+                  QuotaAdjusterSettingsName.ofProjectLocationName("[PROJECT]", "[LOCATION]")
+                      .toString())
               .build();
       QuotaAdjusterSettings response =
           quotaAdjusterSettingsManagerClient.getQuotaAdjusterSettings(request);

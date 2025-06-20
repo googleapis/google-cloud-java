@@ -292,6 +292,9 @@
             "GetSubpropertyEventFilter": {
               "methods": ["getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilterCallable"]
             },
+            "GetSubpropertySyncConfig": {
+              "methods": ["getSubpropertySyncConfig", "getSubpropertySyncConfig", "getSubpropertySyncConfig", "getSubpropertySyncConfigCallable"]
+            },
             "ListAccessBindings": {
               "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
             },
@@ -375,6 +378,9 @@
             },
             "ListSubpropertyEventFilters": {
               "methods": ["listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFiltersPagedCallable", "listSubpropertyEventFiltersCallable"]
+            },
+            "ListSubpropertySyncConfigs": {
+              "methods": ["listSubpropertySyncConfigs", "listSubpropertySyncConfigs", "listSubpropertySyncConfigs", "listSubpropertySyncConfigsPagedCallable", "listSubpropertySyncConfigsCallable"]
             },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
@@ -477,6 +483,9 @@
             },
             "UpdateSubpropertyEventFilter": {
               "methods": ["updateSubpropertyEventFilter", "updateSubpropertyEventFilter", "updateSubpropertyEventFilterCallable"]
+            },
+            "UpdateSubpropertySyncConfig": {
+              "methods": ["updateSubpropertySyncConfig", "updateSubpropertySyncConfig", "updateSubpropertySyncConfigCallable"]
             }
           }
         }

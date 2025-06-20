@@ -65,4 +65,90 @@ public interface PscInterfaceConfigOrBuilder
    * @return The bytes for networkAttachment.
    */
   com.google.protobuf.ByteString getNetworkAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.DnsPeeringConfig> getDnsPeeringConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.DnsPeeringConfig getDnsPeeringConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDnsPeeringConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.DnsPeeringConfigOrBuilder>
+      getDnsPeeringConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.DnsPeeringConfigOrBuilder getDnsPeeringConfigsOrBuilder(int index);
 }

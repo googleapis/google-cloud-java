@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1;
+package com.google.cloud.networkservices.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
@@ -28,32 +28,29 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class SessionEventName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT =
+public class MeshRouteViewName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_MESH_ROUTE_VIEW =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}");
+          "projects/{project}/locations/{location}/meshes/{mesh}/routeViews/{route_view}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
-  private final String reasoningEngine;
-  private final String session;
-  private final String event;
+  private final String mesh;
+  private final String routeView;
 
   @Deprecated
-  protected SessionEventName() {
+  protected MeshRouteViewName() {
     project = null;
     location = null;
-    reasoningEngine = null;
-    session = null;
-    event = null;
+    mesh = null;
+    routeView = null;
   }
 
-  private SessionEventName(Builder builder) {
+  private MeshRouteViewName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
-    reasoningEngine = Preconditions.checkNotNull(builder.getReasoningEngine());
-    session = Preconditions.checkNotNull(builder.getSession());
-    event = Preconditions.checkNotNull(builder.getEvent());
+    mesh = Preconditions.checkNotNull(builder.getMesh());
+    routeView = Preconditions.checkNotNull(builder.getRouteView());
   }
 
   public String getProject() {
@@ -64,16 +61,12 @@ public class SessionEventName implements ResourceName {
     return location;
   }
 
-  public String getReasoningEngine() {
-    return reasoningEngine;
+  public String getMesh() {
+    return mesh;
   }
 
-  public String getSession() {
-    return session;
-  }
-
-  public String getEvent() {
-    return event;
+  public String getRouteView() {
+    return routeView;
   }
 
   public static Builder newBuilder() {
@@ -84,55 +77,51 @@ public class SessionEventName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SessionEventName of(
-      String project, String location, String reasoningEngine, String session, String event) {
+  public static MeshRouteViewName of(
+      String project, String location, String mesh, String routeView) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
-        .setReasoningEngine(reasoningEngine)
-        .setSession(session)
-        .setEvent(event)
+        .setMesh(mesh)
+        .setRouteView(routeView)
         .build();
   }
 
-  public static String format(
-      String project, String location, String reasoningEngine, String session, String event) {
+  public static String format(String project, String location, String mesh, String routeView) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
-        .setReasoningEngine(reasoningEngine)
-        .setSession(session)
-        .setEvent(event)
+        .setMesh(mesh)
+        .setRouteView(routeView)
         .build()
         .toString();
   }
 
-  public static SessionEventName parse(String formattedString) {
+  public static MeshRouteViewName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.validatedMatch(
-            formattedString, "SessionEventName.parse: formattedString not in valid format");
+        PROJECT_LOCATION_MESH_ROUTE_VIEW.validatedMatch(
+            formattedString, "MeshRouteViewName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
         matchMap.get("location"),
-        matchMap.get("reasoning_engine"),
-        matchMap.get("session"),
-        matchMap.get("event"));
+        matchMap.get("mesh"),
+        matchMap.get("route_view"));
   }
 
-  public static List<SessionEventName> parseList(List<String> formattedStrings) {
-    List<SessionEventName> list = new ArrayList<>(formattedStrings.size());
+  public static List<MeshRouteViewName> parseList(List<String> formattedStrings) {
+    List<MeshRouteViewName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<SessionEventName> values) {
+  public static List<String> toStringList(List<MeshRouteViewName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (SessionEventName value : values) {
+    for (MeshRouteViewName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -143,7 +132,7 @@ public class SessionEventName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.matches(formattedString);
+    return PROJECT_LOCATION_MESH_ROUTE_VIEW.matches(formattedString);
   }
 
   @Override
@@ -158,14 +147,11 @@ public class SessionEventName implements ResourceName {
           if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (reasoningEngine != null) {
-            fieldMapBuilder.put("reasoning_engine", reasoningEngine);
+          if (mesh != null) {
+            fieldMapBuilder.put("mesh", mesh);
           }
-          if (session != null) {
-            fieldMapBuilder.put("session", session);
-          }
-          if (event != null) {
-            fieldMapBuilder.put("event", event);
+          if (routeView != null) {
+            fieldMapBuilder.put("route_view", routeView);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -180,17 +166,8 @@ public class SessionEventName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION_EVENT.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "reasoning_engine",
-        reasoningEngine,
-        "session",
-        session,
-        "event",
-        event);
+    return PROJECT_LOCATION_MESH_ROUTE_VIEW.instantiate(
+        "project", project, "location", location, "mesh", mesh, "route_view", routeView);
   }
 
   @Override
@@ -199,12 +176,11 @@ public class SessionEventName implements ResourceName {
       return true;
     }
     if (o != null && getClass() == o.getClass()) {
-      SessionEventName that = ((SessionEventName) o);
+      MeshRouteViewName that = ((MeshRouteViewName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.reasoningEngine, that.reasoningEngine)
-          && Objects.equals(this.session, that.session)
-          && Objects.equals(this.event, that.event);
+          && Objects.equals(this.mesh, that.mesh)
+          && Objects.equals(this.routeView, that.routeView);
     }
     return false;
   }
@@ -217,24 +193,18 @@ public class SessionEventName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
-    h ^= Objects.hashCode(reasoningEngine);
+    h ^= Objects.hashCode(mesh);
     h *= 1000003;
-    h ^= Objects.hashCode(session);
-    h *= 1000003;
-    h ^= Objects.hashCode(event);
+    h ^= Objects.hashCode(routeView);
     return h;
   }
 
-  /**
-   * Builder for
-   * projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}.
-   */
+  /** Builder for projects/{project}/locations/{location}/meshes/{mesh}/routeViews/{route_view}. */
   public static class Builder {
     private String project;
     private String location;
-    private String reasoningEngine;
-    private String session;
-    private String event;
+    private String mesh;
+    private String routeView;
 
     protected Builder() {}
 
@@ -246,16 +216,12 @@ public class SessionEventName implements ResourceName {
       return location;
     }
 
-    public String getReasoningEngine() {
-      return reasoningEngine;
+    public String getMesh() {
+      return mesh;
     }
 
-    public String getSession() {
-      return session;
-    }
-
-    public String getEvent() {
-      return event;
+    public String getRouteView() {
+      return routeView;
     }
 
     public Builder setProject(String project) {
@@ -268,31 +234,25 @@ public class SessionEventName implements ResourceName {
       return this;
     }
 
-    public Builder setReasoningEngine(String reasoningEngine) {
-      this.reasoningEngine = reasoningEngine;
+    public Builder setMesh(String mesh) {
+      this.mesh = mesh;
       return this;
     }
 
-    public Builder setSession(String session) {
-      this.session = session;
+    public Builder setRouteView(String routeView) {
+      this.routeView = routeView;
       return this;
     }
 
-    public Builder setEvent(String event) {
-      this.event = event;
-      return this;
+    private Builder(MeshRouteViewName meshRouteViewName) {
+      this.project = meshRouteViewName.project;
+      this.location = meshRouteViewName.location;
+      this.mesh = meshRouteViewName.mesh;
+      this.routeView = meshRouteViewName.routeView;
     }
 
-    private Builder(SessionEventName sessionEventName) {
-      this.project = sessionEventName.project;
-      this.location = sessionEventName.location;
-      this.reasoningEngine = sessionEventName.reasoningEngine;
-      this.session = sessionEventName.session;
-      this.event = sessionEventName.event;
-    }
-
-    public SessionEventName build() {
-      return new SessionEventName(this);
+    public MeshRouteViewName build() {
+      return new MeshRouteViewName(this);
     }
   }
 }

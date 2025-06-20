@@ -29,7 +29,7 @@ public interface CreateServiceBindingRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the ServiceBinding. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CreateServiceBindingRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the ServiceBinding. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>

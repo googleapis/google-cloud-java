@@ -44,6 +44,10 @@ public final class ServiceNetworkingProto {
       internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -65,19 +69,23 @@ public final class ServiceNetworkingProto {
           + "onnect\030\004 \001(\010B\003\340A\001\022\037\n\022service_attachment\030"
           + "\005 \001(\tB\003\340A\003\"S\n\025PscAutomatedEndpoints\022\022\n\np"
           + "roject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rmatc"
-          + "h_address\030\003 \001(\t\"b\n\022PscInterfaceConfig\022L\n"
-          + "\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n(compu"
-          + "te.googleapis.com/NetworkAttachmentB\346\002\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\026Ser"
-          + "viceNetworkingProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1\352Av\n("
-          + "compute.googleapis.com/NetworkAttachment"
-          + "\022Jprojects/{project}/regions/{region}/ne"
-          + "tworkAttachments/{networkattachment}b\006pr"
-          + "oto3"
+          + "h_address\030\003 \001(\t\"\267\001\n\022PscInterfaceConfig\022L"
+          + "\n\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n(comp"
+          + "ute.googleapis.com/NetworkAttachment\022S\n\023"
+          + "dns_peering_configs\030\002 \003(\01321.google.cloud"
+          + ".aiplatform.v1beta1.DnsPeeringConfigB\003\340A"
+          + "\001\"a\n\020DnsPeeringConfig\022\023\n\006domain\030\001 \001(\tB\003\340"
+          + "A\002\022\033\n\016target_project\030\002 \001(\tB\003\340A\002\022\033\n\016targe"
+          + "t_network\030\003 \001(\tB\003\340A\002B\346\002\n#com.google.clou"
+          + "d.aiplatform.v1beta1B\026ServiceNetworkingP"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1\352Av\n(compute.googlea"
+          + "pis.com/NetworkAttachment\022Jprojects/{pro"
+          + "ject}/regions/{region}/networkAttachment"
+          + "s/{networkattachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,7 +127,15 @@ public final class ServiceNetworkingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor,
             new java.lang.String[] {
-              "NetworkAttachment",
+              "NetworkAttachment", "DnsPeeringConfigs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor,
+            new java.lang.String[] {
+              "Domain", "TargetProject", "TargetNetwork",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

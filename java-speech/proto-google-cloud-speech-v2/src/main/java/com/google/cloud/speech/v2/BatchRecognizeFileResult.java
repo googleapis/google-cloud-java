@@ -341,7 +341,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    * <code>string uri = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1462
    * @return The uri.
    */
   @java.lang.Override
@@ -368,7 +368,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    * <code>string uri = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1462
    * @return The bytes for uri.
    */
   @java.lang.Override
@@ -398,7 +398,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1465
    * @return Whether the transcript field is set.
    */
   @java.lang.Override
@@ -417,7 +417,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1465
    * @return The transcript.
    */
   @java.lang.Override
@@ -1823,7 +1823,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>string uri = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1462
      * @return The uri.
      */
     @java.lang.Deprecated
@@ -1849,7 +1849,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>string uri = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1462
      * @return The bytes for uri.
      */
     @java.lang.Deprecated
@@ -1875,7 +1875,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>string uri = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1462
      * @param value The uri to set.
      * @return This builder for chaining.
      */
@@ -1900,7 +1900,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>string uri = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1462
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1921,7 +1921,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>string uri = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1443
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1462
      * @param value The bytes for uri to set.
      * @return This builder for chaining.
      */
@@ -1955,7 +1955,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1465
      * @return Whether the transcript field is set.
      */
     @java.lang.Deprecated
@@ -1974,7 +1974,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=1446
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1465
      * @return The transcript.
      */
     @java.lang.Deprecated

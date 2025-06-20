@@ -28,14 +28,12 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the session.
+   * Identifier. The resource name of the session.
    * Format:
    * 'projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}'.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,14 +43,12 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the session.
+   * Identifier. The resource name of the session.
    * Format:
    * 'projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}'.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

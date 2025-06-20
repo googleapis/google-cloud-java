@@ -19,6 +19,28 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AggregateProductStatusesServiceClient =======================
+ *
+ * <p>Service Description: Service to manage aggregate product statuses.
+ *
+ * <p>Sample for AggregateProductStatusesServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AggregateProductStatusesServiceClient aggregateProductStatusesServiceClient =
+ *     AggregateProductStatusesServiceClient.create()) {
+ *   AccountName parent = AccountName.of("[ACCOUNT]");
+ *   for (AggregateProductStatus element :
+ *       aggregateProductStatusesServiceClient.listAggregateProductStatuses(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= IssueResolutionServiceClient =======================
  *
  * <p>Service Description: Service to provide an issue resolution content for account issues and
