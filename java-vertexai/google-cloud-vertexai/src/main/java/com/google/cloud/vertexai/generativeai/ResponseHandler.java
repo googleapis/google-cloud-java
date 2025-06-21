@@ -16,6 +16,9 @@
 
 package com.google.cloud.vertexai.generativeai;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Citation;
@@ -25,13 +28,22 @@ import com.google.cloud.vertexai.api.FunctionCall;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.Part;
 import com.google.common.collect.ImmutableList;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
+import com.google.protobuf.util.JsonFormat;
+
+import java.io.IOException;
+import java.util.*;
 
 /** Helper class to post-process GenerateContentResponse. */
 public class ResponseHandler {
+  private static final ObjectMapper DEFAULT_MAPPER = JsonMapper.builder()
+          .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)
+          .enable(DeserializationFeature.USE_BIG_INTEGER_FOR_INTS)
+          .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+          .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
+          .enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
+          .build();
 
   /**
    * Gets the text message in a GenerateContentResponse.
@@ -51,6 +63,46 @@ public class ResponseHandler {
     }
 
     return text;
+  }
+
+  /**
+   * Deserialises the text of a {@link GenerateContentResponse} into a strongly-typed value.
+   * Behaviour:
+   *   - If {@code clazz} extends {@code com.google.protobuf.Message}, the JSON is merged into a
+   *       new protobuf builder via {@link JsonFormat}.</li>
+   *   - Otherwise the JSON is read with Jackson.  If {@code customMapper} is present its
+   *       configuration is used; when empty the library’s default {@code MAPPER} is applied.</li>
+   * @param response     the Vertex AI response whose first candidate contains JSON
+   * @param clazz        target class (protobuf message or POJO)
+   * @param customMapper optional Jackson {@link JsonMapper} to override the default settings
+   * @param <T>          concrete return type
+   * @return             an instance of {@code T} populated from the model output
+   * @throws IllegalArgumentException if reflection fails, the JSON is invalid, or the payload
+   *                                  cannot be merged into the protobuf builder
+   */
+  @SuppressWarnings("unchecked")
+  public static <T> T getStructuredResponse(
+          GenerateContentResponse response,
+          Class<T> clazz,
+          Optional<JsonMapper> customMapper) {
+
+    String text = getText(response);
+    if (com.google.protobuf.Message.class.isAssignableFrom(clazz)) {
+      try {
+        Message.Builder builder =
+                (Message.Builder) clazz.getMethod("newBuilder").invoke(null);
+        JsonFormat.parser().ignoringUnknownFields().merge(text, builder);
+        return (T) builder.build();
+      } catch (ReflectiveOperationException | InvalidProtocolBufferException e) {
+        throw new IllegalArgumentException("Parsing as protobuf failed", e);
+      }
+    }
+    ObjectMapper mapper = customMapper.orElse((JsonMapper) DEFAULT_MAPPER);
+    try {
+      return mapper.readValue(text, clazz);
+    } catch (IOException e) {
+      throw new IllegalArgumentException("JSON parse failed", e);
+    }
   }
 
   /**
