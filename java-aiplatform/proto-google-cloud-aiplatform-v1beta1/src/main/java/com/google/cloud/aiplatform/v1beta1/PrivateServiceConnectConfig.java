@@ -41,6 +41,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
 
   private PrivateServiceConnectConfig() {
     projectAllowlist_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    pscAutomationConfigs_ = java.util.Collections.emptyList();
     serviceAttachment_ = "";
   }
 
@@ -156,6 +157,101 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     return projectAllowlist_.getByteString(index);
   }
 
+  public static final int PSC_AUTOMATION_CONFIGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      pscAutomationConfigs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      getPscAutomationConfigsList() {
+    return pscAutomationConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+      getPscAutomationConfigsOrBuilderList() {
+    return pscAutomationConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPscAutomationConfigsCount() {
+    return pscAutomationConfigs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(
+      int index) {
+    return pscAutomationConfigs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder
+      getPscAutomationConfigsOrBuilder(int index) {
+    return pscAutomationConfigs_.get(index);
+  }
+
   public static final int ENABLE_SECURE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 4;
   private boolean enableSecurePrivateServiceConnect_ = false;
 
@@ -256,6 +352,9 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     for (int i = 0; i < projectAllowlist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectAllowlist_.getRaw(i));
     }
+    for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
+      output.writeMessage(3, pscAutomationConfigs_.get(i));
+    }
     if (enableSecurePrivateServiceConnect_ != false) {
       output.writeBool(4, enableSecurePrivateServiceConnect_);
     }
@@ -283,6 +382,10 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       size += dataSize;
       size += 1 * getProjectAllowlistList().size();
     }
+    for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, pscAutomationConfigs_.get(i));
+    }
     if (enableSecurePrivateServiceConnect_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
@@ -309,6 +412,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
 
     if (getEnablePrivateServiceConnect() != other.getEnablePrivateServiceConnect()) return false;
     if (!getProjectAllowlistList().equals(other.getProjectAllowlistList())) return false;
+    if (!getPscAutomationConfigsList().equals(other.getPscAutomationConfigsList())) return false;
     if (getEnableSecurePrivateServiceConnect() != other.getEnableSecurePrivateServiceConnect())
       return false;
     if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
@@ -328,6 +432,10 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     if (getProjectAllowlistCount() > 0) {
       hash = (37 * hash) + PROJECT_ALLOWLIST_FIELD_NUMBER;
       hash = (53 * hash) + getProjectAllowlistList().hashCode();
+    }
+    if (getPscAutomationConfigsCount() > 0) {
+      hash = (37 * hash) + PSC_AUTOMATION_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPscAutomationConfigsList().hashCode();
     }
     hash = (37 * hash) + ENABLE_SECURE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER;
     hash =
@@ -478,6 +586,13 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       bitField0_ = 0;
       enablePrivateServiceConnect_ = false;
       projectAllowlist_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+      } else {
+        pscAutomationConfigs_ = null;
+        pscAutomationConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableSecurePrivateServiceConnect_ = false;
       serviceAttachment_ = "";
       return this;
@@ -508,11 +623,25 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig result =
           new com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig result) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          pscAutomationConfigs_ = java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.pscAutomationConfigs_ = pscAutomationConfigs_;
+      } else {
+        result.pscAutomationConfigs_ = pscAutomationConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -525,10 +654,10 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
         projectAllowlist_.makeImmutable();
         result.projectAllowlist_ = projectAllowlist_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enableSecurePrivateServiceConnect_ = enableSecurePrivateServiceConnect_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.serviceAttachment_ = serviceAttachment_;
       }
     }
@@ -594,12 +723,39 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
         }
         onChanged();
       }
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (!other.pscAutomationConfigs_.isEmpty()) {
+          if (pscAutomationConfigs_.isEmpty()) {
+            pscAutomationConfigs_ = other.pscAutomationConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePscAutomationConfigsIsMutable();
+            pscAutomationConfigs_.addAll(other.pscAutomationConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pscAutomationConfigs_.isEmpty()) {
+          if (pscAutomationConfigsBuilder_.isEmpty()) {
+            pscAutomationConfigsBuilder_.dispose();
+            pscAutomationConfigsBuilder_ = null;
+            pscAutomationConfigs_ = other.pscAutomationConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            pscAutomationConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPscAutomationConfigsFieldBuilder()
+                    : null;
+          } else {
+            pscAutomationConfigsBuilder_.addAllMessages(other.pscAutomationConfigs_);
+          }
+        }
+      }
       if (other.getEnableSecurePrivateServiceConnect() != false) {
         setEnableSecurePrivateServiceConnect(other.getEnableSecurePrivateServiceConnect());
       }
       if (!other.getServiceAttachment().isEmpty()) {
         serviceAttachment_ = other.serviceAttachment_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -641,16 +797,30 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
                 projectAllowlist_.add(s);
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.parser(),
+                        extensionRegistry);
+                if (pscAutomationConfigsBuilder_ == null) {
+                  ensurePscAutomationConfigsIsMutable();
+                  pscAutomationConfigs_.add(m);
+                } else {
+                  pscAutomationConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             case 32:
               {
                 enableSecurePrivateServiceConnect_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 serviceAttachment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -923,6 +1093,446 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       return this;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+
+    private void ensurePscAutomationConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        pscAutomationConfigs_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>(
+                pscAutomationConfigs_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        pscAutomationConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+        getPscAutomationConfigsList() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPscAutomationConfigsCount() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.size();
+      } else {
+        return pscAutomationConfigsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(
+        int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.get(index);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscAutomationConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.set(index, value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscAutomationConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        int index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig value) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(index, value);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPscAutomationConfigs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder builderForValue) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPscAutomationConfigs(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+            values) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscAutomationConfigs_);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscAutomationConfigs() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePscAutomationConfigs(int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        ensurePscAutomationConfigsIsMutable();
+        pscAutomationConfigs_.remove(index);
+        onChanged();
+      } else {
+        pscAutomationConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        getPscAutomationConfigsBuilder(int index) {
+      return getPscAutomationConfigsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder
+        getPscAutomationConfigsOrBuilder(int index) {
+      if (pscAutomationConfigsBuilder_ == null) {
+        return pscAutomationConfigs_.get(index);
+      } else {
+        return pscAutomationConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        getPscAutomationConfigsOrBuilderList() {
+      if (pscAutomationConfigsBuilder_ != null) {
+        return pscAutomationConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pscAutomationConfigs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        addPscAutomationConfigsBuilder() {
+      return getPscAutomationConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder
+        addPscAutomationConfigsBuilder(int index) {
+      return getPscAutomationConfigsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of projects and networks where the PSC endpoints will be
+     * created. This field is used by Online Inference(Prediction) only.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder>
+        getPscAutomationConfigsBuilderList() {
+      return getPscAutomationConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+        getPscAutomationConfigsFieldBuilder() {
+      if (pscAutomationConfigsBuilder_ == null) {
+        pscAutomationConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig,
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>(
+                pscAutomationConfigs_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        pscAutomationConfigs_ = null;
+      }
+      return pscAutomationConfigsBuilder_;
+    }
+
     private boolean enableSecurePrivateServiceConnect_;
 
     /**
@@ -966,7 +1576,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public Builder setEnableSecurePrivateServiceConnect(boolean value) {
 
       enableSecurePrivateServiceConnect_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -988,7 +1598,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearEnableSecurePrivateServiceConnect() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableSecurePrivateServiceConnect_ = false;
       onChanged();
       return this;
@@ -1065,7 +1675,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       serviceAttachment_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1085,7 +1695,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
      */
     public Builder clearServiceAttachment() {
       serviceAttachment_ = getDefaultInstance().getServiceAttachment();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1110,7 +1720,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       }
       checkByteStringIsUtf8(value);
       serviceAttachment_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -99,6 +99,78 @@ public interface PrivateServiceConnectConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.PSCAutomationConfig> getPscAutomationConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PSCAutomationConfig getPscAutomationConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPscAutomationConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.PSCAutomationConfigOrBuilder>
+      getPscAutomationConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PSCAutomationConfigOrBuilder getPscAutomationConfigsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The name of the generated service attachment resource.
    * This is only populated if the endpoint is deployed with
    * PrivateServiceConnect.

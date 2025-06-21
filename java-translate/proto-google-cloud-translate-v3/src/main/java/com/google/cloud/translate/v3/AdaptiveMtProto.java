@@ -244,13 +244,13 @@ public final class AdaptiveMtProto {
           + "\003 \001(\t\"\224\001\n\037ListAdaptiveMtSentencesRespons"
           + "e\022S\n\025adaptive_mt_sentences\030\001 \003(\0132/.googl"
           + "e.cloud.translation.v3.AdaptiveMtSentenc"
-          + "eB\003\340A\003\022\034\n\017next_page_token\030\002 \001(\tB\003\340A\001B\311\001\n"
+          + "eB\003\340A\003\022\034\n\017next_page_token\030\002 \001(\tB\003\340A\001B\306\001\n"
           + "\035com.google.cloud.translate.v3B\017Adaptive"
           + "MtProtoP\001Z;cloud.google.com/go/translate"
-          + "/apiv3/translatepb;translatepb\370\001\001\252\002\031Goog"
-          + "le.Cloud.Translate.V3\312\002\031Google\\Cloud\\Tra"
-          + "nslate\\V3\352\002\034Google::Cloud::Translate::V3"
-          + "b\006proto3"
+          + "/apiv3/translatepb;translatepb\252\002\031Google."
+          + "Cloud.Translate.V3\312\002\031Google\\Cloud\\Transl"
+          + "ate\\V3\352\002\034Google::Cloud::Translate::V3b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

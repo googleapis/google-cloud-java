@@ -99,6 +99,79 @@ public interface PrivateServiceConnectConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
+      getPscAutomationConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPscAutomationConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
+      getPscAutomationConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of projects and networks where the PSC endpoints will be
+   * created. This field is used by Online Inference(Prediction) only.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PSCAutomationConfig psc_automation_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder getPscAutomationConfigsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If set to true, enable secure private service connect with IAM
    * authorization. Otherwise, private service connect will be done without
    * authorization. Note latency will be slightly increased if authorization is

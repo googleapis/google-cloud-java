@@ -1034,7 +1034,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
    *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
-   *     input document. Specify up to 10 language codes here.
+   *     input document. Specify up to 10 language codes here. Supported language codes are listed
+   *     in [Language Support](https://cloud.google.com/translate/docs/languages).
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
    *     files must use UTF-8 encoding.
@@ -1101,7 +1102,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
    *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
-   *     input document. Specify up to 10 language codes here.
+   *     input document. Specify up to 10 language codes here. Supported language codes are listed
+   *     in [Language Support](https://cloud.google.com/translate/docs/languages).
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
    *     files must use UTF-8 encoding.
