@@ -1524,9 +1524,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -1536,9 +1535,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The model.
    */
@@ -1559,9 +1556,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -1571,9 +1567,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for model.
    */
@@ -2392,6 +2386,66 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SPECULATIVE_DECODING_SPEC_FIELD_NUMBER = 30;
+  private com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeculativeDecodingSpec() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2463,6 +2517,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, checkpointId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(30, getSpeculativeDecodingSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2542,6 +2599,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, checkpointId_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, getSpeculativeDecodingSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2592,6 +2654,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
     if (!getCheckpointId().equals(other.getCheckpointId())) return false;
+    if (hasSpeculativeDecodingSpec() != other.hasSpeculativeDecodingSpec()) return false;
+    if (hasSpeculativeDecodingSpec()) {
+      if (!getSpeculativeDecodingSpec().equals(other.getSpeculativeDecodingSpec())) return false;
+    }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -2663,6 +2729,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCheckpointId().hashCode();
+    if (hasSpeculativeDecodingSpec()) {
+      hash = (37 * hash) + SPECULATIVE_DECODING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeculativeDecodingSpec().hashCode();
+    }
     switch (predictionResourcesCase_) {
       case 7:
         hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
@@ -2848,6 +2918,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getFasterDeploymentConfigFieldBuilder();
         getRolloutOptionsFieldBuilder();
         getStatusFieldBuilder();
+        getSpeculativeDecodingSpecFieldBuilder();
       }
     }
 
@@ -2901,6 +2972,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSystemLabels().clear();
       checkpointId_ = "";
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -3001,6 +3077,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.checkpointId_ = checkpointId_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.speculativeDecodingSpec_ =
+            speculativeDecodingSpecBuilder_ == null
+                ? speculativeDecodingSpec_
+                : speculativeDecodingSpecBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3120,6 +3203,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         checkpointId_ = other.checkpointId_;
         bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.hasSpeculativeDecodingSpec()) {
+        mergeSpeculativeDecodingSpec(other.getSpeculativeDecodingSpec());
       }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
@@ -3295,6 +3381,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4077,9 +4170,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4089,9 +4181,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The model.
      */
@@ -4111,9 +4201,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4123,9 +4212,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for model.
      */
@@ -4145,9 +4232,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4157,9 +4243,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The model to set.
      * @return This builder for chaining.
@@ -4178,9 +4262,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4190,9 +4273,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -4207,9 +4288,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4219,9 +4299,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for model to set.
      * @return This builder for chaining.
@@ -6524,6 +6602,226 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>
+        speculativeDecodingSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speculativeDecodingSpec field is set.
+     */
+    public boolean hasSpeculativeDecodingSpec() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speculativeDecodingSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec
+        getSpeculativeDecodingSpec() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      } else {
+        return speculativeDecodingSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speculativeDecodingSpec_ = value;
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder builderForValue) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpec_ = builderForValue.build();
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && speculativeDecodingSpec_ != null
+            && speculativeDecodingSpec_
+                != com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec
+                    .getDefaultInstance()) {
+          getSpeculativeDecodingSpecBuilder().mergeFrom(value);
+        } else {
+          speculativeDecodingSpec_ = value;
+        }
+      } else {
+        speculativeDecodingSpecBuilder_.mergeFrom(value);
+      }
+      if (speculativeDecodingSpec_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeculativeDecodingSpec() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder
+        getSpeculativeDecodingSpecBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder
+        getSpeculativeDecodingSpecOrBuilder() {
+      if (speculativeDecodingSpecBuilder_ != null) {
+        return speculativeDecodingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>
+        getSpeculativeDecodingSpecFieldBuilder() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>(
+                getSpeculativeDecodingSpec(), getParentForChildren(), isClean());
+        speculativeDecodingSpec_ = null;
+      }
+      return speculativeDecodingSpecBuilder_;
     }
 
     @java.lang.Override
