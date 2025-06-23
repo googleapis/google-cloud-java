@@ -9,6 +9,7 @@
     <groupId>com.google.cloud</groupId>
     <version>2.60.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
+  <name>Google Cloud Java - Bigtable Emulator Core</name>
 
   <artifactId>google-cloud-bigtable-emulator-core</artifactId>
   <version>0.197.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->

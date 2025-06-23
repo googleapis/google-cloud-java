@@ -16,6 +16,7 @@
   <version>2.60.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
 
   <packaging>pom</packaging>
+  <name>Google Cloud Bigtable Dependency BOM</name>
   <description>
     A BOM that describes all of the dependencies used by google-cloud-bigtable. It's
     mainly intended to be used by java-bigtable-hbase to align dependencies
