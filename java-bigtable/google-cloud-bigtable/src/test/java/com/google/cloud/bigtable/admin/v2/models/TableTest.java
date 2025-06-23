@@ -90,7 +90,8 @@ public class TableTest {
     assertThat(result.isAutomatedBackupEnabled()).isTrue();
     assertEquals(
         result.getAutomatedBackupPolicy().viewConfig(),
-        "AutomatedBackupPolicy{com.google.bigtable.admin.v2.Table$AutomatedBackupPolicy.retention_period=seconds: 1\n"
+        "AutomatedBackupPolicy{com.google.bigtable.admin.v2.Table$AutomatedBackupPolicy.retention_period=seconds:"
+            + " 1\n"
             + //
             "nanos: 99\n"
             + //
