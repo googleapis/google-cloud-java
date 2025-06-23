@@ -6,9 +6,22 @@
   <version>1.26.0</version><!-- {x-version-update:google-cloud-vertexai:current} -->
   <packaging>jar</packaging>
   <name>Google VertexAI API</name>
-  <description>VertexAI API Vertex AI is an integrated suite of machine learning tools and services
+  <description>Vertex AI is an integrated suite of machine learning tools and services
     for building and using ML models with AutoML or custom code. It offers both novices and experts
-    the best workbench for the entire machine learning development lifecycle.</description>
+    the best workbench for the entire machine learning development lifecycle.
+
+    --------------------------------------------------------------------------------------
+    DEPRECATION NOTICE:
+    The 'com.google.cloud.vertexai.generativeai' package and its classes are deprecated as of
+    June 24, 2025 and will be removed on June 24, 2026.
+
+    Please transition to the Google Gen AI SDK (com.google.genai:google-genai)
+    for GenAI functionality.
+
+    A detailed migration guide is available at:
+    https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java
+    --------------------------------------------------------------------------------------
+  </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vertexai-parent</artifactId>
