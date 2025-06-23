@@ -476,7 +476,9 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
-              retryConfig);
+              retryConfig,
+              false,
+              null);
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -932,7 +934,9 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              false,
+              null);
     } catch (BigQueryRetryHelperException e) {
       if (e.getCause() instanceof BigQueryException) {
         if (((BigQueryException) e.getCause()).getCode() == HTTP_NOT_FOUND) {
@@ -977,7 +981,9 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              false,
+              null);
 
       return results;
     } catch (BigQueryRetryHelperException e) {
@@ -1208,7 +1214,9 @@ class ConnectionImpl implements Connection {
                 bigQueryOptions.getRetrySettings(),
                 BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
                 bigQueryOptions.getClock(),
-                retryConfig);
+                retryConfig,
+                false,
+                null);
 
         if (results.getErrors() != null) {
           List<BigQueryError> bigQueryErrors =
@@ -1471,7 +1479,9 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
-              retryConfig);
+              retryConfig,
+              false,
+              null);
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       logger.log(Level.WARNING, "\n Error occurred while calling createJobForQuery", e);
       throw BigQueryException.translateAndThrow(e);
@@ -1514,7 +1524,9 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
-              retryConfig);
+              retryConfig,
+              false,
+              null);
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

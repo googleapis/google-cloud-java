@@ -4,6 +4,12 @@
   <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
     <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/BigQueryRetryHelper</className>
+    <method>java.lang.Object runWithRetries(java.util.concurrent.Callable, com.google.api.gax.retrying.RetrySettings, com.google.api.gax.retrying.ResultRetryAlgorithm, com.google.api.core.ApiClock, com.google.cloud.bigquery.BigQueryRetryConfig)</method>
+    <justification>A Tracer object is needed to use Otel and runWithRetries is only called in a few files, so it should be fine to update the signature</justification>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
     <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
     <method>com.google.api.services.bigquery.model.GetQueryResultsResponse getQueryResultsWithRowLimit(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)</method>
     <justification>getQueryResultsWithRowLimit is just used by ConnectionImpl at the moment so it should be fine to update the signature instead of writing an overloaded method</justification>

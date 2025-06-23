@@ -295,7 +295,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -340,7 +342,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -394,7 +398,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -488,7 +494,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   getOptions().getClock(),
                   getBigQueryRetryConfig(optionsMap) != null
                       ? getBigQueryRetryConfig(optionsMap)
-                      : DEFAULT_RETRY_CONFIG));
+                      : DEFAULT_RETRY_CONFIG,
+                  getOptions().isOpenTelemetryTracingEnabled(),
+                  getOptions().getOpenTelemetryTracer()));
         } catch (BigQueryRetryHelperException e) {
           throw BigQueryException.translateAndThrow(e);
         }
@@ -580,7 +588,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return Dataset.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -644,7 +654,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.x();
       return new PageImpl<>(
           new DatasetPageFetcher(projectId, serviceOptions, cursor, optionsMap),
@@ -694,7 +706,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -743,7 +757,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -787,7 +803,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -831,7 +849,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -873,7 +893,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -912,7 +934,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -957,7 +981,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1001,7 +1027,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1045,7 +1073,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1097,7 +1127,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return Table.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1154,7 +1186,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return Model.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1211,7 +1245,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return Routine.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1427,7 +1463,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.x();
       Iterable<Table> tables =
           Iterables.transform(
@@ -1466,7 +1504,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.x();
       Iterable<Model> models =
           Iterables.transform(
@@ -1505,7 +1545,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.x();
       Iterable<Routine> routines =
           Iterables.transform(
@@ -1585,7 +1627,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   getOptions().getRetrySettings(),
                   BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
                   getOptions().getClock(),
-                  EMPTY_RETRY_CONFIG);
+                  EMPTY_RETRY_CONFIG,
+                  getOptions().isOpenTelemetryTracingEnabled(),
+                  getOptions().getOpenTelemetryTracer());
         } catch (BigQueryRetryHelperException e) {
           throw BigQueryException.translateAndThrow(e);
         }
@@ -1677,7 +1721,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.getPageToken();
       Map<BigQueryRpc.Option, ?> pageOptionMap =
           Strings.isNullOrEmpty(cursor) ? optionsMap : optionMap(TableDataListOption.startIndex(0));
@@ -1749,7 +1795,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return Job.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1804,7 +1852,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
       String cursor = result.x();
       Iterable<Job> jobs =
           Iterables.transform(
@@ -1857,7 +1907,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           getOptions().getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          getOptions().isOpenTelemetryTracingEnabled(),
+          getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -1942,7 +1994,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              DEFAULT_RETRY_CONFIG);
+              DEFAULT_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -2117,7 +2171,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               serviceOptions.getClock(),
-              DEFAULT_RETRY_CONFIG);
+              DEFAULT_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
 
       TableSchema schemaPb = results.getSchema();
 
@@ -2186,7 +2242,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -2230,7 +2288,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG));
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -2276,7 +2336,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       return response.getPermissions() == null
           ? ImmutableList.of()
           : ImmutableList.copyOf(response.getPermissions());

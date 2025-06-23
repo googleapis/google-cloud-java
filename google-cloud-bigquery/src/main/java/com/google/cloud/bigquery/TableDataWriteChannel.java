@@ -20,6 +20,8 @@ import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -50,7 +52,19 @@ public class TableDataWriteChannel
 
   @Override
   protected void flushBuffer(final int length, final boolean last) {
-    try {
+    Span flushBuffer = null;
+    if (getOptions().isOpenTelemetryTracingEnabled()
+        && getOptions().getOpenTelemetryTracer() != null) {
+      flushBuffer =
+          getOptions()
+              .getOpenTelemetryTracer()
+              .spanBuilder("com.google.cloud.bigquery.TableDataWriteChannel.flushBuffer")
+              .setAttribute("bq.table_data_write_channel.flush_buffer.length", length)
+              .setAttribute("bq.table_data_write_channel.flush_buffer.last", last)
+              .startSpan();
+    }
+
+    try (Scope flushBufferScope = flushBuffer != null ? flushBuffer.makeCurrent() : null) {
       com.google.api.services.bigquery.model.Job jobPb =
           BigQueryRetryHelper.runWithRetries(
               new Callable<com.google.api.services.bigquery.model.Job>() {
@@ -65,10 +79,16 @@ public class TableDataWriteChannel
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock(),
-              EMPTY_RETRY_CONFIG);
+              EMPTY_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
+    } finally {
+      if (flushBuffer != null) {
+        flushBuffer.end();
+      }
     }
   }
 
@@ -81,7 +101,18 @@ public class TableDataWriteChannel
       final BigQueryOptions options,
       final JobId jobId,
       final WriteChannelConfiguration writeChannelConfiguration) {
-    try {
+    Span open = null;
+    if (options.isOpenTelemetryTracingEnabled() && options.getOpenTelemetryTracer() != null) {
+      open =
+          options
+              .getOpenTelemetryTracer()
+              .spanBuilder("com.google.cloud.bigquery.TableDataWriteChannel.open")
+              .setAllAttributes(jobId.getOtelAttributes())
+              .setAllAttributes(writeChannelConfiguration.getDestinationTable().getOtelAttributes())
+              .startSpan();
+    }
+
+    try (Scope openScope = open != null ? open.makeCurrent() : null) {
       return BigQueryRetryHelper.runWithRetries(
           new Callable<String>() {
             @Override
@@ -97,9 +128,15 @@ public class TableDataWriteChannel
           options.getRetrySettings(),
           BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           options.getClock(),
-          EMPTY_RETRY_CONFIG);
+          EMPTY_RETRY_CONFIG,
+          options.isOpenTelemetryTracingEnabled(),
+          options.getOpenTelemetryTracer());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
+    } finally {
+      if (open != null) {
+        open.end();
+      }
     }
   }
 

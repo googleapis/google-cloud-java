@@ -6489,6 +6489,14 @@ public class ITBigQueryTest {
 
     assertThat(location).isNotEqualTo(wrongLocation);
 
+    Tracer tracer = otel.getTracer("Test Tracer");
+    bigquery =
+        bigquery.getOptions().toBuilder()
+            .setEnableOpenTelemetryTracing(true)
+            .setOpenTelemetryTracer(tracer)
+            .build()
+            .getService();
+
     Dataset dataset =
         bigquery.create(
             DatasetInfo.newBuilder("locationset_" + UUID.randomUUID().toString().replace("-", "_"))
@@ -6565,6 +6573,11 @@ public class ITBigQueryTest {
             bigquery.writer(
                 JobId.newBuilder().setLocation(location).build(), writeChannelConfiguration)) {
           writer.write(ByteBuffer.wrap("foo".getBytes()));
+          assertEquals(
+              OTEL_ATTRIBUTES
+                  .get("com.google.cloud.bigquery.TableDataWriteChannel.open")
+                  .get(AttributeKey.stringKey("bq.job.location")),
+              location);
         }
 
         try {
@@ -6577,6 +6590,12 @@ public class ITBigQueryTest {
       }
     } finally {
       bigquery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
+      bigquery =
+          bigquery.getOptions().toBuilder()
+              .setEnableOpenTelemetryTracing(false)
+              .setOpenTelemetryTracer(null)
+              .build()
+              .getService();
     }
   }
 
@@ -7661,6 +7680,7 @@ public class ITBigQueryTest {
     assertEquals(
         OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.updateTable"),
         OTEL_PARENT_SPAN_ID);
+    assertTrue(bigquery.delete(updatedTable.getTableId()));
   }
 
   @Test
@@ -7680,6 +7700,9 @@ public class ITBigQueryTest {
     assertNull(tableResult.getJobId());
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.queryRpc"));
+    assertNotNull(
+        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries"));
+    assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.BigQuery.query"));
 
     // Query job
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -7694,5 +7717,7 @@ public class ITBigQueryTest {
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.getQueryResults"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.listTableData"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createJob"));
+    assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.Job.getQueryResults"));
+    assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.Job.waitForQueryResults"));
   }
 }
