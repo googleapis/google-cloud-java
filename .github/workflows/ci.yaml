@@ -64,9 +64,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
@@ -75,17 +72,11 @@ jobs:
         distribution: temurin
         java-version: 17
     - run: java -version
-    - uses: actions/cache@v4
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
-    - run: java -version
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
-        HEAD_BRANCH: ${{ github.head_ref }}
-        BASE_BRANCH: ${{ github.base_ref }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
