@@ -93,8 +93,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
-    git checkout "${BASE_BRANCH}"
-    changed_file_list=$(git diff --name-only "${BASE_BRANCH}" HEAD)
+    changed_file_list=$(git diff --name-only "${BASE_BRANCH}" "${HEAD_BRANCH}")
     echo "${changed_file_list}"
     has_code_change="false"
     while IFS= read -r changed_file; do
