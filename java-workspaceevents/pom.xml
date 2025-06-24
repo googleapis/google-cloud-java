@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-workspaceevents-v1beta</artifactId>
+        <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workspaceevents-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-workspaceevents-v1beta</artifactId>
+        <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workspaceevents-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-workspaceevents-v1</artifactId>
         <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workspaceevents-v1:current} -->
       </dependency>
@@ -47,7 +57,9 @@
   <modules>
     <module>google-cloud-workspaceevents</module>
     <module>grpc-google-cloud-workspaceevents-v1</module>
+    <module>grpc-google-cloud-workspaceevents-v1beta</module>
     <module>proto-google-cloud-workspaceevents-v1</module>
+    <module>proto-google-cloud-workspaceevents-v1beta</module>
     <module>google-cloud-workspaceevents-bom</module>
   </modules>
 
