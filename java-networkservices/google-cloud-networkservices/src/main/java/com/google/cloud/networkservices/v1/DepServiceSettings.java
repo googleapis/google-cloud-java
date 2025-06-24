@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -229,6 +230,51 @@ public class DepServiceSettings extends ClientSettings<DepServiceSettings> {
   public OperationCallSettings<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationSettings() {
     return ((DepServiceStubSettings) getStubSettings()).deleteLbRouteExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuthzExtensions. */
+  public PagedCallSettings<
+          ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).listAuthzExtensionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuthzExtension. */
+  public UnaryCallSettings<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).getAuthzExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzExtension. */
+  public UnaryCallSettings<CreateAuthzExtensionRequest, Operation> createAuthzExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).createAuthzExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzExtension. */
+  public OperationCallSettings<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).createAuthzExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzExtension. */
+  public UnaryCallSettings<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).updateAuthzExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzExtension. */
+  public OperationCallSettings<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).updateAuthzExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzExtension. */
+  public UnaryCallSettings<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).deleteAuthzExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzExtension. */
+  public OperationCallSettings<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).deleteAuthzExtensionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -473,6 +519,59 @@ public class DepServiceSettings extends ClientSettings<DepServiceSettings> {
     public OperationCallSettings.Builder<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
         deleteLbRouteExtensionOperationSettings() {
       return getStubSettingsBuilder().deleteLbRouteExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthzExtensions. */
+    public PagedCallSettings.Builder<
+            ListAuthzExtensionsRequest,
+            ListAuthzExtensionsResponse,
+            ListAuthzExtensionsPagedResponse>
+        listAuthzExtensionsSettings() {
+      return getStubSettingsBuilder().listAuthzExtensionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthzExtension. */
+    public UnaryCallSettings.Builder<GetAuthzExtensionRequest, AuthzExtension>
+        getAuthzExtensionSettings() {
+      return getStubSettingsBuilder().getAuthzExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzExtension. */
+    public UnaryCallSettings.Builder<CreateAuthzExtensionRequest, Operation>
+        createAuthzExtensionSettings() {
+      return getStubSettingsBuilder().createAuthzExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzExtension. */
+    public OperationCallSettings.Builder<
+            CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+        createAuthzExtensionOperationSettings() {
+      return getStubSettingsBuilder().createAuthzExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzExtension. */
+    public UnaryCallSettings.Builder<UpdateAuthzExtensionRequest, Operation>
+        updateAuthzExtensionSettings() {
+      return getStubSettingsBuilder().updateAuthzExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzExtension. */
+    public OperationCallSettings.Builder<
+            UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+        updateAuthzExtensionOperationSettings() {
+      return getStubSettingsBuilder().updateAuthzExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzExtension. */
+    public UnaryCallSettings.Builder<DeleteAuthzExtensionRequest, Operation>
+        deleteAuthzExtensionSettings() {
+      return getStubSettingsBuilder().deleteAuthzExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzExtension. */
+    public OperationCallSettings.Builder<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+        deleteAuthzExtensionOperationSettings() {
+      return getStubSettingsBuilder().deleteAuthzExtensionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

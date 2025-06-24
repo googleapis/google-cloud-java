@@ -28,6 +28,8 @@ import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServ
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -58,6 +60,8 @@ import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -67,6 +71,8 @@ import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
@@ -81,6 +87,8 @@ import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
 import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
@@ -105,6 +113,10 @@ import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginsResponse;
 import com.google.cloud.networkservices.v1.Mesh;
 import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
@@ -121,6 +133,9 @@ import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.UpdateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.WasmPlugin;
+import com.google.cloud.networkservices.v1.WasmPluginVersion;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -148,17 +163,19 @@ import javax.annotation.Generated;
 public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(Empty.getDescriptor())
+          .add(WasmPluginVersion.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(EndpointPolicy.getDescriptor())
-          .add(Gateway.getDescriptor())
+          .add(WasmPlugin.getDescriptor())
           .add(TcpRoute.getDescriptor())
           .add(HttpRoute.getDescriptor())
-          .add(ServiceLbPolicy.getDescriptor())
           .add(TlsRoute.getDescriptor())
           .add(Mesh.getDescriptor())
-          .add(GrpcRoute.getDescriptor())
           .add(ServiceBinding.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(Gateway.getDescriptor())
+          .add(ServiceLbPolicy.getDescriptor())
+          .add(GrpcRoute.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<
@@ -360,6 +377,354 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteEndpointPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListWasmPluginVersions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListWasmPluginVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/wasmPlugins/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWasmPluginVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWasmPluginVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListWasmPluginVersionsResponse>newBuilder()
+                      .setDefaultInstance(ListWasmPluginVersionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetWasmPluginVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetWasmPluginVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/wasmPlugins/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<WasmPluginVersion>newBuilder()
+                      .setDefaultInstance(WasmPluginVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionMethodDescriptor =
+          ApiMethodDescriptor.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateWasmPluginVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateWasmPluginVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/wasmPlugins/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "wasmPluginVersionId", request.getWasmPluginVersionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "wasmPluginVersion", request.getWasmPluginVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateWasmPluginVersionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteWasmPluginVersion")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteWasmPluginVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/wasmPlugins/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteWasmPluginVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteWasmPluginVersionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsMethodDescriptor =
+          ApiMethodDescriptor.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/ListWasmPlugins")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListWasmPluginsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/wasmPlugins",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWasmPluginsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWasmPluginsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListWasmPluginsResponse>newBuilder()
+                      .setDefaultInstance(ListWasmPluginsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetWasmPluginRequest, WasmPlugin>
+      getWasmPluginMethodDescriptor =
+          ApiMethodDescriptor.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetWasmPlugin")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetWasmPluginRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/wasmPlugins/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<WasmPlugin>newBuilder()
+                      .setDefaultInstance(WasmPlugin.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateWasmPluginRequest, Operation>
+      createWasmPluginMethodDescriptor =
+          ApiMethodDescriptor.<CreateWasmPluginRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/CreateWasmPlugin")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateWasmPluginRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/wasmPlugins",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "wasmPluginId", request.getWasmPluginId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("wasmPlugin", request.getWasmPlugin(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateWasmPluginRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateWasmPluginRequest, Operation>
+      updateWasmPluginMethodDescriptor =
+          ApiMethodDescriptor.<UpdateWasmPluginRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/UpdateWasmPlugin")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateWasmPluginRequest>newBuilder()
+                      .setPath(
+                          "/v1/{wasmPlugin.name=projects/*/locations/*/wasmPlugins/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "wasmPlugin.name", request.getWasmPlugin().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("wasmPlugin", request.getWasmPlugin(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateWasmPluginRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteWasmPluginRequest, Operation>
+      deleteWasmPluginMethodDescriptor =
+          ApiMethodDescriptor.<DeleteWasmPluginRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/DeleteWasmPlugin")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteWasmPluginRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/wasmPlugins/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteWasmPluginRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteWasmPluginRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -2265,6 +2630,35 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyCallable;
   private final OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable;
+  private final UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable;
+  private final UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable;
+  private final OperationCallable<
+          CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable;
+  private final OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable;
+  private final UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable;
+  private final UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable;
+  private final OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable;
+  private final UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable;
+  private final OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable;
+  private final OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysResponse> listGatewaysCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysPagedResponse>
       listGatewaysPagedCallable;
@@ -2527,6 +2921,112 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+        listWasmPluginVersionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionTransportSettings =
+            HttpJsonCallSettings.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+                .setMethodDescriptor(getWasmPluginVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionTransportSettings =
+            HttpJsonCallSettings.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createWasmPluginVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionTransportSettings =
+            HttpJsonCallSettings.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteWasmPluginVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListWasmPluginsRequest, ListWasmPluginsResponse>
+        listWasmPluginsTransportSettings =
+            HttpJsonCallSettings.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginTransportSettings =
+        HttpJsonCallSettings.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+            .setMethodDescriptor(getWasmPluginMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginTransportSettings =
+        HttpJsonCallSettings.<CreateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(createWasmPluginMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginTransportSettings =
+        HttpJsonCallSettings.<UpdateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateWasmPluginMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "wasm_plugin.name", String.valueOf(request.getWasmPlugin().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginTransportSettings =
+        HttpJsonCallSettings.<DeleteWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteWasmPluginMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListGatewaysRequest, ListGatewaysResponse> listGatewaysTransportSettings =
         HttpJsonCallSettings.<ListGatewaysRequest, ListGatewaysResponse>newBuilder()
             .setMethodDescriptor(listGatewaysMethodDescriptor)
@@ -3141,6 +3641,79 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
             settings.deleteEndpointPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listWasmPluginVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.listWasmPluginVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.getWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginVersionTransportSettings,
+            settings.getWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionSettings(),
+            clientContext);
+    this.deleteWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listWasmPluginsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.listWasmPluginsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.getWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginTransportSettings, settings.getWasmPluginSettings(), clientContext);
+    this.createWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginTransportSettings, settings.createWasmPluginSettings(), clientContext);
+    this.createWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginTransportSettings,
+            settings.createWasmPluginOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            updateWasmPluginTransportSettings, settings.updateWasmPluginSettings(), clientContext);
+    this.updateWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            updateWasmPluginTransportSettings,
+            settings.updateWasmPluginOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginTransportSettings, settings.deleteWasmPluginSettings(), clientContext);
+    this.deleteWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginTransportSettings,
+            settings.deleteWasmPluginOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listGatewaysCallable =
         callableFactory.createUnaryCallable(
             listGatewaysTransportSettings, settings.listGatewaysSettings(), clientContext);
@@ -3514,6 +4087,15 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
     methodDescriptors.add(createEndpointPolicyMethodDescriptor);
     methodDescriptors.add(updateEndpointPolicyMethodDescriptor);
     methodDescriptors.add(deleteEndpointPolicyMethodDescriptor);
+    methodDescriptors.add(listWasmPluginVersionsMethodDescriptor);
+    methodDescriptors.add(getWasmPluginVersionMethodDescriptor);
+    methodDescriptors.add(createWasmPluginVersionMethodDescriptor);
+    methodDescriptors.add(deleteWasmPluginVersionMethodDescriptor);
+    methodDescriptors.add(listWasmPluginsMethodDescriptor);
+    methodDescriptors.add(getWasmPluginMethodDescriptor);
+    methodDescriptors.add(createWasmPluginMethodDescriptor);
+    methodDescriptors.add(updateWasmPluginMethodDescriptor);
+    methodDescriptors.add(deleteWasmPluginMethodDescriptor);
     methodDescriptors.add(listGatewaysMethodDescriptor);
     methodDescriptors.add(getGatewayMethodDescriptor);
     methodDescriptors.add(createGatewayMethodDescriptor);
@@ -3618,6 +4200,97 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable() {
     return deleteEndpointPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable() {
+    return listWasmPluginVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable() {
+    return listWasmPluginVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable() {
+    return getWasmPluginVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable() {
+    return createWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable() {
+    return createWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable() {
+    return deleteWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable() {
+    return deleteWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse> listWasmPluginsCallable() {
+    return listWasmPluginsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable() {
+    return listWasmPluginsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable() {
+    return getWasmPluginCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable() {
+    return createWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable() {
+    return createWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable() {
+    return updateWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable() {
+    return updateWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable() {
+    return deleteWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable() {
+    return deleteWasmPluginOperationCallable;
   }
 
   @Override

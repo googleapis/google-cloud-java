@@ -78,7 +78,7 @@ public interface TranslateDocumentRequestOrBuilder
    * <pre>
    * Optional. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * [Language Support] (https://cloud.google.com/translate/docs/languages). If
+   * [Language Support](https://cloud.google.com/translate/docs/languages). If
    * the source language isn't specified, the API attempts to identify the
    * source language automatically and returns the source language within the
    * response. Source language must be specified if the request contains a
@@ -97,7 +97,7 @@ public interface TranslateDocumentRequestOrBuilder
    * <pre>
    * Optional. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * [Language Support] (https://cloud.google.com/translate/docs/languages). If
+   * [Language Support](https://cloud.google.com/translate/docs/languages). If
    * the source language isn't specified, the API attempts to identify the
    * source language automatically and returns the source language within the
    * response. Source language must be specified if the request contains a
@@ -115,8 +115,8 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The ISO-639 language code to use for translation of the input
-   * document, set to one of the language codes listed in [Language Support]
-   * (https://cloud.google.com/translate/docs/languages).
+   * document, set to one of the language codes listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string target_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -130,8 +130,8 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The ISO-639 language code to use for translation of the input
-   * document, set to one of the language codes listed in [Language Support]
-   * (https://cloud.google.com/translate/docs/languages).
+   * document, set to one of the language codes listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string target_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>

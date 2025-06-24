@@ -28,6 +28,8 @@ import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServ
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -50,6 +52,8 @@ import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -59,6 +63,8 @@ import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
@@ -73,6 +79,8 @@ import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
 import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
@@ -97,6 +105,10 @@ import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginsResponse;
 import com.google.cloud.networkservices.v1.Mesh;
 import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
@@ -113,6 +125,9 @@ import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.UpdateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.WasmPlugin;
+import com.google.cloud.networkservices.v1.WasmPluginVersion;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -188,6 +203,104 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   "google.cloud.networkservices.v1.NetworkServices/DeleteEndpointPolicy")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsMethodDescriptor =
+          MethodDescriptor
+              .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListWasmPluginVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginVersionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WasmPluginVersion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsMethodDescriptor =
+          MethodDescriptor.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/ListWasmPlugins")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetWasmPluginRequest, WasmPlugin>
+      getWasmPluginMethodDescriptor =
+          MethodDescriptor.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WasmPlugin.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateWasmPluginRequest, Operation>
+      createWasmPluginMethodDescriptor =
+          MethodDescriptor.<CreateWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/CreateWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateWasmPluginRequest, Operation>
+      updateWasmPluginMethodDescriptor =
+          MethodDescriptor.<UpdateWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/UpdateWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteWasmPluginRequest, Operation>
+      deleteWasmPluginMethodDescriptor =
+          MethodDescriptor.<DeleteWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/DeleteWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteWasmPluginRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -695,6 +808,35 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyCallable;
   private final OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable;
+  private final UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable;
+  private final UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable;
+  private final OperationCallable<
+          CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable;
+  private final OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable;
+  private final UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable;
+  private final UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable;
+  private final OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable;
+  private final UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable;
+  private final OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable;
+  private final OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysResponse> listGatewaysCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysPagedResponse>
       listGatewaysPagedCallable;
@@ -914,6 +1056,103 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
     GrpcCallSettings<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyTransportSettings =
         GrpcCallSettings.<DeleteEndpointPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+        listWasmPluginVersionsTransportSettings =
+            GrpcCallSettings
+                .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+                .setMethodDescriptor(getWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListWasmPluginsRequest, ListWasmPluginsResponse>
+        listWasmPluginsTransportSettings =
+            GrpcCallSettings.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginTransportSettings =
+        GrpcCallSettings.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+            .setMethodDescriptor(getWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginTransportSettings =
+        GrpcCallSettings.<CreateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(createWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginTransportSettings =
+        GrpcCallSettings.<UpdateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "wasm_plugin.name", String.valueOf(request.getWasmPlugin().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginTransportSettings =
+        GrpcCallSettings.<DeleteWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteWasmPluginMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1478,6 +1717,79 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             settings.deleteEndpointPolicyOperationSettings(),
             clientContext,
             operationsStub);
+    this.listWasmPluginVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.listWasmPluginVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.getWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginVersionTransportSettings,
+            settings.getWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionSettings(),
+            clientContext);
+    this.deleteWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listWasmPluginsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.listWasmPluginsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.getWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginTransportSettings, settings.getWasmPluginSettings(), clientContext);
+    this.createWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginTransportSettings, settings.createWasmPluginSettings(), clientContext);
+    this.createWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginTransportSettings,
+            settings.createWasmPluginOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            updateWasmPluginTransportSettings, settings.updateWasmPluginSettings(), clientContext);
+    this.updateWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            updateWasmPluginTransportSettings,
+            settings.updateWasmPluginOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginTransportSettings, settings.deleteWasmPluginSettings(), clientContext);
+    this.deleteWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginTransportSettings,
+            settings.deleteWasmPluginOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listGatewaysCallable =
         callableFactory.createUnaryCallable(
             listGatewaysTransportSettings, settings.listGatewaysSettings(), clientContext);
@@ -1895,6 +2207,97 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable() {
     return deleteEndpointPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable() {
+    return listWasmPluginVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable() {
+    return listWasmPluginVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable() {
+    return getWasmPluginVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable() {
+    return createWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable() {
+    return createWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable() {
+    return deleteWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable() {
+    return deleteWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse> listWasmPluginsCallable() {
+    return listWasmPluginsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable() {
+    return listWasmPluginsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable() {
+    return getWasmPluginCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable() {
+    return createWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable() {
+    return createWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable() {
+    return updateWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable() {
+    return updateWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable() {
+    return deleteWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable() {
+    return deleteWasmPluginOperationCallable;
   }
 
   @Override
