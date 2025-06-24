@@ -93,14 +93,14 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
-    git checkout "${BASE_BRANCH}"
-    git checkout "${HEAD_BRANCH}"
-    changed_file_list="$(git diff --name-only "${BASE_BRANCH}" HEAD)"
+    changed_file_list=$(git diff --name-only "${BASE_BRANCH}" "${HEAD_BRANCH}")
+    echo "${changed_file_list}"
     has_code_change="false"
     while IFS= read -r changed_file; do
         if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
-            has_code_change="true"
-            break
+          echo "Matched: ${changed_file}"
+          has_code_change="true"
+          break
         fi
     done <<< "${changed_file_list}"
     if [ "${has_code_change}" == "false" ]; then
