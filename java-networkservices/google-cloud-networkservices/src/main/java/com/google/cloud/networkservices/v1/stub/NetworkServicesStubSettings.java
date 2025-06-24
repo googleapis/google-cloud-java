@@ -28,6 +28,8 @@ import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServ
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -72,6 +74,8 @@ import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -81,6 +85,8 @@ import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
@@ -95,6 +101,8 @@ import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
 import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
@@ -119,6 +127,10 @@ import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginsResponse;
 import com.google.cloud.networkservices.v1.Mesh;
 import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
@@ -135,6 +147,9 @@ import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
 import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.UpdateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.WasmPlugin;
+import com.google.cloud.networkservices.v1.WasmPluginVersion;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -255,6 +270,35 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       deleteEndpointPolicySettings;
   private final OperationCallSettings<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsSettings;
+  private final UnaryCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionSettings;
+  private final UnaryCallSettings<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionSettings;
+  private final OperationCallSettings<
+          CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationSettings;
+  private final UnaryCallSettings<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionSettings;
+  private final OperationCallSettings<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationSettings;
+  private final PagedCallSettings<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+      listWasmPluginsSettings;
+  private final UnaryCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings;
+  private final UnaryCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginSettings;
+  private final OperationCallSettings<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationSettings;
+  private final UnaryCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginSettings;
+  private final OperationCallSettings<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationSettings;
+  private final UnaryCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginSettings;
+  private final OperationCallSettings<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationSettings;
   private final PagedCallSettings<
           ListGatewaysRequest, ListGatewaysResponse, ListGatewaysPagedResponse>
       listGatewaysSettings;
@@ -427,6 +471,84 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
             @Override
             public Iterable<EndpointPolicy> extractResources(ListEndpointPoliciesResponse payload) {
               return payload.getEndpointPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
+      LIST_WASM_PLUGIN_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWasmPluginVersionsRequest injectToken(
+                ListWasmPluginVersionsRequest payload, String token) {
+              return ListWasmPluginVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWasmPluginVersionsRequest injectPageSize(
+                ListWasmPluginVersionsRequest payload, int pageSize) {
+              return ListWasmPluginVersionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWasmPluginVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWasmPluginVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<WasmPluginVersion> extractResources(
+                ListWasmPluginVersionsResponse payload) {
+              return payload.getWasmPluginVersionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin>
+      LIST_WASM_PLUGINS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWasmPluginsRequest injectToken(
+                ListWasmPluginsRequest payload, String token) {
+              return ListWasmPluginsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWasmPluginsRequest injectPageSize(
+                ListWasmPluginsRequest payload, int pageSize) {
+              return ListWasmPluginsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWasmPluginsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWasmPluginsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<WasmPlugin> extractResources(ListWasmPluginsResponse payload) {
+              return payload.getWasmPluginsList();
             }
           };
 
@@ -848,6 +970,50 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
           };
 
   private static final PagedListResponseFactory<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          ListWasmPluginVersionsPagedResponse>
+      LIST_WASM_PLUGIN_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWasmPluginVersionsRequest,
+              ListWasmPluginVersionsResponse,
+              ListWasmPluginVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWasmPluginVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+                    callable,
+                ListWasmPluginVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWasmPluginVersionsResponse> futureResponse) {
+              PageContext<
+                      ListWasmPluginVersionsRequest,
+                      ListWasmPluginVersionsResponse,
+                      WasmPluginVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_WASM_PLUGIN_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListWasmPluginVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+      LIST_WASM_PLUGINS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWasmPluginsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse> callable,
+                ListWasmPluginsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWasmPluginsResponse> futureResponse) {
+              PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> pageContext =
+                  PageContext.create(callable, LIST_WASM_PLUGINS_PAGE_STR_DESC, request, context);
+              return ListWasmPluginsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListGatewaysRequest, ListGatewaysResponse, ListGatewaysPagedResponse>
       LIST_GATEWAYS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1101,6 +1267,90 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
   public OperationCallSettings<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationSettings() {
     return deleteEndpointPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listWasmPluginVersions. */
+  public PagedCallSettings<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsSettings() {
+    return listWasmPluginVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getWasmPluginVersion. */
+  public UnaryCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionSettings() {
+    return getWasmPluginVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPluginVersion. */
+  public UnaryCallSettings<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionSettings() {
+    return createWasmPluginVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPluginVersion. */
+  public OperationCallSettings<CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationSettings() {
+    return createWasmPluginVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPluginVersion. */
+  public UnaryCallSettings<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionSettings() {
+    return deleteWasmPluginVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPluginVersion. */
+  public OperationCallSettings<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationSettings() {
+    return deleteWasmPluginVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listWasmPlugins. */
+  public PagedCallSettings<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+      listWasmPluginsSettings() {
+    return listWasmPluginsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getWasmPlugin. */
+  public UnaryCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings() {
+    return getWasmPluginSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPlugin. */
+  public UnaryCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginSettings() {
+    return createWasmPluginSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPlugin. */
+  public OperationCallSettings<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationSettings() {
+    return createWasmPluginOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateWasmPlugin. */
+  public UnaryCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginSettings() {
+    return updateWasmPluginSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateWasmPlugin. */
+  public OperationCallSettings<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationSettings() {
+    return updateWasmPluginOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPlugin. */
+  public UnaryCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginSettings() {
+    return deleteWasmPluginSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPlugin. */
+  public OperationCallSettings<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationSettings() {
+    return deleteWasmPluginOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listGateways. */
@@ -1641,6 +1891,22 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     deleteEndpointPolicySettings = settingsBuilder.deleteEndpointPolicySettings().build();
     deleteEndpointPolicyOperationSettings =
         settingsBuilder.deleteEndpointPolicyOperationSettings().build();
+    listWasmPluginVersionsSettings = settingsBuilder.listWasmPluginVersionsSettings().build();
+    getWasmPluginVersionSettings = settingsBuilder.getWasmPluginVersionSettings().build();
+    createWasmPluginVersionSettings = settingsBuilder.createWasmPluginVersionSettings().build();
+    createWasmPluginVersionOperationSettings =
+        settingsBuilder.createWasmPluginVersionOperationSettings().build();
+    deleteWasmPluginVersionSettings = settingsBuilder.deleteWasmPluginVersionSettings().build();
+    deleteWasmPluginVersionOperationSettings =
+        settingsBuilder.deleteWasmPluginVersionOperationSettings().build();
+    listWasmPluginsSettings = settingsBuilder.listWasmPluginsSettings().build();
+    getWasmPluginSettings = settingsBuilder.getWasmPluginSettings().build();
+    createWasmPluginSettings = settingsBuilder.createWasmPluginSettings().build();
+    createWasmPluginOperationSettings = settingsBuilder.createWasmPluginOperationSettings().build();
+    updateWasmPluginSettings = settingsBuilder.updateWasmPluginSettings().build();
+    updateWasmPluginOperationSettings = settingsBuilder.updateWasmPluginOperationSettings().build();
+    deleteWasmPluginSettings = settingsBuilder.deleteWasmPluginSettings().build();
+    deleteWasmPluginOperationSettings = settingsBuilder.deleteWasmPluginOperationSettings().build();
     listGatewaysSettings = settingsBuilder.listGatewaysSettings().build();
     getGatewaySettings = settingsBuilder.getGatewaySettings().build();
     createGatewaySettings = settingsBuilder.createGatewaySettings().build();
@@ -1747,6 +2013,41 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     private final OperationCallSettings.Builder<
             DeleteEndpointPolicyRequest, Empty, OperationMetadata>
         deleteEndpointPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListWasmPluginVersionsRequest,
+            ListWasmPluginVersionsResponse,
+            ListWasmPluginVersionsPagedResponse>
+        listWasmPluginVersionsSettings;
+    private final UnaryCallSettings.Builder<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionSettings;
+    private final UnaryCallSettings.Builder<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionSettings;
+    private final OperationCallSettings.Builder<
+            CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+        createWasmPluginVersionOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+        deleteWasmPluginVersionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+        listWasmPluginsSettings;
+    private final UnaryCallSettings.Builder<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings;
+    private final UnaryCallSettings.Builder<CreateWasmPluginRequest, Operation>
+        createWasmPluginSettings;
+    private final OperationCallSettings.Builder<
+            CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        createWasmPluginOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateWasmPluginRequest, Operation>
+        updateWasmPluginSettings;
+    private final OperationCallSettings.Builder<
+            UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        updateWasmPluginOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteWasmPluginRequest, Operation>
+        deleteWasmPluginSettings;
+    private final OperationCallSettings.Builder<DeleteWasmPluginRequest, Empty, OperationMetadata>
+        deleteWasmPluginOperationSettings;
     private final PagedCallSettings.Builder<
             ListGatewaysRequest, ListGatewaysResponse, ListGatewaysPagedResponse>
         listGatewaysSettings;
@@ -1948,6 +2249,21 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       updateEndpointPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteEndpointPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEndpointPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listWasmPluginVersionsSettings =
+          PagedCallSettings.newBuilder(LIST_WASM_PLUGIN_VERSIONS_PAGE_STR_FACT);
+      getWasmPluginVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWasmPluginVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWasmPluginVersionOperationSettings = OperationCallSettings.newBuilder();
+      deleteWasmPluginVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteWasmPluginVersionOperationSettings = OperationCallSettings.newBuilder();
+      listWasmPluginsSettings = PagedCallSettings.newBuilder(LIST_WASM_PLUGINS_PAGE_STR_FACT);
+      getWasmPluginSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWasmPluginSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWasmPluginOperationSettings = OperationCallSettings.newBuilder();
+      updateWasmPluginSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateWasmPluginOperationSettings = OperationCallSettings.newBuilder();
+      deleteWasmPluginSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteWasmPluginOperationSettings = OperationCallSettings.newBuilder();
       listGatewaysSettings = PagedCallSettings.newBuilder(LIST_GATEWAYS_PAGE_STR_FACT);
       getGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2033,6 +2349,15 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               createEndpointPolicySettings,
               updateEndpointPolicySettings,
               deleteEndpointPolicySettings,
+              listWasmPluginVersionsSettings,
+              getWasmPluginVersionSettings,
+              createWasmPluginVersionSettings,
+              deleteWasmPluginVersionSettings,
+              listWasmPluginsSettings,
+              getWasmPluginSettings,
+              createWasmPluginSettings,
+              updateWasmPluginSettings,
+              deleteWasmPluginSettings,
               listGatewaysSettings,
               getGatewaySettings,
               createGatewaySettings,
@@ -2099,6 +2424,22 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       deleteEndpointPolicySettings = settings.deleteEndpointPolicySettings.toBuilder();
       deleteEndpointPolicyOperationSettings =
           settings.deleteEndpointPolicyOperationSettings.toBuilder();
+      listWasmPluginVersionsSettings = settings.listWasmPluginVersionsSettings.toBuilder();
+      getWasmPluginVersionSettings = settings.getWasmPluginVersionSettings.toBuilder();
+      createWasmPluginVersionSettings = settings.createWasmPluginVersionSettings.toBuilder();
+      createWasmPluginVersionOperationSettings =
+          settings.createWasmPluginVersionOperationSettings.toBuilder();
+      deleteWasmPluginVersionSettings = settings.deleteWasmPluginVersionSettings.toBuilder();
+      deleteWasmPluginVersionOperationSettings =
+          settings.deleteWasmPluginVersionOperationSettings.toBuilder();
+      listWasmPluginsSettings = settings.listWasmPluginsSettings.toBuilder();
+      getWasmPluginSettings = settings.getWasmPluginSettings.toBuilder();
+      createWasmPluginSettings = settings.createWasmPluginSettings.toBuilder();
+      createWasmPluginOperationSettings = settings.createWasmPluginOperationSettings.toBuilder();
+      updateWasmPluginSettings = settings.updateWasmPluginSettings.toBuilder();
+      updateWasmPluginOperationSettings = settings.updateWasmPluginOperationSettings.toBuilder();
+      deleteWasmPluginSettings = settings.deleteWasmPluginSettings.toBuilder();
+      deleteWasmPluginOperationSettings = settings.deleteWasmPluginOperationSettings.toBuilder();
       listGatewaysSettings = settings.listGatewaysSettings.toBuilder();
       getGatewaySettings = settings.getGatewaySettings.toBuilder();
       createGatewaySettings = settings.createGatewaySettings.toBuilder();
@@ -2186,6 +2527,15 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               createEndpointPolicySettings,
               updateEndpointPolicySettings,
               deleteEndpointPolicySettings,
+              listWasmPluginVersionsSettings,
+              getWasmPluginVersionSettings,
+              createWasmPluginVersionSettings,
+              deleteWasmPluginVersionSettings,
+              listWasmPluginsSettings,
+              getWasmPluginSettings,
+              createWasmPluginSettings,
+              updateWasmPluginSettings,
+              deleteWasmPluginSettings,
               listGatewaysSettings,
               getGatewaySettings,
               createGatewaySettings,
@@ -2284,6 +2634,51 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
       builder
           .deleteEndpointPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listWasmPluginVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getWasmPluginVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createWasmPluginVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteWasmPluginVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listWasmPluginsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getWasmPluginSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createWasmPluginSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateWasmPluginSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteWasmPluginSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2585,6 +2980,126 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteEndpointPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createWasmPluginVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateWasmPluginVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(WasmPluginVersion.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteWasmPluginVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteWasmPluginVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createWasmPluginOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateWasmPluginRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(WasmPlugin.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateWasmPluginOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateWasmPluginRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(WasmPlugin.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteWasmPluginOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteWasmPluginRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
                   .build())
@@ -3244,6 +3759,94 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     public OperationCallSettings.Builder<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
         deleteEndpointPolicyOperationSettings() {
       return deleteEndpointPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listWasmPluginVersions. */
+    public PagedCallSettings.Builder<
+            ListWasmPluginVersionsRequest,
+            ListWasmPluginVersionsResponse,
+            ListWasmPluginVersionsPagedResponse>
+        listWasmPluginVersionsSettings() {
+      return listWasmPluginVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getWasmPluginVersion. */
+    public UnaryCallSettings.Builder<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionSettings() {
+      return getWasmPluginVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPluginVersion. */
+    public UnaryCallSettings.Builder<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionSettings() {
+      return createWasmPluginVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPluginVersion. */
+    public OperationCallSettings.Builder<
+            CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+        createWasmPluginVersionOperationSettings() {
+      return createWasmPluginVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPluginVersion. */
+    public UnaryCallSettings.Builder<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionSettings() {
+      return deleteWasmPluginVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPluginVersion. */
+    public OperationCallSettings.Builder<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+        deleteWasmPluginVersionOperationSettings() {
+      return deleteWasmPluginVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listWasmPlugins. */
+    public PagedCallSettings.Builder<
+            ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+        listWasmPluginsSettings() {
+      return listWasmPluginsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getWasmPlugin. */
+    public UnaryCallSettings.Builder<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings() {
+      return getWasmPluginSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPlugin. */
+    public UnaryCallSettings.Builder<CreateWasmPluginRequest, Operation>
+        createWasmPluginSettings() {
+      return createWasmPluginSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPlugin. */
+    public OperationCallSettings.Builder<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        createWasmPluginOperationSettings() {
+      return createWasmPluginOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateWasmPlugin. */
+    public UnaryCallSettings.Builder<UpdateWasmPluginRequest, Operation>
+        updateWasmPluginSettings() {
+      return updateWasmPluginSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateWasmPlugin. */
+    public OperationCallSettings.Builder<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        updateWasmPluginOperationSettings() {
+      return updateWasmPluginOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPlugin. */
+    public UnaryCallSettings.Builder<DeleteWasmPluginRequest, Operation>
+        deleteWasmPluginSettings() {
+      return deleteWasmPluginSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPlugin. */
+    public OperationCallSettings.Builder<DeleteWasmPluginRequest, Empty, OperationMetadata>
+        deleteWasmPluginOperationSettings() {
+      return deleteWasmPluginOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listGateways. */

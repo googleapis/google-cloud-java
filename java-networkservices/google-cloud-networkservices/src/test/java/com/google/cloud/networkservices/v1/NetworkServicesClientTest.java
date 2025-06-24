@@ -28,6 +28,8 @@ import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServ
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -571,6 +573,859 @@ public class NetworkServicesClientTest {
     try {
       String name = "name3373707";
       client.deleteEndpointPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listWasmPluginVersionsTest() throws Exception {
+    WasmPluginVersion responsesElement = WasmPluginVersion.newBuilder().build();
+    ListWasmPluginVersionsResponse expectedResponse =
+        ListWasmPluginVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPluginVersions(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    ListWasmPluginVersionsPagedResponse pagedListResponse = client.listWasmPluginVersions(parent);
+
+    List<WasmPluginVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWasmPluginVersionsRequest actualRequest =
+        ((ListWasmPluginVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWasmPluginVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.listWasmPluginVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWasmPluginVersionsTest2() throws Exception {
+    WasmPluginVersion responsesElement = WasmPluginVersion.newBuilder().build();
+    ListWasmPluginVersionsResponse expectedResponse =
+        ListWasmPluginVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPluginVersions(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWasmPluginVersionsPagedResponse pagedListResponse = client.listWasmPluginVersions(parent);
+
+    List<WasmPluginVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWasmPluginVersionsRequest actualRequest =
+        ((ListWasmPluginVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWasmPluginVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWasmPluginVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginVersionTest() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    WasmPluginVersionName name =
+        WasmPluginVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+
+    WasmPluginVersion actualResponse = client.getWasmPluginVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWasmPluginVersionRequest actualRequest =
+        ((GetWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWasmPluginVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginVersionName name =
+          WasmPluginVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+      client.getWasmPluginVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginVersionTest2() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    WasmPluginVersion actualResponse = client.getWasmPluginVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWasmPluginVersionRequest actualRequest =
+        ((GetWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWasmPluginVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWasmPluginVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWasmPluginVersionTest() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+    WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+    String wasmPluginVersionId = "wasmPluginVersionId38892252";
+
+    WasmPluginVersion actualResponse =
+        client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWasmPluginVersionRequest actualRequest =
+        ((CreateWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(wasmPluginVersion, actualRequest.getWasmPluginVersion());
+    Assert.assertEquals(wasmPluginVersionId, actualRequest.getWasmPluginVersionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWasmPluginVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+      String wasmPluginVersionId = "wasmPluginVersionId38892252";
+      client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createWasmPluginVersionTest2() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+    String wasmPluginVersionId = "wasmPluginVersionId38892252";
+
+    WasmPluginVersion actualResponse =
+        client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWasmPluginVersionRequest actualRequest =
+        ((CreateWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(wasmPluginVersion, actualRequest.getWasmPluginVersion());
+    Assert.assertEquals(wasmPluginVersionId, actualRequest.getWasmPluginVersionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWasmPluginVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+      String wasmPluginVersionId = "wasmPluginVersionId38892252";
+      client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    WasmPluginVersionName name =
+        WasmPluginVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+
+    client.deleteWasmPluginVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWasmPluginVersionRequest actualRequest =
+        ((DeleteWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWasmPluginVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginVersionName name =
+          WasmPluginVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+      client.deleteWasmPluginVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteWasmPluginVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWasmPluginVersionRequest actualRequest =
+        ((DeleteWasmPluginVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWasmPluginVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteWasmPluginVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listWasmPluginsTest() throws Exception {
+    WasmPlugin responsesElement = WasmPlugin.newBuilder().build();
+    ListWasmPluginsResponse expectedResponse =
+        ListWasmPluginsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPlugins(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListWasmPluginsPagedResponse pagedListResponse = client.listWasmPlugins(parent);
+
+    List<WasmPlugin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWasmPluginsRequest actualRequest = ((ListWasmPluginsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWasmPluginsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listWasmPlugins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWasmPluginsTest2() throws Exception {
+    WasmPlugin responsesElement = WasmPlugin.newBuilder().build();
+    ListWasmPluginsResponse expectedResponse =
+        ListWasmPluginsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPlugins(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWasmPluginsPagedResponse pagedListResponse = client.listWasmPlugins(parent);
+
+    List<WasmPlugin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWasmPluginsRequest actualRequest = ((ListWasmPluginsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWasmPluginsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWasmPlugins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    WasmPlugin actualResponse = client.getWasmPlugin(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWasmPluginRequest actualRequest = ((GetWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWasmPluginExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.getWasmPlugin(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginTest2() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    WasmPlugin actualResponse = client.getWasmPlugin(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWasmPluginRequest actualRequest = ((GetWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWasmPluginExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWasmPlugin(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+    String wasmPluginId = "wasmPluginId1902086770";
+
+    WasmPlugin actualResponse =
+        client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWasmPluginRequest actualRequest = ((CreateWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(wasmPlugin, actualRequest.getWasmPlugin());
+    Assert.assertEquals(wasmPluginId, actualRequest.getWasmPluginId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWasmPluginExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+      String wasmPluginId = "wasmPluginId1902086770";
+      client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createWasmPluginTest2() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+    String wasmPluginId = "wasmPluginId1902086770";
+
+    WasmPlugin actualResponse =
+        client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWasmPluginRequest actualRequest = ((CreateWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(wasmPlugin, actualRequest.getWasmPlugin());
+    Assert.assertEquals(wasmPluginId, actualRequest.getWasmPluginId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWasmPluginExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+      String wasmPluginId = "wasmPluginId1902086770";
+      client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    WasmPlugin actualResponse = client.updateWasmPluginAsync(wasmPlugin, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateWasmPluginRequest actualRequest = ((UpdateWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(wasmPlugin, actualRequest.getWasmPlugin());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateWasmPluginExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateWasmPluginAsync(wasmPlugin, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    client.deleteWasmPluginAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWasmPluginRequest actualRequest = ((DeleteWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWasmPluginExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.deleteWasmPluginAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteWasmPluginAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWasmPluginRequest actualRequest = ((DeleteWasmPluginRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWasmPluginExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteWasmPluginAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

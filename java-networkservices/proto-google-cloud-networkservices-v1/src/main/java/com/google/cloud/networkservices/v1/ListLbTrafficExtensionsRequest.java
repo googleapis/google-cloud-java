@@ -78,7 +78,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The project and location from which the `LbTrafficExtension`
-   * resources are listed, specified in the following format:
+   * resources are listed. These values are specified in the following format:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *
@@ -106,7 +106,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The project and location from which the `LbTrafficExtension`
-   * resources are listed, specified in the following format:
+   * resources are listed. These values are specified in the following format:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results.
+   * Optional. Hint about how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -288,7 +288,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results.
+   * Optional. Hint about how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -761,7 +761,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The project and location from which the `LbTrafficExtension`
-     * resources are listed, specified in the following format:
+     * resources are listed. These values are specified in the following format:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -788,7 +788,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The project and location from which the `LbTrafficExtension`
-     * resources are listed, specified in the following format:
+     * resources are listed. These values are specified in the following format:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -815,7 +815,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The project and location from which the `LbTrafficExtension`
-     * resources are listed, specified in the following format:
+     * resources are listed. These values are specified in the following format:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -841,7 +841,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The project and location from which the `LbTrafficExtension`
-     * resources are listed, specified in the following format:
+     * resources are listed. These values are specified in the following format:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -863,7 +863,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The project and location from which the `LbTrafficExtension`
-     * resources are listed, specified in the following format:
+     * resources are listed. These values are specified in the following format:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -1172,7 +1172,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results.
+     * Optional. Hint about how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1195,7 +1195,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results.
+     * Optional. Hint about how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1218,7 +1218,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results.
+     * Optional. Hint about how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1240,7 +1240,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results.
+     * Optional. Hint about how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1258,7 +1258,7 @@ public final class ListLbTrafficExtensionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results.
+     * Optional. Hint about how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

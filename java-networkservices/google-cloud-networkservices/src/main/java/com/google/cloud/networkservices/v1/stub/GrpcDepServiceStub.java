@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -32,19 +33,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AuthzExtension;
+import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
+import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -180,6 +188,57 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsMethodDescriptor =
+          MethodDescriptor.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListAuthzExtensions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAuthzExtensionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAuthzExtensionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAuthzExtensionRequest, AuthzExtension>
+      getAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuthzExtension.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateAuthzExtensionRequest, Operation>
+      createAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<CreateAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAuthzExtensionRequest, Operation>
+      updateAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAuthzExtensionRequest, Operation>
+      deleteAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -266,6 +325,20 @@ public class GrpcDepServiceStub extends DepServiceStub {
       deleteLbRouteExtensionCallable;
   private final OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable;
+  private final UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable;
+  private final UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable;
+  private final OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable;
+  private final UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable;
+  private final OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable;
+  private final UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable;
+  private final OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -433,6 +506,59 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+        listAuthzExtensionsTransportSettings =
+            GrpcCallSettings.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listAuthzExtensionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionTransportSettings =
+        GrpcCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+            .setMethodDescriptor(getAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAuthzExtensionRequest, Operation> createAuthzExtensionTransportSettings =
+        GrpcCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionTransportSettings =
+        GrpcCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "authz_extension.name",
+                      String.valueOf(request.getAuthzExtension().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionTransportSettings =
+        GrpcCallSettings.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -581,6 +707,54 @@ public class GrpcDepServiceStub extends DepServiceStub {
             settings.deleteLbRouteExtensionOperationSettings(),
             clientContext,
             operationsStub);
+    this.listAuthzExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.listAuthzExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.getAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getAuthzExtensionTransportSettings,
+            settings.getAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionSettings(),
+            clientContext);
+    this.updateAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionSettings(),
+            clientContext);
+    this.deleteAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -712,6 +886,56 @@ public class GrpcDepServiceStub extends DepServiceStub {
   public OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable() {
     return deleteLbRouteExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    return listAuthzExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    return listAuthzExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    return getAuthzExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable() {
+    return createAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    return createAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable() {
+    return updateAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    return updateAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable() {
+    return deleteAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    return deleteAuthzExtensionOperationCallable;
   }
 
   @Override

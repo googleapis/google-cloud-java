@@ -36,6 +36,32 @@
  *   Connection response = developerConnectClient.getConnection(name);
  * }
  * }</pre>
+ *
+ * <p>======================= InsightsConfigServiceClient =======================
+ *
+ * <p>Service Description: Creates and manages InsightsConfigs.
+ *
+ * <p>The InsightsConfig resource is the core configuration object to capture events from your
+ * Software Development Lifecycle. It acts as the central hub for managing how Developer connect
+ * understands your application, its runtime environments, and the artifacts deployed within them. A
+ * user can create an InsightsConfig, list previously-requested InsightsConfigs or get
+ * InsightsConfigs by their ID to determine the status of the InsightsConfig.
+ *
+ * <p>Sample for InsightsConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InsightsConfigServiceClient insightsConfigServiceClient =
+ *     InsightsConfigServiceClient.create()) {
+ *   InsightsConfigName name =
+ *       InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+ *   InsightsConfig response = insightsConfigServiceClient.getInsightsConfig(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.developerconnect.v1;
