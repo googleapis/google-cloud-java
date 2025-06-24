@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -45,6 +46,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
@@ -1036,6 +1038,482 @@ public class DepServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteLbRouteExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listAuthzExtensionsTest() throws Exception {
+    AuthzExtension responsesElement = AuthzExtension.newBuilder().build();
+    ListAuthzExtensionsResponse expectedResponse =
+        ListAuthzExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthzExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAuthzExtensionsPagedResponse pagedListResponse = client.listAuthzExtensions(parent);
+
+    List<AuthzExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthzExtensionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthzExtensionsRequest actualRequest = ((ListAuthzExtensionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthzExtensionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAuthzExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthzExtensionsTest2() throws Exception {
+    AuthzExtension responsesElement = AuthzExtension.newBuilder().build();
+    ListAuthzExtensionsResponse expectedResponse =
+        ListAuthzExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthzExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAuthzExtensionsPagedResponse pagedListResponse = client.listAuthzExtensions(parent);
+
+    List<AuthzExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthzExtensionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthzExtensionsRequest actualRequest = ((ListAuthzExtensionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthzExtensionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAuthzExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    AuthzExtensionName name = AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+
+    AuthzExtension actualResponse = client.getAuthzExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthzExtensionRequest actualRequest = ((GetAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthzExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      AuthzExtensionName name =
+          AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+      client.getAuthzExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthzExtensionTest2() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AuthzExtension actualResponse = client.getAuthzExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthzExtensionRequest actualRequest = ((GetAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthzExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAuthzExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+    String authzExtensionId = "authzExtensionId-973067640";
+
+    AuthzExtension actualResponse =
+        client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuthzExtensionRequest actualRequest =
+        ((CreateAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(authzExtension, actualRequest.getAuthzExtension());
+    Assert.assertEquals(authzExtensionId, actualRequest.getAuthzExtensionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuthzExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+      String authzExtensionId = "authzExtensionId-973067640";
+      client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAuthzExtensionTest2() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+    String authzExtensionId = "authzExtensionId-973067640";
+
+    AuthzExtension actualResponse =
+        client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuthzExtensionRequest actualRequest =
+        ((CreateAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(authzExtension, actualRequest.getAuthzExtension());
+    Assert.assertEquals(authzExtensionId, actualRequest.getAuthzExtensionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuthzExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+      String authzExtensionId = "authzExtensionId-973067640";
+      client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AuthzExtension actualResponse =
+        client.updateAuthzExtensionAsync(authzExtension, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAuthzExtensionRequest actualRequest =
+        ((UpdateAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(authzExtension, actualRequest.getAuthzExtension());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAuthzExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAuthzExtensionAsync(authzExtension, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAuthzExtensionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    AuthzExtensionName name = AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+
+    client.deleteAuthzExtensionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthzExtensionRequest actualRequest =
+        ((DeleteAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthzExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      AuthzExtensionName name =
+          AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+      client.deleteAuthzExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAuthzExtensionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAuthzExtensionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthzExtensionRequest actualRequest =
+        ((DeleteAuthzExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthzExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAuthzExtensionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

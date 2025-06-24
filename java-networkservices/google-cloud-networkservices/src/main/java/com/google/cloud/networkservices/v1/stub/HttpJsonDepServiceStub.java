@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -40,19 +41,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AuthzExtension;
+import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
+import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.common.collect.ImmutableMap;
@@ -86,6 +94,7 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
           .add(LbRouteExtension.getDescriptor())
           .add(LbTrafficExtension.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(AuthzExtension.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<
@@ -497,6 +506,204 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsMethodDescriptor =
+          ApiMethodDescriptor.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListAuthzExtensions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuthzExtensionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/authzExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthzExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthzExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuthzExtensionsResponse>newBuilder()
+                      .setDefaultInstance(ListAuthzExtensionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuthzExtensionRequest, AuthzExtension>
+      getAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetAuthzExtension")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuthzExtension>newBuilder()
+                      .setDefaultInstance(AuthzExtension.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAuthzExtensionRequest, Operation>
+      createAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<CreateAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateAuthzExtension")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/authzExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "authzExtensionId", request.getAuthzExtensionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("authzExtension", request.getAuthzExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAuthzExtensionRequest, Operation>
+      updateAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateAuthzExtension")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{authzExtension.name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "authzExtension.name",
+                                request.getAuthzExtension().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("authzExtension", request.getAuthzExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAuthzExtensionRequest, Operation>
+      deleteAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteAuthzExtension")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -734,6 +941,20 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
       deleteLbRouteExtensionCallable;
   private final OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable;
+  private final UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable;
+  private final UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable;
+  private final OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable;
+  private final UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable;
+  private final OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable;
+  private final UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable;
+  private final OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -939,6 +1160,69 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+        listAuthzExtensionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listAuthzExtensionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAuthzExtensionRequest, AuthzExtension>
+        getAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+                .setMethodDescriptor(getAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateAuthzExtensionRequest, Operation>
+        createAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateAuthzExtensionRequest, Operation>
+        updateAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "authz_extension.name",
+                          String.valueOf(request.getAuthzExtension().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAuthzExtensionRequest, Operation>
+        deleteAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1093,6 +1377,54 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
             settings.deleteLbRouteExtensionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listAuthzExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.listAuthzExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.getAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getAuthzExtensionTransportSettings,
+            settings.getAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionSettings(),
+            clientContext);
+    this.updateAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionSettings(),
+            clientContext);
+    this.deleteAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1131,6 +1463,11 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
     methodDescriptors.add(createLbRouteExtensionMethodDescriptor);
     methodDescriptors.add(updateLbRouteExtensionMethodDescriptor);
     methodDescriptors.add(deleteLbRouteExtensionMethodDescriptor);
+    methodDescriptors.add(listAuthzExtensionsMethodDescriptor);
+    methodDescriptors.add(getAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(createAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(updateAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(deleteAuthzExtensionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1245,6 +1582,56 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
   public OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable() {
     return deleteLbRouteExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    return listAuthzExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    return listAuthzExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    return getAuthzExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable() {
+    return createAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    return createAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable() {
+    return updateAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    return updateAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable() {
+    return deleteAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    return deleteAuthzExtensionOperationCallable;
   }
 
   @Override

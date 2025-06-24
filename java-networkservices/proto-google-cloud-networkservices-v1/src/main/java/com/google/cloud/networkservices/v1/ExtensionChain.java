@@ -814,6 +814,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * Optional. The `:authority` header in the gRPC request sent from Envoy
      * to the extension service.
      * Required for Callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -829,6 +832,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * Optional. The `:authority` header in the gRPC request sent from Envoy
      * to the extension service.
      * Required for Callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -843,8 +849,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The reference to the service that runs the extension.
      *
-     * Currently only callout extensions are supported here.
-     *
      * To configure a callout extension, `service` must be a fully-qualified
      * reference
      * to a [backend
@@ -853,6 +857,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
      * or
      * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+     *
+     * To configure a plugin extension, `service` must be a reference
+     * to a [`WasmPlugin`
+     * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+     * in the format:
+     * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+     * or
+     * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+     *
+     * Plugin extensions are currently supported for the
+     * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+     * resources.
      * </pre>
      *
      * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,8 +883,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The reference to the service that runs the extension.
      *
-     * Currently only callout extensions are supported here.
-     *
      * To configure a callout extension, `service` must be a fully-qualified
      * reference
      * to a [backend
@@ -877,6 +891,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
      * or
      * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+     *
+     * To configure a plugin extension, `service` must be a reference
+     * to a [`WasmPlugin`
+     * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+     * in the format:
+     * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+     * or
+     * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+     *
+     * Plugin extensions are currently supported for the
+     * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+     * resources.
      * </pre>
      *
      * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,9 +916,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -908,9 +940,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -926,9 +964,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -945,9 +989,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -963,9 +1013,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -982,8 +1038,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -997,8 +1056,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1012,8 +1074,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1107,6 +1172,124 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the forwardHeaders at the given index.
      */
     com.google.protobuf.ByteString getForwardHeadersBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The metadata.
+     */
+    com.google.protobuf.Struct getMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
   }
 
   /**
@@ -1234,6 +1417,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * Optional. The `:authority` header in the gRPC request sent from Envoy
      * to the extension service.
      * Required for Callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1260,6 +1446,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * Optional. The `:authority` header in the gRPC request sent from Envoy
      * to the extension service.
      * Required for Callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1290,8 +1479,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The reference to the service that runs the extension.
      *
-     * Currently only callout extensions are supported here.
-     *
      * To configure a callout extension, `service` must be a fully-qualified
      * reference
      * to a [backend
@@ -1300,6 +1487,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
      * or
      * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+     *
+     * To configure a plugin extension, `service` must be a reference
+     * to a [`WasmPlugin`
+     * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+     * in the format:
+     * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+     * or
+     * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+     *
+     * Plugin extensions are currently supported for the
+     * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+     * resources.
      * </pre>
      *
      * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1325,8 +1524,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The reference to the service that runs the extension.
      *
-     * Currently only callout extensions are supported here.
-     *
      * To configure a callout extension, `service` must be a fully-qualified
      * reference
      * to a [backend
@@ -1335,6 +1532,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
      * or
      * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+     *
+     * To configure a plugin extension, `service` must be a reference
+     * to a [`WasmPlugin`
+     * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+     * in the format:
+     * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+     * or
+     * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+     *
+     * Plugin extensions are currently supported for the
+     * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+     * resources.
      * </pre>
      *
      * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1378,9 +1587,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -1401,9 +1616,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -1422,9 +1643,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -1444,9 +1671,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -1465,9 +1698,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of events during request or response processing for which
-     * this extension is called. This field is required for the
-     * `LbTrafficExtension` resource. It must not be set for the
-     * `LbRouteExtension` resource.
+     * this extension is called.
+     *
+     * For the `LbTrafficExtension` resource, this field is required.
+     *
+     * For the `LbRouteExtension` resource, this field is optional. If
+     * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+     *
+     * For the `LbEdgeExtension` resource, this field is required and must only
+     * contain `REQUEST_HEADERS` event.
      * </pre>
      *
      * <code>
@@ -1492,8 +1731,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1510,8 +1752,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1528,8 +1773,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specifies the timeout for each individual message on the
-     * stream. The timeout must be between 10-1000 milliseconds. Required for
-     * Callout extensions.
+     * stream. The timeout must be between `10`-`10000` milliseconds. Required
+     * for callout extensions.
+     *
+     * This field is not supported for plugin extensions. Setting it results in
+     * a validation error.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1647,6 +1895,136 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
       return forwardHeaders_.getByteString(index);
     }
 
+    public static final int METADATA_FIELD_NUMBER = 9;
+    private com.google.protobuf.Struct metadata_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getMetadata() {
+      return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata provided here is included as part of the
+     * `metadata_context` (of type `google.protobuf.Struct`) in the
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata is available under the namespace
+     * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+     * For example:
+     * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+     *
+     * The following variables are supported in the metadata:
+     *
+     * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+     *   qualified resource name.
+     *
+     * This field must not be set for plugin extensions. Setting it results in
+     * a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
+     *
+     * This field is subject to following limitations:
+     *
+     * * The total size of the metadata must be less than 1KiB.
+     * * The total number of keys in the metadata must be less than 16.
+     * * The length of each key must be less than 64 characters.
+     * * The length of each value must be less than 1024 characters.
+     * * All values must be strings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1686,6 +2064,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
       }
       for (int i = 0; i < forwardHeaders_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, forwardHeaders_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(9, getMetadata());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1732,6 +2113,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getForwardHeadersList().size();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMetadata());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1758,6 +2142,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
       }
       if (getFailOpen() != other.getFailOpen()) return false;
       if (!getForwardHeadersList().equals(other.getForwardHeadersList())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata().equals(other.getMetadata())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1788,6 +2176,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
       if (getForwardHeadersCount() > 0) {
         hash = (37 * hash) + FORWARD_HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + getForwardHeadersList().hashCode();
+      }
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1934,6 +2326,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getTimeoutFieldBuilder();
+          getMetadataFieldBuilder();
         }
       }
 
@@ -1953,6 +2346,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
         }
         failOpen_ = false;
         forwardHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
+          metadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -2021,6 +2419,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000040) != 0)) {
           forwardHeaders_.makeImmutable();
           result.forwardHeaders_ = forwardHeaders_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2115,6 +2517,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2197,6 +2602,12 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
                   forwardHeaders_.add(s);
                   break;
                 } // case 58
+              case 74:
+                {
+                  input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2361,6 +2772,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * Optional. The `:authority` header in the gRPC request sent from Envoy
        * to the extension service.
        * Required for Callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2386,6 +2800,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * Optional. The `:authority` header in the gRPC request sent from Envoy
        * to the extension service.
        * Required for Callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2411,6 +2828,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * Optional. The `:authority` header in the gRPC request sent from Envoy
        * to the extension service.
        * Required for Callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2435,6 +2855,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * Optional. The `:authority` header in the gRPC request sent from Envoy
        * to the extension service.
        * Required for Callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2455,6 +2878,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * Optional. The `:authority` header in the gRPC request sent from Envoy
        * to the extension service.
        * Required for Callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>string authority = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2481,8 +2907,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The reference to the service that runs the extension.
        *
-       * Currently only callout extensions are supported here.
-       *
        * To configure a callout extension, `service` must be a fully-qualified
        * reference
        * to a [backend
@@ -2491,6 +2915,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
        * or
        * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+       *
+       * To configure a plugin extension, `service` must be a reference
+       * to a [`WasmPlugin`
+       * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+       * in the format:
+       * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+       * or
+       * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+       *
+       * Plugin extensions are currently supported for the
+       * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+       * resources.
        * </pre>
        *
        * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2515,8 +2951,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The reference to the service that runs the extension.
        *
-       * Currently only callout extensions are supported here.
-       *
        * To configure a callout extension, `service` must be a fully-qualified
        * reference
        * to a [backend
@@ -2525,6 +2959,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
        * or
        * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+       *
+       * To configure a plugin extension, `service` must be a reference
+       * to a [`WasmPlugin`
+       * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+       * in the format:
+       * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+       * or
+       * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+       *
+       * Plugin extensions are currently supported for the
+       * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+       * resources.
        * </pre>
        *
        * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2549,8 +2995,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The reference to the service that runs the extension.
        *
-       * Currently only callout extensions are supported here.
-       *
        * To configure a callout extension, `service` must be a fully-qualified
        * reference
        * to a [backend
@@ -2559,6 +3003,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
        * or
        * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+       *
+       * To configure a plugin extension, `service` must be a reference
+       * to a [`WasmPlugin`
+       * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+       * in the format:
+       * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+       * or
+       * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+       *
+       * Plugin extensions are currently supported for the
+       * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+       * resources.
        * </pre>
        *
        * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2582,8 +3038,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The reference to the service that runs the extension.
        *
-       * Currently only callout extensions are supported here.
-       *
        * To configure a callout extension, `service` must be a fully-qualified
        * reference
        * to a [backend
@@ -2592,6 +3046,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
        * or
        * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+       *
+       * To configure a plugin extension, `service` must be a reference
+       * to a [`WasmPlugin`
+       * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+       * in the format:
+       * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+       * or
+       * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+       *
+       * Plugin extensions are currently supported for the
+       * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+       * resources.
        * </pre>
        *
        * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2611,8 +3077,6 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The reference to the service that runs the extension.
        *
-       * Currently only callout extensions are supported here.
-       *
        * To configure a callout extension, `service` must be a fully-qualified
        * reference
        * to a [backend
@@ -2621,6 +3085,18 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        * `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}`
        * or
        * `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
+       *
+       * To configure a plugin extension, `service` must be a reference
+       * to a [`WasmPlugin`
+       * resource](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.wasmPlugins)
+       * in the format:
+       * `projects/{project}/locations/{location}/wasmPlugins/{plugin}`
+       * or
+       * `//networkservices.googleapis.com/projects/{project}/locations/{location}/wasmPlugins/{wasmPlugin}`.
+       *
+       * Plugin extensions are currently supported for the
+       * `LbTrafficExtension`, the `LbRouteExtension`, and the `LbEdgeExtension`
+       * resources.
        * </pre>
        *
        * <code>string service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2654,9 +3130,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2677,9 +3159,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2697,9 +3185,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2718,9 +3212,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2747,9 +3247,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2774,9 +3280,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2801,9 +3313,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2824,9 +3342,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2844,9 +3368,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2865,9 +3395,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2890,9 +3426,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2914,9 +3456,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of events during request or response processing for which
-       * this extension is called. This field is required for the
-       * `LbTrafficExtension` resource. It must not be set for the
-       * `LbRouteExtension` resource.
+       * this extension is called.
+       *
+       * For the `LbTrafficExtension` resource, this field is required.
+       *
+       * For the `LbRouteExtension` resource, this field is optional. If
+       * unspecified, `REQUEST_HEADERS` event is assumed as supported.
+       *
+       * For the `LbEdgeExtension` resource, this field is required and must only
+       * contain `REQUEST_HEADERS` event.
        * </pre>
        *
        * <code>
@@ -2947,8 +3495,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2965,8 +3516,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2987,8 +3541,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3013,8 +3570,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3036,8 +3596,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3067,8 +3630,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3090,8 +3656,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3108,8 +3677,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3128,8 +3700,11 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Specifies the timeout for each individual message on the
-       * stream. The timeout must be between 10-1000 milliseconds. Required for
-       * Callout extensions.
+       * stream. The timeout must be between `10`-`10000` milliseconds. Required
+       * for callout extensions.
+       *
+       * This field is not supported for plugin extensions. Setting it results in
+       * a validation error.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3448,6 +4023,448 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private com.google.protobuf.Struct metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          metadataBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The metadata.
+       */
+      public com.google.protobuf.Struct getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMetadata(com.google.protobuf.Struct value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMetadata(com.google.protobuf.Struct value) {
+        if (metadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && metadata_ != null
+              && metadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getMetadataBuilder().mergeFrom(value);
+          } else {
+            metadata_ = value;
+          }
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+        if (metadata_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
+          metadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The metadata provided here is included as part of the
+       * `metadata_context` (of type `google.protobuf.Struct`) in the
+       * `ProcessingRequest` message sent to the extension server.
+       *
+       * The metadata is available under the namespace
+       * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
+       * For example:
+       * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
+       *
+       * The following variables are supported in the metadata:
+       *
+       * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
+       *   qualified resource name.
+       *
+       * This field must not be set for plugin extensions. Setting it results in
+       * a validation error.
+       *
+       * You can set metadata at either the resource level or the extension level.
+       * The extension level metadata is recommended because you can pass a
+       * different set of metadata through each extension to the backend.
+       *
+       * This field is subject to following limitations:
+       *
+       * * The total size of the metadata must be less than 1KiB.
+       * * The total number of keys in the metadata must be less than 16.
+       * * The length of each key must be less than 64 characters.
+       * * The length of each value must be less than 1024 characters.
+       * * All values must be strings.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getMetadata(), getParentForChildren(), isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3652,7 +4669,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -3673,7 +4691,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -3695,7 +4714,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -3715,7 +4735,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -3735,7 +4756,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -4591,7 +5613,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4615,7 +5638,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4638,7 +5662,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4661,7 +5686,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4691,7 +5717,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4719,7 +5746,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4749,7 +5777,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4779,7 +5808,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4806,7 +5836,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4834,7 +5865,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4862,7 +5894,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4888,7 +5921,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4914,7 +5948,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4934,7 +5969,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4958,7 +5994,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -4983,7 +6020,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -5005,7 +6043,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>
@@ -5028,7 +6067,8 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessageV3
      * At least one extension is required.
      * Up to 3 extensions can be defined for each extension chain
      * for `LbTrafficExtension` resource.
-     * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+     * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+     * per extension chain.
      * </pre>
      *
      * <code>

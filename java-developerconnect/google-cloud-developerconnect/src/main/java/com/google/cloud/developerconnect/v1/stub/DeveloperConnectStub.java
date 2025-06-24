@@ -18,18 +18,27 @@ package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.developerconnect.v1.AccountConnector;
 import com.google.cloud.developerconnect.v1.Connection;
+import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
 import com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
+import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
@@ -40,15 +49,23 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
+import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.GitRepositoryLink;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse;
 import com.google.cloud.developerconnect.v1.ListConnectionsRequest;
 import com.google.cloud.developerconnect.v1.ListConnectionsResponse;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
+import com.google.cloud.developerconnect.v1.ListUsersRequest;
+import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
+import com.google.cloud.developerconnect.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -186,6 +203,86 @@ public abstract class DeveloperConnectStub implements BackgroundResource {
 
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchGitRefsCallable()");
+  }
+
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listAccountConnectorsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAccountConnectorsCallable()");
+  }
+
+  public UnaryCallable<GetAccountConnectorRequest, AccountConnector> getAccountConnectorCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAccountConnectorCallable()");
+  }
+
+  public OperationCallable<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createAccountConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAccountConnectorRequest, Operation> createAccountConnectorCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAccountConnectorCallable()");
+  }
+
+  public OperationCallable<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAccountConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAccountConnectorRequest, Operation> updateAccountConnectorCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAccountConnectorCallable()");
+  }
+
+  public OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteAccountConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAccountConnectorRequest, Operation> deleteAccountConnectorCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAccountConnectorCallable()");
+  }
+
+  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchAccessTokenCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
+  }
+
+  public OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteUserOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteUserCallable()");
+  }
+
+  public UnaryCallable<FetchSelfRequest, User> fetchSelfCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchSelfCallable()");
+  }
+
+  public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSelfOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSelfCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
