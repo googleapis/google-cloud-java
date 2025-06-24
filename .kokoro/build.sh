@@ -93,9 +93,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
-    echo "Target Branch: ${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}"
-    echo "Pull Request Commit: ${KOKORO_GITHUB_PULL_REQUEST_COMMIT}"
-    changed_file_list=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}" "${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
+    changed_file_list=$(git diff --name-only "${BASE_BRANCH}" HEAD)
     echo "${changed_file_list}"
     has_code_change="false"
     while IFS= read -r changed_file; do
