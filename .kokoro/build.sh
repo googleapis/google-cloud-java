@@ -93,6 +93,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
+    git checkout "${BASE_BRANCH}"
     changed_file_list=$(git diff --name-only "${BASE_BRANCH}" HEAD)
     echo "${changed_file_list}"
     has_code_change="false"
