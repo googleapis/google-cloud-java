@@ -26,6 +26,7 @@ import com.google.auth.Credentials;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
@@ -121,9 +122,11 @@ public class Util {
   static String extractTableId(Object request) {
     String tableName = null;
     String authorizedViewName = null;
+    String materializedViewName = null;
     if (request instanceof ReadRowsRequest) {
       tableName = ((ReadRowsRequest) request).getTableName();
       authorizedViewName = ((ReadRowsRequest) request).getAuthorizedViewName();
+      materializedViewName = ((ReadRowsRequest) request).getMaterializedViewName();
     } else if (request instanceof MutateRowsRequest) {
       tableName = ((MutateRowsRequest) request).getTableName();
       authorizedViewName = ((MutateRowsRequest) request).getAuthorizedViewName();
@@ -133,6 +136,7 @@ public class Util {
     } else if (request instanceof SampleRowKeysRequest) {
       tableName = ((SampleRowKeysRequest) request).getTableName();
       authorizedViewName = ((SampleRowKeysRequest) request).getAuthorizedViewName();
+      materializedViewName = ((SampleRowKeysRequest) request).getMaterializedViewName();
     } else if (request instanceof CheckAndMutateRowRequest) {
       tableName = ((CheckAndMutateRowRequest) request).getTableName();
       authorizedViewName = ((CheckAndMutateRowRequest) request).getAuthorizedViewName();
@@ -149,6 +153,9 @@ public class Util {
     }
     if (authorizedViewName != null && !authorizedViewName.isEmpty()) {
       return AuthorizedViewName.parse(authorizedViewName).getTable();
+    }
+    if (materializedViewName != null && !materializedViewName.isEmpty()) {
+      return MaterializedViewName.parse(materializedViewName).getMaterializedView();
     }
     return "<unspecified>";
   }
