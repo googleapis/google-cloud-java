@@ -592,6 +592,25 @@ libraries:
   - proto_path: google/cloud/confidentialcomputing/v1
   - proto_path: google/cloud/confidentialcomputing/v1alpha1
 
+- api_shortname: configdelivery
+  name_pretty: Config Delivery API
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
+  api_description: ConfigDelivery service manages the deployment of kubernetes configuration
+    to a fleet of kubernetes clusters.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-configdelivery
+  api_id: configdelivery.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/configdelivery/v1beta
+  requires_billing: true
+  rest_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
 - api_shortname: connectgateway
   name_pretty: Connect Gateway API
   product_documentation: 
