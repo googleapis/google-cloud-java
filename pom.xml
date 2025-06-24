@@ -122,6 +122,7 @@
     <module>java-language</module>
     <module>java-life-sciences</module>
     <module>java-lustre</module>
+    <module>java-maintenance</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>

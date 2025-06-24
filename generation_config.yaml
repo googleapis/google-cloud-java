@@ -1327,6 +1327,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/lustre/v1
   requires_billing: true
+- api_shortname: maintenance
+  name_pretty: Maintenance API
+  product_documentation: https://cloud.google.com/unified-maintenance/docs/overview
+  api_description: The Maintenance API provides a centralized view of planned disruptive
+    maintenance events across supported Google Cloud products.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-maintenance
+  api_id: maintenance.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/maintenance/api/v1beta
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
 - api_shortname: managedidentities
   name_pretty: Managed Service for Microsoft Active Directory
   product_documentation: https://cloud.google.com/managed-microsoft-ad/
