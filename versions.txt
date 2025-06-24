@@ -864,3 +864,6 @@ grpc-google-cloud-workspaceevents-v1beta:0.30.0:0.31.0-SNAPSHOT
 google-cloud-maintenance:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-maintenance-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-maintenance-v1beta:0.0.0:0.0.1-SNAPSHOT
+google-cloud-configdelivery:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-configdelivery-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-configdelivery-v1beta:0.0.0:0.0.1-SNAPSHOT
