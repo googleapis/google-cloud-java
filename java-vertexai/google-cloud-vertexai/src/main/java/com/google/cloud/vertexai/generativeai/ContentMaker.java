@@ -22,7 +22,14 @@ import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.Part;
 import com.google.common.base.Strings;
 
-/** Helper class to create content. */
+/**
+ * Helper class to create content.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public class ContentMaker {
   private static final String DEFAULT_ROLE = "user";
 
