@@ -69,6 +69,14 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FasterDeploymentConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_RagConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_RagConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_fieldAccessorTable;
@@ -96,7 +104,7 @@ public final class EndpointProto {
           + "ource.proto\0320google/cloud/aiplatform/v1/encryption_spec.proto\032,google/cloud/aipl"
           + "atform/v1/explanation.proto\032#google/cloud/aiplatform/v1/io.proto\0322google/cloud/a"
           + "iplatform/v1/machine_resources.proto\0323google/cloud/aiplatform/v1/service_network"
-          + "ing.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\377\n\n"
+          + "ing.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\346\013\n"
           + "\010Endpoint\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\023\n"
@@ -126,25 +134,27 @@ public final class EndpointProto {
           + "\030client_connection_config\030\027"
           + " \001(\01322.google.cloud.aiplatform.v1.ClientConnectionConfig\022\032\n\r"
           + "satisfies_pzs\030\033 \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\030\034 \001(\010B\003\340A\003\0323\n"
+          + "satisfies_pzi\030\034 \001(\010B\003\340A\003\022e\n"
+          + "\037gen_ai_advanced_features_config\030\035 \001("
+          + "\01327.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigB\003\340A\001\0323\n"
           + "\021TrafficSplitEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\005:\0028\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\265\001\352A\261\001\n"
-          + "\"aiplatform.googleapis.com/Endpoint\022<projects/{proje"
-          + "ct}/locations/{location}/endpoints/{endpoint}\022Mprojects/{project}/locations/{loc"
-          + "ation}/publishers/{publisher}/models/{model}\"\365\t\n\r"
+          + "\"aiplatform.googleapis.com/Endpoint\022<projects/{project}/locations/{lo"
+          + "cation}/endpoints/{endpoint}\022Mprojects/{"
+          + "project}/locations/{location}/publishers/{publisher}/models/{model}\"\362\t\n\r"
           + "DeployedModel\022M\n"
-          + "\023dedicated_resources\030\007"
-          + " \001(\0132..google.cloud.aiplatform.v1.DedicatedResourcesH\000\022M\n"
-          + "\023automatic_resources\030\010"
-          + " \001(\0132..google.cloud.aiplatform.v1.AutomaticResourcesH\000\022Q\n"
+          + "\023dedicated_resources\030\007 \001(\0132..goo"
+          + "gle.cloud.aiplatform.v1.DedicatedResourcesH\000\022M\n"
+          + "\023automatic_resources\030\010 \001(\0132..goog"
+          + "le.cloud.aiplatform.v1.AutomaticResourcesH\000\022Q\n"
           + "\020shared_resources\030\021 \001(\tB5\372A2\n"
           + "0aiplatform.googleapis.com/DeploymentResourcePoolH\000\022\017\n"
-          + "\002id\030\001 \001(\tB\003\340A\005\0226\n"
-          + "\005model\030\002 \001(\tB\'\340A\002\372A!\n"
+          + "\002id\030\001 \001(\tB\003\340A\005\0223\n"
+          + "\005model\030\002 \001(\tB$\372A!\n"
           + "\037aiplatform.googleapis.com/Model\022\035\n"
           + "\020model_version_id\030\022 \001(\tB\003\340A\003\022\024\n"
           + "\014display_name\030\003 \001(\t\0224\n"
@@ -156,17 +166,17 @@ public final class EndpointProto {
           + "\031disable_container_logging\030\017 \001(\010\022\035\n"
           + "\025enable_access_logging\030\r"
           + " \001(\010\022L\n"
-          + "\021private_endpoints\030\016"
-          + " \001(\0132,.google.cloud.aiplatform.v1.PrivateEndpointsB\003\340A\003\022T\n"
-          + "\030faster_deployment_config\030\027 \001(\01322.google.clo"
-          + "ud.aiplatform.v1.FasterDeploymentConfig\022E\n"
-          + "\006status\030\032"
-          + " \001(\01320.google.cloud.aiplatform.v1.DeployedModel.StatusB\003\340A\003\022R\n\r"
-          + "system_labels\030\034"
-          + " \003(\0132;.google.cloud.aiplatform.v1.DeployedModel.SystemLabelsEntry\022\025\n\r"
+          + "\021private_endpoints\030\016 \001"
+          + "(\0132,.google.cloud.aiplatform.v1.PrivateEndpointsB\003\340A\003\022T\n"
+          + "\030faster_deployment_config\030\027"
+          + " \001(\01322.google.cloud.aiplatform.v1.FasterDeploymentConfig\022E\n"
+          + "\006status\030\032 \001(\01320.go"
+          + "ogle.cloud.aiplatform.v1.DeployedModel.StatusB\003\340A\003\022R\n\r"
+          + "system_labels\030\034 \003(\0132;.goog"
+          + "le.cloud.aiplatform.v1.DeployedModel.SystemLabelsEntry\022\025\n\r"
           + "checkpoint_id\030\035 \001(\t\022[\n"
-          + "\031speculative_decoding_spec\030\036"
-          + " \001(\01323.google.cloud.aiplatform.v1.SpeculativeDecodingSpecB\003\340A\001\032\177\n"
+          + "\031speculative_decoding_spec\030\036 \001(\01323.googl"
+          + "e.cloud.aiplatform.v1.SpeculativeDecodingSpecB\003\340A\001\032\177\n"
           + "\006Status\022\024\n"
           + "\007message\030\001 \001(\tB\003\340A\003\0229\n"
           + "\020last_update_time\030\002"
@@ -184,17 +194,22 @@ public final class EndpointProto {
           + "#PredictRequestResponseLoggingConfig\022\017\n"
           + "\007enabled\030\001 \001(\010\022\025\n\r"
           + "sampling_rate\030\002 \001(\001\022M\n"
-          + "\024bigquery_destination\030\003"
-          + " \001(\0132/.google.cloud.aiplatform.v1.BigQueryDestination\"N\n"
+          + "\024bigquery_destination\030\003 \001(\0132/.googl"
+          + "e.cloud.aiplatform.v1.BigQueryDestination\"N\n"
           + "\026ClientConnectionConfig\0224\n"
           + "\021inference_timeout\030\001 \001(\0132\031.google.protobuf.Duration\"5\n"
           + "\026FasterDeploymentConfig\022\033\n"
-          + "\023fast_tryout_enabled\030\002 \001(\010\"\231\003\n"
+          + "\023fast_tryout_enabled\030\002 \001(\010\"\225\001\n"
+          + "\033GenAiAdvancedFeaturesConfig\022U\n\n"
+          + "rag_config\030\001 \001(\0132A.google.cl"
+          + "oud.aiplatform.v1.GenAiAdvancedFeaturesConfig.RagConfig\032\037\n"
+          + "\tRagConfig\022\022\n\n"
+          + "enable_rag\030\001 \001(\010\"\231\003\n"
           + "\027SpeculativeDecodingSpec\022l\n"
-          + "\027draft_model_speculation\030\002 \001(\0132I.google.cloud.aiplatf"
-          + "orm.v1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022a\n"
-          + "\021ngram_speculation\030\003 \001("
-          + "\0132D.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
+          + "\027draft_model_speculation\030\002 \001(\0132I.google.c"
+          + "loud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022a\n"
+          + "\021ngram_speculation\030\003 \001(\0132D.google.cloud.aiplatform."
+          + "v1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
           + "\027speculative_token_count\030\001 \001(\005\032U\n"
           + "\025DraftModelSpeculation\022<\n"
           + "\013draft_model\030\001 \001(\tB\'\340A\002\372A!\n"
@@ -203,9 +218,10 @@ public final class EndpointProto {
           + "ngram_size\030\001 \001(\005B\r\n"
           + "\013speculationB\313\001\n"
           + "\036com.google.cloud.aiplatform.v1B\r"
-          + "EndpointProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatfo"
-          + "rmpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
-          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "EndpointProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
+          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
+          + "gle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -247,6 +263,7 @@ public final class EndpointProto {
               "ClientConnectionConfig",
               "SatisfiesPzs",
               "SatisfiesPzi",
+              "GenAiAdvancedFeaturesConfig",
             });
     internal_static_google_cloud_aiplatform_v1_Endpoint_TrafficSplitEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Endpoint_descriptor.getNestedTypes().get(0);
@@ -339,8 +356,26 @@ public final class EndpointProto {
             new java.lang.String[] {
               "FastTryoutEnabled",
             });
-    internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_descriptor =
+    internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_descriptor,
+            new java.lang.String[] {
+              "RagConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_RagConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_RagConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GenAiAdvancedFeaturesConfig_RagConfig_descriptor,
+            new java.lang.String[] {
+              "EnableRag",
+            });
+    internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SpeculativeDecodingSpec_descriptor,

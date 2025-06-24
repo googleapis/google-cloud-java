@@ -23,6 +23,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
+ * -----------------------------------------------------------------------------
  * Configures which glossary should be used for a specific target language,
  * and defines options for applying that glossary.
  * </pre>
@@ -314,6 +315,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
+   * -----------------------------------------------------------------------------
    * Configures which glossary should be used for a specific target language,
    * and defines options for applying that glossary.
    * </pre>

@@ -268,12 +268,12 @@ public final class AutoMLTranslationProto {
           + "ime\030\n \001(\0132\032.google.protobuf.TimestampB\003\340"
           + "A\003:[\352AX\n\036translate.googleapis.com/Model\022"
           + "6projects/{project}/locations/{location}"
-          + "/models/{model}B\320\001\n\035com.google.cloud.tra"
+          + "/models/{model}B\315\001\n\035com.google.cloud.tra"
           + "nslate.v3B\026AutoMLTranslationProtoP\001Z;clo"
           + "ud.google.com/go/translate/apiv3/transla"
-          + "tepb;translatepb\370\001\001\252\002\031Google.Cloud.Trans"
-          + "late.V3\312\002\031Google\\Cloud\\Translate\\V3\352\002\034Go"
-          + "ogle::Cloud::Translate::V3b\006proto3"
+          + "tepb;translatepb\252\002\031Google.Cloud.Translat"
+          + "e.V3\312\002\031Google\\Cloud\\Translate\\V3\352\002\034Googl"
+          + "e::Cloud::Translate::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
