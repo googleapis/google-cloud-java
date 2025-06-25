@@ -7,90 +7,95 @@
     ":updateNotScheduled",
     ":automergeDisabled",
     ":ignoreModulesAndTests",
-    ":maintainLockFilesDisabled",
-    ":autodetectPinVersions"
+    ":maintainLockFilesDisabled"
   ],
-  "ignorePaths": [".kokoro/requirements.txt"],
+  "ignorePaths": [
+    ".kokoro/requirements.txt"
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.kokoro/continuous/graalvm-native.*.cfg$"
+      "managerFilePatterns": [
+        "/^.kokoro/continuous/graalvm-native.*.cfg$/"
       ],
-      "matchStrings": ["value: \"gcr.io/cloud-devrel-public-resources/graalvm.*:(?<currentValue>.*?)\""],
+      "matchStrings": [
+        "value: \"gcr.io/cloud-devrel-public-resources/graalvm.*:(?<currentValue>.*?)\""
+      ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/unmanaged_dependency_check.yaml$"
+      "managerFilePatterns": [
+        "/^.github/workflows/unmanaged_dependency_check.yaml$/"
       ],
-      "matchStrings": ["uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"],
+      "matchStrings": [
+        "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
+      ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
     }
   ],
   "packageRules": [
     {
-      "packagePatterns": [
-        "^com.google.guava:"
-      ],
-      "versionScheme": "docker"
+      "versioning": "docker",
+      "matchPackageNames": [
+        "/^com.google.guava:/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.api:gax",
-        "^com.google.auth:",
-        "^com.google.cloud:google-cloud-core",
-        "^io.grpc:",
-        "^com.google.guava:"
-      ],
-      "groupName": "core dependencies"
+      "groupName": "core dependencies",
+      "matchPackageNames": [
+        "/^com.google.api:gax/",
+        "/^com.google.auth:/",
+        "/^com.google.cloud:google-cloud-core/",
+        "/^io.grpc:/",
+        "/^com.google.guava:/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.http-client:",
-        "^com.google.oauth-client:",
-        "^com.google.api-client:"
-      ],
-      "groupName": "core transport dependencies"
+      "groupName": "core transport dependencies",
+      "matchPackageNames": [
+        "/^com.google.http-client:/",
+        "/^com.google.oauth-client:/",
+        "/^com.google.api-client:/"
+      ]
     },
     {
-      "packagePatterns": [
-        "*"
-      ],
       "semanticCommitType": "deps",
-      "semanticCommitScope": null
+      "semanticCommitScope": null,
+      "matchPackageNames": [
+        "*"
+      ]
     },
     {
-      "packagePatterns": [
-        "^org.apache.maven",
-        "^org.jacoco:",
-        "^org.codehaus.mojo:",
-        "^org.sonatype.plugins:",
-        "^com.coveo:",
-        "^com.google.cloud:google-cloud-shared-config"
-      ],
       "semanticCommitType": "build",
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^org.apache.maven/",
+        "/^org.jacoco:/",
+        "/^org.codehaus.mojo:/",
+        "/^org.sonatype.plugins:/",
+        "/^com.coveo:/",
+        "/^com.google.cloud:google-cloud-shared-config/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.cloud:google-cloud-bigquerystorage",
-        "^com.google.cloud:libraries-bom",
-        "^com.google.cloud.samples:shared-configuration"
-      ],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-bigquerystorage/",
+        "/^com.google.cloud:libraries-bom/",
+        "/^com.google.cloud.samples:shared-configuration/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.cloud:google-cloud-"
-      ],
-      "ignoreUnstable": false
+      "ignoreUnstable": false,
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-/"
+      ]
     }
   ],
-  "semanticCommits": true,
+  "semanticCommits": "enabled",
   "dependencyDashboard": true
 }
