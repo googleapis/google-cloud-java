@@ -65,6 +65,7 @@
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
+    <module>java-configdelivery</module>
     <module>java-connectgateway</module>
     <module>java-contact-center-insights</module>
     <module>java-container</module>
