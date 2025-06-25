@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.22.6](https://github.com/googleapis/java-logging/compare/v3.22.5...v3.22.6) (2025-06-25)
+
+
+### Bug Fixes
+
+* Regenerate gapic yaml and service yaml for logging by augmentation configs ([9023895](https://github.com/googleapis/java-logging/commit/9023895fd56381c1f4309843a269975763a89d40))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#1821](https://github.com/googleapis/java-logging/issues/1821)) ([af4edc5](https://github.com/googleapis/java-logging/commit/af4edc5b1399b3563d9cf07e171c4281fde2bb79))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#1822](https://github.com/googleapis/java-logging/issues/1822)) ([0a96dd5](https://github.com/googleapis/java-logging/commit/0a96dd52dc1594767b7dd60da99a17bac8ac14ba))
+
 ## [3.22.5](https://github.com/googleapis/java-logging/compare/v3.22.4...v3.22.5) (2025-06-05)
 
 
