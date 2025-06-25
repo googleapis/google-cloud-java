@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.11.0 (2025-06-25)
+
+### Features
+
+* KMS key resource_definition `cloudkms.googleapis.com/CryptoKey is added ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
 ## 0.9.0 (2025-06-16)
 
 * No change

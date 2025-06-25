@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.61.0](https://github.com/googleapis/google-cloud-java/compare/v1.60.0...v1.61.0) (2025-06-25)
+
+
+### Features
+
+* [aiplatform] add PSCAutomationConfig to PrivateServiceConnectConfig in service_networking.proto ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [configdelivery] new module for configdelivery ([#11640](https://github.com/googleapis/google-cloud-java/issues/11640)) ([5987aa8](https://github.com/googleapis/google-cloud-java/commit/5987aa84faaa3a1d73be1becbd8f760cf7fe13cf))
+* [developerconnect] add DCI insights config proto ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [maintenance] new module for maintenance ([#11641](https://github.com/googleapis/google-cloud-java/issues/11641)) ([9a83b47](https://github.com/googleapis/google-cloud-java/commit/9a83b47f75124fdb3b341001e843ad56426c47c6))
+* [networkservices] Add support for WasmPlugin resource in NetworkServices API ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [parametermanager] KMS key resource_definition `cloudkms.googleapis.com/CryptoKey is added ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [retail] add a user_attributes field in SearchRequest that can be used for personalization ([0f5f4ed](https://github.com/googleapis/google-cloud-java/commit/0f5f4ed30e3ee1a889c4321ee950c75f4ba2727c))
+* Generate Worksspace Events v1beta Client Library ([#11642](https://github.com/googleapis/google-cloud-java/issues/11642)) ([da8ad05](https://github.com/googleapis/google-cloud-java/commit/da8ad05708ead0b578b6aec7a06b8b3fe40c717f))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.60.0 ([b0c5552](https://github.com/googleapis/google-cloud-java/commit/b0c5552ba7e2397ec0848894a686ed7f7baab676))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+### Documentation
+
+* [translate] minor formatting ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [translate] minor formatting ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [translate] Update hyperlink to the supported languages documentation page ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [translate] Update hyperlink to the supported languages documentation page ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [vertexai] Add deprecation note in README and pom ([#11638](https://github.com/googleapis/google-cloud-java/issues/11638)) ([8cc7c69](https://github.com/googleapis/google-cloud-java/commit/8cc7c693055c29428bb022c762cf4023a2cfacd2))
+* [vertexai] Add deprecation notice for generativeai package ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+* [vertexai] Add deprecation notice for generativeai package ([#11637](https://github.com/googleapis/google-cloud-java/issues/11637)) ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+
 ## [1.60.0](https://github.com/googleapis/google-cloud-java/compare/v1.59.0...v1.60.0) (2025-06-20)
 
 
