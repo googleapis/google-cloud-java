@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.140.2](https://github.com/googleapis/java-pubsub/compare/v1.140.1...v1.140.2) (2025-06-25)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.51.0 ([#2457](https://github.com/googleapis/java-pubsub/issues/2457)) ([d74215a](https://github.com/googleapis/java-pubsub/commit/d74215a6f1e641ba75997e2e43bef348fb9c4a3c))
+* Update dependency com.google.cloud:google-cloud-core to v2.58.0 ([#2443](https://github.com/googleapis/java-pubsub/issues/2443)) ([d4599d9](https://github.com/googleapis/java-pubsub/commit/d4599d93b780b6ef20ad44582aeb8c1cd35f99d4))
+* Update dependency com.google.cloud:google-cloud-storage to v2.53.1 ([#2452](https://github.com/googleapis/java-pubsub/issues/2452)) ([b4af237](https://github.com/googleapis/java-pubsub/commit/b4af2370bb875ee8d0047f67a72e8c6d62547a12))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#2461](https://github.com/googleapis/java-pubsub/issues/2461)) ([715916a](https://github.com/googleapis/java-pubsub/commit/715916aeedbe696b9c4b922e4fb2bbf76f8b201a))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.36.0 ([#2440](https://github.com/googleapis/java-pubsub/issues/2440)) ([50a3eb9](https://github.com/googleapis/java-pubsub/commit/50a3eb9276b4711b8161a021d055238abc0e20de))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.31.1 ([#2442](https://github.com/googleapis/java-pubsub/issues/2442)) ([a0be1bb](https://github.com/googleapis/java-pubsub/commit/a0be1bbe601575f05fb00f6d616b51de8f23238d))
+* Update dependency org.easymock:easymock to v5.6.0 ([#2069](https://github.com/googleapis/java-pubsub/issues/2069)) ([5f144a4](https://github.com/googleapis/java-pubsub/commit/5f144a461c6749ec7e2cf900399f386094451244))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#2462](https://github.com/googleapis/java-pubsub/issues/2462)) ([ee8e5c7](https://github.com/googleapis/java-pubsub/commit/ee8e5c7166f2ac4eb706241e42f4ce84afcc2668))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#2464](https://github.com/googleapis/java-pubsub/issues/2464)) ([7a0af37](https://github.com/googleapis/java-pubsub/commit/7a0af37c01e747d8f40145b7b4438eaadab9e01a))
+
 ## [1.140.1](https://github.com/googleapis/java-pubsub/compare/v1.140.0...v1.140.1) (2025-06-05)
 
 
