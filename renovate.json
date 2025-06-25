@@ -15,9 +15,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.kokoro/continuous/graalvm-native.*.cfg$",
-        "^.kokoro/presubmit/graalvm-native.*.cfg$"
+      "managerFilePatterns": [
+        "/^.kokoro/continuous/graalvm-native.*.cfg$/",
+        "/^.kokoro/presubmit/graalvm-native.*.cfg$/"
       ],
       "matchStrings": [
         "value: \"gcr.io/cloud-devrel-public-resources/graalvm.*:(?<currentValue>.*?)\""
@@ -27,8 +27,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/unmanaged_dependency_check.yaml$"
+      "managerFilePatterns": [
+        "/^.github/workflows/unmanaged_dependency_check.yaml$/"
       ],
       "matchStrings": [
         "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
