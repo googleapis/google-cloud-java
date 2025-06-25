@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.31.7](https://github.com/googleapis/java-firestore/compare/v3.31.6...v3.31.7) (2025-06-25)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.64.0 ([#2143](https://github.com/googleapis/java-firestore/issues/2143)) ([c42dcab](https://github.com/googleapis/java-firestore/commit/c42dcabb11a0374cc3ac70e46b9dde3aff5d7268))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.66.0 ([#2154](https://github.com/googleapis/java-firestore/issues/2154)) ([15f1ceb](https://github.com/googleapis/java-firestore/commit/15f1ceb27c1ef4f460a1d490054b30a15838fc7d))
+* Update dependency com.google.cloud:google-cloud-trace to v2.64.0 ([#2144](https://github.com/googleapis/java-firestore/issues/2144)) ([213f63c](https://github.com/googleapis/java-firestore/commit/213f63cf936b5849ec416b041b570953d2e478f2))
+* Update dependency com.google.cloud:google-cloud-trace to v2.66.0 ([#2155](https://github.com/googleapis/java-firestore/issues/2155)) ([934b6e5](https://github.com/googleapis/java-firestore/commit/934b6e5a3a83acf7bb84726fc7dd44d5d7720513))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.49.2 ([#2149](https://github.com/googleapis/java-firestore/issues/2149)) ([6331e05](https://github.com/googleapis/java-firestore/commit/6331e05fdc4d030ebdaa5e0f53e3229f611736a7))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#2158](https://github.com/googleapis/java-firestore/issues/2158)) ([97bd331](https://github.com/googleapis/java-firestore/commit/97bd33163c84c92688907167c8280dd9d167c005))
+* Update googleapis/sdk-platform-java action to v2.59.1 ([#2147](https://github.com/googleapis/java-firestore/issues/2147)) ([4a21735](https://github.com/googleapis/java-firestore/commit/4a21735534fd837de624044b07a5290e9dcd273b))
+* Update googleapis/sdk-platform-java action to v2.59.2 ([#2152](https://github.com/googleapis/java-firestore/issues/2152)) ([6ea90fc](https://github.com/googleapis/java-firestore/commit/6ea90fc88d0641dd5a8e182e71e08bd14345a7c0))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#2156](https://github.com/googleapis/java-firestore/issues/2156)) ([59d73bc](https://github.com/googleapis/java-firestore/commit/59d73bc388c90228a360c138c820b0e0cc416750))
+* Update opentelemetry.version to v1.51.0 ([#2145](https://github.com/googleapis/java-firestore/issues/2145)) ([2f0958d](https://github.com/googleapis/java-firestore/commit/2f0958d721095009cbc5da55b9c7837b4c307a66))
+
 ## [3.31.6](https://github.com/googleapis/java-firestore/compare/v3.31.5...v3.31.6) (2025-06-04)
 
 
