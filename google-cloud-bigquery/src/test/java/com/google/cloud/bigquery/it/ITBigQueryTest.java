@@ -7608,6 +7608,11 @@ public class ITBigQueryTest {
       Map<AttributeKey<?>, Object> createMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createDataset");
       assertEquals(createMap.get(AttributeKey.stringKey("bq.dataset.location")), "null");
+      assertEquals(
+          OTEL_ATTRIBUTES
+              .get("com.google.cloud.bigquery.BigQueryRpc.createDataset")
+              .get(AttributeKey.stringKey("bq.rpc.service")),
+          "DatasetService");
 
       Map<AttributeKey<?>, Object> getMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.getDataset");
@@ -7634,6 +7639,10 @@ public class ITBigQueryTest {
           OTEL_SPAN_IDS_TO_NAMES.get(
               OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.deleteDataset")),
           "Test Parent Span");
+      assertEquals(
+          OTEL_SPAN_IDS_TO_NAMES.get(
+              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQueryRpc.createDataset")),
+          "com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries");
       assertEquals(OTEL_PARENT_SPAN_IDS.get("Test Parent Span"), OTEL_PARENT_SPAN_ID);
       RemoteBigQueryHelper.forceDelete(bigquery, billingModelDataset);
     }
@@ -7671,12 +7680,18 @@ public class ITBigQueryTest {
             .get("com.google.cloud.bigquery.BigQuery.createTable")
             .get(AttributeKey.stringKey("bq.table.creation_time")),
         "null");
+    assertEquals(
+        OTEL_ATTRIBUTES
+            .get("com.google.cloud.bigquery.BigQueryRpc.createTable")
+            .get(AttributeKey.stringKey("bq.rpc.method")),
+        "InsertTable");
 
     Table updatedTable =
         bigquery.update(createdTable.toBuilder().setDescription("Updated Description").build());
     assertThat(updatedTable.getDescription()).isEqualTo("Updated Description");
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.updateTable"));
+    assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.patchTable"));
     assertEquals(
         OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.updateTable"),
         OTEL_PARENT_SPAN_ID);
@@ -7702,6 +7717,7 @@ public class ITBigQueryTest {
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.queryRpc"));
     assertNotNull(
         OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries"));
+    assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.queryRpc"));
     assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.BigQuery.query"));
 
     // Query job
@@ -7716,8 +7732,12 @@ public class ITBigQueryTest {
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.getQueryResults"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.listTableData"));
+    assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.listTableData"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createJob"));
+    assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.createJob"));
+    // Key exists, but value is null because no options were supplied in the request.
     assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.Job.getQueryResults"));
+    assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.getQueryResults"));
     assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.Job.waitForQueryResults"));
   }
 }
