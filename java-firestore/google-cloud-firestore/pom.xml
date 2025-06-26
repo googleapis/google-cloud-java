@@ -224,7 +224,7 @@
     <dependency>
       <groupId>com.google.cloud.opentelemetry</groupId>
       <artifactId>exporter-trace</artifactId>
-      <version>0.35.0</version>
+      <version>0.36.0</version>
       <scope>test</scope>
     </dependency>
     <!-- END OpenTelemetry -->
