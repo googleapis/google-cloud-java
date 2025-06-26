@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.30.0](https://github.com/googleapis/java-datastore/compare/v2.29.2...v2.30.0) (2025-06-26)
+
+
+### Features
+
+* Enable grpc configurator for client-side tracing ([#1886](https://github.com/googleapis/java-datastore/issues/1886)) ([97004c8](https://github.com/googleapis/java-datastore/commit/97004c85d73541ccfc26e0f4212e3a447d3e4ba6))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.60.0 ([#1799](https://github.com/googleapis/java-datastore/issues/1799)) ([bf2a33c](https://github.com/googleapis/java-datastore/commit/bf2a33c32a04b978a19fd6dfbe845769c921fa4f))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#1897](https://github.com/googleapis/java-datastore/issues/1897)) ([a8d99cd](https://github.com/googleapis/java-datastore/commit/a8d99cde26c38376b596f44379f4d069b25339b2))
+* Update googleapis/sdk-platform-java action to v2.59.1 ([#1880](https://github.com/googleapis/java-datastore/issues/1880)) ([4fb9929](https://github.com/googleapis/java-datastore/commit/4fb992943152bb4533e0bbd80e373de61f5ec864))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#1898](https://github.com/googleapis/java-datastore/issues/1898)) ([0921f86](https://github.com/googleapis/java-datastore/commit/0921f869ff4a19e7c0fe918aea0896922e9a18af))
+
 ## [2.29.2](https://github.com/googleapis/java-datastore/compare/v2.29.1...v2.29.2) (2025-06-13)
 
 
