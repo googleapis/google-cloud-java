@@ -4300,7 +4300,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -4319,7 +4319,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -4341,7 +4341,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -4365,7 +4365,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -4384,7 +4384,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -4407,7 +4407,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. This field will only be set if `enable_exactly_once_delivery` is
-   * set to `true`.
+   * set to `true` and is not guaranteed to be populated.
    * </pre>
    *
    * <code>
@@ -5422,7 +5422,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5440,7 +5440,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5466,7 +5466,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5493,7 +5493,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5518,7 +5518,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5552,7 +5552,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5575,7 +5575,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5594,7 +5594,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5618,7 +5618,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5655,7 +5655,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5673,7 +5673,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5699,7 +5699,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5726,7 +5726,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5751,7 +5751,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5785,7 +5785,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5808,7 +5808,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5827,7 +5827,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>
@@ -5851,7 +5851,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. This field will only be set if `enable_exactly_once_delivery` is
-     * set to `true`.
+     * set to `true` and is not guaranteed to be populated.
      * </pre>
      *
      * <code>

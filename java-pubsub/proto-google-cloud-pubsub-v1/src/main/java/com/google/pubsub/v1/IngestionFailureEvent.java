@@ -1383,6 +1383,463 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface MessageTransformationFailureReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Set when a Pub/Sub message fails to get published due to a message
+   * transformation error.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason}
+   */
+  public static final class MessageTransformationFailureReason
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+      MessageTransformationFailureReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use MessageTransformationFailureReason.newBuilder() to construct.
+    private MessageTransformationFailureReason(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MessageTransformationFailureReason() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MessageTransformationFailureReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_MessageTransformationFailureReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_MessageTransformationFailureReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+                  .class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set when a Pub/Sub message fails to get published due to a message
+     * transformation error.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+        com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_MessageTransformationFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_MessageTransformationFailureReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_MessageTransformationFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason) {
+          return mergeFrom(
+              (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent
+            .MessageTransformationFailureReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MessageTransformationFailureReason> PARSER =
+        new com.google.protobuf.AbstractParser<MessageTransformationFailureReason>() {
+          @java.lang.Override
+          public MessageTransformationFailureReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MessageTransformationFailureReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MessageTransformationFailureReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface CloudStorageFailureOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure)
@@ -1591,6 +2048,54 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
         getSchemaViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    boolean hasMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.ReasonCase getReasonCase();
   }
 
@@ -1652,6 +2157,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       AVRO_FAILURE_REASON(5),
       API_VIOLATION_REASON(6),
       SCHEMA_VIOLATION_REASON(7),
+      MESSAGE_TRANSFORMATION_FAILURE_REASON(8),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -1677,6 +2183,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return API_VIOLATION_REASON;
           case 7:
             return SCHEMA_VIOLATION_REASON;
+          case 8:
+            return MESSAGE_TRANSFORMATION_FAILURE_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -2008,6 +2516,75 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
     }
 
+    public static final int MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageTransformationFailureReason() {
+      return reasonCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason() {
+      if (reasonCase_ == 8) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder() {
+      if (reasonCase_ == 8) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2043,6 +2620,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             7, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 8) {
+        output.writeMessage(
+            8,
+            (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2076,6 +2659,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 7, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8,
+                (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                    reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2105,6 +2695,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           break;
         case 7:
           if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
+        case 8:
+          if (!getMessageTransformationFailureReason()
+              .equals(other.getMessageTransformationFailureReason())) return false;
           break;
         case 0:
         default:
@@ -2138,6 +2732,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 7:
           hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
           break;
         case 0:
         default:
@@ -2297,6 +2895,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (schemaViolationReasonBuilder_ != null) {
           schemaViolationReasonBuilder_.clear();
         }
+        if (messageTransformationFailureReasonBuilder_ != null) {
+          messageTransformationFailureReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -2361,6 +2962,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 7 && schemaViolationReasonBuilder_ != null) {
           result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 8 && messageTransformationFailureReasonBuilder_ != null) {
+          result.reason_ = messageTransformationFailureReasonBuilder_.build();
         }
       }
 
@@ -2443,6 +3047,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeSchemaViolationReason(other.getSchemaViolationReason());
               break;
             }
+          case MESSAGE_TRANSFORMATION_FAILURE_REASON:
+            {
+              mergeMessageTransformationFailureReason(
+                  other.getMessageTransformationFailureReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -2513,6 +3123,14 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 7;
                   break;
                 } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getMessageTransformationFailureReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  reasonCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3576,6 +4194,274 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return schemaViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          messageTransformationFailureReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the messageTransformationFailureReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTransformationFailureReason() {
+        return reasonCase_ == 8;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The messageTransformationFailureReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 8) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 8) {
+            return messageTransformationFailureReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+              builderForValue) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 8
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent
+                                .MessageTransformationFailureReason)
+                            reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 8) {
+            messageTransformationFailureReasonBuilder_.mergeFrom(value);
+          } else {
+            messageTransformationFailureReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 8) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 8) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          messageTransformationFailureReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+          getMessageTransformationFailureReasonBuilder() {
+        return getMessageTransformationFailureReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+          getMessageTransformationFailureReasonOrBuilder() {
+        if ((reasonCase_ == 8) && (messageTransformationFailureReasonBuilder_ != null)) {
+          return messageTransformationFailureReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 8) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          getMessageTransformationFailureReasonFieldBuilder() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (!(reasonCase_ == 8)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .getDefaultInstance();
+          }
+          messageTransformationFailureReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent
+                      .MessageTransformationFailureReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                      reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 8;
+        onChanged();
+        return messageTransformationFailureReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3818,6 +4704,54 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
         getSchemaViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    boolean hasMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.ReasonCase getReasonCase();
   }
 
@@ -3878,6 +4812,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
       SCHEMA_VIOLATION_REASON(6),
+      MESSAGE_TRANSFORMATION_FAILURE_REASON(7),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -3901,6 +4836,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return API_VIOLATION_REASON;
           case 6:
             return SCHEMA_VIOLATION_REASON;
+          case 7:
+            return MESSAGE_TRANSFORMATION_FAILURE_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -4188,6 +5125,75 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
     }
 
+    public static final int MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageTransformationFailureReason() {
+      return reasonCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4222,6 +5228,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4253,6 +5265,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                    reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4280,6 +5299,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           break;
         case 6:
           if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
+        case 7:
+          if (!getMessageTransformationFailureReason()
+              .equals(other.getMessageTransformationFailureReason())) return false;
           break;
         case 0:
         default:
@@ -4311,6 +5334,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 6:
           hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
           break;
         case 0:
         default:
@@ -4468,6 +5495,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (schemaViolationReasonBuilder_ != null) {
           schemaViolationReasonBuilder_.clear();
         }
+        if (messageTransformationFailureReasonBuilder_ != null) {
+          messageTransformationFailureReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -4532,6 +5562,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
           result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 7 && messageTransformationFailureReasonBuilder_ != null) {
+          result.reason_ = messageTransformationFailureReasonBuilder_.build();
         }
       }
 
@@ -4612,6 +5645,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeSchemaViolationReason(other.getSchemaViolationReason());
               break;
             }
+          case MESSAGE_TRANSFORMATION_FAILURE_REASON:
+            {
+              mergeMessageTransformationFailureReason(
+                  other.getMessageTransformationFailureReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -4681,6 +5720,14 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getMessageTransformationFailureReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  reasonCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5552,6 +6599,274 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return schemaViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          messageTransformationFailureReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the messageTransformationFailureReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTransformationFailureReason() {
+        return reasonCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The messageTransformationFailureReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 7) {
+            return messageTransformationFailureReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+              builderForValue) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent
+                                .MessageTransformationFailureReason)
+                            reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 7) {
+            messageTransformationFailureReasonBuilder_.mergeFrom(value);
+          } else {
+            messageTransformationFailureReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          messageTransformationFailureReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+          getMessageTransformationFailureReasonBuilder() {
+        return getMessageTransformationFailureReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+          getMessageTransformationFailureReasonOrBuilder() {
+        if ((reasonCase_ == 7) && (messageTransformationFailureReasonBuilder_ != null)) {
+          return messageTransformationFailureReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          getMessageTransformationFailureReasonFieldBuilder() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (!(reasonCase_ == 7)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .getDefaultInstance();
+          }
+          messageTransformationFailureReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent
+                      .MessageTransformationFailureReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                      reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 7;
+        onChanged();
+        return messageTransformationFailureReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5794,6 +7109,54 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
         getSchemaViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    boolean hasMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.ReasonCase
         getReasonCase();
   }
@@ -5856,6 +7219,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
       SCHEMA_VIOLATION_REASON(6),
+      MESSAGE_TRANSFORMATION_FAILURE_REASON(7),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -5879,6 +7243,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return API_VIOLATION_REASON;
           case 6:
             return SCHEMA_VIOLATION_REASON;
+          case 7:
+            return MESSAGE_TRANSFORMATION_FAILURE_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -6166,6 +7532,75 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
     }
 
+    public static final int MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageTransformationFailureReason() {
+      return reasonCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6200,6 +7635,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6231,6 +7672,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                    reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6259,6 +7707,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           break;
         case 6:
           if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
+        case 7:
+          if (!getMessageTransformationFailureReason()
+              .equals(other.getMessageTransformationFailureReason())) return false;
           break;
         case 0:
         default:
@@ -6290,6 +7742,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 6:
           hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
           break;
         case 0:
         default:
@@ -6450,6 +7906,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (schemaViolationReasonBuilder_ != null) {
           schemaViolationReasonBuilder_.clear();
         }
+        if (messageTransformationFailureReasonBuilder_ != null) {
+          messageTransformationFailureReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -6516,6 +7975,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
           result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 7 && messageTransformationFailureReasonBuilder_ != null) {
+          result.reason_ = messageTransformationFailureReasonBuilder_.build();
         }
       }
 
@@ -6598,6 +8060,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeSchemaViolationReason(other.getSchemaViolationReason());
               break;
             }
+          case MESSAGE_TRANSFORMATION_FAILURE_REASON:
+            {
+              mergeMessageTransformationFailureReason(
+                  other.getMessageTransformationFailureReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -6667,6 +8135,14 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getMessageTransformationFailureReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  reasonCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7538,6 +9014,274 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return schemaViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          messageTransformationFailureReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the messageTransformationFailureReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTransformationFailureReason() {
+        return reasonCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The messageTransformationFailureReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 7) {
+            return messageTransformationFailureReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+              builderForValue) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent
+                                .MessageTransformationFailureReason)
+                            reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 7) {
+            messageTransformationFailureReasonBuilder_.mergeFrom(value);
+          } else {
+            messageTransformationFailureReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          messageTransformationFailureReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+          getMessageTransformationFailureReasonBuilder() {
+        return getMessageTransformationFailureReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+          getMessageTransformationFailureReasonOrBuilder() {
+        if ((reasonCase_ == 7) && (messageTransformationFailureReasonBuilder_ != null)) {
+          return messageTransformationFailureReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          getMessageTransformationFailureReasonFieldBuilder() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (!(reasonCase_ == 7)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .getDefaultInstance();
+          }
+          messageTransformationFailureReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent
+                      .MessageTransformationFailureReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                      reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 7;
+        onChanged();
+        return messageTransformationFailureReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7781,6 +9525,54 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
         getSchemaViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    boolean hasMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.ReasonCase
         getReasonCase();
   }
@@ -7843,6 +9635,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       API_VIOLATION_REASON(5),
       SCHEMA_VIOLATION_REASON(6),
+      MESSAGE_TRANSFORMATION_FAILURE_REASON(7),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -7866,6 +9659,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return API_VIOLATION_REASON;
           case 6:
             return SCHEMA_VIOLATION_REASON;
+          case 7:
+            return MESSAGE_TRANSFORMATION_FAILURE_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -8153,6 +9948,75 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
     }
 
+    public static final int MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageTransformationFailureReason() {
+      return reasonCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder() {
+      if (reasonCase_ == 7) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8187,6 +10051,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8218,6 +10088,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 6, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                    reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8246,6 +10123,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           break;
         case 6:
           if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
+          break;
+        case 7:
+          if (!getMessageTransformationFailureReason()
+              .equals(other.getMessageTransformationFailureReason())) return false;
           break;
         case 0:
         default:
@@ -8277,6 +10158,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 6:
           hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
           break;
         case 0:
         default:
@@ -8437,6 +10322,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (schemaViolationReasonBuilder_ != null) {
           schemaViolationReasonBuilder_.clear();
         }
+        if (messageTransformationFailureReasonBuilder_ != null) {
+          messageTransformationFailureReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -8503,6 +10391,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 6 && schemaViolationReasonBuilder_ != null) {
           result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 7 && messageTransformationFailureReasonBuilder_ != null) {
+          result.reason_ = messageTransformationFailureReasonBuilder_.build();
         }
       }
 
@@ -8585,6 +10476,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeSchemaViolationReason(other.getSchemaViolationReason());
               break;
             }
+          case MESSAGE_TRANSFORMATION_FAILURE_REASON:
+            {
+              mergeMessageTransformationFailureReason(
+                  other.getMessageTransformationFailureReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -8654,6 +10551,14 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getMessageTransformationFailureReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  reasonCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9525,6 +11430,274 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return schemaViolationReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          messageTransformationFailureReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the messageTransformationFailureReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTransformationFailureReason() {
+        return reasonCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The messageTransformationFailureReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 7) {
+            return messageTransformationFailureReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+              builderForValue) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent
+                                .MessageTransformationFailureReason)
+                            reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 7) {
+            messageTransformationFailureReasonBuilder_.mergeFrom(value);
+          } else {
+            messageTransformationFailureReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 7) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          messageTransformationFailureReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+          getMessageTransformationFailureReasonBuilder() {
+        return getMessageTransformationFailureReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+          getMessageTransformationFailureReasonOrBuilder() {
+        if ((reasonCase_ == 7) && (messageTransformationFailureReasonBuilder_ != null)) {
+          return messageTransformationFailureReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 7) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          getMessageTransformationFailureReasonFieldBuilder() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (!(reasonCase_ == 7)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .getDefaultInstance();
+          }
+          messageTransformationFailureReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent
+                      .MessageTransformationFailureReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                      reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 7;
+        onChanged();
+        return messageTransformationFailureReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9720,6 +11893,54 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReasonOrBuilder
         getSchemaViolationReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    boolean hasMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.ReasonCase getReasonCase();
   }
 
@@ -9780,6 +12001,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SCHEMA_VIOLATION_REASON(4),
+      MESSAGE_TRANSFORMATION_FAILURE_REASON(5),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -9801,6 +12023,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         switch (value) {
           case 4:
             return SCHEMA_VIOLATION_REASON;
+          case 5:
+            return MESSAGE_TRANSFORMATION_FAILURE_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -10038,6 +12262,75 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason.getDefaultInstance();
     }
 
+    public static final int MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the messageTransformationFailureReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageTransformationFailureReason() {
+      return reasonCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The messageTransformationFailureReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+        getMessageTransformationFailureReason() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure encountered when applying a message transformation to
+     * the Pub/Sub message.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+        getMessageTransformationFailureReasonOrBuilder() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+            reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10065,6 +12358,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         output.writeMessage(
             4, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
       }
+      if (reasonCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10087,6 +12386,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, (com.google.pubsub.v1.IngestionFailureEvent.SchemaViolationReason) reason_);
+      }
+      if (reasonCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                    reason_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10112,6 +12418,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 4:
           if (!getSchemaViolationReason().equals(other.getSchemaViolationReason())) return false;
           break;
+        case 5:
+          if (!getMessageTransformationFailureReason()
+              .equals(other.getMessageTransformationFailureReason())) return false;
+          break;
         case 0:
         default:
       }
@@ -10136,6 +12446,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 4:
           hash = (37 * hash) + SCHEMA_VIOLATION_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getSchemaViolationReason().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
           break;
         case 0:
         default:
@@ -10291,6 +12605,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (schemaViolationReasonBuilder_ != null) {
           schemaViolationReasonBuilder_.clear();
         }
+        if (messageTransformationFailureReasonBuilder_ != null) {
+          messageTransformationFailureReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -10350,6 +12667,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         result.reason_ = this.reason_;
         if (reasonCase_ == 4 && schemaViolationReasonBuilder_ != null) {
           result.reason_ = schemaViolationReasonBuilder_.build();
+        }
+        if (reasonCase_ == 5 && messageTransformationFailureReasonBuilder_ != null) {
+          result.reason_ = messageTransformationFailureReasonBuilder_.build();
         }
       }
 
@@ -10425,6 +12745,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               mergeSchemaViolationReason(other.getSchemaViolationReason());
               break;
             }
+          case MESSAGE_TRANSFORMATION_FAILURE_REASON:
+            {
+              mergeMessageTransformationFailureReason(
+                  other.getMessageTransformationFailureReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -10481,6 +12807,14 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 4;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getMessageTransformationFailureReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  reasonCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11094,6 +13428,274 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 4;
         onChanged();
         return schemaViolationReasonBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          messageTransformationFailureReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the messageTransformationFailureReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTransformationFailureReason() {
+        return reasonCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The messageTransformationFailureReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+          getMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        } else {
+          if (reasonCase_ == 5) {
+            return messageTransformationFailureReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+              builderForValue) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          messageTransformationFailureReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMessageTransformationFailureReason(
+          com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason value) {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 5
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent
+                                .MessageTransformationFailureReason)
+                            reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 5) {
+            messageTransformationFailureReasonBuilder_.mergeFrom(value);
+          } else {
+            messageTransformationFailureReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMessageTransformationFailureReason() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          messageTransformationFailureReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder
+          getMessageTransformationFailureReasonBuilder() {
+        return getMessageTransformationFailureReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
+          getMessageTransformationFailureReasonOrBuilder() {
+        if ((reasonCase_ == 5) && (messageTransformationFailureReasonBuilder_ != null)) {
+          return messageTransformationFailureReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Failure encountered when applying a message transformation to
+       * the Pub/Sub message.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason message_transformation_failure_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+              com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent
+                  .MessageTransformationFailureReasonOrBuilder>
+          getMessageTransformationFailureReasonFieldBuilder() {
+        if (messageTransformationFailureReasonBuilder_ == null) {
+          if (!(reasonCase_ == 5)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                    .getDefaultInstance();
+          }
+          messageTransformationFailureReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason
+                      .Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent
+                      .MessageTransformationFailureReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
+                      reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 5;
+        onChanged();
+        return messageTransformationFailureReasonBuilder_;
       }
 
       @java.lang.Override
