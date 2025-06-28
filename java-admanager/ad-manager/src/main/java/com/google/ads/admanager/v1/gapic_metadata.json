@@ -5,6 +5,30 @@
   "protoPackage": "google.ads.admanager.v1",
   "libraryPackage": "com.google.ads.admanager.v1",
   "services": {
+    "AdBreakService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdBreakServiceClient",
+          "rpcs": {
+            "CreateAdBreak": {
+              "methods": ["createAdBreak", "createAdBreak", "createAdBreak", "createAdBreakCallable"]
+            },
+            "DeleteAdBreak": {
+              "methods": ["deleteAdBreak", "deleteAdBreak", "deleteAdBreak", "deleteAdBreakCallable"]
+            },
+            "GetAdBreak": {
+              "methods": ["getAdBreak", "getAdBreak", "getAdBreak", "getAdBreakCallable"]
+            },
+            "ListAdBreaks": {
+              "methods": ["listAdBreaks", "listAdBreaks", "listAdBreaks", "listAdBreaksPagedCallable", "listAdBreaksCallable"]
+            },
+            "UpdateAdBreak": {
+              "methods": ["updateAdBreak", "updateAdBreak", "updateAdBreakCallable"]
+            }
+          }
+        }
+      }
+    },
     "AdUnitService": {
       "clients": {
         "grpc": {
@@ -18,6 +42,21 @@
             },
             "ListAdUnits": {
               "methods": ["listAdUnits", "listAdUnits", "listAdUnits", "listAdUnitsPagedCallable", "listAdUnitsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BandwidthGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BandwidthGroupServiceClient",
+          "rpcs": {
+            "GetBandwidthGroup": {
+              "methods": ["getBandwidthGroup", "getBandwidthGroup", "getBandwidthGroup", "getBandwidthGroupCallable"]
+            },
+            "ListBandwidthGroups": {
+              "methods": ["listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroupsPagedCallable", "listBandwidthGroupsCallable"]
             }
           }
         }
@@ -83,6 +122,21 @@
         }
       }
     },
+    "DeviceCategoryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeviceCategoryServiceClient",
+          "rpcs": {
+            "GetDeviceCategory": {
+              "methods": ["getDeviceCategory", "getDeviceCategory", "getDeviceCategory", "getDeviceCategoryCallable"]
+            },
+            "ListDeviceCategories": {
+              "methods": ["listDeviceCategories", "listDeviceCategories", "listDeviceCategories", "listDeviceCategoriesPagedCallable", "listDeviceCategoriesCallable"]
+            }
+          }
+        }
+      }
+    },
     "EntitySignalsMappingService": {
       "clients": {
         "grpc": {
@@ -110,6 +164,21 @@
         }
       }
     },
+    "GeoTargetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeoTargetServiceClient",
+          "rpcs": {
+            "GetGeoTarget": {
+              "methods": ["getGeoTarget", "getGeoTarget", "getGeoTarget", "getGeoTargetCallable"]
+            },
+            "ListGeoTargets": {
+              "methods": ["listGeoTargets", "listGeoTargets", "listGeoTargets", "listGeoTargetsPagedCallable", "listGeoTargetsCallable"]
+            }
+          }
+        }
+      }
+    },
     "NetworkService": {
       "clients": {
         "grpc": {
@@ -120,6 +189,36 @@
             },
             "ListNetworks": {
               "methods": ["listNetworks", "listNetworksCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OperatingSystemService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OperatingSystemServiceClient",
+          "rpcs": {
+            "GetOperatingSystem": {
+              "methods": ["getOperatingSystem", "getOperatingSystem", "getOperatingSystem", "getOperatingSystemCallable"]
+            },
+            "ListOperatingSystems": {
+              "methods": ["listOperatingSystems", "listOperatingSystems", "listOperatingSystems", "listOperatingSystemsPagedCallable", "listOperatingSystemsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OperatingSystemVersionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OperatingSystemVersionServiceClient",
+          "rpcs": {
+            "GetOperatingSystemVersion": {
+              "methods": ["getOperatingSystemVersion", "getOperatingSystemVersion", "getOperatingSystemVersion", "getOperatingSystemVersionCallable"]
+            },
+            "ListOperatingSystemVersions": {
+              "methods": ["listOperatingSystemVersions", "listOperatingSystemVersions", "listOperatingSystemVersions", "listOperatingSystemVersionsPagedCallable", "listOperatingSystemVersionsCallable"]
             }
           }
         }
@@ -150,6 +249,63 @@
             },
             "ListPlacements": {
               "methods": ["listPlacements", "listPlacements", "listPlacements", "listPlacementsPagedCallable", "listPlacementsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PrivateAuctionDealService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PrivateAuctionDealServiceClient",
+          "rpcs": {
+            "CreatePrivateAuctionDeal": {
+              "methods": ["createPrivateAuctionDeal", "createPrivateAuctionDeal", "createPrivateAuctionDeal", "createPrivateAuctionDealCallable"]
+            },
+            "GetPrivateAuctionDeal": {
+              "methods": ["getPrivateAuctionDeal", "getPrivateAuctionDeal", "getPrivateAuctionDeal", "getPrivateAuctionDealCallable"]
+            },
+            "ListPrivateAuctionDeals": {
+              "methods": ["listPrivateAuctionDeals", "listPrivateAuctionDeals", "listPrivateAuctionDeals", "listPrivateAuctionDealsPagedCallable", "listPrivateAuctionDealsCallable"]
+            },
+            "UpdatePrivateAuctionDeal": {
+              "methods": ["updatePrivateAuctionDeal", "updatePrivateAuctionDeal", "updatePrivateAuctionDealCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PrivateAuctionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PrivateAuctionServiceClient",
+          "rpcs": {
+            "CreatePrivateAuction": {
+              "methods": ["createPrivateAuction", "createPrivateAuction", "createPrivateAuction", "createPrivateAuctionCallable"]
+            },
+            "GetPrivateAuction": {
+              "methods": ["getPrivateAuction", "getPrivateAuction", "getPrivateAuction", "getPrivateAuctionCallable"]
+            },
+            "ListPrivateAuctions": {
+              "methods": ["listPrivateAuctions", "listPrivateAuctions", "listPrivateAuctions", "listPrivateAuctionsPagedCallable", "listPrivateAuctionsCallable"]
+            },
+            "UpdatePrivateAuction": {
+              "methods": ["updatePrivateAuction", "updatePrivateAuction", "updatePrivateAuctionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProgrammaticBuyerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProgrammaticBuyerServiceClient",
+          "rpcs": {
+            "GetProgrammaticBuyer": {
+              "methods": ["getProgrammaticBuyer", "getProgrammaticBuyer", "getProgrammaticBuyer", "getProgrammaticBuyerCallable"]
+            },
+            "ListProgrammaticBuyers": {
+              "methods": ["listProgrammaticBuyers", "listProgrammaticBuyers", "listProgrammaticBuyers", "listProgrammaticBuyersPagedCallable", "listProgrammaticBuyersCallable"]
             }
           }
         }
