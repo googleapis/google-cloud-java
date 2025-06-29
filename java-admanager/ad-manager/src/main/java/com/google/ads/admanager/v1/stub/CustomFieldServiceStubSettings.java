@@ -107,7 +107,7 @@ import javax.annotation.Generated;
 public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetCustomFieldRequest, CustomField> getCustomFieldSettings;
   private final PagedCallSettings<

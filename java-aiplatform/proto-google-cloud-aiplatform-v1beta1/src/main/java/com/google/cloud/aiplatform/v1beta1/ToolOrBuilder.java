@@ -417,4 +417,53 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the computerUse field is set.
+   */
+  boolean hasComputerUse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The computerUse.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse getComputerUse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ComputerUseOrBuilder getComputerUseOrBuilder();
 }

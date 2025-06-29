@@ -80,17 +80,17 @@ public class CustomTargetingValueServiceClientTest {
     CustomTargetingValue expectedResponse =
         CustomTargetingValue.newBuilder()
             .setName(
-                CustomTargetingValueName.of(
-                        "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
                     .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
             .setAdTagName("adTagName-926580830")
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
 
     CustomTargetingValueName name =
-        CustomTargetingValueName.of(
-            "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]");
+        CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
 
     CustomTargetingValue actualResponse = client.getCustomTargetingValue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -119,8 +119,7 @@ public class CustomTargetingValueServiceClientTest {
 
     try {
       CustomTargetingValueName name =
-          CustomTargetingValueName.of(
-              "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]");
+          CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
       client.getCustomTargetingValue(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -133,16 +132,16 @@ public class CustomTargetingValueServiceClientTest {
     CustomTargetingValue expectedResponse =
         CustomTargetingValue.newBuilder()
             .setName(
-                CustomTargetingValueName.of(
-                        "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
                     .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
             .setAdTagName("adTagName-926580830")
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name =
-        "networks/network-4153/customTargetingKeys/customTargetingKey-4153/customTargetingValues/customTargetingValue-4153";
+    String name = "networks/network-3047/customTargetingValues/customTargetingValue-3047";
 
     CustomTargetingValue actualResponse = client.getCustomTargetingValue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -170,8 +169,7 @@ public class CustomTargetingValueServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String name =
-          "networks/network-4153/customTargetingKeys/customTargetingKey-4153/customTargetingValues/customTargetingValue-4153";
+      String name = "networks/network-3047/customTargetingValues/customTargetingValue-3047";
       client.getCustomTargetingValue(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -189,8 +187,7 @@ public class CustomTargetingValueServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    CustomTargetingKeyName parent =
-        CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]");
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
 
     ListCustomTargetingValuesPagedResponse pagedListResponse =
         client.listCustomTargetingValues(parent);
@@ -223,8 +220,7 @@ public class CustomTargetingValueServiceClientTest {
     mockService.addException(exception);
 
     try {
-      CustomTargetingKeyName parent =
-          CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]");
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
       client.listCustomTargetingValues(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -242,7 +238,7 @@ public class CustomTargetingValueServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "networks/network-3002/customTargetingKeys/customTargetingKey-3002";
+    String parent = "networks/network-5450";
 
     ListCustomTargetingValuesPagedResponse pagedListResponse =
         client.listCustomTargetingValues(parent);
@@ -275,7 +271,7 @@ public class CustomTargetingValueServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String parent = "networks/network-3002/customTargetingKeys/customTargetingKey-3002";
+      String parent = "networks/network-5450";
       client.listCustomTargetingValues(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

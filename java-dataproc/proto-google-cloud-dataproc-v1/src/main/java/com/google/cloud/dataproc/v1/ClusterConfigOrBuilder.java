@@ -28,6 +28,36 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The cluster tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig.ClusterTier cluster_tier = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterTier.
+   */
+  int getClusterTierValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cluster tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig.ClusterTier cluster_tier = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clusterTier.
+   */
+  com.google.cloud.dataproc.v1.ClusterConfig.ClusterTier getClusterTier();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud

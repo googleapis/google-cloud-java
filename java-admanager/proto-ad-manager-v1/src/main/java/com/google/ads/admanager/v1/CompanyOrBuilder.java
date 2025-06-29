@@ -525,6 +525,20 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
+   * Optional. The ID of the Google-recognized canonicalized form of the
+   * `Company`.
+   * </pre>
+   *
+   * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thirdPartyCompanyId.
+   */
+  long getThirdPartyCompanyId();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
@@ -560,18 +574,4 @@ public interface CompanyOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The ID of the Google-recognized canonicalized form of the
-   * `Company`.
-   * </pre>
-   *
-   * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The thirdPartyCompanyId.
-   */
-  long getThirdPartyCompanyId();
 }

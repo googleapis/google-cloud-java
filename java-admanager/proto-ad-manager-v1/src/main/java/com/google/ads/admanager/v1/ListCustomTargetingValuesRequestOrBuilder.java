@@ -30,7 +30,7 @@ public interface ListCustomTargetingValuesRequestOrBuilder
    * <pre>
    * Required. The parent, which owns this collection of CustomTargetingValues.
    * Format:
-   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   * `networks/{network_code}`
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface ListCustomTargetingValuesRequestOrBuilder
    * <pre>
    * Required. The parent, which owns this collection of CustomTargetingValues.
    * Format:
-   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   * `networks/{network_code}`
    * </pre>
    *
    * <code>

@@ -40,8 +40,7 @@ public class AsyncGetCustomTargetingValue {
       GetCustomTargetingValueRequest request =
           GetCustomTargetingValueRequest.newBuilder()
               .setName(
-                  CustomTargetingValueName.of(
-                          "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+                  CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
                       .toString())
               .build();
       ApiFuture<CustomTargetingValue> future =

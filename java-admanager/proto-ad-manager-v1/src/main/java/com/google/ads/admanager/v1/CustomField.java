@@ -71,6 +71,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.CustomField.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -81,7 +82,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the `CustomField`.
-   * Format: `networks/{network_code}/customFields/{custom_field_id}`
+   * Format: `networks/{network_code}/customFields/{custom_field}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -106,7 +107,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the `CustomField`.
-   * Format: `networks/{network_code}/customFields/{custom_field_id}`
+   * Format: `networks/{network_code}/customFields/{custom_field}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -133,11 +134,28 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Unique ID of the CustomField. This value is readonly and is
-   * assigned by Google.
+   * Output only. Unique ID of the CustomField. This attribute is assigned by
+   * Google.
    * </pre>
    *
-   * <code>int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the customFieldId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomFieldId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique ID of the CustomField. This attribute is assigned by
+   * Google.
+   * </pre>
+   *
+   * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The customFieldId.
    */
@@ -158,7 +176,23 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * Required. Name of the CustomField. The max length is 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the CustomField. The max length is 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -182,7 +216,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * Required. Name of the CustomField. The max length is 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -212,7 +246,24 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the custom field. The maximum length is 511
+   * characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -237,7 +288,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -265,7 +316,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the `CustomField`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -283,7 +352,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -308,7 +377,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the entityType field is set.
+   */
+  @java.lang.Override
+  public boolean hasEntityType() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of entity the `CustomField` can be applied to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for entityType.
@@ -326,7 +413,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The entityType.
@@ -353,7 +440,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the dataType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataType() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The data type of the `CustomField`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for dataType.
@@ -371,7 +476,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The dataType.
@@ -397,7 +502,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the visibility field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisibility() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The visibility of the `CustomField`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for visibility.
@@ -415,7 +538,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The visibility.
@@ -544,37 +667,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (customFieldId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(2, customFieldId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus
-            .CUSTOM_FIELD_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(5, status_);
     }
-    if (entityType_
-        != com.google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType
-            .CUSTOM_FIELD_ENTITY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(7, entityType_);
     }
-    if (dataType_
-        != com.google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType
-            .CUSTOM_FIELD_DATA_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeEnum(8, dataType_);
     }
-    if (visibility_
-        != com.google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility
-            .CUSTOM_FIELD_VISIBILITY_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(9, visibility_);
     }
     for (int i = 0; i < options_.size(); i++) {
@@ -592,37 +703,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (customFieldId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, customFieldId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus
-            .CUSTOM_FIELD_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, status_);
     }
-    if (entityType_
-        != com.google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType
-            .CUSTOM_FIELD_ENTITY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, entityType_);
     }
-    if (dataType_
-        != com.google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType
-            .CUSTOM_FIELD_DATA_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, dataType_);
     }
-    if (visibility_
-        != com.google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility
-            .CUSTOM_FIELD_VISIBILITY_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, visibility_);
     }
     for (int i = 0; i < options_.size(); i++) {
@@ -644,13 +743,34 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.CustomField other = (com.google.ads.admanager.v1.CustomField) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getCustomFieldId() != other.getCustomFieldId()) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (status_ != other.status_) return false;
-    if (entityType_ != other.entityType_) return false;
-    if (dataType_ != other.dataType_) return false;
-    if (visibility_ != other.visibility_) return false;
+    if (hasCustomFieldId() != other.hasCustomFieldId()) return false;
+    if (hasCustomFieldId()) {
+      if (getCustomFieldId() != other.getCustomFieldId()) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasEntityType() != other.hasEntityType()) return false;
+    if (hasEntityType()) {
+      if (entityType_ != other.entityType_) return false;
+    }
+    if (hasDataType() != other.hasDataType()) return false;
+    if (hasDataType()) {
+      if (dataType_ != other.dataType_) return false;
+    }
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (visibility_ != other.visibility_) return false;
+    }
     if (!getOptionsList().equals(other.getOptionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -665,20 +785,34 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CUSTOM_FIELD_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCustomFieldId());
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
-    hash = (37 * hash) + ENTITY_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + entityType_;
-    hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + dataType_;
-    hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
-    hash = (53 * hash) + visibility_;
+    if (hasCustomFieldId()) {
+      hash = (37 * hash) + CUSTOM_FIELD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCustomFieldId());
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasEntityType()) {
+      hash = (37 * hash) + ENTITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + entityType_;
+    }
+    if (hasDataType()) {
+      hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + dataType_;
+    }
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + visibility_;
+    }
     if (getOptionsCount() > 0) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptionsList().hashCode();
@@ -890,27 +1024,36 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.customFieldId_ = customFieldId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.status_ = status_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.entityType_ = entityType_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dataType_ = dataType_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.visibility_ = visibility_;
+        to_bitField0_ |= 0x00000040;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -963,30 +1106,30 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getCustomFieldId() != 0L) {
+      if (other.hasCustomFieldId()) {
         setCustomFieldId(other.getCustomFieldId());
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
         description_ = other.description_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
-      if (other.entityType_ != 0) {
-        setEntityTypeValue(other.getEntityTypeValue());
+      if (other.hasEntityType()) {
+        setEntityType(other.getEntityType());
       }
-      if (other.dataType_ != 0) {
-        setDataTypeValue(other.getDataTypeValue());
+      if (other.hasDataType()) {
+        setDataType(other.getDataType());
       }
-      if (other.visibility_ != 0) {
-        setVisibilityValue(other.getVisibilityValue());
+      if (other.hasVisibility()) {
+        setVisibility(other.getVisibility());
       }
       if (optionsBuilder_ == null) {
         if (!other.options_.isEmpty()) {
@@ -1128,7 +1271,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the `CustomField`.
-     * Format: `networks/{network_code}/customFields/{custom_field_id}`
+     * Format: `networks/{network_code}/customFields/{custom_field}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1152,7 +1295,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the `CustomField`.
-     * Format: `networks/{network_code}/customFields/{custom_field_id}`
+     * Format: `networks/{network_code}/customFields/{custom_field}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1176,7 +1319,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the `CustomField`.
-     * Format: `networks/{network_code}/customFields/{custom_field_id}`
+     * Format: `networks/{network_code}/customFields/{custom_field}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1199,7 +1342,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the `CustomField`.
-     * Format: `networks/{network_code}/customFields/{custom_field_id}`
+     * Format: `networks/{network_code}/customFields/{custom_field}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1218,7 +1361,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the `CustomField`.
-     * Format: `networks/{network_code}/customFields/{custom_field_id}`
+     * Format: `networks/{network_code}/customFields/{custom_field}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1243,11 +1386,28 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the CustomField. This value is readonly and is
-     * assigned by Google.
+     * Output only. Unique ID of the CustomField. This attribute is assigned by
+     * Google.
      * </pre>
      *
-     * <code>int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the customFieldId field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomFieldId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the CustomField. This attribute is assigned by
+     * Google.
+     * </pre>
+     *
+     * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The customFieldId.
      */
@@ -1260,11 +1420,11 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the CustomField. This value is readonly and is
-     * assigned by Google.
+     * Output only. Unique ID of the CustomField. This attribute is assigned by
+     * Google.
      * </pre>
      *
-     * <code>int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The customFieldId to set.
      * @return This builder for chaining.
@@ -1281,11 +1441,11 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Unique ID of the CustomField. This value is readonly and is
-     * assigned by Google.
+     * Output only. Unique ID of the CustomField. This attribute is assigned by
+     * Google.
      * </pre>
      *
-     * <code>int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1305,7 +1465,22 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * Required. Name of the CustomField. The max length is 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the CustomField. The max length is 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1328,7 +1503,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * Required. Name of the CustomField. The max length is 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1351,7 +1526,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * Required. Name of the CustomField. The max length is 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1373,7 +1548,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * Required. Name of the CustomField. The max length is 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1391,7 +1566,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * Required. Name of the CustomField. The max length is 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1417,7 +1592,23 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the custom field. The maximum length is 511
+     * characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1441,7 +1632,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1465,7 +1656,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1488,7 +1679,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1507,7 +1698,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1533,7 +1724,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the `CustomField`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -1551,7 +1760,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -1572,7 +1781,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The status.
@@ -1594,7 +1803,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The status to set.
@@ -1619,7 +1828,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1641,7 +1850,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the entityType field is set.
+     */
+    @java.lang.Override
+    public boolean hasEntityType() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of entity the `CustomField` can be applied to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for entityType.
@@ -1659,7 +1886,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for entityType to set.
@@ -1680,7 +1907,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The entityType.
@@ -1704,7 +1931,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The entityType to set.
@@ -1729,7 +1956,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType entity_type = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1751,7 +1978,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the dataType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The data type of the `CustomField`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for dataType.
@@ -1769,7 +2014,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for dataType to set.
@@ -1790,7 +2035,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The dataType.
@@ -1813,7 +2058,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The dataType to set.
@@ -1838,7 +2083,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType data_type = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1860,7 +2105,25 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the visibility field is set.
+     */
+    @java.lang.Override
+    public boolean hasVisibility() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The visibility of the `CustomField`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for visibility.
@@ -1878,7 +2141,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for visibility to set.
@@ -1899,7 +2162,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The visibility.
@@ -1923,7 +2186,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The visibility to set.
@@ -1948,7 +2211,7 @@ public final class CustomField extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility visibility = 9 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
