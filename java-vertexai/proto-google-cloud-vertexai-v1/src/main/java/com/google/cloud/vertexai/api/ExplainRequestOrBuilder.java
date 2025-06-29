@@ -40,7 +40,6 @@ public interface ExplainRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getInstancesList();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   com.google.protobuf.Value getInstances(int index);
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ExplainRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface ExplainRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ExplainRequestOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Value getParameters();
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public interface ExplainRequestOrBuilder
    * @return Whether the explanationSpecOverride field is set.
    */
   boolean hasExplanationSpecOverride();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface ExplainRequestOrBuilder
    * @return The explanationSpecOverride.
    */
   com.google.cloud.vertexai.api.ExplanationSpecOverride getExplanationSpecOverride();
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public interface ExplainRequestOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
-
   /**
    *
    *
