@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.bigquery.ExternalTableDefinition.SourceColumnMatch;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import org.junit.Test;
@@ -61,6 +62,13 @@ public class ExternalTableDefinitionTest {
   private static final String OBJECT_METADATA = "SIMPLE";
   private static final String METADATA_CACHE_MODE = "AUTOMATIC";
   private static final String MAX_STALENESS = "INTERVAL 15 MINUTE";
+  private static final String TIME_ZONE = "America/Los_Angeles";
+  private static final String DATE_FORMAT = "YYYY-MM-DD";
+  private static final String DATETIME_FORMAT = "YYYY-MM-DD HH:MI:SS";
+  private static final String TIME_FORMAT = "HH:MI:SS";
+  private static final String TIMESTAMP_FORMAT = "YYYY-MM-DD HH:MI:SS";
+  private static final SourceColumnMatch SOURCE_COLUMN_MATCH = SourceColumnMatch.POSITION;
+  private static final List<String> NULL_MARKERS = ImmutableList.of("SQL NULL", "TEST_MARKER");
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setFileSetSpecType("FILE_SET_SPEC_TYPE_FILE_SYSTEM_MATCH")
@@ -74,6 +82,13 @@ public class ExternalTableDefinitionTest {
           .setObjectMetadata(OBJECT_METADATA)
           .setMetadataCacheMode(METADATA_CACHE_MODE)
           .setMaxStaleness(MAX_STALENESS)
+          .setTimeZone(TIME_ZONE)
+          .setDateFormat(DATE_FORMAT)
+          .setDatetimeFormat(DATETIME_FORMAT)
+          .setTimeFormat(TIME_FORMAT)
+          .setTimestampFormat(TIMESTAMP_FORMAT)
+          .setSourceColumnMatch(SOURCE_COLUMN_MATCH)
+          .setNullMarkers(NULL_MARKERS)
           .build();
 
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION_AVRO =
@@ -131,6 +146,13 @@ public class ExternalTableDefinitionTest {
     assertEquals(DECIMAL_TARGET_TYPES, EXTERNAL_TABLE_DEFINITION.getDecimalTargetTypes());
     assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
     assertEquals(HIVE_PARTITIONING_OPTIONS, EXTERNAL_TABLE_DEFINITION.getHivePartitioningOptions());
+    assertEquals(TIME_ZONE, EXTERNAL_TABLE_DEFINITION.getTimeZone());
+    assertEquals(DATE_FORMAT, EXTERNAL_TABLE_DEFINITION.getDateFormat());
+    assertEquals(DATETIME_FORMAT, EXTERNAL_TABLE_DEFINITION.getDatetimeFormat());
+    assertEquals(TIME_FORMAT, EXTERNAL_TABLE_DEFINITION.getTimeFormat());
+    assertEquals(TIMESTAMP_FORMAT, EXTERNAL_TABLE_DEFINITION.getTimestampFormat());
+    assertEquals(SOURCE_COLUMN_MATCH, EXTERNAL_TABLE_DEFINITION.getSourceColumnMatch());
+    assertEquals(NULL_MARKERS, EXTERNAL_TABLE_DEFINITION.getNullMarkers());
     assertNotEquals(EXTERNAL_TABLE_DEFINITION, TableDefinition.Type.EXTERNAL);
   }
 
@@ -174,5 +196,12 @@ public class ExternalTableDefinitionTest {
     assertEquals(expected.getObjectMetadata(), value.getObjectMetadata());
     assertEquals(expected.getMetadataCacheMode(), value.getMetadataCacheMode());
     assertEquals(expected.getMaxStaleness(), value.getMaxStaleness());
+    assertEquals(expected.getTimeZone(), value.getTimeZone());
+    assertEquals(expected.getDateFormat(), value.getDateFormat());
+    assertEquals(expected.getDatetimeFormat(), value.getDatetimeFormat());
+    assertEquals(expected.getTimeFormat(), value.getTimeFormat());
+    assertEquals(expected.getTimestampFormat(), value.getTimestampFormat());
+    assertEquals(expected.getSourceColumnMatch(), value.getSourceColumnMatch());
+    assertEquals(expected.getNullMarkers(), value.getNullMarkers());
   }
 }

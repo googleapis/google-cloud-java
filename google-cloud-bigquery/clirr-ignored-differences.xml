@@ -3,6 +3,76 @@
 <differences>
   <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*TimeZone(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*DateFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*DatetimeFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*TimeFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*TimestampFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*SourceColumnMatch(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition*</className>
+    <method>*NullMarkers(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*TimeZone(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*DateFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*DatetimeFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*TimeFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*TimestampFormat(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*SourceColumnMatch(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/LoadJobConfiguration*</className>
+    <method>*NullMarkers(*)</method>
+  </difference>
+  <difference>
     <differenceType>7004</differenceType>
     <className>com/google/cloud/bigquery/BigQueryRetryHelper</className>
     <method>java.lang.Object runWithRetries(java.util.concurrent.Callable, com.google.api.gax.retrying.RetrySettings, com.google.api.gax.retrying.ResultRetryAlgorithm, com.google.api.core.ApiClock, com.google.cloud.bigquery.BigQueryRetryConfig)</method>
