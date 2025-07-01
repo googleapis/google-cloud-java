@@ -183,4 +183,60 @@ public interface FileOrBuilder
    * <code>.google.cloud.securitycenter.v2.File.DiskPath disk_path = 7;</code>
    */
   com.google.cloud.securitycenter.v2.File.DiskPathOrBuilder getDiskPathOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Operation(s) performed on a file.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.File.FileOperation operations = 8;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v2.File.FileOperation> getOperationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Operation(s) performed on a file.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.File.FileOperation operations = 8;</code>
+   */
+  com.google.cloud.securitycenter.v2.File.FileOperation getOperations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Operation(s) performed on a file.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.File.FileOperation operations = 8;</code>
+   */
+  int getOperationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Operation(s) performed on a file.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.File.FileOperation operations = 8;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v2.File.FileOperationOrBuilder>
+      getOperationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Operation(s) performed on a file.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.File.FileOperation operations = 8;</code>
+   */
+  com.google.cloud.securitycenter.v2.File.FileOperationOrBuilder getOperationsOrBuilder(int index);
 }

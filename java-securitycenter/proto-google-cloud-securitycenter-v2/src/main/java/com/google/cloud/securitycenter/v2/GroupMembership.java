@@ -96,6 +96,16 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
      * <code>GROUP_TYPE_TOXIC_COMBINATION = 1;</code>
      */
     GROUP_TYPE_TOXIC_COMBINATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Group represents a chokepoint.
+     * </pre>
+     *
+     * <code>GROUP_TYPE_CHOKEPOINT = 3;</code>
+     */
+    GROUP_TYPE_CHOKEPOINT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -120,6 +130,17 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
      * <code>GROUP_TYPE_TOXIC_COMBINATION = 1;</code>
      */
     public static final int GROUP_TYPE_TOXIC_COMBINATION_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Group represents a chokepoint.
+     * </pre>
+     *
+     * <code>GROUP_TYPE_CHOKEPOINT = 3;</code>
+     */
+    public static final int GROUP_TYPE_CHOKEPOINT_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -149,6 +170,8 @@ public final class GroupMembership extends com.google.protobuf.GeneratedMessageV
           return GROUP_TYPE_UNSPECIFIED;
         case 1:
           return GROUP_TYPE_TOXIC_COMBINATION;
+        case 3:
+          return GROUP_TYPE_CHOKEPOINT;
         default:
           return null;
       }
