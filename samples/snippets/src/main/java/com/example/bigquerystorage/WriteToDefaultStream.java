@@ -20,6 +20,7 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
@@ -184,6 +185,9 @@ public class WriteToDefaultStream {
                   .setChannelsPerCpu(2)
                   .build())
           .setEnableConnectionPool(true)
+          // This will allow connection pool to scale up better. 
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder().setMaxOutstandingElementCount(100L).build())
           // If value is missing in json and there is a default value configured on bigquery
           // column, apply the default value to the missing value field.
           .setDefaultMissingValueInterpretation(
