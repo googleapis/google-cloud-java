@@ -99,37 +99,11 @@ public final class GetKeyRingRequestNew implements Serializable {
 
   public static GetKeyRingRequestNew parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data);
+    return new GetKeyRingRequestNew(getKeyRingRequest.getParserForType().parseFrom(data));
   }
 
-  public static GetKeyRingRequestNew parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data, extensionRegistry);
-  }
-
-  public static GetKeyRingRequestNew parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data);
-  }
-
-  public static GetKeyRingRequestNew parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data, extensionRegistry);
-  }
-
-  public static GetKeyRingRequestNew parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data);
-  }
-
-  public static GetKeyRingRequestNew parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return getKeyRingRequest.getParserForType().parseFrom(data, extensionRegistry);
+  public static GetKeyRingRequestNew parseFrom(byte[] data) {
+    return new GetKeyRingRequestNew(getKeyRingRequest.getParserForType().parseFrom(data));
   }
 
   public static GetKeyRingRequestNew parseFrom(java.io.InputStream input)
