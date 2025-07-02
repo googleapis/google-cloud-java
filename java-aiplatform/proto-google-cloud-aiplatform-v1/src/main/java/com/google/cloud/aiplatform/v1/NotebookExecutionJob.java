@@ -5407,14 +5407,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The Schedule resource name if this job is triggered by one.
-   * Format:
+   * The Schedule resource name if this job is triggered by one. Format:
    * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * </pre>
    *
-   * <code>
-   * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The scheduleResourceName.
    */
@@ -5435,14 +5432,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The Schedule resource name if this job is triggered by one.
-   * Format:
+   * The Schedule resource name if this job is triggered by one. Format:
    * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * </pre>
    *
-   * <code>
-   * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for scheduleResourceName.
    */
@@ -9343,14 +9337,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The Schedule resource name if this job is triggered by one.
-     * Format:
+     * The Schedule resource name if this job is triggered by one. Format:
      * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
      * </pre>
      *
-     * <code>
-     * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The scheduleResourceName.
      */
@@ -9370,14 +9361,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The Schedule resource name if this job is triggered by one.
-     * Format:
+     * The Schedule resource name if this job is triggered by one. Format:
      * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
      * </pre>
      *
-     * <code>
-     * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for scheduleResourceName.
      */
@@ -9397,14 +9385,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The Schedule resource name if this job is triggered by one.
-     * Format:
+     * The Schedule resource name if this job is triggered by one. Format:
      * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
      * </pre>
      *
-     * <code>
-     * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The scheduleResourceName to set.
      * @return This builder for chaining.
@@ -9423,14 +9408,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The Schedule resource name if this job is triggered by one.
-     * Format:
+     * The Schedule resource name if this job is triggered by one. Format:
      * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
      * </pre>
      *
-     * <code>
-     * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -9445,14 +9427,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The Schedule resource name if this job is triggered by one.
-     * Format:
+     * The Schedule resource name if this job is triggered by one. Format:
      * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
      * </pre>
      *
-     * <code>
-     * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for scheduleResourceName to set.
      * @return This builder for chaining.
