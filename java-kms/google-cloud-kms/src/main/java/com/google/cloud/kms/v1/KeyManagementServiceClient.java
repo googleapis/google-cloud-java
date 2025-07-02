@@ -39,7 +39,10 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import org.apache.commons.codec.cli.Digest;
+
 import java.io.IOException;
+import java.security.PublicKey;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -1598,11 +1601,16 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyRing getKeyRing(GetKeyRingRequest request) {
+  private final KeyRing getKeyRing(GetKeyRingRequest request) {
     return getKeyRingCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  public final KeyRing getKeyRing(GetKeyRingRequestNew request) {
+        return getKeyRing(request.getKeyRingRequest());
+    }
+
+
+    // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
    *
