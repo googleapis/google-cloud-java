@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
@@ -57,11 +58,14 @@ import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
+import com.google.bigtable.admin.v2.CreateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.CreateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
+import com.google.bigtable.admin.v2.DeleteSchemaBundleRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -69,12 +73,15 @@ import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
+import com.google.bigtable.admin.v2.GetSchemaBundleRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
@@ -82,6 +89,7 @@ import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.RestoreTableRequest;
+import com.google.bigtable.admin.v2.SchemaBundle;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
@@ -91,6 +99,8 @@ import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.common.collect.ImmutableList;
@@ -263,6 +273,19 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<CreateSchemaBundleRequest, Operation> createSchemaBundleSettings;
+  private final OperationCallSettings<
+          CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationSettings;
+  private final UnaryCallSettings<UpdateSchemaBundleRequest, Operation> updateSchemaBundleSettings;
+  private final OperationCallSettings<
+          UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationSettings;
+  private final UnaryCallSettings<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleSettings;
+  private final PagedCallSettings<
+          ListSchemaBundlesRequest, ListSchemaBundlesResponse, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesSettings;
+  private final UnaryCallSettings<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleSettings;
 
   private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
       LIST_TABLES_PAGE_STR_DESC =
@@ -404,6 +427,44 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle>
+      LIST_SCHEMA_BUNDLES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSchemaBundlesRequest injectToken(
+                ListSchemaBundlesRequest payload, String token) {
+              return ListSchemaBundlesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSchemaBundlesRequest injectPageSize(
+                ListSchemaBundlesRequest payload, int pageSize) {
+              return ListSchemaBundlesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSchemaBundlesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSchemaBundlesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SchemaBundle> extractResources(ListSchemaBundlesResponse payload) {
+              return payload.getSchemaBundlesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       LIST_TABLES_PAGE_STR_FACT =
@@ -473,6 +534,27 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
                   PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
               return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSchemaBundlesRequest, ListSchemaBundlesResponse, ListSchemaBundlesPagedResponse>
+      LIST_SCHEMA_BUNDLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSchemaBundlesRequest,
+              ListSchemaBundlesResponse,
+              ListSchemaBundlesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSchemaBundlesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesResponse> callable,
+                ListSchemaBundlesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSchemaBundlesResponse> futureResponse) {
+              PageContext<ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SCHEMA_BUNDLES_PAGE_STR_DESC, request, context);
+              return ListSchemaBundlesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -692,6 +774,45 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createSchemaBundle. */
+  public UnaryCallSettings<CreateSchemaBundleRequest, Operation> createSchemaBundleSettings() {
+    return createSchemaBundleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSchemaBundle. */
+  public OperationCallSettings<CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationSettings() {
+    return createSchemaBundleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSchemaBundle. */
+  public UnaryCallSettings<UpdateSchemaBundleRequest, Operation> updateSchemaBundleSettings() {
+    return updateSchemaBundleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSchemaBundle. */
+  public OperationCallSettings<UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationSettings() {
+    return updateSchemaBundleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSchemaBundle. */
+  public UnaryCallSettings<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleSettings() {
+    return getSchemaBundleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSchemaBundles. */
+  public PagedCallSettings<
+          ListSchemaBundlesRequest, ListSchemaBundlesResponse, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesSettings() {
+    return listSchemaBundlesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSchemaBundle. */
+  public UnaryCallSettings<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleSettings() {
+    return deleteSchemaBundleSettings;
+  }
+
   public BigtableTableAdminStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -815,6 +936,15 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    createSchemaBundleSettings = settingsBuilder.createSchemaBundleSettings().build();
+    createSchemaBundleOperationSettings =
+        settingsBuilder.createSchemaBundleOperationSettings().build();
+    updateSchemaBundleSettings = settingsBuilder.updateSchemaBundleSettings().build();
+    updateSchemaBundleOperationSettings =
+        settingsBuilder.updateSchemaBundleOperationSettings().build();
+    getSchemaBundleSettings = settingsBuilder.getSchemaBundleSettings().build();
+    listSchemaBundlesSettings = settingsBuilder.listSchemaBundlesSettings().build();
+    deleteSchemaBundleSettings = settingsBuilder.deleteSchemaBundleSettings().build();
   }
 
   /** Builder for BigtableTableAdminStubSettings. */
@@ -893,6 +1023,23 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<CreateSchemaBundleRequest, Operation>
+        createSchemaBundleSettings;
+    private final OperationCallSettings.Builder<
+            CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+        createSchemaBundleOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateSchemaBundleRequest, Operation>
+        updateSchemaBundleSettings;
+    private final OperationCallSettings.Builder<
+            UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+        updateSchemaBundleOperationSettings;
+    private final UnaryCallSettings.Builder<GetSchemaBundleRequest, SchemaBundle>
+        getSchemaBundleSettings;
+    private final PagedCallSettings.Builder<
+            ListSchemaBundlesRequest, ListSchemaBundlesResponse, ListSchemaBundlesPagedResponse>
+        listSchemaBundlesSettings;
+    private final UnaryCallSettings.Builder<DeleteSchemaBundleRequest, Empty>
+        deleteSchemaBundleSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1022,6 +1169,13 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSchemaBundleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSchemaBundleOperationSettings = OperationCallSettings.newBuilder();
+      updateSchemaBundleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSchemaBundleOperationSettings = OperationCallSettings.newBuilder();
+      getSchemaBundleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSchemaBundlesSettings = PagedCallSettings.newBuilder(LIST_SCHEMA_BUNDLES_PAGE_STR_FACT);
+      deleteSchemaBundleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1054,7 +1208,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               copyBackupSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createSchemaBundleSettings,
+              updateSchemaBundleSettings,
+              getSchemaBundleSettings,
+              listSchemaBundlesSettings,
+              deleteSchemaBundleSettings);
       initDefaults(this);
     }
 
@@ -1103,6 +1262,15 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      createSchemaBundleSettings = settings.createSchemaBundleSettings.toBuilder();
+      createSchemaBundleOperationSettings =
+          settings.createSchemaBundleOperationSettings.toBuilder();
+      updateSchemaBundleSettings = settings.updateSchemaBundleSettings.toBuilder();
+      updateSchemaBundleOperationSettings =
+          settings.updateSchemaBundleOperationSettings.toBuilder();
+      getSchemaBundleSettings = settings.getSchemaBundleSettings.toBuilder();
+      listSchemaBundlesSettings = settings.listSchemaBundlesSettings.toBuilder();
+      deleteSchemaBundleSettings = settings.deleteSchemaBundleSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1135,7 +1303,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               copyBackupSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createSchemaBundleSettings,
+              updateSchemaBundleSettings,
+              getSchemaBundleSettings,
+              listSchemaBundlesSettings,
+              deleteSchemaBundleSettings);
     }
 
     private static Builder createDefault() {
@@ -1300,6 +1473,31 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .createSchemaBundleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateSchemaBundleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getSchemaBundleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listSchemaBundlesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSchemaBundleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createTableFromSnapshotOperationSettings()
@@ -1506,6 +1704,56 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(CopyBackupMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createSchemaBundleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSchemaBundleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SchemaBundle.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateSchemaBundleMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateSchemaBundleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateSchemaBundleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SchemaBundle.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateSchemaBundleMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1760,6 +2008,51 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSchemaBundle. */
+    public UnaryCallSettings.Builder<CreateSchemaBundleRequest, Operation>
+        createSchemaBundleSettings() {
+      return createSchemaBundleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSchemaBundle. */
+    public OperationCallSettings.Builder<
+            CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+        createSchemaBundleOperationSettings() {
+      return createSchemaBundleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSchemaBundle. */
+    public UnaryCallSettings.Builder<UpdateSchemaBundleRequest, Operation>
+        updateSchemaBundleSettings() {
+      return updateSchemaBundleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSchemaBundle. */
+    public OperationCallSettings.Builder<
+            UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+        updateSchemaBundleOperationSettings() {
+      return updateSchemaBundleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSchemaBundle. */
+    public UnaryCallSettings.Builder<GetSchemaBundleRequest, SchemaBundle>
+        getSchemaBundleSettings() {
+      return getSchemaBundleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSchemaBundles. */
+    public PagedCallSettings.Builder<
+            ListSchemaBundlesRequest, ListSchemaBundlesResponse, ListSchemaBundlesPagedResponse>
+        listSchemaBundlesSettings() {
+      return listSchemaBundlesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSchemaBundle. */
+    public UnaryCallSettings.Builder<DeleteSchemaBundleRequest, Empty>
+        deleteSchemaBundleSettings() {
+      return deleteSchemaBundleSettings;
     }
 
     @Override

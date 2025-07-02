@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
@@ -35,11 +36,14 @@ import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
+import com.google.bigtable.admin.v2.CreateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.CreateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
+import com.google.bigtable.admin.v2.DeleteSchemaBundleRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -47,12 +51,15 @@ import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
+import com.google.bigtable.admin.v2.GetSchemaBundleRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
@@ -60,6 +67,7 @@ import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.RestoreTableRequest;
+import com.google.bigtable.admin.v2.SchemaBundle;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
@@ -69,6 +77,8 @@ import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -282,6 +292,44 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSchemaBundleOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSchemaBundleRequest, Operation> createSchemaBundleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSchemaBundleCallable()");
+  }
+
+  public OperationCallable<UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSchemaBundleOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateSchemaBundleRequest, Operation> updateSchemaBundleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSchemaBundleCallable()");
+  }
+
+  public UnaryCallable<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSchemaBundleCallable()");
+  }
+
+  public UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSchemaBundlesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+      listSchemaBundlesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSchemaBundlesCallable()");
+  }
+
+  public UnaryCallable<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSchemaBundleCallable()");
   }
 
   @Override

@@ -28,7 +28,8 @@ public interface CreateAuthorizedViewMetadataOrBuilder
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -41,7 +42,8 @@ public interface CreateAuthorizedViewMetadataOrBuilder
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -54,7 +56,8 @@ public interface CreateAuthorizedViewMetadataOrBuilder
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>

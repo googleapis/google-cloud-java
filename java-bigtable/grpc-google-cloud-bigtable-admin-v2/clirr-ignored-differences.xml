@@ -12,4 +12,9 @@
     <className>com/google/bigtable/admin/v2/BigtableInstanceAdminGrpc$AsyncService</className>
     <method>*MaterializedView*</method>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/admin/v2/BigtableTableAdminGrpc$AsyncService</className>
+    <method>*</method>
+  </difference>
 </differences>

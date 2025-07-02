@@ -139,6 +139,15 @@ public final class BigtableTableAdminSettings {
         .add("deleteAuthorizedViewSettings", stubSettings.deleteAuthorizedViewSettings())
         .add("listAuthorizedViewsSettings", stubSettings.listAuthorizedViewsSettings())
         .add("getAuthorizedViewSettings", stubSettings.getAuthorizedViewSettings())
+        .add("createSchemaBundleSettings", stubSettings.createSchemaBundleSettings())
+        .add("createSchemaBundleOperationSettings", stubSettings.createBackupOperationSettings())
+        .add("updateSchemaBundleSettings", stubSettings.updateSchemaBundleSettings())
+        .add(
+            "updateSchemaBundleOperationSettings",
+            stubSettings.updateSchemaBundleOperationSettings())
+        .add("getSchemaBundleSettings", stubSettings.getSchemaBundleSettings())
+        .add("listSchemaBundlesSettings", stubSettings.listSchemaBundlesSettings())
+        .add("deleteSchemaBundleSettings", stubSettings.deleteSchemaBundleSettings())
         .toString();
   }
 

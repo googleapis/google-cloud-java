@@ -41,11 +41,14 @@ import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
+import com.google.bigtable.admin.v2.CreateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.CreateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
+import com.google.bigtable.admin.v2.DeleteSchemaBundleRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -53,6 +56,7 @@ import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
+import com.google.bigtable.admin.v2.GetSchemaBundleRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -60,6 +64,8 @@ import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
@@ -67,6 +73,8 @@ import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.RestoreTableRequest;
+import com.google.bigtable.admin.v2.SchemaBundle;
+import com.google.bigtable.admin.v2.SchemaBundleName;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
@@ -78,6 +86,8 @@ import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
@@ -1822,8 +1832,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }</pre>
    *
    * @param authorizedView Required. The AuthorizedView to update. The `name` in `authorized_view`
-   *     is used to identify the AuthorizedView. AuthorizedView name must in this format
-   *     projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;
+   *     is used to identify the AuthorizedView. AuthorizedView name must in this format:
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
    * @param updateMask Optional. The list of fields to update. A mask specifying which fields in the
    *     AuthorizedView resource should be updated. This mask is relative to the AuthorizedView
    *     resource, not to the request message. A field will be overwritten if it is in the mask. If
@@ -4510,8 +4520,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
-   * resource exists but does not have a policy set.
+   * Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -4523,7 +4533,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   ResourceName resource =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -4542,8 +4553,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
-   * resource exists but does not have a policy set.
+   * Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -4571,8 +4582,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
-   * resource exists but does not have a policy set.
+   * Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -4587,7 +4598,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(request);
@@ -4603,8 +4615,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
-   * resource exists but does not have a policy set.
+   * Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -4619,7 +4631,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -4635,7 +4648,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+   * Sets the access control policy on a Bigtable resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -4647,7 +4660,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   ResourceName resource =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(resource, policy);
    * }
@@ -4671,7 +4685,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+   * Sets the access control policy on a Bigtable resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -4704,7 +4718,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+   * Sets the access control policy on a Bigtable resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -4719,7 +4733,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4736,7 +4751,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+   * Sets the access control policy on a Bigtable resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -4751,7 +4766,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4768,7 +4784,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that the caller has on the specified Table or Backup resource.
+   * Returns permissions that the caller has on the specified Bigtable resource.
    *
    * <p>Sample code:
    *
@@ -4780,7 +4796,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]");
+   *   ResourceName resource =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       baseBigtableTableAdminClient.testIamPermissions(resource, permissions);
@@ -4806,7 +4823,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that the caller has on the specified Table or Backup resource.
+   * Returns permissions that the caller has on the specified Bigtable resource.
    *
    * <p>Sample code:
    *
@@ -4844,7 +4861,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that the caller has on the specified Table or Backup resource.
+   * Returns permissions that the caller has on the specified Bigtable resource.
    *
    * <p>Sample code:
    *
@@ -4859,7 +4876,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response =
@@ -4876,7 +4894,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that the caller has on the specified Table or Backup resource.
+   * Returns permissions that the caller has on the specified Bigtable resource.
    *
    * <p>Sample code:
    *
@@ -4891,7 +4909,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               BackupName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[BACKUP]").toString())
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -4904,6 +4923,742 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   String schemaBundleId = "schemaBundleId2039843326";
+   *   SchemaBundle schemaBundle = SchemaBundle.newBuilder().build();
+   *   SchemaBundle response =
+   *       baseBigtableTableAdminClient
+   *           .createSchemaBundleAsync(parent, schemaBundleId, schemaBundle)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this schema bundle will be created. Values
+   *     are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param schemaBundleId Required. The unique ID to use for the schema bundle, which will become
+   *     the final component of the schema bundle's resource name.
+   * @param schemaBundle Required. The schema bundle to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SchemaBundle, CreateSchemaBundleMetadata> createSchemaBundleAsync(
+      TableName parent, String schemaBundleId, SchemaBundle schemaBundle) {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSchemaBundleId(schemaBundleId)
+            .setSchemaBundle(schemaBundle)
+            .build();
+    return createSchemaBundleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String schemaBundleId = "schemaBundleId2039843326";
+   *   SchemaBundle schemaBundle = SchemaBundle.newBuilder().build();
+   *   SchemaBundle response =
+   *       baseBigtableTableAdminClient
+   *           .createSchemaBundleAsync(parent, schemaBundleId, schemaBundle)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this schema bundle will be created. Values
+   *     are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param schemaBundleId Required. The unique ID to use for the schema bundle, which will become
+   *     the final component of the schema bundle's resource name.
+   * @param schemaBundle Required. The schema bundle to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SchemaBundle, CreateSchemaBundleMetadata> createSchemaBundleAsync(
+      String parent, String schemaBundleId, SchemaBundle schemaBundle) {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.newBuilder()
+            .setParent(parent)
+            .setSchemaBundleId(schemaBundleId)
+            .setSchemaBundle(schemaBundle)
+            .build();
+    return createSchemaBundleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateSchemaBundleRequest request =
+   *       CreateSchemaBundleRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setSchemaBundleId("schemaBundleId2039843326")
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .build();
+   *   SchemaBundle response = baseBigtableTableAdminClient.createSchemaBundleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SchemaBundle, CreateSchemaBundleMetadata> createSchemaBundleAsync(
+      CreateSchemaBundleRequest request) {
+    return createSchemaBundleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateSchemaBundleRequest request =
+   *       CreateSchemaBundleRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setSchemaBundleId("schemaBundleId2039843326")
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .build();
+   *   OperationFuture<SchemaBundle, CreateSchemaBundleMetadata> future =
+   *       baseBigtableTableAdminClient.createSchemaBundleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SchemaBundle response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationCallable() {
+    return stub.createSchemaBundleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateSchemaBundleRequest request =
+   *       CreateSchemaBundleRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setSchemaBundleId("schemaBundleId2039843326")
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableTableAdminClient.createSchemaBundleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSchemaBundleRequest, Operation> createSchemaBundleCallable() {
+    return stub.createSchemaBundleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   SchemaBundle schemaBundle = SchemaBundle.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SchemaBundle response =
+   *       baseBigtableTableAdminClient.updateSchemaBundleAsync(schemaBundle, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param schemaBundle Required. The schema bundle to update.
+   *     <p>The schema bundle's `name` field is used to identify the schema bundle to update. Values
+   *     are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SchemaBundle, UpdateSchemaBundleMetadata> updateSchemaBundleAsync(
+      SchemaBundle schemaBundle, FieldMask updateMask) {
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(schemaBundle)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSchemaBundleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateSchemaBundleRequest request =
+   *       UpdateSchemaBundleRequest.newBuilder()
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   SchemaBundle response = baseBigtableTableAdminClient.updateSchemaBundleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SchemaBundle, UpdateSchemaBundleMetadata> updateSchemaBundleAsync(
+      UpdateSchemaBundleRequest request) {
+    return updateSchemaBundleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateSchemaBundleRequest request =
+   *       UpdateSchemaBundleRequest.newBuilder()
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   OperationFuture<SchemaBundle, UpdateSchemaBundleMetadata> future =
+   *       baseBigtableTableAdminClient.updateSchemaBundleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SchemaBundle response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationCallable() {
+    return stub.updateSchemaBundleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateSchemaBundleRequest request =
+   *       UpdateSchemaBundleRequest.newBuilder()
+   *           .setSchemaBundle(SchemaBundle.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableTableAdminClient.updateSchemaBundleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSchemaBundleRequest, Operation> updateSchemaBundleCallable() {
+    return stub.updateSchemaBundleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata information about the specified schema bundle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   SchemaBundleName name =
+   *       SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]");
+   *   SchemaBundle response = baseBigtableTableAdminClient.getSchemaBundle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the schema bundle to retrieve. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SchemaBundle getSchemaBundle(SchemaBundleName name) {
+    GetSchemaBundleRequest request =
+        GetSchemaBundleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSchemaBundle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata information about the specified schema bundle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String name =
+   *       SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]").toString();
+   *   SchemaBundle response = baseBigtableTableAdminClient.getSchemaBundle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the schema bundle to retrieve. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SchemaBundle getSchemaBundle(String name) {
+    GetSchemaBundleRequest request = GetSchemaBundleRequest.newBuilder().setName(name).build();
+    return getSchemaBundle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata information about the specified schema bundle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   GetSchemaBundleRequest request =
+   *       GetSchemaBundleRequest.newBuilder()
+   *           .setName(
+   *               SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]")
+   *                   .toString())
+   *           .build();
+   *   SchemaBundle response = baseBigtableTableAdminClient.getSchemaBundle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SchemaBundle getSchemaBundle(GetSchemaBundleRequest request) {
+    return getSchemaBundleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata information about the specified schema bundle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   GetSchemaBundleRequest request =
+   *       GetSchemaBundleRequest.newBuilder()
+   *           .setName(
+   *               SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SchemaBundle> future =
+   *       baseBigtableTableAdminClient.getSchemaBundleCallable().futureCall(request);
+   *   // Do something.
+   *   SchemaBundle response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleCallable() {
+    return stub.getSchemaBundleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema bundles associated with the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   for (SchemaBundle element :
+   *       baseBigtableTableAdminClient.listSchemaBundles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of schema bundles. Values are of
+   *     the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaBundlesPagedResponse listSchemaBundles(TableName parent) {
+    ListSchemaBundlesRequest request =
+        ListSchemaBundlesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSchemaBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema bundles associated with the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   for (SchemaBundle element :
+   *       baseBigtableTableAdminClient.listSchemaBundles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of schema bundles. Values are of
+   *     the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaBundlesPagedResponse listSchemaBundles(String parent) {
+    ListSchemaBundlesRequest request =
+        ListSchemaBundlesRequest.newBuilder().setParent(parent).build();
+    return listSchemaBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema bundles associated with the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListSchemaBundlesRequest request =
+   *       ListSchemaBundlesRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SchemaBundle element :
+   *       baseBigtableTableAdminClient.listSchemaBundles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaBundlesPagedResponse listSchemaBundles(ListSchemaBundlesRequest request) {
+    return listSchemaBundlesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema bundles associated with the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListSchemaBundlesRequest request =
+   *       ListSchemaBundlesRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SchemaBundle> future =
+   *       baseBigtableTableAdminClient.listSchemaBundlesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SchemaBundle element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesPagedCallable() {
+    return stub.listSchemaBundlesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema bundles associated with the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListSchemaBundlesRequest request =
+   *       ListSchemaBundlesRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSchemaBundlesResponse response =
+   *         baseBigtableTableAdminClient.listSchemaBundlesCallable().call(request);
+   *     for (SchemaBundle element : response.getSchemaBundlesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+      listSchemaBundlesCallable() {
+    return stub.listSchemaBundlesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   SchemaBundleName name =
+   *       SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]");
+   *   baseBigtableTableAdminClient.deleteSchemaBundle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the schema bundle to delete. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSchemaBundle(SchemaBundleName name) {
+    DeleteSchemaBundleRequest request =
+        DeleteSchemaBundleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSchemaBundle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String name =
+   *       SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]").toString();
+   *   baseBigtableTableAdminClient.deleteSchemaBundle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the schema bundle to delete. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSchemaBundle(String name) {
+    DeleteSchemaBundleRequest request =
+        DeleteSchemaBundleRequest.newBuilder().setName(name).build();
+    deleteSchemaBundle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   DeleteSchemaBundleRequest request =
+   *       DeleteSchemaBundleRequest.newBuilder()
+   *           .setName(
+   *               SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   baseBigtableTableAdminClient.deleteSchemaBundle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSchemaBundle(DeleteSchemaBundleRequest request) {
+    deleteSchemaBundleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a schema bundle in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   DeleteSchemaBundleRequest request =
+   *       DeleteSchemaBundleRequest.newBuilder()
+   *           .setName(
+   *               SchemaBundleName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[SCHEMA_BUNDLE]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       baseBigtableTableAdminClient.deleteSchemaBundleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleCallable() {
+    return stub.deleteSchemaBundleCallable();
   }
 
   @Override
@@ -5239,6 +5994,86 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     protected ListBackupsFixedSizeCollection createCollection(
         List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSchemaBundlesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSchemaBundlesRequest,
+          ListSchemaBundlesResponse,
+          SchemaBundle,
+          ListSchemaBundlesPage,
+          ListSchemaBundlesFixedSizeCollection> {
+
+    public static ApiFuture<ListSchemaBundlesPagedResponse> createAsync(
+        PageContext<ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle> context,
+        ApiFuture<ListSchemaBundlesResponse> futureResponse) {
+      ApiFuture<ListSchemaBundlesPage> futurePage =
+          ListSchemaBundlesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSchemaBundlesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSchemaBundlesPagedResponse(ListSchemaBundlesPage page) {
+      super(page, ListSchemaBundlesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSchemaBundlesPage
+      extends AbstractPage<
+          ListSchemaBundlesRequest,
+          ListSchemaBundlesResponse,
+          SchemaBundle,
+          ListSchemaBundlesPage> {
+
+    private ListSchemaBundlesPage(
+        PageContext<ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle> context,
+        ListSchemaBundlesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSchemaBundlesPage createEmptyPage() {
+      return new ListSchemaBundlesPage(null, null);
+    }
+
+    @Override
+    protected ListSchemaBundlesPage createPage(
+        PageContext<ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle> context,
+        ListSchemaBundlesResponse response) {
+      return new ListSchemaBundlesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSchemaBundlesPage> createPageAsync(
+        PageContext<ListSchemaBundlesRequest, ListSchemaBundlesResponse, SchemaBundle> context,
+        ApiFuture<ListSchemaBundlesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSchemaBundlesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSchemaBundlesRequest,
+          ListSchemaBundlesResponse,
+          SchemaBundle,
+          ListSchemaBundlesPage,
+          ListSchemaBundlesFixedSizeCollection> {
+
+    private ListSchemaBundlesFixedSizeCollection(
+        List<ListSchemaBundlesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSchemaBundlesFixedSizeCollection createEmptyCollection() {
+      return new ListSchemaBundlesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSchemaBundlesFixedSizeCollection createCollection(
+        List<ListSchemaBundlesPage> pages, int collectionSize) {
+      return new ListSchemaBundlesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

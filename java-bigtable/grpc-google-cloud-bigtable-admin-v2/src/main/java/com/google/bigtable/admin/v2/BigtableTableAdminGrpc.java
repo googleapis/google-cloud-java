@@ -1374,6 +1374,237 @@ public final class BigtableTableAdminGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateSchemaBundleRequest, com.google.longrunning.Operation>
+      getCreateSchemaBundleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSchemaBundle",
+      requestType = com.google.bigtable.admin.v2.CreateSchemaBundleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateSchemaBundleRequest, com.google.longrunning.Operation>
+      getCreateSchemaBundleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CreateSchemaBundleRequest,
+            com.google.longrunning.Operation>
+        getCreateSchemaBundleMethod;
+    if ((getCreateSchemaBundleMethod = BigtableTableAdminGrpc.getCreateSchemaBundleMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getCreateSchemaBundleMethod = BigtableTableAdminGrpc.getCreateSchemaBundleMethod)
+            == null) {
+          BigtableTableAdminGrpc.getCreateSchemaBundleMethod =
+              getCreateSchemaBundleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CreateSchemaBundleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSchemaBundle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CreateSchemaBundleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("CreateSchemaBundle"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSchemaBundleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateSchemaBundleRequest, com.google.longrunning.Operation>
+      getUpdateSchemaBundleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSchemaBundle",
+      requestType = com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateSchemaBundleRequest, com.google.longrunning.Operation>
+      getUpdateSchemaBundleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateSchemaBundleRequest,
+            com.google.longrunning.Operation>
+        getUpdateSchemaBundleMethod;
+    if ((getUpdateSchemaBundleMethod = BigtableTableAdminGrpc.getUpdateSchemaBundleMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getUpdateSchemaBundleMethod = BigtableTableAdminGrpc.getUpdateSchemaBundleMethod)
+            == null) {
+          BigtableTableAdminGrpc.getUpdateSchemaBundleMethod =
+              getUpdateSchemaBundleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateSchemaBundleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSchemaBundle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateSchemaBundleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("UpdateSchemaBundle"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSchemaBundleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+          com.google.bigtable.admin.v2.SchemaBundle>
+      getGetSchemaBundleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSchemaBundle",
+      requestType = com.google.bigtable.admin.v2.GetSchemaBundleRequest.class,
+      responseType = com.google.bigtable.admin.v2.SchemaBundle.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+          com.google.bigtable.admin.v2.SchemaBundle>
+      getGetSchemaBundleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+            com.google.bigtable.admin.v2.SchemaBundle>
+        getGetSchemaBundleMethod;
+    if ((getGetSchemaBundleMethod = BigtableTableAdminGrpc.getGetSchemaBundleMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getGetSchemaBundleMethod = BigtableTableAdminGrpc.getGetSchemaBundleMethod) == null) {
+          BigtableTableAdminGrpc.getGetSchemaBundleMethod =
+              getGetSchemaBundleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+                          com.google.bigtable.admin.v2.SchemaBundle>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSchemaBundle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetSchemaBundleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("GetSchemaBundle"))
+                      .build();
+        }
+      }
+    }
+    return getGetSchemaBundleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListSchemaBundlesRequest,
+          com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+      getListSchemaBundlesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSchemaBundles",
+      requestType = com.google.bigtable.admin.v2.ListSchemaBundlesRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListSchemaBundlesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListSchemaBundlesRequest,
+          com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+      getListSchemaBundlesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListSchemaBundlesRequest,
+            com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+        getListSchemaBundlesMethod;
+    if ((getListSchemaBundlesMethod = BigtableTableAdminGrpc.getListSchemaBundlesMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getListSchemaBundlesMethod = BigtableTableAdminGrpc.getListSchemaBundlesMethod)
+            == null) {
+          BigtableTableAdminGrpc.getListSchemaBundlesMethod =
+              getListSchemaBundlesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListSchemaBundlesRequest,
+                          com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSchemaBundles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListSchemaBundlesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListSchemaBundlesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("ListSchemaBundles"))
+                      .build();
+        }
+      }
+    }
+    return getListSchemaBundlesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteSchemaBundleRequest, com.google.protobuf.Empty>
+      getDeleteSchemaBundleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSchemaBundle",
+      requestType = com.google.bigtable.admin.v2.DeleteSchemaBundleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteSchemaBundleRequest, com.google.protobuf.Empty>
+      getDeleteSchemaBundleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.DeleteSchemaBundleRequest, com.google.protobuf.Empty>
+        getDeleteSchemaBundleMethod;
+    if ((getDeleteSchemaBundleMethod = BigtableTableAdminGrpc.getDeleteSchemaBundleMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getDeleteSchemaBundleMethod = BigtableTableAdminGrpc.getDeleteSchemaBundleMethod)
+            == null) {
+          BigtableTableAdminGrpc.getDeleteSchemaBundleMethod =
+              getDeleteSchemaBundleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.DeleteSchemaBundleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSchemaBundle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.DeleteSchemaBundleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("DeleteSchemaBundle"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSchemaBundleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableTableAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigtableTableAdminStub> factory =
@@ -1877,7 +2108,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a Table or Backup resource.
+     * Gets the access control policy for a Bigtable resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -1893,7 +2124,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a Table or Backup resource.
+     * Sets the access control policy on a Bigtable resource.
      * Replaces any existing policy.
      * </pre>
      */
@@ -1908,7 +2139,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup
+     * Returns permissions that the caller has on the specified Bigtable
      * resource.
      * </pre>
      */
@@ -1918,6 +2149,77 @@ public final class BigtableTableAdminGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema bundle in the specified table.
+     * </pre>
+     */
+    default void createSchemaBundle(
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSchemaBundleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a schema bundle in the specified table.
+     * </pre>
+     */
+    default void updateSchemaBundle(
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSchemaBundleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified schema bundle.
+     * </pre>
+     */
+    default void getSchemaBundle(
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.SchemaBundle> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSchemaBundleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema bundles associated with the specified table.
+     * </pre>
+     */
+    default void listSchemaBundles(
+        com.google.bigtable.admin.v2.ListSchemaBundlesRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSchemaBundlesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a schema bundle in the specified table.
+     * </pre>
+     */
+    default void deleteSchemaBundle(
+        com.google.bigtable.admin.v2.DeleteSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSchemaBundleMethod(), responseObserver);
     }
   }
 
@@ -2448,7 +2750,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a Table or Backup resource.
+     * Gets the access control policy for a Bigtable resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -2466,7 +2768,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a Table or Backup resource.
+     * Sets the access control policy on a Bigtable resource.
      * Replaces any existing policy.
      * </pre>
      */
@@ -2483,7 +2785,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup
+     * Returns permissions that the caller has on the specified Bigtable
      * resource.
      * </pre>
      */
@@ -2493,6 +2795,87 @@ public final class BigtableTableAdminGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema bundle in the specified table.
+     * </pre>
+     */
+    public void createSchemaBundle(
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSchemaBundleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a schema bundle in the specified table.
+     * </pre>
+     */
+    public void updateSchemaBundle(
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSchemaBundleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified schema bundle.
+     * </pre>
+     */
+    public void getSchemaBundle(
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.SchemaBundle> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSchemaBundleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema bundles associated with the specified table.
+     * </pre>
+     */
+    public void listSchemaBundles(
+        com.google.bigtable.admin.v2.ListSchemaBundlesRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSchemaBundlesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a schema bundle in the specified table.
+     * </pre>
+     */
+    public void deleteSchemaBundle(
+        com.google.bigtable.admin.v2.DeleteSchemaBundleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSchemaBundleMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2929,7 +3312,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a Table or Backup resource.
+     * Gets the access control policy for a Bigtable resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -2943,7 +3326,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a Table or Backup resource.
+     * Sets the access control policy on a Bigtable resource.
      * Replaces any existing policy.
      * </pre>
      */
@@ -2956,7 +3339,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup
+     * Returns permissions that the caller has on the specified Bigtable
      * resource.
      * </pre>
      */
@@ -2964,6 +3347,71 @@ public final class BigtableTableAdminGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSchemaBundle(
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSchemaBundle(
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified schema bundle.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle(
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema bundles associated with the specified table.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListSchemaBundlesResponse listSchemaBundles(
+        com.google.bigtable.admin.v2.ListSchemaBundlesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchemaBundlesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSchemaBundle(
+        com.google.bigtable.admin.v2.DeleteSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSchemaBundleMethod(), getCallOptions(), request);
     }
   }
 
@@ -3398,7 +3846,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a Table or Backup resource.
+     * Gets the access control policy for a Bigtable resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -3412,7 +3860,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a Table or Backup resource.
+     * Sets the access control policy on a Bigtable resource.
      * Replaces any existing policy.
      * </pre>
      */
@@ -3425,7 +3873,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup
+     * Returns permissions that the caller has on the specified Bigtable
      * resource.
      * </pre>
      */
@@ -3433,6 +3881,71 @@ public final class BigtableTableAdminGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSchemaBundle(
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSchemaBundle(
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified schema bundle.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle(
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSchemaBundleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema bundles associated with the specified table.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListSchemaBundlesResponse listSchemaBundles(
+        com.google.bigtable.admin.v2.ListSchemaBundlesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchemaBundlesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSchemaBundle(
+        com.google.bigtable.admin.v2.DeleteSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSchemaBundleMethod(), getCallOptions(), request);
     }
   }
 
@@ -3875,7 +4388,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a Table or Backup resource.
+     * Gets the access control policy for a Bigtable resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -3890,7 +4403,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a Table or Backup resource.
+     * Sets the access control policy on a Bigtable resource.
      * Replaces any existing policy.
      * </pre>
      */
@@ -3904,7 +4417,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified Table or Backup
+     * Returns permissions that the caller has on the specified Bigtable
      * resource.
      * </pre>
      */
@@ -3913,6 +4426,73 @@ public final class BigtableTableAdminGrpc {
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createSchemaBundle(com.google.bigtable.admin.v2.CreateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSchemaBundleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateSchemaBundle(com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSchemaBundleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified schema bundle.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.SchemaBundle>
+        getSchemaBundle(com.google.bigtable.admin.v2.GetSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSchemaBundleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema bundles associated with the specified table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListSchemaBundlesResponse>
+        listSchemaBundles(com.google.bigtable.admin.v2.ListSchemaBundlesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSchemaBundlesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a schema bundle in the specified table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSchemaBundle(com.google.bigtable.admin.v2.DeleteSchemaBundleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSchemaBundleMethod(), getCallOptions()), request);
     }
   }
 
@@ -3946,6 +4526,11 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_GET_IAM_POLICY = 27;
   private static final int METHODID_SET_IAM_POLICY = 28;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 29;
+  private static final int METHODID_CREATE_SCHEMA_BUNDLE = 30;
+  private static final int METHODID_UPDATE_SCHEMA_BUNDLE = 31;
+  private static final int METHODID_GET_SCHEMA_BUNDLE = 32;
+  private static final int METHODID_LIST_SCHEMA_BUNDLES = 33;
+  private static final int METHODID_DELETE_SCHEMA_BUNDLE = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4124,6 +4709,33 @@ public final class BigtableTableAdminGrpc {
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_SCHEMA_BUNDLE:
+          serviceImpl.createSchemaBundle(
+              (com.google.bigtable.admin.v2.CreateSchemaBundleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCHEMA_BUNDLE:
+          serviceImpl.updateSchemaBundle(
+              (com.google.bigtable.admin.v2.UpdateSchemaBundleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_SCHEMA_BUNDLE:
+          serviceImpl.getSchemaBundle(
+              (com.google.bigtable.admin.v2.GetSchemaBundleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.SchemaBundle>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SCHEMA_BUNDLES:
+          serviceImpl.listSchemaBundles(
+              (com.google.bigtable.admin.v2.ListSchemaBundlesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListSchemaBundlesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SCHEMA_BUNDLE:
+          serviceImpl.deleteSchemaBundle(
+              (com.google.bigtable.admin.v2.DeleteSchemaBundleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4330,6 +4942,38 @@ public final class BigtableTableAdminGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getCreateSchemaBundleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.CreateSchemaBundleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SCHEMA_BUNDLE)))
+        .addMethod(
+            getUpdateSchemaBundleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SCHEMA_BUNDLE)))
+        .addMethod(
+            getGetSchemaBundleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+                    com.google.bigtable.admin.v2.SchemaBundle>(
+                    service, METHODID_GET_SCHEMA_BUNDLE)))
+        .addMethod(
+            getListSchemaBundlesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.ListSchemaBundlesRequest,
+                    com.google.bigtable.admin.v2.ListSchemaBundlesResponse>(
+                    service, METHODID_LIST_SCHEMA_BUNDLES)))
+        .addMethod(
+            getDeleteSchemaBundleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.DeleteSchemaBundleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SCHEMA_BUNDLE)))
         .build();
   }
 
@@ -4411,6 +5055,11 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getCreateSchemaBundleMethod())
+                      .addMethod(getUpdateSchemaBundleMethod())
+                      .addMethod(getGetSchemaBundleMethod())
+                      .addMethod(getListSchemaBundlesMethod())
+                      .addMethod(getDeleteSchemaBundleMethod())
                       .build();
         }
       }

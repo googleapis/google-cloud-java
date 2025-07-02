@@ -124,6 +124,9 @@
             "CreateBackup": {
               "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
             },
+            "CreateSchemaBundle": {
+              "methods": ["createSchemaBundleAsync", "createSchemaBundleAsync", "createSchemaBundleAsync", "createSchemaBundleOperationCallable", "createSchemaBundleCallable"]
+            },
             "CreateTable": {
               "methods": ["createTable", "createTable", "createTable", "createTableCallable"]
             },
@@ -135,6 +138,9 @@
             },
             "DeleteBackup": {
               "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
+            },
+            "DeleteSchemaBundle": {
+              "methods": ["deleteSchemaBundle", "deleteSchemaBundle", "deleteSchemaBundle", "deleteSchemaBundleCallable"]
             },
             "DeleteSnapshot": {
               "methods": ["deleteSnapshot", "deleteSnapshot", "deleteSnapshot", "deleteSnapshotCallable"]
@@ -157,6 +163,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetSchemaBundle": {
+              "methods": ["getSchemaBundle", "getSchemaBundle", "getSchemaBundle", "getSchemaBundleCallable"]
+            },
             "GetSnapshot": {
               "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
             },
@@ -168,6 +177,9 @@
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListSchemaBundles": {
+              "methods": ["listSchemaBundles", "listSchemaBundles", "listSchemaBundles", "listSchemaBundlesPagedCallable", "listSchemaBundlesCallable"]
             },
             "ListSnapshots": {
               "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
@@ -198,6 +210,9 @@
             },
             "UpdateBackup": {
               "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
+            },
+            "UpdateSchemaBundle": {
+              "methods": ["updateSchemaBundleAsync", "updateSchemaBundleAsync", "updateSchemaBundleOperationCallable", "updateSchemaBundleCallable"]
             },
             "UpdateTable": {
               "methods": ["updateTableAsync", "updateTableAsync", "updateTableOperationCallable", "updateTableCallable"]

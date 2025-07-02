@@ -104,6 +104,14 @@ public final class TableProto {
       internal_static_google_bigtable_admin_v2_BackupInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_BackupInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_ProtoSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_SchemaBundle_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -278,18 +286,29 @@ public final class TableProto {
           + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\031\n"
           + "\014source_table\030\004 \001(\tB\003\340A\003\022\032\n\r"
           + "source_backup\030\n"
-          + " \001(\tB\003\340A\003*D\n"
+          + " \001(\tB\003\340A\003\"-\n"
+          + "\013ProtoSchema\022\036\n"
+          + "\021proto_descriptors\030\002 \001(\014B\003\340A\002\"\240\002\n"
+          + "\014SchemaBundle\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022=\n"
+          + "\014proto_schema\030\002"
+          + " \001(\0132%.google.bigtable.admin.v2.ProtoSchemaH\000\022\021\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001:\242\001\352A\236\001\n"
+          + ")bigtableadmin.googleapis.com/SchemaBundle\022Tprojects/{project}/inst"
+          + "ances/{instance}/tables/{table}/schemaBundles/{schema_bundle}*\r"
+          + "schemaBundles2\014schemaBundleB\006\n"
+          + "\004type*D\n"
           + "\021RestoreSourceType\022#\n"
           + "\037RESTORE_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006BACKUP\020\001B\367\002\n"
           + "\034com.google.bigtable.admin.v2B\n"
-          + "TableProtoP\001Z8cloud.google.com/go/bigtable/admin/apiv2/"
-          + "adminpb;adminpb\252\002\036Google.Cloud.Bigtable."
-          + "Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V"
-          + "2\352\002\"Google::Cloud::Bigtable::Admin::V2\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/locations/{loca"
-          + "tion}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_"
-          + "version}b\006proto3"
+          + "TableProtoP\001Z8cloud.google.com/go/big"
+          + "table/admin/apiv2/adminpb;adminpb\252\002\036Goog"
+          + "le.Cloud.Bigtable.Admin.V2\312\002\036Google\\Clou"
+          + "d\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigtable::Admin::V2\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{projec"
+          + "t}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVer"
+          + "sions/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -480,6 +499,22 @@ public final class TableProto {
             internal_static_google_bigtable_admin_v2_BackupInfo_descriptor,
             new java.lang.String[] {
               "Backup", "StartTime", "EndTime", "SourceTable", "SourceBackup",
+            });
+    internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_bigtable_admin_v2_ProtoSchema_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor,
+            new java.lang.String[] {
+              "ProtoDescriptors",
+            });
+    internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_bigtable_admin_v2_SchemaBundle_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor,
+            new java.lang.String[] {
+              "Name", "ProtoSchema", "Etag", "Type",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

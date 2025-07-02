@@ -23,50 +23,50 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * Request message for
- * [google.bigtable.admin.v2.BigtableTableAdmin.ListAuthorizedViews][google.bigtable.admin.v2.BigtableTableAdmin.ListAuthorizedViews]
+ * The request for
+ * [CreateSchemaBundle][google.bigtable.admin.v2.BigtableTableAdmin.CreateSchemaBundle].
  * </pre>
  *
- * Protobuf type {@code google.bigtable.admin.v2.ListAuthorizedViewsRequest}
+ * Protobuf type {@code google.bigtable.admin.v2.CreateSchemaBundleRequest}
  */
-public final class ListAuthorizedViewsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class CreateSchemaBundleRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ListAuthorizedViewsRequest)
-    ListAuthorizedViewsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CreateSchemaBundleRequest)
+    CreateSchemaBundleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
 
-  // Use ListAuthorizedViewsRequest.newBuilder() to construct.
-  private ListAuthorizedViewsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateSchemaBundleRequest.newBuilder() to construct.
+  private CreateSchemaBundleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListAuthorizedViewsRequest() {
+  private CreateSchemaBundleRequest() {
     parent_ = "";
-    pageToken_ = "";
-    view_ = 0;
+    schemaBundleId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListAuthorizedViewsRequest();
+    return new CreateSchemaBundleRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
-        .internal_static_google_bigtable_admin_v2_ListAuthorizedViewsRequest_descriptor;
+        .internal_static_google_bigtable_admin_v2_CreateSchemaBundleRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
-        .internal_static_google_bigtable_admin_v2_ListAuthorizedViewsRequest_fieldAccessorTable
+        .internal_static_google_bigtable_admin_v2_CreateSchemaBundleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.class,
-            com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.Builder.class);
+            com.google.bigtable.admin.v2.CreateSchemaBundleRequest.class,
+            com.google.bigtable.admin.v2.CreateSchemaBundleRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -76,8 +76,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The unique name of the table for which AuthorizedViews should be
-   * listed. Values are of the form
+   * Required. The parent resource where this schema bundle will be created.
+   * Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
@@ -104,8 +104,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The unique name of the table for which AuthorizedViews should be
-   * listed. Values are of the form
+   * Required. The parent resource where this schema bundle will be created.
+   * Values are of the form
    * `projects/{project}/instances/{instance}/tables/{table}`.
    * </pre>
    *
@@ -128,58 +128,32 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_ = 0;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Maximum number of results per page.
-   *
-   * A page_size of zero lets the server choose the number of items to return.
-   * A page_size which is strictly positive will return at most that many items.
-   * A negative page_size will cause an error.
-   *
-   * Following the first request, subsequent paginated calls are not required
-   * to pass a page_size. If a page_size is set in subsequent calls, it must
-   * match the page_size given in the first request.
-   * </pre>
-   *
-   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The pageSize.
-   */
-  @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
-  }
-
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  public static final int SCHEMA_BUNDLE_ID_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object pageToken_ = "";
+  private volatile java.lang.Object schemaBundleId_ = "";
 
   /**
    *
    *
    * <pre>
-   * Optional. The value of `next_page_token` returned by a previous call.
+   * Required. The unique ID to use for the schema bundle, which will become the
+   * final component of the schema bundle's resource name.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The pageToken.
+   * @return The schemaBundleId.
    */
   @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
+  public java.lang.String getSchemaBundleId() {
+    java.lang.Object ref = schemaBundleId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
+      schemaBundleId_ = s;
       return s;
     }
   }
@@ -188,69 +162,84 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The value of `next_page_token` returned by a previous call.
+   * Required. The unique ID to use for the schema bundle, which will become the
+   * final component of the schema bundle's resource name.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The bytes for pageToken.
+   * @return The bytes for schemaBundleId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
+  public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+    java.lang.Object ref = schemaBundleId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pageToken_ = b;
+      schemaBundleId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 4;
-  private int view_ = 0;
+  public static final int SCHEMA_BUNDLE_FIELD_NUMBER = 3;
+  private com.google.bigtable.admin.v2.SchemaBundle schemaBundle_;
 
   /**
    *
    *
    * <pre>
-   * Optional. The resource_view to be applied to the returned AuthorizedViews'
-   * fields. Default to NAME_ONLY.
+   * Required. The schema bundle to create.
    * </pre>
    *
    * <code>
-   * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return Whether the schemaBundle field is set.
    */
   @java.lang.Override
-  public int getViewValue() {
-    return view_;
+  public boolean hasSchemaBundle() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Optional. The resource_view to be applied to the returned AuthorizedViews'
-   * fields. Default to NAME_ONLY.
+   * Required. The schema bundle to create.
    * </pre>
    *
    * <code>
-   * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The view.
+   * @return The schemaBundle.
    */
   @java.lang.Override
-  public com.google.bigtable.admin.v2.AuthorizedView.ResponseView getView() {
-    com.google.bigtable.admin.v2.AuthorizedView.ResponseView result =
-        com.google.bigtable.admin.v2.AuthorizedView.ResponseView.forNumber(view_);
-    return result == null
-        ? com.google.bigtable.admin.v2.AuthorizedView.ResponseView.UNRECOGNIZED
-        : result;
+  public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
+    return schemaBundle_ == null
+        ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+        : schemaBundle_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The schema bundle to create.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.SchemaBundleOrBuilder getSchemaBundleOrBuilder() {
+    return schemaBundle_ == null
+        ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+        : schemaBundle_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,16 +259,11 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(2, pageSize_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, schemaBundleId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
-    }
-    if (view_
-        != com.google.bigtable.admin.v2.AuthorizedView.ResponseView.RESPONSE_VIEW_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(4, view_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getSchemaBundle());
     }
     getUnknownFields().writeTo(output);
   }
@@ -293,16 +277,11 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, schemaBundleId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
-    }
-    if (view_
-        != com.google.bigtable.admin.v2.AuthorizedView.ResponseView.RESPONSE_VIEW_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, view_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSchemaBundle());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -314,16 +293,18 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.bigtable.admin.v2.ListAuthorizedViewsRequest)) {
+    if (!(obj instanceof com.google.bigtable.admin.v2.CreateSchemaBundleRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.admin.v2.ListAuthorizedViewsRequest other =
-        (com.google.bigtable.admin.v2.ListAuthorizedViewsRequest) obj;
+    com.google.bigtable.admin.v2.CreateSchemaBundleRequest other =
+        (com.google.bigtable.admin.v2.CreateSchemaBundleRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (getPageSize() != other.getPageSize()) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
-    if (view_ != other.view_) return false;
+    if (!getSchemaBundleId().equals(other.getSchemaBundleId())) return false;
+    if (hasSchemaBundle() != other.hasSchemaBundle()) return false;
+    if (hasSchemaBundle()) {
+      if (!getSchemaBundle().equals(other.getSchemaBundle())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,82 +318,82 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
+    hash = (37 * hash) + SCHEMA_BUNDLE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSchemaBundleId().hashCode();
+    if (hasSchemaBundle()) {
+      hash = (37 * hash) + SCHEMA_BUNDLE_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaBundle().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(byte[] data)
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseDelimitedFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseDelimitedFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest parseFrom(
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -430,7 +411,7 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
   }
 
   public static Builder newBuilder(
-      com.google.bigtable.admin.v2.ListAuthorizedViewsRequest prototype) {
+      com.google.bigtable.admin.v2.CreateSchemaBundleRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -449,36 +430,45 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for
-   * [google.bigtable.admin.v2.BigtableTableAdmin.ListAuthorizedViews][google.bigtable.admin.v2.BigtableTableAdmin.ListAuthorizedViews]
+   * The request for
+   * [CreateSchemaBundle][google.bigtable.admin.v2.BigtableTableAdmin.CreateSchemaBundle].
    * </pre>
    *
-   * Protobuf type {@code google.bigtable.admin.v2.ListAuthorizedViewsRequest}
+   * Protobuf type {@code google.bigtable.admin.v2.CreateSchemaBundleRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.ListAuthorizedViewsRequest)
-      com.google.bigtable.admin.v2.ListAuthorizedViewsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.CreateSchemaBundleRequest)
+      com.google.bigtable.admin.v2.CreateSchemaBundleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_ListAuthorizedViewsRequest_descriptor;
+          .internal_static_google_bigtable_admin_v2_CreateSchemaBundleRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_ListAuthorizedViewsRequest_fieldAccessorTable
+          .internal_static_google_bigtable_admin_v2_CreateSchemaBundleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.class,
-              com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.Builder.class);
+              com.google.bigtable.admin.v2.CreateSchemaBundleRequest.class,
+              com.google.bigtable.admin.v2.CreateSchemaBundleRequest.Builder.class);
     }
 
-    // Construct using com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.newBuilder()
-    private Builder() {}
+    // Construct using com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSchemaBundleFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -486,26 +476,29 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      pageSize_ = 0;
-      pageToken_ = "";
-      view_ = 0;
+      schemaBundleId_ = "";
+      schemaBundle_ = null;
+      if (schemaBundleBuilder_ != null) {
+        schemaBundleBuilder_.dispose();
+        schemaBundleBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_ListAuthorizedViewsRequest_descriptor;
+          .internal_static_google_bigtable_admin_v2_CreateSchemaBundleRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.ListAuthorizedViewsRequest getDefaultInstanceForType() {
-      return com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.getDefaultInstance();
+    public com.google.bigtable.admin.v2.CreateSchemaBundleRequest getDefaultInstanceForType() {
+      return com.google.bigtable.admin.v2.CreateSchemaBundleRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.ListAuthorizedViewsRequest build() {
-      com.google.bigtable.admin.v2.ListAuthorizedViewsRequest result = buildPartial();
+    public com.google.bigtable.admin.v2.CreateSchemaBundleRequest build() {
+      com.google.bigtable.admin.v2.CreateSchemaBundleRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -513,9 +506,9 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.ListAuthorizedViewsRequest buildPartial() {
-      com.google.bigtable.admin.v2.ListAuthorizedViewsRequest result =
-          new com.google.bigtable.admin.v2.ListAuthorizedViewsRequest(this);
+    public com.google.bigtable.admin.v2.CreateSchemaBundleRequest buildPartial() {
+      com.google.bigtable.admin.v2.CreateSchemaBundleRequest result =
+          new com.google.bigtable.admin.v2.CreateSchemaBundleRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -523,20 +516,21 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartial0(com.google.bigtable.admin.v2.ListAuthorizedViewsRequest result) {
+    private void buildPartial0(com.google.bigtable.admin.v2.CreateSchemaBundleRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.schemaBundleId_ = schemaBundleId_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.pageToken_ = pageToken_;
+        result.schemaBundle_ =
+            schemaBundleBuilder_ == null ? schemaBundle_ : schemaBundleBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.view_ = view_;
-      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -574,32 +568,29 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.bigtable.admin.v2.ListAuthorizedViewsRequest) {
-        return mergeFrom((com.google.bigtable.admin.v2.ListAuthorizedViewsRequest) other);
+      if (other instanceof com.google.bigtable.admin.v2.CreateSchemaBundleRequest) {
+        return mergeFrom((com.google.bigtable.admin.v2.CreateSchemaBundleRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.bigtable.admin.v2.ListAuthorizedViewsRequest other) {
-      if (other == com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.bigtable.admin.v2.CreateSchemaBundleRequest other) {
+      if (other == com.google.bigtable.admin.v2.CreateSchemaBundleRequest.getDefaultInstance())
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
-      }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
+      if (!other.getSchemaBundleId().isEmpty()) {
+        schemaBundleId_ = other.schemaBundleId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
+      if (other.hasSchemaBundle()) {
+        mergeSchemaBundle(other.getSchemaBundle());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -633,24 +624,18 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 16:
+            case 18:
               {
-                pageSize_ = input.readInt32();
+                schemaBundleId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
             case 26:
               {
-                pageToken_ = input.readStringRequireUtf8();
+                input.readMessage(getSchemaBundleFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 32:
-              {
-                view_ = input.readEnum();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -676,8 +661,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The unique name of the table for which AuthorizedViews should be
-     * listed. Values are of the form
+     * Required. The parent resource where this schema bundle will be created.
+     * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -703,8 +688,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The unique name of the table for which AuthorizedViews should be
-     * listed. Values are of the form
+     * Required. The parent resource where this schema bundle will be created.
+     * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -730,8 +715,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The unique name of the table for which AuthorizedViews should be
-     * listed. Values are of the form
+     * Required. The parent resource where this schema bundle will be created.
+     * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -756,8 +741,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The unique name of the table for which AuthorizedViews should be
-     * listed. Values are of the form
+     * Required. The parent resource where this schema bundle will be created.
+     * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -778,8 +763,8 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The unique name of the table for which AuthorizedViews should be
-     * listed. Values are of the form
+     * Required. The parent resource where this schema bundle will be created.
+     * Values are of the form
      * `projects/{project}/instances/{instance}/tables/{table}`.
      * </pre>
      *
@@ -801,105 +786,26 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private int pageSize_;
+    private java.lang.Object schemaBundleId_ = "";
 
     /**
      *
      *
      * <pre>
-     * Optional. Maximum number of results per page.
-     *
-     * A page_size of zero lets the server choose the number of items to return.
-     * A page_size which is strictly positive will return at most that many items.
-     * A negative page_size will cause an error.
-     *
-     * Following the first request, subsequent paginated calls are not required
-     * to pass a page_size. If a page_size is set in subsequent calls, it must
-     * match the page_size given in the first request.
+     * Required. The unique ID to use for the schema bundle, which will become the
+     * final component of the schema bundle's resource name.
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The pageSize.
+     * @return The schemaBundleId.
      */
-    @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Maximum number of results per page.
-     *
-     * A page_size of zero lets the server choose the number of items to return.
-     * A page_size which is strictly positive will return at most that many items.
-     * A negative page_size will cause an error.
-     *
-     * Following the first request, subsequent paginated calls are not required
-     * to pass a page_size. If a page_size is set in subsequent calls, it must
-     * match the page_size given in the first request.
-     * </pre>
-     *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Maximum number of results per page.
-     *
-     * A page_size of zero lets the server choose the number of items to return.
-     * A page_size which is strictly positive will return at most that many items.
-     * A negative page_size will cause an error.
-     *
-     * Following the first request, subsequent paginated calls are not required
-     * to pass a page_size. If a page_size is set in subsequent calls, it must
-     * match the page_size given in the first request.
-     * </pre>
-     *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      pageSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object pageToken_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The value of `next_page_token` returned by a previous call.
-     * </pre>
-     *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The pageToken.
-     */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
+    public java.lang.String getSchemaBundleId() {
+      java.lang.Object ref = schemaBundleId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
+        schemaBundleId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -910,19 +816,20 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The value of `next_page_token` returned by a previous call.
+     * Required. The unique ID to use for the schema bundle, which will become the
+     * final component of the schema bundle's resource name.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The bytes for pageToken.
+     * @return The bytes for schemaBundleId.
      */
-    public com.google.protobuf.ByteString getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
+    public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+      java.lang.Object ref = schemaBundleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pageToken_ = b;
+        schemaBundleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -933,20 +840,21 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The value of `next_page_token` returned by a previous call.
+     * Required. The unique ID to use for the schema bundle, which will become the
+     * final component of the schema bundle's resource name.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The pageToken to set.
+     * @param value The schemaBundleId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageToken(java.lang.String value) {
+    public Builder setSchemaBundleId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      schemaBundleId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,16 +863,17 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The value of `next_page_token` returned by a previous call.
+     * Required. The unique ID to use for the schema bundle, which will become the
+     * final component of the schema bundle's resource name.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageToken() {
-      pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+    public Builder clearSchemaBundleId() {
+      schemaBundleId_ = getDefaultInstance().getSchemaBundleId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -973,112 +882,117 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The value of `next_page_token` returned by a previous call.
+     * Required. The unique ID to use for the schema bundle, which will become the
+     * final component of the schema bundle's resource name.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string schema_bundle_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The bytes for pageToken to set.
+     * @param value The bytes for schemaBundleId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setSchemaBundleIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      pageToken_ = value;
+      schemaBundleId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.bigtable.admin.v2.SchemaBundle schemaBundle_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.SchemaBundle,
+            com.google.bigtable.admin.v2.SchemaBundle.Builder,
+            com.google.bigtable.admin.v2.SchemaBundleOrBuilder>
+        schemaBundleBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the schemaBundle field is set.
+     */
+    public boolean hasSchemaBundle() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The schemaBundle.
+     */
+    public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
+      if (schemaBundleBuilder_ == null) {
+        return schemaBundle_ == null
+            ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+            : schemaBundle_;
+      } else {
+        return schemaBundleBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setSchemaBundle(com.google.bigtable.admin.v2.SchemaBundle value) {
+      if (schemaBundleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaBundle_ = value;
+      } else {
+        schemaBundleBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private int view_ = 0;
-
     /**
      *
      *
      * <pre>
-     * Optional. The resource_view to be applied to the returned AuthorizedViews'
-     * fields. Default to NAME_ONLY.
+     * Required. The schema bundle to create.
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
-     *
-     * @return The enum numeric value on the wire for view.
      */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource_view to be applied to the returned AuthorizedViews'
-     * fields. Default to NAME_ONLY.
-     * </pre>
-     *
-     * <code>
-     * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setViewValue(int value) {
-      view_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource_view to be applied to the returned AuthorizedViews'
-     * fields. Default to NAME_ONLY.
-     * </pre>
-     *
-     * <code>
-     * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The view.
-     */
-    @java.lang.Override
-    public com.google.bigtable.admin.v2.AuthorizedView.ResponseView getView() {
-      com.google.bigtable.admin.v2.AuthorizedView.ResponseView result =
-          com.google.bigtable.admin.v2.AuthorizedView.ResponseView.forNumber(view_);
-      return result == null
-          ? com.google.bigtable.admin.v2.AuthorizedView.ResponseView.UNRECOGNIZED
-          : result;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource_view to be applied to the returned AuthorizedViews'
-     * fields. Default to NAME_ONLY.
-     * </pre>
-     *
-     * <code>
-     * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.bigtable.admin.v2.AuthorizedView.ResponseView value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder setSchemaBundle(
+        com.google.bigtable.admin.v2.SchemaBundle.Builder builderForValue) {
+      if (schemaBundleBuilder_ == null) {
+        schemaBundle_ = builderForValue.build();
+      } else {
+        schemaBundleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
-      view_ = value.getNumber();
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1087,21 +1001,118 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The resource_view to be applied to the returned AuthorizedViews'
-     * fields. Default to NAME_ONLY.
+     * Required. The schema bundle to create.
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView.ResponseView view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
-     *
-     * @return This builder for chaining.
      */
-    public Builder clearView() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      view_ = 0;
+    public Builder mergeSchemaBundle(com.google.bigtable.admin.v2.SchemaBundle value) {
+      if (schemaBundleBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && schemaBundle_ != null
+            && schemaBundle_ != com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()) {
+          getSchemaBundleBuilder().mergeFrom(value);
+        } else {
+          schemaBundle_ = value;
+        }
+      } else {
+        schemaBundleBuilder_.mergeFrom(value);
+      }
+      if (schemaBundle_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearSchemaBundle() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      schemaBundle_ = null;
+      if (schemaBundleBuilder_ != null) {
+        schemaBundleBuilder_.dispose();
+        schemaBundleBuilder_ = null;
+      }
       onChanged();
       return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.SchemaBundle.Builder getSchemaBundleBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSchemaBundleFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.SchemaBundleOrBuilder getSchemaBundleOrBuilder() {
+      if (schemaBundleBuilder_ != null) {
+        return schemaBundleBuilder_.getMessageOrBuilder();
+      } else {
+        return schemaBundle_ == null
+            ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+            : schemaBundle_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema bundle to create.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.SchemaBundle,
+            com.google.bigtable.admin.v2.SchemaBundle.Builder,
+            com.google.bigtable.admin.v2.SchemaBundleOrBuilder>
+        getSchemaBundleFieldBuilder() {
+      if (schemaBundleBuilder_ == null) {
+        schemaBundleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.SchemaBundle,
+                com.google.bigtable.admin.v2.SchemaBundle.Builder,
+                com.google.bigtable.admin.v2.SchemaBundleOrBuilder>(
+                getSchemaBundle(), getParentForChildren(), isClean());
+        schemaBundle_ = null;
+      }
+      return schemaBundleBuilder_;
     }
 
     @java.lang.Override
@@ -1115,24 +1126,24 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.ListAuthorizedViewsRequest)
+    // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.CreateSchemaBundleRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.ListAuthorizedViewsRequest)
-  private static final com.google.bigtable.admin.v2.ListAuthorizedViewsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.CreateSchemaBundleRequest)
+  private static final com.google.bigtable.admin.v2.CreateSchemaBundleRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.ListAuthorizedViewsRequest();
+    DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.CreateSchemaBundleRequest();
   }
 
-  public static com.google.bigtable.admin.v2.ListAuthorizedViewsRequest getDefaultInstance() {
+  public static com.google.bigtable.admin.v2.CreateSchemaBundleRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListAuthorizedViewsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListAuthorizedViewsRequest>() {
+  private static final com.google.protobuf.Parser<CreateSchemaBundleRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateSchemaBundleRequest>() {
         @java.lang.Override
-        public ListAuthorizedViewsRequest parsePartialFrom(
+        public CreateSchemaBundleRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1151,17 +1162,17 @@ public final class ListAuthorizedViewsRequest extends com.google.protobuf.Genera
         }
       };
 
-  public static com.google.protobuf.Parser<ListAuthorizedViewsRequest> parser() {
+  public static com.google.protobuf.Parser<CreateSchemaBundleRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListAuthorizedViewsRequest> getParserForType() {
+  public com.google.protobuf.Parser<CreateSchemaBundleRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.bigtable.admin.v2.ListAuthorizedViewsRequest getDefaultInstanceForType() {
+  public com.google.bigtable.admin.v2.CreateSchemaBundleRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

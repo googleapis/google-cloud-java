@@ -99,7 +99,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1090
+   *     google/bigtable/v2/bigtable.proto;l=1094
    * @return The query.
    */
   @java.lang.Deprecated
@@ -118,7 +118,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1090
+   *     google/bigtable/v2/bigtable.proto;l=1094
    * @return The bytes for query.
    */
   @java.lang.Deprecated
@@ -156,7 +156,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1111
+   *     google/bigtable/v2/bigtable.proto;l=1115
    * @return Whether the protoFormat field is set.
    */
   @java.lang.Deprecated
@@ -173,7 +173,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1111
+   *     google/bigtable/v2/bigtable.proto;l=1115
    * @return The protoFormat.
    */
   @java.lang.Deprecated

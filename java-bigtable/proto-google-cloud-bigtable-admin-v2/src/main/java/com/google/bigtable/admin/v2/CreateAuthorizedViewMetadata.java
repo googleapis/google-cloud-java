@@ -70,7 +70,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -86,7 +87,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -104,7 +106,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request that prompted the initiation of this CreateInstance operation.
+   * The request that prompted the initiation of this CreateAuthorizedView
+   * operation.
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -657,7 +660,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -672,7 +676,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -693,7 +698,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -717,7 +723,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -738,7 +745,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -768,7 +776,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -788,7 +797,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -804,7 +814,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>
@@ -824,7 +835,8 @@ public final class CreateAuthorizedViewMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The request that prompted the initiation of this CreateInstance operation.
+     * The request that prompted the initiation of this CreateAuthorizedView
+     * operation.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.CreateAuthorizedViewRequest original_request = 1;</code>

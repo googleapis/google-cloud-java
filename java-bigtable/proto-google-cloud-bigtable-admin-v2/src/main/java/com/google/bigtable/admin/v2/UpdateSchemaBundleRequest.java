@@ -24,67 +24,68 @@ package com.google.bigtable.admin.v2;
  *
  * <pre>
  * The request for
- * [UpdateAuthorizedView][google.bigtable.admin.v2.BigtableTableAdmin.UpdateAuthorizedView].
+ * [UpdateSchemaBundle][google.bigtable.admin.v2.BigtableTableAdmin.UpdateSchemaBundle].
  * </pre>
  *
- * Protobuf type {@code google.bigtable.admin.v2.UpdateAuthorizedViewRequest}
+ * Protobuf type {@code google.bigtable.admin.v2.UpdateSchemaBundleRequest}
  */
-public final class UpdateAuthorizedViewRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateSchemaBundleRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateAuthorizedViewRequest)
-    UpdateAuthorizedViewRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateSchemaBundleRequest)
+    UpdateSchemaBundleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
 
-  // Use UpdateAuthorizedViewRequest.newBuilder() to construct.
-  private UpdateAuthorizedViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateSchemaBundleRequest.newBuilder() to construct.
+  private UpdateSchemaBundleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateAuthorizedViewRequest() {}
+  private UpdateSchemaBundleRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateAuthorizedViewRequest();
+    return new UpdateSchemaBundleRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
-        .internal_static_google_bigtable_admin_v2_UpdateAuthorizedViewRequest_descriptor;
+        .internal_static_google_bigtable_admin_v2_UpdateSchemaBundleRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
-        .internal_static_google_bigtable_admin_v2_UpdateAuthorizedViewRequest_fieldAccessorTable
+        .internal_static_google_bigtable_admin_v2_UpdateSchemaBundleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.class,
-            com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.Builder.class);
+            com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.class,
+            com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.Builder.class);
   }
 
   private int bitField0_;
-  public static final int AUTHORIZED_VIEW_FIELD_NUMBER = 1;
-  private com.google.bigtable.admin.v2.AuthorizedView authorizedView_;
+  public static final int SCHEMA_BUNDLE_FIELD_NUMBER = 1;
+  private com.google.bigtable.admin.v2.SchemaBundle schemaBundle_;
 
   /**
    *
    *
    * <pre>
-   * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-   * used to identify the AuthorizedView. AuthorizedView name must in this
-   * format:
-   * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * Required. The schema bundle to update.
+   *
+   * The schema bundle's `name` field is used to identify the schema bundle to
+   * update. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
    * </pre>
    *
    * <code>
-   * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the authorizedView field is set.
+   * @return Whether the schemaBundle field is set.
    */
   @java.lang.Override
-  public boolean hasAuthorizedView() {
+  public boolean hasSchemaBundle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
 
@@ -92,44 +93,46 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-   * used to identify the AuthorizedView. AuthorizedView name must in this
-   * format:
-   * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * Required. The schema bundle to update.
+   *
+   * The schema bundle's `name` field is used to identify the schema bundle to
+   * update. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
    * </pre>
    *
    * <code>
-   * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The authorizedView.
+   * @return The schemaBundle.
    */
   @java.lang.Override
-  public com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView() {
-    return authorizedView_ == null
-        ? com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()
-        : authorizedView_;
+  public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
+    return schemaBundle_ == null
+        ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+        : schemaBundle_;
   }
 
   /**
    *
    *
    * <pre>
-   * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-   * used to identify the AuthorizedView. AuthorizedView name must in this
-   * format:
-   * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * Required. The schema bundle to update.
+   *
+   * The schema bundle's `name` field is used to identify the schema bundle to
+   * update. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
    * </pre>
    *
    * <code>
-   * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
-  public com.google.bigtable.admin.v2.AuthorizedViewOrBuilder getAuthorizedViewOrBuilder() {
-    return authorizedView_ == null
-        ? com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()
-        : authorizedView_;
+  public com.google.bigtable.admin.v2.SchemaBundleOrBuilder getSchemaBundleOrBuilder() {
+    return schemaBundle_ == null
+        ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+        : schemaBundle_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -140,12 +143,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The list of fields to update.
-   * A mask specifying which fields in the AuthorizedView resource should be
-   * updated. This mask is relative to the AuthorizedView resource, not to the
-   * request message. A field will be overwritten if it is in the mask. If
-   * empty, all fields set in the request will be overwritten. A special value
-   * `*` means to overwrite all fields (including fields not set in the
-   * request).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -163,12 +160,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The list of fields to update.
-   * A mask specifying which fields in the AuthorizedView resource should be
-   * updated. This mask is relative to the AuthorizedView resource, not to the
-   * request message. A field will be overwritten if it is in the mask. If
-   * empty, all fields set in the request will be overwritten. A special value
-   * `*` means to overwrite all fields (including fields not set in the
-   * request).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -186,12 +177,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The list of fields to update.
-   * A mask specifying which fields in the AuthorizedView resource should be
-   * updated. This mask is relative to the AuthorizedView resource, not to the
-   * request message. A field will be overwritten if it is in the mask. If
-   * empty, all fields set in the request will be overwritten. A special value
-   * `*` means to overwrite all fields (including fields not set in the
-   * request).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -209,8 +194,10 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If true, ignore the safety checks when updating the
-   * AuthorizedView.
+   * Optional. If set, ignore the safety checks when updating the Schema Bundle.
+   * The safety checks are:
+   * - The new Schema Bundle is backwards compatible with the existing Schema
+   * Bundle.
    * </pre>
    *
    * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -237,7 +224,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getAuthorizedView());
+      output.writeMessage(1, getSchemaBundle());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUpdateMask());
@@ -255,7 +242,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAuthorizedView());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSchemaBundle());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
@@ -273,15 +260,15 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest)) {
+    if (!(obj instanceof com.google.bigtable.admin.v2.UpdateSchemaBundleRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest other =
-        (com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest) obj;
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest other =
+        (com.google.bigtable.admin.v2.UpdateSchemaBundleRequest) obj;
 
-    if (hasAuthorizedView() != other.hasAuthorizedView()) return false;
-    if (hasAuthorizedView()) {
-      if (!getAuthorizedView().equals(other.getAuthorizedView())) return false;
+    if (hasSchemaBundle() != other.hasSchemaBundle()) return false;
+    if (hasSchemaBundle()) {
+      if (!getSchemaBundle().equals(other.getSchemaBundle())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -299,9 +286,9 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasAuthorizedView()) {
-      hash = (37 * hash) + AUTHORIZED_VIEW_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthorizedView().hashCode();
+    if (hasSchemaBundle()) {
+      hash = (37 * hash) + SCHEMA_BUNDLE_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaBundle().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -314,71 +301,71 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     return hash;
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(byte[] data)
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseDelimitedFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseDelimitedFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest parseFrom(
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -396,7 +383,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   }
 
   public static Builder newBuilder(
-      com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest prototype) {
+      com.google.bigtable.admin.v2.UpdateSchemaBundleRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -416,31 +403,31 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * The request for
-   * [UpdateAuthorizedView][google.bigtable.admin.v2.BigtableTableAdmin.UpdateAuthorizedView].
+   * [UpdateSchemaBundle][google.bigtable.admin.v2.BigtableTableAdmin.UpdateSchemaBundle].
    * </pre>
    *
-   * Protobuf type {@code google.bigtable.admin.v2.UpdateAuthorizedViewRequest}
+   * Protobuf type {@code google.bigtable.admin.v2.UpdateSchemaBundleRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.UpdateAuthorizedViewRequest)
-      com.google.bigtable.admin.v2.UpdateAuthorizedViewRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.UpdateSchemaBundleRequest)
+      com.google.bigtable.admin.v2.UpdateSchemaBundleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_UpdateAuthorizedViewRequest_descriptor;
+          .internal_static_google_bigtable_admin_v2_UpdateSchemaBundleRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_UpdateAuthorizedViewRequest_fieldAccessorTable
+          .internal_static_google_bigtable_admin_v2_UpdateSchemaBundleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.class,
-              com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.Builder.class);
+              com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.class,
+              com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.Builder.class);
     }
 
-    // Construct using com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.newBuilder()
+    // Construct using com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -452,7 +439,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAuthorizedViewFieldBuilder();
+        getSchemaBundleFieldBuilder();
         getUpdateMaskFieldBuilder();
       }
     }
@@ -461,10 +448,10 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      authorizedView_ = null;
-      if (authorizedViewBuilder_ != null) {
-        authorizedViewBuilder_.dispose();
-        authorizedViewBuilder_ = null;
+      schemaBundle_ = null;
+      if (schemaBundleBuilder_ != null) {
+        schemaBundleBuilder_.dispose();
+        schemaBundleBuilder_ = null;
       }
       updateMask_ = null;
       if (updateMaskBuilder_ != null) {
@@ -478,17 +465,17 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.bigtable.admin.v2.BigtableTableAdminProto
-          .internal_static_google_bigtable_admin_v2_UpdateAuthorizedViewRequest_descriptor;
+          .internal_static_google_bigtable_admin_v2_UpdateSchemaBundleRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest getDefaultInstanceForType() {
-      return com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.getDefaultInstance();
+    public com.google.bigtable.admin.v2.UpdateSchemaBundleRequest getDefaultInstanceForType() {
+      return com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest build() {
-      com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest result = buildPartial();
+    public com.google.bigtable.admin.v2.UpdateSchemaBundleRequest build() {
+      com.google.bigtable.admin.v2.UpdateSchemaBundleRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -496,9 +483,9 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest buildPartial() {
-      com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest result =
-          new com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest(this);
+    public com.google.bigtable.admin.v2.UpdateSchemaBundleRequest buildPartial() {
+      com.google.bigtable.admin.v2.UpdateSchemaBundleRequest result =
+          new com.google.bigtable.admin.v2.UpdateSchemaBundleRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -506,12 +493,12 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartial0(com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest result) {
+    private void buildPartial0(com.google.bigtable.admin.v2.UpdateSchemaBundleRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.authorizedView_ =
-            authorizedViewBuilder_ == null ? authorizedView_ : authorizedViewBuilder_.build();
+        result.schemaBundle_ =
+            schemaBundleBuilder_ == null ? schemaBundle_ : schemaBundleBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -559,19 +546,19 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest) {
-        return mergeFrom((com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest) other);
+      if (other instanceof com.google.bigtable.admin.v2.UpdateSchemaBundleRequest) {
+        return mergeFrom((com.google.bigtable.admin.v2.UpdateSchemaBundleRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest other) {
-      if (other == com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.bigtable.admin.v2.UpdateSchemaBundleRequest other) {
+      if (other == com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.getDefaultInstance())
         return this;
-      if (other.hasAuthorizedView()) {
-        mergeAuthorizedView(other.getAuthorizedView());
+      if (other.hasSchemaBundle()) {
+        mergeSchemaBundle(other.getSchemaBundle());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -607,7 +594,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
               break;
             case 10:
               {
-                input.readMessage(getAuthorizedViewFieldBuilder().getBuilder(), extensionRegistry);
+                input.readMessage(getSchemaBundleFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -642,30 +629,31 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.bigtable.admin.v2.AuthorizedView authorizedView_;
+    private com.google.bigtable.admin.v2.SchemaBundle schemaBundle_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.admin.v2.AuthorizedView,
-            com.google.bigtable.admin.v2.AuthorizedView.Builder,
-            com.google.bigtable.admin.v2.AuthorizedViewOrBuilder>
-        authorizedViewBuilder_;
+            com.google.bigtable.admin.v2.SchemaBundle,
+            com.google.bigtable.admin.v2.SchemaBundle.Builder,
+            com.google.bigtable.admin.v2.SchemaBundleOrBuilder>
+        schemaBundleBuilder_;
 
     /**
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return Whether the authorizedView field is set.
+     * @return Whether the schemaBundle field is set.
      */
-    public boolean hasAuthorizedView() {
+    public boolean hasSchemaBundle() {
       return ((bitField0_ & 0x00000001) != 0);
     }
 
@@ -673,25 +661,26 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return The authorizedView.
+     * @return The schemaBundle.
      */
-    public com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView() {
-      if (authorizedViewBuilder_ == null) {
-        return authorizedView_ == null
-            ? com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()
-            : authorizedView_;
+    public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
+      if (schemaBundleBuilder_ == null) {
+        return schemaBundle_ == null
+            ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+            : schemaBundle_;
       } else {
-        return authorizedViewBuilder_.getMessage();
+        return schemaBundleBuilder_.getMessage();
       }
     }
 
@@ -699,24 +688,25 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setAuthorizedView(com.google.bigtable.admin.v2.AuthorizedView value) {
-      if (authorizedViewBuilder_ == null) {
+    public Builder setSchemaBundle(com.google.bigtable.admin.v2.SchemaBundle value) {
+      if (schemaBundleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        authorizedView_ = value;
+        schemaBundle_ = value;
       } else {
-        authorizedViewBuilder_.setMessage(value);
+        schemaBundleBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
       onChanged();
@@ -727,22 +717,23 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setAuthorizedView(
-        com.google.bigtable.admin.v2.AuthorizedView.Builder builderForValue) {
-      if (authorizedViewBuilder_ == null) {
-        authorizedView_ = builderForValue.build();
+    public Builder setSchemaBundle(
+        com.google.bigtable.admin.v2.SchemaBundle.Builder builderForValue) {
+      if (schemaBundleBuilder_ == null) {
+        schemaBundle_ = builderForValue.build();
       } else {
-        authorizedViewBuilder_.setMessage(builderForValue.build());
+        schemaBundleBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
       onChanged();
@@ -753,30 +744,30 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder mergeAuthorizedView(com.google.bigtable.admin.v2.AuthorizedView value) {
-      if (authorizedViewBuilder_ == null) {
+    public Builder mergeSchemaBundle(com.google.bigtable.admin.v2.SchemaBundle value) {
+      if (schemaBundleBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
-            && authorizedView_ != null
-            && authorizedView_
-                != com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()) {
-          getAuthorizedViewBuilder().mergeFrom(value);
+            && schemaBundle_ != null
+            && schemaBundle_ != com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()) {
+          getSchemaBundleBuilder().mergeFrom(value);
         } else {
-          authorizedView_ = value;
+          schemaBundle_ = value;
         }
       } else {
-        authorizedViewBuilder_.mergeFrom(value);
+        schemaBundleBuilder_.mergeFrom(value);
       }
-      if (authorizedView_ != null) {
+      if (schemaBundle_ != null) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -787,22 +778,23 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder clearAuthorizedView() {
+    public Builder clearSchemaBundle() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      authorizedView_ = null;
-      if (authorizedViewBuilder_ != null) {
-        authorizedViewBuilder_.dispose();
-        authorizedViewBuilder_ = null;
+      schemaBundle_ = null;
+      if (schemaBundleBuilder_ != null) {
+        schemaBundleBuilder_.dispose();
+        schemaBundleBuilder_ = null;
       }
       onChanged();
       return this;
@@ -812,43 +804,45 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.bigtable.admin.v2.AuthorizedView.Builder getAuthorizedViewBuilder() {
+    public com.google.bigtable.admin.v2.SchemaBundle.Builder getSchemaBundleBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
-      return getAuthorizedViewFieldBuilder().getBuilder();
+      return getSchemaBundleFieldBuilder().getBuilder();
     }
 
     /**
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.bigtable.admin.v2.AuthorizedViewOrBuilder getAuthorizedViewOrBuilder() {
-      if (authorizedViewBuilder_ != null) {
-        return authorizedViewBuilder_.getMessageOrBuilder();
+    public com.google.bigtable.admin.v2.SchemaBundleOrBuilder getSchemaBundleOrBuilder() {
+      if (schemaBundleBuilder_ != null) {
+        return schemaBundleBuilder_.getMessageOrBuilder();
       } else {
-        return authorizedView_ == null
-            ? com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()
-            : authorizedView_;
+        return schemaBundle_ == null
+            ? com.google.bigtable.admin.v2.SchemaBundle.getDefaultInstance()
+            : schemaBundle_;
       }
     }
 
@@ -856,31 +850,32 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The AuthorizedView to update. The `name` in `authorized_view` is
-     * used to identify the AuthorizedView. AuthorizedView name must in this
-     * format:
-     * `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+     * Required. The schema bundle to update.
+     *
+     * The schema bundle's `name` field is used to identify the schema bundle to
+     * update. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`
      * </pre>
      *
      * <code>
-     * .google.bigtable.admin.v2.AuthorizedView authorized_view = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.bigtable.admin.v2.SchemaBundle schema_bundle = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.admin.v2.AuthorizedView,
-            com.google.bigtable.admin.v2.AuthorizedView.Builder,
-            com.google.bigtable.admin.v2.AuthorizedViewOrBuilder>
-        getAuthorizedViewFieldBuilder() {
-      if (authorizedViewBuilder_ == null) {
-        authorizedViewBuilder_ =
+            com.google.bigtable.admin.v2.SchemaBundle,
+            com.google.bigtable.admin.v2.SchemaBundle.Builder,
+            com.google.bigtable.admin.v2.SchemaBundleOrBuilder>
+        getSchemaBundleFieldBuilder() {
+      if (schemaBundleBuilder_ == null) {
+        schemaBundleBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.bigtable.admin.v2.AuthorizedView,
-                com.google.bigtable.admin.v2.AuthorizedView.Builder,
-                com.google.bigtable.admin.v2.AuthorizedViewOrBuilder>(
-                getAuthorizedView(), getParentForChildren(), isClean());
-        authorizedView_ = null;
+                com.google.bigtable.admin.v2.SchemaBundle,
+                com.google.bigtable.admin.v2.SchemaBundle.Builder,
+                com.google.bigtable.admin.v2.SchemaBundleOrBuilder>(
+                getSchemaBundle(), getParentForChildren(), isClean());
+        schemaBundle_ = null;
       }
-      return authorizedViewBuilder_;
+      return schemaBundleBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -895,12 +890,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -917,12 +906,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -945,12 +928,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -975,12 +952,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1002,12 +973,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1037,12 +1002,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1064,12 +1023,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1086,12 +1039,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1112,12 +1059,6 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The list of fields to update.
-     * A mask specifying which fields in the AuthorizedView resource should be
-     * updated. This mask is relative to the AuthorizedView resource, not to the
-     * request message. A field will be overwritten if it is in the mask. If
-     * empty, all fields set in the request will be overwritten. A special value
-     * `*` means to overwrite all fields (including fields not set in the
-     * request).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1146,8 +1087,10 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If true, ignore the safety checks when updating the
-     * AuthorizedView.
+     * Optional. If set, ignore the safety checks when updating the Schema Bundle.
+     * The safety checks are:
+     * - The new Schema Bundle is backwards compatible with the existing Schema
+     * Bundle.
      * </pre>
      *
      * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1163,8 +1106,10 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If true, ignore the safety checks when updating the
-     * AuthorizedView.
+     * Optional. If set, ignore the safety checks when updating the Schema Bundle.
+     * The safety checks are:
+     * - The new Schema Bundle is backwards compatible with the existing Schema
+     * Bundle.
      * </pre>
      *
      * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1184,8 +1129,10 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If true, ignore the safety checks when updating the
-     * AuthorizedView.
+     * Optional. If set, ignore the safety checks when updating the Schema Bundle.
+     * The safety checks are:
+     * - The new Schema Bundle is backwards compatible with the existing Schema
+     * Bundle.
      * </pre>
      *
      * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1210,24 +1157,24 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.UpdateAuthorizedViewRequest)
+    // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.UpdateSchemaBundleRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.UpdateAuthorizedViewRequest)
-  private static final com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.UpdateSchemaBundleRequest)
+  private static final com.google.bigtable.admin.v2.UpdateSchemaBundleRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest();
+    DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.UpdateSchemaBundleRequest();
   }
 
-  public static com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest getDefaultInstance() {
+  public static com.google.bigtable.admin.v2.UpdateSchemaBundleRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateAuthorizedViewRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateAuthorizedViewRequest>() {
+  private static final com.google.protobuf.Parser<UpdateSchemaBundleRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateSchemaBundleRequest>() {
         @java.lang.Override
-        public UpdateAuthorizedViewRequest parsePartialFrom(
+        public UpdateSchemaBundleRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1246,17 +1193,17 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateAuthorizedViewRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateSchemaBundleRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateAuthorizedViewRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateSchemaBundleRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest getDefaultInstanceForType() {
+  public com.google.bigtable.admin.v2.UpdateSchemaBundleRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

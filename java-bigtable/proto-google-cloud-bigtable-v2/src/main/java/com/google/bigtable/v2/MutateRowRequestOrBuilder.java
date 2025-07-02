@@ -215,4 +215,44 @@ public interface MutateRowRequestOrBuilder
    * </code>
    */
   com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional parameter for ensuring a MutateRow request is only applied once.
+   * Currently applicable only for certain aggregate types.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>
+   *
+   * @return Whether the idempotency field is set.
+   */
+  boolean hasIdempotency();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional parameter for ensuring a MutateRow request is only applied once.
+   * Currently applicable only for certain aggregate types.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>
+   *
+   * @return The idempotency.
+   */
+  com.google.bigtable.v2.Idempotency getIdempotency();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional parameter for ensuring a MutateRow request is only applied once.
+   * Currently applicable only for certain aggregate types.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>
+   */
+  com.google.bigtable.v2.IdempotencyOrBuilder getIdempotencyOrBuilder();
 }

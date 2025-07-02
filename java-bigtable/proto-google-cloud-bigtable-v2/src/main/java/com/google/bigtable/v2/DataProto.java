@@ -160,6 +160,10 @@ public final class DataProto {
       internal_static_google_bigtable_v2_PartialResultSet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_PartialResultSet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_Idempotency_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_Idempotency_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -335,11 +339,15 @@ public final class DataProto {
           + "\005reset\030\007 \001(\010\022\034\n"
           + "\024estimated_batch_size\030\004 \001(\005B\016\n"
           + "\014partial_rowsB\021\n"
-          + "\017_batch_checksumB\263\001\n"
-          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.co"
-          + "m/go/bigtable/apiv2/bigtablepb;bigtablep"
-          + "b\252\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Cl"
-          + "oud\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
+          + "\017_batch_checksum\"L\n"
+          + "\013Idempotency\022\r"
+          + "\n"
+          + "\005token\030\001 \001(\014\022.\n\n"
+          + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\263\001\n"
+          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.com/"
+          + "go/bigtable/apiv2/bigtablepb;bigtablepb\252"
+          + "\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Clou"
+          + "d\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -654,6 +662,14 @@ public final class DataProto {
               "Reset",
               "EstimatedBatchSize",
               "PartialRows",
+            });
+    internal_static_google_bigtable_v2_Idempotency_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_bigtable_v2_Idempotency_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_Idempotency_descriptor,
+            new java.lang.String[] {
+              "Token", "StartTime",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.bigtable.v2.TypesProto.getDescriptor();

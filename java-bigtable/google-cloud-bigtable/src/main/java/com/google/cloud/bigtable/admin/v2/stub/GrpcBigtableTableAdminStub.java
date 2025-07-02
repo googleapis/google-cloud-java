@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
@@ -40,11 +41,14 @@ import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
+import com.google.bigtable.admin.v2.CreateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.CreateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
+import com.google.bigtable.admin.v2.DeleteSchemaBundleRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -52,12 +56,15 @@ import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
+import com.google.bigtable.admin.v2.GetSchemaBundleRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
 import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
@@ -65,6 +72,7 @@ import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.RestoreTableRequest;
+import com.google.bigtable.admin.v2.SchemaBundle;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
@@ -74,6 +82,8 @@ import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleMetadata;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -377,6 +387,57 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateSchemaBundleRequest, Operation>
+      createSchemaBundleMethodDescriptor =
+          MethodDescriptor.<CreateSchemaBundleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/CreateSchemaBundle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSchemaBundleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSchemaBundleRequest, Operation>
+      updateSchemaBundleMethodDescriptor =
+          MethodDescriptor.<UpdateSchemaBundleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateSchemaBundle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSchemaBundleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSchemaBundleRequest, SchemaBundle>
+      getSchemaBundleMethodDescriptor =
+          MethodDescriptor.<GetSchemaBundleRequest, SchemaBundle>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetSchemaBundle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSchemaBundleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SchemaBundle.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+      listSchemaBundlesMethodDescriptor =
+          MethodDescriptor.<ListSchemaBundlesRequest, ListSchemaBundlesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/ListSchemaBundles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSchemaBundlesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSchemaBundlesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSchemaBundleRequest, Empty>
+      deleteSchemaBundleMethodDescriptor =
+          MethodDescriptor.<DeleteSchemaBundleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteSchemaBundle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSchemaBundleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateTableRequest, Table> createTableCallable;
   private final UnaryCallable<CreateTableFromSnapshotRequest, Operation>
       createTableFromSnapshotCallable;
@@ -440,6 +501,20 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<CreateSchemaBundleRequest, Operation> createSchemaBundleCallable;
+  private final OperationCallable<
+          CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationCallable;
+  private final UnaryCallable<UpdateSchemaBundleRequest, Operation> updateSchemaBundleCallable;
+  private final OperationCallable<
+          UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationCallable;
+  private final UnaryCallable<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleCallable;
+  private final UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+      listSchemaBundlesCallable;
+  private final UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesPagedCallable;
+  private final UnaryCallable<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -793,6 +868,58 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateSchemaBundleRequest, Operation> createSchemaBundleTransportSettings =
+        GrpcCallSettings.<CreateSchemaBundleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSchemaBundleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSchemaBundleRequest, Operation> updateSchemaBundleTransportSettings =
+        GrpcCallSettings.<UpdateSchemaBundleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSchemaBundleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "schema_bundle.name", String.valueOf(request.getSchemaBundle().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleTransportSettings =
+        GrpcCallSettings.<GetSchemaBundleRequest, SchemaBundle>newBuilder()
+            .setMethodDescriptor(getSchemaBundleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+        listSchemaBundlesTransportSettings =
+            GrpcCallSettings.<ListSchemaBundlesRequest, ListSchemaBundlesResponse>newBuilder()
+                .setMethodDescriptor(listSchemaBundlesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleTransportSettings =
+        GrpcCallSettings.<DeleteSchemaBundleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSchemaBundleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createTableCallable =
         callableFactory.createUnaryCallable(
@@ -969,6 +1096,46 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.createSchemaBundleCallable =
+        callableFactory.createUnaryCallable(
+            createSchemaBundleTransportSettings,
+            settings.createSchemaBundleSettings(),
+            clientContext);
+    this.createSchemaBundleOperationCallable =
+        callableFactory.createOperationCallable(
+            createSchemaBundleTransportSettings,
+            settings.createSchemaBundleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateSchemaBundleCallable =
+        callableFactory.createUnaryCallable(
+            updateSchemaBundleTransportSettings,
+            settings.updateSchemaBundleSettings(),
+            clientContext);
+    this.updateSchemaBundleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSchemaBundleTransportSettings,
+            settings.updateSchemaBundleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getSchemaBundleCallable =
+        callableFactory.createUnaryCallable(
+            getSchemaBundleTransportSettings, settings.getSchemaBundleSettings(), clientContext);
+    this.listSchemaBundlesCallable =
+        callableFactory.createUnaryCallable(
+            listSchemaBundlesTransportSettings,
+            settings.listSchemaBundlesSettings(),
+            clientContext);
+    this.listSchemaBundlesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSchemaBundlesTransportSettings,
+            settings.listSchemaBundlesSettings(),
+            clientContext);
+    this.deleteSchemaBundleCallable =
+        callableFactory.createUnaryCallable(
+            deleteSchemaBundleTransportSettings,
+            settings.deleteSchemaBundleSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1210,6 +1377,50 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSchemaBundleRequest, Operation> createSchemaBundleCallable() {
+    return createSchemaBundleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSchemaBundleRequest, SchemaBundle, CreateSchemaBundleMetadata>
+      createSchemaBundleOperationCallable() {
+    return createSchemaBundleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSchemaBundleRequest, Operation> updateSchemaBundleCallable() {
+    return updateSchemaBundleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSchemaBundleRequest, SchemaBundle, UpdateSchemaBundleMetadata>
+      updateSchemaBundleOperationCallable() {
+    return updateSchemaBundleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSchemaBundleRequest, SchemaBundle> getSchemaBundleCallable() {
+    return getSchemaBundleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesResponse>
+      listSchemaBundlesCallable() {
+    return listSchemaBundlesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
+      listSchemaBundlesPagedCallable() {
+    return listSchemaBundlesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSchemaBundleRequest, Empty> deleteSchemaBundleCallable() {
+    return deleteSchemaBundleCallable;
   }
 
   @Override
