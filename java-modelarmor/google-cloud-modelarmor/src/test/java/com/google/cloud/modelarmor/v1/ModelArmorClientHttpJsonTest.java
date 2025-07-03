@@ -707,6 +707,7 @@ public class ModelArmorClientHttpJsonTest {
         SanitizeUserPromptRequest.newBuilder()
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setUserPromptData(DataItem.newBuilder().build())
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
             .build();
 
     SanitizeUserPromptResponse actualResponse = client.sanitizeUserPrompt(request);
@@ -739,6 +740,8 @@ public class ModelArmorClientHttpJsonTest {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       client.sanitizeUserPrompt(request);
       Assert.fail("No exception raised");
@@ -760,6 +763,7 @@ public class ModelArmorClientHttpJsonTest {
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setModelResponseData(DataItem.newBuilder().build())
             .setUserPrompt("userPrompt1504308495")
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
             .build();
 
     SanitizeModelResponseResponse actualResponse = client.sanitizeModelResponse(request);
@@ -793,6 +797,8 @@ public class ModelArmorClientHttpJsonTest {
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setModelResponseData(DataItem.newBuilder().build())
               .setUserPrompt("userPrompt1504308495")
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       client.sanitizeModelResponse(request);
       Assert.fail("No exception raised");

@@ -20,6 +20,7 @@ package com.google.cloud.modelarmor.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.modelarmor.v1.DataItem;
 import com.google.cloud.modelarmor.v1.ModelArmorClient;
+import com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata;
 import com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest;
 import com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse;
 import com.google.cloud.modelarmor.v1.TemplateName;
@@ -41,6 +42,8 @@ public class AsyncSanitizeUserPrompt {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       ApiFuture<SanitizeUserPromptResponse> future =
           modelArmorClient.sanitizeUserPromptCallable().futureCall(request);

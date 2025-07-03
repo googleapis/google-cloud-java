@@ -618,6 +618,7 @@ public class ModelArmorClientTest {
         SanitizeUserPromptRequest.newBuilder()
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setUserPromptData(DataItem.newBuilder().build())
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
             .build();
 
     SanitizeUserPromptResponse actualResponse = client.sanitizeUserPrompt(request);
@@ -629,6 +630,9 @@ public class ModelArmorClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getUserPromptData(), actualRequest.getUserPromptData());
+    Assert.assertEquals(
+        request.getMultiLanguageDetectionMetadata(),
+        actualRequest.getMultiLanguageDetectionMetadata());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -645,6 +649,8 @@ public class ModelArmorClientTest {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       client.sanitizeUserPrompt(request);
       Assert.fail("No exception raised");
@@ -666,6 +672,7 @@ public class ModelArmorClientTest {
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setModelResponseData(DataItem.newBuilder().build())
             .setUserPrompt("userPrompt1504308495")
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
             .build();
 
     SanitizeModelResponseResponse actualResponse = client.sanitizeModelResponse(request);
@@ -679,6 +686,9 @@ public class ModelArmorClientTest {
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getModelResponseData(), actualRequest.getModelResponseData());
     Assert.assertEquals(request.getUserPrompt(), actualRequest.getUserPrompt());
+    Assert.assertEquals(
+        request.getMultiLanguageDetectionMetadata(),
+        actualRequest.getMultiLanguageDetectionMetadata());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -696,6 +706,8 @@ public class ModelArmorClientTest {
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setModelResponseData(DataItem.newBuilder().build())
               .setUserPrompt("userPrompt1504308495")
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       client.sanitizeModelResponse(request);
       Assert.fail("No exception raised");
