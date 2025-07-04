@@ -362,10 +362,6 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=networks/*/operations/reports/runs/*}")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet("/v1/{name=networks/*/operations/reports/exports/*}")
-                                .build())
                         .build())
                 .build());
 

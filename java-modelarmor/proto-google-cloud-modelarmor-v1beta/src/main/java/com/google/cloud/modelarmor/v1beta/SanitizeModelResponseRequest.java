@@ -245,7 +245,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>
@@ -263,7 +263,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>
@@ -284,7 +284,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>
@@ -1223,7 +1223,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1240,7 +1240,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1264,7 +1264,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1290,7 +1290,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1313,7 +1313,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1346,7 +1346,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1368,7 +1368,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1386,7 +1386,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>
@@ -1408,7 +1408,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Metadata related for Translations.
+     * Optional. Metadata related for multi language detection.
      * </pre>
      *
      * <code>

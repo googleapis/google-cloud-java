@@ -2835,6 +2835,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3.Fulfillment$GeneratorSettings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3.Fulfillment$GeneratorSettings$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3.Fulfillment$SetParameterAction",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -178,6 +178,16 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTER_APPLIANCE = 9;</code>
      */
     ROUTER_APPLIANCE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to a Secure Web Proxy Gateway.
+     * </pre>
+     *
+     * <code>SECURE_WEB_PROXY_GATEWAY = 10;</code>
+     */
+    SECURE_WEB_PROXY_GATEWAY(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -291,6 +301,17 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ROUTER_APPLIANCE_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to a Secure Web Proxy Gateway.
+     * </pre>
+     *
+     * <code>SECURE_WEB_PROXY_GATEWAY = 10;</code>
+     */
+    public static final int SECURE_WEB_PROXY_GATEWAY_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -335,6 +356,8 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
           return NCC_HUB;
         case 9:
           return ROUTER_APPLIANCE;
+        case 10:
+          return SECURE_WEB_PROXY_GATEWAY;
         default:
           return null;
       }

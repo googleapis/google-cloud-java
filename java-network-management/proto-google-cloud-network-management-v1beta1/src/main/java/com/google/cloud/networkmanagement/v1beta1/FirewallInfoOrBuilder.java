@@ -374,4 +374,19 @@ public interface FirewallInfoOrBuilder
    * @return The firewallRuleType.
    */
   com.google.cloud.networkmanagement.v1beta1.FirewallInfo.FirewallRuleType getFirewallRuleType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>int32 policy_priority = 12;</code>
+   *
+   * @return The policyPriority.
+   */
+  int getPolicyPriority();
 }

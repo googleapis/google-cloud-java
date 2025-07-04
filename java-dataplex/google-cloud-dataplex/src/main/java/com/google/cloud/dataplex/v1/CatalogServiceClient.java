@@ -3723,6 +3723,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setScope("scope109264468")
+   *           .setSemanticSearch(true)
    *           .build();
    *   for (SearchEntriesResult element : catalogServiceClient.searchEntries(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -3758,6 +3759,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setScope("scope109264468")
+   *           .setSemanticSearch(true)
    *           .build();
    *   ApiFuture<SearchEntriesResult> future =
    *       catalogServiceClient.searchEntriesPagedCallable().futureCall(request);
@@ -3794,6 +3796,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setScope("scope109264468")
+   *           .setSemanticSearch(true)
    *           .build();
    *   while (true) {
    *     SearchEntriesResponse response = catalogServiceClient.searchEntriesCallable().call(request);

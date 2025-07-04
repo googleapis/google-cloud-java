@@ -19,6 +19,24 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AdBreakServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `AdBreak` objects.
+ *
+ * <p>Sample for AdBreakServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AdBreakServiceClient adBreakServiceClient = AdBreakServiceClient.create()) {
+ *   AdBreakName name = AdBreakName.of("[NETWORK_CODE]", "[ASSET_KEY]", "[AD_BREAK]");
+ *   AdBreak response = adBreakServiceClient.getAdBreak(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= AdUnitServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling AdUnit objects.
@@ -34,6 +52,25 @@
  * try (AdUnitServiceClient adUnitServiceClient = AdUnitServiceClient.create()) {
  *   AdUnitName name = AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]");
  *   AdUnit response = adUnitServiceClient.getAdUnit(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= BandwidthGroupServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `BandwidthGroup` objects.
+ *
+ * <p>Sample for BandwidthGroupServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BandwidthGroupServiceClient bandwidthGroupServiceClient =
+ *     BandwidthGroupServiceClient.create()) {
+ *   BandwidthGroupName name = BandwidthGroupName.of("[NETWORK_CODE]", "[BANDWIDTH_GROUP]");
+ *   BandwidthGroup response = bandwidthGroupServiceClient.getBandwidthGroup(name);
  * }
  * }</pre>
  *
@@ -108,10 +145,28 @@
  * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
  *     CustomTargetingValueServiceClient.create()) {
  *   CustomTargetingValueName name =
- *       CustomTargetingValueName.of(
- *           "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]");
+ *       CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
  *   CustomTargetingValue response =
  *       customTargetingValueServiceClient.getCustomTargetingValue(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DeviceCategoryServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `DeviceCategory` objects.
+ *
+ * <p>Sample for DeviceCategoryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DeviceCategoryServiceClient deviceCategoryServiceClient =
+ *     DeviceCategoryServiceClient.create()) {
+ *   DeviceCategoryName name = DeviceCategoryName.of("[NETWORK_CODE]", "[DEVICE_CATEGORY]");
+ *   DeviceCategory response = deviceCategoryServiceClient.getDeviceCategory(name);
  * }
  * }</pre>
  *
@@ -136,9 +191,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= GeoTargetServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `GeoTarget` objects.
+ *
+ * <p>Sample for GeoTargetServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GeoTargetServiceClient geoTargetServiceClient = GeoTargetServiceClient.create()) {
+ *   GeoTargetName name = GeoTargetName.of("[NETWORK_CODE]", "[GEO_TARGET]");
+ *   GeoTarget response = geoTargetServiceClient.getGeoTarget(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= NetworkServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling Network objects.
+ * <p>Service Description: Provides methods for handling `Network` objects.
  *
  * <p>Sample for NetworkServiceClient:
  *
@@ -151,6 +224,46 @@
  * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
  *   NetworkName name = NetworkName.of("[NETWORK_CODE]");
  *   Network response = networkServiceClient.getNetwork(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OperatingSystemServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `OperatingSystem` objects.
+ *
+ * <p>Sample for OperatingSystemServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OperatingSystemServiceClient operatingSystemServiceClient =
+ *     OperatingSystemServiceClient.create()) {
+ *   OperatingSystemName name = OperatingSystemName.of("[NETWORK_CODE]", "[OPERATING_SYSTEM]");
+ *   OperatingSystem response = operatingSystemServiceClient.getOperatingSystem(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OperatingSystemVersionServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `OperatingSystemVersion` objects.
+ *
+ * <p>Sample for OperatingSystemVersionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OperatingSystemVersionServiceClient operatingSystemVersionServiceClient =
+ *     OperatingSystemVersionServiceClient.create()) {
+ *   OperatingSystemVersionName name =
+ *       OperatingSystemVersionName.of("[NETWORK_CODE]", "[OPERATING_SYSTEM_VERSION]");
+ *   OperatingSystemVersion response =
+ *       operatingSystemVersionServiceClient.getOperatingSystemVersion(name);
  * }
  * }</pre>
  *
@@ -187,6 +300,65 @@
  * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
  *   PlacementName name = PlacementName.of("[NETWORK_CODE]", "[PLACEMENT]");
  *   Placement response = placementServiceClient.getPlacement(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PrivateAuctionDealServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `PrivateAuctionDeal` objects.
+ *
+ * <p>Sample for PrivateAuctionDealServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PrivateAuctionDealServiceClient privateAuctionDealServiceClient =
+ *     PrivateAuctionDealServiceClient.create()) {
+ *   PrivateAuctionDealName name =
+ *       PrivateAuctionDealName.of("[NETWORK_CODE]", "[PRIVATE_AUCTION_DEAL]");
+ *   PrivateAuctionDeal response = privateAuctionDealServiceClient.getPrivateAuctionDeal(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PrivateAuctionServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `PrivateAuction` objects.
+ *
+ * <p>Sample for PrivateAuctionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PrivateAuctionServiceClient privateAuctionServiceClient =
+ *     PrivateAuctionServiceClient.create()) {
+ *   PrivateAuctionName name = PrivateAuctionName.of("[NETWORK_CODE]", "[PRIVATE_AUCTION]");
+ *   PrivateAuction response = privateAuctionServiceClient.getPrivateAuction(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ProgrammaticBuyerServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `ProgrammaticBuyer` objects.
+ *
+ * <p>Sample for ProgrammaticBuyerServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProgrammaticBuyerServiceClient programmaticBuyerServiceClient =
+ *     ProgrammaticBuyerServiceClient.create()) {
+ *   ProgrammaticBuyerName name =
+ *       ProgrammaticBuyerName.of("[NETWORK_CODE]", "[PROGRAMMATIC_BUYER]");
+ *   ProgrammaticBuyer response = programmaticBuyerServiceClient.getProgrammaticBuyer(name);
  * }
  * }</pre>
  *

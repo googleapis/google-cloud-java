@@ -155,4 +155,36 @@ public interface DeliverInfoOrBuilder
    * @return The bytes for pscGoogleApiTarget.
    */
   com.google.protobuf.ByteString getPscGoogleApiTargetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Recognized type of a Google Service the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for googleServiceType.
+   */
+  int getGoogleServiceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Recognized type of a Google Service the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+   * </code>
+   *
+   * @return The googleServiceType.
+   */
+  com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType getGoogleServiceType();
 }

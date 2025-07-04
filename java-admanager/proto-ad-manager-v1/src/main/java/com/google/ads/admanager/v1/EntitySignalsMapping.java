@@ -65,6 +65,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
             com.google.ads.admanager.v1.EntitySignalsMapping.Builder.class);
   }
 
+  private int bitField0_;
   private int entityCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -296,7 +297,27 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    * Output only. `EntitySignalsMapping` ID.
    * </pre>
    *
-   * <code>int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the entitySignalsMappingId field is set.
+   */
+  @java.lang.Override
+  public boolean hasEntitySignalsMappingId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `EntitySignalsMapping` ID.
+   * </pre>
+   *
+   * <code>
+   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The entitySignalsMappingId.
    */
@@ -314,11 +335,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The IDs of the categories that are associated with the
+   * Optional. The IDs of the categories that are associated with the
    * referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the taxonomyCategoryIds.
@@ -332,11 +353,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The IDs of the categories that are associated with the
+   * Optional. The IDs of the categories that are associated with the
    * referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of taxonomyCategoryIds.
@@ -349,11 +370,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The IDs of the categories that are associated with the
+   * Optional. The IDs of the categories that are associated with the
    * referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -383,7 +404,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (entitySignalsMappingId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(2, entitySignalsMappingId_);
     }
     if (entityCase_ == 3) {
@@ -414,7 +435,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (entitySignalsMappingId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, entitySignalsMappingId_);
     }
     if (entityCase_ == 3) {
@@ -463,7 +484,10 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         (com.google.ads.admanager.v1.EntitySignalsMapping) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getEntitySignalsMappingId() != other.getEntitySignalsMappingId()) return false;
+    if (hasEntitySignalsMappingId() != other.hasEntitySignalsMappingId()) return false;
+    if (hasEntitySignalsMappingId()) {
+      if (getEntitySignalsMappingId() != other.getEntitySignalsMappingId()) return false;
+    }
     if (!getTaxonomyCategoryIdsList().equals(other.getTaxonomyCategoryIdsList())) return false;
     if (!getEntityCase().equals(other.getEntityCase())) return false;
     switch (entityCase_) {
@@ -492,8 +516,10 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ENTITY_SIGNALS_MAPPING_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEntitySignalsMappingId());
+    if (hasEntitySignalsMappingId()) {
+      hash = (37 * hash) + ENTITY_SIGNALS_MAPPING_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEntitySignalsMappingId());
+    }
     if (getTaxonomyCategoryIdsCount() > 0) {
       hash = (37 * hash) + TAXONOMY_CATEGORY_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTaxonomyCategoryIdsList().hashCode();
@@ -699,13 +725,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.entitySignalsMappingId_ = entitySignalsMappingId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         taxonomyCategoryIds_.makeImmutable();
         result.taxonomyCategoryIds_ = taxonomyCategoryIds_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.ads.admanager.v1.EntitySignalsMapping result) {
@@ -764,7 +793,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.getEntitySignalsMappingId() != 0L) {
+      if (other.hasEntitySignalsMappingId()) {
         setEntitySignalsMappingId(other.getEntitySignalsMappingId());
       }
       if (!other.taxonomyCategoryIds_.isEmpty()) {
@@ -1255,7 +1284,26 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * Output only. `EntitySignalsMapping` ID.
      * </pre>
      *
-     * <code>int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the entitySignalsMappingId field is set.
+     */
+    @java.lang.Override
+    public boolean hasEntitySignalsMappingId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `EntitySignalsMapping` ID.
+     * </pre>
+     *
+     * <code>
+     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The entitySignalsMappingId.
@@ -1272,7 +1320,8 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * Output only. `EntitySignalsMapping` ID.
      * </pre>
      *
-     * <code>int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The entitySignalsMappingId to set.
@@ -1293,7 +1342,8 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * Output only. `EntitySignalsMapping` ID.
      * </pre>
      *
-     * <code>int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1318,11 +1368,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the taxonomyCategoryIds.
@@ -1336,11 +1386,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of taxonomyCategoryIds.
@@ -1353,11 +1403,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -1371,11 +1421,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1395,11 +1445,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The taxonomyCategoryIds to add.
@@ -1418,11 +1468,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The taxonomyCategoryIds to add.
@@ -1440,11 +1490,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The IDs of the categories that are associated with the
+     * Optional. The IDs of the categories that are associated with the
      * referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

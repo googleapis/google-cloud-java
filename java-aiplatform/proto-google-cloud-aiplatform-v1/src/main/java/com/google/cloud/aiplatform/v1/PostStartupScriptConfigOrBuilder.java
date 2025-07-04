@@ -55,7 +55,7 @@ public interface PostStartupScriptConfigOrBuilder
    *
    * <pre>
    * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
+   * `gs://bucket/script.sh`
    * </pre>
    *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,7 +69,7 @@ public interface PostStartupScriptConfigOrBuilder
    *
    * <pre>
    * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
+   * `gs://bucket/script.sh`
    * </pre>
    *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

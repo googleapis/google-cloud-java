@@ -69,71 +69,75 @@ public final class FindingProto {
           + ",google/cloud/securitycenter/v2/finding"
           + ".proto\022\036google.cloud.securitycenter.v2\032\037"
           + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032+google/cloud/securitycenter/v2/access.proto\0320google/cloud/se"
-          + "curitycenter/v2/application.proto\0324google/cloud/securitycenter/v2/attack_exposur"
-          + "e.proto\032=google/cloud/securitycenter/v2/backup_disaster_recovery.proto\0320google/c"
-          + "loud/securitycenter/v2/cloud_armor.proto\032;google/cloud/securitycenter/v2/cloud_d"
-          + "lp_data_profile.proto\0329google/cloud/securitycenter/v2/cloud_dlp_inspection.proto"
-          + "\032/google/cloud/securitycenter/v2/compliance.proto\032/google/cloud/securitycenter/v"
-          + "2/connection.proto\0324google/cloud/securitycenter/v2/contact_details.proto\032.google"
-          + "/cloud/securitycenter/v2/container.proto\0326google/cloud/securitycenter/v2/data_ac"
-          + "cess_event.proto\0324google/cloud/securitycenter/v2/data_flow_event.proto\032Bgoogle/c"
-          + "loud/securitycenter/v2/data_retention_deletion_event.proto\032-google/cloud/securit"
-          + "ycenter/v2/database.proto\032)google/cloud/securitycenter/v2/disk.proto\0321google/clo"
-          + "ud/securitycenter/v2/exfiltration.proto\0324google/cloud/securitycenter/v2/external"
-          + "_system.proto\032)google/cloud/securitycenter/v2/file.proto\0325google/cloud/securityc"
-          + "enter/v2/group_membership.proto\0320google/cloud/securitycenter/v2/iam_binding.prot"
-          + "o\032.google/cloud/securitycenter/v2/indicator.proto\0323google/cloud/securitycenter/v"
-          + "2/kernel_rootkit.proto\032/google/cloud/securitycenter/v2/kubernetes.proto\0322google/"
-          + "cloud/securitycenter/v2/load_balancer.proto\032.google/cloud/securitycenter/v2/log_"
-          + "entry.proto\0321google/cloud/securitycenter/v2/mitre_attack.proto\032-google/cloud/sec"
-          + "uritycenter/v2/notebook.proto\032/google/cloud/securitycenter/v2/org_policy.proto\032,"
-          + "google/cloud/securitycenter/v2/process.proto\0323google/cloud/securitycenter/v2/sec"
-          + "urity_marks.proto\0325google/cloud/securitycenter/v2/security_posture.proto\0326google"
-          + "/cloud/securitycenter/v2/toxic_combination.proto\0322google/cloud/securitycenter/v2"
-          + "/vulnerability.proto\032\034google/protobuf/st"
-          + "ruct.proto\032\037google/protobuf/timestamp.proto\"\332%\n"
-          + "\007Finding\022\014\n"
-          + "\004name\030\001 \001(\t\022\033\n"
+          + "api/resource.proto\032+google/cloud/securitycenter/v2/access.proto\0327google/cloud/se"
+          + "curitycenter/v2/affected_resources.proto\032-google/cloud/securitycenter/v2/ai_mode"
+          + "l.proto\0320google/cloud/securitycenter/v2/application.proto\0324google/cloud/security"
+          + "center/v2/attack_exposure.proto\032=google/cloud/securitycenter/v2/backup_disaster_"
+          + "recovery.proto\032/google/cloud/securitycenter/v2/chokepoint.proto\0320google/cloud/se"
+          + "curitycenter/v2/cloud_armor.proto\032;google/cloud/securitycenter/v2/cloud_dlp_data"
+          + "_profile.proto\0329google/cloud/securitycenter/v2/cloud_dlp_inspection.proto\032/googl"
+          + "e/cloud/securitycenter/v2/compliance.proto\032/google/cloud/securitycenter/v2/conne"
+          + "ction.proto\0324google/cloud/securitycenter/v2/contact_details.proto\032.google/cloud/"
+          + "securitycenter/v2/container.proto\0326google/cloud/securitycenter/v2/data_access_ev"
+          + "ent.proto\0324google/cloud/securitycenter/v2/data_flow_event.proto\032Bgoogle/cloud/se"
+          + "curitycenter/v2/data_retention_deletion_event.proto\032-google/cloud/securitycenter"
+          + "/v2/database.proto\032)google/cloud/securitycenter/v2/disk.proto\0321google/cloud/secu"
+          + "ritycenter/v2/exfiltration.proto\0324google/cloud/securitycenter/v2/external_system"
+          + ".proto\032)google/cloud/securitycenter/v2/file.proto\0325google/cloud/securitycenter/v"
+          + "2/group_membership.proto\0320google/cloud/securitycenter/v2/iam_binding.proto\032.goog"
+          + "le/cloud/securitycenter/v2/indicator.proto\032-google/cloud/securitycenter/v2/ip_ru"
+          + "les.proto\032(google/cloud/securitycenter/v2/job.proto\0323google/cloud/securitycenter"
+          + "/v2/kernel_rootkit.proto\032/google/cloud/securitycenter/v2/kubernetes.proto\0322googl"
+          + "e/cloud/securitycenter/v2/load_balancer.proto\032.google/cloud/securitycenter/v2/lo"
+          + "g_entry.proto\0321google/cloud/securitycenter/v2/mitre_attack.proto\032,google/cloud/s"
+          + "ecuritycenter/v2/network.proto\032-google/cloud/securitycenter/v2/notebook.proto\032/g"
+          + "oogle/cloud/securitycenter/v2/org_policy.proto\032,google/cloud/securitycenter/v2/p"
+          + "rocess.proto\0323google/cloud/securitycenter/v2/security_marks.proto\0325google/cloud/"
+          + "securitycenter/v2/security_posture.proto\0326google/cloud/securitycenter/v2/toxic_c"
+          + "ombination.proto\032.google/cloud/securitycenter/v2/vertex_ai.proto\0322google/cloud/s"
+          + "ecuritycenter/v2/vulnerability.proto\032\034go"
+          + "ogle/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\236)\n"
+          + "\007Finding\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\033\n"
           + "\016canonical_name\030\002 \001(\tB\003\340A\003\022\016\n"
           + "\006parent\030\003 \001(\t\022\032\n\r"
           + "resource_name\030\004 \001(\tB\003\340A\005\022A\n"
-          + "\005state\030\006 \001(\0162-."
-          + "google.cloud.securitycenter.v2.Finding.StateB\003\340A\003\022\025\n"
+          + "\005state\030\006"
+          + " \001(\0162-.google.cloud.securitycenter.v2.Finding.StateB\003\340A\003\022\025\n"
           + "\010category\030\007 \001(\tB\003\340A\005\022\024\n"
           + "\014external_uri\030\010 \001(\t\022X\n"
-          + "\021source_properties\030\t \003("
-          + "\0132=.google.cloud.securitycenter.v2.Finding.SourcePropertiesEntry\022J\n"
+          + "\021source_properties\030\t \003(\0132=.google.cloud.se"
+          + "curitycenter.v2.Finding.SourcePropertiesEntry\022J\n"
           + "\016security_marks\030\n"
           + " \001(\0132-.google.cloud.securitycenter.v2.SecurityMarksB\003\340A\003\022.\n\n"
           + "event_time\030\013 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\013create_time\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022B\n"
-          + "\010severity\030\016"
-          + " \001(\01620.google.cloud.securitycenter.v2.Finding.Severity\022:\n"
+          + "\010severity\030\016 \001("
+          + "\01620.google.cloud.securitycenter.v2.Finding.Severity\022:\n"
           + "\004mute\030\017 \001(\0162,.google.cloud.securitycenter.v2.Finding.Mute\022H\n"
-          + "\tmute_info\0305 \001(\01320.google.c"
-          + "loud.securitycenter.v2.Finding.MuteInfoB\003\340A\003\022K\n\r"
-          + "finding_class\030\020 \001(\01624.google.clo"
-          + "ud.securitycenter.v2.Finding.FindingClass\022<\n"
+          + "\tmute_info\0305"
+          + " \001(\01320.google.cloud.securitycenter.v2.Finding.MuteInfoB\003\340A\003\022K\n\r"
+          + "finding_class\030\020"
+          + " \001(\01624.google.cloud.securitycenter.v2.Finding.FindingClass\022<\n"
           + "\tindicator\030\021 \001(\0132).google.cloud.securitycenter.v2.Indicator\022D\n\r"
           + "vulnerability\030\022 \001(\0132-.google.cloud.securitycenter.v2.Vulnerability\0229\n"
           + "\020mute_update_time\030\023"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022[\n"
-          + "\020external_systems\030\024 \003(\0132<.google.cloud.securi"
-          + "tycenter.v2.Finding.ExternalSystemsEntryB\003\340A\003\022A\n"
+          + "\020external_systems\030\024 \003(\0132"
+          + "<.google.cloud.securitycenter.v2.Finding.ExternalSystemsEntryB\003\340A\003\022A\n"
           + "\014mitre_attack\030\025 \001(\0132+.google.cloud.securitycenter.v2.MitreAttack\0226\n"
           + "\006access\030\026 \001(\0132&.google.cloud.securitycenter.v2.Access\022?\n"
           + "\013connections\030\027"
           + " \003(\0132*.google.cloud.securitycenter.v2.Connection\022\026\n"
           + "\016mute_initiator\030\030 \001(\t\022:\n"
           + "\tprocesses\030\031 \003(\0132\'.google.cloud.securitycenter.v2.Process\022L\n"
-          + "\010contacts\030\032"
-          + " \003(\01325.google.cloud.securitycenter.v2.Finding.ContactsEntryB\003\340A\003\022?\n"
+          + "\010contacts\030\032 \003(\01325.g"
+          + "oogle.cloud.securitycenter.v2.Finding.ContactsEntryB\003\340A\003\022?\n"
           + "\013compliances\030\033 \003(\0132*.google.cloud.securitycenter.v2.Compliance\022 \n"
           + "\023parent_display_name\030\035 \001(\tB\003\340A\003\022\023\n"
           + "\013description\030\036 \001(\t\022B\n"
-          + "\014exfiltration\030\037"
-          + " \001(\0132,.google.cloud.securitycenter.v2.Exfiltration\022@\n"
+          + "\014exfiltration\030\037 \001(\0132,"
+          + ".google.cloud.securitycenter.v2.Exfiltration\022@\n"
           + "\014iam_bindings\030 "
           + " \003(\0132*.google.cloud.securitycenter.v2.IamBinding\022\022\n\n"
           + "next_steps\030! \001(\t\022\023\n"
@@ -141,17 +145,19 @@ public final class FindingProto {
           + "containers\030# \003(\0132).google.cloud.securitycenter.v2.Container\022>\n\n"
           + "kubernetes\030$ \001(\0132*.google.cloud.securitycenter.v2.Kubernetes\022:\n"
           + "\010database\030% \001(\0132(.google.cloud.securitycenter.v2.Database\022G\n"
-          + "\017attack_exposure\030&"
-          + " \001(\0132..google.cloud.securitycenter.v2.AttackExposure\0223\n"
+          + "\017attack_exposure\030& "
+          + "\001(\0132..google.cloud.securitycenter.v2.AttackExposure\0223\n"
           + "\005files\030\' \003(\0132$.google.cloud.securitycenter.v2.File\022P\n"
-          + "\024cloud_dlp_inspection\030( \001(\01322.goog"
-          + "le.cloud.securitycenter.v2.CloudDlpInspection\022S\n"
-          + "\026cloud_dlp_data_profile\030) \001(\01323."
-          + "google.cloud.securitycenter.v2.CloudDlpDataProfile\022E\n"
-          + "\016kernel_rootkit\030* \001(\0132-.goo"
-          + "gle.cloud.securitycenter.v2.KernelRootkit\022?\n"
-          + "\014org_policies\030+ \003(\0132).google.cloud.securitycenter.v2.OrgPolicy\022@\n"
-          + "\013application\030- \001(\0132+.google.cloud.securitycenter.v2.Application\022X\n"
+          + "\024cloud_dlp_inspection\030("
+          + " \001(\01322.google.cloud.securitycenter.v2.CloudDlpInspection\022S\n"
+          + "\026cloud_dlp_data_profile\030)"
+          + " \001(\01323.google.cloud.securitycenter.v2.CloudDlpDataProfile\022E\n"
+          + "\016kernel_rootkit\030*"
+          + " \001(\0132-.google.cloud.securitycenter.v2.KernelRootkit\022?\n"
+          + "\014org_policies\030+ \003(\0132).google.cloud.securitycenter.v2.OrgPolicy\0220\n"
+          + "\003job\030, \001(\0132#.google.cloud.securitycenter.v2.Job\022@\n"
+          + "\013application\030- \001(\0132+.google.cloud.securitycenter.v2.Application\0229\n"
+          + "\010ip_rules\030. \001(\0132\'.google.cloud.securitycenter.v2.IpRules\022X\n"
           + "\030backup_disaster_recovery\030/"
           + " \001(\01326.google.cloud.securitycenter.v2.BackupDisasterRecovery\022I\n"
           + "\020security_posture\0300"
@@ -160,22 +166,28 @@ public final class FindingProto {
           + "\016load_balancers\0302 \003(\0132,.google.cloud.securitycenter.v2.LoadBalancer\022?\n"
           + "\013cloud_armor\0303 \001(\0132*.google.cloud.securitycenter.v2.CloudArmor\022:\n"
           + "\010notebook\0307 \001(\0132(.google.cloud.securitycenter.v2.Notebook\022K\n"
-          + "\021toxic_combination\0308"
-          + " \001(\01320.google.cloud.securitycenter.v2.ToxicCombination\022J\n"
-          + "\021group_memberships\0309"
-          + " \003(\0132/.google.cloud.securitycenter.v2.GroupMembership\0222\n"
+          + "\021toxic_combination\0308 \001(\01320.googl"
+          + "e.cloud.securitycenter.v2.ToxicCombination\022J\n"
+          + "\021group_memberships\0309 \003(\0132/.google.c"
+          + "loud.securitycenter.v2.GroupMembership\0222\n"
           + "\004disk\030: \001(\0132$.google.cloud.securitycenter.v2.Disk\022K\n"
-          + "\022data_access_events\030="
-          + " \003(\0132/.google.cloud.securitycenter.v2.DataAccessEvent\022G\n"
-          + "\020data_flow_events\030>"
-          + " \003(\0132-.google.cloud.securitycenter.v2.DataFlowEvent\022b\n"
-          + "\036data_retention_deletion_events\030@ \003(\0132:.google."
-          + "cloud.securitycenter.v2.DataRetentionDeletionEvent\032\223\003\n"
+          + "\022data_access_events\030= \003(\0132/"
+          + ".google.cloud.securitycenter.v2.DataAccessEvent\022G\n"
+          + "\020data_flow_events\030> \003(\0132-.goog"
+          + "le.cloud.securitycenter.v2.DataFlowEvent\0229\n"
+          + "\010networks\030? \003(\0132\'.google.cloud.securitycenter.v2.Network\022b\n"
+          + "\036data_retention_deletion_events\030@ \003(\0132:.google.cloud.secur"
+          + "itycenter.v2.DataRetentionDeletionEvent\022M\n"
+          + "\022affected_resources\030A \001(\01321.google.clo"
+          + "ud.securitycenter.v2.AffectedResources\0229\n"
+          + "\010ai_model\030B \001(\0132\'.google.cloud.securitycenter.v2.AiModel\022>\n\n"
+          + "chokepoint\030E \001(\0132*.google.cloud.securitycenter.v2.Chokepoint\022;\n"
+          + "\tvertex_ai\030H \001(\0132(.google.cloud.securitycenter.v2.VertexAi\032\223\003\n"
           + "\010MuteInfo\022P\n"
           + "\013static_mute\030\001"
           + " \001(\0132;.google.cloud.securitycenter.v2.Finding.MuteInfo.StaticMute\022`\n"
-          + "\024dynamic_mute_records\030\002 \003(\0132B.google.cloud.securityc"
-          + "enter.v2.Finding.MuteInfo.DynamicMuteRecord\032y\n\n"
+          + "\024dynamic_mute_records\030\002 \003(\0132B.google.clo"
+          + "ud.securitycenter.v2.Finding.MuteInfo.DynamicMuteRecord\032y\n\n"
           + "StaticMute\022;\n"
           + "\005state\030\001 \001(\0162,.google.cloud.securitycenter.v2.Finding.Mute\022.\n\n"
           + "apply_time\030\002 \001(\0132\032.google.protobuf.Timestamp\032X\n"
@@ -187,8 +199,8 @@ public final class FindingProto {
           + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\032f\n"
           + "\024ExternalSystemsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022=\n"
-          + "\005value\030\002 \001(\0132..google.c"
-          + "loud.securitycenter.v2.ExternalSystem:\0028\001\032_\n\r"
+          + "\005value\030\002 \001("
+          + "\0132..google.cloud.securitycenter.v2.ExternalSystem:\0028\001\032_\n\r"
           + "ContactsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022=\n"
           + "\005value\030\002"
@@ -207,27 +219,31 @@ public final class FindingProto {
           + "\020MUTE_UNSPECIFIED\020\000\022\t\n"
           + "\005MUTED\020\001\022\013\n"
           + "\007UNMUTED\020\002\022\r\n"
-          + "\tUNDEFINED\020\003\"\311\001\n"
+          + "\tUNDEFINED\020\003\"\331\001\n"
           + "\014FindingClass\022\035\n"
           + "\031FINDING_CLASS_UNSPECIFIED\020\000\022\n\n"
           + "\006THREAT\020\001\022\021\n\r"
           + "VULNERABILITY\020\002\022\024\n"
           + "\020MISCONFIGURATION\020\003\022\017\n"
-          + "\013OBSERVATION\020\004\022\r\n"
+          + "\013OBSERVATION\020\004\022\r"
+          + "\n"
           + "\tSCC_ERROR\020\005\022\025\n"
           + "\021POSTURE_VIOLATION\020\006\022\025\n"
           + "\021TOXIC_COMBINATION\020\007\022\027\n"
-          + "\023SENSITIVE_DATA_RISK\020\010:\335\003\352A\331\003\n"
-          + "%securitycenter.googleapis.com/Finding\022@organizations/{organization}/sources/{so"
-          + "urce}/findings/{finding}\022Uorganizations/{organization}/sources/{source}/location"
-          + "s/{location}/findings/{finding}\0224folders/{folder}/sources/{source}/findings/{fin"
-          + "ding}\022Ifolders/{folder}/sources/{source}/locations/{location}/findings/{finding}"
-          + "\0226projects/{project}/sources/{source}/findings/{finding}\022Kprojects/{project}/sou"
-          + "rces/{source}/locations/{location}/findings/{finding}*\010findings2\007findingB\346\001\n"
-          + "\"com.google.cloud.securitycenter.v2B\014Finding"
-          + "ProtoP\001ZJcloud.google.com/go/securitycenter/apiv2/securitycenterpb;securitycente"
-          + "rpb\252\002\036Google.Cloud.SecurityCenter.V2\312\002\036G"
-          + "oogle\\Cloud\\SecurityCenter\\V2\352\002!Google::Cloud::SecurityCenter::V2b\006proto3"
+          + "\023SENSITIVE_DATA_RISK\020\010\022\016\n\n"
+          + "CHOKEPOINT\020\t:\335\003\352A\331\003\n"
+          + "%securitycenter.googleapis.com/Finding\022@organization"
+          + "s/{organization}/sources/{source}/findings/{finding}\022Uorganizations/{organizatio"
+          + "n}/sources/{source}/locations/{location}/findings/{finding}\0224folders/{folder}/so"
+          + "urces/{source}/findings/{finding}\022Ifolders/{folder}/sources/{source}/locations/{"
+          + "location}/findings/{finding}\0226projects/{project}/sources/{source}/findings/{find"
+          + "ing}\022Kprojects/{project}/sources/{source"
+          + "}/locations/{location}/findings/{finding}*\010findings2\007findingB\346\001\n"
+          + "\"com.google.cloud.securitycenter.v2B\014FindingProtoP\001ZJclo"
+          + "ud.google.com/go/securitycenter/apiv2/se"
+          + "curitycenterpb;securitycenterpb\252\002\036Google"
+          + ".Cloud.SecurityCenter.V2\312\002\036Google\\Cloud\\"
+          + "SecurityCenter\\V2\352\002!Google::Cloud::SecurityCenter::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -236,9 +252,12 @@ public final class FindingProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.AccessProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.AffectedResourcesProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.AiModelProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.ApplicationProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.AttackExposureProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.BackupDisasterRecoveryProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.ChokepointProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.CloudArmorProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.CloudDlpDataProfileProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.CloudDlpInspectionProto.getDescriptor(),
@@ -257,17 +276,21 @@ public final class FindingProto {
               com.google.cloud.securitycenter.v2.GroupMembershipProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.IamBindingProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.IndicatorProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.IpRulesProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.JobProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.KernelRootkitProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.KubernetesProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.LoadBalancerProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.LogEntryProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.MitreAttackProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.NetworkProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.NotebookProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.OrgPolicyProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.ProcessProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.SecurityMarksProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.SecurityPostureProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.ToxicCombinationProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.VertexAiProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.VulnerabilityProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -319,7 +342,9 @@ public final class FindingProto {
               "CloudDlpDataProfile",
               "KernelRootkit",
               "OrgPolicies",
+              "Job",
               "Application",
+              "IpRules",
               "BackupDisasterRecovery",
               "SecurityPosture",
               "LogEntries",
@@ -331,7 +356,12 @@ public final class FindingProto {
               "Disk",
               "DataAccessEvents",
               "DataFlowEvents",
+              "Networks",
               "DataRetentionDeletionEvents",
+              "AffectedResources",
+              "AiModel",
+              "Chokepoint",
+              "VertexAi",
             });
     internal_static_google_cloud_securitycenter_v2_Finding_MuteInfo_descriptor =
         internal_static_google_cloud_securitycenter_v2_Finding_descriptor.getNestedTypes().get(0);
@@ -394,9 +424,12 @@ public final class FindingProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v2.AccessProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.AffectedResourcesProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.AiModelProto.getDescriptor();
     com.google.cloud.securitycenter.v2.ApplicationProto.getDescriptor();
     com.google.cloud.securitycenter.v2.AttackExposureProto.getDescriptor();
     com.google.cloud.securitycenter.v2.BackupDisasterRecoveryProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.ChokepointProto.getDescriptor();
     com.google.cloud.securitycenter.v2.CloudArmorProto.getDescriptor();
     com.google.cloud.securitycenter.v2.CloudDlpDataProfileProto.getDescriptor();
     com.google.cloud.securitycenter.v2.CloudDlpInspectionProto.getDescriptor();
@@ -415,17 +448,21 @@ public final class FindingProto {
     com.google.cloud.securitycenter.v2.GroupMembershipProto.getDescriptor();
     com.google.cloud.securitycenter.v2.IamBindingProto.getDescriptor();
     com.google.cloud.securitycenter.v2.IndicatorProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.IpRulesProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.JobProto.getDescriptor();
     com.google.cloud.securitycenter.v2.KernelRootkitProto.getDescriptor();
     com.google.cloud.securitycenter.v2.KubernetesProto.getDescriptor();
     com.google.cloud.securitycenter.v2.LoadBalancerProto.getDescriptor();
     com.google.cloud.securitycenter.v2.LogEntryProto.getDescriptor();
     com.google.cloud.securitycenter.v2.MitreAttackProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.NetworkProto.getDescriptor();
     com.google.cloud.securitycenter.v2.NotebookProto.getDescriptor();
     com.google.cloud.securitycenter.v2.OrgPolicyProto.getDescriptor();
     com.google.cloud.securitycenter.v2.ProcessProto.getDescriptor();
     com.google.cloud.securitycenter.v2.SecurityMarksProto.getDescriptor();
     com.google.cloud.securitycenter.v2.SecurityPostureProto.getDescriptor();
     com.google.cloud.securitycenter.v2.ToxicCombinationProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.VertexAiProto.getDescriptor();
     com.google.cloud.securitycenter.v2.VulnerabilityProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

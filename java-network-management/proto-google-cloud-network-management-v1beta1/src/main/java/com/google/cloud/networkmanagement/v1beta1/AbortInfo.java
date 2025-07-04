@@ -395,13 +395,24 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because a PSC endpoint selection for the Google-managed service
+     * Aborted because PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
      *
      * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
      */
     GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT(19),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because endpoint selection for the Google-managed service is
+     * ambiguous (several endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT = 39;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT(39),
     /**
      *
      *
@@ -829,13 +840,25 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because a PSC endpoint selection for the Google-managed service
+     * Aborted because PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
      *
      * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
      */
     public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT_VALUE = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because endpoint selection for the Google-managed service is
+     * ambiguous (several endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT = 39;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT_VALUE = 39;
 
     /**
      *
@@ -1013,6 +1036,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return ROUTE_CONFIG_NOT_FOUND;
         case 19:
           return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
+        case 39:
+          return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT;
         case 20:
           return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
         case 34:

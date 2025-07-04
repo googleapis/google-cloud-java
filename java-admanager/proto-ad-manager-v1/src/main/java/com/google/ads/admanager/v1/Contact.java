@@ -44,6 +44,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   private Contact() {
     name_ = "";
+    companyDisplayName_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Contact.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -122,24 +124,76 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int CONTACT_ID_FIELD_NUMBER = 2;
-  private long contactId_ = 0L;
+  public static final int COMPANY_DISPLAY_NAME_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object companyDisplayName_ = "";
 
   /**
    *
    *
    * <pre>
-   * Output only. The unique ID of the contact. This value is readonly and is
-   * assigned by Google.
+   * Output only. The display name of the Company.
    * </pre>
    *
-   * <code>int64 contact_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The contactId.
+   * @return Whether the companyDisplayName field is set.
    */
   @java.lang.Override
-  public long getContactId() {
-    return contactId_;
+  public boolean hasCompanyDisplayName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the Company.
+   * </pre>
+   *
+   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The companyDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getCompanyDisplayName() {
+    java.lang.Object ref = companyDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      companyDisplayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the Company.
+   * </pre>
+   *
+   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for companyDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCompanyDisplayNameBytes() {
+    java.lang.Object ref = companyDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      companyDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -159,8 +213,8 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (contactId_ != 0L) {
-      output.writeInt64(2, contactId_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, companyDisplayName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -174,8 +228,8 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (contactId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, contactId_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, companyDisplayName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -193,7 +247,10 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Contact other = (com.google.ads.admanager.v1.Contact) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getContactId() != other.getContactId()) return false;
+    if (hasCompanyDisplayName() != other.hasCompanyDisplayName()) return false;
+    if (hasCompanyDisplayName()) {
+      if (!getCompanyDisplayName().equals(other.getCompanyDisplayName())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -207,8 +264,10 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CONTACT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getContactId());
+    if (hasCompanyDisplayName()) {
+      hash = (37 * hash) + COMPANY_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyDisplayName().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -352,7 +411,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      contactId_ = 0L;
+      companyDisplayName_ = "";
       return this;
     }
 
@@ -391,9 +450,12 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.contactId_ = contactId_;
+        result.companyDisplayName_ = companyDisplayName_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -446,8 +508,10 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getContactId() != 0L) {
-        setContactId(other.getContactId());
+      if (other.hasCompanyDisplayName()) {
+        companyDisplayName_ = other.companyDisplayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -481,12 +545,12 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 16:
+            case 154:
               {
-                contactId_ = input.readInt64();
+                companyDisplayName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -622,41 +686,90 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private long contactId_;
+    private java.lang.Object companyDisplayName_ = "";
 
     /**
      *
      *
      * <pre>
-     * Output only. The unique ID of the contact. This value is readonly and is
-     * assigned by Google.
+     * Output only. The display name of the Company.
      * </pre>
      *
-     * <code>int64 contact_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @return The contactId.
+     * @return Whether the companyDisplayName field is set.
      */
-    @java.lang.Override
-    public long getContactId() {
-      return contactId_;
+    public boolean hasCompanyDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. The unique ID of the contact. This value is readonly and is
-     * assigned by Google.
+     * Output only. The display name of the Company.
      * </pre>
      *
-     * <code>int64 contact_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @param value The contactId to set.
+     * @return The companyDisplayName.
+     */
+    public java.lang.String getCompanyDisplayName() {
+      java.lang.Object ref = companyDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the Company.
+     * </pre>
+     *
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for companyDisplayName.
+     */
+    public com.google.protobuf.ByteString getCompanyDisplayNameBytes() {
+      java.lang.Object ref = companyDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        companyDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the Company.
+     * </pre>
+     *
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The companyDisplayName to set.
      * @return This builder for chaining.
      */
-    public Builder setContactId(long value) {
-
-      contactId_ = value;
+    public Builder setCompanyDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      companyDisplayName_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -666,17 +779,41 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique ID of the contact. This value is readonly and is
-     * assigned by Google.
+     * Output only. The display name of the Company.
      * </pre>
      *
-     * <code>int64 contact_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearContactId() {
+    public Builder clearCompanyDisplayName() {
+      companyDisplayName_ = getDefaultInstance().getCompanyDisplayName();
       bitField0_ = (bitField0_ & ~0x00000002);
-      contactId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the Company.
+     * </pre>
+     *
+     * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for companyDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompanyDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      companyDisplayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

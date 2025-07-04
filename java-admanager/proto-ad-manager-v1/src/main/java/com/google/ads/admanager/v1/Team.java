@@ -118,26 +118,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int TEAM_ID_FIELD_NUMBER = 2;
-  private long teamId_ = 0L;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The unique ID of the Team. This value is assigned by Google.
-   * Teams that are created by Google will have negative IDs.
-   * </pre>
-   *
-   * <code>int64 team_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The teamId.
-   */
-  @java.lang.Override
-  public long getTeamId() {
-    return teamId_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -155,9 +135,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (teamId_ != 0L) {
-      output.writeInt64(2, teamId_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -169,9 +146,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
-    if (teamId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, teamId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -189,7 +163,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Team other = (com.google.ads.admanager.v1.Team) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getTeamId() != other.getTeamId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -203,8 +176,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TEAM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTeamId());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -345,7 +316,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      teamId_ = 0L;
       return this;
     }
 
@@ -383,9 +353,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.teamId_ = teamId_;
       }
     }
 
@@ -439,9 +406,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getTeamId() != 0L) {
-        setTeamId(other.getTeamId());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -474,12 +438,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 16:
-              {
-                teamId_ = input.readInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -611,65 +569,6 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    private long teamId_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The unique ID of the Team. This value is assigned by Google.
-     * Teams that are created by Google will have negative IDs.
-     * </pre>
-     *
-     * <code>int64 team_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The teamId.
-     */
-    @java.lang.Override
-    public long getTeamId() {
-      return teamId_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The unique ID of the Team. This value is assigned by Google.
-     * Teams that are created by Google will have negative IDs.
-     * </pre>
-     *
-     * <code>int64 team_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The teamId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTeamId(long value) {
-
-      teamId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The unique ID of the Team. This value is assigned by Google.
-     * Teams that are created by Google will have negative IDs.
-     * </pre>
-     *
-     * <code>int64 team_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearTeamId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      teamId_ = 0L;
       onChanged();
       return this;
     }

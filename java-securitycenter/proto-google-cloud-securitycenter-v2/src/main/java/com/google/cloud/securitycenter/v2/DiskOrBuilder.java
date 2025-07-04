@@ -29,7 +29,7 @@ public interface DiskOrBuilder
    *
    * <pre>
    * The name of the disk, for example,
-   * `https://www.googleapis.com/compute/v1/projects/{project-id}/zones/{zone-id}/disks/{disk-id}`.
+   * "https://www.googleapis.com/compute/v1/projects/{project-id}/zones/{zone-id}/disks/{disk-id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface DiskOrBuilder
    *
    * <pre>
    * The name of the disk, for example,
-   * `https://www.googleapis.com/compute/v1/projects/{project-id}/zones/{zone-id}/disks/{disk-id}`.
+   * "https://www.googleapis.com/compute/v1/projects/{project-id}/zones/{zone-id}/disks/{disk-id}".
    * </pre>
    *
    * <code>string name = 1;</code>

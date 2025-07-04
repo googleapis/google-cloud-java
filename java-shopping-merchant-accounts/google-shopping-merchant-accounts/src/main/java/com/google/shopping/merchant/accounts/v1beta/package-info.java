@@ -160,6 +160,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= CheckoutSettingsServiceClient =======================
+ *
+ * <p>Service Description: Service for supporting [checkout
+ * settings](https://support.google.com/merchants/answer/13945960).
+ *
+ * <p>Sample for CheckoutSettingsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CheckoutSettingsServiceClient checkoutSettingsServiceClient =
+ *     CheckoutSettingsServiceClient.create()) {
+ *   CheckoutSettingsName name = CheckoutSettingsName.of("[ACCOUNT]", "[PROGRAM]");
+ *   CheckoutSettings response = checkoutSettingsServiceClient.getCheckoutSettings(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EmailPreferencesServiceClient =======================
  *
  * <p>Service Description: Service to support the `EmailPreferences` API.

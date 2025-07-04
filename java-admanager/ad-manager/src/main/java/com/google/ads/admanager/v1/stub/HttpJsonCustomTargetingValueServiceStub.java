@@ -63,7 +63,7 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetCustomTargetingValueRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=networks/*/customTargetingKeys/*/customTargetingValues/*}",
+                          "/v1/{name=networks/*/customTargetingValues/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetCustomTargetingValueRequest> serializer =
@@ -71,6 +71,8 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=networks/*/customTargetingKeys/*/customTargetingValues/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -100,7 +102,7 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListCustomTargetingValuesRequest>newBuilder()
                       .setPath(
-                          "/v1/{parent=networks/*/customTargetingKeys/*}/customTargetingValues",
+                          "/v1/{parent=networks/*}/customTargetingValues",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListCustomTargetingValuesRequest> serializer =
@@ -108,6 +110,8 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=networks/*/customTargetingKeys/*}/customTargetingValues")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

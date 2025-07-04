@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -38,6 +39,8 @@ import com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -121,6 +124,20 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsMethodDescriptor =
+          MethodDescriptor
+              .<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkmanagement.v1beta1.VpcFlowLogsService/QueryOrgVpcFlowLogsConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryOrgVpcFlowLogsConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryOrgVpcFlowLogsConfigsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -187,6 +204,11 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
       deleteVpcFlowLogsConfigCallable;
   private final OperationCallable<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationCallable;
+  private final UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable;
+  private final UnaryCallable<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -298,6 +320,18 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+        queryOrgVpcFlowLogsConfigsTransportSettings =
+            GrpcCallSettings
+                .<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>newBuilder()
+                .setMethodDescriptor(queryOrgVpcFlowLogsConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -398,6 +432,16 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
             settings.deleteVpcFlowLogsConfigOperationSettings(),
             clientContext,
             operationsStub);
+    this.queryOrgVpcFlowLogsConfigsCallable =
+        callableFactory.createUnaryCallable(
+            queryOrgVpcFlowLogsConfigsTransportSettings,
+            settings.queryOrgVpcFlowLogsConfigsSettings(),
+            clientContext);
+    this.queryOrgVpcFlowLogsConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryOrgVpcFlowLogsConfigsTransportSettings,
+            settings.queryOrgVpcFlowLogsConfigsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -479,6 +523,18 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   public OperationCallable<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationCallable() {
     return deleteVpcFlowLogsConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable() {
+    return queryOrgVpcFlowLogsConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable() {
+    return queryOrgVpcFlowLogsConfigsPagedCallable;
   }
 
   @Override

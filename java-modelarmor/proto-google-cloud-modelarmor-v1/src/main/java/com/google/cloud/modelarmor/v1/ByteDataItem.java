@@ -135,6 +135,26 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>POWERPOINT_DOCUMENT = 5;</code>
      */
     POWERPOINT_DOCUMENT(5),
+    /**
+     *
+     *
+     * <pre>
+     * TXT
+     * </pre>
+     *
+     * <code>TXT = 6;</code>
+     */
+    TXT(6),
+    /**
+     *
+     *
+     * <pre>
+     * CSV
+     * </pre>
+     *
+     * <code>CSV = 7;</code>
+     */
+    CSV(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -204,6 +224,28 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int POWERPOINT_DOCUMENT_VALUE = 5;
 
+    /**
+     *
+     *
+     * <pre>
+     * TXT
+     * </pre>
+     *
+     * <code>TXT = 6;</code>
+     */
+    public static final int TXT_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * CSV
+     * </pre>
+     *
+     * <code>CSV = 7;</code>
+     */
+    public static final int CSV_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -240,6 +282,10 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
           return EXCEL_DOCUMENT;
         case 5:
           return POWERPOINT_DOCUMENT;
+        case 6:
+          return TXT;
+        case 7:
+          return CSV;
         default:
           return null;
       }
