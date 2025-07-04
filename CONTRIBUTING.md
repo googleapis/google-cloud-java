@@ -88,7 +88,7 @@ Code in this repo is formatted with
 [google-java-format](https://github.com/google/google-java-format).
 To run formatting on your project, you can run:
 ```
-mvn com.coveo:fmt-maven-plugin:format
+mvn com.spotify.fmt:fmt-maven-plugin:format
 ```
 
 [1]: https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account
