@@ -36,7 +36,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -456,7 +458,22 @@ public final class GenerativeModel {
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
-    return generateContent(buildGenerateContentRequest(contents));
+    return generateContent(buildGenerateContentRequest(contents, Collections.emptyMap()));
+  }
+
+  /**
+   * Generates content from this model given a list of contents.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
+   *               call in the format of key-value pairs.
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public GenerateContentResponse generateContent(List<Content> contents, Map<String, String> labels) throws IOException {
+    return generateContent(buildGenerateContentRequest(contents, labels));
   }
 
   /**
@@ -510,7 +527,24 @@ public final class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents)
       throws IOException {
-    return generateContentStream(buildGenerateContentRequest(contents));
+    return generateContentStream(buildGenerateContentRequest(contents, Collections.emptyMap()));
+  }
+
+  /**
+   * Generates content with streaming support from generative model given a list of contents
+   * and labels metadata.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
+   *               call in the format of key-value pairs.
+   * @return a {@link ResponseStream} that contains a streaming of {@link
+   *     com.google.cloud.vertexai.api.GenerateContentResponse}
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents, Map<String, String> labels)
+          throws IOException {
+    return generateContentStream(buildGenerateContentRequest(contents, labels));
   }
 
   /**
@@ -569,7 +603,23 @@ public final class GenerativeModel {
    */
   public ApiFuture<GenerateContentResponse> generateContentAsync(List<Content> contents)
       throws IOException {
-    return generateContentAsync(buildGenerateContentRequest(contents));
+    return generateContentAsync(buildGenerateContentRequest(contents, Collections.emptyMap()));
+  }
+
+  /**
+   * Asynchronously generates content from generative model given a list of contents.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
+   *               call in the format of key-value pairs.
+   * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
+   *     generateContent request
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public ApiFuture<GenerateContentResponse> generateContentAsync(List<Content> contents, Map<String, String> labels)
+          throws IOException {
+    return generateContentAsync(buildGenerateContentRequest(contents, labels));
   }
 
   /**
@@ -599,7 +649,7 @@ public final class GenerativeModel {
    * Builds a {@link com.google.cloud.vertexai.api.GenerateContentRequest} based on a list of
    * contents and model configurations.
    */
-  private GenerateContentRequest buildGenerateContentRequest(List<Content> contents) {
+  private GenerateContentRequest buildGenerateContentRequest(List<Content> contents, Map<String, String> labels) {
     checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder()
@@ -607,7 +657,8 @@ public final class GenerativeModel {
             .addAllContents(contents)
             .setGenerationConfig(generationConfig)
             .addAllSafetySettings(safetySettings)
-            .addAllTools(tools);
+            .addAllTools(tools)
+            .putAllLabels(labels);
 
     if (toolConfig.isPresent()) {
       requestBuilder.setToolConfig(toolConfig.get());

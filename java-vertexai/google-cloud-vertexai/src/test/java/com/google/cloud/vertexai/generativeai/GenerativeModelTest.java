@@ -50,6 +50,7 @@ import com.google.cloud.vertexai.api.Type;
 import com.google.cloud.vertexai.api.VertexAISearch;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.Before;
@@ -358,6 +359,19 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void generateContent_withContents_requestHasCorrectContentAndLabels() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    GenerateContentResponse unused = model.generateContent(Collections.singletonList(CONTENT),
+            Collections.singletonMap("label", "value"));
+
+    ArgumentCaptor<GenerateContentRequest> request =
+            ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).call(request.capture());
+    assertThat(request.getValue().getContents(0)).isEqualTo(CONTENT);
+  }
+
+  @Test
   public void generateContent_withDefaultGenerationConfig_requestHasCorrectGenerationConfigAndText()
       throws Exception {
     model =
@@ -524,6 +538,19 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void generateContentStream_withContents_requestHasCorrectContentAndLabel() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    ResponseStream unused = model.generateContentStream(Collections.singletonList(CONTENT),
+            Collections.singletonMap("label", "value"));
+
+    ArgumentCaptor<GenerateContentRequest> request =
+            ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockServerStreamCallable).call(request.capture());
+    assertThat(request.getValue().getContents(0)).isEqualTo(CONTENT);
+  }
+
+  @Test
   public void generateContentStream_withDefaultGenerationConfig_requestHasCorrectGenerationConfig()
       throws Exception {
     model =
@@ -683,6 +710,19 @@ public final class GenerativeModelTest {
 
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).futureCall(request.capture());
+    assertThat(request.getValue().getContents(0)).isEqualTo(CONTENT);
+  }
+
+  @Test
+  public void generateContentAsync_withContents_requestHasCorrectContentAndLabel() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    ApiFuture<GenerateContentResponse> unused = model.generateContentAsync(Collections.singletonList(CONTENT),
+            Collections.singletonMap("label", "value"));
+
+    ArgumentCaptor<GenerateContentRequest> request =
+            ArgumentCaptor.forClass(GenerateContentRequest.class);
     verify(mockUnaryCallable).futureCall(request.capture());
     assertThat(request.getValue().getContents(0)).isEqualTo(CONTENT);
   }
