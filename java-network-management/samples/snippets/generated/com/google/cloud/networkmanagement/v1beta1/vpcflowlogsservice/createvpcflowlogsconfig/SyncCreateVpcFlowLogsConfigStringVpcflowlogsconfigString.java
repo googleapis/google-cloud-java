@@ -38,7 +38,9 @@ public class SyncCreateVpcFlowLogsConfigStringVpcflowlogsconfigString {
       String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
       String vpcFlowLogsConfigId =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                  "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+              .toString();
       VpcFlowLogsConfig response =
           vpcFlowLogsServiceClient
               .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)

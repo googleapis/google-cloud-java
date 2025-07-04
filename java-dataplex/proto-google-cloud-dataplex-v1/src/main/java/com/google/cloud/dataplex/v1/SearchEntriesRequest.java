@@ -374,6 +374,26 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int SEMANTIC_SEARCH_FIELD_NUMBER = 11;
+  private boolean semanticSearch_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether the search should understand the meaning and
+   * intent behind the query, rather than just matching keywords.
+   * </pre>
+   *
+   * <code>bool semantic_search = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The semanticSearch.
+   */
+  @java.lang.Override
+  public boolean getSemanticSearch() {
+    return semanticSearch_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -406,6 +426,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, scope_);
     }
+    if (semanticSearch_ != false) {
+      output.writeBool(11, semanticSearch_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -433,6 +456,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, scope_);
     }
+    if (semanticSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, semanticSearch_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -455,6 +481,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getScope().equals(other.getScope())) return false;
+    if (getSemanticSearch() != other.getSemanticSearch()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -478,6 +505,8 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + getScope().hashCode();
+    hash = (37 * hash) + SEMANTIC_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSemanticSearch());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -616,6 +645,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       pageToken_ = "";
       orderBy_ = "";
       scope_ = "";
+      semanticSearch_ = false;
       return this;
     }
 
@@ -669,6 +699,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.semanticSearch_ = semanticSearch_;
       }
     }
 
@@ -746,6 +779,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.getSemanticSearch() != false) {
+        setSemanticSearch(other.getSemanticSearch());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -808,6 +844,12 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 88:
+              {
+                semanticSearch_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1510,6 +1552,65 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       scope_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private boolean semanticSearch_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the search should understand the meaning and
+     * intent behind the query, rather than just matching keywords.
+     * </pre>
+     *
+     * <code>bool semantic_search = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The semanticSearch.
+     */
+    @java.lang.Override
+    public boolean getSemanticSearch() {
+      return semanticSearch_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the search should understand the meaning and
+     * intent behind the query, rather than just matching keywords.
+     * </pre>
+     *
+     * <code>bool semantic_search = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The semanticSearch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSemanticSearch(boolean value) {
+
+      semanticSearch_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the search should understand the meaning and
+     * intent behind the query, rather than just matching keywords.
+     * </pre>
+     *
+     * <code>bool semantic_search = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSemanticSearch() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      semanticSearch_ = false;
       onChanged();
       return this;
     }

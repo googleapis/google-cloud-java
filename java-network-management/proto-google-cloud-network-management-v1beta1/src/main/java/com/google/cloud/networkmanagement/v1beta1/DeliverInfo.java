@@ -45,6 +45,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     ipAddress_ = "";
     storageBucket_ = "";
     pscGoogleApiTarget_ = "";
+    googleServiceType_ = 0;
   }
 
   @java.lang.Override
@@ -580,6 +581,255 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.DeliverInfo.Target)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Recognized type of a Google Service.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType}
+   */
+  public enum GoogleServiceType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified Google Service.
+     * </pre>
+     *
+     * <code>GOOGLE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    GOOGLE_SERVICE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Identity aware proxy.
+     * https://cloud.google.com/iap/docs/using-tcp-forwarding
+     * </pre>
+     *
+     * <code>IAP = 1;</code>
+     */
+    IAP(1),
+    /**
+     *
+     *
+     * <pre>
+     * One of two services sharing IP ranges:
+     * * Load Balancer proxy
+     * * Centralized Health Check prober
+     * https://cloud.google.com/load-balancing/docs/firewall-rules
+     * </pre>
+     *
+     * <code>GFE_PROXY_OR_HEALTH_CHECK_PROBER = 2;</code>
+     */
+    GFE_PROXY_OR_HEALTH_CHECK_PROBER(2),
+    /**
+     *
+     *
+     * <pre>
+     * Connectivity from Cloud DNS to forwarding targets or alternate name
+     * servers that use private routing.
+     * https://cloud.google.com/dns/docs/zones/forwarding-zones#firewall-rules
+     * https://cloud.google.com/dns/docs/policies#firewall-rules
+     * </pre>
+     *
+     * <code>CLOUD_DNS = 3;</code>
+     */
+    CLOUD_DNS(3),
+    /**
+     *
+     *
+     * <pre>
+     * private.googleapis.com and restricted.googleapis.com
+     * </pre>
+     *
+     * <code>PRIVATE_GOOGLE_ACCESS = 4;</code>
+     */
+    PRIVATE_GOOGLE_ACCESS(4),
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Serverless VPC Access.
+     * https://cloud.google.com/vpc/docs/serverless-vpc-access
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS = 5;</code>
+     */
+    SERVERLESS_VPC_ACCESS(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified Google Service.
+     * </pre>
+     *
+     * <code>GOOGLE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int GOOGLE_SERVICE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Identity aware proxy.
+     * https://cloud.google.com/iap/docs/using-tcp-forwarding
+     * </pre>
+     *
+     * <code>IAP = 1;</code>
+     */
+    public static final int IAP_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * One of two services sharing IP ranges:
+     * * Load Balancer proxy
+     * * Centralized Health Check prober
+     * https://cloud.google.com/load-balancing/docs/firewall-rules
+     * </pre>
+     *
+     * <code>GFE_PROXY_OR_HEALTH_CHECK_PROBER = 2;</code>
+     */
+    public static final int GFE_PROXY_OR_HEALTH_CHECK_PROBER_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Connectivity from Cloud DNS to forwarding targets or alternate name
+     * servers that use private routing.
+     * https://cloud.google.com/dns/docs/zones/forwarding-zones#firewall-rules
+     * https://cloud.google.com/dns/docs/policies#firewall-rules
+     * </pre>
+     *
+     * <code>CLOUD_DNS = 3;</code>
+     */
+    public static final int CLOUD_DNS_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * private.googleapis.com and restricted.googleapis.com
+     * </pre>
+     *
+     * <code>PRIVATE_GOOGLE_ACCESS = 4;</code>
+     */
+    public static final int PRIVATE_GOOGLE_ACCESS_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Serverless VPC Access.
+     * https://cloud.google.com/vpc/docs/serverless-vpc-access
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS = 5;</code>
+     */
+    public static final int SERVERLESS_VPC_ACCESS_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static GoogleServiceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static GoogleServiceType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return GOOGLE_SERVICE_TYPE_UNSPECIFIED;
+        case 1:
+          return IAP;
+        case 2:
+          return GFE_PROXY_OR_HEALTH_CHECK_PROBER;
+        case 3:
+          return CLOUD_DNS;
+        case 4:
+          return PRIVATE_GOOGLE_ACCESS;
+        case 5:
+          return SERVERLESS_VPC_ACCESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<GoogleServiceType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<GoogleServiceType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<GoogleServiceType>() {
+              public GoogleServiceType findValueByNumber(int number) {
+                return GoogleServiceType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1beta1.DeliverInfo.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final GoogleServiceType[] VALUES = values();
+
+    public static GoogleServiceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private GoogleServiceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType)
+  }
+
   public static final int TARGET_FIELD_NUMBER = 1;
   private int target_ = 0;
 
@@ -833,6 +1083,53 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int GOOGLE_SERVICE_TYPE_FIELD_NUMBER = 6;
+  private int googleServiceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Recognized type of a Google Service the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for googleServiceType.
+   */
+  @java.lang.Override
+  public int getGoogleServiceTypeValue() {
+    return googleServiceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Recognized type of a Google Service the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+   * </code>
+   *
+   * @return The googleServiceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType
+      getGoogleServiceType() {
+    com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType result =
+        com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType.forNumber(
+            googleServiceType_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -864,6 +1161,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pscGoogleApiTarget_);
     }
+    if (googleServiceType_
+        != com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType
+            .GOOGLE_SERVICE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, googleServiceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -890,6 +1193,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pscGoogleApiTarget_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, pscGoogleApiTarget_);
     }
+    if (googleServiceType_
+        != com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType
+            .GOOGLE_SERVICE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, googleServiceType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -911,6 +1220,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (!getStorageBucket().equals(other.getStorageBucket())) return false;
     if (!getPscGoogleApiTarget().equals(other.getPscGoogleApiTarget())) return false;
+    if (googleServiceType_ != other.googleServiceType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -932,6 +1242,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStorageBucket().hashCode();
     hash = (37 * hash) + PSC_GOOGLE_API_TARGET_FIELD_NUMBER;
     hash = (53 * hash) + getPscGoogleApiTarget().hashCode();
+    hash = (37 * hash) + GOOGLE_SERVICE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + googleServiceType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1078,6 +1390,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       ipAddress_ = "";
       storageBucket_ = "";
       pscGoogleApiTarget_ = "";
+      googleServiceType_ = 0;
       return this;
     }
 
@@ -1128,6 +1441,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.pscGoogleApiTarget_ = pscGoogleApiTarget_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.googleServiceType_ = googleServiceType_;
       }
     }
 
@@ -1200,6 +1516,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.googleServiceType_ != 0) {
+        setGoogleServiceTypeValue(other.getGoogleServiceTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1256,6 +1575,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                googleServiceType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1817,6 +2142,121 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       pscGoogleApiTarget_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int googleServiceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Recognized type of a Google Service the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for googleServiceType.
+     */
+    @java.lang.Override
+    public int getGoogleServiceTypeValue() {
+      return googleServiceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Recognized type of a Google Service the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for googleServiceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleServiceTypeValue(int value) {
+      googleServiceType_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Recognized type of a Google Service the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+     * </code>
+     *
+     * @return The googleServiceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType
+        getGoogleServiceType() {
+      com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType result =
+          com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType.forNumber(
+              googleServiceType_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Recognized type of a Google Service the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+     * </code>
+     *
+     * @param value The googleServiceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleServiceType(
+        com.google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      googleServiceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Recognized type of a Google Service the packet is delivered to (if
+     * applicable).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DeliverInfo.GoogleServiceType google_service_type = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGoogleServiceType() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      googleServiceType_ = 0;
       onChanged();
       return this;
     }
