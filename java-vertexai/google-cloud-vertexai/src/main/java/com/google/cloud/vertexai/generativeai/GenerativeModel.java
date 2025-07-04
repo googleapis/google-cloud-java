@@ -466,13 +466,14 @@ public final class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
-   *               call in the format of key-value pairs.
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API call
+   *     in the format of key-value pairs.
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  public GenerateContentResponse generateContent(List<Content> contents, Map<String, String> labels) throws IOException {
+  public GenerateContentResponse generateContent(List<Content> contents, Map<String, String> labels)
+      throws IOException {
     return generateContent(buildGenerateContentRequest(contents, labels));
   }
 
@@ -531,19 +532,19 @@ public final class GenerativeModel {
   }
 
   /**
-   * Generates content with streaming support from generative model given a list of contents
-   * and labels metadata.
+   * Generates content with streaming support from generative model given a list of contents and
+   * labels metadata.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
-   *               call in the format of key-value pairs.
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API call
+   *     in the format of key-value pairs.
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
-  public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents, Map<String, String> labels)
-          throws IOException {
+  public ResponseStream<GenerateContentResponse> generateContentStream(
+      List<Content> contents, Map<String, String> labels) throws IOException {
     return generateContentStream(buildGenerateContentRequest(contents, labels));
   }
 
@@ -611,14 +612,14 @@ public final class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API
-   *               call in the format of key-value pairs.
+   * @param labels a map {@link java.util.Map} containing Metadata that you can add to the API call
+   *     in the format of key-value pairs.
    * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
    *     generateContent request
    * @throws IOException if an I/O error occurs while making the API call
    */
-  public ApiFuture<GenerateContentResponse> generateContentAsync(List<Content> contents, Map<String, String> labels)
-          throws IOException {
+  public ApiFuture<GenerateContentResponse> generateContentAsync(
+      List<Content> contents, Map<String, String> labels) throws IOException {
     return generateContentAsync(buildGenerateContentRequest(contents, labels));
   }
 
@@ -649,7 +650,8 @@ public final class GenerativeModel {
    * Builds a {@link com.google.cloud.vertexai.api.GenerateContentRequest} based on a list of
    * contents and model configurations.
    */
-  private GenerateContentRequest buildGenerateContentRequest(List<Content> contents, Map<String, String> labels) {
+  private GenerateContentRequest buildGenerateContentRequest(
+      List<Content> contents, Map<String, String> labels) {
     checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder()
