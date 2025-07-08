@@ -1254,7 +1254,8 @@ class ConnectionWorker implements AutoCloseable {
         || statusCode == Code.UNAVAILABLE
         || statusCode == Code.CANCELLED
         || statusCode == Code.INTERNAL
-        || statusCode == Code.DEADLINE_EXCEEDED;
+        || statusCode == Code.DEADLINE_EXCEEDED
+        || statusCode == Code.UNKNOWN;
   }
 
   private boolean useBackoffForError(Code statusCode, String streamName) {
