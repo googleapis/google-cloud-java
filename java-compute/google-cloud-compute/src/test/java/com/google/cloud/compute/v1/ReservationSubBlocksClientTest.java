@@ -27,11 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonReservationSubBlocksStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -177,6 +180,83 @@ public class ReservationSubBlocksClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void performMaintenanceTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String parentName = "parentName-6933";
+    String reservationSubBlock = "reservationSubBlock-8367";
+
+    Operation actualResponse =
+        client.performMaintenanceAsync(project, zone, parentName, reservationSubBlock).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void performMaintenanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String parentName = "parentName-6933";
+      String reservationSubBlock = "reservationSubBlock-8367";
+      client.performMaintenanceAsync(project, zone, parentName, reservationSubBlock).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 }

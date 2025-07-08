@@ -19,9 +19,12 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ReservationSubBlocksClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
 import javax.annotation.Generated;
@@ -47,6 +50,17 @@ public abstract class ReservationSubBlocksStub implements BackgroundResource {
   public UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
   }
 
   @Override
