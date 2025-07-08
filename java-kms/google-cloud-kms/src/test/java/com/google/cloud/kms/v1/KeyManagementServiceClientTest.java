@@ -478,7 +478,7 @@ public class KeyManagementServiceClientTest {
     KeyRing actualResponse = client.getKeyRing(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    List<? extends Object> actualRequests = mockKeyManagementService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetKeyRingRequest actualRequest = ((GetKeyRingRequest) actualRequests.get(0));
 
@@ -517,7 +517,7 @@ public class KeyManagementServiceClientTest {
     KeyRing actualResponse = client.getKeyRing(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    List<? extends Object> actualRequests = mockKeyManagementService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetKeyRingRequest actualRequest = ((GetKeyRingRequest) actualRequests.get(0));
 

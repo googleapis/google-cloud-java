@@ -49,7 +49,7 @@ import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequestProto;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
@@ -142,11 +142,11 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(ListImportJobsResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<GetKeyRingRequest, KeyRing> getKeyRingMethodDescriptor =
-      MethodDescriptor.<GetKeyRingRequest, KeyRing>newBuilder()
+  private static final MethodDescriptor<GetKeyRingRequestProto, KeyRing> getKeyRingMethodDescriptor =
+      MethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRingRequest.getDefaultInstance()))
+          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRingRequestProto.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(KeyRing.getDefaultInstance()))
           .build();
 
@@ -431,7 +431,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable;
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
       listImportJobsPagedCallable;
-  private final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable;
+  private final UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable;
   private final UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable;
   private final UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionCallable;
@@ -561,8 +561,8 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .build();
-    GrpcCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
-        GrpcCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
+    GrpcCallSettings<GetKeyRingRequestProto, KeyRing> getKeyRingTransportSettings =
+        GrpcCallSettings.<GetKeyRingRequestProto, KeyRing>newBuilder()
             .setMethodDescriptor(getKeyRingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
@@ -1057,7 +1057,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
-  public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+  public UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable() {
     return getKeyRingCallable;
   }
 

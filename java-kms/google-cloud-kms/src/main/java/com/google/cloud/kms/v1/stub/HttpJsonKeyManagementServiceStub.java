@@ -54,7 +54,7 @@ import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequestProto;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
@@ -265,18 +265,18 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<GetKeyRingRequest, KeyRing> getKeyRingMethodDescriptor =
-      ApiMethodDescriptor.<GetKeyRingRequest, KeyRing>newBuilder()
+  private static final ApiMethodDescriptor<GetKeyRingRequestProto, KeyRing> getKeyRingMethodDescriptor =
+      ApiMethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
           .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
           .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
-              ProtoMessageRequestFormatter.<GetKeyRingRequest>newBuilder()
+              ProtoMessageRequestFormatter.<GetKeyRingRequestProto>newBuilder()
                   .setPath(
                       "/v1/{name=projects/*/locations/*/keyRings/*}",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
-                        ProtoRestSerializer<GetKeyRingRequest> serializer =
+                        ProtoRestSerializer<GetKeyRingRequestProto> serializer =
                             ProtoRestSerializer.create();
                         serializer.putPathParam(fields, "name", request.getName());
                         return fields;
@@ -284,7 +284,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
-                        ProtoRestSerializer<GetKeyRingRequest> serializer =
+                        ProtoRestSerializer<GetKeyRingRequestProto> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
@@ -1359,7 +1359,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable;
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
       listImportJobsPagedCallable;
-  private final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable;
+  private final UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable;
   private final UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable;
   private final UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionCallable;
@@ -1493,8 +1493,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
-        HttpJsonCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
+    HttpJsonCallSettings<GetKeyRingRequestProto, KeyRing> getKeyRingTransportSettings =
+        HttpJsonCallSettings.<GetKeyRingRequestProto, KeyRing>newBuilder()
             .setMethodDescriptor(getKeyRingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
@@ -2055,7 +2055,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
-  public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+  public UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable() {
     return getKeyRingCallable;
   }
 
