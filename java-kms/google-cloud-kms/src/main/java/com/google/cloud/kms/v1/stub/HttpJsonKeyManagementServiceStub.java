@@ -265,38 +265,39 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<GetKeyRingRequestProto, KeyRing> getKeyRingMethodDescriptor =
-      ApiMethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
-          .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
-          .setHttpMethod("GET")
-          .setType(ApiMethodDescriptor.MethodType.UNARY)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<GetKeyRingRequestProto>newBuilder()
-                  .setPath(
-                      "/v1/{name=projects/*/locations/*/keyRings/*}",
-                      request -> {
-                        Map<String, String> fields = new HashMap<>();
-                        ProtoRestSerializer<GetKeyRingRequestProto> serializer =
-                            ProtoRestSerializer.create();
-                        serializer.putPathParam(fields, "name", request.getName());
-                        return fields;
-                      })
-                  .setQueryParamsExtractor(
-                      request -> {
-                        Map<String, List<String>> fields = new HashMap<>();
-                        ProtoRestSerializer<GetKeyRingRequestProto> serializer =
-                            ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                        return fields;
-                      })
-                  .setRequestBodyExtractor(request -> null)
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<KeyRing>newBuilder()
-                  .setDefaultInstance(KeyRing.getDefaultInstance())
-                  .setDefaultTypeRegistry(typeRegistry)
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<GetKeyRingRequestProto, KeyRing>
+      getKeyRingMethodDescriptor =
+          ApiMethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetKeyRingRequestProto>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetKeyRingRequestProto> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetKeyRingRequestProto> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<KeyRing>newBuilder()
+                      .setDefaultInstance(KeyRing.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<GetCryptoKeyRequest, CryptoKey>
       getCryptoKeyMethodDescriptor =

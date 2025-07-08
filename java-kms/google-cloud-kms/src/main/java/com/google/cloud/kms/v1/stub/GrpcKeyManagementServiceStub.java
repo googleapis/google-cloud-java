@@ -142,13 +142,15 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(ListImportJobsResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<GetKeyRingRequestProto, KeyRing> getKeyRingMethodDescriptor =
-      MethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRingRequestProto.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(KeyRing.getDefaultInstance()))
-          .build();
+  private static final MethodDescriptor<GetKeyRingRequestProto, KeyRing>
+      getKeyRingMethodDescriptor =
+          MethodDescriptor.<GetKeyRingRequestProto, KeyRing>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetKeyRing")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetKeyRingRequestProto.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KeyRing.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<GetCryptoKeyRequest, CryptoKey>
       getCryptoKeyMethodDescriptor =

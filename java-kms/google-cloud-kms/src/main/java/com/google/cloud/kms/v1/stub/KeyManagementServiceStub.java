@@ -61,7 +61,6 @@ import com.google.cloud.kms.v1.MacSignRequest;
 import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
-import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RawDecryptRequest;
 import com.google.cloud.kms.v1.RawDecryptResponse;
 import com.google.cloud.kms.v1.RawEncryptRequest;
@@ -139,7 +138,8 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCryptoKeyVersionCallable()");
   }
 
-  public UnaryCallable<GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey> getPublicKeyCallable() {
+  public UnaryCallable<GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
+      getPublicKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublicKeyCallable()");
   }
 
