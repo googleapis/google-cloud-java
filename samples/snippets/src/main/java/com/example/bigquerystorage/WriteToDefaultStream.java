@@ -185,7 +185,7 @@ public class WriteToDefaultStream {
                   .setChannelsPerCpu(2)
                   .build())
           .setEnableConnectionPool(true)
-          // This will allow connection pool to scale up better. 
+          // This will allow connection pool to scale up better.
           .setFlowControlSettings(
               FlowControlSettings.newBuilder().setMaxOutstandingElementCount(100L).build())
           // If value is missing in json and there is a default value configured on bigquery
