@@ -1,187 +1,174 @@
-# Copyright 2022 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# GitHub action job to test core java library features on
-# downstream client libraries before they are released.
-on:
+'on':
   push:
     branches:
-    - main
-  pull_request:
+      - 1.61.x
+  pull_request: null
 name: generation diff
 env:
-  library_generation_image_tag: 2.60.0
+  library_generation_image_tag: 2.60.1
 jobs:
   root-pom:
-    # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Generate root pom.xml file
-      shell: bash
-      run: |
-        docker run \
-          --rm \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):/workspace" \
-          --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          /src/library_generation/cli/generate_monorepo_root_pom.py \
-          generate \
-          --repository-path=/workspace
-    - name: Fail if there's any difference
-      run: git --no-pager diff --exit-code
-
+      - uses: actions/checkout@v4
+      - name: Generate root pom.xml file
+        shell: bash
+        run: |
+          docker run \
+            --rm \
+            --quiet \
+            -u "$(id -u):$(id -g)" \
+            -v "$(pwd):/workspace" \
+            --entrypoint python \
+            gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+            /src/library_generation/cli/generate_monorepo_root_pom.py \
+            generate \
+            --repository-path=/workspace
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
   gapic-bom:
-    # gapic-libraries-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Generate gapic-libraries-bom/pom.xml
-      shell: bash
-      run: |
-        docker run \
-          --rm \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):/workspace" \
-          --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          /src/library_generation/cli/generate_monorepo_gapic_bom.py \
-          generate \
-          --repository-path=/workspace \
-          --versions-file=/workspace/versions.txt
-    - name: Fail if there's any difference
-      run: git --no-pager diff --exit-code
-
+      - uses: actions/checkout@v4
+      - name: Generate gapic-libraries-bom/pom.xml
+        shell: bash
+        run: |
+          docker run \
+            --rm \
+            --quiet \
+            -u "$(id -u):$(id -g)" \
+            -v "$(pwd):/workspace" \
+            --entrypoint python \
+            gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+            /src/library_generation/cli/generate_monorepo_gapic_bom.py \
+            generate \
+            --repository-path=/workspace \
+            --versions-file=/workspace/versions.txt
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
   owlbot-py:
-    # applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
-      - name: Fail if there's any difference (To fix, run generation/update_owlbot_postprocessor_config.sh)
+      - name: >-
+          Fail if there's any difference (To fix, run
+          generation/update_owlbot_postprocessor_config.sh)
         run: git --no-pager diff --exit-code
-
   owlbot-yaml:
-    # Each module's .Owlbot-hermetic.yaml config is configured according to set_owlbot_config.sh
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Check if .Owlbot-hermetic.yaml files are correctly configured
         run: |
           bash generation/set_owlbot_config.sh
-      - name: Fail if there's any difference (To fix, run generation/set_owlbot_config.sh)
+      - name: >-
+          Fail if there's any difference (To fix, run
+          generation/set_owlbot_config.sh)
         run: git --no-pager diff --exit-code
-
   gitignore_correctness:
-    # Generated files should not match .gitignore
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: checking any files matching gitignore
-      # By default, GitHub Actions's bash has '-e' option to fail immediately
-      # upon non-zero exit code. Not using it here to catch the exit code 1.
-      shell: /usr/bin/bash --noprofile --norc -o pipefail {0}
-      run: |
-        find . -type f -name '*.java' -not -path './.git/*' \
-            |git check-ignore --no-index --verbose --stdin
-        # https://git-scm.com/docs/git-check-ignore returns 1 when there's no
-        # matching files with the gitignore file.
-        # "--no-index" is needed to check against tracked files.
-        if [ "$?" == 1 ]; then
-          echo "No matching files. Good."
-          exit 0
-        else
-          echo "There are gitignore matching files. Please adjust .gitignore."
-          exit 1
-        fi
-
+      - uses: actions/checkout@v4
+      - name: checking any files matching gitignore
+        shell: /usr/bin/bash --noprofile --norc -o pipefail {0}
+        run: |
+          find . -type f -name '*.java' -not -path './.git/*' \
+              |git check-ignore --no-index --verbose --stdin
+          # https://git-scm.com/docs/git-check-ignore returns 1 when there's no
+          # matching files with the gitignore file.
+          # "--no-index" is needed to check against tracked files.
+          if [ "$?" == 1 ]; then
+            echo "No matching files. Good."
+            exit 0
+          else
+            echo "There are gitignore matching files. Please adjust .gitignore."
+            exit 1
+          fi
   generate-readme:
-    # Ensure generate-readme.py runs fine
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      # These parameters should match ones in readme.yaml
-      with:
-        python-version: '3.11'
-        architecture: 'x64'
-    - run: python3 -m pip install --require-hashes -r .github/requirements.txt
-    - run: python3 generate-readme.py
-
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - run: python3 -m pip install --require-hashes -r .github/requirements.txt
+      - run: python3 generate-readme.py
   group_id_check_for_maps_libraries:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Install Maps modules
-      run: |
-        IncludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
-            |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
-        echo "Included modules: ${IncludedNonCloudModules}"
-        mvn -B -V -ntp install --also-make --projects "${IncludedNonCloudModules}" \
-            -DskipTests -Dclirr.skip
+      - uses: actions/checkout@v4
+      - name: Install Maps modules
+        run: >
+          IncludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
+              |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
+          echo "Included modules: ${IncludedNonCloudModules}"
 
-    - name: Ensure Maps libraries have com.google.maps group IDs
-      run: |
-        for POM in $(find java-maps-* -name 'pom.xml'); do
-          group_id=$(mvn -q exec:exec -Dexec.executable=echo -Dexec.args='${project.groupId}' \
-              --projects $POM  2>/dev/null )
-          echo "${group_id}" |grep -q com.google.maps
-          # 0 if match; otherwise 1
-          match=$?
-          if [ "${match}" == "1" ]; then
-            echo "Unexpected group ID '${group_id}' found in ${POM}"
-            exit 1
-          fi
-          echo "Passed ${POM}"
-        done
-        echo "All group IDs start with com.google.maps. Good."
-
+          mvn -B -V -ntp install --also-make --projects
+          "${IncludedNonCloudModules}" \
+              -DskipTests -Dclirr.skip
+      - name: Ensure Maps libraries have com.google.maps group IDs
+        run: |
+          for POM in $(find java-maps-* -name 'pom.xml'); do
+            group_id=$(mvn -q exec:exec -Dexec.executable=echo -Dexec.args='${project.groupId}' \
+                --projects $POM  2>/dev/null )
+            echo "${group_id}" |grep -q com.google.maps
+            # 0 if match; otherwise 1
+            match=$?
+            if [ "${match}" == "1" ]; then
+              echo "Unexpected group ID '${group_id}' found in ${POM}"
+              exit 1
+            fi
+            echo "Passed ${POM}"
+          done
+          echo "All group IDs start with com.google.maps. Good."
   package_name_check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Ensure no new invalid package name in Java files
-      shell: bash
-      run: |
-        # grep returns "1" (error) when no output
-        set +e
-        echo "Finding files matching '*main/java/google/*.java'"
-        # In past, we published Java classes with wrong package names (google.)
-        # due to improper java_package field in proto files (https://protobuf.dev/programming-guides/proto3/#options).
-        # This check excludes these existing files.
-        
-        # java/com/google : This is the standard package
-        # samples         : Samples are not shipped as a library
-        # grafeas         : java-grafeas is known to have special package name
-        # cloud-build v2  : java_package was not configured when we published
-        #                   the Cloud Build V2 client library
-        # the rest        : the same as above
-        invalid_files=$(find . -name '*.java' \
-            |grep --invert-match 'java/com/google' \
-            |grep --invert-match samples \
-            |grep --invert-match grafeas \
-            |grep --invert-match 'cloud-build.*v2' \
-            |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
-            |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')
-        if [ -n "${invalid_files}" ]; then
-          echo "New invalid package name found. Check the files: ${invalid_files}"
-          exit 1
-        fi
-        echo "No new invalid package names in Java files"
-        
+      - uses: actions/checkout@v4
+      - name: Ensure no new invalid package name in Java files
+        shell: bash
+        run: >
+          # grep returns "1" (error) when no output
 
+          set +e
+
+          echo "Finding files matching '*main/java/google/*.java'"
+
+          # In past, we published Java classes with wrong package names
+          (google.)
+
+          # due to improper java_package field in proto files
+          (https://protobuf.dev/programming-guides/proto3/#options).
+
+          # This check excludes these existing files.
+
+
+          # java/com/google : This is the standard package
+
+          # samples         : Samples are not shipped as a library
+
+          # grafeas         : java-grafeas is known to have special package name
+
+          # cloud-build v2  : java_package was not configured when we published
+
+          #                   the Cloud Build V2 client library
+
+          # the rest        : the same as above
+
+          invalid_files=$(find . -name '*.java' \
+              |grep --invert-match 'java/com/google' \
+              |grep --invert-match samples \
+              |grep --invert-match grafeas \
+              |grep --invert-match 'cloud-build.*v2' \
+              |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
+              |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')
+          if [ -n "${invalid_files}" ]; then
+            echo "New invalid package name found. Check the files: ${invalid_files}"
+            exit 1
+          fi
+
+          echo "No new invalid package names in Java files"

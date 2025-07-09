@@ -1,23 +1,8 @@
-# Copyright 2022 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# Github action job to test core java library features on
-# downstream client libraries before they are released.
-on:
+'on':
   push:
     branches:
-    - main
-  pull_request:
+      - 1.61.x
+  pull_request: null
 name: ci
 jobs:
   units:
@@ -25,134 +10,115 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17, 21, 24]
+        java:
+          - 8
+          - 11
+          - 17
+          - 21
+          - 24
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: ${{matrix.java}}
-    - run: java -version
-    - uses: actions/cache@v4
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: test
-        JOB_NAME: units-${{matrix.java}}
+      - name: Get current week within the year
+        id: date
+        run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{matrix.java}}
+      - run: java -version
+      - uses: actions/cache@v4
+        id: mvn-cache
+        with:
+          path: ~/.m2/repository
+          key: >-
+            ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year
+            }}
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: test
+          JOB_NAME: units-${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
-    - name: Support longpaths
-      run: git config --system core.longpaths true
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 11
-        cache: 'maven'
-    - run: java -version
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: test
-        JOB_NAME: windows-units
+      - name: Support longpaths
+        run: git config --system core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 11
+          cache: maven
+      - run: java -version
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: test
+          JOB_NAME: windows-units
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 17
-    - run: java -version
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: lint
-        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - run: java -version
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: lint
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 11
-        cache: maven
-    - run: java -version
-    - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
-    - run: java -version
-    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+      - name: Get current week within the year
+        id: date
+        run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 11
+          cache: maven
+      - run: java -version
+      - name: Install Maven modules to local Maven repository
+        run: |
+          mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+      - run: java -version
+      - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        java-version: 11
-        distribution: temurin
-        cache: maven
-    - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
-    - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.54.0
-      with:
-        bom-path: gapic-libraries-bom/pom.xml
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: maven
+      - name: Install Maven modules to local Maven repository
+        run: >
+          mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+          -Denforcer.skip
+      - name: Validate gapic-libraries-bom
+        uses: googleapis/java-cloud-bom/tests/validate-bom@v26.54.0
+        with:
+          bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: validate generation configuration
-      shell: bash
-      run: |
-        docker run \
-          --rm \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):${workspace_name}" \
-          --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          /src/library_generation/cli/entry_point.py validate-generation-config
-      env:
-        library_generation_image_tag: 2.60.0
-        workspace_name: /workspace
-
-# TODO: Uncomment the needed Github Actions
-#  dependencies:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        java: [8, 11, 17]
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: ${{matrix.java}}
-#    - run: java -version
-#    - run: .kokoro/dependencies.sh
-#  clirr:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: 8
-#    - run: java -version
-#    - run: .kokoro/build.sh
-#      env:
-#        JOB_TYPE: clirr
+      - uses: actions/checkout@v4
+      - name: validate generation configuration
+        shell: bash
+        run: |
+          docker run \
+            --rm \
+            --quiet \
+            -u "$(id -u):$(id -g)" \
+            -v "$(pwd):${workspace_name}" \
+            --entrypoint python \
+            gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+            /src/library_generation/cli/entry_point.py validate-generation-config
+        env:
+          library_generation_image_tag: 2.60.1
+          workspace_name: /workspace
