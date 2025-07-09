@@ -149,6 +149,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void listVpcFlowLogsConfigsTest2() throws Exception {
     VpcFlowLogsConfig responsesElement = VpcFlowLogsConfig.newBuilder().build();
@@ -495,6 +496,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void createVpcFlowLogsConfigTest3() throws Exception {
     VpcFlowLogsConfig expectedResponse =
@@ -563,6 +565,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void createVpcFlowLogsConfigTest4() throws Exception {
     VpcFlowLogsConfig expectedResponse =
