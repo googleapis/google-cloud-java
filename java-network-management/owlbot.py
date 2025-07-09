@@ -101,6 +101,21 @@ for library in s.get_staging_dirs():
         r'\s+@Test\n\s+public void testIamPermissionsTest\(\) throws Exception.*',
         '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void testIamPermissionsTest() throws Exception {'
     )
+    s.replace(
+            v1beta1_vpcflowlogs_file_name,
+            r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest3\(\) throws Exception.*',
+            '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest3() throws Exception {'
+    )
+    s.replace(
+             v1beta1_vpcflowlogs_file_name,
+             r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest4\(\) throws Exception.*',
+             '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest4() throws Exception {'
+    )
+    s.replace(
+             v1beta1_vpcflowlogs_file_name,
+             r'\s+@Test\n\s+public void listVpcFlowLogsConfigsTest2\(\) throws Exception.*',
+             '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest2() throws Exception {'
+    )
     s.move(library)
 
 s.remove_staging_dirs()
