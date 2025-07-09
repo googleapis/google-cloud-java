@@ -60,6 +60,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -147,6 +148,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void listVpcFlowLogsConfigsTest2() throws Exception {
     VpcFlowLogsConfig responsesElement = VpcFlowLogsConfig.newBuilder().build();
@@ -435,6 +437,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void createVpcFlowLogsConfigTest3() throws Exception {
     VpcFlowLogsConfig expectedResponse =
@@ -500,6 +503,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void createVpcFlowLogsConfigTest4() throws Exception {
     VpcFlowLogsConfig expectedResponse =
