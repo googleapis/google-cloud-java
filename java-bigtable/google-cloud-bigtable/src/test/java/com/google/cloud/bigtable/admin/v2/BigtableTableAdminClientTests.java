@@ -35,6 +35,7 @@ import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
+import com.google.bigtable.admin.v2.CreateSchemaBundleMetadata;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -46,10 +47,12 @@ import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.RestoreSourceType;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.SchemaBundleName;
 import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleMetadata;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
@@ -58,6 +61,8 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAutho
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
@@ -67,16 +72,19 @@ import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
+import com.google.cloud.bigtable.admin.v2.models.SchemaBundle;
 import com.google.cloud.bigtable.admin.v2.models.SubsetView;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.Type;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -90,6 +98,11 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
 import io.grpc.Status;
 import io.grpc.Status.Code;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -122,6 +135,11 @@ public class BigtableTableAdminClientTests {
   private static final String CLUSTER_ID = "my-cluster";
   private static final String BACKUP_ID = "my-backup";
   private static final String AUTHORIZED_VIEW_ID = "my-authorized-view";
+  private static final String SCHEMA_BUNDLE_ID = "my-schema-bundle";
+  // Location: `google-cloud-bigtable/src/test/resources/proto_schema_bundle.pb`
+  private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
+  // Location: `google-cloud-bigtable/src/test/resources/updated_proto_schema_bundle.pb`
+  private static final String TEST_UPDATED_PROTO_SCHEMA_BUNDLE = "updated_proto_schema_bundle.pb";
 
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
   private static final String TABLE_NAME =
@@ -224,6 +242,35 @@ public class BigtableTableAdminClientTests {
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, Empty>
       mockDeleteAuthorizedViewCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.CreateSchemaBundleRequest,
+          com.google.bigtable.admin.v2.SchemaBundle,
+          CreateSchemaBundleMetadata>
+      mockCreateSchemaBundleOperationCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.UpdateSchemaBundleRequest,
+          com.google.bigtable.admin.v2.SchemaBundle,
+          UpdateSchemaBundleMetadata>
+      mockUpdateSchemaBundleOperationCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.GetSchemaBundleRequest,
+          com.google.bigtable.admin.v2.SchemaBundle>
+      mockGetSchemaBundleCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
+      mockListSchemaBundlesCallable;
+
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.DeleteSchemaBundleRequest, Empty>
+      mockDeleteSchemaBundleCallable;
 
   @Mock
   private UnaryCallable<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
@@ -1292,6 +1339,218 @@ public class BigtableTableAdminClientTests {
   }
 
   @Test
+  public void testCreateSchemaBundle() throws IOException, URISyntaxException {
+    // Setup
+    Mockito.when(mockStub.createSchemaBundleOperationCallable())
+        .thenReturn(mockCreateSchemaBundleOperationCallable);
+    byte[] content = Files.readAllBytes(Paths.get(getResourceFilePath(TEST_PROTO_SCHEMA_BUNDLE)));
+
+    com.google.bigtable.admin.v2.CreateSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setSchemaBundleId(SCHEMA_BUNDLE_ID)
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setProtoSchema(
+                        com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                            .setProtoDescriptors(ByteString.copyFrom(content))))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setProtoSchema(
+                com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                    .setProtoDescriptors(ByteString.copyFrom(content)))
+            .build();
+
+    mockOperationResult(
+        mockCreateSchemaBundleOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        CreateSchemaBundleMetadata.newBuilder()
+            .setName(expectedRequest.getSchemaBundle().getName())
+            .build());
+
+    CreateSchemaBundleRequest req =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setProtoSchemaFile(getResourceFilePath(TEST_PROTO_SCHEMA_BUNDLE));
+
+    // Execute
+    SchemaBundle actualResult = adminClient.createSchemaBundle(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testUpdateSchemaBundle() throws IOException, URISyntaxException {
+    // Setup
+    Mockito.when(mockStub.updateSchemaBundleOperationCallable())
+        .thenReturn(mockUpdateSchemaBundleOperationCallable);
+    byte[] content =
+        Files.readAllBytes(Paths.get(getResourceFilePath(TEST_UPDATED_PROTO_SCHEMA_BUNDLE)));
+
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setName(
+                        NameUtil.formatSchemaBundleName(
+                            PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+                    .setProtoSchema(
+                        com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                            .setProtoDescriptors(ByteString.copyFrom(content)))
+                    .build())
+            .setUpdateMask(FieldMask.newBuilder().addPaths("proto_schema"))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setProtoSchema(
+                com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                    .setProtoDescriptors(ByteString.copyFrom(content)))
+            .build();
+
+    mockOperationResult(
+        mockUpdateSchemaBundleOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        UpdateSchemaBundleMetadata.newBuilder()
+            .setName(expectedRequest.getSchemaBundle().getName())
+            .build());
+
+    UpdateSchemaBundleRequest req =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setProtoSchemaFile(getResourceFilePath(TEST_UPDATED_PROTO_SCHEMA_BUNDLE));
+
+    // Execute
+    SchemaBundle actualResult = adminClient.updateSchemaBundle(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetSchemaBundle() {
+    // Setup
+    Mockito.when(mockStub.getSchemaBundleCallable()).thenReturn(mockGetSchemaBundleCallable);
+
+    com.google.bigtable.admin.v2.GetSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setProtoSchema(
+                com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                    .setProtoDescriptors(ByteString.copyFromUtf8("schema")))
+            .build();
+
+    Mockito.when(mockGetSchemaBundleCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    SchemaBundle actualResult = adminClient.getSchemaBundle(TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testListSchemaBundles() {
+    // Setup
+    Mockito.when(mockStub.listSchemaBundlesPagedCallable())
+        .thenReturn(mockListSchemaBundlesCallable);
+
+    com.google.bigtable.admin.v2.ListSchemaBundlesRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListSchemaBundlesRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .build();
+
+    // 3 SchemaBundles spread across 2 pages
+    List<com.google.bigtable.admin.v2.SchemaBundle> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+              .setName(
+                  NameUtil.formatSchemaBundleName(
+                      PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID + i))
+              .build());
+    }
+
+    // 2 on the first page
+    ListSchemaBundlesPage page0 = Mockito.mock(ListSchemaBundlesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
+
+    // 1 on the last page
+    ListSchemaBundlesPage page1 = Mockito.mock(ListSchemaBundlesPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
+
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(ApiFutures.immediateFuture(page1));
+
+    // Link page to the response
+    ListSchemaBundlesPagedResponse response0 = Mockito.mock(ListSchemaBundlesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListSchemaBundlesCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(response0));
+
+    // Execute
+    List<String> actualResults = adminClient.listSchemaBundles(TABLE_ID);
+
+    // Verify
+    List<String> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.SchemaBundle expectedProto : expectedProtos) {
+      expectedResults.add(SchemaBundleName.parse(expectedProto.getName()).getSchemaBundle());
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testDeleteSchemaBundle() {
+    // Setup
+    Mockito.when(mockStub.deleteSchemaBundleCallable()).thenReturn(mockDeleteSchemaBundleCallable);
+
+    com.google.bigtable.admin.v2.DeleteSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.DeleteSchemaBundleRequest.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .build();
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDeleteSchemaBundleCallable.futureCall(expectedRequest))
+        .thenAnswer(
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+                });
+
+    // Execute
+    adminClient.deleteSchemaBundle(TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
   public void testGetBackupIamPolicy() {
     // Setup
     Mockito.when(mockStub.getIamPolicyCallable()).thenReturn(mockGetIamPolicyCallable);
@@ -1414,5 +1673,11 @@ public class BigtableTableAdminClientTests {
     OperationFuture<RespT, MetaT> operationFuture =
         OperationFutures.immediateOperationFuture(operationSnapshot);
     Mockito.when(callable.futureCall(request)).thenReturn(operationFuture);
+  }
+
+  private String getResourceFilePath(String filePath) throws URISyntaxException {
+    ClassLoader cl = Thread.currentThread().getContextClassLoader();
+    URL protoSchema = cl.getResource(filePath);
+    return Paths.get(protoSchema.toURI()).toAbsolutePath().toString();
   }
 }

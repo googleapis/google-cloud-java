@@ -61,6 +61,17 @@ public class NameUtilTest {
   }
 
   @Test
+  public void formatSchemabundleNameTest() {
+    String testSchemaBundleName =
+        "projects/my-project/instances/my-instance/tables/my-table/schemaBundles/my-schema-bundle";
+
+    assertThat(
+            NameUtil.formatSchemaBundleName(
+                "my-project", "my-instance", "my-table", "my-schema-bundle"))
+        .isEqualTo(testSchemaBundleName);
+  }
+
+  @Test
   public void formatMaterializedViewNameTest() {
     String testMaterializedViewName =
         "projects/my-project/instances/my-instance/materializedViews/my-materialized-view";
@@ -90,6 +101,18 @@ public class NameUtilTest {
 
     exception.expect(IllegalArgumentException.class);
     NameUtil.extractAuthorizedViewIdFromAuthorizedViewName("bad-format");
+  }
+
+  @Test
+  public void extractSchemaBundleIdFromSchemaBundleNameTest() {
+    String testSchemaBundleName =
+        "projects/my-project/instances/my-instance/tables/my-table/schemaBundles/my-schema-bundle";
+
+    assertThat(NameUtil.extractSchemaBundleIdFromSchemaBundleName(testSchemaBundleName))
+        .isEqualTo("my-schema-bundle");
+
+    exception.expect(IllegalArgumentException.class);
+    NameUtil.extractSchemaBundleIdFromSchemaBundleName("bad-format");
   }
 
   @Test

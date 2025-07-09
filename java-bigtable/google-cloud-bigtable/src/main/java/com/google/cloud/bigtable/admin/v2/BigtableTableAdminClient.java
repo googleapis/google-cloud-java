@@ -24,13 +24,16 @@ import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
+import com.google.bigtable.admin.v2.DeleteSchemaBundleRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
+import com.google.bigtable.admin.v2.GetSchemaBundleRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.Table.ClusterState;
@@ -41,6 +44,8 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAutho
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSchemaBundlesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
@@ -50,6 +55,7 @@ import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.GCRules;
@@ -57,9 +63,11 @@ import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
+import com.google.cloud.bigtable.admin.v2.models.SchemaBundle;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
@@ -1795,6 +1803,340 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             .build();
 
     return transformToVoid(this.stub.deleteAuthorizedViewCallable().futureCall(request));
+  }
+
+  /**
+   * Creates a new schema bundle with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * CreateSchemaBundleRequest request = CreateSchemaBundleRequest.of("my-table", "my-new-schema-bundle")
+   *     .setDeletionProtection(true)
+   *     .setSchemaBundleType(
+   *         SubsetView.create()
+   *             .addRowPrefix("row#")
+   *             .addFamilySubsets(
+   *                 "my-family", FamilySubsets.create().addQualifier("column")));
+   *
+   * SchemaBundle response = client.createSchemaBundle(request);
+   * }</pre>
+   *
+   * @see CreateSchemaBundleRequest for available options.
+   */
+  public SchemaBundle createSchemaBundle(CreateSchemaBundleRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createSchemaBundleAsync(request));
+  }
+
+  /**
+   * Asynchronously creates a new schema bundle with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * CreateSchemaBundleRequest request = CreateSchemaBundleRequest.of("my-table", "my-new-schema-bundle")
+   *     .setDeletionProtection(true)
+   *     .setSchemaBundleType(
+   *         SubsetView.create()
+   *             .addRowPrefix("row#")
+   *             .addFamilySubsets(
+   *                 "my-family", FamilySubsets.create().addQualifier("column")));
+   *
+   * ApiFuture<SchemaBundle> future = client.createSchemaBundleAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *     future,
+   *     new ApiFutureCallback<SchemaBundle>() {
+   *       public void onSuccess(SchemaBundle schemaBundle) {
+   *         System.out.println("Successfully created the schema bundle: " + schemaBundle.getId());
+   *       }
+   *
+   *       public void onFailure(Throwable t) {
+   *         t.printStackTrace();
+   *       }
+   *     },
+   *     MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see CreateSchemaBundleRequest for available options.
+   */
+  public ApiFuture<SchemaBundle> createSchemaBundleAsync(CreateSchemaBundleRequest request) {
+    return ApiFutures.transform(
+        stub.createSchemaBundleOperationCallable()
+            .futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.SchemaBundle, SchemaBundle>() {
+          @Override
+          public SchemaBundle apply(com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto) {
+            return SchemaBundle.fromProto(schemaBundleProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Updates an existing schema bundle with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * SchemaBundle existingSchemaBundle = client.getSchemaBundle("my-table", "my-schema-bundle");
+   *
+   * UpdateSchemaBundleRequest request = UpdateSchemaBundleRequest.of(existingSchemaBundle).setDeletionProtection(true);
+   *
+   * SchemaBundle response = client.updateSchemaBundle(request);
+   * }</pre>
+   *
+   * @see UpdateSchemaBundleRequest for available options.
+   */
+  public SchemaBundle updateSchemaBundle(UpdateSchemaBundleRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateSchemaBundleAsync(request));
+  }
+
+  /**
+   * Asynchronously updates an existing schema bundle with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * SchemaBundle existingSchemaBundle = client.getSchemaBundle("my-table", "my-schema-bundle");
+   *
+   * UpdateSchemaBundleRequest request = UpdateSchemaBundleRequest.of(existingSchemaBundle).setDeletionProtection(true);
+   *
+   * ApiFuture<SchemaBundle> future = client.updateSchemaBundleAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *     future,
+   *     new ApiFutureCallback<SchemaBundle>() {
+   *       public void onSuccess(SchemaBundle schemaBundle) {
+   *         System.out.println("Successfully updated the schema bundle: " + schemaBundle.getId());
+   *       }
+   *
+   *       public void onFailure(Throwable t) {
+   *         t.printStackTrace();
+   *       }
+   *     },
+   *     MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see UpdateSchemaBundleRequest for available options.
+   */
+  public ApiFuture<SchemaBundle> updateSchemaBundleAsync(UpdateSchemaBundleRequest request) {
+    return ApiFutures.transform(
+        stub.updateSchemaBundleOperationCallable()
+            .futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.SchemaBundle, SchemaBundle>() {
+          @Override
+          public SchemaBundle apply(com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto) {
+            return SchemaBundle.fromProto(schemaBundleProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Gets an schema bundle with the specified schema bundle ID in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * SchemaBundle schemaBundle = client.getSchemaBundle("my-table", "my-schema-bundle");
+   * }</pre>
+   */
+  public SchemaBundle getSchemaBundle(String tableId, String schemaBundleId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getSchemaBundleAsync(tableId, schemaBundleId));
+  }
+
+  /**
+   * Asynchronously gets an schema bundle with the specified schema bundle ID in the specified
+   * table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<SchemaBundle> future = client.getSchemaBundleAsync("my-table", "my-schema-bundle");
+   *
+   * ApiFutures.addCallback(
+   *     future,
+   *     new ApiFutureCallback<SchemaBundle>() {
+   *       public void onSuccess(SchemaBundle schemaBundle) {
+   *         System.out.println("Successfully get the schema bundle: " + schemaBundle.getId());
+   *       }
+   *
+   *       public void onFailure(Throwable t) {
+   *         t.printStackTrace();
+   *       }
+   *     },
+   *     MoreExecutors.directExecutor());
+   * }</pre>
+   */
+  public ApiFuture<SchemaBundle> getSchemaBundleAsync(String tableId, String schemaBundleId) {
+    GetSchemaBundleRequest request =
+        GetSchemaBundleRequest.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(projectId, instanceId, tableId, schemaBundleId))
+            .build();
+    return ApiFutures.transform(
+        stub.getSchemaBundleCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.SchemaBundle, SchemaBundle>() {
+          @Override
+          public SchemaBundle apply(com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto) {
+            return SchemaBundle.fromProto(schemaBundleProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Lists all schema bundle IDs in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> schemaBundles = client.listSchemaBundles("my-table");
+   * }</pre>
+   */
+  public List<String> listSchemaBundles(String tableId) {
+    return ApiExceptions.callAndTranslateApiException(listSchemaBundlesAsync(tableId));
+  }
+
+  /**
+   * Asynchronously lists all schema bundle IDs in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> future = client.listSchemaBundlesAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *     future,
+   *     new ApiFutureCallback<List<String>>() {
+   *       public void onSuccess(List<String> schemaBundleIds) {
+   *         System.out.println("Successfully get list of schema bundles:");
+   *         for (SchemaBundle schemaBundleId : schemaBundleIds) {
+   *           System.out.println(schemaBundleId);
+   *         }
+   *       }
+   *
+   *       public void onFailure(Throwable t) {
+   *         t.printStackTrace();
+   *       }
+   *     },
+   *     MoreExecutors.directExecutor());
+   * }</pre>
+   */
+  public ApiFuture<List<String>> listSchemaBundlesAsync(String tableId) {
+    ListSchemaBundlesRequest request =
+        ListSchemaBundlesRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(projectId, instanceId, tableId))
+            .build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way
+    // to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListSchemaBundlesPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listSchemaBundlesPagedCallable().futureCall(request),
+            new ApiFunction<ListSchemaBundlesPagedResponse, ListSchemaBundlesPage>() {
+              @Override
+              public ListSchemaBundlesPage apply(ListSchemaBundlesPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.SchemaBundle>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListSchemaBundlesPage, List<com.google.bigtable.admin.v2.SchemaBundle>>() {
+              List<com.google.bigtable.admin.v2.SchemaBundle> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.SchemaBundle>> apply(
+                  ListSchemaBundlesPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.SchemaBundle>, List<String>>() {
+          @Override
+          public List<String> apply(List<com.google.bigtable.admin.v2.SchemaBundle> protos) {
+            List<String> results = Lists.newArrayListWithCapacity(protos.size());
+            for (com.google.bigtable.admin.v2.SchemaBundle proto : protos) {
+              results.add(NameUtil.extractSchemaBundleIdFromSchemaBundleName(proto.getName()));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Deletes an schema bundle with the specified schema bundle ID in the specified table. Note that
+   * the deletion is prohibited if the schema bundle has deletion_protection field set to true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteSchemaBundle("my-table", "my-schema-bundle");
+   * }</pre>
+   */
+  public void deleteSchemaBundle(String tableId, String schemaBundleId) {
+    ApiExceptions.callAndTranslateApiException(deleteSchemaBundleAsync(tableId, schemaBundleId));
+  }
+
+  /**
+   * Asynchronously deletes an schema bundle with the specified schema bundle ID in the specified
+   * table. Note that the deletion is prohibited if the schema bundle has deletion_protection field
+   * set to true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<void> future = client.deleteSchemaBundleAsync("my-table", "my-schema-bundle");
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<void>() {
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully deleted the schema bundle");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Void> deleteSchemaBundleAsync(String tableId, String schemaBundleId) {
+    DeleteSchemaBundleRequest request =
+        DeleteSchemaBundleRequest.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(projectId, instanceId, tableId, schemaBundleId))
+            .build();
+
+    return transformToVoid(this.stub.deleteSchemaBundleCallable().futureCall(request));
   }
 
   /**
