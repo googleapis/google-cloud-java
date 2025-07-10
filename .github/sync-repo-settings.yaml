@@ -132,6 +132,22 @@ branchProtectionRules:
       - javadoc
       - library_generation
       - unmanaged_dependency_check
+  - pattern: 3.15.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - library_generation
+      - unmanaged_dependency_check
 permissionRules:
   - team: yoshi-admins
     permission: admin
