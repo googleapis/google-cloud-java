@@ -18,6 +18,7 @@ from synthtool.languages import java
 v1_file_name = "owl-bot-staging/v1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java"
 v1beta1_file_name = "owl-bot-staging/v1beta1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java"
 v1beta1_vpcflowlogs_file_name = "owl-bot-staging/v1beta1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java"
+v1beta1_org_vpcflowlogs_file_name = "owl-bot-staging/v1beta1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java"
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
@@ -116,6 +117,21 @@ for library in s.get_staging_dirs():
              r'\s+@Test\n\s+public void listVpcFlowLogsConfigsTest2\(\) throws Exception.*',
              '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest2() throws Exception {'
     )
+    s.replace(
+              v1beta1_org_vpcflowlogs_file_name,
+              r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest\(\) throws Exception.*',
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest() throws Exception {'
+    )
+    s.replace(
+              v1beta1_org_vpcflowlogs_file_name,
+              r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest2\(\) throws Exception.*',
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest2() throws Exception {'
+    )
+    s.replace(
+              v1beta1_org_vpcflowlogs_file_name,
+              r'\s+@Test\n\s+public void listVpcFlowLogsConfigsTest\(\) throws Exception.*',
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest() throws Exception {'
+        )
     s.move(library)
 
 s.remove_staging_dirs()
