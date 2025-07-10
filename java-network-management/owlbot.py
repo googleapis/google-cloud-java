@@ -120,18 +120,18 @@ for library in s.get_staging_dirs():
     s.replace(
               v1beta1_org_vpcflowlogs_file_name,
               r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest\(\) throws Exception.*',
-              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest() throws Exception {'
+              '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest() throws Exception {'
     )
     s.replace(
               v1beta1_org_vpcflowlogs_file_name,
               r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest2\(\) throws Exception.*',
-              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest2() throws Exception {'
+              '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest2() throws Exception {'
     )
     s.replace(
               v1beta1_org_vpcflowlogs_file_name,
               r'\s+@Test\n\s+public void listVpcFlowLogsConfigsTest\(\) throws Exception.*',
-              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest() throws Exception {'
-        )
+              '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest() throws Exception {'
+    )
     s.move(library)
 
 s.remove_staging_dirs()
