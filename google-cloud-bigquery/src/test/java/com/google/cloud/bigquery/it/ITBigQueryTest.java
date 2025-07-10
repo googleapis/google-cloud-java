@@ -613,6 +613,7 @@ public class ITBigQueryTest {
   private static final String LOAD_FILE_LARGE = "load_large.csv";
 
   private static final String LOAD_FILE_FLEXIBLE_COLUMN_NAME = "load_flexible_column_name.csv";
+  private static final String LOAD_FILE_NULL = "load_null.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String JSON_LOAD_FILE_BQ_RESULTSET = "load_bq_resultset.json";
   private static final String JSON_LOAD_FILE_SIMPLE = "load_simple.json";
@@ -628,6 +629,7 @@ public class ITBigQueryTest {
   private static final TableId TABLE_ID_FASTQUERY_BQ_RESULTSET =
       TableId.of(DATASET, "fastquery_testing_bq_resultset");
   private static final String CSV_CONTENT = "StringValue1\nStringValue2\n";
+  private static final String CSV_CONTENT_NULL = "String\0Value1\n";
   private static final String CSV_CONTENT_FLEXIBLE_COLUMN = "name,&ampersand\nrow_name,1";
 
   private static final String JSON_CONTENT =
@@ -1080,6 +1082,9 @@ public class ITBigQueryTest {
     storage.create(
         BlobInfo.newBuilder(BUCKET, LOAD_FILE).setContentType("text/plain").build(),
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));
+    storage.create(
+        BlobInfo.newBuilder(BUCKET, LOAD_FILE_NULL).setContentType("text/plain").build(),
+        CSV_CONTENT_NULL.getBytes(StandardCharsets.UTF_8));
     storage.create(
         BlobInfo.newBuilder(BUCKET, LOAD_FILE_FLEXIBLE_COLUMN_NAME)
             .setContentType("text/plain")
@@ -6600,9 +6605,9 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testPreserveAsciiControlCharacters()
+  public void testWriteChannelPreserveAsciiControlCharacters()
       throws InterruptedException, IOException, TimeoutException {
-    String destinationTableName = "test_preserve_ascii_control_characters";
+    String destinationTableName = "test_write_channel_preserve_ascii_control_characters";
     TableId tableId = TableId.of(DATASET, destinationTableName);
     WriteChannelConfiguration configuration =
         WriteChannelConfiguration.newBuilder(tableId)
@@ -6623,6 +6628,26 @@ public class ITBigQueryTest {
     FieldValueList row = rows.getValues().iterator().next();
     assertEquals("\u0000", row.get(0).getStringValue());
     assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
+  public void testLoadJobPreserveAsciiControlCharacters() throws InterruptedException {
+    String destinationTableName = "test_load_job_preserve_ascii_control_characters";
+    TableId destinationTable = TableId.of(DATASET, destinationTableName);
+
+    try {
+      LoadJobConfiguration configuration =
+          LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE_NULL)
+              .setFormatOptions(
+                  CsvOptions.newBuilder().setPreserveAsciiControlCharacters(true).build())
+              .setSchema(SIMPLE_SCHEMA)
+              .build();
+      Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+      remoteLoadJob = remoteLoadJob.waitFor();
+      assertNull(remoteLoadJob.getStatus().getError());
+    } finally {
+      assertTrue(bigquery.delete(destinationTable));
+    }
   }
 
   @Test

@@ -219,6 +219,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         this.nullMarker = loadConfigurationPb.getNullMarker();
       }
       if (loadConfigurationPb.getAllowJaggedRows() != null
+          || loadConfigurationPb.getPreserveAsciiControlCharacters() != null
           || loadConfigurationPb.getAllowQuotedNewlines() != null
           || loadConfigurationPb.getEncoding() != null
           || loadConfigurationPb.getFieldDelimiter() != null
@@ -229,6 +230,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
                 .setEncoding(loadConfigurationPb.getEncoding())
                 .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
                 .setQuote(loadConfigurationPb.getQuote());
+        if (loadConfigurationPb.getPreserveAsciiControlCharacters() != null) {
+          builder.setPreserveAsciiControlCharacters(
+              loadConfigurationPb.getPreserveAsciiControlCharacters());
+        }
         if (loadConfigurationPb.getAllowJaggedRows() != null) {
           builder.setAllowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
         }
@@ -907,6 +912,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.getEncoding())
+          .setPreserveAsciiControlCharacters(csvOptions.getPreserveAsciiControlCharacters())
           .setQuote(csvOptions.getQuote());
       if (csvOptions.getSkipLeadingRows() != null) {
         // todo(mziccard) remove checked cast or comment when #1044 is closed

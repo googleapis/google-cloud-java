@@ -38,6 +38,7 @@ public class LoadJobConfigurationTest {
           .setAllowJaggedRows(true)
           .setAllowQuotedNewLines(false)
           .setEncoding(StandardCharsets.UTF_8)
+          .setPreserveAsciiControlCharacters(true)
           .build();
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
