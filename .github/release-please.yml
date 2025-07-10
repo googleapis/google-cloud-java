@@ -31,6 +31,10 @@ branches:
     handleGHRelease: true
     releaseType: java-backport
     branch: 2.48.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    branch: 2.52.x
 bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
