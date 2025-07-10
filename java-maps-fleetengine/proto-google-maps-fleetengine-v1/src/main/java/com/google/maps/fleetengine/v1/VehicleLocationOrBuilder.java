@@ -946,6 +946,157 @@ public interface VehicleLocationOrBuilder
    *
    *
    * <pre>
+   * The location from Android's Fused Location Provider.
+   * </pre>
+   *
+   * <code>.google.type.LatLng flp_location = 29;</code>
+   *
+   * @return Whether the flpLocation field is set.
+   */
+  boolean hasFlpLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The location from Android's Fused Location Provider.
+   * </pre>
+   *
+   * <code>.google.type.LatLng flp_location = 29;</code>
+   *
+   * @return The flpLocation.
+   */
+  com.google.type.LatLng getFlpLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The location from Android's Fused Location Provider.
+   * </pre>
+   *
+   * <code>.google.type.LatLng flp_location = 29;</code>
+   */
+  com.google.type.LatLngOrBuilder getFlpLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update timestamp of `flp_location`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp flp_update_time = 30;</code>
+   *
+   * @return Whether the flpUpdateTime field is set.
+   */
+  boolean hasFlpUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update timestamp of `flp_location`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp flp_update_time = 30;</code>
+   *
+   * @return The flpUpdateTime.
+   */
+  com.google.protobuf.Timestamp getFlpUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update timestamp of `flp_location`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp flp_update_time = 30;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getFlpUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accuracy of `flp_location` in meters as a radius.
+   * </pre>
+   *
+   * <code>.google.protobuf.DoubleValue flp_latlng_accuracy_meters = 31;</code>
+   *
+   * @return Whether the flpLatlngAccuracyMeters field is set.
+   */
+  boolean hasFlpLatlngAccuracyMeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accuracy of `flp_location` in meters as a radius.
+   * </pre>
+   *
+   * <code>.google.protobuf.DoubleValue flp_latlng_accuracy_meters = 31;</code>
+   *
+   * @return The flpLatlngAccuracyMeters.
+   */
+  com.google.protobuf.DoubleValue getFlpLatlngAccuracyMeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accuracy of `flp_location` in meters as a radius.
+   * </pre>
+   *
+   * <code>.google.protobuf.DoubleValue flp_latlng_accuracy_meters = 31;</code>
+   */
+  com.google.protobuf.DoubleValueOrBuilder getFlpLatlngAccuracyMetersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Direction the vehicle is moving in degrees, as determined by the Fused
+   * Location Provider. 0 represents North. The valid range is [0,360).
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value flp_heading_degrees = 32;</code>
+   *
+   * @return Whether the flpHeadingDegrees field is set.
+   */
+  boolean hasFlpHeadingDegrees();
+
+  /**
+   *
+   *
+   * <pre>
+   * Direction the vehicle is moving in degrees, as determined by the Fused
+   * Location Provider. 0 represents North. The valid range is [0,360).
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value flp_heading_degrees = 32;</code>
+   *
+   * @return The flpHeadingDegrees.
+   */
+  com.google.protobuf.Int32Value getFlpHeadingDegrees();
+
+  /**
+   *
+   *
+   * <pre>
+   * Direction the vehicle is moving in degrees, as determined by the Fused
+   * Location Provider. 0 represents North. The valid range is [0,360).
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value flp_heading_degrees = 32;</code>
+   */
+  com.google.protobuf.Int32ValueOrBuilder getFlpHeadingDegreesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Supplemental location provided by the integrating app.
    * </pre>
    *
@@ -1091,7 +1242,7 @@ public interface VehicleLocationOrBuilder
    * <code>bool road_snapped = 26 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.road_snapped is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=298
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=311
    * @return The roadSnapped.
    */
   @java.lang.Deprecated
