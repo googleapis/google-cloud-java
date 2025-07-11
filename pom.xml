@@ -121,6 +121,7 @@
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
+    <module>java-licensemanager</module>
     <module>java-life-sciences</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
