@@ -2362,6 +2362,7 @@ libraries:
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
+  - proto_path: google/shopping/merchant/reports/v1alpha
 
 - api_shortname: merchantapi
   name_pretty: Merchant API
