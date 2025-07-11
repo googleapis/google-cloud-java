@@ -190,7 +190,6 @@
                 <groupId>com.google.truth.extensions</groupId>
                 <artifactId>truth-proto-extension</artifactId>
                 <version>1.4.4</version>
-                <scope>test</scope>
                 <exclusions>
                     <!-- exclude protobuf-java as it is managed in the shared deps bom-->
                     <exclusion>
@@ -206,8 +205,10 @@
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
+                <artifactId>mockito-bom</artifactId>
                 <version>4.11.0</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
