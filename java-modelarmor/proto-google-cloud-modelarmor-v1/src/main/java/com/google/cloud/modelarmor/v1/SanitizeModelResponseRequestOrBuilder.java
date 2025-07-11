@@ -124,4 +124,48 @@ public interface SanitizeModelResponseRequestOrBuilder
    * @return The bytes for userPrompt.
    */
   com.google.protobuf.ByteString getUserPromptBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related for multi language detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata multi_language_detection_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiLanguageDetectionMetadata field is set.
+   */
+  boolean hasMultiLanguageDetectionMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related for multi language detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata multi_language_detection_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiLanguageDetectionMetadata.
+   */
+  com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata getMultiLanguageDetectionMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related for multi language detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata multi_language_detection_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadataOrBuilder
+      getMultiLanguageDetectionMetadataOrBuilder();
 }

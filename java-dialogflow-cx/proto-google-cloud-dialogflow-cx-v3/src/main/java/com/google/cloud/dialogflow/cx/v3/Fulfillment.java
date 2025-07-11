@@ -59,6 +59,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     tag_ = "";
     setParameterActions_ = java.util.Collections.emptyList();
     conditionalCases_ = java.util.Collections.emptyList();
+    generators_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -4880,6 +4881,1485 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface GeneratorSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The generator to call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The generator.
+     */
+    java.lang.String getGenerator();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The generator to call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for generator.
+     */
+    com.google.protobuf.ByteString getGeneratorBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    int getInputParametersCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    boolean containsInputParameters(java.lang.String key);
+
+    /** Use {@link #getInputParametersMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getInputParameters();
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getInputParametersMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    /* nullable */
+    java.lang.String getInputParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    java.lang.String getInputParametersOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output parameter which should contain the generator response.
+     * </pre>
+     *
+     * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The outputParameter.
+     */
+    java.lang.String getOutputParameter();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output parameter which should contain the generator response.
+     * </pre>
+     *
+     * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for outputParameter.
+     */
+    com.google.protobuf.ByteString getOutputParameterBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Generator settings used by the LLM to generate a text response.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings}
+   */
+  public static final class GeneratorSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)
+      GeneratorSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use GeneratorSettings.newBuilder() to construct.
+    private GeneratorSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GeneratorSettings() {
+      generator_ = "";
+      outputParameter_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GeneratorSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetInputParameters();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.class,
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder.class);
+    }
+
+    public static final int GENERATOR_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object generator_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The generator to call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The generator.
+     */
+    @java.lang.Override
+    public java.lang.String getGenerator() {
+      java.lang.Object ref = generator_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        generator_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The generator to call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for generator.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGeneratorBytes() {
+      java.lang.Object ref = generator_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        generator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INPUT_PARAMETERS_FIELD_NUMBER = 2;
+
+    private static final class InputParametersDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+                  .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_InputParametersEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> inputParameters_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetInputParameters() {
+      if (inputParameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InputParametersDefaultEntryHolder.defaultEntry);
+      }
+      return inputParameters_;
+    }
+
+    public int getInputParametersCount() {
+      return internalGetInputParameters().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    @java.lang.Override
+    public boolean containsInputParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInputParameters().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getInputParametersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getInputParameters() {
+      return getInputParametersMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getInputParametersMap() {
+      return internalGetInputParameters().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getInputParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetInputParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Map from [placeholder parameter][Generator.Parameter.id] in the
+     * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+     * session parameters. By default, Dialogflow uses the session parameter
+     * with the same name to fill in the generator template. e.g. If there is a
+     * placeholder parameter `city` in the Generator, Dialogflow default to fill
+     * in the `$city` with
+     * `$session.params.city`. However, you may choose to fill `$city` with
+     * `$session.params.desination-city`.
+     * - Map key: [parameter ID][Genrator.Parameter.id]
+     * - Map value: session parameter name
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getInputParametersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetInputParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int OUTPUT_PARAMETER_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object outputParameter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output parameter which should contain the generator response.
+     * </pre>
+     *
+     * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The outputParameter.
+     */
+    @java.lang.Override
+    public java.lang.String getOutputParameter() {
+      java.lang.Object ref = outputParameter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputParameter_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output parameter which should contain the generator response.
+     * </pre>
+     *
+     * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for outputParameter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOutputParameterBytes() {
+      java.lang.Object ref = outputParameter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        outputParameter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generator_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, generator_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetInputParameters(), InputParametersDefaultEntryHolder.defaultEntry, 2);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputParameter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputParameter_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generator_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, generator_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetInputParameters().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> inputParameters__ =
+            InputParametersDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, inputParameters__);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputParameter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputParameter_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings other =
+          (com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings) obj;
+
+      if (!getGenerator().equals(other.getGenerator())) return false;
+      if (!internalGetInputParameters().equals(other.internalGetInputParameters())) return false;
+      if (!getOutputParameter().equals(other.getOutputParameter())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GENERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getGenerator().hashCode();
+      if (!internalGetInputParameters().getMap().isEmpty()) {
+        hash = (37 * hash) + INPUT_PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetInputParameters().hashCode();
+      }
+      hash = (37 * hash) + OUTPUT_PARAMETER_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputParameter().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generator settings used by the LLM to generate a text response.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetInputParameters();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableInputParameters();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.class,
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        generator_ = "";
+        internalGetMutableInputParameters().clear();
+        outputParameter_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_GeneratorSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings build() {
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings result =
+            new com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.generator_ = generator_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputParameters_ = internalGetInputParameters();
+          result.inputParameters_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.outputParameter_ = outputParameter_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.getDefaultInstance())
+          return this;
+        if (!other.getGenerator().isEmpty()) {
+          generator_ = other.generator_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableInputParameters().mergeFrom(other.internalGetInputParameters());
+        bitField0_ |= 0x00000002;
+        if (!other.getOutputParameter().isEmpty()) {
+          outputParameter_ = other.outputParameter_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  generator_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                      inputParameters__ =
+                          input.readMessage(
+                              InputParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableInputParameters()
+                      .getMutableMap()
+                      .put(inputParameters__.getKey(), inputParameters__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  outputParameter_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object generator_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The generator to call.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+       * </pre>
+       *
+       * <code>
+       * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The generator.
+       */
+      public java.lang.String getGenerator() {
+        java.lang.Object ref = generator_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          generator_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The generator to call.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+       * </pre>
+       *
+       * <code>
+       * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for generator.
+       */
+      public com.google.protobuf.ByteString getGeneratorBytes() {
+        java.lang.Object ref = generator_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          generator_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The generator to call.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+       * </pre>
+       *
+       * <code>
+       * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The generator to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGenerator(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generator_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The generator to call.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+       * </pre>
+       *
+       * <code>
+       * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGenerator() {
+        generator_ = getDefaultInstance().getGenerator();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The generator to call.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
+       * </pre>
+       *
+       * <code>
+       * string generator = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for generator to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGeneratorBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        generator_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> inputParameters_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetInputParameters() {
+        if (inputParameters_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              InputParametersDefaultEntryHolder.defaultEntry);
+        }
+        return inputParameters_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableInputParameters() {
+        if (inputParameters_ == null) {
+          inputParameters_ =
+              com.google.protobuf.MapField.newMapField(
+                  InputParametersDefaultEntryHolder.defaultEntry);
+        }
+        if (!inputParameters_.isMutable()) {
+          inputParameters_ = inputParameters_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return inputParameters_;
+      }
+
+      public int getInputParametersCount() {
+        return internalGetInputParameters().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      @java.lang.Override
+      public boolean containsInputParameters(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetInputParameters().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getInputParametersMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getInputParameters() {
+        return getInputParametersMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getInputParametersMap() {
+        return internalGetInputParameters().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getInputParametersOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetInputParameters().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getInputParametersOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetInputParameters().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearInputParameters() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableInputParameters().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      public Builder removeInputParameters(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableInputParameters().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableInputParameters() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableInputParameters().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      public Builder putInputParameters(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableInputParameters().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Map from [placeholder parameter][Generator.Parameter.id] in the
+       * [Generator][google.cloud.dialogflow.cx.v3.Generator] to corresponding
+       * session parameters. By default, Dialogflow uses the session parameter
+       * with the same name to fill in the generator template. e.g. If there is a
+       * placeholder parameter `city` in the Generator, Dialogflow default to fill
+       * in the `$city` with
+       * `$session.params.city`. However, you may choose to fill `$city` with
+       * `$session.params.desination-city`.
+       * - Map key: [parameter ID][Genrator.Parameter.id]
+       * - Map value: session parameter name
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; input_parameters = 2;</code>
+       */
+      public Builder putAllInputParameters(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableInputParameters().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      private java.lang.Object outputParameter_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Output parameter which should contain the generator response.
+       * </pre>
+       *
+       * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The outputParameter.
+       */
+      public java.lang.String getOutputParameter() {
+        java.lang.Object ref = outputParameter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputParameter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Output parameter which should contain the generator response.
+       * </pre>
+       *
+       * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for outputParameter.
+       */
+      public com.google.protobuf.ByteString getOutputParameterBytes() {
+        java.lang.Object ref = outputParameter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          outputParameter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Output parameter which should contain the generator response.
+       * </pre>
+       *
+       * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The outputParameter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputParameter(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputParameter_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Output parameter which should contain the generator response.
+       * </pre>
+       *
+       * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutputParameter() {
+        outputParameter_ = getDefaultInstance().getOutputParameter();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Output parameter which should contain the generator response.
+       * </pre>
+       *
+       * <code>string output_parameter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for outputParameter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputParameterBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        outputParameter_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings)
+    private static final com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GeneratorSettings> PARSER =
+        new com.google.protobuf.AbstractParser<GeneratorSettings>() {
+          @java.lang.Override
+          public GeneratorSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GeneratorSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeneratorSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int MESSAGES_FIELD_NUMBER = 1;
 
@@ -5369,6 +6849,91 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     return enableGenerativeFallback_;
   }
 
+  public static final int GENERATORS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+      generators_;
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+      getGeneratorsList() {
+    return generators_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>
+      getGeneratorsOrBuilderList() {
+    return generators_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public int getGeneratorsCount() {
+    return generators_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings getGenerators(int index) {
+    return generators_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder
+      getGeneratorsOrBuilder(int index) {
+    return generators_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5407,6 +6972,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (enableGenerativeFallback_ != false) {
       output.writeBool(12, enableGenerativeFallback_);
     }
+    for (int i = 0; i < generators_.size(); i++) {
+      output.writeMessage(13, generators_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5441,6 +7009,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (enableGenerativeFallback_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableGenerativeFallback_);
     }
+    for (int i = 0; i < generators_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, generators_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5468,6 +7039,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
     }
     if (getEnableGenerativeFallback() != other.getEnableGenerativeFallback()) return false;
+    if (!getGeneratorsList().equals(other.getGeneratorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5503,6 +7075,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_GENERATIVE_FALLBACK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGenerativeFallback());
+    if (getGeneratorsCount() > 0) {
+      hash = (37 * hash) + GENERATORS_FIELD_NUMBER;
+      hash = (53 * hash) + getGeneratorsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5662,6 +7238,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         getSetParameterActionsFieldBuilder();
         getConditionalCasesFieldBuilder();
         getAdvancedSettingsFieldBuilder();
+        getGeneratorsFieldBuilder();
       }
     }
 
@@ -5699,6 +7276,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_ = null;
       }
       enableGenerativeFallback_ = false;
+      if (generatorsBuilder_ == null) {
+        generators_ = java.util.Collections.emptyList();
+      } else {
+        generators_ = null;
+        generatorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -5761,6 +7345,15 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         result.conditionalCases_ = conditionalCases_;
       } else {
         result.conditionalCases_ = conditionalCasesBuilder_.build();
+      }
+      if (generatorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          generators_ = java.util.Collections.unmodifiableList(generators_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.generators_ = generators_;
+      } else {
+        result.generators_ = generatorsBuilder_.build();
       }
     }
 
@@ -5932,6 +7525,33 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableGenerativeFallback() != false) {
         setEnableGenerativeFallback(other.getEnableGenerativeFallback());
       }
+      if (generatorsBuilder_ == null) {
+        if (!other.generators_.isEmpty()) {
+          if (generators_.isEmpty()) {
+            generators_ = other.generators_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureGeneratorsIsMutable();
+            generators_.addAll(other.generators_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.generators_.isEmpty()) {
+          if (generatorsBuilder_.isEmpty()) {
+            generatorsBuilder_.dispose();
+            generatorsBuilder_ = null;
+            generators_ = other.generators_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            generatorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGeneratorsFieldBuilder()
+                    : null;
+          } else {
+            generatorsBuilder_.addAllMessages(other.generators_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6031,6 +7651,20 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 96
+            case 106:
+              {
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.parser(),
+                        extensionRegistry);
+                if (generatorsBuilder_ == null) {
+                  ensureGeneratorsIsMutable();
+                  generators_.add(m);
+                } else {
+                  generatorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7886,6 +9520,410 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       enableGenerativeFallback_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+        generators_ = java.util.Collections.emptyList();
+
+    private void ensureGeneratorsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        generators_ =
+            new java.util.ArrayList<
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>(generators_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings,
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>
+        generatorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+        getGeneratorsList() {
+      if (generatorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(generators_);
+      } else {
+        return generatorsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public int getGeneratorsCount() {
+      if (generatorsBuilder_ == null) {
+        return generators_.size();
+      } else {
+        return generatorsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings getGenerators(
+        int index) {
+      if (generatorsBuilder_ == null) {
+        return generators_.get(index);
+      } else {
+        return generatorsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder setGenerators(
+        int index, com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings value) {
+      if (generatorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGeneratorsIsMutable();
+        generators_.set(index, value);
+        onChanged();
+      } else {
+        generatorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder setGenerators(
+        int index,
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder builderForValue) {
+      if (generatorsBuilder_ == null) {
+        ensureGeneratorsIsMutable();
+        generators_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        generatorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder addGenerators(
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings value) {
+      if (generatorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGeneratorsIsMutable();
+        generators_.add(value);
+        onChanged();
+      } else {
+        generatorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder addGenerators(
+        int index, com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings value) {
+      if (generatorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGeneratorsIsMutable();
+        generators_.add(index, value);
+        onChanged();
+      } else {
+        generatorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder addGenerators(
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder builderForValue) {
+      if (generatorsBuilder_ == null) {
+        ensureGeneratorsIsMutable();
+        generators_.add(builderForValue.build());
+        onChanged();
+      } else {
+        generatorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder addGenerators(
+        int index,
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder builderForValue) {
+      if (generatorsBuilder_ == null) {
+        ensureGeneratorsIsMutable();
+        generators_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        generatorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder addAllGenerators(
+        java.lang.Iterable<
+                ? extends com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+            values) {
+      if (generatorsBuilder_ == null) {
+        ensureGeneratorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, generators_);
+        onChanged();
+      } else {
+        generatorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder clearGenerators() {
+      if (generatorsBuilder_ == null) {
+        generators_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        generatorsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public Builder removeGenerators(int index) {
+      if (generatorsBuilder_ == null) {
+        ensureGeneratorsIsMutable();
+        generators_.remove(index);
+        onChanged();
+      } else {
+        generatorsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder
+        getGeneratorsBuilder(int index) {
+      return getGeneratorsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder
+        getGeneratorsOrBuilder(int index) {
+      if (generatorsBuilder_ == null) {
+        return generators_.get(index);
+      } else {
+        return generatorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>
+        getGeneratorsOrBuilderList() {
+      if (generatorsBuilder_ != null) {
+        return generatorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(generators_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder
+        addGeneratorsBuilder() {
+      return getGeneratorsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder
+        addGeneratorsBuilder(int index) {
+      return getGeneratorsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of Generators to be called during this fulfillment.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder>
+        getGeneratorsBuilderList() {
+      return getGeneratorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings,
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>
+        getGeneratorsFieldBuilder() {
+      if (generatorsBuilder_ == null) {
+        generatorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings,
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>(
+                generators_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        generators_ = null;
+      }
+      return generatorsBuilder_;
     }
 
     @java.lang.Override

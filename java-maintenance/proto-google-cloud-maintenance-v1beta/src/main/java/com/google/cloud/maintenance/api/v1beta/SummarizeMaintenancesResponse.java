@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.8
 package com.google.cloud.maintenance.api.v1beta;
 
-/** Protobuf type {@code google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for SummarizeMaintenances custom method.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse}
+ */
 public final class SummarizeMaintenancesResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse)
@@ -460,7 +468,15 @@ public final class SummarizeMaintenancesResponse extends com.google.protobuf.Gen
     return builder;
   }
 
-  /** Protobuf type {@code google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for SummarizeMaintenances custom method.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse)

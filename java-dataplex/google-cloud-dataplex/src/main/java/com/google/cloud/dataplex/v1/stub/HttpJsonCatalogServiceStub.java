@@ -954,6 +954,8 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "scope", request.getScope());
+                            serializer.putQueryParam(
+                                fields, "semanticSearch", request.getSemanticSearch());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

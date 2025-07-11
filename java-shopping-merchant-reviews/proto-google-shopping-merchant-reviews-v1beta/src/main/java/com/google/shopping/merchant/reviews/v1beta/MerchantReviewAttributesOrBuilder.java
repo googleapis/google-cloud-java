@@ -573,10 +573,10 @@ public interface MerchantReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The language of the review defined by BCP-47 language code.
+   * Optional. The language of the review defined by BCP-47 language code.
    * </pre>
    *
-   * <code>optional string review_language = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string review_language = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the reviewLanguage field is set.
    */
@@ -586,10 +586,10 @@ public interface MerchantReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The language of the review defined by BCP-47 language code.
+   * Optional. The language of the review defined by BCP-47 language code.
    * </pre>
    *
-   * <code>optional string review_language = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string review_language = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The reviewLanguage.
    */
@@ -599,10 +599,10 @@ public interface MerchantReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The language of the review defined by BCP-47 language code.
+   * Optional. The language of the review defined by BCP-47 language code.
    * </pre>
    *
-   * <code>optional string review_language = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string review_language = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for reviewLanguage.
    */

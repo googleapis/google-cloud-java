@@ -91,7 +91,7 @@ public final class MerchantReviewsProto {
           + "\003 \001(\0132A.google.shopping.merchant.reviews"
           + ".v1beta.MerchantReviewAttributesB\003\340A\001\022E\n"
           + "\021custom_attributes\030\004 \003(\0132%.google.shoppi"
-          + "ng.type.CustomAttributeB\003\340A\002\022\030\n\013data_sou"
+          + "ng.type.CustomAttributeB\003\340A\001\022\030\n\013data_sou"
           + "rce\030\005 \001(\tB\003\340A\003\022b\n\026merchant_review_status"
           + "\030\006 \001(\0132=.google.shopping.merchant.review"
           + "s.v1beta.MerchantReviewStatusB\003\340A\003:z\352Aw\n"

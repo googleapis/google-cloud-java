@@ -66,7 +66,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> InsertProductInput</td>
- *      <td><p> Uploads a product input to your Merchant Center account. If an input with the same contentLanguage, offerId, and dataSource already exists, this method replaces that entry.
+ *      <td><p> [Uploads a product input to your Merchant Center account](/merchant/api/guides/products/overview#upload-product-input). You must have a products data source to be able to insert a product. The unique identifier of the data source is passed as a query parameter in the request URL.
+ * <p>  If an input with the same contentLanguage, offerId, and dataSource already exists, this method replaces that entry.
  * <p>  After inserting, updating, or deleting a product input, it may take several minutes before the processed product can be retrieved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -229,8 +230,13 @@ public class ProductInputsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a product input to your Merchant Center account. If an input with the same
-   * contentLanguage, offerId, and dataSource already exists, this method replaces that entry.
+   * [Uploads a product input to your Merchant Center
+   * account](/merchant/api/guides/products/overview#upload-product-input). You must have a products
+   * data source to be able to insert a product. The unique identifier of the data source is passed
+   * as a query parameter in the request URL.
+   *
+   * <p>If an input with the same contentLanguage, offerId, and dataSource already exists, this
+   * method replaces that entry.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the processed product can be retrieved.
@@ -264,8 +270,13 @@ public class ProductInputsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Uploads a product input to your Merchant Center account. If an input with the same
-   * contentLanguage, offerId, and dataSource already exists, this method replaces that entry.
+   * [Uploads a product input to your Merchant Center
+   * account](/merchant/api/guides/products/overview#upload-product-input). You must have a products
+   * data source to be able to insert a product. The unique identifier of the data source is passed
+   * as a query parameter in the request URL.
+   *
+   * <p>If an input with the same contentLanguage, offerId, and dataSource already exists, this
+   * method replaces that entry.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the processed product can be retrieved.
@@ -435,9 +446,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product input resource to delete. Format:
-   *     accounts/{account}/productInputs/{product} where the last section `product` consists of 4
-   *     parts: channel~content_language~feed_label~offer_id example for product name is
-   *     "accounts/123/productInputs/online~en~US~sku123"
+   *     `accounts/{account}/productInputs/{product}` where the last section `product` consists of 4
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/productInputs/online~en~US~sku123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductInput(ProductInputName name) {
@@ -471,9 +482,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product input resource to delete. Format:
-   *     accounts/{account}/productInputs/{product} where the last section `product` consists of 4
-   *     parts: channel~content_language~feed_label~offer_id example for product name is
-   *     "accounts/123/productInputs/online~en~US~sku123"
+   *     `accounts/{account}/productInputs/{product}` where the last section `product` consists of 4
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/productInputs/online~en~US~sku123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductInput(String name) {

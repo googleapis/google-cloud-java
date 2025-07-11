@@ -130,7 +130,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -144,7 +144,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
@@ -153,7 +153,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -167,7 +167,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
@@ -176,7 +176,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -190,7 +190,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getCustomAttributesCount();
@@ -199,7 +199,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -213,7 +213,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
@@ -223,7 +223,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -237,7 +237,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(int index);

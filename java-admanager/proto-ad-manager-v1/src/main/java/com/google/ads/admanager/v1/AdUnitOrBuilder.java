@@ -75,7 +75,24 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the parentAdUnit field is set.
+   */
+  boolean hasParentAdUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The AdUnit's parent. Every ad unit has a parent except
+   * for the root ad unit, which is created by Google. Format:
+   * "networks/{network_code}/adUnits/{ad_unit_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parentAdUnit.
@@ -92,7 +109,7 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parentAdUnit.
@@ -183,7 +200,21 @@ public interface AdUnitOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the ad unit. Its maximum length is 255
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -197,7 +228,7 @@ public interface AdUnitOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -207,13 +238,33 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Immutable. A string used to uniquely identify the ad unit for the purposes
-   * of serving the ad. This attribute is optional and can be set during ad unit
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
    * creation. If it is not provided, it will be assigned by Google based on the
    * ad unit ID.
    * </pre>
    *
-   * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the adUnitCode field is set.
+   */
+  boolean hasAdUnitCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
+   * creation. If it is not provided, it will be assigned by Google based on the
+   * ad unit ID.
+   * </pre>
+   *
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The adUnitCode.
    */
@@ -223,13 +274,15 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Immutable. A string used to uniquely identify the ad unit for the purposes
-   * of serving the ad. This attribute is optional and can be set during ad unit
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
    * creation. If it is not provided, it will be assigned by Google based on the
    * ad unit ID.
    * </pre>
    *
-   * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for adUnitCode.
    */
@@ -243,7 +296,22 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this ad unit.  It defaults to ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -258,7 +326,7 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -275,7 +343,24 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the appliedTargetWindow field is set.
+   */
+  boolean hasAppliedTargetWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target window directly applied to this AdUnit.
+   * If this field is not set, this AdUnit uses the target window specified in
+   * effectiveTargetWindow.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for appliedTargetWindow.
@@ -292,7 +377,7 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The appliedTargetWindow.
@@ -309,7 +394,24 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveTargetWindow field is set.
+   */
+  boolean hasEffectiveTargetWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. The target window of this AdUnit. This
+   * value is inherited from ancestor AdUnits and defaults to TOP if no AdUnit
+   * in the hierarchy specifies it.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for effectiveTargetWindow.
@@ -326,7 +428,7 @@ public interface AdUnitOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The effectiveTargetWindow.
@@ -477,7 +579,21 @@ public interface AdUnitOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the ad unit. The maximum length is 65,535
+   * characters.
+   * </pre>
+   *
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -491,7 +607,7 @@ public interface AdUnitOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -507,7 +623,23 @@ public interface AdUnitOrBuilder
    * feature is only available for Ad Manager 360 accounts.
    * </pre>
    *
-   * <code>bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the explicitlyTargeted field is set.
+   */
+  boolean hasExplicitlyTargeted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this field is set to true, then the AdUnit will not be
+   * implicitly targeted when its parent is. Traffickers must explicitly
+   * target such an AdUnit or else no line items will serve to it. This
+   * feature is only available for Ad Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The explicitlyTargeted.
    */
@@ -520,7 +652,20 @@ public interface AdUnitOrBuilder
    * Output only. This field is set to true if the ad unit has any children.
    * </pre>
    *
-   * <code>bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the hasChildren field is set.
+   */
+  boolean hasHasChildren();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is set to true if the ad unit has any children.
+   * </pre>
+   *
+   * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The hasChildren.
    */
@@ -533,7 +678,8 @@ public interface AdUnitOrBuilder
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the updateTime field is set.
@@ -547,7 +693,8 @@ public interface AdUnitOrBuilder
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The updateTime.
@@ -561,7 +708,8 @@ public interface AdUnitOrBuilder
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
@@ -640,11 +788,34 @@ public interface AdUnitOrBuilder
    * corresponds to in an external set top box ad campaign system.
    * </pre>
    *
-   * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   * @return Whether the externalSetTopBoxChannelId field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasExternalSetTopBoxChannelId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines what set top box video on demand channel this ad unit
+   * corresponds to in an external set top box ad campaign system.
+   * </pre>
+   *
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
    * @return The externalSetTopBoxChannelId.
    */
+  @java.lang.Deprecated
   java.lang.String getExternalSetTopBoxChannelId();
 
   /**
@@ -655,11 +826,15 @@ public interface AdUnitOrBuilder
    * corresponds to in an external set top box ad campaign system.
    * </pre>
    *
-   * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
    * @return The bytes for externalSetTopBoxChannelId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getExternalSetTopBoxChannelIdBytes();
 
   /**
@@ -671,7 +846,8 @@ public interface AdUnitOrBuilder
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the refreshDelay field is set.
@@ -687,7 +863,8 @@ public interface AdUnitOrBuilder
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The refreshDelay.
@@ -703,7 +880,8 @@ public interface AdUnitOrBuilder
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getRefreshDelayOrBuilder();
@@ -780,8 +958,8 @@ public interface AdUnitOrBuilder
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -796,8 +974,8 @@ public interface AdUnitOrBuilder
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -812,8 +990,8 @@ public interface AdUnitOrBuilder
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -828,8 +1006,8 @@ public interface AdUnitOrBuilder
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -845,8 +1023,8 @@ public interface AdUnitOrBuilder
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1004,12 +1182,28 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Optional. The smart size mode for this ad unit. This attribute is optional
-   * and defaults to SmartSizeMode.NONE for fixed sizes.
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the smartSizeMode field is set.
+   */
+  boolean hasSmartSizeMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
    * </code>
    *
    * @return The enum numeric value on the wire for smartSizeMode.
@@ -1020,12 +1214,12 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Optional. The smart size mode for this ad unit. This attribute is optional
-   * and defaults to SmartSizeMode.NONE for fixed sizes.
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
    * </code>
    *
    * @return The smartSizeMode.
@@ -1036,9 +1230,9 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Optional. The value of AdSense enabled directly applied to this ad unit.
-   * This attribute is optional and if not specified this ad unit will inherit
-   * the value of effectiveAdsenseEnabled from its ancestors.
+   * Optional. The value of AdSense enabled directly applied to this ad unit. If
+   * not specified this ad unit will inherit the value of
+   * effectiveAdsenseEnabled from its ancestors.
    * </pre>
    *
    * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -1052,9 +1246,9 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Optional. The value of AdSense enabled directly applied to this ad unit.
-   * This attribute is optional and if not specified this ad unit will inherit
-   * the value of effectiveAdsenseEnabled from its ancestors.
+   * Optional. The value of AdSense enabled directly applied to this ad unit. If
+   * not specified this ad unit will inherit the value of
+   * effectiveAdsenseEnabled from its ancestors.
    * </pre>
    *
    * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -1074,7 +1268,27 @@ public interface AdUnitOrBuilder
    * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
    * </pre>
    *
-   * <code>bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveAdsenseEnabled field is set.
+   */
+  boolean hasEffectiveAdsenseEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the AdUnit is enabled for serving ads
+   * from the AdSense content network. This attribute defaults to the ad unit's
+   * parent or ancestor's setting if one has been set. If no ancestor of the ad
+   * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
+   * </pre>
+   *
+   * <code>
+   * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The effectiveAdsenseEnabled.
    */

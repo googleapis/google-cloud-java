@@ -512,14 +512,11 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Schedule resource name if this job is triggered by one.
-   * Format:
+   * The Schedule resource name if this job is triggered by one. Format:
    * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * </pre>
    *
-   * <code>
-   * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The scheduleResourceName.
    */
@@ -529,14 +526,11 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The Schedule resource name if this job is triggered by one.
-   * Format:
+   * The Schedule resource name if this job is triggered by one. Format:
    * `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * </pre>
    *
-   * <code>
-   * string schedule_resource_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string schedule_resource_name = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for scheduleResourceName.
    */

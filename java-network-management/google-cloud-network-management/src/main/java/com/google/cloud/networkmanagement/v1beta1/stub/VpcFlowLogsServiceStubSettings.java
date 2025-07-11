@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -59,6 +60,8 @@ import com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.common.collect.ImmutableList;
@@ -184,6 +187,11 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
   private final OperationCallSettings<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationSettings;
   private final PagedCallSettings<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -229,6 +237,51 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
             @Override
             public Iterable<VpcFlowLogsConfig> extractResources(
                 ListVpcFlowLogsConfigsResponse payload) {
+              return payload.getVpcFlowLogsConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse, VpcFlowLogsConfig>
+      QUERY_ORG_VPC_FLOW_LOGS_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryOrgVpcFlowLogsConfigsRequest,
+              QueryOrgVpcFlowLogsConfigsResponse,
+              VpcFlowLogsConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryOrgVpcFlowLogsConfigsRequest injectToken(
+                QueryOrgVpcFlowLogsConfigsRequest payload, String token) {
+              return QueryOrgVpcFlowLogsConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public QueryOrgVpcFlowLogsConfigsRequest injectPageSize(
+                QueryOrgVpcFlowLogsConfigsRequest payload, int pageSize) {
+              return QueryOrgVpcFlowLogsConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryOrgVpcFlowLogsConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryOrgVpcFlowLogsConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<VpcFlowLogsConfig> extractResources(
+                QueryOrgVpcFlowLogsConfigsResponse payload) {
               return payload.getVpcFlowLogsConfigsList();
             }
           };
@@ -291,6 +344,37 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
                       PageContext.create(
                           callable, LIST_VPC_FLOW_LOGS_CONFIGS_PAGE_STR_DESC, request, context);
               return ListVpcFlowLogsConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          QueryOrgVpcFlowLogsConfigsPagedResponse>
+      QUERY_ORG_VPC_FLOW_LOGS_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryOrgVpcFlowLogsConfigsRequest,
+              QueryOrgVpcFlowLogsConfigsResponse,
+              QueryOrgVpcFlowLogsConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryOrgVpcFlowLogsConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+                    callable,
+                QueryOrgVpcFlowLogsConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryOrgVpcFlowLogsConfigsResponse> futureResponse) {
+              PageContext<
+                      QueryOrgVpcFlowLogsConfigsRequest,
+                      QueryOrgVpcFlowLogsConfigsResponse,
+                      VpcFlowLogsConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          QUERY_ORG_VPC_FLOW_LOGS_CONFIGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return QueryOrgVpcFlowLogsConfigsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -360,6 +444,15 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
   public OperationCallSettings<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationSettings() {
     return deleteVpcFlowLogsConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryOrgVpcFlowLogsConfigs. */
+  public PagedCallSettings<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsSettings() {
+    return queryOrgVpcFlowLogsConfigsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -511,6 +604,8 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
     deleteVpcFlowLogsConfigSettings = settingsBuilder.deleteVpcFlowLogsConfigSettings().build();
     deleteVpcFlowLogsConfigOperationSettings =
         settingsBuilder.deleteVpcFlowLogsConfigOperationSettings().build();
+    queryOrgVpcFlowLogsConfigsSettings =
+        settingsBuilder.queryOrgVpcFlowLogsConfigsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -544,6 +639,11 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
     private final OperationCallSettings.Builder<
             DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
         deleteVpcFlowLogsConfigOperationSettings;
+    private final PagedCallSettings.Builder<
+            QueryOrgVpcFlowLogsConfigsRequest,
+            QueryOrgVpcFlowLogsConfigsResponse,
+            QueryOrgVpcFlowLogsConfigsPagedResponse>
+        queryOrgVpcFlowLogsConfigsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -588,6 +688,8 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
       updateVpcFlowLogsConfigOperationSettings = OperationCallSettings.newBuilder();
       deleteVpcFlowLogsConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVpcFlowLogsConfigOperationSettings = OperationCallSettings.newBuilder();
+      queryOrgVpcFlowLogsConfigsSettings =
+          PagedCallSettings.newBuilder(QUERY_ORG_VPC_FLOW_LOGS_CONFIGS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -601,6 +703,7 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
               createVpcFlowLogsConfigSettings,
               updateVpcFlowLogsConfigSettings,
               deleteVpcFlowLogsConfigSettings,
+              queryOrgVpcFlowLogsConfigsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -623,6 +726,7 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
       deleteVpcFlowLogsConfigSettings = settings.deleteVpcFlowLogsConfigSettings.toBuilder();
       deleteVpcFlowLogsConfigOperationSettings =
           settings.deleteVpcFlowLogsConfigOperationSettings.toBuilder();
+      queryOrgVpcFlowLogsConfigsSettings = settings.queryOrgVpcFlowLogsConfigsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -636,6 +740,7 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
               createVpcFlowLogsConfigSettings,
               updateVpcFlowLogsConfigSettings,
               deleteVpcFlowLogsConfigSettings,
+              queryOrgVpcFlowLogsConfigsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -690,6 +795,11 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
 
       builder
           .deleteVpcFlowLogsConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryOrgVpcFlowLogsConfigsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -859,6 +969,15 @@ public class VpcFlowLogsServiceStubSettings extends StubSettings<VpcFlowLogsServ
     public OperationCallSettings.Builder<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
         deleteVpcFlowLogsConfigOperationSettings() {
       return deleteVpcFlowLogsConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryOrgVpcFlowLogsConfigs. */
+    public PagedCallSettings.Builder<
+            QueryOrgVpcFlowLogsConfigsRequest,
+            QueryOrgVpcFlowLogsConfigsResponse,
+            QueryOrgVpcFlowLogsConfigsPagedResponse>
+        queryOrgVpcFlowLogsConfigsSettings() {
+      return queryOrgVpcFlowLogsConfigsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

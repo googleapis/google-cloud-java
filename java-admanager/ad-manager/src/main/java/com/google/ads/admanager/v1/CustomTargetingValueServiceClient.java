@@ -48,8 +48,7 @@ import javax.annotation.Generated;
  * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
  *     CustomTargetingValueServiceClient.create()) {
  *   CustomTargetingValueName name =
- *       CustomTargetingValueName.of(
- *           "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]");
+ *       CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
  *   CustomTargetingValue response =
  *       customTargetingValueServiceClient.getCustomTargetingValue(name);
  * }
@@ -95,7 +94,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> listCustomTargetingValues(CustomTargetingKeyName parent)
+ *           <li><p> listCustomTargetingValues(NetworkName parent)
  *           <li><p> listCustomTargetingValues(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -216,15 +215,14 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
    *     CustomTargetingValueServiceClient.create()) {
    *   CustomTargetingValueName name =
-   *       CustomTargetingValueName.of(
-   *           "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]");
+   *       CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
    *   CustomTargetingValue response =
    *       customTargetingValueServiceClient.getCustomTargetingValue(name);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the CustomTargetingValue. Format:
-   *     `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}/customTargetingValues/{custom_targeting_value_id}`
+   *     `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomTargetingValue getCustomTargetingValue(CustomTargetingValueName name) {
@@ -250,16 +248,14 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
    *     CustomTargetingValueServiceClient.create()) {
    *   String name =
-   *       CustomTargetingValueName.of(
-   *               "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
-   *           .toString();
+   *       CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]").toString();
    *   CustomTargetingValue response =
    *       customTargetingValueServiceClient.getCustomTargetingValue(name);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the CustomTargetingValue. Format:
-   *     `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}/customTargetingValues/{custom_targeting_value_id}`
+   *     `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomTargetingValue getCustomTargetingValue(String name) {
@@ -285,8 +281,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *   GetCustomTargetingValueRequest request =
    *       GetCustomTargetingValueRequest.newBuilder()
    *           .setName(
-   *               CustomTargetingValueName.of(
-   *                       "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+   *               CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
    *                   .toString())
    *           .build();
    *   CustomTargetingValue response =
@@ -319,8 +314,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *   GetCustomTargetingValueRequest request =
    *       GetCustomTargetingValueRequest.newBuilder()
    *           .setName(
-   *               CustomTargetingValueName.of(
-   *                       "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+   *               CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<CustomTargetingValue> future =
@@ -349,8 +343,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
    *     CustomTargetingValueServiceClient.create()) {
-   *   CustomTargetingKeyName parent =
-   *       CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]");
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
    *   for (CustomTargetingValue element :
    *       customTargetingValueServiceClient.listCustomTargetingValues(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -359,11 +352,11 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
-   *     Format: `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   *     Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomTargetingValuesPagedResponse listCustomTargetingValues(
-      CustomTargetingKeyName parent) {
+      NetworkName parent) {
     ListCustomTargetingValuesRequest request =
         ListCustomTargetingValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -385,8 +378,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
    *     CustomTargetingValueServiceClient.create()) {
-   *   String parent =
-   *       CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString();
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
    *   for (CustomTargetingValue element :
    *       customTargetingValueServiceClient.listCustomTargetingValues(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -395,7 +387,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
-   *     Format: `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   *     Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomTargetingValuesPagedResponse listCustomTargetingValues(String parent) {
@@ -420,8 +412,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *     CustomTargetingValueServiceClient.create()) {
    *   ListCustomTargetingValuesRequest request =
    *       ListCustomTargetingValuesRequest.newBuilder()
-   *           .setParent(
-   *               CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -459,8 +450,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *     CustomTargetingValueServiceClient.create()) {
    *   ListCustomTargetingValuesRequest request =
    *       ListCustomTargetingValuesRequest.newBuilder()
-   *           .setParent(
-   *               CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -500,8 +490,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *     CustomTargetingValueServiceClient.create()) {
    *   ListCustomTargetingValuesRequest request =
    *       ListCustomTargetingValuesRequest.newBuilder()
-   *           .setParent(
-   *               CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")

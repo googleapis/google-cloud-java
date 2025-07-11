@@ -202,10 +202,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -218,10 +219,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -234,10 +236,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
@@ -973,10 +976,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the error field is set.
      */
@@ -988,10 +992,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The error.
      */
@@ -1007,10 +1012,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -1030,10 +1036,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
@@ -1050,10 +1057,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -1078,10 +1086,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1098,10 +1107,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
       bitField0_ |= 0x00000008;
@@ -1113,10 +1123,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
@@ -1130,10 +1141,11 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Original error response from underlying Google API, if available.
+     * Output only. Original error response from underlying Google API, if
+     * available.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 4;</code>
+     * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>

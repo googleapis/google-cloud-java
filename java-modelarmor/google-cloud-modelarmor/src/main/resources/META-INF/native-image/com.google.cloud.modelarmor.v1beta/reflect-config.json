@@ -1350,6 +1350,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.modelarmor.v1beta.Template$TemplateMetadata$MultiLanguageDetection",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.modelarmor.v1beta.Template$TemplateMetadata$MultiLanguageDetection$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.modelarmor.v1beta.UpdateFloorSettingRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -28,6 +28,58 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
+   * Describes number of instances that have ongoing maintenance.
+   * </pre>
+   *
+   * <code>optional int32 instance_maintenance_ongoing_count = 137611253;</code>
+   *
+   * @return Whether the instanceMaintenanceOngoingCount field is set.
+   */
+  boolean hasInstanceMaintenanceOngoingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of instances that have ongoing maintenance.
+   * </pre>
+   *
+   * <code>optional int32 instance_maintenance_ongoing_count = 137611253;</code>
+   *
+   * @return The instanceMaintenanceOngoingCount.
+   */
+  int getInstanceMaintenanceOngoingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of instances that have pending maintenance.
+   * </pre>
+   *
+   * <code>optional int32 instance_maintenance_pending_count = 76612881;</code>
+   *
+   * @return Whether the instanceMaintenancePendingCount field is set.
+   */
+  boolean hasInstanceMaintenancePendingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of instances that have pending maintenance.
+   * </pre>
+   *
+   * <code>optional int32 instance_maintenance_pending_count = 76612881;</code>
+   *
+   * @return The instanceMaintenancePendingCount.
+   */
+  int getInstanceMaintenancePendingCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
    * </pre>
    *
@@ -117,6 +169,58 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return The bytes for schedulingType.
    */
   com.google.protobuf.ByteString getSchedulingTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * </pre>
+   *
+   * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
+   *
+   * @return Whether the subblockInfraMaintenanceOngoingCount field is set.
+   */
+  boolean hasSubblockInfraMaintenanceOngoingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * </pre>
+   *
+   * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
+   *
+   * @return The subblockInfraMaintenanceOngoingCount.
+   */
+  int getSubblockInfraMaintenanceOngoingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * </pre>
+   *
+   * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
+   *
+   * @return Whether the subblockInfraMaintenancePendingCount field is set.
+   */
+  boolean hasSubblockInfraMaintenancePendingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * </pre>
+   *
+   * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
+   *
+   * @return The subblockInfraMaintenancePendingCount.
+   */
+  int getSubblockInfraMaintenancePendingCount();
 
   /**
    *

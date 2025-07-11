@@ -49,6 +49,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     province_ = "";
     streetAddress_ = "";
     postalCode_ = "";
+    rdnSequence_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -496,6 +497,92 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RDN_SEQUENCE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+      rdnSequence_;
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+      getRdnSequenceList() {
+    return rdnSequence_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>
+      getRdnSequenceOrBuilderList() {
+    return rdnSequence_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public int getRdnSequenceCount() {
+    return rdnSequence_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.RelativeDistinguishedName getRdnSequence(
+      int index) {
+    return rdnSequence_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder
+      getRdnSequenceOrBuilder(int index) {
+    return rdnSequence_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -534,6 +621,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, postalCode_);
     }
+    for (int i = 0; i < rdnSequence_.size(); i++) {
+      output.writeMessage(9, rdnSequence_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -567,6 +657,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, postalCode_);
     }
+    for (int i = 0; i < rdnSequence_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, rdnSequence_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -591,6 +684,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!getProvince().equals(other.getProvince())) return false;
     if (!getStreetAddress().equals(other.getStreetAddress())) return false;
     if (!getPostalCode().equals(other.getPostalCode())) return false;
+    if (!getRdnSequenceList().equals(other.getRdnSequenceList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -618,6 +712,10 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStreetAddress().hashCode();
     hash = (37 * hash) + POSTAL_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getPostalCode().hashCode();
+    if (getRdnSequenceCount() > 0) {
+      hash = (37 * hash) + RDN_SEQUENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getRdnSequenceList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -767,6 +865,13 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       province_ = "";
       streetAddress_ = "";
       postalCode_ = "";
+      if (rdnSequenceBuilder_ == null) {
+        rdnSequence_ = java.util.Collections.emptyList();
+      } else {
+        rdnSequence_ = null;
+        rdnSequenceBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -794,11 +899,24 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.Subject buildPartial() {
       com.google.cloud.security.privateca.v1.Subject result =
           new com.google.cloud.security.privateca.v1.Subject(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.security.privateca.v1.Subject result) {
+      if (rdnSequenceBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          rdnSequence_ = java.util.Collections.unmodifiableList(rdnSequence_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.rdnSequence_ = rdnSequence_;
+      } else {
+        result.rdnSequence_ = rdnSequenceBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.security.privateca.v1.Subject result) {
@@ -914,6 +1032,33 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (rdnSequenceBuilder_ == null) {
+        if (!other.rdnSequence_.isEmpty()) {
+          if (rdnSequence_.isEmpty()) {
+            rdnSequence_ = other.rdnSequence_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureRdnSequenceIsMutable();
+            rdnSequence_.addAll(other.rdnSequence_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.rdnSequence_.isEmpty()) {
+          if (rdnSequenceBuilder_.isEmpty()) {
+            rdnSequenceBuilder_.dispose();
+            rdnSequenceBuilder_ = null;
+            rdnSequence_ = other.rdnSequence_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            rdnSequenceBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRdnSequenceFieldBuilder()
+                    : null;
+          } else {
+            rdnSequenceBuilder_.addAllMessages(other.rdnSequence_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -988,6 +1133,20 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.cloud.security.privateca.v1.RelativeDistinguishedName m =
+                    input.readMessage(
+                        com.google.cloud.security.privateca.v1.RelativeDistinguishedName.parser(),
+                        extensionRegistry);
+                if (rdnSequenceBuilder_ == null) {
+                  ensureRdnSequenceIsMutable();
+                  rdnSequence_.add(m);
+                } else {
+                  rdnSequenceBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1893,6 +2052,430 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+        rdnSequence_ = java.util.Collections.emptyList();
+
+    private void ensureRdnSequenceIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        rdnSequence_ =
+            new java.util.ArrayList<
+                com.google.cloud.security.privateca.v1.RelativeDistinguishedName>(rdnSequence_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedName,
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder,
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>
+        rdnSequenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+        getRdnSequenceList() {
+      if (rdnSequenceBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(rdnSequence_);
+      } else {
+        return rdnSequenceBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public int getRdnSequenceCount() {
+      if (rdnSequenceBuilder_ == null) {
+        return rdnSequence_.size();
+      } else {
+        return rdnSequenceBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.RelativeDistinguishedName getRdnSequence(
+        int index) {
+      if (rdnSequenceBuilder_ == null) {
+        return rdnSequence_.get(index);
+      } else {
+        return rdnSequenceBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder setRdnSequence(
+        int index, com.google.cloud.security.privateca.v1.RelativeDistinguishedName value) {
+      if (rdnSequenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.set(index, value);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder setRdnSequence(
+        int index,
+        com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder builderForValue) {
+      if (rdnSequenceBuilder_ == null) {
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder addRdnSequence(
+        com.google.cloud.security.privateca.v1.RelativeDistinguishedName value) {
+      if (rdnSequenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.add(value);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder addRdnSequence(
+        int index, com.google.cloud.security.privateca.v1.RelativeDistinguishedName value) {
+      if (rdnSequenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.add(index, value);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder addRdnSequence(
+        com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder builderForValue) {
+      if (rdnSequenceBuilder_ == null) {
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.add(builderForValue.build());
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder addRdnSequence(
+        int index,
+        com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder builderForValue) {
+      if (rdnSequenceBuilder_ == null) {
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder addAllRdnSequence(
+        java.lang.Iterable<
+                ? extends com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+            values) {
+      if (rdnSequenceBuilder_ == null) {
+        ensureRdnSequenceIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rdnSequence_);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder clearRdnSequence() {
+      if (rdnSequenceBuilder_ == null) {
+        rdnSequence_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public Builder removeRdnSequence(int index) {
+      if (rdnSequenceBuilder_ == null) {
+        ensureRdnSequenceIsMutable();
+        rdnSequence_.remove(index);
+        onChanged();
+      } else {
+        rdnSequenceBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder
+        getRdnSequenceBuilder(int index) {
+      return getRdnSequenceFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder
+        getRdnSequenceOrBuilder(int index) {
+      if (rdnSequenceBuilder_ == null) {
+        return rdnSequence_.get(index);
+      } else {
+        return rdnSequenceBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>
+        getRdnSequenceOrBuilderList() {
+      if (rdnSequenceBuilder_ != null) {
+        return rdnSequenceBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(rdnSequence_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder
+        addRdnSequenceBuilder() {
+      return getRdnSequenceFieldBuilder()
+          .addBuilder(
+              com.google.cloud.security.privateca.v1.RelativeDistinguishedName
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder
+        addRdnSequenceBuilder(int index) {
+      return getRdnSequenceFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.security.privateca.v1.RelativeDistinguishedName
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used in place of the named subject fields.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder>
+        getRdnSequenceBuilderList() {
+      return getRdnSequenceFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedName,
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder,
+            com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>
+        getRdnSequenceFieldBuilder() {
+      if (rdnSequenceBuilder_ == null) {
+        rdnSequenceBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.RelativeDistinguishedName,
+                com.google.cloud.security.privateca.v1.RelativeDistinguishedName.Builder,
+                com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>(
+                rdnSequence_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        rdnSequence_ = null;
+      }
+      return rdnSequenceBuilder_;
     }
 
     @java.lang.Override

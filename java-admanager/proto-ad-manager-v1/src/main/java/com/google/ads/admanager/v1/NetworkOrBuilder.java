@@ -252,7 +252,7 @@ public interface NetworkOrBuilder
    * <pre>
    * Output only. Top most [Ad Unit](google.ads.admanager.v1.AdUnit) to which
    * descendant Ad Units can be added.
-   * Format: networks/{network_code}/adUnit/{ad_unit_id}
+   * Format: networks/{network_code}/adUnits/{ad_unit}
    * </pre>
    *
    * <code>
@@ -269,7 +269,7 @@ public interface NetworkOrBuilder
    * <pre>
    * Output only. Top most [Ad Unit](google.ads.admanager.v1.AdUnit) to which
    * descendant Ad Units can be added.
-   * Format: networks/{network_code}/adUnit/{ad_unit_id}
+   * Format: networks/{network_code}/adUnits/{ad_unit}
    * </pre>
    *
    * <code>

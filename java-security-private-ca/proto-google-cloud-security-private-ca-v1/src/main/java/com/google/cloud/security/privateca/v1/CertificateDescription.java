@@ -45,6 +45,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
   private CertificateDescription() {
     crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tbsCertificateDigest_ = "";
   }
 
   @java.lang.Override
@@ -4306,6 +4307,65 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         : certFingerprint_;
   }
 
+  public static final int TBS_CERTIFICATE_DIGEST_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tbsCertificateDigest_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The hash of the pre-signed certificate, which will be signed by the CA.
+   * Corresponds to the TBS Certificate in
+   * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+   * populated.
+   * </pre>
+   *
+   * <code>string tbs_certificate_digest = 9;</code>
+   *
+   * @return The tbsCertificateDigest.
+   */
+  @java.lang.Override
+  public java.lang.String getTbsCertificateDigest() {
+    java.lang.Object ref = tbsCertificateDigest_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tbsCertificateDigest_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The hash of the pre-signed certificate, which will be signed by the CA.
+   * Corresponds to the TBS Certificate in
+   * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+   * populated.
+   * </pre>
+   *
+   * <code>string tbs_certificate_digest = 9;</code>
+   *
+   * @return The bytes for tbsCertificateDigest.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTbsCertificateDigestBytes() {
+    java.lang.Object ref = tbsCertificateDigest_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tbsCertificateDigest_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4345,6 +4405,9 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(8, getCertFingerprint());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tbsCertificateDigest_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, tbsCertificateDigest_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4389,6 +4452,9 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCertFingerprint());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tbsCertificateDigest_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, tbsCertificateDigest_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4432,6 +4498,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     if (hasCertFingerprint()) {
       if (!getCertFingerprint().equals(other.getCertFingerprint())) return false;
     }
+    if (!getTbsCertificateDigest().equals(other.getTbsCertificateDigest())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4475,6 +4542,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + CERT_FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getCertFingerprint().hashCode();
     }
+    hash = (37 * hash) + TBS_CERTIFICATE_DIGEST_FIELD_NUMBER;
+    hash = (53 * hash) + getTbsCertificateDigest().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4665,6 +4734,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         certFingerprintBuilder_.dispose();
         certFingerprintBuilder_ = null;
       }
+      tbsCertificateDigest_ = "";
       return this;
     }
 
@@ -4742,6 +4812,9 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         result.certFingerprint_ =
             certFingerprintBuilder_ == null ? certFingerprint_ : certFingerprintBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tbsCertificateDigest_ = tbsCertificateDigest_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4831,6 +4904,11 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (other.hasCertFingerprint()) {
         mergeCertFingerprint(other.getCertFingerprint());
       }
+      if (!other.getTbsCertificateDigest().isEmpty()) {
+        tbsCertificateDigest_ = other.tbsCertificateDigest_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4908,6 +4986,12 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                tbsCertificateDigest_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6633,6 +6717,132 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         certFingerprint_ = null;
       }
       return certFingerprintBuilder_;
+    }
+
+    private java.lang.Object tbsCertificateDigest_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The hash of the pre-signed certificate, which will be signed by the CA.
+     * Corresponds to the TBS Certificate in
+     * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+     * populated.
+     * </pre>
+     *
+     * <code>string tbs_certificate_digest = 9;</code>
+     *
+     * @return The tbsCertificateDigest.
+     */
+    public java.lang.String getTbsCertificateDigest() {
+      java.lang.Object ref = tbsCertificateDigest_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tbsCertificateDigest_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hash of the pre-signed certificate, which will be signed by the CA.
+     * Corresponds to the TBS Certificate in
+     * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+     * populated.
+     * </pre>
+     *
+     * <code>string tbs_certificate_digest = 9;</code>
+     *
+     * @return The bytes for tbsCertificateDigest.
+     */
+    public com.google.protobuf.ByteString getTbsCertificateDigestBytes() {
+      java.lang.Object ref = tbsCertificateDigest_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tbsCertificateDigest_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hash of the pre-signed certificate, which will be signed by the CA.
+     * Corresponds to the TBS Certificate in
+     * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+     * populated.
+     * </pre>
+     *
+     * <code>string tbs_certificate_digest = 9;</code>
+     *
+     * @param value The tbsCertificateDigest to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTbsCertificateDigest(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tbsCertificateDigest_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hash of the pre-signed certificate, which will be signed by the CA.
+     * Corresponds to the TBS Certificate in
+     * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+     * populated.
+     * </pre>
+     *
+     * <code>string tbs_certificate_digest = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTbsCertificateDigest() {
+      tbsCertificateDigest_ = getDefaultInstance().getTbsCertificateDigest();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hash of the pre-signed certificate, which will be signed by the CA.
+     * Corresponds to the TBS Certificate in
+     * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+     * populated.
+     * </pre>
+     *
+     * <code>string tbs_certificate_digest = 9;</code>
+     *
+     * @param value The bytes for tbsCertificateDigest to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTbsCertificateDigestBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tbsCertificateDigest_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

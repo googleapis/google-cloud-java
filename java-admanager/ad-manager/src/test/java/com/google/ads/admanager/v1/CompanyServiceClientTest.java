@@ -93,8 +93,8 @@ public class CompanyServiceClientTest {
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .setPrimaryContact("primaryContact-532068418")
             .addAllAppliedTeams(new ArrayList<String>())
-            .setUpdateTime(Timestamp.newBuilder().build())
             .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -150,8 +150,8 @@ public class CompanyServiceClientTest {
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
             .setPrimaryContact("primaryContact-532068418")
             .addAllAppliedTeams(new ArrayList<String>())
-            .setUpdateTime(Timestamp.newBuilder().build())
             .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

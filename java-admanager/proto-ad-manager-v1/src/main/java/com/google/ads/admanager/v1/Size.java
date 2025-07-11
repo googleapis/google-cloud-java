@@ -70,9 +70,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The width of the [Creative](google.ads.admanager.v1.Creative),
-   * [AdUnit](google.ads.admanager.v1.AdUnit), or
-   * [LineItem](google.ads.admanager.v1.LineItem).
+   * Required. The width of the Creative,
+   * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
    * </pre>
    *
    * <code>int32 width = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,9 +90,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The height of the [Creative](google.ads.admanager.v1.Creative),
-   * [AdUnit](google.ads.admanager.v1.AdUnit), or
-   * [LineItem](google.ads.admanager.v1.LineItem).
+   * Required. The height of the Creative,
+   * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
    * </pre>
    *
    * <code>int32 height = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -112,10 +110,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The SizeType of the
-   * [Creative](google.ads.admanager.v1.Creative),
-   * [AdUnit](google.ads.admanager.v1.AdUnit), or
-   * [LineItem](google.ads.admanager.v1.LineItem).
+   * Required. The SizeType of the Creative,
+   * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
    * </pre>
    *
    * <code>
@@ -133,10 +129,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The SizeType of the
-   * [Creative](google.ads.admanager.v1.Creative),
-   * [AdUnit](google.ads.admanager.v1.AdUnit), or
-   * [LineItem](google.ads.admanager.v1.LineItem).
+   * Required. The SizeType of the Creative,
+   * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
    * </pre>
    *
    * <code>
@@ -541,9 +535,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The width of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 width = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -559,9 +552,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The width of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 width = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -581,9 +573,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The width of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 width = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -603,9 +594,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The height of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 height = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -621,9 +611,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The height of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 height = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -643,9 +632,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of the [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The height of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>int32 height = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -665,10 +653,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The SizeType of the
-     * [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The SizeType of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>
@@ -686,10 +672,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The SizeType of the
-     * [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The SizeType of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>
@@ -710,10 +694,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The SizeType of the
-     * [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The SizeType of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>
@@ -735,10 +717,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The SizeType of the
-     * [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The SizeType of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>
@@ -762,10 +742,8 @@ public final class Size extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The SizeType of the
-     * [Creative](google.ads.admanager.v1.Creative),
-     * [AdUnit](google.ads.admanager.v1.AdUnit), or
-     * [LineItem](google.ads.admanager.v1.LineItem).
+     * Required. The SizeType of the Creative,
+     * [AdUnit][google.ads.admanager.v1.AdUnit], or LineItem.
      * </pre>
      *
      * <code>

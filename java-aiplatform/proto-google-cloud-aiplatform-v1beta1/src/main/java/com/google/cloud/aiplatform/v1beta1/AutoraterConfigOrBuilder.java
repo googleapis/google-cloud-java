@@ -58,9 +58,9 @@ public interface AutoraterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to flip the candidate and baseline responses.
-   * This is only applicable to the pairwise metric. If enabled, also provide
-   * PairwiseMetricSpec.candidate_response_field_name and
+   * Optional. Default is true. Whether to flip the candidate and baseline
+   * responses. This is only applicable to the pairwise metric. If enabled, also
+   * provide PairwiseMetricSpec.candidate_response_field_name and
    * PairwiseMetricSpec.baseline_response_field_name. When rendering
    * PairwiseMetricSpec.metric_prompt_template, the candidate and baseline
    * fields will be flipped for half of the samples to reduce bias.
@@ -76,9 +76,9 @@ public interface AutoraterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to flip the candidate and baseline responses.
-   * This is only applicable to the pairwise metric. If enabled, also provide
-   * PairwiseMetricSpec.candidate_response_field_name and
+   * Optional. Default is true. Whether to flip the candidate and baseline
+   * responses. This is only applicable to the pairwise metric. If enabled, also
+   * provide PairwiseMetricSpec.candidate_response_field_name and
    * PairwiseMetricSpec.baseline_response_field_name. When rendering
    * PairwiseMetricSpec.metric_prompt_template, the candidate and baseline
    * fields will be flipped for half of the samples to reduce bias.

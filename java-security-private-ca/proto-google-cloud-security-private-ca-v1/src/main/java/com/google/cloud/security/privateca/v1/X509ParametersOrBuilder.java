@@ -76,7 +76,9 @@ public interface X509ParametersOrBuilder
    * <pre>
    * Optional. Describes options in this
    * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
-   * are relevant in a CA certificate.
+   * are relevant in a CA certificate. If not specified, a default basic
+   * constraints extension with `is_ca=false` will be added for leaf
+   * certificates.
    * </pre>
    *
    * <code>
@@ -93,7 +95,9 @@ public interface X509ParametersOrBuilder
    * <pre>
    * Optional. Describes options in this
    * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
-   * are relevant in a CA certificate.
+   * are relevant in a CA certificate. If not specified, a default basic
+   * constraints extension with `is_ca=false` will be added for leaf
+   * certificates.
    * </pre>
    *
    * <code>
@@ -110,7 +114,9 @@ public interface X509ParametersOrBuilder
    * <pre>
    * Optional. Describes options in this
    * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
-   * are relevant in a CA certificate.
+   * are relevant in a CA certificate. If not specified, a default basic
+   * constraints extension with `is_ca=false` will be added for leaf
+   * certificates.
    * </pre>
    *
    * <code>

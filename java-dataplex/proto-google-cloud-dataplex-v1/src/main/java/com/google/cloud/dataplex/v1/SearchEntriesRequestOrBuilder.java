@@ -196,4 +196,18 @@ public interface SearchEntriesRequestOrBuilder
    * @return The bytes for scope.
    */
   com.google.protobuf.ByteString getScopeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether the search should understand the meaning and
+   * intent behind the query, rather than just matching keywords.
+   * </pre>
+   *
+   * <code>bool semantic_search = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The semanticSearch.
+   */
+  boolean getSemanticSearch();
 }

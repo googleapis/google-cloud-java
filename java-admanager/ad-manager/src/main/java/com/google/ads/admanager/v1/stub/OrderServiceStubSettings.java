@@ -107,7 +107,7 @@ import javax.annotation.Generated;
 public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetOrderRequest, Order> getOrderSettings;
   private final PagedCallSettings<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
