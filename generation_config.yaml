@@ -1302,6 +1302,22 @@ libraries:
   - proto_path: google/cloud/language/v1beta2
   - proto_path: google/cloud/language/v2
 
+- api_shortname: licensemanager
+  name_pretty: License Manager API
+  product_documentation: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
+  api_description: License Manager is a tool to manage and track third-party licenses
+    on Google Cloud.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-licensemanager
+  api_id: licensemanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/licensemanager/v1
+  requires_billing: true
 - api_shortname: lifesciences
   name_pretty: Cloud Life Sciences
   product_documentation: https://cloud.google.com/life-sciences/docs
@@ -2347,6 +2363,7 @@ libraries:
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
+  - proto_path: google/shopping/merchant/reports/v1alpha
 
 - api_shortname: merchantapi
   name_pretty: Merchant API
