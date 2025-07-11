@@ -29,11 +29,11 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format: accounts/{account}/productInputs/{productinput}
+   * Format: `accounts/{account}/productInputs/{productinput}`
    * where the last section `productinput` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product input name is
-   * "accounts/123/productInputs/online~en~US~sku123"
+   * `accounts/123/productInputs/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -47,11 +47,11 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format: accounts/{account}/productInputs/{productinput}
+   * Format: `accounts/{account}/productInputs/{productinput}`
    * where the last section `productinput` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product input name is
-   * "accounts/123/productInputs/online~en~US~sku123"
+   * `accounts/123/productInputs/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -65,8 +65,7 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Output only. The name of the processed product.
-   * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * Format: `accounts/{account}/products/{product}`
    * </pre>
    *
    * <code>string product = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -80,8 +79,7 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Output only. The name of the processed product.
-   * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * Format: `accounts/{account}/products/{product}`
    * </pre>
    *
    * <code>string product = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -202,9 +200,11 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [feed
-   * label](https://developers.google.com/shopping-content/guides/products/feed-labels)
-   * for the product.
+   * Required. Immutable. The label that lets you categorize and identify your
+   * products. The maximum allowed characters are 20, and the supported
+   * characters are `A-Z`, `0-9`, hyphen, and underscore. The feed label must
+   * not include any spaces. For more information, see [Using feed
+   * labels](//support.google.com/merchants/answer/14994087).
    * </pre>
    *
    * <code>
@@ -219,9 +219,11 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [feed
-   * label](https://developers.google.com/shopping-content/guides/products/feed-labels)
-   * for the product.
+   * Required. Immutable. The label that lets you categorize and identify your
+   * products. The maximum allowed characters are 20, and the supported
+   * characters are `A-Z`, `0-9`, hyphen, and underscore. The feed label must
+   * not include any spaces. For more information, see [Using feed
+   * labels](//support.google.com/merchants/answer/14994087).
    * </pre>
    *
    * <code>
@@ -236,9 +238,9 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Optional. Represents the existing version (freshness) of the product, which
-   * can be used to preserve the right order when multiple updates are done at
-   * the same time.
+   * Optional. Immutable. Represents the existing version (freshness) of the
+   * product, which can be used to preserve the right order when multiple
+   * updates are done at the same time.
    *
    * If set, the insertion is prevented when version number is lower than
    * the current version number of the existing product. Re-insertion (for
@@ -246,12 +248,16 @@ public interface ProductInputOrBuilder
    * `version_number`.
    *
    * Only supported for insertions into primary data sources.
+   * Do not set this field for updates.
+   * Do not set this field for insertions into supplemental data sources.
    *
    * If the operation is prevented, the aborted exception will be
    * thrown.
    * </pre>
    *
-   * <code>optional int64 version_number = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int64 version_number = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return Whether the versionNumber field is set.
    */
@@ -261,9 +267,9 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Optional. Represents the existing version (freshness) of the product, which
-   * can be used to preserve the right order when multiple updates are done at
-   * the same time.
+   * Optional. Immutable. Represents the existing version (freshness) of the
+   * product, which can be used to preserve the right order when multiple
+   * updates are done at the same time.
    *
    * If set, the insertion is prevented when version number is lower than
    * the current version number of the existing product. Re-insertion (for
@@ -271,12 +277,16 @@ public interface ProductInputOrBuilder
    * `version_number`.
    *
    * Only supported for insertions into primary data sources.
+   * Do not set this field for updates.
+   * Do not set this field for insertions into supplemental data sources.
    *
    * If the operation is prevented, the aborted exception will be
    * thrown.
    * </pre>
    *
-   * <code>optional int64 version_number = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int64 version_number = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The versionNumber.
    */
@@ -334,7 +344,7 @@ public interface ProductInputOrBuilder
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
    * This is useful for submitting attributes not explicitly exposed by the
-   * API, such as additional attributes used for Buy on Google.
+   * API.
    * Maximum allowed number of characters for each
    * custom attribute is 10240 (represents sum of characters for name and
    * value). Maximum 2500 custom attributes can be set per product, with total
@@ -357,7 +367,7 @@ public interface ProductInputOrBuilder
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
    * This is useful for submitting attributes not explicitly exposed by the
-   * API, such as additional attributes used for Buy on Google.
+   * API.
    * Maximum allowed number of characters for each
    * custom attribute is 10240 (represents sum of characters for name and
    * value). Maximum 2500 custom attributes can be set per product, with total
@@ -380,7 +390,7 @@ public interface ProductInputOrBuilder
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
    * This is useful for submitting attributes not explicitly exposed by the
-   * API, such as additional attributes used for Buy on Google.
+   * API.
    * Maximum allowed number of characters for each
    * custom attribute is 10240 (represents sum of characters for name and
    * value). Maximum 2500 custom attributes can be set per product, with total
@@ -403,7 +413,7 @@ public interface ProductInputOrBuilder
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
    * This is useful for submitting attributes not explicitly exposed by the
-   * API, such as additional attributes used for Buy on Google.
+   * API.
    * Maximum allowed number of characters for each
    * custom attribute is 10240 (represents sum of characters for name and
    * value). Maximum 2500 custom attributes can be set per product, with total
@@ -427,7 +437,7 @@ public interface ProductInputOrBuilder
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
    * This is useful for submitting attributes not explicitly exposed by the
-   * API, such as additional attributes used for Buy on Google.
+   * API.
    * Maximum allowed number of characters for each
    * custom attribute is 10240 (represents sum of characters for name and
    * value). Maximum 2500 custom attributes can be set per product, with total

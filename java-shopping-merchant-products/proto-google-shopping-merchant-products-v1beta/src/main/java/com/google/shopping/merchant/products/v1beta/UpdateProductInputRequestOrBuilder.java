@@ -161,7 +161,8 @@ public interface UpdateProductInputRequestOrBuilder
    *
    * Only API data sources are supported.
    *
-   * Format: `accounts/{account}/dataSources/{datasource}`.
+   * Format: `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -179,7 +180,8 @@ public interface UpdateProductInputRequestOrBuilder
    *
    * Only API data sources are supported.
    *
-   * Format: `accounts/{account}/dataSources/{datasource}`.
+   * Format: `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
