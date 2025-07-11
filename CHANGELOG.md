@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.16.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.3...v3.16.0) (2025-07-11)
+
+
+### Features
+
+* Lower maxInflightRequest setting so that connection pool can scale up more efficiently. ([#2993](https://github.com/googleapis/java-bigquerystorage/issues/2993)) ([38e5837](https://github.com/googleapis/java-bigquerystorage/commit/38e5837dda2dfd2c2b22bedae6db089892f129f1))
+* Next release from main branch is 3.16.0 ([#3037](https://github.com/googleapis/java-bigquerystorage/issues/3037)) ([314d641](https://github.com/googleapis/java-bigquerystorage/commit/314d6419d29c175106f7d935be8c6ccf442466a5))
+
+
+### Bug Fixes
+
+* Add UNKNOWN to retry code, the same set was used for request level retries. ([#3034](https://github.com/googleapis/java-bigquerystorage/issues/3034)) ([60fb0c7](https://github.com/googleapis/java-bigquerystorage/commit/60fb0c743a1546d8ca2d6ea4c79e88d33ae09139))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.52.0 ([#3028](https://github.com/googleapis/java-bigquerystorage/issues/3028)) ([6501ab5](https://github.com/googleapis/java-bigquerystorage/commit/6501ab5b204a9d13dce709fd832173645596f5d9))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#3035](https://github.com/googleapis/java-bigquerystorage/issues/3035)) ([40d4e06](https://github.com/googleapis/java-bigquerystorage/commit/40d4e061f45ac3a08806828a4e47a2b48843f551))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.13.3 ([#3032](https://github.com/googleapis/java-bigquerystorage/issues/3032)) ([951f769](https://github.com/googleapis/java-bigquerystorage/commit/951f7697e28f8bfbe27130da29904c888266f30a))
+* Update googleapis/sdk-platform-java action to v2.60.1 ([#3036](https://github.com/googleapis/java-bigquerystorage/issues/3036)) ([c2941a5](https://github.com/googleapis/java-bigquerystorage/commit/c2941a5d6f99515d5ee49ebcfd00a855f22dce1c))
+* Update googleapis/sdk-platform-java action to v2.60.1 ([#3040](https://github.com/googleapis/java-bigquerystorage/issues/3040)) ([11412b4](https://github.com/googleapis/java-bigquerystorage/commit/11412b4b99510f5c52f26a3b83d7ce5cab7ae032))
+
 ## [3.15.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.2...v3.15.3) (2025-06-25)
 
 
