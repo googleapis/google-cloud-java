@@ -102,8 +102,8 @@ public interface ListCertificateAuthoritiesResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCertificateAuthoritiesRequest.next_page_token][] to retrieve the next
-   * page of results.
+   * [ListCertificateAuthoritiesRequest.page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -117,8 +117,8 @@ public interface ListCertificateAuthoritiesResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCertificateAuthoritiesRequest.next_page_token][] to retrieve the next
-   * page of results.
+   * [ListCertificateAuthoritiesRequest.page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

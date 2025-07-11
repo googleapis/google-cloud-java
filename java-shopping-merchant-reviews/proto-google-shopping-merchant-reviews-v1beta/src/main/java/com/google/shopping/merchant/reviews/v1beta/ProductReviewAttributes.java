@@ -2099,10 +2099,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -2115,10 +2116,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -2139,10 +2141,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */
@@ -3091,6 +3094,78 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     return isSpam_;
   }
 
+  public static final int IS_VERIFIED_PURCHASE_FIELD_NUMBER = 30;
+  private boolean isVerifiedPurchase_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the reviewer's purchase is verified.
+   * </pre>
+   *
+   * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the isVerifiedPurchase field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsVerifiedPurchase() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the reviewer's purchase is verified.
+   * </pre>
+   *
+   * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isVerifiedPurchase.
+   */
+  @java.lang.Override
+  public boolean getIsVerifiedPurchase() {
+    return isVerifiedPurchase_;
+  }
+
+  public static final int IS_INCENTIVIZED_REVIEW_FIELD_NUMBER = 31;
+  private boolean isIncentivizedReview_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the review is incentivized.
+   * </pre>
+   *
+   * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the isIncentivizedReview field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsIncentivizedReview() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the review is incentivized.
+   * </pre>
+   *
+   * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The isIncentivizedReview.
+   */
+  @java.lang.Override
+  public boolean getIsIncentivizedReview() {
+    return isIncentivizedReview_;
+  }
+
   public static final int COLLECTION_METHOD_FIELD_NUMBER = 28;
   private int collectionMethod_ = 0;
 
@@ -3298,6 +3373,12 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, transactionId_);
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeBool(30, isVerifiedPurchase_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeBool(31, isIncentivizedReview_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3447,6 +3528,12 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, transactionId_);
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, isVerifiedPurchase_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, isIncentivizedReview_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3541,6 +3628,14 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     if (hasIsSpam() != other.hasIsSpam()) return false;
     if (hasIsSpam()) {
       if (getIsSpam() != other.getIsSpam()) return false;
+    }
+    if (hasIsVerifiedPurchase() != other.hasIsVerifiedPurchase()) return false;
+    if (hasIsVerifiedPurchase()) {
+      if (getIsVerifiedPurchase() != other.getIsVerifiedPurchase()) return false;
+    }
+    if (hasIsIncentivizedReview() != other.hasIsIncentivizedReview()) return false;
+    if (hasIsIncentivizedReview()) {
+      if (getIsIncentivizedReview() != other.getIsIncentivizedReview()) return false;
     }
     if (collectionMethod_ != other.collectionMethod_) return false;
     if (!getTransactionId().equals(other.getTransactionId())) return false;
@@ -3665,6 +3760,14 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     if (hasIsSpam()) {
       hash = (37 * hash) + IS_SPAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSpam());
+    }
+    if (hasIsVerifiedPurchase()) {
+      hash = (37 * hash) + IS_VERIFIED_PURCHASE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsVerifiedPurchase());
+    }
+    if (hasIsIncentivizedReview()) {
+      hash = (37 * hash) + IS_INCENTIVIZED_REVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsIncentivizedReview());
     }
     hash = (37 * hash) + COLLECTION_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + collectionMethod_;
@@ -3858,6 +3961,8 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       skus_ = com.google.protobuf.LazyStringArrayList.emptyList();
       brands_ = com.google.protobuf.LazyStringArrayList.emptyList();
       isSpam_ = false;
+      isVerifiedPurchase_ = false;
+      isIncentivizedReview_ = false;
       collectionMethod_ = 0;
       transactionId_ = "";
       return this;
@@ -4009,9 +4114,17 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.collectionMethod_ = collectionMethod_;
+        result.isVerifiedPurchase_ = isVerifiedPurchase_;
+        to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.isIncentivizedReview_ = isIncentivizedReview_;
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.collectionMethod_ = collectionMethod_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.transactionId_ = transactionId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4237,12 +4350,18 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       if (other.hasIsSpam()) {
         setIsSpam(other.getIsSpam());
       }
+      if (other.hasIsVerifiedPurchase()) {
+        setIsVerifiedPurchase(other.getIsVerifiedPurchase());
+      }
+      if (other.hasIsIncentivizedReview()) {
+        setIsIncentivizedReview(other.getIsIncentivizedReview());
+      }
       if (other.collectionMethod_ != 0) {
         setCollectionMethodValue(other.getCollectionMethodValue());
       }
       if (!other.getTransactionId().isEmpty()) {
         transactionId_ = other.transactionId_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4446,15 +4565,27 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             case 224:
               {
                 collectionMethod_ = input.readEnum();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 224
             case 234:
               {
                 transactionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 234
+            case 240:
+              {
+                isVerifiedPurchase_ = input.readBool();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 240
+            case 248:
+              {
+                isIncentivizedReview_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 248
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6001,10 +6132,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the content field is set.
      */
@@ -6016,10 +6148,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The content.
      */
@@ -6039,10 +6172,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for content.
      */
@@ -6062,10 +6196,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -6084,10 +6219,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6102,10 +6238,11 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The content of the review.
+     * Optional. The content of the review. If empty, the content might still get
+     * populated from pros and cons.
      * </pre>
      *
-     * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.
@@ -8570,6 +8707,158 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return this;
     }
 
+    private boolean isVerifiedPurchase_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the reviewer's purchase is verified.
+     * </pre>
+     *
+     * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the isVerifiedPurchase field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsVerifiedPurchase() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the reviewer's purchase is verified.
+     * </pre>
+     *
+     * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isVerifiedPurchase.
+     */
+    @java.lang.Override
+    public boolean getIsVerifiedPurchase() {
+      return isVerifiedPurchase_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the reviewer's purchase is verified.
+     * </pre>
+     *
+     * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The isVerifiedPurchase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsVerifiedPurchase(boolean value) {
+
+      isVerifiedPurchase_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the reviewer's purchase is verified.
+     * </pre>
+     *
+     * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsVerifiedPurchase() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      isVerifiedPurchase_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isIncentivizedReview_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the review is incentivized.
+     * </pre>
+     *
+     * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the isIncentivizedReview field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsIncentivizedReview() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the review is incentivized.
+     * </pre>
+     *
+     * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isIncentivizedReview.
+     */
+    @java.lang.Override
+    public boolean getIsIncentivizedReview() {
+      return isIncentivizedReview_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the review is incentivized.
+     * </pre>
+     *
+     * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The isIncentivizedReview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsIncentivizedReview(boolean value) {
+
+      isIncentivizedReview_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the review is incentivized.
+     * </pre>
+     *
+     * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsIncentivizedReview() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      isIncentivizedReview_ = false;
+      onChanged();
+      return this;
+    }
+
     private int collectionMethod_ = 0;
 
     /**
@@ -8606,7 +8895,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      */
     public Builder setCollectionMethodValue(int value) {
       collectionMethod_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8656,7 +8945,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       collectionMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -8676,7 +8965,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCollectionMethod() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       collectionMethod_ = 0;
       onChanged();
       return this;
@@ -8753,7 +9042,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       transactionId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8773,7 +9062,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      */
     public Builder clearTransactionId() {
       transactionId_ = getDefaultInstance().getTransactionId();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -8798,7 +9087,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       transactionId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }

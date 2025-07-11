@@ -1943,6 +1943,46 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   *
+   * @return Whether the tlsSettings field is set.
+   */
+  boolean hasTlsSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   *
+   * @return The tlsSettings.
+   */
+  com.google.cloud.compute.v1.BackendServiceTlsSettings getTlsSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder getTlsSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] List of resources referencing given backend service.
    * </pre>
    *

@@ -29,11 +29,11 @@ public interface DeleteProductInputRequestOrBuilder
    *
    * <pre>
    * Required. The name of the product input resource to delete.
-   * Format: accounts/{account}/productInputs/{product}
+   * Format: `accounts/{account}/productInputs/{product}`
    * where the last section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product name is
-   * "accounts/123/productInputs/online~en~US~sku123"
+   * `accounts/123/productInputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>
@@ -49,11 +49,11 @@ public interface DeleteProductInputRequestOrBuilder
    *
    * <pre>
    * Required. The name of the product input resource to delete.
-   * Format: accounts/{account}/productInputs/{product}
+   * Format: `accounts/{account}/productInputs/{product}`
    * where the last section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product name is
-   * "accounts/123/productInputs/online~en~US~sku123"
+   * `accounts/123/productInputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>
@@ -70,7 +70,8 @@ public interface DeleteProductInputRequestOrBuilder
    * <pre>
    * Required. The primary or supplemental data source from which the product
    * input should be deleted. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,7 +86,8 @@ public interface DeleteProductInputRequestOrBuilder
    * <pre>
    * Required. The primary or supplemental data source from which the product
    * input should be deleted. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 2 [(.google.api.field_behavior) = REQUIRED];</code>

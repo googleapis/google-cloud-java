@@ -129,7 +129,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>
@@ -160,7 +160,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata related for Translations.
+   * Optional. Metadata related for multi language detection.
    * </pre>
    *
    * <code>

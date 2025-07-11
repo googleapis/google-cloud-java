@@ -499,10 +499,11 @@ public interface ProductReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -512,10 +513,11 @@ public interface ProductReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -525,10 +527,11 @@ public interface ProductReviewAttributesOrBuilder
    *
    *
    * <pre>
-   * Required. The content of the review.
+   * Optional. The content of the review. If empty, the content might still get
+   * populated from pros and cons.
    * </pre>
    *
-   * <code>optional string content = 12 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string content = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */
@@ -1269,6 +1272,60 @@ public interface ProductReviewAttributesOrBuilder
    * @return The isSpam.
    */
   boolean getIsSpam();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the reviewer's purchase is verified.
+   * </pre>
+   *
+   * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the isVerifiedPurchase field is set.
+   */
+  boolean hasIsVerifiedPurchase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the reviewer's purchase is verified.
+   * </pre>
+   *
+   * <code>optional bool is_verified_purchase = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isVerifiedPurchase.
+   */
+  boolean getIsVerifiedPurchase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the review is incentivized.
+   * </pre>
+   *
+   * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the isIncentivizedReview field is set.
+   */
+  boolean hasIsIncentivizedReview();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the review is incentivized.
+   * </pre>
+   *
+   * <code>optional bool is_incentivized_review = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The isIncentivizedReview.
+   */
+  boolean getIsIncentivizedReview();
 
   /**
    *

@@ -59,7 +59,20 @@ public interface UserOrBuilder
    * Output only. `User` ID.
    * </pre>
    *
-   * <code>int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the userId field is set.
+   */
+  boolean hasUserId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `User` ID.
+   * </pre>
+   *
+   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The userId.
    */
@@ -72,7 +85,20 @@ public interface UserOrBuilder
    * Required. The name of the User. It has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the User. It has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -85,7 +111,7 @@ public interface UserOrBuilder
    * Required. The name of the User. It has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -99,7 +125,21 @@ public interface UserOrBuilder
    * you must already have a Google Account.
    * </pre>
    *
-   * <code>string email = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string email = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The email or login of the User. In order to create a new user,
+   * you must already have a Google Account.
+   * </pre>
+   *
+   * <code>optional string email = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The email.
    */
@@ -113,7 +153,7 @@ public interface UserOrBuilder
    * you must already have a Google Account.
    * </pre>
    *
-   * <code>string email = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string email = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for email.
    */
@@ -128,7 +168,23 @@ public interface UserOrBuilder
    * </pre>
    *
    * <code>
-   * string role = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string role = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The unique Role ID of the User. Roles that are created by Google
+   * will have negative IDs.
+   * </pre>
+   *
+   * <code>
+   * optional string role = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The role.
@@ -144,7 +200,7 @@ public interface UserOrBuilder
    * </pre>
    *
    * <code>
-   * string role = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string role = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for role.
@@ -159,7 +215,21 @@ public interface UserOrBuilder
    * cannot log in to the system or perform any operations.
    * </pre>
    *
-   * <code>bool active = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool active = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the active field is set.
+   */
+  boolean hasActive();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the User is active. An inactive user
+   * cannot log in to the system or perform any operations.
+   * </pre>
+   *
+   * <code>optional bool active = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The active.
    */
@@ -173,7 +243,21 @@ public interface UserOrBuilder
    * This attribute has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the externalId field is set.
+   */
+  boolean hasExternalId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the User that is meaningful to the publisher.
+   * This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalId.
    */
@@ -187,7 +271,7 @@ public interface UserOrBuilder
    * This attribute has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalId.
    */
@@ -201,7 +285,21 @@ public interface UserOrBuilder
    * Service account users can only be added through the UI.
    * </pre>
    *
-   * <code>bool service_account = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool service_account = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  boolean hasServiceAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the user is an OAuth2 service account user.
+   * Service account users can only be added through the UI.
+   * </pre>
+   *
+   * <code>optional bool service_account = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The serviceAccount.
    */
@@ -218,7 +316,26 @@ public interface UserOrBuilder
    * times returned in API responses.
    * </pre>
    *
-   * <code>string orders_ui_local_time_zone = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string orders_ui_local_time_zone = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ordersUiLocalTimeZone field is set.
+   */
+  boolean hasOrdersUiLocalTimeZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The IANA Time Zone Database time zone, e.g. "America/New_York",
+   * used in the orders and line items UI for this User. If not provided, the UI
+   * then defaults to using the Network's timezone. This setting only affects
+   * the UI for this user and does not affect the timezone of any dates and
+   * times returned in API responses.
+   * </pre>
+   *
+   * <code>optional string orders_ui_local_time_zone = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ordersUiLocalTimeZone.
    */
@@ -235,7 +352,8 @@ public interface UserOrBuilder
    * times returned in API responses.
    * </pre>
    *
-   * <code>string orders_ui_local_time_zone = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string orders_ui_local_time_zone = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for ordersUiLocalTimeZone.
    */

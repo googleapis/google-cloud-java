@@ -512,6 +512,84 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListResourceChanges</td>
+ *      <td><p> Lists ResourceChanges for a given preview.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listResourceChanges(ListResourceChangesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listResourceChanges(PreviewName parent)
+ *           <li><p> listResourceChanges(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listResourceChangesPagedCallable()
+ *           <li><p> listResourceChangesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetResourceChange</td>
+ *      <td><p> Get a ResourceChange for a given preview.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getResourceChange(GetResourceChangeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getResourceChange(ResourceChangeName name)
+ *           <li><p> getResourceChange(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getResourceChangeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListResourceDrifts</td>
+ *      <td><p> List ResourceDrifts for a given preview.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listResourceDrifts(ListResourceDriftsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listResourceDrifts(PreviewName parent)
+ *           <li><p> listResourceDrifts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listResourceDriftsPagedCallable()
+ *           <li><p> listResourceDriftsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetResourceDrift</td>
+ *      <td><p> Get a ResourceDrift for a given preview.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getResourceDrift(GetResourceDriftRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getResourceDrift(ResourceDriftName name)
+ *           <li><p> getResourceDrift(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getResourceDriftCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -3726,6 +3804,591 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists ResourceChanges for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+   *   for (ResourceChange element : configClient.listResourceChanges(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the ResourceChanges are listed. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceChangesPagedResponse listResourceChanges(PreviewName parent) {
+    ListResourceChangesRequest request =
+        ListResourceChangesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listResourceChanges(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ResourceChanges for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString();
+   *   for (ResourceChange element : configClient.listResourceChanges(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the ResourceChanges are listed. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceChangesPagedResponse listResourceChanges(String parent) {
+    ListResourceChangesRequest request =
+        ListResourceChangesRequest.newBuilder().setParent(parent).build();
+    return listResourceChanges(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ResourceChanges for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceChangesRequest request =
+   *       ListResourceChangesRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ResourceChange element : configClient.listResourceChanges(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceChangesPagedResponse listResourceChanges(
+      ListResourceChangesRequest request) {
+    return listResourceChangesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ResourceChanges for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceChangesRequest request =
+   *       ListResourceChangesRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ResourceChange> future =
+   *       configClient.listResourceChangesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ResourceChange element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable() {
+    return stub.listResourceChangesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ResourceChanges for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceChangesRequest request =
+   *       ListResourceChangesRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListResourceChangesResponse response =
+   *         configClient.listResourceChangesCallable().call(request);
+   *     for (ResourceChange element : response.getResourceChangesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable() {
+    return stub.listResourceChangesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceChange for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ResourceChangeName name =
+   *       ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]");
+   *   ResourceChange response = configClient.getResourceChange(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource change to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceChanges/{resource_change}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceChange getResourceChange(ResourceChangeName name) {
+    GetResourceChangeRequest request =
+        GetResourceChangeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getResourceChange(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceChange for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+   *           .toString();
+   *   ResourceChange response = configClient.getResourceChange(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource change to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceChanges/{resource_change}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceChange getResourceChange(String name) {
+    GetResourceChangeRequest request = GetResourceChangeRequest.newBuilder().setName(name).build();
+    return getResourceChange(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceChange for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetResourceChangeRequest request =
+   *       GetResourceChangeRequest.newBuilder()
+   *           .setName(
+   *               ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+   *                   .toString())
+   *           .build();
+   *   ResourceChange response = configClient.getResourceChange(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceChange getResourceChange(GetResourceChangeRequest request) {
+    return getResourceChangeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceChange for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetResourceChangeRequest request =
+   *       GetResourceChangeRequest.newBuilder()
+   *           .setName(
+   *               ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ResourceChange> future =
+   *       configClient.getResourceChangeCallable().futureCall(request);
+   *   // Do something.
+   *   ResourceChange response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable() {
+    return stub.getResourceChangeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List ResourceDrifts for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+   *   for (ResourceDrift element : configClient.listResourceDrifts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the ResourceDrifts are listed. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceDriftsPagedResponse listResourceDrifts(PreviewName parent) {
+    ListResourceDriftsRequest request =
+        ListResourceDriftsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listResourceDrifts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List ResourceDrifts for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString();
+   *   for (ResourceDrift element : configClient.listResourceDrifts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the ResourceDrifts are listed. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceDriftsPagedResponse listResourceDrifts(String parent) {
+    ListResourceDriftsRequest request =
+        ListResourceDriftsRequest.newBuilder().setParent(parent).build();
+    return listResourceDrifts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List ResourceDrifts for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceDriftsRequest request =
+   *       ListResourceDriftsRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ResourceDrift element : configClient.listResourceDrifts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceDriftsPagedResponse listResourceDrifts(
+      ListResourceDriftsRequest request) {
+    return listResourceDriftsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List ResourceDrifts for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceDriftsRequest request =
+   *       ListResourceDriftsRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ResourceDrift> future =
+   *       configClient.listResourceDriftsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ResourceDrift element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable() {
+    return stub.listResourceDriftsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List ResourceDrifts for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListResourceDriftsRequest request =
+   *       ListResourceDriftsRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListResourceDriftsResponse response =
+   *         configClient.listResourceDriftsCallable().call(request);
+   *     for (ResourceDrift element : response.getResourceDriftsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable() {
+    return stub.listResourceDriftsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceDrift for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ResourceDriftName name =
+   *       ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]");
+   *   ResourceDrift response = configClient.getResourceDrift(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource drift to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceDrifts/{resource_drift}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceDrift getResourceDrift(ResourceDriftName name) {
+    GetResourceDriftRequest request =
+        GetResourceDriftRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getResourceDrift(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceDrift for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+   *           .toString();
+   *   ResourceDrift response = configClient.getResourceDrift(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource drift to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceDrifts/{resource_drift}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceDrift getResourceDrift(String name) {
+    GetResourceDriftRequest request = GetResourceDriftRequest.newBuilder().setName(name).build();
+    return getResourceDrift(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceDrift for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetResourceDriftRequest request =
+   *       GetResourceDriftRequest.newBuilder()
+   *           .setName(
+   *               ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+   *                   .toString())
+   *           .build();
+   *   ResourceDrift response = configClient.getResourceDrift(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceDrift getResourceDrift(GetResourceDriftRequest request) {
+    return getResourceDriftCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceDrift for a given preview.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetResourceDriftRequest request =
+   *       GetResourceDriftRequest.newBuilder()
+   *           .setName(
+   *               ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ResourceDrift> future = configClient.getResourceDriftCallable().futureCall(request);
+   *   // Do something.
+   *   ResourceDrift response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
+    return stub.getResourceDriftCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -4484,6 +5147,170 @@ public class ConfigClient implements BackgroundResource {
     protected ListTerraformVersionsFixedSizeCollection createCollection(
         List<ListTerraformVersionsPage> pages, int collectionSize) {
       return new ListTerraformVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListResourceChangesPagedResponse
+      extends AbstractPagedListResponse<
+          ListResourceChangesRequest,
+          ListResourceChangesResponse,
+          ResourceChange,
+          ListResourceChangesPage,
+          ListResourceChangesFixedSizeCollection> {
+
+    public static ApiFuture<ListResourceChangesPagedResponse> createAsync(
+        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+            context,
+        ApiFuture<ListResourceChangesResponse> futureResponse) {
+      ApiFuture<ListResourceChangesPage> futurePage =
+          ListResourceChangesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListResourceChangesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListResourceChangesPagedResponse(ListResourceChangesPage page) {
+      super(page, ListResourceChangesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListResourceChangesPage
+      extends AbstractPage<
+          ListResourceChangesRequest,
+          ListResourceChangesResponse,
+          ResourceChange,
+          ListResourceChangesPage> {
+
+    private ListResourceChangesPage(
+        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+            context,
+        ListResourceChangesResponse response) {
+      super(context, response);
+    }
+
+    private static ListResourceChangesPage createEmptyPage() {
+      return new ListResourceChangesPage(null, null);
+    }
+
+    @Override
+    protected ListResourceChangesPage createPage(
+        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+            context,
+        ListResourceChangesResponse response) {
+      return new ListResourceChangesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListResourceChangesPage> createPageAsync(
+        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+            context,
+        ApiFuture<ListResourceChangesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListResourceChangesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListResourceChangesRequest,
+          ListResourceChangesResponse,
+          ResourceChange,
+          ListResourceChangesPage,
+          ListResourceChangesFixedSizeCollection> {
+
+    private ListResourceChangesFixedSizeCollection(
+        List<ListResourceChangesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListResourceChangesFixedSizeCollection createEmptyCollection() {
+      return new ListResourceChangesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListResourceChangesFixedSizeCollection createCollection(
+        List<ListResourceChangesPage> pages, int collectionSize) {
+      return new ListResourceChangesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListResourceDriftsPagedResponse
+      extends AbstractPagedListResponse<
+          ListResourceDriftsRequest,
+          ListResourceDriftsResponse,
+          ResourceDrift,
+          ListResourceDriftsPage,
+          ListResourceDriftsFixedSizeCollection> {
+
+    public static ApiFuture<ListResourceDriftsPagedResponse> createAsync(
+        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
+        ApiFuture<ListResourceDriftsResponse> futureResponse) {
+      ApiFuture<ListResourceDriftsPage> futurePage =
+          ListResourceDriftsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListResourceDriftsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListResourceDriftsPagedResponse(ListResourceDriftsPage page) {
+      super(page, ListResourceDriftsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListResourceDriftsPage
+      extends AbstractPage<
+          ListResourceDriftsRequest,
+          ListResourceDriftsResponse,
+          ResourceDrift,
+          ListResourceDriftsPage> {
+
+    private ListResourceDriftsPage(
+        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
+        ListResourceDriftsResponse response) {
+      super(context, response);
+    }
+
+    private static ListResourceDriftsPage createEmptyPage() {
+      return new ListResourceDriftsPage(null, null);
+    }
+
+    @Override
+    protected ListResourceDriftsPage createPage(
+        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
+        ListResourceDriftsResponse response) {
+      return new ListResourceDriftsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListResourceDriftsPage> createPageAsync(
+        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
+        ApiFuture<ListResourceDriftsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListResourceDriftsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListResourceDriftsRequest,
+          ListResourceDriftsResponse,
+          ResourceDrift,
+          ListResourceDriftsPage,
+          ListResourceDriftsFixedSizeCollection> {
+
+    private ListResourceDriftsFixedSizeCollection(
+        List<ListResourceDriftsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListResourceDriftsFixedSizeCollection createEmptyCollection() {
+      return new ListResourceDriftsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListResourceDriftsFixedSizeCollection createCollection(
+        List<ListResourceDriftsPage> pages, int collectionSize) {
+      return new ListResourceDriftsFixedSizeCollection(pages, collectionSize);
     }
   }
 

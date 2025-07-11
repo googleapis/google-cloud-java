@@ -267,6 +267,50 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   *
+   * @return Whether the reservationSubBlockMaintenance field is set.
+   */
+  boolean hasReservationSubBlockMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   *
+   * @return The reservationSubBlockMaintenance.
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationSubBlockMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder
+      getReservationSubBlockMaintenanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *

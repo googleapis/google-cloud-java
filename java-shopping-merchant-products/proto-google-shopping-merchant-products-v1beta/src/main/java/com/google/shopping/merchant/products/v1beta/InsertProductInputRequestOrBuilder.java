@@ -29,7 +29,7 @@ public interface InsertProductInputRequestOrBuilder
    *
    * <pre>
    * Required. The account where this product will be inserted.
-   * Format: accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface InsertProductInputRequestOrBuilder
    *
    * <pre>
    * Required. The account where this product will be inserted.
-   * Format: accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>
@@ -105,11 +105,14 @@ public interface InsertProductInputRequestOrBuilder
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source.
+   * product will be moved to a new data source. For more information, see
+   * [Overview of Data sources
+   * sub-API](/merchant/api/guides/data-sources/overview).
    *
    * Only API data sources are supported.
    *
-   * Format: `accounts/{account}/dataSources/{datasource}`.
+   * Format: `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -124,11 +127,14 @@ public interface InsertProductInputRequestOrBuilder
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source.
+   * product will be moved to a new data source. For more information, see
+   * [Overview of Data sources
+   * sub-API](/merchant/api/guides/data-sources/overview).
    *
    * Only API data sources are supported.
    *
-   * Format: `accounts/{account}/dataSources/{datasource}`.
+   * Format: `accounts/{account}/dataSources/{datasource}`. For example,
+   * `accounts/123456/dataSources/104628`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>

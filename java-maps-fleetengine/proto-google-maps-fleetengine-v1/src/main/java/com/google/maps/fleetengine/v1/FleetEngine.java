@@ -48,6 +48,10 @@ public final class FleetEngine {
       internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_maps_fleetengine_v1_TripAttribute_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_maps_fleetengine_v1_TripAttribute_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,7 +99,7 @@ public final class FleetEngine {
           + "\014string_value\030\003 \001(\tH\000\022\024\n\n"
           + "bool_value\030\004 \001(\010H\000\022\026\n"
           + "\014number_value\030\005 \001(\001H\000B\031\n"
-          + "\027vehicle_attribute_value\"\244\014\n"
+          + "\027vehicle_attribute_value\"\200\016\n"
           + "\017VehicleLocation\022%\n"
           + "\010location\030\001 \001(\0132\023.google.type.LatLng\022=\n"
           + "\023horizontal_accuracy\030\010"
@@ -126,14 +130,25 @@ public final class FleetEngine {
           + "\014raw_location\030\020 \001(\0132\023.google.type.LatLng\0225\n"
           + "\021raw_location_time\030\021 \001(\0132\032.google.protobuf.Timestamp\022@\n"
           + "\023raw_location_sensor\030\034 \001(\0162#.maps.fleetengine.v1.LocationSensor\022;\n"
-          + "\025raw_location_accuracy\030\031 \001(\0132\034.google.protobuf.DoubleValue\0222\n"
+          + "\025raw_location_accuracy\030\031 \001(\0132\034.google.protobuf.DoubleValue\022)\n"
+          + "\014flp_location\030\035 \001(\0132\023.google.type.LatLng\0223\n"
+          + "\017flp_update_time\030\036 \001(\0132\032.google.protobuf.Timestamp\022@\n"
+          + "\032flp_latlng_accuracy_meters\030\037"
+          + " \001(\0132\034.google.protobuf.DoubleValue\0228\n"
+          + "\023flp_heading_degrees\030  \001(\0132\033.google.protobuf.Int32Value\0222\n"
           + "\025supplemental_location\030\022 \001(\0132\023.google.type.LatLng\022>\n"
           + "\032supplemental_location_time\030\023 \001(\0132\032.google.protobuf.Timestamp\022I\n"
           + "\034supplemental_location_sensor\030\024"
           + " \001(\0162#.maps.fleetengine.v1.LocationSensor\022D\n"
           + "\036supplemental_location_accuracy\030\025"
           + " \001(\0132\034.google.protobuf.DoubleValue\022\030\n"
-          + "\014road_snapped\030\032 \001(\010B\002\030\001*<\n"
+          + "\014road_snapped\030\032 \001(\010B\002\030\001\"z\n\r"
+          + "TripAttribute\022\013\n"
+          + "\003key\030\001 \001(\t\022\026\n"
+          + "\014string_value\030\002 \001(\tH\000\022\024\n\n"
+          + "bool_value\030\003 \001(\010H\000\022\026\n"
+          + "\014number_value\030\004 \001(\001H\000B\026\n"
+          + "\024trip_attribute_value*<\n"
           + "\010TripType\022\025\n"
           + "\021UNKNOWN_TRIP_TYPE\020\000\022\n\n"
           + "\006SHARED\020\001\022\r\n"
@@ -163,11 +178,11 @@ public final class FleetEngine {
           + "\025FLEET_ENGINE_LOCATION\020\006\022\033\n"
           + "\027FUSED_LOCATION_PROVIDER\020d\022\022\n\r"
           + "CORE_LOCATION\020\310\001B\327\001\n"
-          + "\036com.google.maps.fleetengine.v1B\013FleetEngineP"
-          + "\001ZFcloud.google.com/go/maps/fleetengine/"
-          + "apiv1/fleetenginepb;fleetenginepb\242\002\003CFE\252"
-          + "\002\032Google.Maps.FleetEngine.V1\312\002\032Google\\Ma"
-          + "ps\\FleetEngine\\V1\352\002\035Google::Maps::FleetEngine::V1b\006proto3"
+          + "\036com.google.maps.fleetengine.v1B\013FleetEngineP\001ZFcloud.google."
+          + "com/go/maps/fleetengine/apiv1/fleetengin"
+          + "epb;fleetenginepb\242\002\003CFE\252\002\032Google.Maps.Fl"
+          + "eetEngine.V1\312\002\032Google\\Maps\\FleetEngine\\V"
+          + "1\352\002\035Google::Maps::FleetEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -250,11 +265,23 @@ public final class FleetEngine {
               "RawLocationTime",
               "RawLocationSensor",
               "RawLocationAccuracy",
+              "FlpLocation",
+              "FlpUpdateTime",
+              "FlpLatlngAccuracyMeters",
+              "FlpHeadingDegrees",
               "SupplementalLocation",
               "SupplementalLocationTime",
               "SupplementalLocationSensor",
               "SupplementalLocationAccuracy",
               "RoadSnapped",
+            });
+    internal_static_maps_fleetengine_v1_TripAttribute_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_maps_fleetengine_v1_TripAttribute_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_maps_fleetengine_v1_TripAttribute_descriptor,
+            new java.lang.String[] {
+              "Key", "StringValue", "BoolValue", "NumberValue", "TripAttributeValue",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

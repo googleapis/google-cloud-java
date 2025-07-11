@@ -28,6 +28,52 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    *
    * <pre>
+   * Output only. Aggregation statistics derived from results of
+   * EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AggregationOutput aggregation_output = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the aggregationOutput field is set.
+   */
+  boolean hasAggregationOutput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregation statistics derived from results of
+   * EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AggregationOutput aggregation_output = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The aggregationOutput.
+   */
+  com.google.cloud.aiplatform.v1beta1.AggregationOutput getAggregationOutput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregation statistics derived from results of
+   * EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AggregationOutput aggregation_output = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AggregationOutputOrBuilder getAggregationOutputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Output info for EvaluationService.EvaluateDataset.
    * </pre>
    *

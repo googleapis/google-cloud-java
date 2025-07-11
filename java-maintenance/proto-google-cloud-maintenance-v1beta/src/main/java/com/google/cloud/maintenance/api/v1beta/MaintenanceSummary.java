@@ -183,7 +183,15 @@ public final class MaintenanceSummary extends com.google.protobuf.GeneratedMessa
         getAggregatesOrBuilder(int index);
   }
 
-  /** Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Stats} */
+  /**
+   *
+   *
+   * <pre>
+   * Stats indicates the type of aggregate and the corresponding aggregates.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Stats}
+   */
   public static final class Stats extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.maintenance.api.v1beta.MaintenanceSummary.Stats)
@@ -551,7 +559,15 @@ public final class MaintenanceSummary extends com.google.protobuf.GeneratedMessa
       return builder;
     }
 
-    /** Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Stats} */
+    /**
+     *
+     *
+     * <pre>
+     * Stats indicates the type of aggregate and the corresponding aggregates.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Stats}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -1497,7 +1513,15 @@ public final class MaintenanceSummary extends com.google.protobuf.GeneratedMessa
     long getCount();
   }
 
-  /** Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Aggregate} */
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate is a &lt;group, count&gt; pair.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Aggregate}
+   */
   public static final class Aggregate extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.maintenance.api.v1beta.MaintenanceSummary.Aggregate)
@@ -1782,7 +1806,15 @@ public final class MaintenanceSummary extends com.google.protobuf.GeneratedMessa
       return builder;
     }
 
-    /** Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Aggregate} */
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate is a &lt;group, count&gt; pair.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.maintenance.api.v1beta.MaintenanceSummary.Aggregate}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements

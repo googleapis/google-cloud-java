@@ -4690,6 +4690,62 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return timeoutSec_;
   }
 
+  public static final int TLS_SETTINGS_FIELD_NUMBER = 81794791;
+  private com.google.cloud.compute.v1.BackendServiceTlsSettings tlsSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   *
+   * @return Whether the tlsSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasTlsSettings() {
+    return ((bitField1_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   *
+   * @return The tlsSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceTlsSettings getTlsSettings() {
+    return tlsSettings_ == null
+        ? com.google.cloud.compute.v1.BackendServiceTlsSettings.getDefaultInstance()
+        : tlsSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder getTlsSettingsOrBuilder() {
+    return tlsSettings_ == null
+        ? com.google.cloud.compute.v1.BackendServiceTlsSettings.getDefaultInstance()
+        : tlsSettings_;
+  }
+
   public static final int USED_BY_FIELD_NUMBER = 389320729;
 
   @SuppressWarnings("serial")
@@ -4826,6 +4882,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000040) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      output.writeMessage(81794791, getTlsSettings());
     }
     if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 84577944, protocol_);
@@ -5002,6 +5061,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(81794791, getTlsSettings());
     }
     if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(84577944, protocol_);
@@ -5324,6 +5386,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasTimeoutSec()) {
       if (getTimeoutSec() != other.getTimeoutSec()) return false;
     }
+    if (hasTlsSettings() != other.hasTlsSettings()) return false;
+    if (hasTlsSettings()) {
+      if (!getTlsSettings().equals(other.getTlsSettings())) return false;
+    }
     if (!getUsedByList().equals(other.getUsedByList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5526,6 +5592,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TIMEOUT_SEC_FIELD_NUMBER;
       hash = (53 * hash) + getTimeoutSec();
     }
+    if (hasTlsSettings()) {
+      hash = (37 * hash) + TLS_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTlsSettings().hashCode();
+    }
     if (getUsedByCount() > 0) {
       hash = (37 * hash) + USED_BY_FIELD_NUMBER;
       hash = (53 * hash) + getUsedByList().hashCode();
@@ -5710,6 +5780,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         getSecuritySettingsFieldBuilder();
         getStrongSessionAffinityCookieFieldBuilder();
         getSubsettingFieldBuilder();
+        getTlsSettingsFieldBuilder();
         getUsedByFieldBuilder();
       }
     }
@@ -5840,13 +5911,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         subsettingBuilder_ = null;
       }
       timeoutSec_ = 0;
+      tlsSettings_ = null;
+      if (tlsSettingsBuilder_ != null) {
+        tlsSettingsBuilder_.dispose();
+        tlsSettingsBuilder_ = null;
+      }
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
       } else {
         usedBy_ = null;
         usedByBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       return this;
     }
 
@@ -5914,9 +5990,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
       }
       if (usedByBuilder_ == null) {
-        if (((bitField1_ & 0x00008000) != 0)) {
+        if (((bitField1_ & 0x00010000) != 0)) {
           usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
-          bitField1_ = (bitField1_ & ~0x00008000);
+          bitField1_ = (bitField1_ & ~0x00010000);
         }
         result.usedBy_ = usedBy_;
       } else {
@@ -6127,6 +6203,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00004000) != 0)) {
         result.timeoutSec_ = timeoutSec_;
         to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
+        result.tlsSettings_ =
+            tlsSettingsBuilder_ == null ? tlsSettings_ : tlsSettingsBuilder_.build();
+        to_bitField1_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -6456,11 +6537,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTimeoutSec()) {
         setTimeoutSec(other.getTimeoutSec());
       }
+      if (other.hasTlsSettings()) {
+        mergeTlsSettings(other.getTlsSettings());
+      }
       if (usedByBuilder_ == null) {
         if (!other.usedBy_.isEmpty()) {
           if (usedBy_.isEmpty()) {
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00008000);
+            bitField1_ = (bitField1_ & ~0x00010000);
           } else {
             ensureUsedByIsMutable();
             usedBy_.addAll(other.usedBy_);
@@ -6473,7 +6557,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             usedByBuilder_.dispose();
             usedByBuilder_ = null;
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00008000);
+            bitField1_ = (bitField1_ & ~0x00010000);
             usedByBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUsedByFieldBuilder()
@@ -6607,6 +6691,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00004000;
                 break;
               } // case 639959960
+            case 654358330:
+              {
+                input.readMessage(getTlsSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00008000;
+                break;
+              } // case 654358330
             case 676623554:
               {
                 protocol_ = input.readStringRequireUtf8();
@@ -14688,14 +14778,220 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.BackendServiceTlsSettings tlsSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceTlsSettings,
+            com.google.cloud.compute.v1.BackendServiceTlsSettings.Builder,
+            com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder>
+        tlsSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     *
+     * @return Whether the tlsSettings field is set.
+     */
+    public boolean hasTlsSettings() {
+      return ((bitField1_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     *
+     * @return The tlsSettings.
+     */
+    public com.google.cloud.compute.v1.BackendServiceTlsSettings getTlsSettings() {
+      if (tlsSettingsBuilder_ == null) {
+        return tlsSettings_ == null
+            ? com.google.cloud.compute.v1.BackendServiceTlsSettings.getDefaultInstance()
+            : tlsSettings_;
+      } else {
+        return tlsSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public Builder setTlsSettings(com.google.cloud.compute.v1.BackendServiceTlsSettings value) {
+      if (tlsSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tlsSettings_ = value;
+      } else {
+        tlsSettingsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public Builder setTlsSettings(
+        com.google.cloud.compute.v1.BackendServiceTlsSettings.Builder builderForValue) {
+      if (tlsSettingsBuilder_ == null) {
+        tlsSettings_ = builderForValue.build();
+      } else {
+        tlsSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public Builder mergeTlsSettings(com.google.cloud.compute.v1.BackendServiceTlsSettings value) {
+      if (tlsSettingsBuilder_ == null) {
+        if (((bitField1_ & 0x00008000) != 0)
+            && tlsSettings_ != null
+            && tlsSettings_
+                != com.google.cloud.compute.v1.BackendServiceTlsSettings.getDefaultInstance()) {
+          getTlsSettingsBuilder().mergeFrom(value);
+        } else {
+          tlsSettings_ = value;
+        }
+      } else {
+        tlsSettingsBuilder_.mergeFrom(value);
+      }
+      if (tlsSettings_ != null) {
+        bitField1_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public Builder clearTlsSettings() {
+      bitField1_ = (bitField1_ & ~0x00008000);
+      tlsSettings_ = null;
+      if (tlsSettingsBuilder_ != null) {
+        tlsSettingsBuilder_.dispose();
+        tlsSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceTlsSettings.Builder getTlsSettingsBuilder() {
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return getTlsSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder
+        getTlsSettingsOrBuilder() {
+      if (tlsSettingsBuilder_ != null) {
+        return tlsSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return tlsSettings_ == null
+            ? com.google.cloud.compute.v1.BackendServiceTlsSettings.getDefaultInstance()
+            : tlsSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Backend Authenticated TLS and mTLS. May only be specified when the backend protocol is SSL, HTTPS or HTTP2.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.BackendServiceTlsSettings tls_settings = 81794791;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceTlsSettings,
+            com.google.cloud.compute.v1.BackendServiceTlsSettings.Builder,
+            com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder>
+        getTlsSettingsFieldBuilder() {
+      if (tlsSettingsBuilder_ == null) {
+        tlsSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendServiceTlsSettings,
+                com.google.cloud.compute.v1.BackendServiceTlsSettings.Builder,
+                com.google.cloud.compute.v1.BackendServiceTlsSettingsOrBuilder>(
+                getTlsSettings(), getParentForChildren(), isClean());
+        tlsSettings_ = null;
+      }
+      return tlsSettingsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> usedBy_ =
         java.util.Collections.emptyList();
 
     private void ensureUsedByIsMutable() {
-      if (!((bitField1_ & 0x00008000) != 0)) {
+      if (!((bitField1_ & 0x00010000) != 0)) {
         usedBy_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.BackendServiceUsedBy>(usedBy_);
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00010000;
       }
     }
 
@@ -14921,7 +15217,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUsedBy() {
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00008000);
+        bitField1_ = (bitField1_ & ~0x00010000);
         onChanged();
       } else {
         usedByBuilder_.clear();
@@ -15050,7 +15346,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.BackendServiceUsedBy,
                 com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
                 com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>(
-                usedBy_, ((bitField1_ & 0x00008000) != 0), getParentForChildren(), isClean());
+                usedBy_, ((bitField1_ & 0x00010000) != 0), getParentForChildren(), isClean());
         usedBy_ = null;
       }
       return usedByBuilder_;

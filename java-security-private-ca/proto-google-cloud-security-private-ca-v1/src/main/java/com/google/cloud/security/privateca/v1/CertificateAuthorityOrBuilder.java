@@ -28,12 +28,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,12 +43,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -886,4 +886,81 @@ public interface CertificateAuthorityOrBuilder
    * <code>map&lt;string, string&gt; labels = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userDefinedAccessUrls field is set.
+   */
+  boolean hasUserDefinedAccessUrls();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userDefinedAccessUrls.
+   */
+  com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+      getUserDefinedAccessUrls();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrlsOrBuilder
+      getUserDefinedAccessUrlsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

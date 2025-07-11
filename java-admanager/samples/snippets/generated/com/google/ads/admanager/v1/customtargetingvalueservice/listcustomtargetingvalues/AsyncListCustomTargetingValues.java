@@ -17,10 +17,10 @@
 package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_CustomTargetingValueService_ListCustomTargetingValues_async]
-import com.google.ads.admanager.v1.CustomTargetingKeyName;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.CustomTargetingValueServiceClient;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.NetworkName;
 import com.google.api.core.ApiFuture;
 
 public class AsyncListCustomTargetingValues {
@@ -39,8 +39,7 @@ public class AsyncListCustomTargetingValues {
         CustomTargetingValueServiceClient.create()) {
       ListCustomTargetingValuesRequest request =
           ListCustomTargetingValuesRequest.newBuilder()
-              .setParent(
-                  CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+              .setParent(NetworkName.of("[NETWORK_CODE]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

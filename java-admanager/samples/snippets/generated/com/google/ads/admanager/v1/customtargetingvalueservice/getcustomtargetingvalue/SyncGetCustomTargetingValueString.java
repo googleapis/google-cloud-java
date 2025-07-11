@@ -36,9 +36,7 @@ public class SyncGetCustomTargetingValueString {
     try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
         CustomTargetingValueServiceClient.create()) {
       String name =
-          CustomTargetingValueName.of(
-                  "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
-              .toString();
+          CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]").toString();
       CustomTargetingValue response =
           customTargetingValueServiceClient.getCustomTargetingValue(name);
     }

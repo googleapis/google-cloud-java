@@ -28,10 +28,10 @@ public interface TerraformVariableOrBuilder
    *
    *
    * <pre>
-   * Input variable value.
+   * Optional. Input variable value.
    * </pre>
    *
-   * <code>.google.protobuf.Value input_value = 5;</code>
+   * <code>.google.protobuf.Value input_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the inputValue field is set.
    */
@@ -41,10 +41,10 @@ public interface TerraformVariableOrBuilder
    *
    *
    * <pre>
-   * Input variable value.
+   * Optional. Input variable value.
    * </pre>
    *
-   * <code>.google.protobuf.Value input_value = 5;</code>
+   * <code>.google.protobuf.Value input_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The inputValue.
    */
@@ -54,10 +54,10 @@ public interface TerraformVariableOrBuilder
    *
    *
    * <pre>
-   * Input variable value.
+   * Optional. Input variable value.
    * </pre>
    *
-   * <code>.google.protobuf.Value input_value = 5;</code>
+   * <code>.google.protobuf.Value input_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ValueOrBuilder getInputValueOrBuilder();
 }

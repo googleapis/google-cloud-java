@@ -398,4 +398,36 @@ public interface CertificateDescriptionOrBuilder
    */
   com.google.cloud.security.privateca.v1.CertificateDescription.CertificateFingerprintOrBuilder
       getCertFingerprintOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The hash of the pre-signed certificate, which will be signed by the CA.
+   * Corresponds to the TBS Certificate in
+   * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+   * populated.
+   * </pre>
+   *
+   * <code>string tbs_certificate_digest = 9;</code>
+   *
+   * @return The tbsCertificateDigest.
+   */
+  java.lang.String getTbsCertificateDigest();
+
+  /**
+   *
+   *
+   * <pre>
+   * The hash of the pre-signed certificate, which will be signed by the CA.
+   * Corresponds to the TBS Certificate in
+   * https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be
+   * populated.
+   * </pre>
+   *
+   * <code>string tbs_certificate_digest = 9;</code>
+   *
+   * @return The bytes for tbsCertificateDigest.
+   */
+  com.google.protobuf.ByteString getTbsCertificateDigestBytes();
 }

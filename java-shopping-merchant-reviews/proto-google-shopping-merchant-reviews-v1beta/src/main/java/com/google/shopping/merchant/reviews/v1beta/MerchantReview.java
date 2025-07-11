@@ -251,7 +251,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -265,7 +265,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -277,7 +277,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -291,7 +291,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -304,7 +304,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -318,7 +318,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -330,7 +330,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -344,7 +344,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -356,7 +356,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -370,7 +370,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1523,7 +1523,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1537,7 +1537,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
@@ -1552,7 +1552,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1566,7 +1566,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getCustomAttributesCount() {
@@ -1581,7 +1581,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1595,7 +1595,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
@@ -1610,7 +1610,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1624,7 +1624,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
@@ -1645,7 +1645,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1659,7 +1659,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setCustomAttributes(
@@ -1678,7 +1678,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1692,7 +1692,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addCustomAttributes(com.google.shopping.type.CustomAttribute value) {
@@ -1713,7 +1713,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1727,7 +1727,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
@@ -1748,7 +1748,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1762,7 +1762,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addCustomAttributes(
@@ -1781,7 +1781,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1795,7 +1795,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addCustomAttributes(
@@ -1814,7 +1814,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1828,7 +1828,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllCustomAttributes(
@@ -1847,7 +1847,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1861,7 +1861,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearCustomAttributes() {
@@ -1879,7 +1879,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1893,7 +1893,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeCustomAttributes(int index) {
@@ -1911,7 +1911,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1925,7 +1925,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.type.CustomAttribute.Builder getCustomAttributesBuilder(int index) {
@@ -1936,7 +1936,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1950,7 +1950,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(
@@ -1966,7 +1966,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -1980,7 +1980,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
@@ -1996,7 +1996,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -2010,7 +2010,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder() {
@@ -2022,7 +2022,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -2036,7 +2036,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder(int index) {
@@ -2048,7 +2048,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of custom (merchant-provided) attributes. It can also be
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
      * used for submitting any attribute of the data specification in its generic
      * form (for example,
      * `{ "name": "size type", "value": "regular" }`).
@@ -2062,7 +2062,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.shopping.type.CustomAttribute.Builder>

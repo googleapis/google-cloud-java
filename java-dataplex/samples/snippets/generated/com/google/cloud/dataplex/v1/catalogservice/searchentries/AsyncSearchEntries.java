@@ -44,6 +44,7 @@ public class AsyncSearchEntries {
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
               .setScope("scope109264468")
+              .setSemanticSearch(true)
               .build();
       ApiFuture<SearchEntriesResult> future =
           catalogServiceClient.searchEntriesPagedCallable().futureCall(request);

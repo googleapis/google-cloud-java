@@ -97,6 +97,24 @@ branchProtectionRules:
       - header-check
       - library_generation
       - unmanaged_dependency_check
+  - pattern: 1.61.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - 'Kokoro - Test: GraalVM Native Image C'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
 permissionRules:
   - team: yoshi-admins
     permission: admin

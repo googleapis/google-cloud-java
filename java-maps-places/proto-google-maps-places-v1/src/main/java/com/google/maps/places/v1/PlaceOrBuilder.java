@@ -188,11 +188,14 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The primary type of the given result. This type must one of the Places API
-   * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+   * The primary type of the given result. This type must be one of the Places
+   * API supported types. For example, "restaurant", "cafe", "airport", etc.  A
    * place can only have a single primary type.  For the complete list of
    * possible values, see Table A and Table B at
-   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * The primary type may be missing if the place's primary type is not a
+   * supported type. When a primary type is present, it is always one of the
+   * types in the `types` field.
    * </pre>
    *
    * <code>string primary_type = 50;</code>
@@ -205,11 +208,14 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The primary type of the given result. This type must one of the Places API
-   * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+   * The primary type of the given result. This type must be one of the Places
+   * API supported types. For example, "restaurant", "cafe", "airport", etc.  A
    * place can only have a single primary type.  For the complete list of
    * possible values, see Table A and Table B at
-   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * The primary type may be missing if the place's primary type is not a
+   * supported type. When a primary type is present, it is always one of the
+   * types in the `types` field.
    * </pre>
    *
    * <code>string primary_type = 50;</code>
@@ -225,7 +231,9 @@ public interface PlaceOrBuilder
    * The display name of the primary type, localized to the request language if
    * applicable. For the complete list of possible values, see Table A and Table
    * B at
-   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * The primary type may be missing if the place's primary type is not a
+   * supported type.
    * </pre>
    *
    * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
@@ -241,7 +249,9 @@ public interface PlaceOrBuilder
    * The display name of the primary type, localized to the request language if
    * applicable. For the complete list of possible values, see Table A and Table
    * B at
-   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * The primary type may be missing if the place's primary type is not a
+   * supported type.
    * </pre>
    *
    * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
@@ -257,7 +267,9 @@ public interface PlaceOrBuilder
    * The display name of the primary type, localized to the request language if
    * applicable. For the complete list of possible values, see Table A and Table
    * B at
-   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * The primary type may be missing if the place's primary type is not a
+   * supported type.
    * </pre>
    *
    * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>

@@ -4663,6 +4663,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
             .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -4710,6 +4711,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
             .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -4755,6 +4757,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
             .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4816,6 +4819,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
             .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4877,6 +4881,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
             .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

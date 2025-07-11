@@ -51,18 +51,4 @@ public interface TeamOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The unique ID of the Team. This value is assigned by Google.
-   * Teams that are created by Google will have negative IDs.
-   * </pre>
-   *
-   * <code>int64 team_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The teamId.
-   */
-  long getTeamId();
 }

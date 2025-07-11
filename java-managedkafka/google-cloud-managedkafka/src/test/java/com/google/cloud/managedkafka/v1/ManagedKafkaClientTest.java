@@ -198,6 +198,7 @@ public class ManagedKafkaClientTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockManagedKafka.addResponse(expectedResponse);
 
@@ -243,6 +244,7 @@ public class ManagedKafkaClientTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockManagedKafka.addResponse(expectedResponse);
 
@@ -288,6 +290,7 @@ public class ManagedKafkaClientTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -347,6 +350,7 @@ public class ManagedKafkaClientTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -406,6 +410,7 @@ public class ManagedKafkaClientTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

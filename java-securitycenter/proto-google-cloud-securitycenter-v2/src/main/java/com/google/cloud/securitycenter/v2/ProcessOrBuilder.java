@@ -352,4 +352,18 @@ public interface ProcessOrBuilder
    * @return The parentPid.
    */
   long getParentPid();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the user that executed the process. E.g. If this is the root user
+   * this will always be 0.
+   * </pre>
+   *
+   * <code>int64 user_id = 11;</code>
+   *
+   * @return The userId.
+   */
+  long getUserId();
 }

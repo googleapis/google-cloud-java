@@ -19,9 +19,11 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ReservationSubBlocksStub;
@@ -101,6 +103,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listPagedCallable()
  *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Allows customers to perform maintenance on a reservation subBlock</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(String project, String zone, String parentName, String reservationSubBlock)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -466,6 +487,153 @@ public class ReservationSubBlocksClient implements BackgroundResource {
   public final UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
       listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to perform maintenance on a reservation subBlock
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentName = "parentName-244870571";
+   *   String reservationSubBlock = "reservationSubBlock-1816847847";
+   *   Operation response =
+   *       reservationSubBlocksClient
+   *           .performMaintenanceAsync(project, zone, parentName, reservationSubBlock)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone for this request. Zone name should conform to RFC1035.
+   * @param parentName The name of the parent reservation and parent block. In the format of
+   *     reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
+   * @param reservationSubBlock The name of the reservation subBlock. Name should conform to RFC1035
+   *     or be a resource ID.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      String project, String zone, String parentName, String reservationSubBlock) {
+    PerformMaintenanceReservationSubBlockRequest request =
+        PerformMaintenanceReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentName(parentName)
+            .setReservationSubBlock(reservationSubBlock)
+            .build();
+    return performMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to perform maintenance on a reservation subBlock
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   PerformMaintenanceReservationSubBlockRequest request =
+   *       PerformMaintenanceReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = reservationSubBlocksClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      PerformMaintenanceReservationSubBlockRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to perform maintenance on a reservation subBlock
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   PerformMaintenanceReservationSubBlockRequest request =
+   *       PerformMaintenanceReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationSubBlocksClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to perform maintenance on a reservation subBlock
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   PerformMaintenanceReservationSubBlockRequest request =
+   *       PerformMaintenanceReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reservationSubBlocksClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
   }
 
   @Override

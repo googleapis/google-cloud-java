@@ -320,7 +320,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The feed label for the product.
+   * Output only. The feed label lets you categorize and identify your products.
+   * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+   * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+   * For more information, see [Using feed
+   * labels](//support.google.com/merchants/answer/14994087)
    * </pre>
    *
    * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -344,7 +348,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The feed label for the product.
+   * Output only. The feed label lets you categorize and identify your products.
+   * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+   * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+   * For more information, see [Using feed
+   * labels](//support.google.com/merchants/answer/14994087)
    * </pre>
    *
    * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1973,7 +1981,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The feed label for the product.
+     * Output only. The feed label lets you categorize and identify your products.
+     * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+     * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+     * For more information, see [Using feed
+     * labels](//support.google.com/merchants/answer/14994087)
      * </pre>
      *
      * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1996,7 +2008,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The feed label for the product.
+     * Output only. The feed label lets you categorize and identify your products.
+     * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+     * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+     * For more information, see [Using feed
+     * labels](//support.google.com/merchants/answer/14994087)
      * </pre>
      *
      * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2019,7 +2035,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The feed label for the product.
+     * Output only. The feed label lets you categorize and identify your products.
+     * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+     * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+     * For more information, see [Using feed
+     * labels](//support.google.com/merchants/answer/14994087)
      * </pre>
      *
      * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2041,7 +2061,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The feed label for the product.
+     * Output only. The feed label lets you categorize and identify your products.
+     * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+     * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+     * For more information, see [Using feed
+     * labels](//support.google.com/merchants/answer/14994087)
      * </pre>
      *
      * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2059,7 +2083,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The feed label for the product.
+     * Output only. The feed label lets you categorize and identify your products.
+     * The maximum allowed characters is 20 and the supported characters are`A-Z`,
+     * `0-9`, hyphen and underscore. The feed label must not include any spaces.
+     * For more information, see [Using feed
+     * labels](//support.google.com/merchants/answer/14994087)
      * </pre>
      *
      * <code>string feed_label = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

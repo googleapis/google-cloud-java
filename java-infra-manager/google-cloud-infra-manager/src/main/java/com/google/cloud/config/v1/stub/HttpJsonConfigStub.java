@@ -19,6 +19,8 @@ package com.google.cloud.config.v1.stub;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -52,6 +54,8 @@ import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
+import com.google.cloud.config.v1.GetResourceChangeRequest;
+import com.google.cloud.config.v1.GetResourceDriftRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
@@ -60,6 +64,10 @@ import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
 import com.google.cloud.config.v1.ListPreviewsResponse;
+import com.google.cloud.config.v1.ListResourceChangesRequest;
+import com.google.cloud.config.v1.ListResourceChangesResponse;
+import com.google.cloud.config.v1.ListResourceDriftsRequest;
+import com.google.cloud.config.v1.ListResourceDriftsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -71,6 +79,8 @@ import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
+import com.google.cloud.config.v1.ResourceChange;
+import com.google.cloud.config.v1.ResourceDrift;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
@@ -979,6 +989,150 @@ public class HttpJsonConfigStub extends ConfigStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesMethodDescriptor =
+          ApiMethodDescriptor.<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceChanges")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceChangesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/previews/*}/resourceChanges",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceChangesResponse>newBuilder()
+                      .setDefaultInstance(ListResourceChangesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceChangeRequest, ResourceChange>
+      getResourceChangeMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceChangeRequest, ResourceChange>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceChange")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceChangeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/previews/*/resourceChanges/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceChange>newBuilder()
+                      .setDefaultInstance(ResourceChange.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsMethodDescriptor =
+          ApiMethodDescriptor.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceDrifts")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceDriftsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/previews/*}/resourceDrifts",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceDriftsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceDriftsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceDriftsResponse>newBuilder()
+                      .setDefaultInstance(ListResourceDriftsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceDriftRequest, ResourceDrift>
+      getResourceDriftMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceDrift")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceDriftRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/previews/*/resourceDrifts/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceDriftRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceDriftRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceDrift>newBuilder()
+                      .setDefaultInstance(ResourceDrift.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1208,6 +1362,16 @@ public class HttpJsonConfigStub extends ConfigStub {
       listTerraformVersionsPagedCallable;
   private final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable;
+  private final UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable;
+  private final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1547,6 +1711,54 @@ public class HttpJsonConfigStub extends ConfigStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListResourceChangesRequest, ListResourceChangesResponse>
+        listResourceChangesTransportSettings =
+            HttpJsonCallSettings
+                .<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+                .setMethodDescriptor(listResourceChangesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeTransportSettings =
+            HttpJsonCallSettings.<GetResourceChangeRequest, ResourceChange>newBuilder()
+                .setMethodDescriptor(getResourceChangeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListResourceDriftsRequest, ListResourceDriftsResponse>
+        listResourceDriftsTransportSettings =
+            HttpJsonCallSettings.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+                .setMethodDescriptor(listResourceDriftsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftTransportSettings =
+        HttpJsonCallSettings.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+            .setMethodDescriptor(getResourceDriftMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1743,6 +1955,34 @@ public class HttpJsonConfigStub extends ConfigStub {
             getTerraformVersionTransportSettings,
             settings.getTerraformVersionSettings(),
             clientContext);
+    this.listResourceChangesCallable =
+        callableFactory.createUnaryCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.listResourceChangesPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.getResourceChangeCallable =
+        callableFactory.createUnaryCallable(
+            getResourceChangeTransportSettings,
+            settings.getResourceChangeSettings(),
+            clientContext);
+    this.listResourceDriftsCallable =
+        callableFactory.createUnaryCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.listResourceDriftsPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.getResourceDriftCallable =
+        callableFactory.createUnaryCallable(
+            getResourceDriftTransportSettings, settings.getResourceDriftSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1794,6 +2034,10 @@ public class HttpJsonConfigStub extends ConfigStub {
     methodDescriptors.add(exportPreviewResultMethodDescriptor);
     methodDescriptors.add(listTerraformVersionsMethodDescriptor);
     methodDescriptors.add(getTerraformVersionMethodDescriptor);
+    methodDescriptors.add(listResourceChangesMethodDescriptor);
+    methodDescriptors.add(getResourceChangeMethodDescriptor);
+    methodDescriptors.add(listResourceDriftsMethodDescriptor);
+    methodDescriptors.add(getResourceDriftMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1994,6 +2238,40 @@ public class HttpJsonConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
     return getTerraformVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable() {
+    return listResourceChangesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable() {
+    return listResourceChangesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable() {
+    return getResourceChangeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable() {
+    return listResourceDriftsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable() {
+    return listResourceDriftsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
+    return getResourceDriftCallable;
   }
 
   @Override

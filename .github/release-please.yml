@@ -23,3 +23,8 @@ branches:
     manifest: true
     handleGHRelease: true
     branch: 1.53.x
+  - primaryBranch: main
+    releaseType: java-backport
+    manifest: true
+    handleGHRelease: true
+    branch: 1.61.x

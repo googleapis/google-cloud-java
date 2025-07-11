@@ -49,7 +49,7 @@ public final class VpcFlowLogsConfigProto {
           + "Agoogle/cloud/networkmanagement/v1beta1/vpc_flow_logs_config.proto\022&google.clou"
           + "d.networkmanagement.v1beta1\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\032\037google/protobuf/timestamp.proto\"\221\013\n"
+          + "e.proto\032\037google/protobuf/timestamp.proto\"\302\020\n"
           + "\021VpcFlowLogsConfig\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\035\n"
           + "\013description\030\002 \001(\tB\003\340A\001H\001\210\001\001\022X\n"
@@ -62,11 +62,18 @@ public final class VpcFlowLogsConfigProto {
           + "\010metadata\030\006 \001(\0162B.google.cloud.networkmanag"
           + "ement.v1beta1.VpcFlowLogsConfig.MetadataB\003\340A\001H\005\210\001\001\022\034\n"
           + "\017metadata_fields\030\007 \003(\tB\003\340A\001\022\035\n"
-          + "\013filter_expr\030\010 \001(\tB\003\340A\001H\006\210\001\001\022!\n"
+          + "\013filter_expr\030\010 \001(\tB\003\340A\001H\006\210\001\001\022x\n"
+          + "\026cross_project_metadata\030\r"
+          + " \001(\0162N.google.cloud.n"
+          + "etworkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadataB\003\340A\001H\007\210\001\001\022v\n"
+          + "\025target_resource_state\030\014 \001(\0162M.google.cloud."
+          + "networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceStateB\003\340A\003H\010\210\001\001\022\021\n"
+          + "\007network\030d \001(\tH\000\022\020\n"
+          + "\006subnet\030e \001(\tH\000\022!\n"
           + "\027interconnect_attachment\030f \001(\tH\000\022\024\n\n"
           + "vpn_tunnel\030g \001(\tH\000\022Z\n"
-          + "\006labels\030\013 \003(\0132E.google.cloud."
-          + "networkmanagement.v1beta1.VpcFlowLogsConfig.LabelsEntryB\003\340A\001\0224\n"
+          + "\006labels\030\013 \003(\0132E.google.cloud.n"
+          + "etworkmanagement.v1beta1.VpcFlowLogsConfig.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
@@ -89,23 +96,35 @@ public final class VpcFlowLogsConfigProto {
           + "\024METADATA_UNSPECIFIED\020\000\022\030\n"
           + "\024INCLUDE_ALL_METADATA\020\001\022\030\n"
           + "\024EXCLUDE_ALL_METADATA\020\002\022\023\n"
-          + "\017CUSTOM_METADATA\020\003:\262\001\352A\256\001\n"
-          + "2networkmanagement.googleapis.com/VpcFlowLogsConfig\022Qprojects/"
-          + "{project}/locations/{location}/vpcFlowLo"
-          + "gsConfigs/{vpc_flow_logs_config}*\022vpcFlowLogsConfigs2\021vpcFlowLogsConfigB\021\n"
+          + "\017CUSTOM_METADATA\020\003\"\207\001\n"
+          + "\024CrossProjectMetadata\022&\n"
+          + "\"CROSS_PROJECT_METADATA_UNSPECIFIED\020\000\022\"\n"
+          + "\036CROSS_PROJECT_METADATA_ENABLED\020\001\022#\n"
+          + "\037CROSS_PROJECT_METADATA_DISABLED\020\002\"|\n"
+          + "\023TargetResourceState\022%\n"
+          + "!TARGET_RESOURCE_STATE_UNSPECIFIED\020\000\022\032\n"
+          + "\026TARGET_RESOURCE_EXISTS\020\001\022\"\n"
+          + "\036TARGET_RESOURCE_DOES_NOT_EXIST\020\002:\217\002\352A\213\002\n"
+          + "2networkmanagement.googleapis.com/VpcFlowLogsConfig\022Qprojects/{project}/locatio"
+          + "ns/{location}/vpcFlowLogsConfigs/{vpc_flow_logs_config}\022[organizations/{organiza"
+          + "tion}/locations/{location}/vpcFlowLogsCo"
+          + "nfigs/{vpc_flow_logs_config}*\022vpcFlowLogsConfigs2\021vpcFlowLogsConfigB\021\n"
           + "\017target_resourceB\016\n"
           + "\014_descriptionB\010\n"
           + "\006_stateB\027\n"
           + "\025_aggregation_intervalB\020\n"
           + "\016_flow_samplingB\013\n"
           + "\t_metadataB\016\n"
-          + "\014_filter_exprB\236\002\n"
-          + "*com.google.cloud.networkmanagement.v1beta1B\026Vpc"
-          + "FlowLogsConfigProtoP\001ZXcloud.google.com/go/networkmanagement/apiv1beta1/networkm"
-          + "anagementpb;networkmanagementpb\252\002&Google"
-          + ".Cloud.NetworkManagement.V1Beta1\312\002&Googl"
-          + "e\\Cloud\\NetworkManagement\\V1beta1\352\002)Goog"
-          + "le::Cloud::NetworkManagement::V1beta1b\006proto3"
+          + "\014_filter_exprB\031\n"
+          + "\027_cross_project_metadataB\030\n"
+          + "\026_target_resource_stateB\213\003\n"
+          + "*com.google.cloud.networkmanagement.v1beta1B\026VpcFlowLogsConfigProtoP\001ZXcloud.go"
+          + "ogle.com/go/networkmanagement/apiv1beta1/networkmanagementpb;networkmanagementpb"
+          + "\252\002&Google.Cloud.NetworkManagement.V1Beta"
+          + "1\312\002&Google\\Cloud\\NetworkManagement\\V1bet"
+          + "a1\352\002)Google::Cloud::NetworkManagement::V1beta1\352Aj\n"
+          + "5networkmanagement.googleapis.com/OrganizationLocation\0221organizations/"
+          + "{organization}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,6 +148,10 @@ public final class VpcFlowLogsConfigProto {
               "Metadata",
               "MetadataFields",
               "FilterExpr",
+              "CrossProjectMetadata",
+              "TargetResourceState",
+              "Network",
+              "Subnet",
               "InterconnectAttachment",
               "VpnTunnel",
               "Labels",
@@ -150,6 +173,7 @@ public final class VpcFlowLogsConfigProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

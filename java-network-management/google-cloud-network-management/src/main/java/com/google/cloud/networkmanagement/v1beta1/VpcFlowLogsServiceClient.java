@@ -65,7 +65,8 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
  *   VpcFlowLogsConfigName name =
- *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+ *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+ *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
  *   VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
  * }
  * }</pre>
@@ -92,6 +93,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listVpcFlowLogsConfigs(LocationName parent)
+ *           <li><p> listVpcFlowLogsConfigs(OrganizationLocationName parent)
  *           <li><p> listVpcFlowLogsConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -122,7 +124,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateVpcFlowLogsConfig</td>
- *      <td><p> Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for the purpose of the check mentioned above, therefore - creating another configuration with the same fields but different values for the following fields will fail as well:   - name   - create_time   - update_time   - labels   - description</td>
+ *      <td><p> Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes:
+ * <p>    1. Creating a configuration with `state=DISABLED` will fail   2. The following fields are not considered as settings for the purpose   of the check mentioned above, therefore - creating another configuration   with the same fields but different values for the following fields will   fail as well:       &#42; name       &#42; create_time       &#42; update_time       &#42; labels       &#42; description</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -132,6 +135,8 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createVpcFlowLogsConfigAsync(LocationName parent, VpcFlowLogsConfig vpcFlowLogsConfig, VpcFlowLogsConfigName vpcFlowLogsConfigId)
  *           <li><p> createVpcFlowLogsConfigAsync(LocationName parent, VpcFlowLogsConfig vpcFlowLogsConfig, String vpcFlowLogsConfigId)
+ *           <li><p> createVpcFlowLogsConfigAsync(OrganizationLocationName parent, VpcFlowLogsConfig vpcFlowLogsConfig, VpcFlowLogsConfigName vpcFlowLogsConfigId)
+ *           <li><p> createVpcFlowLogsConfigAsync(OrganizationLocationName parent, VpcFlowLogsConfig vpcFlowLogsConfig, String vpcFlowLogsConfigId)
  *           <li><p> createVpcFlowLogsConfigAsync(String parent, VpcFlowLogsConfig vpcFlowLogsConfig, VpcFlowLogsConfigName vpcFlowLogsConfigId)
  *           <li><p> createVpcFlowLogsConfigAsync(String parent, VpcFlowLogsConfig vpcFlowLogsConfig, String vpcFlowLogsConfigId)
  *      </ul>
@@ -144,7 +149,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateVpcFlowLogsConfig</td>
- *      <td><p> Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes: 1. The following fields are not considrered as `settings` for the purpose of the check mentioned above, therefore - updating another configuration with the same fields but different values for the following fields will fail as well:   - name   - create_time   - update_time   - labels   - description</td>
+ *      <td><p> Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes:
+ * <p>    1. Updating a configuration with `state=DISABLED` will fail   2. The following fields are not considered as settings for the purpose   of the check mentioned above, therefore - updating another configuration   with the same fields but different values for the following fields will   fail as well:       &#42; name       &#42; create_time       &#42; update_time       &#42; labels       &#42; description</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -178,6 +184,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteVpcFlowLogsConfigOperationCallable()
  *           <li><p> deleteVpcFlowLogsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryOrgVpcFlowLogsConfigs</td>
+ *      <td><p> QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC Flow Logs configurations applicable to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryOrgVpcFlowLogsConfigs(QueryOrgVpcFlowLogsConfigsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryOrgVpcFlowLogsConfigsPagedCallable()
+ *           <li><p> queryOrgVpcFlowLogsConfigsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -409,11 +430,49 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VpcFlowLogsConfig:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(LocationName parent) {
+    ListVpcFlowLogsConfigsRequest request =
+        ListVpcFlowLogsConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listVpcFlowLogsConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all `VpcFlowLogsConfigs` in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (VpcFlowLogsConfig element :
+   *       vpcFlowLogsServiceClient.listVpcFlowLogsConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(
+      OrganizationLocationName parent) {
     ListVpcFlowLogsConfigsRequest request =
         ListVpcFlowLogsConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -442,8 +501,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VpcFlowLogsConfig:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(String parent) {
@@ -579,13 +640,18 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   VpcFlowLogsConfigName name =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
    *   VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
    * }
    * }</pre>
    *
-   * @param name Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * @param name Required. The resource name of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For project-level resources:
+   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *     <p>- For organization-level resources:
+   *     `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VpcFlowLogsConfig getVpcFlowLogsConfig(VpcFlowLogsConfigName name) {
@@ -610,13 +676,19 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   String name =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *           .toString();
    *   VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
    * }
    * }</pre>
    *
-   * @param name Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * @param name Required. The resource name of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For project-level resources:
+   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *     <p>- For organization-level resources:
+   *     `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VpcFlowLogsConfig getVpcFlowLogsConfig(String name) {
@@ -641,7 +713,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   GetVpcFlowLogsConfigRequest request =
    *       GetVpcFlowLogsConfigRequest.newBuilder()
    *           .setName(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .build();
    *   VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(request);
@@ -671,7 +744,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   GetVpcFlowLogsConfigRequest request =
    *       GetVpcFlowLogsConfigRequest.newBuilder()
    *           .setName(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<VpcFlowLogsConfig> future =
@@ -689,11 +763,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -707,7 +782,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
    *   VpcFlowLogsConfigName vpcFlowLogsConfigId =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
    *   VpcFlowLogsConfig response =
    *       vpcFlowLogsServiceClient
    *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
@@ -715,8 +791,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VPC Flow Logs configuration to create:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
    * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -738,11 +816,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -756,7 +835,9 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
    *   String vpcFlowLogsConfigId =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *           .toString();
    *   VpcFlowLogsConfig response =
    *       vpcFlowLogsServiceClient
    *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
@@ -764,8 +845,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VPC Flow Logs configuration to create:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
    * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -784,11 +867,118 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+   *   VpcFlowLogsConfigName vpcFlowLogsConfigId =
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+   *   VpcFlowLogsConfig response =
+   *       vpcFlowLogsServiceClient
+   *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
+   * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
+   * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
+      OrganizationLocationName parent,
+      VpcFlowLogsConfig vpcFlowLogsConfig,
+      VpcFlowLogsConfigName vpcFlowLogsConfigId) {
+    CreateVpcFlowLogsConfigRequest request =
+        CreateVpcFlowLogsConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setVpcFlowLogsConfig(vpcFlowLogsConfig)
+            .setVpcFlowLogsConfigId(
+                vpcFlowLogsConfigId == null ? null : vpcFlowLogsConfigId.toString())
+            .build();
+    return createVpcFlowLogsConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+   *   String vpcFlowLogsConfigId =
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *           .toString();
+   *   VpcFlowLogsConfig response =
+   *       vpcFlowLogsServiceClient
+   *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
+   * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
+   * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
+      OrganizationLocationName parent,
+      VpcFlowLogsConfig vpcFlowLogsConfig,
+      String vpcFlowLogsConfigId) {
+    CreateVpcFlowLogsConfigRequest request =
+        CreateVpcFlowLogsConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setVpcFlowLogsConfig(vpcFlowLogsConfig)
+            .setVpcFlowLogsConfigId(vpcFlowLogsConfigId)
+            .build();
+    return createVpcFlowLogsConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -802,7 +992,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
    *   VpcFlowLogsConfigName vpcFlowLogsConfigId =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
    *   VpcFlowLogsConfig response =
    *       vpcFlowLogsServiceClient
    *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
@@ -810,8 +1001,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VPC Flow Logs configuration to create:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
    * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -833,11 +1026,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -851,7 +1045,9 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
    *   String vpcFlowLogsConfigId =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *           .toString();
    *   VpcFlowLogsConfig response =
    *       vpcFlowLogsServiceClient
    *           .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)
@@ -859,8 +1055,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource of the VPC Flow Logs configuration to create:
-   *     `projects/{project_id}/locations/global`
+   * @param parent Required. The parent resource of the VpcFlowLogsConfig to create, in one of the
+   *     following formats:
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
+   *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @param vpcFlowLogsConfig Required. A `VpcFlowLogsConfig` resource
    * @param vpcFlowLogsConfigId Required. ID of the `VpcFlowLogsConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -879,11 +1077,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -898,7 +1097,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *       CreateVpcFlowLogsConfigRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setVpcFlowLogsConfigId(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .setVpcFlowLogsConfig(VpcFlowLogsConfig.newBuilder().build())
    *           .build();
@@ -918,11 +1118,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -937,7 +1138,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *       CreateVpcFlowLogsConfigRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setVpcFlowLogsConfigId(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .setVpcFlowLogsConfig(VpcFlowLogsConfig.newBuilder().build())
    *           .build();
@@ -957,11 +1159,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already
-   * exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration
-   * with state=DISABLED will fail. 2. The following fields are not considrered as `settings` for
-   * the purpose of the check mentioned above, therefore - creating another configuration with the
-   * same fields but different values for the following fields will fail as well: - name -
-   * create_time - update_time - labels - description
+   * exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Creating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - creating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -976,7 +1179,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *       CreateVpcFlowLogsConfigRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setVpcFlowLogsConfigId(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .setVpcFlowLogsConfig(VpcFlowLogsConfig.newBuilder().build())
    *           .build();
@@ -995,10 +1199,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings
-   * already exists (even if the ID is different), the creation fails. Notes: 1. The following
-   * fields are not considrered as `settings` for the purpose of the check mentioned above,
-   * therefore - updating another configuration with the same fields but different values for the
-   * following fields will fail as well: - name - create_time - update_time - labels - description
+   * already exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Updating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - updating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -1020,7 +1226,10 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *
    * @param vpcFlowLogsConfig Required. Only fields specified in update_mask are updated.
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
-   *     this field.
+   *     this field. For example, to change the state of the configuration to ENABLED, specify
+   *     `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be: `vpc_flow_logs_config =
+   *     { name = "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config" state =
+   *     "ENABLED" }`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> updateVpcFlowLogsConfigAsync(
@@ -1036,10 +1245,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings
-   * already exists (even if the ID is different), the creation fails. Notes: 1. The following
-   * fields are not considrered as `settings` for the purpose of the check mentioned above,
-   * therefore - updating another configuration with the same fields but different values for the
-   * following fields will fail as well: - name - create_time - update_time - labels - description
+   * already exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Updating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - updating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -1071,10 +1282,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings
-   * already exists (even if the ID is different), the creation fails. Notes: 1. The following
-   * fields are not considrered as `settings` for the purpose of the check mentioned above,
-   * therefore - updating another configuration with the same fields but different values for the
-   * following fields will fail as well: - name - create_time - update_time - labels - description
+   * already exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Updating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - updating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -1106,10 +1319,12 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings
-   * already exists (even if the ID is different), the creation fails. Notes: 1. The following
-   * fields are not considrered as `settings` for the purpose of the check mentioned above,
-   * therefore - updating another configuration with the same fields but different values for the
-   * following fields will fail as well: - name - create_time - update_time - labels - description
+   * already exists (even if the ID is different), the creation fails. Notes:
+   *
+   * <p>1. Updating a configuration with `state=DISABLED` will fail 2. The following fields are not
+   * considered as settings for the purpose of the check mentioned above, therefore - updating
+   * another configuration with the same fields but different values for the following fields will
+   * fail as well: &#42; name &#42; create_time &#42; update_time &#42; labels &#42; description
    *
    * <p>Sample code:
    *
@@ -1151,13 +1366,18 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   VpcFlowLogsConfigName name =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
    *   vpcFlowLogsServiceClient.deleteVpcFlowLogsConfigAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * @param name Required. The resource name of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For a project-level resource:
+   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *     <p>- For an organization-level resource:
+   *     `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteVpcFlowLogsConfigAsync(
@@ -1183,13 +1403,19 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   String name =
-   *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+   *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *           .toString();
    *   vpcFlowLogsServiceClient.deleteVpcFlowLogsConfigAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * @param name Required. The resource name of the VpcFlowLogsConfig, in one of the following
+   *     formats:
+   *     <p>- For a project-level resource:
+   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *     <p>- For an organization-level resource:
+   *     `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteVpcFlowLogsConfigAsync(String name) {
@@ -1214,7 +1440,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   DeleteVpcFlowLogsConfigRequest request =
    *       DeleteVpcFlowLogsConfigRequest.newBuilder()
    *           .setName(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .build();
    *   vpcFlowLogsServiceClient.deleteVpcFlowLogsConfigAsync(request).get();
@@ -1245,7 +1472,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   DeleteVpcFlowLogsConfigRequest request =
    *       DeleteVpcFlowLogsConfigRequest.newBuilder()
    *           .setName(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
@@ -1276,7 +1504,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *   DeleteVpcFlowLogsConfigRequest request =
    *       DeleteVpcFlowLogsConfigRequest.newBuilder()
    *           .setName(
-   *               VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+   *               VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1289,6 +1518,120 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteVpcFlowLogsConfigRequest, Operation>
       deleteVpcFlowLogsConfigCallable() {
     return stub.deleteVpcFlowLogsConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC Flow Logs
+   * configurations applicable to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   QueryOrgVpcFlowLogsConfigsRequest request =
+   *       QueryOrgVpcFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (VpcFlowLogsConfig element :
+   *       vpcFlowLogsServiceClient.queryOrgVpcFlowLogsConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryOrgVpcFlowLogsConfigsPagedResponse queryOrgVpcFlowLogsConfigs(
+      QueryOrgVpcFlowLogsConfigsRequest request) {
+    return queryOrgVpcFlowLogsConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC Flow Logs
+   * configurations applicable to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   QueryOrgVpcFlowLogsConfigsRequest request =
+   *       QueryOrgVpcFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<VpcFlowLogsConfig> future =
+   *       vpcFlowLogsServiceClient.queryOrgVpcFlowLogsConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (VpcFlowLogsConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable() {
+    return stub.queryOrgVpcFlowLogsConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC Flow Logs
+   * configurations applicable to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   QueryOrgVpcFlowLogsConfigsRequest request =
+   *       QueryOrgVpcFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     QueryOrgVpcFlowLogsConfigsResponse response =
+   *         vpcFlowLogsServiceClient.queryOrgVpcFlowLogsConfigsCallable().call(request);
+   *     for (VpcFlowLogsConfig element : response.getVpcFlowLogsConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable() {
+    return stub.queryOrgVpcFlowLogsConfigsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1756,6 +2099,102 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
     protected ListVpcFlowLogsConfigsFixedSizeCollection createCollection(
         List<ListVpcFlowLogsConfigsPage> pages, int collectionSize) {
       return new ListVpcFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryOrgVpcFlowLogsConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          VpcFlowLogsConfig,
+          QueryOrgVpcFlowLogsConfigsPage,
+          QueryOrgVpcFlowLogsConfigsFixedSizeCollection> {
+
+    public static ApiFuture<QueryOrgVpcFlowLogsConfigsPagedResponse> createAsync(
+        PageContext<
+                QueryOrgVpcFlowLogsConfigsRequest,
+                QueryOrgVpcFlowLogsConfigsResponse,
+                VpcFlowLogsConfig>
+            context,
+        ApiFuture<QueryOrgVpcFlowLogsConfigsResponse> futureResponse) {
+      ApiFuture<QueryOrgVpcFlowLogsConfigsPage> futurePage =
+          QueryOrgVpcFlowLogsConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryOrgVpcFlowLogsConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryOrgVpcFlowLogsConfigsPagedResponse(QueryOrgVpcFlowLogsConfigsPage page) {
+      super(page, QueryOrgVpcFlowLogsConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryOrgVpcFlowLogsConfigsPage
+      extends AbstractPage<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          VpcFlowLogsConfig,
+          QueryOrgVpcFlowLogsConfigsPage> {
+
+    private QueryOrgVpcFlowLogsConfigsPage(
+        PageContext<
+                QueryOrgVpcFlowLogsConfigsRequest,
+                QueryOrgVpcFlowLogsConfigsResponse,
+                VpcFlowLogsConfig>
+            context,
+        QueryOrgVpcFlowLogsConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static QueryOrgVpcFlowLogsConfigsPage createEmptyPage() {
+      return new QueryOrgVpcFlowLogsConfigsPage(null, null);
+    }
+
+    @Override
+    protected QueryOrgVpcFlowLogsConfigsPage createPage(
+        PageContext<
+                QueryOrgVpcFlowLogsConfigsRequest,
+                QueryOrgVpcFlowLogsConfigsResponse,
+                VpcFlowLogsConfig>
+            context,
+        QueryOrgVpcFlowLogsConfigsResponse response) {
+      return new QueryOrgVpcFlowLogsConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryOrgVpcFlowLogsConfigsPage> createPageAsync(
+        PageContext<
+                QueryOrgVpcFlowLogsConfigsRequest,
+                QueryOrgVpcFlowLogsConfigsResponse,
+                VpcFlowLogsConfig>
+            context,
+        ApiFuture<QueryOrgVpcFlowLogsConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryOrgVpcFlowLogsConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          VpcFlowLogsConfig,
+          QueryOrgVpcFlowLogsConfigsPage,
+          QueryOrgVpcFlowLogsConfigsFixedSizeCollection> {
+
+    private QueryOrgVpcFlowLogsConfigsFixedSizeCollection(
+        List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryOrgVpcFlowLogsConfigsFixedSizeCollection createEmptyCollection() {
+      return new QueryOrgVpcFlowLogsConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryOrgVpcFlowLogsConfigsFixedSizeCollection createCollection(
+        List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
+      return new QueryOrgVpcFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

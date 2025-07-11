@@ -203,6 +203,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -254,6 +255,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -305,6 +307,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -365,6 +368,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -425,6 +429,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -444,6 +449,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -483,6 +489,7 @@ public class ManagedKafkaClientHttpJsonTest {
               .setRebalanceConfig(RebalanceConfig.newBuilder().build())
               .setSatisfiesPzi(true)
               .setSatisfiesPzs(true)
+              .setTlsConfig(TlsConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();

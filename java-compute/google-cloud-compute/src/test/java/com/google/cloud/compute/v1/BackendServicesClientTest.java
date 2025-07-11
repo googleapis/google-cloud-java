@@ -410,6 +410,7 @@ public class BackendServicesClientTest {
             .setStrongSessionAffinityCookie(BackendServiceHttpCookie.newBuilder().build())
             .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setTlsSettings(BackendServiceTlsSettings.newBuilder().build())
             .addAllUsedBy(new ArrayList<BackendServiceUsedBy>())
             .build();
     mockService.addResponse(expectedResponse);

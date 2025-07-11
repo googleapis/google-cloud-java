@@ -183,6 +183,68 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         : userPromptData_;
   }
 
+  public static final int MULTI_LANGUAGE_DETECTION_METADATA_FIELD_NUMBER = 6;
+  private com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata
+      multiLanguageDetectionMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related to Multi Language Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiLanguageDetectionMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiLanguageDetectionMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related to Multi Language Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiLanguageDetectionMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata
+      getMultiLanguageDetectionMetadata() {
+    return multiLanguageDetectionMetadata_ == null
+        ? com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.getDefaultInstance()
+        : multiLanguageDetectionMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata related to Multi Language Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadataOrBuilder
+      getMultiLanguageDetectionMetadataOrBuilder() {
+    return multiLanguageDetectionMetadata_ == null
+        ? com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.getDefaultInstance()
+        : multiLanguageDetectionMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -203,6 +265,9 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getUserPromptData());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getMultiLanguageDetectionMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -217,6 +282,11 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUserPromptData());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getMultiLanguageDetectionMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -239,6 +309,12 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     if (hasUserPromptData()) {
       if (!getUserPromptData().equals(other.getUserPromptData())) return false;
     }
+    if (hasMultiLanguageDetectionMetadata() != other.hasMultiLanguageDetectionMetadata())
+      return false;
+    if (hasMultiLanguageDetectionMetadata()) {
+      if (!getMultiLanguageDetectionMetadata().equals(other.getMultiLanguageDetectionMetadata()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -255,6 +331,10 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     if (hasUserPromptData()) {
       hash = (37 * hash) + USER_PROMPT_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getUserPromptData().hashCode();
+    }
+    if (hasMultiLanguageDetectionMetadata()) {
+      hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiLanguageDetectionMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -399,6 +479,7 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getUserPromptDataFieldBuilder();
+        getMultiLanguageDetectionMetadataFieldBuilder();
       }
     }
 
@@ -411,6 +492,11 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
       if (userPromptDataBuilder_ != null) {
         userPromptDataBuilder_.dispose();
         userPromptDataBuilder_ = null;
+      }
+      multiLanguageDetectionMetadata_ = null;
+      if (multiLanguageDetectionMetadataBuilder_ != null) {
+        multiLanguageDetectionMetadataBuilder_.dispose();
+        multiLanguageDetectionMetadataBuilder_ = null;
       }
       return this;
     }
@@ -458,6 +544,13 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         result.userPromptData_ =
             userPromptDataBuilder_ == null ? userPromptData_ : userPromptDataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.multiLanguageDetectionMetadata_ =
+            multiLanguageDetectionMetadataBuilder_ == null
+                ? multiLanguageDetectionMetadata_
+                : multiLanguageDetectionMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -517,6 +610,9 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
       if (other.hasUserPromptData()) {
         mergeUserPromptData(other.getUserPromptData());
       }
+      if (other.hasMultiLanguageDetectionMetadata()) {
+        mergeMultiLanguageDetectionMetadata(other.getMultiLanguageDetectionMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -555,6 +651,14 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 50:
+              {
+                input.readMessage(
+                    getMultiLanguageDetectionMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -912,6 +1016,227 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         userPromptData_ = null;
       }
       return userPromptDataBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata
+        multiLanguageDetectionMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata,
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.Builder,
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadataOrBuilder>
+        multiLanguageDetectionMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiLanguageDetectionMetadata field is set.
+     */
+    public boolean hasMultiLanguageDetectionMetadata() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiLanguageDetectionMetadata.
+     */
+    public com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata
+        getMultiLanguageDetectionMetadata() {
+      if (multiLanguageDetectionMetadataBuilder_ == null) {
+        return multiLanguageDetectionMetadata_ == null
+            ? com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.getDefaultInstance()
+            : multiLanguageDetectionMetadata_;
+      } else {
+        return multiLanguageDetectionMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiLanguageDetectionMetadata(
+        com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata value) {
+      if (multiLanguageDetectionMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiLanguageDetectionMetadata_ = value;
+      } else {
+        multiLanguageDetectionMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiLanguageDetectionMetadata(
+        com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.Builder builderForValue) {
+      if (multiLanguageDetectionMetadataBuilder_ == null) {
+        multiLanguageDetectionMetadata_ = builderForValue.build();
+      } else {
+        multiLanguageDetectionMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMultiLanguageDetectionMetadata(
+        com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata value) {
+      if (multiLanguageDetectionMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && multiLanguageDetectionMetadata_ != null
+            && multiLanguageDetectionMetadata_
+                != com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata
+                    .getDefaultInstance()) {
+          getMultiLanguageDetectionMetadataBuilder().mergeFrom(value);
+        } else {
+          multiLanguageDetectionMetadata_ = value;
+        }
+      } else {
+        multiLanguageDetectionMetadataBuilder_.mergeFrom(value);
+      }
+      if (multiLanguageDetectionMetadata_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMultiLanguageDetectionMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      multiLanguageDetectionMetadata_ = null;
+      if (multiLanguageDetectionMetadataBuilder_ != null) {
+        multiLanguageDetectionMetadataBuilder_.dispose();
+        multiLanguageDetectionMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.Builder
+        getMultiLanguageDetectionMetadataBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getMultiLanguageDetectionMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadataOrBuilder
+        getMultiLanguageDetectionMetadataOrBuilder() {
+      if (multiLanguageDetectionMetadataBuilder_ != null) {
+        return multiLanguageDetectionMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return multiLanguageDetectionMetadata_ == null
+            ? com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.getDefaultInstance()
+            : multiLanguageDetectionMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata related to Multi Language Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata multi_language_detection_metadata = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata,
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.Builder,
+            com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadataOrBuilder>
+        getMultiLanguageDetectionMetadataFieldBuilder() {
+      if (multiLanguageDetectionMetadataBuilder_ == null) {
+        multiLanguageDetectionMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata,
+                com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata.Builder,
+                com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadataOrBuilder>(
+                getMultiLanguageDetectionMetadata(), getParentForChildren(), isClean());
+        multiLanguageDetectionMetadata_ = null;
+      }
+      return multiLanguageDetectionMetadataBuilder_;
     }
 
     @java.lang.Override

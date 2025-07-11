@@ -231,4 +231,68 @@ public interface SubjectOrBuilder
    * @return The bytes for postalCode.
    */
   com.google.protobuf.ByteString getPostalCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  java.util.List<com.google.cloud.security.privateca.v1.RelativeDistinguishedName>
+      getRdnSequenceList();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  com.google.cloud.security.privateca.v1.RelativeDistinguishedName getRdnSequence(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  int getRdnSequenceCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder>
+      getRdnSequenceOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used in place of the named subject fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.security.privateca.v1.RelativeDistinguishedName rdn_sequence = 9;
+   * </code>
+   */
+  com.google.cloud.security.privateca.v1.RelativeDistinguishedNameOrBuilder getRdnSequenceOrBuilder(
+      int index);
 }

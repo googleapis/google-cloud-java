@@ -1549,4 +1549,60 @@ public interface TripOrBuilder
    * @return The view.
    */
   com.google.maps.fleetengine.v1.TripView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  java.util.List<com.google.maps.fleetengine.v1.TripAttribute> getAttributesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  com.google.maps.fleetengine.v1.TripAttribute getAttributes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  int getAttributesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  java.util.List<? extends com.google.maps.fleetengine.v1.TripAttributeOrBuilder>
+      getAttributesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  com.google.maps.fleetengine.v1.TripAttributeOrBuilder getAttributesOrBuilder(int index);
 }

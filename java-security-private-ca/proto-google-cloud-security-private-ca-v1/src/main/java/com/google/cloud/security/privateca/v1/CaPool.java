@@ -1504,6 +1504,67 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the backdateDuration field is set.
+     */
+    boolean hasBackdateDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The backdateDuration.
+     */
+    com.google.protobuf.Duration getBackdateDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getBackdateDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The maximum lifetime allowed for issued
      * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
      * if the issuing
@@ -5824,6 +5885,83 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       return allowedKeyTypes_.get(index);
     }
 
+    public static final int BACKDATE_DURATION_FIELD_NUMBER = 7;
+    private com.google.protobuf.Duration backdateDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the backdateDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasBackdateDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The backdateDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getBackdateDuration() {
+      return backdateDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : backdateDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to backdate all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+     * certificates will be issued with a not_before_time of the issuance time
+     * (i.e. the current time). If set, the certificates will be issued with a
+     * not_before_time of the issuance time minus the backdate_duration. The
+     * not_after_time will be adjusted to preserve the requested lifetime. The
+     * backdate_duration must be less than or equal to 48 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getBackdateDurationOrBuilder() {
+      return backdateDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : backdateDuration_;
+    }
+
     public static final int MAXIMUM_LIFETIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration maximumLifetime_;
 
@@ -5849,7 +5987,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaximumLifetime() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -5926,7 +6064,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAllowedIssuanceModes() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -6003,7 +6141,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasBaselineValues() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -6084,7 +6222,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIdentityConstraints() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -6171,7 +6309,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPassthroughExtensions() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -6263,20 +6401,23 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < allowedKeyTypes_.size(); i++) {
         output.writeMessage(1, allowedKeyTypes_.get(i));
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getMaximumLifetime());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getAllowedIssuanceModes());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(4, getBaselineValues());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(5, getIdentityConstraints());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeMessage(6, getPassthroughExtensions());
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(7, getBackdateDuration());
       }
       getUnknownFields().writeTo(output);
     }
@@ -6291,23 +6432,26 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, allowedKeyTypes_.get(i));
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMaximumLifetime());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAllowedIssuanceModes());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBaselineValues());
-      }
       if (((bitField0_ & 0x00000008) != 0)) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getIdentityConstraints());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBaselineValues());
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getIdentityConstraints());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPassthroughExtensions());
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getBackdateDuration());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6326,6 +6470,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy) obj;
 
       if (!getAllowedKeyTypesList().equals(other.getAllowedKeyTypesList())) return false;
+      if (hasBackdateDuration() != other.hasBackdateDuration()) return false;
+      if (hasBackdateDuration()) {
+        if (!getBackdateDuration().equals(other.getBackdateDuration())) return false;
+      }
       if (hasMaximumLifetime() != other.hasMaximumLifetime()) return false;
       if (hasMaximumLifetime()) {
         if (!getMaximumLifetime().equals(other.getMaximumLifetime())) return false;
@@ -6360,6 +6508,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (getAllowedKeyTypesCount() > 0) {
         hash = (37 * hash) + ALLOWED_KEY_TYPES_FIELD_NUMBER;
         hash = (53 * hash) + getAllowedKeyTypesList().hashCode();
+      }
+      if (hasBackdateDuration()) {
+        hash = (37 * hash) + BACKDATE_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getBackdateDuration().hashCode();
       }
       if (hasMaximumLifetime()) {
         hash = (37 * hash) + MAXIMUM_LIFETIME_FIELD_NUMBER;
@@ -6527,6 +6679,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getAllowedKeyTypesFieldBuilder();
+          getBackdateDurationFieldBuilder();
           getMaximumLifetimeFieldBuilder();
           getAllowedIssuanceModesFieldBuilder();
           getBaselineValuesFieldBuilder();
@@ -6546,6 +6699,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           allowedKeyTypesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        backdateDuration_ = null;
+        if (backdateDurationBuilder_ != null) {
+          backdateDurationBuilder_.dispose();
+          backdateDurationBuilder_ = null;
+        }
         maximumLifetime_ = null;
         if (maximumLifetimeBuilder_ != null) {
           maximumLifetimeBuilder_.dispose();
@@ -6625,35 +6783,42 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maximumLifetime_ =
-              maximumLifetimeBuilder_ == null ? maximumLifetime_ : maximumLifetimeBuilder_.build();
+          result.backdateDuration_ =
+              backdateDurationBuilder_ == null
+                  ? backdateDuration_
+                  : backdateDurationBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maximumLifetime_ =
+              maximumLifetimeBuilder_ == null ? maximumLifetime_ : maximumLifetimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.allowedIssuanceModes_ =
               allowedIssuanceModesBuilder_ == null
                   ? allowedIssuanceModes_
                   : allowedIssuanceModesBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.baselineValues_ =
-              baselineValuesBuilder_ == null ? baselineValues_ : baselineValuesBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.baselineValues_ =
+              baselineValuesBuilder_ == null ? baselineValues_ : baselineValuesBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.identityConstraints_ =
               identityConstraintsBuilder_ == null
                   ? identityConstraints_
                   : identityConstraintsBuilder_.build();
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.passthroughExtensions_ =
               passthroughExtensionsBuilder_ == null
                   ? passthroughExtensions_
                   : passthroughExtensionsBuilder_.build();
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000020;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -6734,6 +6899,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasBackdateDuration()) {
+          mergeBackdateDuration(other.getBackdateDuration());
+        }
         if (other.hasMaximumLifetime()) {
           mergeMaximumLifetime(other.getMaximumLifetime());
         }
@@ -6794,37 +6962,44 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getMaximumLifetimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getAllowedIssuanceModesFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getBaselineValuesFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       getIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getPassthroughExtensionsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getBackdateDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7339,6 +7514,272 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         return allowedKeyTypesBuilder_;
       }
 
+      private com.google.protobuf.Duration backdateDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          backdateDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the backdateDuration field is set.
+       */
+      public boolean hasBackdateDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The backdateDuration.
+       */
+      public com.google.protobuf.Duration getBackdateDuration() {
+        if (backdateDurationBuilder_ == null) {
+          return backdateDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : backdateDuration_;
+        } else {
+          return backdateDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBackdateDuration(com.google.protobuf.Duration value) {
+        if (backdateDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          backdateDuration_ = value;
+        } else {
+          backdateDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBackdateDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (backdateDurationBuilder_ == null) {
+          backdateDuration_ = builderForValue.build();
+        } else {
+          backdateDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeBackdateDuration(com.google.protobuf.Duration value) {
+        if (backdateDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && backdateDuration_ != null
+              && backdateDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getBackdateDurationBuilder().mergeFrom(value);
+          } else {
+            backdateDuration_ = value;
+          }
+        } else {
+          backdateDurationBuilder_.mergeFrom(value);
+        }
+        if (backdateDuration_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBackdateDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        backdateDuration_ = null;
+        if (backdateDurationBuilder_ != null) {
+          backdateDurationBuilder_.dispose();
+          backdateDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getBackdateDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getBackdateDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getBackdateDurationOrBuilder() {
+        if (backdateDurationBuilder_ != null) {
+          return backdateDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return backdateDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : backdateDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The duration to backdate all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
+       * certificates will be issued with a not_before_time of the issuance time
+       * (i.e. the current time). If set, the certificates will be issued with a
+       * not_before_time of the issuance time minus the backdate_duration. The
+       * not_after_time will be adjusted to preserve the requested lifetime. The
+       * backdate_duration must be less than or equal to 48 hours.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration backdate_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getBackdateDurationFieldBuilder() {
+        if (backdateDurationBuilder_ == null) {
+          backdateDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getBackdateDuration(), getParentForChildren(), isClean());
+          backdateDuration_ = null;
+        }
+        return backdateDurationBuilder_;
+      }
+
       private com.google.protobuf.Duration maximumLifetime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,
@@ -7367,7 +7808,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the maximumLifetime field is set.
        */
       public boolean hasMaximumLifetime() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
 
       /**
@@ -7427,7 +7868,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           maximumLifetimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7456,7 +7897,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           maximumLifetimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7481,7 +7922,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeMaximumLifetime(com.google.protobuf.Duration value) {
         if (maximumLifetimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && maximumLifetime_ != null
               && maximumLifetime_ != com.google.protobuf.Duration.getDefaultInstance()) {
             getMaximumLifetimeBuilder().mergeFrom(value);
@@ -7492,7 +7933,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           maximumLifetimeBuilder_.mergeFrom(value);
         }
         if (maximumLifetime_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
@@ -7517,7 +7958,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMaximumLifetime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         maximumLifetime_ = null;
         if (maximumLifetimeBuilder_ != null) {
           maximumLifetimeBuilder_.dispose();
@@ -7546,7 +7987,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMaximumLifetimeBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getMaximumLifetimeFieldBuilder().getBuilder();
       }
@@ -7639,7 +8080,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the allowedIssuanceModes field is set.
        */
       public boolean hasAllowedIssuanceModes() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
 
       /**
@@ -7694,7 +8135,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           allowedIssuanceModesBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7721,7 +8162,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           allowedIssuanceModesBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7743,7 +8184,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeAllowedIssuanceModes(
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes value) {
         if (allowedIssuanceModesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && allowedIssuanceModes_ != null
               && allowedIssuanceModes_
                   != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
@@ -7756,7 +8197,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           allowedIssuanceModesBuilder_.mergeFrom(value);
         }
         if (allowedIssuanceModes_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -7777,7 +8218,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearAllowedIssuanceModes() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         allowedIssuanceModes_ = null;
         if (allowedIssuanceModesBuilder_ != null) {
           allowedIssuanceModesBuilder_.dispose();
@@ -7803,7 +8244,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes.Builder
           getAllowedIssuanceModesBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getAllowedIssuanceModesFieldBuilder().getBuilder();
       }
@@ -7896,7 +8337,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the baselineValues field is set.
        */
       public boolean hasBaselineValues() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
 
       /**
@@ -7959,7 +8400,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           baselineValuesBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -7990,7 +8431,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           baselineValuesBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8017,7 +8458,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeBaselineValues(
           com.google.cloud.security.privateca.v1.X509Parameters value) {
         if (baselineValuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && baselineValues_ != null
               && baselineValues_
                   != com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()) {
@@ -8029,7 +8470,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           baselineValuesBuilder_.mergeFrom(value);
         }
         if (baselineValues_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -8055,7 +8496,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearBaselineValues() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         baselineValues_ = null;
         if (baselineValuesBuilder_ != null) {
           baselineValuesBuilder_.dispose();
@@ -8086,7 +8527,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.X509Parameters.Builder
           getBaselineValuesBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getBaselineValuesFieldBuilder().getBuilder();
       }
@@ -8183,7 +8624,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the identityConstraints field is set.
        */
       public boolean hasIdentityConstraints() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
 
       /**
@@ -8240,7 +8681,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           identityConstraintsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -8268,7 +8709,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           identityConstraintsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -8291,7 +8732,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeIdentityConstraints(
           com.google.cloud.security.privateca.v1.CertificateIdentityConstraints value) {
         if (identityConstraintsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && identityConstraints_ != null
               && identityConstraints_
                   != com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
@@ -8304,7 +8745,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           identityConstraintsBuilder_.mergeFrom(value);
         }
         if (identityConstraints_ != null) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         return this;
@@ -8326,7 +8767,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearIdentityConstraints() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         identityConstraints_ = null;
         if (identityConstraintsBuilder_ != null) {
           identityConstraintsBuilder_.dispose();
@@ -8353,7 +8794,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
           getIdentityConstraintsBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getIdentityConstraintsFieldBuilder().getBuilder();
       }
@@ -8454,7 +8895,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the passthroughExtensions field is set.
        */
       public boolean hasPassthroughExtensions() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
 
       /**
@@ -8533,7 +8974,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           passthroughExtensionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -8572,7 +9013,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         } else {
           passthroughExtensionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -8606,7 +9047,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergePassthroughExtensions(
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints value) {
         if (passthroughExtensionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && passthroughExtensions_ != null
               && passthroughExtensions_
                   != com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
@@ -8619,7 +9060,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           passthroughExtensionsBuilder_.mergeFrom(value);
         }
         if (passthroughExtensions_ != null) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         return this;
@@ -8652,7 +9093,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearPassthroughExtensions() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         passthroughExtensions_ = null;
         if (passthroughExtensionsBuilder_ != null) {
           passthroughExtensionsBuilder_.dispose();
@@ -8690,7 +9131,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
           getPassthroughExtensionsBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getPassthroughExtensionsFieldBuilder().getBuilder();
       }
@@ -8853,12 +9294,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -8879,12 +9320,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -9717,12 +10158,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -9742,12 +10183,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -9767,12 +10208,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -9791,12 +10232,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -9811,12 +10252,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

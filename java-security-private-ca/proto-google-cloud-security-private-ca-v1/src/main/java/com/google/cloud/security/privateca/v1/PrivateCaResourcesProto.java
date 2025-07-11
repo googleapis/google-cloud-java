@@ -41,6 +41,10 @@ public final class PrivateCaResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1_CertificateAuthority_KeyVersionSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_fieldAccessorTable;
@@ -181,6 +185,14 @@ public final class PrivateCaResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1_KeyUsage_ExtendedKeyUsageOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_security_privateca_v1_AttributeTypeAndValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_security_privateca_v1_AttributeTypeAndValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_security_privateca_v1_RelativeDistinguishedName_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_security_privateca_v1_RelativeDistinguishedName_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_security_privateca_v1_Subject_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1_Subject_fieldAccessorTable;
@@ -210,9 +222,9 @@ public final class PrivateCaResourcesProto {
           + "ateca.v1\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032\036google/pro"
           + "tobuf/duration.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\032\026google/type/expr.proto\"\365\017\n"
+          + "mestamp.proto\032\026google/type/expr.proto\"\206\022\n"
           + "\024CertificateAuthority\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022S\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022S\n"
           + "\004type\030\002 \001(\0162=.google.cloud.security."
           + "privateca.v1.CertificateAuthority.TypeB\006\340A\002\340A\005\022M\n"
           + "\006config\030\003 \001(\01325.google.cloud.se"
@@ -241,15 +253,23 @@ public final class PrivateCaResourcesProto {
           + "\013delete_time\030\017 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013expire_time\030\020 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022Y\n"
           + "\006labels\030\021 \003(\0132D.google.cloud.security.privateca."
-          + "v1.CertificateAuthority.LabelsEntryB\003\340A\001\032H\n\n"
+          + "v1.CertificateAuthority.LabelsEntryB\003\340A\001\022u\n"
+          + "\030user_defined_access_urls\030\022 \001(\0132N.goo"
+          + "gle.cloud.security.privateca.v1.Certific"
+          + "ateAuthority.UserDefinedAccessUrlsB\003\340A\001\022\032\n\r"
+          + "satisfies_pzs\030\023 \001(\010B\003\340A\003\022\032\n\r"
+          + "satisfies_pzi\030\024 \001(\010B\003\340A\003\032H\n\n"
           + "AccessUrls\022!\n"
           + "\031ca_certificate_access_url\030\001 \001(\t\022\027\n"
           + "\017crl_access_urls\030\002 \003(\t\032\240\001\n"
           + "\016KeyVersionSpec\022\037\n"
           + "\025cloud_kms_key_version\030\001 \001(\tH\000\022_\n"
-          + "\talgorithm\030\002 \001(\0162J.google.cloud"
-          + ".security.privateca.v1.CertificateAuthority.SignHashAlgorithmH\000B\014\n\n"
-          + "KeyVersion\032-\n"
+          + "\talgorithm\030\002 \001(\0162J.google.cloud.security.privateca.v1.Ce"
+          + "rtificateAuthority.SignHashAlgorithmH\000B\014\n\n"
+          + "KeyVersion\032`\n"
+          + "\025UserDefinedAccessUrls\022)\n"
+          + "\034aia_issuing_certificate_urls\030\001 \003(\tB\003\340A\001\022\034\n"
+          + "\017crl_access_urls\030\002 \003(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\">\n"
@@ -274,53 +294,53 @@ public final class PrivateCaResourcesProto {
           + "\025RSA_PKCS1_4096_SHA256\020\010\022\022\n"
           + "\016EC_P256_SHA256\020\004\022\022\n"
           + "\016EC_P384_SHA384\020\005:\235\001\352A\231\001\n"
-          + "-privateca.googleapis.com/CertificateAuthority\022hprojects/{project}/location"
-          + "s/{location}/caPools/{ca_pool}/certifica"
-          + "teAuthorities/{certificate_authority}\"\241\020\n"
+          + "-privateca.googleapis.com/CertificateAuthority\022hprojects/{project}/locations/{loca"
+          + "tion}/caPools/{ca_pool}/certificateAuthorities/{certificate_authority}\"\334\020\n"
           + "\006CaPool\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022E\n"
-          + "\004tier\030\002 \001("
-          + "\0162/.google.cloud.security.privateca.v1.CaPool.TierB\006\340A\002\340A\005\022W\n"
-          + "\017issuance_policy\030\003 "
-          + "\001(\01329.google.cloud.security.privateca.v1.CaPool.IssuancePolicyB\003\340A\001\022]\n"
-          + "\022publishing_options\030\004 \001(\0132<.google.cloud.security."
-          + "privateca.v1.CaPool.PublishingOptionsB\003\340A\001\022K\n"
-          + "\006labels\030\005 \003(\01326.google.cloud.securi"
-          + "ty.privateca.v1.CaPool.LabelsEntryB\003\340A\001\032\373\001\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022E\n"
+          + "\004tier\030\002 \001(\0162/.goo"
+          + "gle.cloud.security.privateca.v1.CaPool.TierB\006\340A\002\340A\005\022W\n"
+          + "\017issuance_policy\030\003 \001(\01329.g"
+          + "oogle.cloud.security.privateca.v1.CaPool.IssuancePolicyB\003\340A\001\022]\n"
+          + "\022publishing_options\030\004"
+          + " \001(\0132<.google.cloud.security.privateca.v1.CaPool.PublishingOptionsB\003\340A\001\022K\n"
+          + "\006labels\030\005"
+          + " \003(\01326.google.cloud.security.privateca.v1.CaPool.LabelsEntryB\003\340A\001\032\373\001\n"
           + "\021PublishingOptions\022\034\n"
           + "\017publish_ca_cert\030\001 \001(\010B\003\340A\001\022\030\n"
           + "\013publish_crl\030\002 \001(\010B\003\340A\001\022i\n"
-          + "\017encoding_format\030\003 \001(\0162K.google.cloud.se"
-          + "curity.privateca.v1.CaPool.PublishingOptions.EncodingFormatB\003\340A\001\"C\n"
+          + "\017encoding_format\030\003 \001(\0162K.google.cloud.security."
+          + "privateca.v1.CaPool.PublishingOptions.EncodingFormatB\003\340A\001\"C\n"
           + "\016EncodingFormat\022\037\n"
           + "\033ENCODING_FORMAT_UNSPECIFIED\020\000\022\007\n"
           + "\003PEM\020\001\022\007\n"
-          + "\003DER\020\002\032\357\t\n"
+          + "\003DER\020\002\032\252\n\n"
           + "\016IssuancePolicy\022h\n"
-          + "\021allowed_key_types\030\001 \003(\0132H.google.cloud.secur"
-          + "ity.privateca.v1.CaPool.IssuancePolicy.AllowedKeyTypeB\003\340A\001\0228\n"
+          + "\021allowed_key_types\030\001 \003(\0132H.google.cloud.security.pri"
+          + "vateca.v1.CaPool.IssuancePolicy.AllowedKeyTypeB\003\340A\001\0229\n"
+          + "\021backdate_duration\030\007"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\0228\n"
           + "\020maximum_lifetime\030\002"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022l\n"
-          + "\026allowed_issuance_modes\030\003 \001(\0132G.google.cl"
-          + "oud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModesB\003\340A\001\022P\n"
-          + "\017baseline_values\030\004"
-          + " \001(\01322.google.cloud.security.privateca.v1.X509ParametersB\003\340A\001\022e\n"
-          + "\024identity_constraints\030\005 \001(\0132B.google.cloud.securi"
-          + "ty.privateca.v1.CertificateIdentityConstraintsB\003\340A\001\022h\n"
-          + "\026passthrough_extensions\030\006 \001(\0132C.google.cloud.security.privateca.v1"
-          + ".CertificateExtensionConstraintsB\003\340A\001\032\305\004\n"
+          + "\026allowed_issuance_modes\030\003 \001(\0132G.google.cloud.security.privateca.v1.Ca"
+          + "Pool.IssuancePolicy.IssuanceModesB\003\340A\001\022P\n"
+          + "\017baseline_values\030\004 \001(\01322.google.cloud.s"
+          + "ecurity.privateca.v1.X509ParametersB\003\340A\001\022e\n"
+          + "\024identity_constraints\030\005 \001(\0132B.google."
+          + "cloud.security.privateca.v1.CertificateIdentityConstraintsB\003\340A\001\022h\n"
+          + "\026passthrough_extensions\030\006 \001(\0132C.google.cloud.security."
+          + "privateca.v1.CertificateExtensionConstraintsB\003\340A\001\032\305\004\n"
           + "\016AllowedKeyType\022b\n"
-          + "\003rsa\030\001 \001(\0132S.google.c"
-          + "loud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyTypeH\000\022l\n"
-          + "\016elliptic_curve\030\002 \001(\0132R.google.cloud.secu"
-          + "rity.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyTypeH\000\032J\n\n"
+          + "\003rsa\030\001 \001(\0132S.google.cloud.security.privateca.v1.C"
+          + "aPool.IssuancePolicy.AllowedKeyType.RsaKeyTypeH\000\022l\n"
+          + "\016elliptic_curve\030\002 \001(\0132R.google.cloud.security.privateca.v1.CaPool.Iss"
+          + "uancePolicy.AllowedKeyType.EcKeyTypeH\000\032J\n\n"
           + "RsaKeyType\022\035\n"
           + "\020min_modulus_size\030\001 \001(\003B\003\340A\001\022\035\n"
           + "\020max_modulus_size\030\002 \001(\003B\003\340A\001\032\210\002\n"
           + "\tEcKeyType\022\211\001\n"
-          + "\023signature_algorithm\030\001 \001(\0162g.google.clou"
-          + "d.security.privateca.v1.CaPool.IssuanceP"
-          + "olicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithmB\003\340A\001\"o\n"
+          + "\023signature_algorithm\030\001 \001(\0162g.google.cloud.security.privateca.v1.CaPo"
+          + "ol.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithmB\003\340A\001\"o\n"
           + "\024EcSignatureAlgorithm\022&\n"
           + "\"EC_SIGNATURE_ALGORITHM_UNSPECIFIED\020\000\022\016\n\n"
           + "ECDSA_P256\020\001\022\016\n\n"
@@ -337,44 +357,43 @@ public final class PrivateCaResourcesProto {
           + "\020TIER_UNSPECIFIED\020\000\022\016\n\n"
           + "ENTERPRISE\020\001\022\n\n"
           + "\006DEVOPS\020\002:_\352A\\\n"
-          + "\037privateca.googleapis.com/CaPool\0229projects/{projec"
-          + "t}/locations/{location}/caPools/{ca_pool}\"\274\010\n"
+          + "\037privateca.googleapis.com/CaPool\0229proj"
+          + "ects/{project}/locations/{location}/caPools/{ca_pool}\"\274\010\n"
           + "\031CertificateRevocationList\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\034\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\034\n"
           + "\017sequence_number\030\002 \001(\003B\003\340A\003\022s\n"
-          + "\024revoked_certificates\030\003 \003(\0132P.google."
-          + "cloud.security.privateca.v1.CertificateRevocationList.RevokedCertificateB\003\340A\003\022\024\n"
+          + "\024revoked_certificates\030\003 \003(\0132P.google.cloud.security.privateca.v1."
+          + "CertificateRevocationList.RevokedCertificateB\003\340A\003\022\024\n"
           + "\007pem_crl\030\004 \001(\tB\003\340A\003\022\027\n\n"
           + "access_url\030\005 \001(\tB\003\340A\003\022W\n"
-          + "\005state\030\006 \001(\0162C.google.cloud.secur"
-          + "ity.privateca.v1.CertificateRevocationList.StateB\003\340A\003\0224\n"
+          + "\005state\030\006 \001(\0162C.google"
+          + ".cloud.security.privateca.v1.CertificateRevocationList.StateB\003\340A\003\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
           + "\013revision_id\030\t \001(\tB\003\340A\003\022^\n"
           + "\006labels\030\n"
-          + " \003(\0132I.google.cloud.security.privateca.v1"
-          + ".CertificateRevocationList.LabelsEntryB\003\340A\001\032\300\001\n"
+          + " \003(\0132I.google.cloud.security."
+          + "privateca.v1.CertificateRevocationList.LabelsEntryB\003\340A\001\032\300\001\n"
           + "\022RevokedCertificate\022>\n"
           + "\013certificate\030\001 \001(\tB)\372A&\n"
           + "$privateca.googleapis.com/Certificate\022\031\n"
           + "\021hex_serial_number\030\002 \001(\t\022O\n"
-          + "\021revocation_reason\030\003 \001(\01624.google.cloud."
-          + "security.privateca.v1.RevocationReason\032-\n"
+          + "\021revocation_reason\030\003 \001(\01624.g"
+          + "oogle.cloud.security.privateca.v1.RevocationReason\032-\n"
           + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001\":\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\016\n\n"
           + "SUPERSEDED\020\002:\334\001\352A\330\001\n"
-          + "2privateca.googleapis.com/CertificateRevocation"
-          + "List\022\241\001projects/{project}/locations/{loc"
-          + "ation}/caPools/{ca_pool}/certificateAuthorities/{certificate_authority}/certific"
-          + "ateRevocationLists/{certificate_revocation_list}\"\217\n\n"
-          + "\013Certificate\022:\n"
-          + "\004name\030\001 \001(\tB,\340A\003\372A&\n"
-          + "$privateca.googleapis.com/Certificate\022\026\n"
+          + "2privateca.googleapis.com/CertificateRevocationList\022\241\001projects/{project}/lo"
+          + "cations/{location}/caPools/{ca_pool}/certificateAuthorities/{certificate_authori"
+          + "ty}/certificateRevocationLists/{certificate_revocation_list}\"\346\t\n"
+          + "\013Certificate\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\007pem_csr\030\002 \001(\tB\003\340A\005H\000\022L\n"
           + "\006config\030\003"
           + " \001(\01325.google.cloud.security.privateca.v1.CertificateConfigB\003\340A\005H\000\022[\n"
@@ -384,62 +403,61 @@ public final class PrivateCaResourcesProto {
           + " \001(\0132\031.google.protobuf.DurationB\006\340A\002\340A\005\022R\n"
           + "\024certificate_template\030\006 \001(\tB4\340A\005\372A.\n"
           + ",privateca.googleapis.com/CertificateTemplate\022Q\n"
-          + "\014subject_mode\030\007 \001(\01626"
-          + ".google.cloud.security.privateca.v1.SubjectRequestModeB\003\340A\005\022b\n"
-          + "\022revocation_details\030\010 \001(\0132A.google.cloud.security.privatec"
-          + "a.v1.Certificate.RevocationDetailsB\003\340A\003\022\034\n"
+          + "\014subject_mode\030\007"
+          + " \001(\01626.google.cloud.security.privateca.v1.SubjectRequestModeB\003\340A\005\022b\n"
+          + "\022revocation_details\030\010 \001(\0132A.google.cloud.securi"
+          + "ty.privateca.v1.Certificate.RevocationDetailsB\003\340A\003\022\034\n"
           + "\017pem_certificate\030\t \001(\tB\003\340A\003\022`\n"
           + "\027certificate_description\030\n"
-          + " \001(\0132:.google.cloud.se"
-          + "curity.privateca.v1.CertificateDescriptionB\003\340A\003\022\"\n"
+          + " \001(\0132:.goog"
+          + "le.cloud.security.privateca.v1.CertificateDescriptionB\003\340A\003\022\"\n"
           + "\025pem_certificate_chain\030\013 \003(\tB\003\340A\003\0224\n"
           + "\013create_time\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\r"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022P\n"
-          + "\006labels\030\016"
-          + " \003(\0132;.google.cloud.security.privateca.v1.Certificate.LabelsEntryB\003\340A\001\032\230\001\n"
+          + "\006labels\030\016 \003(\0132;.google.cloud.securi"
+          + "ty.privateca.v1.Certificate.LabelsEntryB\003\340A\001\032\230\001\n"
           + "\021RevocationDetails\022N\n"
-          + "\020revocation_state\030\001 \001("
-          + "\01624.google.cloud.security.privateca.v1.RevocationReason\0223\n"
+          + "\020revocation_state\030\001"
+          + " \001(\01624.google.cloud.security.privateca.v1.RevocationReason\0223\n"
           + "\017revocation_time\030\002 \001(\0132\032.google.protobuf.Timestamp\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\177\352A|\n"
-          + "$privateca.googleapis.com/Certificate\022Tprojects/{project}/locations/{location}/"
-          + "caPools/{ca_pool}/certificates/{certificate}B\024\n"
-          + "\022certificate_config\"\321\006\n"
-          + "\023CertificateTemplate\022B\n"
-          + "\004name\030\001 \001(\tB4\340A\003\372A.\n"
-          + ",privateca.googleapis.com/CertificateTemplate\0228\n"
+          + "$privateca.googleapis.com/Certificate\022Tprojects/{project}/locations/"
+          + "{location}/caPools/{ca_pool}/certificates/{certificate}B\024\n"
+          + "\022certificate_config\"\240\006\n"
+          + "\023CertificateTemplate\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0228\n"
           + "\020maximum_lifetime\030\t"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022R\n"
-          + "\021predefined_values\030\002 "
-          + "\001(\01322.google.cloud.security.privateca.v1.X509ParametersB\003\340A\001\022e\n"
-          + "\024identity_constraints\030\003 \001(\0132B.google.cloud.security.priva"
-          + "teca.v1.CertificateIdentityConstraintsB\003\340A\001\022h\n"
-          + "\026passthrough_extensions\030\004 \001(\0132C.go"
-          + "ogle.cloud.security.privateca.v1.CertificateExtensionConstraintsB\003\340A\001\022\030\n"
+          + "\021predefined_values\030\002"
+          + " \001(\01322.google.cloud.security.privateca.v1.X509ParametersB\003\340A\001\022e\n"
+          + "\024identity_constraints\030\003 \001(\0132B.google.cloud.security.pri"
+          + "vateca.v1.CertificateIdentityConstraintsB\003\340A\001\022h\n"
+          + "\026passthrough_extensions\030\004 \001(\0132C."
+          + "google.cloud.security.privateca.v1.CertificateExtensionConstraintsB\003\340A\001\022\030\n"
           + "\013description\030\005 \001(\tB\003\340A\001\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022X\n"
-          + "\006labels\030\010 \003(\0132C.google.cloud.secur"
-          + "ity.privateca.v1.CertificateTemplate.LabelsEntryB\003\340A\001\032-\n"
+          + "\006labels\030\010 \003(\0132C.google.cloud.sec"
+          + "urity.privateca.v1.CertificateTemplate.LabelsEntryB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\207\001\352A\203\001\n"
-          + ",privateca.googleapis.com/CertificateTemplate\022Sproje"
-          + "cts/{project}/locations/{location}/certi"
-          + "ficateTemplates/{certificate_template}\"\316\006\n"
+          + ",privateca.googleapis.com/CertificateTemplate\022Spro"
+          + "jects/{project}/locations/{location}/cer"
+          + "tificateTemplates/{certificate_template}\"\316\006\n"
           + "\016X509Parameters\022D\n"
-          + "\tkey_usage\030\001 \001(\0132,.g"
-          + "oogle.cloud.security.privateca.v1.KeyUsageB\003\340A\001\022U\n\n"
-          + "ca_options\030\002 \001(\0132<.google.clo"
-          + "ud.security.privateca.v1.X509Parameters.CaOptionsB\003\340A\001\022E\n\n"
-          + "policy_ids\030\003 \003(\0132,.goo"
-          + "gle.cloud.security.privateca.v1.ObjectIdB\003\340A\001\022\035\n"
+          + "\tkey_usage\030\001 \001(\0132,"
+          + ".google.cloud.security.privateca.v1.KeyUsageB\003\340A\001\022U\n\n"
+          + "ca_options\030\002 \001(\0132<.google.c"
+          + "loud.security.privateca.v1.X509Parameters.CaOptionsB\003\340A\001\022E\n\n"
+          + "policy_ids\030\003 \003(\0132,.g"
+          + "oogle.cloud.security.privateca.v1.ObjectIdB\003\340A\001\022\035\n"
           + "\020aia_ocsp_servers\030\004 \003(\tB\003\340A\001\022a\n"
-          + "\020name_constraints\030\006 \001(\0132B.google.cloud.se"
-          + "curity.privateca.v1.X509Parameters.NameConstraintsB\003\340A\001\022U\n"
+          + "\020name_constraints\030\006 \001(\0132B.google.cloud."
+          + "security.privateca.v1.X509Parameters.NameConstraintsB\003\340A\001\022U\n"
           + "\025additional_extensions\030\005"
           + " \003(\01321.google.cloud.security.privateca.v1.X509ExtensionB\003\340A\001\032s\n"
           + "\tCaOptions\022\027\n"
@@ -460,48 +478,49 @@ public final class PrivateCaResourcesProto {
           + "\021SubordinateConfig\022V\n"
           + "\025certificate_authority\030\001 \001(\tB5\340A\002\372A/\n"
           + "-privateca.googleapis.com/CertificateAuthorityH\000\022m\n"
-          + "\020pem_issuer_chain\030\002 \001(\0132L.google.cloud.s"
-          + "ecurity.privateca.v1.SubordinateConfig.SubordinateConfigChainB\003\340A\002H\000\0327\n"
+          + "\020pem_issuer_chain\030\002 \001(\0132L.google.cloud"
+          + ".security.privateca.v1.SubordinateConfig.SubordinateConfigChainB\003\340A\002H\000\0327\n"
           + "\026SubordinateConfigChain\022\035\n"
           + "\020pem_certificates\030\001 \003(\tB\003\340A\002B\024\n"
           + "\022subordinate_config\"\235\001\n"
           + "\tPublicKey\022\020\n"
           + "\003key\030\001 \001(\014B\003\340A\002\022L\n"
-          + "\006format\030\002 \001(\01627.go"
-          + "ogle.cloud.security.privateca.v1.PublicKey.KeyFormatB\003\340A\002\"0\n"
+          + "\006format\030\002 \001(\01627."
+          + "google.cloud.security.privateca.v1.PublicKey.KeyFormatB\003\340A\002\"0\n"
           + "\tKeyFormat\022\032\n"
           + "\026KEY_FORMAT_UNSPECIFIED\020\000\022\007\n"
           + "\003PEM\020\001\"\254\004\n"
           + "\021CertificateConfig\022`\n"
-          + "\016subject_config\030\001 \001(\0132C.goog"
-          + "le.cloud.security.privateca.v1.CertificateConfig.SubjectConfigB\003\340A\002\022L\n"
+          + "\016subject_config\030\001 \001(\0132C.go"
+          + "ogle.cloud.security.privateca.v1.CertificateConfig.SubjectConfigB\003\340A\002\022L\n"
           + "\013x509_config\030\002"
           + " \001(\01322.google.cloud.security.privateca.v1.X509ParametersB\003\340A\002\022F\n\n"
           + "public_key\030\003"
           + " \001(\0132-.google.cloud.security.privateca.v1.PublicKeyB\003\340A\001\022X\n"
-          + "\016subject_key_id\030\004 \001("
-          + "\0132;.google.cloud.security.privateca.v1.CertificateConfig.KeyIdB\003\340A\001\032\246\001\n\r"
+          + "\016subject_key_id\030\004 "
+          + "\001(\0132;.google.cloud.security.privateca.v1.CertificateConfig.KeyIdB\003\340A\001\032\246\001\n\r"
           + "SubjectConfig\022A\n"
           + "\007subject\030\001"
           + " \001(\0132+.google.cloud.security.privateca.v1.SubjectB\003\340A\001\022R\n"
-          + "\020subject_alt_name\030\002"
-          + " \001(\01323.google.cloud.security.privateca.v1.SubjectAltNamesB\003\340A\001\032\034\n"
+          + "\020subject_alt_name\030\002 \001(\01323.google.cloud.secu"
+          + "rity.privateca.v1.SubjectAltNamesB\003\340A\001\032\034\n"
           + "\005KeyId\022\023\n"
-          + "\006key_id\030\001 \001(\tB\003\340A\002\"\241\010\n"
+          + "\006key_id\030\001 \001(\tB\003\340A\002\"\301\010\n"
           + "\026CertificateDescription\022j\n"
-          + "\023subject_description\030\001 \001(\0132M.google.cloud.security.privateca.v1."
-          + "CertificateDescription.SubjectDescription\022L\n"
-          + "\020x509_description\030\002 \001(\01322.google.clo"
-          + "ud.security.privateca.v1.X509Parameters\022A\n\n"
+          + "\023subject_description\030\001 \001(\0132M.google.cloud.security.privateca.v"
+          + "1.CertificateDescription.SubjectDescription\022L\n"
+          + "\020x509_description\030\002 \001(\01322.google.c"
+          + "loud.security.privateca.v1.X509Parameters\022A\n\n"
           + "public_key\030\003 \001(\0132-.google.cloud.security.privateca.v1.PublicKey\022X\n"
-          + "\016subject_key_id\030\004"
-          + " \001(\0132@.google.cloud.security.privateca.v1.CertificateDescription.KeyId\022Z\n"
-          + "\020authority_key_id\030\005 \001(\0132@.google.cloud.se"
-          + "curity.privateca.v1.CertificateDescription.KeyId\022\037\n"
+          + "\016subject_key_id\030\004 \001(\0132@.google.cloud.security.pri"
+          + "vateca.v1.CertificateDescription.KeyId\022Z\n"
+          + "\020authority_key_id\030\005 \001(\0132@.google.cloud."
+          + "security.privateca.v1.CertificateDescription.KeyId\022\037\n"
           + "\027crl_distribution_points\030\006 \003(\t\022$\n"
           + "\034aia_issuing_certificate_urls\030\007 \003(\t\022k\n"
-          + "\020cert_fingerprint\030\010 \001(\0132Q.google.cloud"
-          + ".security.privateca.v1.CertificateDescription.CertificateFingerprint\032\322\002\n"
+          + "\020cert_fingerprint\030\010 \001(\0132Q.google.clo"
+          + "ud.security.privateca.v1.CertificateDescription.CertificateFingerprint\022\036\n"
+          + "\026tbs_certificate_digest\030\t \001(\t\032\322\002\n"
           + "\022SubjectDescription\022<\n"
           + "\007subject\030\001 \001(\0132+.google.cloud.security.privateca.v1.Subject\022M\n"
           + "\020subject_alt_name\030\002"
@@ -517,15 +536,15 @@ public final class PrivateCaResourcesProto {
           + "\010ObjectId\022\033\n"
           + "\016object_id_path\030\001 \003(\005B\003\340A\002\"\200\001\n\r"
           + "X509Extension\022D\n"
-          + "\tobject_id\030\001"
-          + " \001(\0132,.google.cloud.security.privateca.v1.ObjectIdB\003\340A\002\022\025\n"
+          + "\tobject_id\030\001 \001(\0132,"
+          + ".google.cloud.security.privateca.v1.ObjectIdB\003\340A\002\022\025\n"
           + "\010critical\030\002 \001(\010B\003\340A\001\022\022\n"
           + "\005value\030\003 \001(\014B\003\340A\002\"\242\005\n"
           + "\010KeyUsage\022T\n"
           + "\016base_key_usage\030\001"
           + " \001(\0132<.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions\022`\n"
-          + "\022extended_key_usage\030\002 \001(\0132D.google.cloud"
-          + ".security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions\022Q\n"
+          + "\022extended_key_usage\030\002 \001(\0132D.google.cloud.secur"
+          + "ity.privateca.v1.KeyUsage.ExtendedKeyUsageOptions\022Q\n"
           + "\033unknown_extended_key_usages\030\003"
           + " \003(\0132,.google.cloud.security.privateca.v1.ObjectId\032\347\001\n"
           + "\017KeyUsageOptions\022\031\n"
@@ -544,7 +563,17 @@ public final class PrivateCaResourcesProto {
           + "\014code_signing\030\003 \001(\010\022\030\n"
           + "\020email_protection\030\004 \001(\010\022\025\n\r"
           + "time_stamping\030\005 \001(\010\022\024\n"
-          + "\014ocsp_signing\030\006 \001(\010\"\270\001\n"
+          + "\014ocsp_signing\030\006 \001(\010\"\276\001\n"
+          + "\025AttributeTypeAndValue\022A\n"
+          + "\004type\030\001"
+          + " \001(\01621.google.cloud.security.privateca.v1.AttributeTypeH\000\022A\n"
+          + "\tobject_id\030\002 \001("
+          + "\0132,.google.cloud.security.privateca.v1.ObjectIdH\000\022\r\n"
+          + "\005value\030\003 \001(\tB\020\n"
+          + "\016attribute_type\"j\n"
+          + "\031RelativeDistinguishedName\022M\n\n"
+          + "attributes\030\001"
+          + " \003(\01329.google.cloud.security.privateca.v1.AttributeTypeAndValue\"\215\002\n"
           + "\007Subject\022\023\n"
           + "\013common_name\030\001 \001(\t\022\024\n"
           + "\014country_code\030\002 \001(\t\022\024\n"
@@ -553,14 +582,16 @@ public final class PrivateCaResourcesProto {
           + "\010locality\030\005 \001(\t\022\020\n"
           + "\010province\030\006 \001(\t\022\026\n"
           + "\016street_address\030\007 \001(\t\022\023\n"
-          + "\013postal_code\030\010 \001(\t\"\251\001\n"
+          + "\013postal_code\030\010 \001(\t\022S\n"
+          + "\014rdn_sequence\030\t \003(\0132"
+          + "=.google.cloud.security.privateca.v1.RelativeDistinguishedName\"\251\001\n"
           + "\017SubjectAltNames\022\021\n"
           + "\tdns_names\030\001 \003(\t\022\014\n"
           + "\004uris\030\002 \003(\t\022\027\n"
           + "\017email_addresses\030\003 \003(\t\022\024\n"
           + "\014ip_addresses\030\004 \003(\t\022F\n"
-          + "\013custom_sans\030\005 "
-          + "\003(\01321.google.cloud.security.privateca.v1.X509Extension\"\372\001\n"
+          + "\013custom_sans\030\005"
+          + " \003(\01321.google.cloud.security.privateca.v1.X509Extension\"\372\001\n"
           + "\036CertificateIdentityConstraints\022.\n"
           + "\016cel_expression\030\001 \001(\0132\021.google.type.ExprB\003\340A\001\022+\n"
           + "\031allow_subject_passthrough\030\002 \001(\010B\003\340A\002H\000\210\001\001\0225\n"
@@ -569,10 +600,11 @@ public final class PrivateCaResourcesProto {
           + "\032_allow_subject_passthroughB&\n"
           + "$_allow_subject_alt_names_passthrough\"\264\003\n"
           + "\037CertificateExtensionConstraints\022|\n"
-          + "\020known_extensions\030\001 \003(\0162].google.cloud.security.privat"
-          + "eca.v1.CertificateExtensionConstraints.KnownCertificateExtensionB\003\340A\001\022P\n"
-          + "\025additional_extensions\030\002"
-          + " \003(\0132,.google.cloud.security.privateca.v1.ObjectIdB\003\340A\001\"\300\001\n"
+          + "\020known_extensions\030\001 \003(\0162].google.c"
+          + "loud.security.privateca.v1.CertificateEx"
+          + "tensionConstraints.KnownCertificateExtensionB\003\340A\001\022P\n"
+          + "\025additional_extensions\030\002 \003(\013"
+          + "2,.google.cloud.security.privateca.v1.ObjectIdB\003\340A\001\"\300\001\n"
           + "\031KnownCertificateExtension\022+\n"
           + "\'KNOWN_CERTIFICATE_EXTENSION_UNSPECIFIED\020\000\022\022\n"
           + "\016BASE_KEY_USAGE\020\001\022\026\n"
@@ -580,7 +612,17 @@ public final class PrivateCaResourcesProto {
           + "CA_OPTIONS\020\003\022\016\n\n"
           + "POLICY_IDS\020\004\022\024\n"
           + "\020AIA_OCSP_SERVERS\020\005\022\024\n"
-          + "\020NAME_CONSTRAINTS\020\006*\207\002\n"
+          + "\020NAME_CONSTRAINTS\020\006*\276\001\n\r"
+          + "AttributeType\022\036\n"
+          + "\032ATTRIBUTE_TYPE_UNSPECIFIED\020\000\022\017\n"
+          + "\013COMMON_NAME\020\001\022\020\n"
+          + "\014COUNTRY_CODE\020\002\022\020\n"
+          + "\014ORGANIZATION\020\003\022\027\n"
+          + "\023ORGANIZATIONAL_UNIT\020\004\022\014\n"
+          + "\010LOCALITY\020\005\022\014\n"
+          + "\010PROVINCE\020\006\022\022\n"
+          + "\016STREET_ADDRESS\020\007\022\017\n"
+          + "\013POSTAL_CODE\020\010*\207\002\n"
           + "\020RevocationReason\022!\n"
           + "\035REVOCATION_REASON_UNSPECIFIED\020\000\022\022\n"
           + "\016KEY_COMPROMISE\020\001\022$\n"
@@ -590,16 +632,18 @@ public final class PrivateCaResourcesProto {
           + "\026CESSATION_OF_OPERATION\020\005\022\024\n"
           + "\020CERTIFICATE_HOLD\020\006\022\027\n"
           + "\023PRIVILEGE_WITHDRAWN\020\007\022\"\n"
-          + "\036ATTRIBUTE_AUTHORITY_COMPROMISE\020\010*]\n"
+          + "\036ATTRIBUTE_AUTHORITY_COMPROMISE\020\010*o\n"
           + "\022SubjectRequestMode\022$\n"
           + " SUBJECT_REQUEST_MODE_UNSPECIFIED\020\000\022\013\n"
-          + "\007DEFAULT\020\001\022\024\n"
-          + "\020REFLECTED_SPIFFE\020\002B\377\001\n"
-          + "&com.google.cloud.security.privateca.v1B\027PrivateC"
-          + "aResourcesProtoP\001ZDcloud.google.com/go/security/privateca/apiv1/privatecapb;priv"
-          + "atecapb\370\001\001\252\002\"Google.Cloud.Security.Priva"
-          + "teCA.V1\312\002\"Google\\Cloud\\Security\\PrivateC"
-          + "A\\V1\352\002&Google::Cloud::Security::PrivateCA::V1b\006proto3"
+          + "\007DEFAULT\020\001\022\020\n"
+          + "\014RDN_SEQUENCE\020\003\022\024\n"
+          + "\020REFLECTED_SPIFFE\020\002B\374\001\n"
+          + "&com.google.cloud.security.privateca.v1B\027PrivateCaResource"
+          + "sProtoP\001ZDcloud.google.com/go/security/p"
+          + "rivateca/apiv1/privatecapb;privatecapb\252\002"
+          + "\"Google.Cloud.Security.PrivateCA.V1\312\002\"Go"
+          + "ogle\\Cloud\\Security\\PrivateCA\\V1\352\002&Googl"
+          + "e::Cloud::Security::PrivateCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -634,6 +678,9 @@ public final class PrivateCaResourcesProto {
               "DeleteTime",
               "ExpireTime",
               "Labels",
+              "UserDefinedAccessUrls",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     internal_static_google_cloud_security_privateca_v1_CertificateAuthority_AccessUrls_descriptor =
         internal_static_google_cloud_security_privateca_v1_CertificateAuthority_descriptor
@@ -655,10 +702,20 @@ public final class PrivateCaResourcesProto {
             new java.lang.String[] {
               "CloudKmsKeyVersion", "Algorithm", "KeyVersion",
             });
-    internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_descriptor =
+    internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor =
         internal_static_google_cloud_security_privateca_v1_CertificateAuthority_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor,
+            new java.lang.String[] {
+              "AiaIssuingCertificateUrls", "CrlAccessUrls",
+            });
+    internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_descriptor =
+        internal_static_google_cloud_security_privateca_v1_CertificateAuthority_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_CertificateAuthority_LabelsEntry_descriptor,
@@ -692,6 +749,7 @@ public final class PrivateCaResourcesProto {
             internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_descriptor,
             new java.lang.String[] {
               "AllowedKeyTypes",
+              "BackdateDuration",
               "MaximumLifetime",
               "AllowedIssuanceModes",
               "BaselineValues",
@@ -962,6 +1020,7 @@ public final class PrivateCaResourcesProto {
               "CrlDistributionPoints",
               "AiaIssuingCertificateUrls",
               "CertFingerprint",
+              "TbsCertificateDigest",
             });
     internal_static_google_cloud_security_privateca_v1_CertificateDescription_SubjectDescription_descriptor =
         internal_static_google_cloud_security_privateca_v1_CertificateDescription_descriptor
@@ -1055,8 +1114,24 @@ public final class PrivateCaResourcesProto {
               "TimeStamping",
               "OcspSigning",
             });
-    internal_static_google_cloud_security_privateca_v1_Subject_descriptor =
+    internal_static_google_cloud_security_privateca_v1_AttributeTypeAndValue_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_security_privateca_v1_AttributeTypeAndValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_security_privateca_v1_AttributeTypeAndValue_descriptor,
+            new java.lang.String[] {
+              "Type", "ObjectId", "Value", "AttributeType",
+            });
+    internal_static_google_cloud_security_privateca_v1_RelativeDistinguishedName_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_security_privateca_v1_RelativeDistinguishedName_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_security_privateca_v1_RelativeDistinguishedName_descriptor,
+            new java.lang.String[] {
+              "Attributes",
+            });
+    internal_static_google_cloud_security_privateca_v1_Subject_descriptor =
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_security_privateca_v1_Subject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_Subject_descriptor,
@@ -1069,9 +1144,10 @@ public final class PrivateCaResourcesProto {
               "Province",
               "StreetAddress",
               "PostalCode",
+              "RdnSequence",
             });
     internal_static_google_cloud_security_privateca_v1_SubjectAltNames_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_security_privateca_v1_SubjectAltNames_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_SubjectAltNames_descriptor,
@@ -1079,7 +1155,7 @@ public final class PrivateCaResourcesProto {
               "DnsNames", "Uris", "EmailAddresses", "IpAddresses", "CustomSans",
             });
     internal_static_google_cloud_security_privateca_v1_CertificateIdentityConstraints_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_security_privateca_v1_CertificateIdentityConstraints_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_CertificateIdentityConstraints_descriptor,
@@ -1087,7 +1163,7 @@ public final class PrivateCaResourcesProto {
               "CelExpression", "AllowSubjectPassthrough", "AllowSubjectAltNamesPassthrough",
             });
     internal_static_google_cloud_security_privateca_v1_CertificateExtensionConstraints_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_security_privateca_v1_CertificateExtensionConstraints_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_CertificateExtensionConstraints_descriptor,

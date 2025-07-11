@@ -189,5 +189,48 @@ public interface NotificationConfigOrBuilder
   com.google.cloud.securitycenter.v2.NotificationConfig.StreamingConfigOrBuilder
       getStreamingConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the notification config was last
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the notification config was last
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the notification config was last
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
   com.google.cloud.securitycenter.v2.NotificationConfig.NotifyConfigCase getNotifyConfigCase();
 }
