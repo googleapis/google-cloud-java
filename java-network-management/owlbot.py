@@ -120,6 +120,11 @@ for library in s.get_staging_dirs():
     )
     s.replace(
             v1_vpcflowlogs_file_name,
+            r'^import org.junit.Test;',
+            'import org.junit.Ignore;\nimport org.junit.Test;'
+    )
+    s.replace(
+            v1_vpcflowlogs_file_name,
             r'\s+@Test\n\s+public void createVpcFlowLogsConfigTest3\(\) throws Exception.*',
             '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void createVpcFlowLogsConfigTest3() throws Exception {'
     )
@@ -132,6 +137,11 @@ for library in s.get_staging_dirs():
              v1_vpcflowlogs_file_name,
              r'\s+@Test\n\s+public void listVpcFlowLogsConfigsTest2\(\) throws Exception.*',
              '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void listVpcFlowLogsConfigsTest2() throws Exception {'
+    )
+    s.replace(
+              v1beta1_org_vpcflowlogs_file_name,
+              r'^import org.junit.Test;',
+              'import org.junit.Ignore;\nimport org.junit.Test;'
     )
     s.replace(
               v1beta1_org_vpcflowlogs_file_name,
