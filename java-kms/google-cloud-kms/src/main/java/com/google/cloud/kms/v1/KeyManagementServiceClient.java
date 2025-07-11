@@ -1599,7 +1599,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KeyRing getKeyRing(GetKeyRingRequest request) {
-    return getKeyRingCallable().call(request);
+    return getKeyRingCallable().call(request.getProtoRequest());
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1627,7 +1627,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * }</pre>
    */
-  public final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+  public final UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable() {
     return stub.getKeyRingCallable();
   }
 
@@ -1926,7 +1926,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublicKey getPublicKey(CryptoKeyVersionName name) {
+  public final com.google.cloud.kms.v1.PublicKey getPublicKey(CryptoKeyVersionName name) {
     GetPublicKeyRequest request =
         GetPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPublicKey(request);
@@ -1961,7 +1961,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublicKey getPublicKey(String name) {
+  public final com.google.cloud.kms.v1.PublicKey getPublicKey(String name) {
     GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder().setName(name).build();
     return getPublicKey(request);
   }
@@ -2001,7 +2001,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublicKey getPublicKey(GetPublicKeyRequest request) {
+  public final com.google.cloud.kms.v1.PublicKey getPublicKey(GetPublicKeyRequest request) {
     return getPublicKeyCallable().call(request);
   }
 
@@ -2040,7 +2040,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * }</pre>
    */
-  public final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+  public final UnaryCallable<GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
+      getPublicKeyCallable() {
     return stub.getPublicKeyCallable();
   }
 
@@ -4159,7 +4160,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] is supplied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
+  public final AsymmetricSignResponse asymmetricSign(
+      CryptoKeyVersionName name, com.google.cloud.kms.v1.Digest digest) {
     AsymmetricSignRequest request =
         AsymmetricSignRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4203,7 +4205,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] is supplied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AsymmetricSignResponse asymmetricSign(String name, Digest digest) {
+  public final AsymmetricSignResponse asymmetricSign(
+      String name, com.google.cloud.kms.v1.Digest digest) {
     AsymmetricSignRequest request =
         AsymmetricSignRequest.newBuilder().setName(name).setDigest(digest).build();
     return asymmetricSign(request);
