@@ -30,6 +30,9 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+    - name: Install Dependencies
+      shell: bash
+      run: sudo apt-get update && sudo apt-get install -y libxml2-utils
     - name: Update params in generation config to latest
       shell: bash
       run: |
