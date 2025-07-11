@@ -867,3 +867,5 @@ grpc-google-cloud-maintenance-v1beta:0.1.0:0.2.0-SNAPSHOT
 google-cloud-configdelivery:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-configdelivery-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-configdelivery-v1beta:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-bigquerydatapolicy-v2beta1:0.64.0:0.65.0-SNAPSHOT
+grpc-google-cloud-bigquerydatapolicy-v2beta1:0.64.0:0.65.0-SNAPSHOT
