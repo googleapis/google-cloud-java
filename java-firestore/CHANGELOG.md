@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.31.9](https://github.com/googleapis/java-firestore/compare/v3.31.8...v3.31.9) (2025-07-11)
+
+
+### Bug Fixes
+
+* Improve performance of the UTF-8 string comparison logic. ([#2182](https://github.com/googleapis/java-firestore/issues/2182)) ([869a381](https://github.com/googleapis/java-firestore/commit/869a3814511f9a6e15641b3279bb871867886940))
+
+
+### Dependencies
+
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.45.0 ([#2184](https://github.com/googleapis/java-firestore/issues/2184)) ([88097cb](https://github.com/googleapis/java-firestore/commit/88097cbe8878b45897c89e102fa82e1975d2d74b))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#2186](https://github.com/googleapis/java-firestore/issues/2186)) ([466e597](https://github.com/googleapis/java-firestore/commit/466e597c282533c0e500b57d27f386ef9ea99e5e))
+* Update dependency org.apache.commons:commons-lang3 to v3.18.0 ([#2187](https://github.com/googleapis/java-firestore/issues/2187)) ([1f3c20b](https://github.com/googleapis/java-firestore/commit/1f3c20b1923c3ae000359be91e7e39458c36ce2e))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#2176](https://github.com/googleapis/java-firestore/issues/2176)) ([8283a08](https://github.com/googleapis/java-firestore/commit/8283a08b1749e06864b50ab1813c13e9eb61c087))
+* Update googleapis/sdk-platform-java action to v2.60.1 ([#2181](https://github.com/googleapis/java-firestore/issues/2181)) ([be9daba](https://github.com/googleapis/java-firestore/commit/be9dabab8467a5aa3986d34f393d597d670af029))
+
+
+### Documentation
+
+* Add an example to the detailed comment in compareUtf8Strings() ([#2183](https://github.com/googleapis/java-firestore/issues/2183)) ([e16b158](https://github.com/googleapis/java-firestore/commit/e16b15853d6545c3c1476086c3bc88cb46991718))
+
 ## [3.31.8](https://github.com/googleapis/java-firestore/compare/v3.31.7...v3.31.8) (2025-07-02)
 
 
