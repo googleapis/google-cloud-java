@@ -41,8 +41,7 @@
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
     ".github/workflows/ci.yaml",
     ".github/workflows/generated_files_sync.yaml",
-    ".github/workflows/unmanaged_dependency_check.yaml",
-    ".github/workflows/hermetic_library_generation.yaml"
+    ".github/workflows/unmanaged_dependency_check.yaml"
   ],
   "customManagers": [
     {
