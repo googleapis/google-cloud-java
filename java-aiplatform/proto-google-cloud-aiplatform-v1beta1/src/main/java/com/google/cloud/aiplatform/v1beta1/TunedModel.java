@@ -77,7 +77,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the TunedModel. Format:
-   * `projects/{project}/locations/{location}/models/{model}`.
+   *
+   * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+   *
+   * When tuning from a base model, the version_id will be 1.
+   *
+   * For continuous tuning, the version id will be incremented by 1 from the
+   * last version id in the parent model. E.g.,
+   * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+   * 1}`
    * </pre>
    *
    * <code>
@@ -104,7 +112,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the TunedModel. Format:
-   * `projects/{project}/locations/{location}/models/{model}`.
+   *
+   * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+   *
+   * When tuning from a base model, the version_id will be 1.
+   *
+   * For continuous tuning, the version id will be incremented by 1 from the
+   * last version id in the parent model. E.g.,
+   * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+   * 1}`
    * </pre>
    *
    * <code>
@@ -729,7 +745,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the TunedModel. Format:
-     * `projects/{project}/locations/{location}/models/{model}`.
+     *
+     * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+     *
+     * When tuning from a base model, the version_id will be 1.
+     *
+     * For continuous tuning, the version id will be incremented by 1 from the
+     * last version id in the parent model. E.g.,
+     * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+     * 1}`
      * </pre>
      *
      * <code>
@@ -755,7 +779,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the TunedModel. Format:
-     * `projects/{project}/locations/{location}/models/{model}`.
+     *
+     * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+     *
+     * When tuning from a base model, the version_id will be 1.
+     *
+     * For continuous tuning, the version id will be incremented by 1 from the
+     * last version id in the parent model. E.g.,
+     * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+     * 1}`
      * </pre>
      *
      * <code>
@@ -781,7 +813,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the TunedModel. Format:
-     * `projects/{project}/locations/{location}/models/{model}`.
+     *
+     * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+     *
+     * When tuning from a base model, the version_id will be 1.
+     *
+     * For continuous tuning, the version id will be incremented by 1 from the
+     * last version id in the parent model. E.g.,
+     * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+     * 1}`
      * </pre>
      *
      * <code>
@@ -806,7 +846,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the TunedModel. Format:
-     * `projects/{project}/locations/{location}/models/{model}`.
+     *
+     * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+     *
+     * When tuning from a base model, the version_id will be 1.
+     *
+     * For continuous tuning, the version id will be incremented by 1 from the
+     * last version id in the parent model. E.g.,
+     * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+     * 1}`
      * </pre>
      *
      * <code>
@@ -827,7 +875,15 @@ public final class TunedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the TunedModel. Format:
-     * `projects/{project}/locations/{location}/models/{model}`.
+     *
+     * `projects/{project}/locations/{location}/models/{model}&#64;{version_id}`
+     *
+     * When tuning from a base model, the version_id will be 1.
+     *
+     * For continuous tuning, the version id will be incremented by 1 from the
+     * last version id in the parent model. E.g.,
+     * `projects/{project}/locations/{location}/models/{model}&#64;{last_version_id +
+     * 1}`
      * </pre>
      *
      * <code>
