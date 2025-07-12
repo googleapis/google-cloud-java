@@ -118,6 +118,43 @@ public interface DeployRequestOrBuilder
    *
    *
    * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   *
+   * @return Whether the customModel field is set.
+   */
+  boolean hasCustomModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   *
+   * @return The customModel.
+   */
+  com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel getCustomModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder getCustomModelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the Location to deploy the model in.
    * Format: `projects/{project}/locations/{location}`
    * </pre>

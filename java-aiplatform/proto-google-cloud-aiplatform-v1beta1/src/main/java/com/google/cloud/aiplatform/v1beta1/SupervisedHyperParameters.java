@@ -345,6 +345,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. Multiplier for adjusting the default learning rate.
+   * Mutually exclusive with `learning_rate`.
    * </pre>
    *
    * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -354,6 +355,27 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
   @java.lang.Override
   public double getLearningRateMultiplier() {
     return learningRateMultiplier_;
+  }
+
+  public static final int LEARNING_RATE_FIELD_NUMBER = 6;
+  private double learningRate_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Learning rate for tuning.
+   * Mutually exclusive with `learning_rate_multiplier`.
+   * This feature is only available for open source models.
+   * </pre>
+   *
+   * <code>double learning_rate = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The learningRate.
+   */
+  @java.lang.Override
+  public double getLearningRate() {
+    return learningRate_;
   }
 
   public static final int ADAPTER_SIZE_FIELD_NUMBER = 3;
@@ -401,6 +423,26 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int BATCH_SIZE_FIELD_NUMBER = 5;
+  private long batchSize_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Batch size for tuning.
+   * This feature is only available for open source models.
+   * </pre>
+   *
+   * <code>int64 batch_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The batchSize.
+   */
+  @java.lang.Override
+  public long getBatchSize() {
+    return batchSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -427,6 +469,12 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(3, adapterSize_);
     }
+    if (batchSize_ != 0L) {
+      output.writeInt64(5, batchSize_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(learningRate_) != 0) {
+      output.writeDouble(6, learningRate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -448,6 +496,12 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, adapterSize_);
     }
+    if (batchSize_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, batchSize_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(learningRate_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, learningRate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -467,7 +521,10 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     if (getEpochCount() != other.getEpochCount()) return false;
     if (java.lang.Double.doubleToLongBits(getLearningRateMultiplier())
         != java.lang.Double.doubleToLongBits(other.getLearningRateMultiplier())) return false;
+    if (java.lang.Double.doubleToLongBits(getLearningRate())
+        != java.lang.Double.doubleToLongBits(other.getLearningRate())) return false;
     if (adapterSize_ != other.adapterSize_) return false;
+    if (getBatchSize() != other.getBatchSize()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -486,8 +543,15 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getLearningRateMultiplier()));
+    hash = (37 * hash) + LEARNING_RATE_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getLearningRate()));
     hash = (37 * hash) + ADAPTER_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + adapterSize_;
+    hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBatchSize());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,7 +695,9 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       bitField0_ = 0;
       epochCount_ = 0L;
       learningRateMultiplier_ = 0D;
+      learningRate_ = 0D;
       adapterSize_ = 0;
+      batchSize_ = 0L;
       return this;
     }
 
@@ -677,7 +743,13 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
         result.learningRateMultiplier_ = learningRateMultiplier_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.learningRate_ = learningRate_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.adapterSize_ = adapterSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.batchSize_ = batchSize_;
       }
     }
 
@@ -734,8 +806,14 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       if (other.getLearningRateMultiplier() != 0D) {
         setLearningRateMultiplier(other.getLearningRateMultiplier());
       }
+      if (other.getLearningRate() != 0D) {
+        setLearningRate(other.getLearningRate());
+      }
       if (other.adapterSize_ != 0) {
         setAdapterSizeValue(other.getAdapterSizeValue());
+      }
+      if (other.getBatchSize() != 0L) {
+        setBatchSize(other.getBatchSize());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -778,9 +856,21 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
             case 24:
               {
                 adapterSize_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
+            case 40:
+              {
+                batchSize_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 49:
+              {
+                learningRate_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 49
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -866,6 +956,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. Multiplier for adjusting the default learning rate.
+     * Mutually exclusive with `learning_rate`.
      * </pre>
      *
      * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -882,6 +973,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. Multiplier for adjusting the default learning rate.
+     * Mutually exclusive with `learning_rate`.
      * </pre>
      *
      * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -902,6 +994,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. Multiplier for adjusting the default learning rate.
+     * Mutually exclusive with `learning_rate`.
      * </pre>
      *
      * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -911,6 +1004,68 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     public Builder clearLearningRateMultiplier() {
       bitField0_ = (bitField0_ & ~0x00000002);
       learningRateMultiplier_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double learningRate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Learning rate for tuning.
+     * Mutually exclusive with `learning_rate_multiplier`.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>double learning_rate = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The learningRate.
+     */
+    @java.lang.Override
+    public double getLearningRate() {
+      return learningRate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Learning rate for tuning.
+     * Mutually exclusive with `learning_rate_multiplier`.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>double learning_rate = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The learningRate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLearningRate(double value) {
+
+      learningRate_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Learning rate for tuning.
+     * Mutually exclusive with `learning_rate_multiplier`.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>double learning_rate = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLearningRate() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      learningRate_ = 0D;
       onChanged();
       return this;
     }
@@ -951,7 +1106,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      */
     public Builder setAdapterSizeValue(int value) {
       adapterSize_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -999,7 +1154,7 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       adapterSize_ = value.getNumber();
       onChanged();
       return this;
@@ -1019,8 +1174,67 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAdapterSize() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       adapterSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long batchSize_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Batch size for tuning.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>int64 batch_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The batchSize.
+     */
+    @java.lang.Override
+    public long getBatchSize() {
+      return batchSize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Batch size for tuning.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>int64 batch_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The batchSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBatchSize(long value) {
+
+      batchSize_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Batch size for tuning.
+     * This feature is only available for open source models.
+     * </pre>
+     *
+     * <code>int64 batch_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBatchSize() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      batchSize_ = 0L;
       onChanged();
       return this;
     }
