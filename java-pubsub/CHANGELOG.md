@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.141.0](https://github.com/googleapis/java-pubsub/compare/v1.140.2...v1.141.0) (2025-07-11)
+
+
+### Features
+
+* Add MessageTransformationFailureReason to IngestionFailureEvent ([8271399](https://github.com/googleapis/java-pubsub/commit/8271399cc6348f69ba034b676cce2aa7592122a4))
+* Next release from main branch is 1.141.0 ([#2481](https://github.com/googleapis/java-pubsub/issues/2481)) ([bd9f385](https://github.com/googleapis/java-pubsub/commit/bd9f3850efa77ce759b4f281aecd9645666cb0f7))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.60.1 ([c9ef2cd](https://github.com/googleapis/java-pubsub/commit/c9ef2cda2c6ad20d5e57fe3ccf69f845f7ef36b7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.52.0 ([#2467](https://github.com/googleapis/java-pubsub/issues/2467)) ([fe08a6f](https://github.com/googleapis/java-pubsub/commit/fe08a6f1f6ee18e97c752f82786016999f6ab12c))
+* Update dependency com.google.cloud:google-cloud-core to v2.58.1 ([#2476](https://github.com/googleapis/java-pubsub/issues/2476)) ([96a2354](https://github.com/googleapis/java-pubsub/commit/96a23544fce609c7b19a00638a767926c304d3f8))
+* Update dependency com.google.cloud:google-cloud-storage to v2.53.2 ([#2469](https://github.com/googleapis/java-pubsub/issues/2469)) ([fa51a01](https://github.com/googleapis/java-pubsub/commit/fa51a01ed39393b7cad25fb39a1c87099def830a))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#2477](https://github.com/googleapis/java-pubsub/issues/2477)) ([e1657cb](https://github.com/googleapis/java-pubsub/commit/e1657cbeae5f2c3c9680ef6b5ff2b1ea5549f4ba))
+* Update googleapis/sdk-platform-java action to v2.60.0 ([#2471](https://github.com/googleapis/java-pubsub/issues/2471)) ([2b0e8e0](https://github.com/googleapis/java-pubsub/commit/2b0e8e0b58432f0975c15d0d01f185dc81de6caf))
+* Update googleapis/sdk-platform-java action to v2.60.1 ([#2475](https://github.com/googleapis/java-pubsub/issues/2475)) ([e7c0b5d](https://github.com/googleapis/java-pubsub/commit/e7c0b5d44f0ad53adfac6ec26572baad54d04dee))
+
 ## [1.140.2](https://github.com/googleapis/java-pubsub/compare/v1.140.1...v1.140.2) (2025-06-25)
 
 
