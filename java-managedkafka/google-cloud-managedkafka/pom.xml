@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managedkafka</artifactId>
-  <version>0.24.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+  <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
   <packaging>jar</packaging>
   <name>Google Managed Service for Apache Kafka API</name>
   <description>Managed Service for Apache Kafka API Manage Apache Kafka clusters and resources.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-managedkafka-parent</artifactId>
-    <version>0.24.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+    <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-managedkafka</site.installationModule>
