@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
 
@@ -49,15 +51,27 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.Backup;
+import com.google.cloud.memorystore.v1.BackupCollection;
+import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
+import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
+import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
+import com.google.cloud.memorystore.v1.ListBackupsRequest;
+import com.google.cloud.memorystore.v1.ListBackupsResponse;
 import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
+import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -167,6 +181,29 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceOperationSettings;
   private final UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings;
+  private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings;
+  private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings;
+  private final PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings;
+  private final UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings;
+  private final UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings;
+  private final OperationCallSettings<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationSettings;
+  private final UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings;
+  private final OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -203,6 +240,79 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
               return payload.getInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectToken(
+                ListBackupCollectionsRequest payload, String token) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectPageSize(
+                ListBackupCollectionsRequest payload, int pageSize) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupCollectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupCollectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupCollection> extractResources(
+                ListBackupCollectionsResponse payload) {
+              return payload.getBackupCollectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList();
             }
           };
 
@@ -254,6 +364,47 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               PageContext<ListInstancesRequest, ListInstancesResponse, Instance> pageContext =
                   PageContext.create(callable, LIST_INSTANCES_PAGE_STR_DESC, request, context);
               return ListInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupCollectionsRequest,
+              ListBackupCollectionsResponse,
+              ListBackupCollectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupCollectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse> callable,
+                ListBackupCollectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupCollectionsResponse> futureResponse) {
+              PageContext<
+                      ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC, request, context);
+              return ListBackupCollectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -322,6 +473,77 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   public UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings() {
     return getCertificateAuthoritySettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return rescheduleMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return rescheduleMaintenanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupCollections. */
+  public PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings() {
+    return listBackupCollectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupCollection. */
+  public UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings() {
+    return getBackupCollectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings() {
+    return exportBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public OperationCallSettings<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationSettings() {
+    return exportBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings() {
+    return backupInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationSettings() {
+    return backupInstanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -426,6 +648,19 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
+    rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
+    rescheduleMaintenanceOperationSettings =
+        settingsBuilder.rescheduleMaintenanceOperationSettings().build();
+    listBackupCollectionsSettings = settingsBuilder.listBackupCollectionsSettings().build();
+    getBackupCollectionSettings = settingsBuilder.getBackupCollectionSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    exportBackupSettings = settingsBuilder.exportBackupSettings().build();
+    exportBackupOperationSettings = settingsBuilder.exportBackupOperationSettings().build();
+    backupInstanceSettings = settingsBuilder.backupInstanceSettings().build();
+    backupInstanceOperationSettings = settingsBuilder.backupInstanceOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -451,6 +686,32 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         deleteInstanceOperationSettings;
     private final UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings;
+    private final UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings;
+    private final OperationCallSettings.Builder<ExportBackupRequest, Backup, OperationMetadata>
+        exportBackupOperationSettings;
+    private final UnaryCallSettings.Builder<BackupInstanceRequest, Operation>
+        backupInstanceSettings;
+    private final OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
+        backupInstanceOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -515,6 +776,19 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
+      listBackupCollectionsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT);
+      getBackupCollectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      exportBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportBackupOperationSettings = OperationCallSettings.newBuilder();
+      backupInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      backupInstanceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -526,6 +800,14 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              rescheduleMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupInstanceSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -543,6 +825,19 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
+      rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
+      rescheduleMaintenanceOperationSettings =
+          settings.rescheduleMaintenanceOperationSettings.toBuilder();
+      listBackupCollectionsSettings = settings.listBackupCollectionsSettings.toBuilder();
+      getBackupCollectionSettings = settings.getBackupCollectionSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      exportBackupSettings = settings.exportBackupSettings.toBuilder();
+      exportBackupOperationSettings = settings.exportBackupOperationSettings.toBuilder();
+      backupInstanceSettings = settings.backupInstanceSettings.toBuilder();
+      backupInstanceOperationSettings = settings.backupInstanceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -554,6 +849,14 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              rescheduleMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupInstanceSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -600,6 +903,46 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .getCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .rescheduleMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupCollectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupCollectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .backupInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -683,6 +1026,102 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .rescheduleMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .backupInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BackupInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -750,6 +1189,78 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getCertificateAuthoritySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return rescheduleMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return rescheduleMaintenanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupCollections. */
+    public PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings() {
+      return listBackupCollectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupCollection. */
+    public UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings() {
+      return getBackupCollectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings() {
+      return exportBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public OperationCallSettings.Builder<ExportBackupRequest, Backup, OperationMetadata>
+        exportBackupOperationSettings() {
+      return exportBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public UnaryCallSettings.Builder<BackupInstanceRequest, Operation> backupInstanceSettings() {
+      return backupInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
+        backupInstanceOperationSettings() {
+      return backupInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

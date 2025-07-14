@@ -135,6 +135,8 @@ public class BackupForGKEClientTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
             .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -204,6 +206,8 @@ public class BackupForGKEClientTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
             .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -361,6 +365,8 @@ public class BackupForGKEClientTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
             .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
@@ -415,6 +421,8 @@ public class BackupForGKEClientTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
             .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
@@ -469,6 +477,8 @@ public class BackupForGKEClientTest {
             .setStateReason("stateReason1148834357")
             .setRpoRiskLevel(-1939768030)
             .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setBackupChannel(
+                BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
             .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1978,6 +1988,8 @@ public class BackupForGKEClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2041,6 +2053,8 @@ public class BackupForGKEClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2192,6 +2206,8 @@ public class BackupForGKEClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2240,6 +2256,8 @@ public class BackupForGKEClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2288,6 +2306,8 @@ public class BackupForGKEClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setStateReason("stateReason1148834357")
+            .setRestoreChannel(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

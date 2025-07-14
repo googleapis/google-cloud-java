@@ -19,6 +19,8 @@ package com.google.cloud.config.v1;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -297,6 +299,30 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionSettings() {
     return ((ConfigStubSettings) getStubSettings()).getTerraformVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceChanges. */
+  public PagedCallSettings<
+          ListResourceChangesRequest, ListResourceChangesResponse, ListResourceChangesPagedResponse>
+      listResourceChangesSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listResourceChangesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceChange. */
+  public UnaryCallSettings<GetResourceChangeRequest, ResourceChange> getResourceChangeSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getResourceChangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceDrifts. */
+  public PagedCallSettings<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+      listResourceDriftsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listResourceDriftsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceDrift. */
+  public UnaryCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getResourceDriftSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -612,6 +638,34 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionSettings() {
       return getStubSettingsBuilder().getTerraformVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceChanges. */
+    public PagedCallSettings.Builder<
+            ListResourceChangesRequest,
+            ListResourceChangesResponse,
+            ListResourceChangesPagedResponse>
+        listResourceChangesSettings() {
+      return getStubSettingsBuilder().listResourceChangesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceChange. */
+    public UnaryCallSettings.Builder<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeSettings() {
+      return getStubSettingsBuilder().getResourceChangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceDrifts. */
+    public PagedCallSettings.Builder<
+            ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+        listResourceDriftsSettings() {
+      return getStubSettingsBuilder().listResourceDriftsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceDrift. */
+    public UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
+        getResourceDriftSettings() {
+      return getStubSettingsBuilder().getResourceDriftSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

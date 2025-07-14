@@ -1017,6 +1017,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.maps.fleetengine.v1.TripAttribute",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.maps.fleetengine.v1.TripAttribute$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.maps.fleetengine.v1.TripStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

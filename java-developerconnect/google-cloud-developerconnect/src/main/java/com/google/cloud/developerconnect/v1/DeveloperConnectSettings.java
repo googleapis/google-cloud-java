@@ -18,9 +18,11 @@ package com.google.cloud.developerconnect.v1;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -243,6 +245,99 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
   public PagedCallSettings<FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
       fetchGitRefsSettings() {
     return ((DeveloperConnectStubSettings) getStubSettings()).fetchGitRefsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAccountConnectors. */
+  public PagedCallSettings<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          ListAccountConnectorsPagedResponse>
+      listAccountConnectorsSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).listAccountConnectorsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAccountConnector. */
+  public UnaryCallSettings<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).getAccountConnectorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAccountConnector. */
+  public UnaryCallSettings<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).createAccountConnectorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAccountConnector. */
+  public OperationCallSettings<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .createAccountConnectorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAccountConnector. */
+  public UnaryCallSettings<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).updateAccountConnectorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAccountConnector. */
+  public OperationCallSettings<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .updateAccountConnectorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccountConnector. */
+  public UnaryCallSettings<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).deleteAccountConnectorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccountConnector. */
+  public OperationCallSettings<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .deleteAccountConnectorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchAccessToken. */
+  public UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).fetchAccessTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).listUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public UnaryCallSettings<DeleteUserRequest, Operation> deleteUserSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).deleteUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public OperationCallSettings<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).deleteUserOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchSelf. */
+  public UnaryCallSettings<FetchSelfRequest, User> fetchSelfSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).fetchSelfSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSelf. */
+  public UnaryCallSettings<DeleteSelfRequest, Operation> deleteSelfSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).deleteSelfSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSelf. */
+  public OperationCallSettings<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).deleteSelfOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -489,6 +584,98 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
             FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
         fetchGitRefsSettings() {
       return getStubSettingsBuilder().fetchGitRefsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAccountConnectors. */
+    public PagedCallSettings.Builder<
+            ListAccountConnectorsRequest,
+            ListAccountConnectorsResponse,
+            ListAccountConnectorsPagedResponse>
+        listAccountConnectorsSettings() {
+      return getStubSettingsBuilder().listAccountConnectorsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAccountConnector. */
+    public UnaryCallSettings.Builder<GetAccountConnectorRequest, AccountConnector>
+        getAccountConnectorSettings() {
+      return getStubSettingsBuilder().getAccountConnectorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAccountConnector. */
+    public UnaryCallSettings.Builder<CreateAccountConnectorRequest, Operation>
+        createAccountConnectorSettings() {
+      return getStubSettingsBuilder().createAccountConnectorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAccountConnector. */
+    public OperationCallSettings.Builder<
+            CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        createAccountConnectorOperationSettings() {
+      return getStubSettingsBuilder().createAccountConnectorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccountConnector. */
+    public UnaryCallSettings.Builder<UpdateAccountConnectorRequest, Operation>
+        updateAccountConnectorSettings() {
+      return getStubSettingsBuilder().updateAccountConnectorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccountConnector. */
+    public OperationCallSettings.Builder<
+            UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        updateAccountConnectorOperationSettings() {
+      return getStubSettingsBuilder().updateAccountConnectorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccountConnector. */
+    public UnaryCallSettings.Builder<DeleteAccountConnectorRequest, Operation>
+        deleteAccountConnectorSettings() {
+      return getStubSettingsBuilder().deleteAccountConnectorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccountConnector. */
+    public OperationCallSettings.Builder<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+        deleteAccountConnectorOperationSettings() {
+      return getStubSettingsBuilder().deleteAccountConnectorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchAccessToken. */
+    public UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenSettings() {
+      return getStubSettingsBuilder().fetchAccessTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return getStubSettingsBuilder().listUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public UnaryCallSettings.Builder<DeleteUserRequest, Operation> deleteUserSettings() {
+      return getStubSettingsBuilder().deleteUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public OperationCallSettings.Builder<DeleteUserRequest, Empty, OperationMetadata>
+        deleteUserOperationSettings() {
+      return getStubSettingsBuilder().deleteUserOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchSelf. */
+    public UnaryCallSettings.Builder<FetchSelfRequest, User> fetchSelfSettings() {
+      return getStubSettingsBuilder().fetchSelfSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSelf. */
+    public UnaryCallSettings.Builder<DeleteSelfRequest, Operation> deleteSelfSettings() {
+      return getStubSettingsBuilder().deleteSelfSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSelf. */
+    public OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
+        deleteSelfOperationSettings() {
+      return getStubSettingsBuilder().deleteSelfOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

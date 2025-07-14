@@ -160,6 +160,17 @@ public class LicensesSettings extends ClientSettings<LicensesSettings> {
     return ((LicensesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateLicenseRequest, Operation> updateSettings() {
+    return ((LicensesStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateLicenseRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((LicensesStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   public static final LicensesSettings create(LicensesStubSettings stub) throws IOException {
     return new LicensesSettings.Builder(stub.toBuilder()).build();
   }
@@ -303,6 +314,17 @@ public class LicensesSettings extends ClientSettings<LicensesSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateLicenseRequest, Operation> updateSettings() {
+      return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateLicenseRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

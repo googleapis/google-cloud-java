@@ -191,7 +191,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     default void listComments(
@@ -206,8 +206,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     default void createComment(
@@ -256,7 +256,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public void listComments(
@@ -273,8 +273,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public void createComment(
@@ -310,7 +310,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public com.google.cloud.support.v2.ListCommentsResponse listComments(
@@ -323,8 +323,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public com.google.cloud.support.v2.Comment createComment(
@@ -357,7 +357,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public com.google.cloud.support.v2.ListCommentsResponse listComments(
@@ -370,8 +370,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public com.google.cloud.support.v2.Comment createComment(
@@ -404,7 +404,7 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all Comments associated with the Case object.
+     * List all the comments associated with a case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -418,8 +418,8 @@ public final class CommentServiceGrpc {
      *
      *
      * <pre>
-     * Add a new comment to the specified Case.
-     * The comment object must have the following fields set: body.
+     * Add a new comment to a case.
+     * The comment must have the following fields set: `body`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Comment>

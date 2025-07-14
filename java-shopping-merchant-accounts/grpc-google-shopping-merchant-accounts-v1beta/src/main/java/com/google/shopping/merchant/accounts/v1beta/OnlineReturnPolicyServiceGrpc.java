@@ -24,7 +24,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service facilitates the management of a merchant's remorse return policy
  * configuration, encompassing return policies for both ads and free listings
  * ## programs. This API defines the following resource model:
- * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+ * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -149,6 +149,170 @@ public final class OnlineReturnPolicyServiceGrpc {
     return getListOnlineReturnPoliciesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest,
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+      getCreateOnlineReturnPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOnlineReturnPolicy",
+      requestType =
+          com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest,
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+      getCreateOnlineReturnPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+        getCreateOnlineReturnPolicyMethod;
+    if ((getCreateOnlineReturnPolicyMethod =
+            OnlineReturnPolicyServiceGrpc.getCreateOnlineReturnPolicyMethod)
+        == null) {
+      synchronized (OnlineReturnPolicyServiceGrpc.class) {
+        if ((getCreateOnlineReturnPolicyMethod =
+                OnlineReturnPolicyServiceGrpc.getCreateOnlineReturnPolicyMethod)
+            == null) {
+          OnlineReturnPolicyServiceGrpc.getCreateOnlineReturnPolicyMethod =
+              getCreateOnlineReturnPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1beta
+                              .CreateOnlineReturnPolicyRequest,
+                          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateOnlineReturnPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1beta
+                                  .CreateOnlineReturnPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OnlineReturnPolicyServiceMethodDescriptorSupplier(
+                              "CreateOnlineReturnPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateOnlineReturnPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest,
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+      getUpdateOnlineReturnPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOnlineReturnPolicy",
+      requestType =
+          com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest,
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+      getUpdateOnlineReturnPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+        getUpdateOnlineReturnPolicyMethod;
+    if ((getUpdateOnlineReturnPolicyMethod =
+            OnlineReturnPolicyServiceGrpc.getUpdateOnlineReturnPolicyMethod)
+        == null) {
+      synchronized (OnlineReturnPolicyServiceGrpc.class) {
+        if ((getUpdateOnlineReturnPolicyMethod =
+                OnlineReturnPolicyServiceGrpc.getUpdateOnlineReturnPolicyMethod)
+            == null) {
+          OnlineReturnPolicyServiceGrpc.getUpdateOnlineReturnPolicyMethod =
+              getUpdateOnlineReturnPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1beta
+                              .UpdateOnlineReturnPolicyRequest,
+                          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateOnlineReturnPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1beta
+                                  .UpdateOnlineReturnPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OnlineReturnPolicyServiceMethodDescriptorSupplier(
+                              "UpdateOnlineReturnPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateOnlineReturnPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest,
+          com.google.protobuf.Empty>
+      getDeleteOnlineReturnPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOnlineReturnPolicy",
+      requestType =
+          com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest,
+          com.google.protobuf.Empty>
+      getDeleteOnlineReturnPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest,
+            com.google.protobuf.Empty>
+        getDeleteOnlineReturnPolicyMethod;
+    if ((getDeleteOnlineReturnPolicyMethod =
+            OnlineReturnPolicyServiceGrpc.getDeleteOnlineReturnPolicyMethod)
+        == null) {
+      synchronized (OnlineReturnPolicyServiceGrpc.class) {
+        if ((getDeleteOnlineReturnPolicyMethod =
+                OnlineReturnPolicyServiceGrpc.getDeleteOnlineReturnPolicyMethod)
+            == null) {
+          OnlineReturnPolicyServiceGrpc.getDeleteOnlineReturnPolicyMethod =
+              getDeleteOnlineReturnPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1beta
+                              .DeleteOnlineReturnPolicyRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteOnlineReturnPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1beta
+                                  .DeleteOnlineReturnPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OnlineReturnPolicyServiceMethodDescriptorSupplier(
+                              "DeleteOnlineReturnPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteOnlineReturnPolicyMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static OnlineReturnPolicyServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<OnlineReturnPolicyServiceStub> factory =
@@ -210,7 +374,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public interface AsyncService {
@@ -219,7 +383,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy for a given business.
+     * Gets an existing return policy for a given merchant.
      * </pre>
      */
     default void getOnlineReturnPolicy(
@@ -234,7 +398,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies for a given business.
+     * Lists all existing return policies for a given merchant.
      * </pre>
      */
     default void listOnlineReturnPolicies(
@@ -245,6 +409,50 @@ public final class OnlineReturnPolicyServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListOnlineReturnPoliciesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new return policy for a given merchant.
+     * </pre>
+     */
+    default void createOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateOnlineReturnPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing return policy for a given merchant.
+     * </pre>
+     */
+    default void updateOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOnlineReturnPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing return policy.
+     * </pre>
+     */
+    default void deleteOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteOnlineReturnPolicyMethod(), responseObserver);
+    }
   }
 
   /**
@@ -254,7 +462,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public abstract static class OnlineReturnPolicyServiceImplBase
@@ -273,7 +481,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceStub
@@ -293,7 +501,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy for a given business.
+     * Gets an existing return policy for a given merchant.
      * </pre>
      */
     public void getOnlineReturnPolicy(
@@ -310,7 +518,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies for a given business.
+     * Lists all existing return policies for a given merchant.
      * </pre>
      */
     public void listOnlineReturnPolicies(
@@ -323,6 +531,56 @@ public final class OnlineReturnPolicyServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new return policy for a given merchant.
+     * </pre>
+     */
+    public void createOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateOnlineReturnPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing return policy for a given merchant.
+     * </pre>
+     */
+    public void updateOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOnlineReturnPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing return policy.
+     * </pre>
+     */
+    public void deleteOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteOnlineReturnPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -332,7 +590,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceBlockingV2Stub
@@ -352,7 +610,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy for a given business.
+     * Gets an existing return policy for a given merchant.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicy(
@@ -365,7 +623,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies for a given business.
+     * Lists all existing return policies for a given merchant.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse
@@ -373,6 +631,45 @@ public final class OnlineReturnPolicyServiceGrpc {
             com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListOnlineReturnPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy createOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOnlineReturnPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy updateOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOnlineReturnPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing return policy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -384,7 +681,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceBlockingStub
@@ -404,7 +701,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy for a given business.
+     * Gets an existing return policy for a given merchant.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicy(
@@ -417,7 +714,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies for a given business.
+     * Lists all existing return policies for a given merchant.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse
@@ -425,6 +722,45 @@ public final class OnlineReturnPolicyServiceGrpc {
             com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListOnlineReturnPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy createOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOnlineReturnPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy updateOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOnlineReturnPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing return policy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -436,7 +772,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a merchant's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceFutureStub
@@ -456,7 +792,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy for a given business.
+     * Gets an existing return policy for a given merchant.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -471,7 +807,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies for a given business.
+     * Lists all existing return policies for a given merchant.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -481,10 +817,57 @@ public final class OnlineReturnPolicyServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListOnlineReturnPoliciesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+        createOnlineReturnPolicy(
+            com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateOnlineReturnPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing return policy for a given merchant.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
+        updateOnlineReturnPolicy(
+            com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOnlineReturnPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing return policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteOnlineReturnPolicy(
+            com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteOnlineReturnPolicyMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ONLINE_RETURN_POLICY = 0;
   private static final int METHODID_LIST_ONLINE_RETURN_POLICIES = 1;
+  private static final int METHODID_CREATE_ONLINE_RETURN_POLICY = 2;
+  private static final int METHODID_UPDATE_ONLINE_RETURN_POLICY = 3;
+  private static final int METHODID_DELETE_ONLINE_RETURN_POLICY = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -519,6 +902,28 @@ public final class OnlineReturnPolicyServiceGrpc {
                           .ListOnlineReturnPoliciesResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_ONLINE_RETURN_POLICY:
+          serviceImpl.createOnlineReturnPolicy(
+              (com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ONLINE_RETURN_POLICY:
+          serviceImpl.updateOnlineReturnPolicy(
+              (com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ONLINE_RETURN_POLICY:
+          serviceImpl.deleteOnlineReturnPolicy(
+              (com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -551,6 +956,26 @@ public final class OnlineReturnPolicyServiceGrpc {
                     com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest,
                     com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse>(
                     service, METHODID_LIST_ONLINE_RETURN_POLICIES)))
+        .addMethod(
+            getCreateOnlineReturnPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest,
+                    com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>(
+                    service, METHODID_CREATE_ONLINE_RETURN_POLICY)))
+        .addMethod(
+            getUpdateOnlineReturnPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest,
+                    com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>(
+                    service, METHODID_UPDATE_ONLINE_RETURN_POLICY)))
+        .addMethod(
+            getDeleteOnlineReturnPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ONLINE_RETURN_POLICY)))
         .build();
   }
 
@@ -604,6 +1029,9 @@ public final class OnlineReturnPolicyServiceGrpc {
                       .setSchemaDescriptor(new OnlineReturnPolicyServiceFileDescriptorSupplier())
                       .addMethod(getGetOnlineReturnPolicyMethod())
                       .addMethod(getListOnlineReturnPoliciesMethod())
+                      .addMethod(getCreateOnlineReturnPolicyMethod())
+                      .addMethod(getUpdateOnlineReturnPolicyMethod())
+                      .addMethod(getDeleteOnlineReturnPolicyMethod())
                       .build();
         }
       }

@@ -10,17 +10,32 @@
         "grpc": {
           "libraryClient": "DeveloperConnectClient",
           "rpcs": {
+            "CreateAccountConnector": {
+              "methods": ["createAccountConnectorAsync", "createAccountConnectorAsync", "createAccountConnectorAsync", "createAccountConnectorOperationCallable", "createAccountConnectorCallable"]
+            },
             "CreateConnection": {
               "methods": ["createConnectionAsync", "createConnectionAsync", "createConnectionAsync", "createConnectionOperationCallable", "createConnectionCallable"]
             },
             "CreateGitRepositoryLink": {
               "methods": ["createGitRepositoryLinkAsync", "createGitRepositoryLinkAsync", "createGitRepositoryLinkAsync", "createGitRepositoryLinkOperationCallable", "createGitRepositoryLinkCallable"]
             },
+            "DeleteAccountConnector": {
+              "methods": ["deleteAccountConnectorAsync", "deleteAccountConnectorAsync", "deleteAccountConnectorAsync", "deleteAccountConnectorOperationCallable", "deleteAccountConnectorCallable"]
+            },
             "DeleteConnection": {
               "methods": ["deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionOperationCallable", "deleteConnectionCallable"]
             },
             "DeleteGitRepositoryLink": {
               "methods": ["deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkOperationCallable", "deleteGitRepositoryLinkCallable"]
+            },
+            "DeleteSelf": {
+              "methods": ["deleteSelfAsync", "deleteSelfAsync", "deleteSelfAsync", "deleteSelfOperationCallable", "deleteSelfCallable"]
+            },
+            "DeleteUser": {
+              "methods": ["deleteUserAsync", "deleteUserAsync", "deleteUserAsync", "deleteUserOperationCallable", "deleteUserCallable"]
+            },
+            "FetchAccessToken": {
+              "methods": ["fetchAccessToken", "fetchAccessToken", "fetchAccessToken", "fetchAccessTokenCallable"]
             },
             "FetchGitHubInstallations": {
               "methods": ["fetchGitHubInstallations", "fetchGitHubInstallations", "fetchGitHubInstallations", "fetchGitHubInstallationsCallable"]
@@ -37,6 +52,12 @@
             "FetchReadWriteToken": {
               "methods": ["fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteTokenCallable"]
             },
+            "FetchSelf": {
+              "methods": ["fetchSelf", "fetchSelf", "fetchSelf", "fetchSelfCallable"]
+            },
+            "GetAccountConnector": {
+              "methods": ["getAccountConnector", "getAccountConnector", "getAccountConnector", "getAccountConnectorCallable"]
+            },
             "GetConnection": {
               "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
             },
@@ -45,6 +66,9 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAccountConnectors": {
+              "methods": ["listAccountConnectors", "listAccountConnectors", "listAccountConnectors", "listAccountConnectorsPagedCallable", "listAccountConnectorsCallable"]
             },
             "ListConnections": {
               "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
@@ -55,8 +79,44 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "UpdateAccountConnector": {
+              "methods": ["updateAccountConnectorAsync", "updateAccountConnectorAsync", "updateAccountConnectorOperationCallable", "updateAccountConnectorCallable"]
+            },
             "UpdateConnection": {
               "methods": ["updateConnectionAsync", "updateConnectionAsync", "updateConnectionOperationCallable", "updateConnectionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InsightsConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InsightsConfigServiceClient",
+          "rpcs": {
+            "CreateInsightsConfig": {
+              "methods": ["createInsightsConfigAsync", "createInsightsConfigAsync", "createInsightsConfigAsync", "createInsightsConfigOperationCallable", "createInsightsConfigCallable"]
+            },
+            "DeleteInsightsConfig": {
+              "methods": ["deleteInsightsConfigAsync", "deleteInsightsConfigAsync", "deleteInsightsConfigAsync", "deleteInsightsConfigOperationCallable", "deleteInsightsConfigCallable"]
+            },
+            "GetInsightsConfig": {
+              "methods": ["getInsightsConfig", "getInsightsConfig", "getInsightsConfig", "getInsightsConfigCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListInsightsConfigs": {
+              "methods": ["listInsightsConfigs", "listInsightsConfigs", "listInsightsConfigs", "listInsightsConfigsPagedCallable", "listInsightsConfigsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateInsightsConfig": {
+              "methods": ["updateInsightsConfigAsync", "updateInsightsConfigOperationCallable", "updateInsightsConfigCallable"]
             }
           }
         }

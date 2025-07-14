@@ -5,6 +5,7 @@
     <name>Google Cloud Client Library for Java Samples</name>
     <artifactId>google-cloud-samples</artifactId>
     <groupId>com.google.cloud</groupId>
+    <!-- We do not release this module. The "-SNAPSHOT" version avoids accidental releases -->
     <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +13,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-jar-parent</artifactId>
-        <version>1.56.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+        <version>1.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
         <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
     </parent>
 
@@ -31,6 +32,19 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <configuration>
+                        <!--
+                          When we use OSSRH with nexus-staging-maven-plugin, this "skip" configuration
+                          is overridden and ignored by nexus-staging-maven-plugin.
+                          Once we start publishing artifacts via Central Portal using maven-deploy-plugin
+                          (without nexus-staging-maven-plugin), we no longer rely on skipNexusStagingDeployMojo.
+                        -->
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>

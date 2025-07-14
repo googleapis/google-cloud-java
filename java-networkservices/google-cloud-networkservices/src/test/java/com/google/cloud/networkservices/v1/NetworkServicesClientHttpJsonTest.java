@@ -17,14 +17,19 @@
 package com.google.cloud.networkservices.v1;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -625,6 +630,943 @@ public class NetworkServicesClientHttpJsonTest {
   }
 
   @Test
+  public void listWasmPluginVersionsTest() throws Exception {
+    WasmPluginVersion responsesElement = WasmPluginVersion.newBuilder().build();
+    ListWasmPluginVersionsResponse expectedResponse =
+        ListWasmPluginVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPluginVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    ListWasmPluginVersionsPagedResponse pagedListResponse = client.listWasmPluginVersions(parent);
+
+    List<WasmPluginVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listWasmPluginVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.listWasmPluginVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWasmPluginVersionsTest2() throws Exception {
+    WasmPluginVersion responsesElement = WasmPluginVersion.newBuilder().build();
+    ListWasmPluginVersionsResponse expectedResponse =
+        ListWasmPluginVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPluginVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9167/locations/location-9167/wasmPlugins/wasmPlugin-9167";
+
+    ListWasmPluginVersionsPagedResponse pagedListResponse = client.listWasmPluginVersions(parent);
+
+    List<WasmPluginVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listWasmPluginVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9167/locations/location-9167/wasmPlugins/wasmPlugin-9167";
+      client.listWasmPluginVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginVersionTest() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    WasmPluginVersionName name =
+        WasmPluginVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+
+    WasmPluginVersion actualResponse = client.getWasmPluginVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getWasmPluginVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginVersionName name =
+          WasmPluginVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+      client.getWasmPluginVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginVersionTest2() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4691/locations/location-4691/wasmPlugins/wasmPlugin-4691/versions/version-4691";
+
+    WasmPluginVersion actualResponse = client.getWasmPluginVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getWasmPluginVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4691/locations/location-4691/wasmPlugins/wasmPlugin-4691/versions/version-4691";
+      client.getWasmPluginVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWasmPluginVersionTest() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+    WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+    String wasmPluginVersionId = "wasmPluginVersionId38892252";
+
+    WasmPluginVersion actualResponse =
+        client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWasmPluginVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+      String wasmPluginVersionId = "wasmPluginVersionId38892252";
+      client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createWasmPluginVersionTest2() throws Exception {
+    WasmPluginVersion expectedResponse =
+        WasmPluginVersion.newBuilder()
+            .setName(
+                WasmPluginVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setImageUri("imageUri-859610607")
+            .setImageDigest("imageDigest1735426815")
+            .setPluginConfigDigest("pluginConfigDigest1647092345")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-9167/locations/location-9167/wasmPlugins/wasmPlugin-9167";
+    WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+    String wasmPluginVersionId = "wasmPluginVersionId38892252";
+
+    WasmPluginVersion actualResponse =
+        client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWasmPluginVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9167/locations/location-9167/wasmPlugins/wasmPlugin-9167";
+      WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+      String wasmPluginVersionId = "wasmPluginVersionId38892252";
+      client.createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    WasmPluginVersionName name =
+        WasmPluginVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+
+    client.deleteWasmPluginVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteWasmPluginVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginVersionName name =
+          WasmPluginVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+      client.deleteWasmPluginVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-4691/locations/location-4691/wasmPlugins/wasmPlugin-4691/versions/version-4691";
+
+    client.deleteWasmPluginVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteWasmPluginVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4691/locations/location-4691/wasmPlugins/wasmPlugin-4691/versions/version-4691";
+      client.deleteWasmPluginVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listWasmPluginsTest() throws Exception {
+    WasmPlugin responsesElement = WasmPlugin.newBuilder().build();
+    ListWasmPluginsResponse expectedResponse =
+        ListWasmPluginsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPlugins(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListWasmPluginsPagedResponse pagedListResponse = client.listWasmPlugins(parent);
+
+    List<WasmPlugin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listWasmPluginsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listWasmPlugins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWasmPluginsTest2() throws Exception {
+    WasmPlugin responsesElement = WasmPlugin.newBuilder().build();
+    ListWasmPluginsResponse expectedResponse =
+        ListWasmPluginsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWasmPlugins(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListWasmPluginsPagedResponse pagedListResponse = client.listWasmPlugins(parent);
+
+    List<WasmPlugin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWasmPluginsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listWasmPluginsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listWasmPlugins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    WasmPlugin actualResponse = client.getWasmPlugin(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getWasmPluginExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.getWasmPlugin(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWasmPluginTest2() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1682/locations/location-1682/wasmPlugins/wasmPlugin-1682";
+
+    WasmPlugin actualResponse = client.getWasmPlugin(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getWasmPluginExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1682/locations/location-1682/wasmPlugins/wasmPlugin-1682";
+      client.getWasmPlugin(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+    String wasmPluginId = "wasmPluginId1902086770";
+
+    WasmPlugin actualResponse =
+        client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWasmPluginExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+      String wasmPluginId = "wasmPluginId1902086770";
+      client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createWasmPluginTest2() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+    String wasmPluginId = "wasmPluginId1902086770";
+
+    WasmPlugin actualResponse =
+        client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWasmPluginExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+      String wasmPluginId = "wasmPluginId1902086770";
+      client.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateWasmPluginTest() throws Exception {
+    WasmPlugin expectedResponse =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    WasmPlugin wasmPlugin =
+        WasmPlugin.newBuilder()
+            .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setMainVersionId("mainVersionId-1526150566")
+            .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+            .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+            .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    WasmPlugin actualResponse = client.updateWasmPluginAsync(wasmPlugin, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateWasmPluginExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPlugin wasmPlugin =
+          WasmPlugin.newBuilder()
+              .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setMainVersionId("mainVersionId-1526150566")
+              .setLogConfig(WasmPlugin.LogConfig.newBuilder().build())
+              .putAllVersions(new HashMap<String, WasmPlugin.VersionDetails>())
+              .addAllUsedBy(new ArrayList<WasmPlugin.UsedBy>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateWasmPluginAsync(wasmPlugin, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+
+    client.deleteWasmPluginAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteWasmPluginExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+      client.deleteWasmPluginAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteWasmPluginTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWasmPluginTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1682/locations/location-1682/wasmPlugins/wasmPlugin-1682";
+
+    client.deleteWasmPluginAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteWasmPluginExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1682/locations/location-1682/wasmPlugins/wasmPlugin-1682";
+      client.deleteWasmPluginAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listGatewaysTest() throws Exception {
     Gateway responsesElement = Gateway.newBuilder().build();
     ListGatewaysResponse expectedResponse =
@@ -734,9 +1676,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -786,9 +1734,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -838,9 +1792,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -899,9 +1859,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -960,9 +1926,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -980,9 +1952,15 @@ public class NetworkServicesClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .addAllCertificateUrls(new ArrayList<String>())
+            .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+            .setNetwork("network1843485230")
+            .setSubnetwork("subnetwork-1302785042")
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1020,9 +1998,15 @@ public class NetworkServicesClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setDescription("description-1724546052")
+              .addAllAddresses(new ArrayList<String>())
               .addAllPorts(new ArrayList<Integer>())
               .setScope("scope109264468")
               .setServerTlsPolicy("serverTlsPolicy-1897015798")
+              .addAllCertificateUrls(new ArrayList<String>())
+              .setGatewaySecurityPolicy("gatewaySecurityPolicy-1714068490")
+              .setNetwork("network1843485230")
+              .setSubnetwork("subnetwork-1302785042")
+              .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGatewayAsync(gateway, updateMask).get();
@@ -2738,6 +3722,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2789,6 +3774,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2840,6 +3826,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2900,6 +3887,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2960,6 +3948,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2979,6 +3968,7 @@ public class NetworkServicesClientHttpJsonTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3018,6 +4008,7 @@ public class NetworkServicesClientHttpJsonTest {
               .addAllRules(new ArrayList<TlsRoute.RouteRule>())
               .addAllMeshes(new ArrayList<String>())
               .addAllGateways(new ArrayList<String>())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTlsRouteAsync(tlsRoute, updateMask).get();
@@ -3226,6 +4217,7 @@ public class NetworkServicesClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3277,6 +4269,7 @@ public class NetworkServicesClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3329,6 +4322,7 @@ public class NetworkServicesClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -3389,6 +4383,7 @@ public class NetworkServicesClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -3434,6 +4429,85 @@ public class NetworkServicesClientHttpJsonTest {
       ServiceBinding serviceBinding = ServiceBinding.newBuilder().build();
       String serviceBindingId = "serviceBindingId-1424670901";
       client.createServiceBindingAsync(parent, serviceBinding, serviceBindingId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateServiceBindingTest() throws Exception {
+    ServiceBinding expectedResponse =
+        ServiceBinding.newBuilder()
+            .setName(
+                ServiceBindingName.of("[PROJECT]", "[LOCATION]", "[SERVICE_BINDING]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateServiceBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ServiceBinding serviceBinding =
+        ServiceBinding.newBuilder()
+            .setName(
+                ServiceBindingName.of("[PROJECT]", "[LOCATION]", "[SERVICE_BINDING]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setService("service1984153269")
+            .setServiceId("serviceId-194185552")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ServiceBinding actualResponse =
+        client.updateServiceBindingAsync(serviceBinding, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateServiceBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ServiceBinding serviceBinding =
+          ServiceBinding.newBuilder()
+              .setName(
+                  ServiceBindingName.of("[PROJECT]", "[LOCATION]", "[SERVICE_BINDING]").toString())
+              .setDescription("description-1724546052")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setService("service1984153269")
+              .setServiceId("serviceId-194185552")
+              .putAllLabels(new HashMap<String, String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateServiceBindingAsync(serviceBinding, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -3643,6 +4717,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3693,6 +4768,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3743,6 +4819,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3802,6 +4879,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3861,6 +4939,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3879,6 +4958,7 @@ public class NetworkServicesClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setInterceptionPort(537115930)
+            .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3917,6 +4997,7 @@ public class NetworkServicesClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setDescription("description-1724546052")
               .setInterceptionPort(537115930)
+              .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMeshAsync(mesh, updateMask).get();
@@ -4012,6 +5093,923 @@ public class NetworkServicesClientHttpJsonTest {
       client.deleteMeshAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listServiceLbPoliciesTest() throws Exception {
+    ServiceLbPolicy responsesElement = ServiceLbPolicy.newBuilder().build();
+    ListServiceLbPoliciesResponse expectedResponse =
+        ListServiceLbPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServiceLbPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListServiceLbPoliciesPagedResponse pagedListResponse = client.listServiceLbPolicies(parent);
+
+    List<ServiceLbPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServiceLbPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listServiceLbPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listServiceLbPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServiceLbPoliciesTest2() throws Exception {
+    ServiceLbPolicy responsesElement = ServiceLbPolicy.newBuilder().build();
+    ListServiceLbPoliciesResponse expectedResponse =
+        ListServiceLbPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServiceLbPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListServiceLbPoliciesPagedResponse pagedListResponse = client.listServiceLbPolicies(parent);
+
+    List<ServiceLbPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServiceLbPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listServiceLbPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listServiceLbPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getServiceLbPolicyTest() throws Exception {
+    ServiceLbPolicy expectedResponse =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ServiceLbPolicyName name =
+        ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+
+    ServiceLbPolicy actualResponse = client.getServiceLbPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getServiceLbPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ServiceLbPolicyName name =
+          ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+      client.getServiceLbPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getServiceLbPolicyTest2() throws Exception {
+    ServiceLbPolicy expectedResponse =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4511/locations/location-4511/serviceLbPolicies/serviceLbPolicie-4511";
+
+    ServiceLbPolicy actualResponse = client.getServiceLbPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getServiceLbPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4511/locations/location-4511/serviceLbPolicies/serviceLbPolicie-4511";
+      client.getServiceLbPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createServiceLbPolicyTest() throws Exception {
+    ServiceLbPolicy expectedResponse =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createServiceLbPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+    String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+
+    ServiceLbPolicy actualResponse =
+        client.createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createServiceLbPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+      String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+      client.createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createServiceLbPolicyTest2() throws Exception {
+    ServiceLbPolicy expectedResponse =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createServiceLbPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+    String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+
+    ServiceLbPolicy actualResponse =
+        client.createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createServiceLbPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ServiceLbPolicy serviceLbPolicy = ServiceLbPolicy.newBuilder().build();
+      String serviceLbPolicyId = "serviceLbPolicyId1391086104";
+      client.createServiceLbPolicyAsync(parent, serviceLbPolicy, serviceLbPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateServiceLbPolicyTest() throws Exception {
+    ServiceLbPolicy expectedResponse =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateServiceLbPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ServiceLbPolicy serviceLbPolicy =
+        ServiceLbPolicy.newBuilder()
+            .setName(
+                ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+            .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+            .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ServiceLbPolicy actualResponse =
+        client.updateServiceLbPolicyAsync(serviceLbPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateServiceLbPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ServiceLbPolicy serviceLbPolicy =
+          ServiceLbPolicy.newBuilder()
+              .setName(
+                  ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setAutoCapacityDrain(ServiceLbPolicy.AutoCapacityDrain.newBuilder().build())
+              .setFailoverConfig(ServiceLbPolicy.FailoverConfig.newBuilder().build())
+              .setIsolationConfig(ServiceLbPolicy.IsolationConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateServiceLbPolicyAsync(serviceLbPolicy, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteServiceLbPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteServiceLbPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ServiceLbPolicyName name =
+        ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+
+    client.deleteServiceLbPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteServiceLbPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ServiceLbPolicyName name =
+          ServiceLbPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVICE_LB_POLICY]");
+      client.deleteServiceLbPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteServiceLbPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteServiceLbPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-4511/locations/location-4511/serviceLbPolicies/serviceLbPolicie-4511";
+
+    client.deleteServiceLbPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteServiceLbPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4511/locations/location-4511/serviceLbPolicies/serviceLbPolicie-4511";
+      client.deleteServiceLbPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getGatewayRouteViewTest() throws Exception {
+    GatewayRouteView expectedResponse =
+        GatewayRouteView.newBuilder()
+            .setName(
+                GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]")
+                    .toString())
+            .setRouteProjectNumber(1055608805)
+            .setRouteLocation("routeLocation1045847326")
+            .setRouteType("routeType167668003")
+            .setRouteId("routeId1385647428")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GatewayRouteViewName name =
+        GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]");
+
+    GatewayRouteView actualResponse = client.getGatewayRouteView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGatewayRouteViewExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GatewayRouteViewName name =
+          GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]");
+      client.getGatewayRouteView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGatewayRouteViewTest2() throws Exception {
+    GatewayRouteView expectedResponse =
+        GatewayRouteView.newBuilder()
+            .setName(
+                GatewayRouteViewName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]", "[ROUTE_VIEW]")
+                    .toString())
+            .setRouteProjectNumber(1055608805)
+            .setRouteLocation("routeLocation1045847326")
+            .setRouteType("routeType167668003")
+            .setRouteId("routeId1385647428")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9392/locations/location-9392/gateways/gateway-9392/routeViews/routeView-9392";
+
+    GatewayRouteView actualResponse = client.getGatewayRouteView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGatewayRouteViewExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9392/locations/location-9392/gateways/gateway-9392/routeViews/routeView-9392";
+      client.getGatewayRouteView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMeshRouteViewTest() throws Exception {
+    MeshRouteView expectedResponse =
+        MeshRouteView.newBuilder()
+            .setName(
+                MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]")
+                    .toString())
+            .setRouteProjectNumber(1055608805)
+            .setRouteLocation("routeLocation1045847326")
+            .setRouteType("routeType167668003")
+            .setRouteId("routeId1385647428")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MeshRouteViewName name =
+        MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]");
+
+    MeshRouteView actualResponse = client.getMeshRouteView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMeshRouteViewExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MeshRouteViewName name =
+          MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]");
+      client.getMeshRouteView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMeshRouteViewTest2() throws Exception {
+    MeshRouteView expectedResponse =
+        MeshRouteView.newBuilder()
+            .setName(
+                MeshRouteViewName.of("[PROJECT]", "[LOCATION]", "[MESH]", "[ROUTE_VIEW]")
+                    .toString())
+            .setRouteProjectNumber(1055608805)
+            .setRouteLocation("routeLocation1045847326")
+            .setRouteType("routeType167668003")
+            .setRouteId("routeId1385647428")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1804/locations/location-1804/meshes/meshe-1804/routeViews/routeView-1804";
+
+    MeshRouteView actualResponse = client.getMeshRouteView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMeshRouteViewExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1804/locations/location-1804/meshes/meshe-1804/routeViews/routeView-1804";
+      client.getMeshRouteView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGatewayRouteViewsTest() throws Exception {
+    GatewayRouteView responsesElement = GatewayRouteView.newBuilder().build();
+    ListGatewayRouteViewsResponse expectedResponse =
+        ListGatewayRouteViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGatewayRouteViews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GatewayName parent = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
+
+    ListGatewayRouteViewsPagedResponse pagedListResponse = client.listGatewayRouteViews(parent);
+
+    List<GatewayRouteView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGatewayRouteViewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGatewayRouteViewsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GatewayName parent = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
+      client.listGatewayRouteViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGatewayRouteViewsTest2() throws Exception {
+    GatewayRouteView responsesElement = GatewayRouteView.newBuilder().build();
+    ListGatewayRouteViewsResponse expectedResponse =
+        ListGatewayRouteViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGatewayRouteViews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-7280/locations/location-7280/gateways/gateway-7280";
+
+    ListGatewayRouteViewsPagedResponse pagedListResponse = client.listGatewayRouteViews(parent);
+
+    List<GatewayRouteView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGatewayRouteViewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGatewayRouteViewsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-7280/locations/location-7280/gateways/gateway-7280";
+      client.listGatewayRouteViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMeshRouteViewsTest() throws Exception {
+    MeshRouteView responsesElement = MeshRouteView.newBuilder().build();
+    ListMeshRouteViewsResponse expectedResponse =
+        ListMeshRouteViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMeshRouteViews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MeshName parent = MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]");
+
+    ListMeshRouteViewsPagedResponse pagedListResponse = client.listMeshRouteViews(parent);
+
+    List<MeshRouteView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMeshRouteViewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMeshRouteViewsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MeshName parent = MeshName.of("[PROJECT]", "[LOCATION]", "[MESH]");
+      client.listMeshRouteViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMeshRouteViewsTest2() throws Exception {
+    MeshRouteView responsesElement = MeshRouteView.newBuilder().build();
+    ListMeshRouteViewsResponse expectedResponse =
+        ListMeshRouteViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMeshRouteViews(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8532/locations/location-8532/meshes/meshe-8532";
+
+    ListMeshRouteViewsPagedResponse pagedListResponse = client.listMeshRouteViews(parent);
+
+    List<MeshRouteView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMeshRouteViewsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMeshRouteViewsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8532/locations/location-8532/meshes/meshe-8532";
+      client.listMeshRouteViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

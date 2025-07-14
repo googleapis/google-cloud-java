@@ -25,10 +25,12 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
+option csharp_namespace = "Google.Cloud.ModelArmor.V1";
 option go_package = "cloud.google.com/go/modelarmor/apiv1/modelarmorpb;modelarmorpb";
 option java_multiple_files = true;
 option java_outer_classname = "V1mainProto";
 option java_package = "com.google.cloud.modelarmor.v1";
+option php_namespace = "Google\\Cloud\\ModelArmor\\V1";
 
 // Service describing handlers for resources
 service ModelArmor {
@@ -175,7 +177,7 @@ enum RaiFilterType {
 // Higher value maps to a greater confidence level. To enforce stricter level a
 // lower value should be used.
 enum DetectionConfidenceLevel {
-  // Same as MEDIUM_AND_ABOVE.
+  // Same as LOW_AND_ABOVE.
   DETECTION_CONFIDENCE_LEVEL_UNSPECIFIED = 0;
 
   // Highest chance of a false positive.
@@ -237,6 +239,13 @@ message Template {
 
   // Message describing TemplateMetadata
   message TemplateMetadata {
+    // Metadata to enable multi language detection via template.
+    message MultiLanguageDetection {
+      // Required. If true, multi language detection will be enabled.
+      bool enable_multi_language_detection = 1
+          [(google.api.field_behavior) = REQUIRED];
+    }
+
     // Optional. If true, partial detector failures should be ignored.
     bool ignore_partial_invocation_failures = 1
         [(google.api.field_behavior) = OPTIONAL];
@@ -267,6 +276,10 @@ message Template {
 
     // Optional. If true, log sanitize operations.
     bool log_sanitize_operations = 7 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Metadata for multi language detection.
+    MultiLanguageDetection multi_language_detection = 9
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Identifier. name of resource
@@ -657,6 +670,10 @@ message SanitizeUserPromptRequest {
 
   // Required. User prompt data to sanitize.
   DataItem user_prompt_data = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Metadata related to Multi Language Detection.
+  MultiLanguageDetectionMetadata multi_language_detection_metadata = 6
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Sanitize Model Response request.
@@ -675,6 +692,10 @@ message SanitizeModelResponseRequest {
 
   // Optional. User Prompt associated with Model response.
   string user_prompt = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Metadata related for multi language detection.
+  MultiLanguageDetectionMetadata multi_language_detection_metadata = 7
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Sanitized User Prompt Response.
@@ -700,6 +721,10 @@ message SanitizationResult {
 
     // Error message if any.
     string error_message = 2;
+
+    // Passthrough field defined in TemplateMetadata to indicate whether to
+    // ignore partial invocation failures.
+    bool ignore_partial_invocation_failures = 3;
   }
 
   // Output only. Overall filter match state for Sanitization.
@@ -728,6 +753,19 @@ message SanitizationResult {
   // Output only. Metadata related to Sanitization.
   SanitizationMetadata sanitization_metadata = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Message for Enabling Multi Language Detection.
+message MultiLanguageDetectionMetadata {
+  // Optional. Optional Source language of the user prompt.
+  //
+  // If multi-language detection is enabled but language is not set in that case
+  // we would automatically detect the source language.
+  string source_language = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Enable detection of multi-language prompts and responses.
+  bool enable_multi_language_detection = 2
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Filter Result obtained after Sanitization operations.
@@ -858,6 +896,21 @@ message ByteDataItem {
 
     // PDF
     PDF = 2;
+
+    // DOCX, DOCM, DOTX, DOTM
+    WORD_DOCUMENT = 3;
+
+    // XLSX, XLSM, XLTX, XLYM
+    EXCEL_DOCUMENT = 4;
+
+    // PPTX, PPTM, POTX, POTM, POT
+    POWERPOINT_DOCUMENT = 5;
+
+    // TXT
+    TXT = 6;
+
+    // CSV
+    CSV = 7;
   }
 
   // Required. The type of byte data

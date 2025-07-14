@@ -1187,6 +1187,8 @@ public class ModelArmorClient implements BackgroundResource {
    *       SanitizeUserPromptRequest.newBuilder()
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
    * }
@@ -1216,6 +1218,8 @@ public class ModelArmorClient implements BackgroundResource {
    *       SanitizeUserPromptRequest.newBuilder()
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   ApiFuture<SanitizeUserPromptResponse> future =
    *       modelArmorClient.sanitizeUserPromptCallable().futureCall(request);
@@ -1247,6 +1251,8 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setModelResponseData(DataItem.newBuilder().build())
    *           .setUserPrompt("userPrompt1504308495")
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   SanitizeModelResponseResponse response = modelArmorClient.sanitizeModelResponse(request);
    * }
@@ -1278,6 +1284,8 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setModelResponseData(DataItem.newBuilder().build())
    *           .setUserPrompt("userPrompt1504308495")
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   ApiFuture<SanitizeModelResponseResponse> future =
    *       modelArmorClient.sanitizeModelResponseCallable().futureCall(request);

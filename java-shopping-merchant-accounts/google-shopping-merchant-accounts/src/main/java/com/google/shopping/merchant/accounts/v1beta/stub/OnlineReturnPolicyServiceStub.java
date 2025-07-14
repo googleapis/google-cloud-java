@@ -21,10 +21,14 @@ import static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicySer
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse;
 import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy;
+import com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -51,6 +55,20 @@ public abstract class OnlineReturnPolicyServiceStub implements BackgroundResourc
   public UnaryCallable<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse>
       listOnlineReturnPoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: listOnlineReturnPoliciesCallable()");
+  }
+
+  public UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOnlineReturnPolicyCallable()");
+  }
+
+  public UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOnlineReturnPolicyCallable()");
+  }
+
+  public UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty> deleteOnlineReturnPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOnlineReturnPolicyCallable()");
   }
 
   @Override

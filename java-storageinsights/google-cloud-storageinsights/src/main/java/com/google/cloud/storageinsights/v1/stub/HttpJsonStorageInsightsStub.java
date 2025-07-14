@@ -16,37 +16,55 @@
 
 package com.google.cloud.storageinsights.v1.stub;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.CreateReportConfigRequest;
+import com.google.cloud.storageinsights.v1.DatasetConfig;
+import com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.DeleteReportConfigRequest;
+import com.google.cloud.storageinsights.v1.GetDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportDetailRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetResponse;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportConfigsRequest;
 import com.google.cloud.storageinsights.v1.ListReportConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportDetailsRequest;
 import com.google.cloud.storageinsights.v1.ListReportDetailsResponse;
+import com.google.cloud.storageinsights.v1.OperationMetadata;
 import com.google.cloud.storageinsights.v1.ReportConfig;
 import com.google.cloud.storageinsights.v1.ReportDetail;
+import com.google.cloud.storageinsights.v1.UnlinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.UpdateReportConfigRequest;
+import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -65,7 +83,13 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(DatasetConfig.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(LinkDatasetResponse.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<ListReportConfigsRequest, ListReportConfigsResponse>
       listReportConfigsMethodDescriptor =
@@ -330,6 +354,286 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsMethodDescriptor =
+          ApiMethodDescriptor.<ListDatasetConfigsRequest, ListDatasetConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/ListDatasetConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDatasetConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/datasetConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDatasetConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDatasetConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDatasetConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListDatasetConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDatasetConfigRequest, DatasetConfig>
+      getDatasetConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
+              .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/GetDatasetConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDatasetConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/datasetConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DatasetConfig>newBuilder()
+                      .setDefaultInstance(DatasetConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDatasetConfigRequest, Operation>
+      createDatasetConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateDatasetConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/CreateDatasetConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDatasetConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/datasetConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "datasetConfigId", request.getDatasetConfigId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("datasetConfig", request.getDatasetConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDatasetConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDatasetConfigRequest, Operation>
+      updateDatasetConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDatasetConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/UpdateDatasetConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDatasetConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{datasetConfig.name=projects/*/locations/*/datasetConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "datasetConfig.name", request.getDatasetConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("datasetConfig", request.getDatasetConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDatasetConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDatasetConfigRequest, Operation>
+      deleteDatasetConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDatasetConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/DeleteDatasetConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDatasetConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/datasetConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDatasetConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDatasetConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<LinkDatasetRequest, Operation>
+      linkDatasetMethodDescriptor =
+          ApiMethodDescriptor.<LinkDatasetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/LinkDataset")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LinkDatasetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/datasetConfigs/*}:linkDataset",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LinkDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LinkDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (LinkDatasetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UnlinkDatasetRequest, Operation>
+      unlinkDatasetMethodDescriptor =
+          ApiMethodDescriptor.<UnlinkDatasetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/UnlinkDataset")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UnlinkDatasetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/datasetConfigs/*}:unlinkDataset",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UnlinkDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UnlinkDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UnlinkDatasetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -411,12 +715,33 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
   private final UnaryCallable<ListReportDetailsRequest, ListReportDetailsPagedResponse>
       listReportDetailsPagedCallable;
   private final UnaryCallable<GetReportDetailRequest, ReportDetail> getReportDetailCallable;
+  private final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable;
+  private final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable;
+  private final UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable;
+  private final UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable;
+  private final OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable;
+  private final UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable;
+  private final OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable;
+  private final UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable;
+  private final OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable;
+  private final UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable;
+  private final OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable;
+  private final UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable;
+  private final OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonStorageInsightsStub create(StorageInsightsStubSettings settings)
@@ -457,6 +782,33 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListReportConfigsRequest, ListReportConfigsResponse>
         listReportConfigsTransportSettings =
@@ -541,6 +893,89 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+        listDatasetConfigsTransportSettings =
+            HttpJsonCallSettings.<ListDatasetConfigsRequest, ListDatasetConfigsResponse>newBuilder()
+                .setMethodDescriptor(listDatasetConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigTransportSettings =
+        HttpJsonCallSettings.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
+            .setMethodDescriptor(getDatasetConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateDatasetConfigRequest, Operation>
+        createDatasetConfigTransportSettings =
+            HttpJsonCallSettings.<CreateDatasetConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDatasetConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateDatasetConfigRequest, Operation>
+        updateDatasetConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateDatasetConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDatasetConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "dataset_config.name",
+                          String.valueOf(request.getDatasetConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDatasetConfigRequest, Operation>
+        deleteDatasetConfigTransportSettings =
+            HttpJsonCallSettings.<DeleteDatasetConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDatasetConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<LinkDatasetRequest, Operation> linkDatasetTransportSettings =
+        HttpJsonCallSettings.<LinkDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(linkDatasetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetTransportSettings =
+        HttpJsonCallSettings.<UnlinkDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(unlinkDatasetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -606,6 +1041,70 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
     this.getReportDetailCallable =
         callableFactory.createUnaryCallable(
             getReportDetailTransportSettings, settings.getReportDetailSettings(), clientContext);
+    this.listDatasetConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listDatasetConfigsTransportSettings,
+            settings.listDatasetConfigsSettings(),
+            clientContext);
+    this.listDatasetConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatasetConfigsTransportSettings,
+            settings.listDatasetConfigsSettings(),
+            clientContext);
+    this.getDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDatasetConfigTransportSettings, settings.getDatasetConfigSettings(), clientContext);
+    this.createDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            createDatasetConfigTransportSettings,
+            settings.createDatasetConfigSettings(),
+            clientContext);
+    this.createDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatasetConfigTransportSettings,
+            settings.createDatasetConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDatasetConfigTransportSettings,
+            settings.updateDatasetConfigSettings(),
+            clientContext);
+    this.updateDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDatasetConfigTransportSettings,
+            settings.updateDatasetConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatasetConfigTransportSettings,
+            settings.deleteDatasetConfigSettings(),
+            clientContext);
+    this.deleteDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatasetConfigTransportSettings,
+            settings.deleteDatasetConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.linkDatasetCallable =
+        callableFactory.createUnaryCallable(
+            linkDatasetTransportSettings, settings.linkDatasetSettings(), clientContext);
+    this.linkDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            linkDatasetTransportSettings,
+            settings.linkDatasetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.unlinkDatasetCallable =
+        callableFactory.createUnaryCallable(
+            unlinkDatasetTransportSettings, settings.unlinkDatasetSettings(), clientContext);
+    this.unlinkDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            unlinkDatasetTransportSettings,
+            settings.unlinkDatasetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -630,9 +1129,20 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
     methodDescriptors.add(deleteReportConfigMethodDescriptor);
     methodDescriptors.add(listReportDetailsMethodDescriptor);
     methodDescriptors.add(getReportDetailMethodDescriptor);
+    methodDescriptors.add(listDatasetConfigsMethodDescriptor);
+    methodDescriptors.add(getDatasetConfigMethodDescriptor);
+    methodDescriptors.add(createDatasetConfigMethodDescriptor);
+    methodDescriptors.add(updateDatasetConfigMethodDescriptor);
+    methodDescriptors.add(deleteDatasetConfigMethodDescriptor);
+    methodDescriptors.add(linkDatasetMethodDescriptor);
+    methodDescriptors.add(unlinkDatasetMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -682,6 +1192,78 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
   @Override
   public UnaryCallable<GetReportDetailRequest, ReportDetail> getReportDetailCallable() {
     return getReportDetailCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable() {
+    return listDatasetConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable() {
+    return listDatasetConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable() {
+    return getDatasetConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable() {
+    return createDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable() {
+    return createDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable() {
+    return updateDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable() {
+    return updateDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable() {
+    return deleteDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable() {
+    return deleteDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable() {
+    return linkDatasetCallable;
+  }
+
+  @Override
+  public OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable() {
+    return linkDatasetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable() {
+    return unlinkDatasetCallable;
+  }
+
+  @Override
+  public OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable() {
+    return unlinkDatasetOperationCallable;
   }
 
   @Override

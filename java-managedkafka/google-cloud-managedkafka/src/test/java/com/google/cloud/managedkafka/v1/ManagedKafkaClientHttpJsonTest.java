@@ -16,6 +16,7 @@
 
 package com.google.cloud.managedkafka.v1;
 
+import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListAclsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListClustersPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListConsumerGroupsPagedResponse;
 import static com.google.cloud.managedkafka.v1.ManagedKafkaClient.ListLocationsPagedResponse;
@@ -42,6 +43,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -201,6 +203,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -252,6 +255,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -303,6 +307,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -363,6 +368,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -423,6 +429,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -442,6 +449,7 @@ public class ManagedKafkaClientHttpJsonTest {
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
+            .setTlsConfig(TlsConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -481,6 +489,7 @@ public class ManagedKafkaClientHttpJsonTest {
               .setRebalanceConfig(RebalanceConfig.newBuilder().build())
               .setSatisfiesPzi(true)
               .setSatisfiesPzs(true)
+              .setTlsConfig(TlsConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -1357,6 +1366,645 @@ public class ManagedKafkaClientHttpJsonTest {
       String name =
           "projects/project-2449/locations/location-2449/clusters/cluster-2449/consumerGroups/consumerGroup-2449";
       client.deleteConsumerGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclsTest() throws Exception {
+    Acl responsesElement = Acl.newBuilder().build();
+    ListAclsResponse expectedResponse =
+        ListAclsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAcls(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListAclsPagedResponse pagedListResponse = client.listAcls(parent);
+
+    List<Acl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listAcls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclsTest2() throws Exception {
+    Acl responsesElement = Acl.newBuilder().build();
+    ListAclsResponse expectedResponse =
+        ListAclsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAcls(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    ListAclsPagedResponse pagedListResponse = client.listAcls(parent);
+
+    List<Acl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.listAcls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+
+    Acl actualResponse = client.getAcl(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      client.getAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclTest2() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8752/locations/location-8752/clusters/cluster-8752/acls/acl-8752";
+
+    Acl actualResponse = client.getAcl(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8752/locations/location-8752/clusters/cluster-8752/acls/acl-8752";
+      client.getAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    Acl acl = Acl.newBuilder().build();
+    String aclId = "aclId92636997";
+
+    Acl actualResponse = client.createAcl(parent, acl, aclId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAclExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      Acl acl = Acl.newBuilder().build();
+      String aclId = "aclId92636997";
+      client.createAcl(parent, acl, aclId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclTest2() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+    Acl acl = Acl.newBuilder().build();
+    String aclId = "aclId92636997";
+
+    Acl actualResponse = client.createAcl(parent, acl, aclId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAclExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      Acl acl = Acl.newBuilder().build();
+      String aclId = "aclId92636997";
+      client.createAcl(parent, acl, aclId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAclTest() throws Exception {
+    Acl expectedResponse =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Acl acl =
+        Acl.newBuilder()
+            .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+            .addAllAclEntries(new ArrayList<AclEntry>())
+            .setEtag("etag3123477")
+            .setResourceType("resourceType-384364440")
+            .setResourceName("resourceName-384566343")
+            .setPatternType("patternType-1669290262")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Acl actualResponse = client.updateAcl(acl, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAclExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Acl acl =
+          Acl.newBuilder()
+              .setName(AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]").toString())
+              .addAllAclEntries(new ArrayList<AclEntry>())
+              .setEtag("etag3123477")
+              .setResourceType("resourceType-384364440")
+              .setResourceName("resourceName-384566343")
+              .setPatternType("patternType-1669290262")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAcl(acl, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAclTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+
+    client.deleteAcl(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAclExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclName name = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      client.deleteAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAclTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8752/locations/location-8752/clusters/cluster-8752/acls/acl-8752";
+
+    client.deleteAcl(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAclExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8752/locations/location-8752/clusters/cluster-8752/acls/acl-8752";
+      client.deleteAcl(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addAclEntryTest() throws Exception {
+    AddAclEntryResponse expectedResponse =
+        AddAclEntryResponse.newBuilder()
+            .setAcl(Acl.newBuilder().build())
+            .setAclCreated(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    AddAclEntryResponse actualResponse = client.addAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAclEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.addAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addAclEntryTest2() throws Exception {
+    AddAclEntryResponse expectedResponse =
+        AddAclEntryResponse.newBuilder()
+            .setAcl(Acl.newBuilder().build())
+            .setAclCreated(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String acl =
+        "projects/project-2033/locations/location-2033/clusters/cluster-2033/acls/acl-2033";
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    AddAclEntryResponse actualResponse = client.addAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAclEntryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String acl =
+          "projects/project-2033/locations/location-2033/clusters/cluster-2033/acls/acl-2033";
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.addAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeAclEntryTest() throws Exception {
+    RemoveAclEntryResponse expectedResponse = RemoveAclEntryResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    RemoveAclEntryResponse actualResponse = client.removeAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeAclEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclName acl = AclName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[ACL]");
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.removeAclEntry(acl, aclEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeAclEntryTest2() throws Exception {
+    RemoveAclEntryResponse expectedResponse = RemoveAclEntryResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String acl =
+        "projects/project-2033/locations/location-2033/clusters/cluster-2033/acls/acl-2033";
+    AclEntry aclEntry = AclEntry.newBuilder().build();
+
+    RemoveAclEntryResponse actualResponse = client.removeAclEntry(acl, aclEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeAclEntryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String acl =
+          "projects/project-2033/locations/location-2033/clusters/cluster-2033/acls/acl-2033";
+      AclEntry aclEntry = AclEntry.newBuilder().build();
+      client.removeAclEntry(acl, aclEntry);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

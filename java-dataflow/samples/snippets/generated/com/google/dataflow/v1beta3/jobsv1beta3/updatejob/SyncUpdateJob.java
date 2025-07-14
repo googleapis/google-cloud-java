@@ -20,6 +20,7 @@ package com.google.dataflow.v1beta3.samples;
 import com.google.dataflow.v1beta3.Job;
 import com.google.dataflow.v1beta3.JobsV1Beta3Client;
 import com.google.dataflow.v1beta3.UpdateJobRequest;
+import com.google.protobuf.FieldMask;
 
 public class SyncUpdateJob {
 
@@ -40,6 +41,7 @@ public class SyncUpdateJob {
               .setJobId("jobId101296568")
               .setJob(Job.newBuilder().build())
               .setLocation("location1901043637")
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       Job response = jobsV1Beta3Client.updateJob(request);
     }

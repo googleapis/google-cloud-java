@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -28,16 +29,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
@@ -45,6 +50,8 @@ import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -203,6 +210,28 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteReactionCallable()");
+  }
+
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomEmojiCallable()");
+  }
+
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomEmojiCallable()");
+  }
+
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomEmojisPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomEmojisCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomEmojiCallable()");
   }
 
   public UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {

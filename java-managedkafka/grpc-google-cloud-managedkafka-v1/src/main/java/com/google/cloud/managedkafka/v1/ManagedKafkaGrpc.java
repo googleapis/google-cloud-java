@@ -663,6 +663,312 @@ public final class ManagedKafkaGrpc {
     return getDeleteConsumerGroupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.ListAclsRequest,
+          com.google.cloud.managedkafka.v1.ListAclsResponse>
+      getListAclsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAcls",
+      requestType = com.google.cloud.managedkafka.v1.ListAclsRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.ListAclsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.ListAclsRequest,
+          com.google.cloud.managedkafka.v1.ListAclsResponse>
+      getListAclsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.ListAclsRequest,
+            com.google.cloud.managedkafka.v1.ListAclsResponse>
+        getListAclsMethod;
+    if ((getListAclsMethod = ManagedKafkaGrpc.getListAclsMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getListAclsMethod = ManagedKafkaGrpc.getListAclsMethod) == null) {
+          ManagedKafkaGrpc.getListAclsMethod =
+              getListAclsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.ListAclsRequest,
+                          com.google.cloud.managedkafka.v1.ListAclsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAcls"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.ListAclsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.ListAclsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("ListAcls"))
+                      .build();
+        }
+      }
+    }
+    return getListAclsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.GetAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getGetAclMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAcl",
+      requestType = com.google.cloud.managedkafka.v1.GetAclRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.Acl.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.GetAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getGetAclMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.GetAclRequest, com.google.cloud.managedkafka.v1.Acl>
+        getGetAclMethod;
+    if ((getGetAclMethod = ManagedKafkaGrpc.getGetAclMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getGetAclMethod = ManagedKafkaGrpc.getGetAclMethod) == null) {
+          ManagedKafkaGrpc.getGetAclMethod =
+              getGetAclMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.GetAclRequest,
+                          com.google.cloud.managedkafka.v1.Acl>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAcl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.GetAclRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.Acl.getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("GetAcl"))
+                      .build();
+        }
+      }
+    }
+    return getGetAclMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.CreateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getCreateAclMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAcl",
+      requestType = com.google.cloud.managedkafka.v1.CreateAclRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.Acl.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.CreateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getCreateAclMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.CreateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+        getCreateAclMethod;
+    if ((getCreateAclMethod = ManagedKafkaGrpc.getCreateAclMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getCreateAclMethod = ManagedKafkaGrpc.getCreateAclMethod) == null) {
+          ManagedKafkaGrpc.getCreateAclMethod =
+              getCreateAclMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.CreateAclRequest,
+                          com.google.cloud.managedkafka.v1.Acl>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAcl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.CreateAclRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.Acl.getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("CreateAcl"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAclMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.UpdateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getUpdateAclMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAcl",
+      requestType = com.google.cloud.managedkafka.v1.UpdateAclRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.Acl.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.UpdateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+      getUpdateAclMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.UpdateAclRequest, com.google.cloud.managedkafka.v1.Acl>
+        getUpdateAclMethod;
+    if ((getUpdateAclMethod = ManagedKafkaGrpc.getUpdateAclMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getUpdateAclMethod = ManagedKafkaGrpc.getUpdateAclMethod) == null) {
+          ManagedKafkaGrpc.getUpdateAclMethod =
+              getUpdateAclMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.UpdateAclRequest,
+                          com.google.cloud.managedkafka.v1.Acl>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAcl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.UpdateAclRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.Acl.getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("UpdateAcl"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAclMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.DeleteAclRequest, com.google.protobuf.Empty>
+      getDeleteAclMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAcl",
+      requestType = com.google.cloud.managedkafka.v1.DeleteAclRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.DeleteAclRequest, com.google.protobuf.Empty>
+      getDeleteAclMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.DeleteAclRequest, com.google.protobuf.Empty>
+        getDeleteAclMethod;
+    if ((getDeleteAclMethod = ManagedKafkaGrpc.getDeleteAclMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getDeleteAclMethod = ManagedKafkaGrpc.getDeleteAclMethod) == null) {
+          ManagedKafkaGrpc.getDeleteAclMethod =
+              getDeleteAclMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.DeleteAclRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAcl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.DeleteAclRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("DeleteAcl"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAclMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.AddAclEntryRequest,
+          com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+      getAddAclEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddAclEntry",
+      requestType = com.google.cloud.managedkafka.v1.AddAclEntryRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.AddAclEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.AddAclEntryRequest,
+          com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+      getAddAclEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.AddAclEntryRequest,
+            com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+        getAddAclEntryMethod;
+    if ((getAddAclEntryMethod = ManagedKafkaGrpc.getAddAclEntryMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getAddAclEntryMethod = ManagedKafkaGrpc.getAddAclEntryMethod) == null) {
+          ManagedKafkaGrpc.getAddAclEntryMethod =
+              getAddAclEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.AddAclEntryRequest,
+                          com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAclEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.AddAclEntryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.AddAclEntryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ManagedKafkaMethodDescriptorSupplier("AddAclEntry"))
+                      .build();
+        }
+      }
+    }
+    return getAddAclEntryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.RemoveAclEntryRequest,
+          com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+      getRemoveAclEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveAclEntry",
+      requestType = com.google.cloud.managedkafka.v1.RemoveAclEntryRequest.class,
+      responseType = com.google.cloud.managedkafka.v1.RemoveAclEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.managedkafka.v1.RemoveAclEntryRequest,
+          com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+      getRemoveAclEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.managedkafka.v1.RemoveAclEntryRequest,
+            com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+        getRemoveAclEntryMethod;
+    if ((getRemoveAclEntryMethod = ManagedKafkaGrpc.getRemoveAclEntryMethod) == null) {
+      synchronized (ManagedKafkaGrpc.class) {
+        if ((getRemoveAclEntryMethod = ManagedKafkaGrpc.getRemoveAclEntryMethod) == null) {
+          ManagedKafkaGrpc.getRemoveAclEntryMethod =
+              getRemoveAclEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.managedkafka.v1.RemoveAclEntryRequest,
+                          com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveAclEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.RemoveAclEntryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.managedkafka.v1.RemoveAclEntryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ManagedKafkaMethodDescriptorSupplier("RemoveAclEntry"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveAclEntryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ManagedKafkaStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ManagedKafkaStub> factory =
@@ -924,6 +1230,105 @@ public final class ManagedKafkaGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteConsumerGroupMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the acls in a given cluster.
+     * </pre>
+     */
+    default void listAcls(
+        com.google.cloud.managedkafka.v1.ListAclsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.ListAclsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAclsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single acl.
+     * </pre>
+     */
+    default void getAcl(
+        com.google.cloud.managedkafka.v1.GetAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAclMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new acl in the given project, location, and cluster.
+     * </pre>
+     */
+    default void createAcl(
+        com.google.cloud.managedkafka.v1.CreateAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAclMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single acl.
+     * </pre>
+     */
+    default void updateAcl(
+        com.google.cloud.managedkafka.v1.UpdateAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAclMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an acl.
+     * </pre>
+     */
+    default void deleteAcl(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAclMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Adds an acl entry to an acl. Creates the acl if it does
+     * not exist yet.
+     * </pre>
+     */
+    default void addAclEntry(
+        com.google.cloud.managedkafka.v1.AddAclEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddAclEntryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Removes an acl entry from an acl. Deletes the acl if
+     * its acl entries become empty (i.e. if the removed entry was the last one in
+     * the acl).
+     * </pre>
+     */
+    default void removeAclEntry(
+        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveAclEntryMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1184,6 +1589,114 @@ public final class ManagedKafkaGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the acls in a given cluster.
+     * </pre>
+     */
+    public void listAcls(
+        com.google.cloud.managedkafka.v1.ListAclsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.ListAclsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAclsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single acl.
+     * </pre>
+     */
+    public void getAcl(
+        com.google.cloud.managedkafka.v1.GetAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAclMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new acl in the given project, location, and cluster.
+     * </pre>
+     */
+    public void createAcl(
+        com.google.cloud.managedkafka.v1.CreateAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAclMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single acl.
+     * </pre>
+     */
+    public void updateAcl(
+        com.google.cloud.managedkafka.v1.UpdateAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAclMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an acl.
+     * </pre>
+     */
+    public void deleteAcl(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAclMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Adds an acl entry to an acl. Creates the acl if it does
+     * not exist yet.
+     * </pre>
+     */
+    public void addAclEntry(
+        com.google.cloud.managedkafka.v1.AddAclEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddAclEntryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Removes an acl entry from an acl. Deletes the acl if
+     * its acl entries become empty (i.e. if the removed entry was the last one in
+     * the acl).
+     * </pre>
+     */
+    public void removeAclEntry(
+        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveAclEntryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1387,6 +1900,100 @@ public final class ManagedKafkaGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConsumerGroupMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the acls in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ListAclsResponse listAcls(
+        com.google.cloud.managedkafka.v1.ListAclsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single acl.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl getAcl(
+        com.google.cloud.managedkafka.v1.GetAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new acl in the given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl createAcl(
+        com.google.cloud.managedkafka.v1.CreateAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single acl.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl updateAcl(
+        com.google.cloud.managedkafka.v1.UpdateAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an acl.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAcl(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Adds an acl entry to an acl. Creates the acl if it does
+     * not exist yet.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.AddAclEntryResponse addAclEntry(
+        com.google.cloud.managedkafka.v1.AddAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAclEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Removes an acl entry from an acl. Deletes the acl if
+     * its acl entries become empty (i.e. if the removed entry was the last one in
+     * the acl).
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.RemoveAclEntryResponse removeAclEntry(
+        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveAclEntryMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1589,6 +2196,100 @@ public final class ManagedKafkaGrpc {
         com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConsumerGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the acls in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ListAclsResponse listAcls(
+        com.google.cloud.managedkafka.v1.ListAclsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single acl.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl getAcl(
+        com.google.cloud.managedkafka.v1.GetAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new acl in the given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl createAcl(
+        com.google.cloud.managedkafka.v1.CreateAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single acl.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Acl updateAcl(
+        com.google.cloud.managedkafka.v1.UpdateAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an acl.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAcl(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAclMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Adds an acl entry to an acl. Creates the acl if it does
+     * not exist yet.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.AddAclEntryResponse addAclEntry(
+        com.google.cloud.managedkafka.v1.AddAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAclEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Removes an acl entry from an acl. Deletes the acl if
+     * its acl entries become empty (i.e. if the removed entry was the last one in
+     * the acl).
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.RemoveAclEntryResponse removeAclEntry(
+        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveAclEntryMethod(), getCallOptions(), request);
     }
   }
 
@@ -1802,6 +2503,103 @@ public final class ManagedKafkaGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteConsumerGroupMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the acls in a given cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.managedkafka.v1.ListAclsResponse>
+        listAcls(com.google.cloud.managedkafka.v1.ListAclsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAclsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single acl.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedkafka.v1.Acl>
+        getAcl(com.google.cloud.managedkafka.v1.GetAclRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAclMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new acl in the given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedkafka.v1.Acl>
+        createAcl(com.google.cloud.managedkafka.v1.CreateAclRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAclMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single acl.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedkafka.v1.Acl>
+        updateAcl(com.google.cloud.managedkafka.v1.UpdateAclRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAclMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an acl.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAcl(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAclMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Adds an acl entry to an acl. Creates the acl if it does
+     * not exist yet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.managedkafka.v1.AddAclEntryResponse>
+        addAclEntry(com.google.cloud.managedkafka.v1.AddAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddAclEntryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incremental update: Removes an acl entry from an acl. Deletes the acl if
+     * its acl entries become empty (i.e. if the removed entry was the last one in
+     * the acl).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>
+        removeAclEntry(com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveAclEntryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -1818,6 +2616,13 @@ public final class ManagedKafkaGrpc {
   private static final int METHODID_GET_CONSUMER_GROUP = 11;
   private static final int METHODID_UPDATE_CONSUMER_GROUP = 12;
   private static final int METHODID_DELETE_CONSUMER_GROUP = 13;
+  private static final int METHODID_LIST_ACLS = 14;
+  private static final int METHODID_GET_ACL = 15;
+  private static final int METHODID_CREATE_ACL = 16;
+  private static final int METHODID_UPDATE_ACL = 17;
+  private static final int METHODID_DELETE_ACL = 18;
+  private static final int METHODID_ADD_ACL_ENTRY = 19;
+  private static final int METHODID_REMOVE_ACL_ENTRY = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1915,6 +2720,44 @@ public final class ManagedKafkaGrpc {
           serviceImpl.deleteConsumerGroup(
               (com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_ACLS:
+          serviceImpl.listAcls(
+              (com.google.cloud.managedkafka.v1.ListAclsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.ListAclsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ACL:
+          serviceImpl.getAcl(
+              (com.google.cloud.managedkafka.v1.GetAclRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl>) responseObserver);
+          break;
+        case METHODID_CREATE_ACL:
+          serviceImpl.createAcl(
+              (com.google.cloud.managedkafka.v1.CreateAclRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACL:
+          serviceImpl.updateAcl(
+              (com.google.cloud.managedkafka.v1.UpdateAclRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.Acl>) responseObserver);
+          break;
+        case METHODID_DELETE_ACL:
+          serviceImpl.deleteAcl(
+              (com.google.cloud.managedkafka.v1.DeleteAclRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_ADD_ACL_ENTRY:
+          serviceImpl.addAclEntry(
+              (com.google.cloud.managedkafka.v1.AddAclEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.AddAclEntryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REMOVE_ACL_ENTRY:
+          serviceImpl.removeAclEntry(
+              (com.google.cloud.managedkafka.v1.RemoveAclEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2023,6 +2866,51 @@ public final class ManagedKafkaGrpc {
                 new MethodHandlers<
                     com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_CONSUMER_GROUP)))
+        .addMethod(
+            getListAclsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.ListAclsRequest,
+                    com.google.cloud.managedkafka.v1.ListAclsResponse>(
+                    service, METHODID_LIST_ACLS)))
+        .addMethod(
+            getGetAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.GetAclRequest,
+                    com.google.cloud.managedkafka.v1.Acl>(service, METHODID_GET_ACL)))
+        .addMethod(
+            getCreateAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.CreateAclRequest,
+                    com.google.cloud.managedkafka.v1.Acl>(service, METHODID_CREATE_ACL)))
+        .addMethod(
+            getUpdateAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.UpdateAclRequest,
+                    com.google.cloud.managedkafka.v1.Acl>(service, METHODID_UPDATE_ACL)))
+        .addMethod(
+            getDeleteAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.DeleteAclRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_ACL)))
+        .addMethod(
+            getAddAclEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.AddAclEntryRequest,
+                    com.google.cloud.managedkafka.v1.AddAclEntryResponse>(
+                    service, METHODID_ADD_ACL_ENTRY)))
+        .addMethod(
+            getRemoveAclEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedkafka.v1.RemoveAclEntryRequest,
+                    com.google.cloud.managedkafka.v1.RemoveAclEntryResponse>(
+                    service, METHODID_REMOVE_ACL_ENTRY)))
         .build();
   }
 
@@ -2088,6 +2976,13 @@ public final class ManagedKafkaGrpc {
                       .addMethod(getGetConsumerGroupMethod())
                       .addMethod(getUpdateConsumerGroupMethod())
                       .addMethod(getDeleteConsumerGroupMethod())
+                      .addMethod(getListAclsMethod())
+                      .addMethod(getGetAclMethod())
+                      .addMethod(getCreateAclMethod())
+                      .addMethod(getUpdateAclMethod())
+                      .addMethod(getDeleteAclMethod())
+                      .addMethod(getAddAclEntryMethod())
+                      .addMethod(getRemoveAclEntryMethod())
                       .build();
         }
       }

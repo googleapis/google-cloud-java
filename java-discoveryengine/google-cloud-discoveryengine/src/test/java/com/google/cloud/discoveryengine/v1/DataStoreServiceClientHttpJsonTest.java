@@ -96,10 +96,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -162,10 +169,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -228,10 +242,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -287,10 +308,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -536,10 +564,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -555,10 +590,17 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -600,10 +642,17 @@ public class DataStoreServiceClientHttpJsonTest {
               .setDefaultSchemaId("defaultSchemaId1300415485")
               .setCreateTime(Timestamp.newBuilder().build())
               .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
+              .setKmsKeyName("kmsKeyName412586233")
+              .setCmekConfig(CmekConfig.newBuilder().build())
               .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+              .setAclEnabled(true)
               .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
               .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
               .setStartingSchema(Schema.newBuilder().build())
+              .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+              .setIdentityMappingStore(
+                  IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                      .toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);

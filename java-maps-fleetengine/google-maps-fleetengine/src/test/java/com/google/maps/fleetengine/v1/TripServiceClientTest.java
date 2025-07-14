@@ -122,6 +122,7 @@ public class TripServiceClientTest {
             .setLastLocation(VehicleLocation.newBuilder().build())
             .setLastLocationSnappable(true)
             .setView(TripView.forNumber(0))
+            .addAllAttributes(new ArrayList<TripAttribute>())
             .build();
     mockTripService.addResponse(expectedResponse);
 
@@ -207,6 +208,7 @@ public class TripServiceClientTest {
             .setLastLocation(VehicleLocation.newBuilder().build())
             .setLastLocationSnappable(true)
             .setView(TripView.forNumber(0))
+            .addAllAttributes(new ArrayList<TripAttribute>())
             .build();
     mockTripService.addResponse(expectedResponse);
 
@@ -496,6 +498,7 @@ public class TripServiceClientTest {
             .setLastLocation(VehicleLocation.newBuilder().build())
             .setLastLocationSnappable(true)
             .setView(TripView.forNumber(0))
+            .addAllAttributes(new ArrayList<TripAttribute>())
             .build();
     mockTripService.addResponse(expectedResponse);
 

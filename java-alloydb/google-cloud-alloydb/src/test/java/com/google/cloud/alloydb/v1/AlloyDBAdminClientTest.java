@@ -560,6 +560,344 @@ public class AlloyDBAdminClientTest {
   }
 
   @Test
+  public void exportClusterTest() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportClusterRequest actualRequest = ((ExportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(gcsDestination, actualRequest.getGcsDestination());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(csvExportOptions, actualRequest.getCsvExportOptions());
+    Assert.assertEquals(sqlExportOptions, actualRequest.getSqlExportOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportClusterTest2() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    String name = "name3373707";
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportClusterRequest actualRequest = ((ExportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(gcsDestination, actualRequest.getGcsDestination());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(csvExportOptions, actualRequest.getCsvExportOptions());
+    Assert.assertEquals(sqlExportOptions, actualRequest.getSqlExportOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportClusterExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importClusterTest() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportClusterRequest actualRequest = ((ImportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(gcsUri, actualRequest.getGcsUri());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(user, actualRequest.getUser());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importClusterTest2() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportClusterRequest actualRequest = ((ImportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(gcsUri, actualRequest.getGcsUri());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(user, actualRequest.getUser());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importClusterExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpgradeClusterRequest actualRequest = ((UpgradeClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(version, actualRequest.getVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest2() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    String name = "name3373707";
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpgradeClusterRequest actualRequest = ((UpgradeClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(version, actualRequest.getVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteClusterTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -1302,6 +1640,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1364,6 +1703,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1426,6 +1766,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1502,6 +1843,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1578,6 +1920,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1656,6 +1999,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1793,6 +2137,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1950,6 +2295,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2020,6 +2366,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2090,6 +2437,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2163,6 +2511,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2236,6 +2585,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2306,6 +2656,7 @@ public class AlloyDBAdminClientTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2560,6 +2911,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -2618,6 +2970,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -2676,6 +3029,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -2748,6 +3102,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")
@@ -2820,6 +3175,7 @@ public class AlloyDBAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setCreateCompletionTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setClusterUid("clusterUid240271350")

@@ -165,6 +165,7 @@ public class FirewallsClientTest {
             .setLogConfig(FirewallLogConfig.newBuilder().build())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setParams(FirewallParams.newBuilder().build())
             .setPriority(-1165461084)
             .setSelfLink("selfLink1191800166")
             .addAllSourceRanges(new ArrayList<String>())

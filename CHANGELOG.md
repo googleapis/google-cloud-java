@@ -1,5 +1,296 @@
 # Changelog
 
+## [1.62.0](https://github.com/googleapis/google-cloud-java/compare/v1.61.0...v1.62.0) (2025-07-11)
+
+
+### Features
+
+* [admanager] Added support for AdBreak resource ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] Add Aggregation Output in EvaluateDataset Get Operation Response ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add computer use support to tools ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add computer use support to tools ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add flexstart option to v1beta1 ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add invoke_route_prefix to ModelContainerSpec in aiplatform v1 models.proto ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add message ColabImage, add field colab_image to NotebookSoftwareConfig ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] add message ColabImage, add field colab_image to NotebookSoftwareConfig ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] Expose task_unique_name in pipeline task details for pipeline rerun ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [aiplatform] Expose task_unique_name in pipeline task details for pipeline rerun ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [bigquerydatapolicy] new module for bigquerydatapolicy v2beta1 ([#11674](https://github.com/googleapis/google-cloud-java/issues/11674)) ([5bf0054](https://github.com/googleapis/google-cloud-java/commit/5bf0054e7bba3187bcd09b08b06d639023817bcb))
+* [compute] Update Compute Engine v1 API to revision 20250626 ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [dataplex] A new field `semantic_search` is added to `message.google.cloud.dataplex.v1.SearchEntriesRequest` ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [dataproc] Add `cluster_tier` to support creating premium clusters ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [dialogflow-cx] Add support for generator settings on fulfillment ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [dialogflow] add a sipTrunk API ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [infra-manager] added resource change and drift details for the preview ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [licensemanager] new module for licensemanager ([#11673](https://github.com/googleapis/google-cloud-java/issues/11673)) ([c192cdc](https://github.com/googleapis/google-cloud-java/commit/c192cdc1843f34caad0cbe05c1216bf892a5c0f7))
+* [managedkafka] update libraries and clients for Managed Kafka ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [maps-fleetengine-delivery] add ability to specify trip attributes to Trip and deprecate Trip.remaining_waypoints_version ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [merchantapi] new module for merchant-reports-v1alpha ([#11672](https://github.com/googleapis/google-cloud-java/issues/11672)) ([e611ec2](https://github.com/googleapis/google-cloud-java/commit/e611ec22adb990a3ca6b2785b183618231309b92))
+* [modelarmor] add client libraries for v1beta API ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [modelarmor] Add MultiLingual Support for Sanitize APIs ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [networkservices] Add isolation support to prevent cross-region overflow by adding a new field "isolation_config" to message "ServiceLbPolicy" ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [security-private-ca] add RDN sequence ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [securitycenter] Add AffectedResources proto ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [shopping-merchant-accounts] Add CheckoutSettings service ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [shopping-merchant-product-studio] Initial Image API publication ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* next release from main branch is 1.62.0 ([#11666](https://github.com/googleapis/google-cloud-java/issues/11666)) ([6173dc1](https://github.com/googleapis/google-cloud-java/commit/6173dc1da7078eb9e66fdadc209db6fe01bdbc26))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.60.1 ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+### Documentation
+
+* [maintenance] Add missing comments for messages ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [maps-places] clarify behavior of primary types and weekday text ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [network-management] Various documentation and comment improvements, Enable organization-level support for VPC Flow Logs ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [shopping-merchant-products] A comment for method `InsertProductInput` in service `ProductInputsService` is changed ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+* [shopping-merchant-reviews] A comment for field `custom_attributes` in message `.google.shopping.merchant.reviews.v1beta.MerchantReview` is changed ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+
+## [1.61.0](https://github.com/googleapis/google-cloud-java/compare/v1.60.0...v1.61.0) (2025-06-25)
+
+
+### Features
+
+* [aiplatform] add PSCAutomationConfig to PrivateServiceConnectConfig in service_networking.proto ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [configdelivery] new module for configdelivery ([#11640](https://github.com/googleapis/google-cloud-java/issues/11640)) ([5987aa8](https://github.com/googleapis/google-cloud-java/commit/5987aa84faaa3a1d73be1becbd8f760cf7fe13cf))
+* [developerconnect] add DCI insights config proto ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [maintenance] new module for maintenance ([#11641](https://github.com/googleapis/google-cloud-java/issues/11641)) ([9a83b47](https://github.com/googleapis/google-cloud-java/commit/9a83b47f75124fdb3b341001e843ad56426c47c6))
+* [networkservices] Add support for WasmPlugin resource in NetworkServices API ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [parametermanager] KMS key resource_definition `cloudkms.googleapis.com/CryptoKey is added ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [retail] add a user_attributes field in SearchRequest that can be used for personalization ([0f5f4ed](https://github.com/googleapis/google-cloud-java/commit/0f5f4ed30e3ee1a889c4321ee950c75f4ba2727c))
+* Generate Worksspace Events v1beta Client Library ([#11642](https://github.com/googleapis/google-cloud-java/issues/11642)) ([da8ad05](https://github.com/googleapis/google-cloud-java/commit/da8ad05708ead0b578b6aec7a06b8b3fe40c717f))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.60.0 ([b0c5552](https://github.com/googleapis/google-cloud-java/commit/b0c5552ba7e2397ec0848894a686ed7f7baab676))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+### Documentation
+
+* [translate] minor formatting ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [translate] minor formatting ([42ccca2](https://github.com/googleapis/google-cloud-java/commit/42ccca28b11eac0e3fb1f407f1586049a1122b46))
+* [translate] Update hyperlink to the supported languages documentation page ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [translate] Update hyperlink to the supported languages documentation page ([3d01109](https://github.com/googleapis/google-cloud-java/commit/3d01109b72ffd9436a92d381427d4975f899ce92))
+* [vertexai] Add deprecation note in README and pom ([#11638](https://github.com/googleapis/google-cloud-java/issues/11638)) ([8cc7c69](https://github.com/googleapis/google-cloud-java/commit/8cc7c693055c29428bb022c762cf4023a2cfacd2))
+* [vertexai] Add deprecation notice for generativeai package ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+* [vertexai] Add deprecation notice for generativeai package ([#11637](https://github.com/googleapis/google-cloud-java/issues/11637)) ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+
+## [1.60.0](https://github.com/googleapis/google-cloud-java/compare/v1.59.0...v1.60.0) (2025-06-20)
+
+
+### Features
+
+* [aiplatform] add DnsPeeringConfig in service_networking.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add DnsPeeringConfig in service_networking.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add EncryptionSpec field for RagCorpus CMEK feature to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add invoke_route_prefix to ModelContainerSpec in aiplatform v1beta1 models.proto ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add Model Garden deploy OSS model API ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add RagEngineConfig update/get APIs to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] add Scaled tier for RagEngineConfig to v1beta, equivalent to Enterprise ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Expose UrlContextMetadata API to v1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Expose UrlContextMetadata API to v1beta1 ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Introduce RagFileMetadataConfig for importing metadata to Rag ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [aiplatform] Reasoning Engine v1beta1 subresource updates ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [alloydb] Instance.ActivationPolicy field ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [analytics-admin] add the `GetSubpropertySyncConfigRequest` method ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [channel] A new enum `CustomerAttestationState` is added ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [cloudquotas] Added support for hierarchical enrollment in Quota Adjuster consumer API ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [dataproc] Added support for DELTA, ICEBERG, PIG components ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [dlp] add SaveToGcsFindingsOutput ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [java-shopping-merchant-issue-resolution] add AggregateProductStatuses ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [maps-area-insights] Places Aggregate API v1 is now Generally Available (GA) ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [networkservices] update NetworkServices protos ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [secretmanager] update secret manager protos for tags ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+* [shopping-merchant-product-studio] Publish Python client libraries for Product studio APIs ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+
+
+### Documentation
+
+* [speech] updated description of sample_rate_hertz ([1522da9](https://github.com/googleapis/google-cloud-java/commit/1522da96946d5abf21453f7116c83fc216e43320))
+
+## [1.59.0](https://github.com/googleapis/google-cloud-java/compare/v1.58.0...v1.59.0) (2025-06-16)
+
+
+### Features
+
+* [spanneradapter] new module for spanneradapter ([#11617](https://github.com/googleapis/google-cloud-java/issues/11617)) ([8a849a6](https://github.com/googleapis/google-cloud-java/commit/8a849a6f00579081dfff6e5dc7cf3e517b1b1718))
+
+## [1.58.0](https://github.com/googleapis/google-cloud-java/compare/v1.57.0...v1.58.0) (2025-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* [cloudcommerceconsumerprocurement] An existing google.api.http annotation `http_uri` is changed for method `UpdateLicensePool` in service `LicenseManagementService`
+
+### Features
+
+* [aiplatform] A new field `include_thoughts` is added to message `.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig` ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] A new field `include_thoughts` is added to message `.google.cloud.aiplatform.v1.Part` ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] add encryption_spec to Model Monitoring public preview API ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [aiplatform] add ImportIndex to IndexService ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] add json schema support to structured output and function declaration ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] add json schema support to structured output and function declaration ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] add network_attachment to PscInterfaceConfig ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] add VertexAISearch.max_results, filter, data_store_specs options ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [aiplatform] add VertexAISearch.max_results, filter, data_store_specs options ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [aiplatform] adding thoughts_token_count to prediction service ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [aiplatform] adding thoughts_token_count to v1beta1 client library ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [aiplatform] Expose URL Context API to v1 ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] Expose URL Context API to v1beta1 ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [aiplatform] Introduce RAG as context/memory store for Gemini Live API ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [compute] Update Compute Engine v1 API to revision 20250511 ([#1047](https://github.com/googleapis/google-cloud-java/issues/1047)) ([8883ae7](https://github.com/googleapis/google-cloud-java/commit/8883ae758e25f92c1eb6f85cc45d54fe2babcb26))
+* [compute] Update Compute Engine v1 API to revision 20250601 ([#1052](https://github.com/googleapis/google-cloud-java/issues/1052)) ([3a36735](https://github.com/googleapis/google-cloud-java/commit/3a36735d7e80e4b0212d464122b95aa79c39c9d9))
+* [container] add topology_manager in NodeKubeletConfig ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [container] add topology_manager in NodeKubeletConfig ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [dataform] Support adding a workflow action to execute a Data Preparation node ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [dataproc] add scenarios AUTO/NONE to autotuning config ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [discoveryengine] add CMEK config service ([3a36735](https://github.com/googleapis/google-cloud-java/commit/3a36735d7e80e4b0212d464122b95aa79c39c9d9))
+* [dlp] add Dataplex Catalog action for discovery configs ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [kms] Adding eTag field to AutokeyConfig ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [managedkafka] add Managed Kafka ACL API ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [netapp] A new message 'google.cloud.netapp.v1.BackupRetentionPolicy' is added in 'google.cloud.netapp.v1.BackupVault' ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [retail] add a user_attributes field in SearchRequest that can be used for personalization ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [shopping-merchant-accounts] A new method_signature `parent,online_return_policy` is added to method `CreateOnlineReturnPolicy` in service `OnlineReturnPolicyService` ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [shopping-merchant-accounts] Add OmnichannelSetingsService, LfpProvidersService and GbpAccountsService ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [storage-transfer] support Azure federated identity ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+
+
+### Bug Fixes
+
+* [cloudcommerceconsumerprocurement] An existing google.api.http annotation `http_uri` is changed for method `UpdateLicensePool` in service `LicenseManagementService` ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [lustre] Changed field behavior for an existing field per_unit_storage_throughput. It is now required ([3a36735](https://github.com/googleapis/google-cloud-java/commit/3a36735d7e80e4b0212d464122b95aa79c39c9d9))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20250524-2.0.0 ([#11469](https://github.com/googleapis/google-cloud-java/issues/11469)) ([467792c](https://github.com/googleapis/google-cloud-java/commit/467792c435ec174a9a94cfebaa03e93a1e211f77))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.140.0 ([#11601](https://github.com/googleapis/google-cloud-java/issues/11601)) ([e86864e](https://github.com/googleapis/google-cloud-java/commit/e86864ea7efcb5954462a89f7608f78b9b090eda))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.52.3 ([#11602](https://github.com/googleapis/google-cloud-java/issues/11602)) ([a2808e0](https://github.com/googleapis/google-cloud-java/commit/a2808e041b051d9495088ecb22a097048261fb09))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.61.0 ([#11604](https://github.com/googleapis/google-cloud-java/issues/11604)) ([d712f07](https://github.com/googleapis/google-cloud-java/commit/d712f073463eabc5cd73eb1fcd6b6134bc429f96))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.59.0 ([8883ae7](https://github.com/googleapis/google-cloud-java/commit/8883ae758e25f92c1eb6f85cc45d54fe2babcb26))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+* Update vision ITSystemTest to handle deviations in values returned by API ([#11596](https://github.com/googleapis/google-cloud-java/issues/11596)) ([0cb2ef7](https://github.com/googleapis/google-cloud-java/commit/0cb2ef7d83de4e34d780260da960b8ce249677cb))
+
+
+### Documentation
+
+* [cloudsupport] Annotate all names with IDENTIFIER ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [cloudsupport] Remove unnecessary curl and Python documentation ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [cloudsupport] Update Cloud Support RPC comments to no longer include cURL and Python examples ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [iap] Add clarifications on IAP CorsSettings behavior ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* [kms] A comment for enum value `DESTROYED` in enum `CryptoKeyVersionState` is changed ([6fbaf55](https://github.com/googleapis/google-cloud-java/commit/6fbaf558134d8388c8ac4e06e9617d035ee5667c))
+* [parallelstore] fix various typos in commentary ([4c2dc69](https://github.com/googleapis/google-cloud-java/commit/4c2dc695e1d4ff4ed187092451d47e82334c297c))
+* **maps-places:** add link to client library examples ([#11597](https://github.com/googleapis/google-cloud-java/issues/11597)) ([80a9d63](https://github.com/googleapis/google-cloud-java/commit/80a9d63203bc7e12a8ed2a7cd0eb06450c3ce03e))
+
+## [1.57.0](https://github.com/googleapis/google-cloud-java/compare/v1.56.0...v1.57.0) (2025-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* [maps-places] An existing field `description` is removed from message `.google.maps.places.v1.Place`
+* [compute] Remove schemas.MachineType.scratchDisks.scratchDisk from config ([#1027](https://github.com/googleapis/google-cloud-java/issues/1027))
+* [workspaceevents] An existing oauth_scope https://www.googleapis.com/auth/chat.bot is removed from SubscriptionsService
+
+### Features
+
+* [aiplatform] A new value `NVIDIA_B200 & NVIDIA_H200_141GB` is added to enum `AcceleratorType` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] A new value `NVIDIA_B200 & NVIDIA_H200_141GB` is added to enum `AcceleratorType` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] add ANN feature for RagManagedDb ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Add checkpoint ID to endpoint proto ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [aiplatform] Add checkpoint ID to endpoint proto ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [aiplatform] add EncryptionSpec for RagCorpus CMEK feature ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] new field `additional_properties` is added to message `.google.cloud.aiplatform.v1.Schema` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] new field `additional_properties` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Tuning Checkpoints API ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Tuning Checkpoints API ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] Add CloudSQL support for RestoreCluster operation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] Sync AlloyDB API changes from HEAD to stable ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [analyticshub] Add support for Analytics Hub & Marketplace Integration ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [chronicle] new module for chronicle ([#11587](https://github.com/googleapis/google-cloud-java/issues/11587)) ([6645e51](https://github.com/googleapis/google-cloud-java/commit/6645e51e7972d24a82fd05bc9f4801033822f00f))
+* [gke-backup] Add BackupChannel field in BackupPlan ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [run] support GPU zonal redundancy setting in Cloud Run services ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [run] support node selector in Cloud Run jobs for GPU setting ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [shopping-merchant-accounts] updated comments for returns sub-API publication ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [storageinsights] Add Client Libraries for Datasets ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [video-live-stream] added OutputType field to the Clip resource to support MP4 clipping ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+
+
+### Bug Fixes
+
+* [compute] Remove schemas.MachineType.scratchDisks.scratchDisk from config ([#1027](https://github.com/googleapis/google-cloud-java/issues/1027)) ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [deploy] correct pattern of unused resource definition, Revision ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [maps-places] An existing field `description` is removed from message `.google.maps.places.v1.Place` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [workspaceevents] An existing oauth_scope https://www.googleapis.com/auth/chat.bot is removed from SubscriptionsService ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.57.0 ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.58.0 ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#11582](https://github.com/googleapis/google-cloud-java/issues/11582)) ([2059de9](https://github.com/googleapis/google-cloud-java/commit/2059de99ad5bbbcb82905ec9a733253c78e1624f))
+
+
+### Dependencies
+
+* update java-cloud-bom in java-samples to 26.59.0 ([#11573](https://github.com/googleapis/google-cloud-java/issues/11573)) ([49151ee](https://github.com/googleapis/google-cloud-java/commit/49151ee9ce0b8ae1f9b5a6422a6672dd8c128d9e))
+
+
+### Documentation
+
+* [aiplatform] Remove comments for a non public feature ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] A comment for field `encryption_config` in message `.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy` is changed ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [asset] fix typos in documentation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [cloudsupport] Bring comments and metadata up to date ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [dataplex] A comment for message `MetadataJob` is changed ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [storagebatchoperations] minor fixes to the reference documentation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+
+## [1.56.0](https://github.com/googleapis/google-cloud-java/compare/v1.55.0...v1.56.0) (2025-05-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* [dataflow] An existing oauth_scope `https://www.googleapis.com/auth/compute.readonly` is removed from service `JobsV1Beta3`
+
+### Features
+
+* [aiplatform] A new field `system_labels` is added to message `google.cloud.aiplatform.v1beta1.DeployRequest` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] add gemini_request_read_config field to AssembleDataRequest and AssessDataRequest in aiplatform v1beta ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] allow customers to set encryption_spec for context caching ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] Expose llm parser to public v1 proto to prepare for GA ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] new fields `ref` and `defs` are added to message `.google.cloud.aiplatform.v1.Schema` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] new fields `ref` and `defs` are added to message `.google.cloud.aiplatform.v1beta1.Schema` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [chat] A new method `customEmojis.create` is added ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [cloudcontrolspartner] Enable partners to create, update and delete their customers ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [grafeas] Support for Secrets ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [modelarmor] add Model Armor PHP and C# SDK support ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [netapp] add `volume_region` and `backup_region` to backup `Backup` message ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [texttospeech] Support markup input for Cloud TTS Chirp 3: HD voice synthesis ([e811d3f](https://github.com/googleapis/google-cloud-java/commit/e811d3f1ccd592fe1cc1844761249aeb827742a4))
+* Generate IAM v3 Library ([#11557](https://github.com/googleapis/google-cloud-java/issues/11557)) ([a91ea2f](https://github.com/googleapis/google-cloud-java/commit/a91ea2f4e94de82eb1541baf83b6adfb33412afe))
+* Generate IAM v3beta Library ([#11565](https://github.com/googleapis/google-cloud-java/issues/11565)) ([fa0236b](https://github.com/googleapis/google-cloud-java/commit/fa0236bf6f494a5db9478ee73babb2d9165aaf35))
+
+
+### Bug Fixes
+
+* [dataflow] An existing oauth_scope `https://www.googleapis.com/auth/compute.readonly` is removed from service `JobsV1Beta3` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [valkey] Changed field behavior for an existing field `psc_connection_id` in message `.google.cloud.memorystore.v1.PscConnection` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.56.3 ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* include gax testlib for native image testing ([#11556](https://github.com/googleapis/google-cloud-java/issues/11556)) ([3d398b7](https://github.com/googleapis/google-cloud-java/commit/3d398b7016891f0b1bd1d88c1e459296778bec1f))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
+### Documentation
+
+* [aiplatform] Deprecate election category HARM_CATEGORY_CIVIC_INTEGRITY ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] Deprecate election category HARM_CATEGORY_CIVIC_INTEGRITY ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [aiplatform] update an outdated URL ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [asset] Documentation tweak ([e811d3f](https://github.com/googleapis/google-cloud-java/commit/e811d3f1ccd592fe1cc1844761249aeb827742a4))
+* [asset] fix minor typos ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [datacatalog] update documentation URL ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [managedkafka] A comment for message `TaskRetryPolicy` is changed ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [shopping-merchant-lfp] Add clarification to GetLfpMerchantState documentation ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* [storagebatchoperations] A comment for method `ListJobs` in service `StorageBatchOperations` is changed ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+
 ## [1.55.0](https://github.com/googleapis/google-cloud-java/compare/v1.54.0...v1.55.0) (2025-04-30)
 
 

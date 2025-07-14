@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>26.52.0</version>
+                <version>26.61.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -34,19 +34,16 @@
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-secretmanager</artifactId>
         </dependency>
+        <dependency>
+          <groupId>com.google.api</groupId>
+          <artifactId>gax</artifactId>
+          <classifier>testlib</classifier>
+          <scope>test</scope>
+        </dependency>       
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-
            <!-- This plugin enables building the application to a JAR *not* using native image compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

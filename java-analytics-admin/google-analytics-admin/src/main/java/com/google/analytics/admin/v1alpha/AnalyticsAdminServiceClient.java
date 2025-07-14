@@ -2933,6 +2933,63 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ListSubpropertySyncConfigs</td>
+ *      <td><p> List all Subproperty Sync Configs on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(ListSubpropertySyncConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(PropertyName parent)
+ *           <li><p> listSubpropertySyncConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigsPagedCallable()
+ *           <li><p> listSubpropertySyncConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSubpropertySyncConfig</td>
+ *      <td><p> Updates a Subproperty Sync Config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(UpdateSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSubpropertySyncConfig</td>
+ *      <td><p> Lookup for a single Subproperty Sync Config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(GetSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(SubpropertySyncConfigName name)
+ *           <li><p> getSubpropertySyncConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -22180,6 +22237,414 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.submitUserDeletionCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Subproperty Sync Configs on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      PropertyName parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Subproperty Sync Configs on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(String parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder().setParent(parent).build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Subproperty Sync Configs on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      ListSubpropertySyncConfigsRequest request) {
+    return listSubpropertySyncConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Subproperty Sync Configs on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SubpropertySyncConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    return stub.listSubpropertySyncConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Subproperty Sync Configs on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubpropertySyncConfigsResponse response =
+   *         analyticsAdminServiceClient.listSubpropertySyncConfigsCallable().call(request);
+   *     for (SubpropertySyncConfig element : response.getSubpropertySyncConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    return stub.listSubpropertySyncConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfig subpropertySyncConfig = SubpropertySyncConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(
+   *           subpropertySyncConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subpropertySyncConfig Required. The SubpropertySyncConfig to update.
+   * @param updateMask Optional. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask) {
+    UpdateSubpropertySyncConfigRequest request =
+        UpdateSubpropertySyncConfigRequest.newBuilder()
+            .setSubpropertySyncConfig(subpropertySyncConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      UpdateSubpropertySyncConfigRequest request) {
+    return updateSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    return stub.updateSubpropertySyncConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfigName name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(SubpropertySyncConfigName name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString();
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(String name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder().setName(name).build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(
+      GetSubpropertySyncConfigRequest request) {
+    return getSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Subproperty Sync Config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    return stub.getSubpropertySyncConfigCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -24595,6 +25060,102 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListReportingDataAnnotationsFixedSizeCollection createCollection(
         List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
       return new ListReportingDataAnnotationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubpropertySyncConfigsPagedResponse> createAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      ApiFuture<ListSubpropertySyncConfigsPage> futurePage =
+          ListSubpropertySyncConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubpropertySyncConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubpropertySyncConfigsPagedResponse(ListSubpropertySyncConfigsPage page) {
+      super(page, ListSubpropertySyncConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPage
+      extends AbstractPage<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage> {
+
+    private ListSubpropertySyncConfigsPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubpropertySyncConfigsPage createEmptyPage() {
+      return new ListSubpropertySyncConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsPage createPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      return new ListSubpropertySyncConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubpropertySyncConfigsPage> createPageAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    private ListSubpropertySyncConfigsFixedSizeCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubpropertySyncConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsFixedSizeCollection createCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

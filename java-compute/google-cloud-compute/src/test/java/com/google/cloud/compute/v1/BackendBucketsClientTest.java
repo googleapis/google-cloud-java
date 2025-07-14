@@ -314,6 +314,7 @@ public class BackendBucketsClientTest {
             .setEnableCdn(true)
             .setId(3355)
             .setKind("kind3292052")
+            .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .setName("name3373707")
             .setSelfLink("selfLink1191800166")
             .addAllUsedBy(new ArrayList<BackendBucketUsedBy>())

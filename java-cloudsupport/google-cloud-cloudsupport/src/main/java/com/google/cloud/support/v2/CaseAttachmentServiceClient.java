@@ -34,7 +34,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service to manage file attachment for Google Cloud support cases.
+ * Service Description: A service to manage file attachments for Google Cloud support cases.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -67,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAttachments</td>
- *      <td><p> Retrieve all attachments associated with a support case.</td>
+ *      <td><p> List all the attachments associated with a support case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -195,7 +195,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -214,8 +214,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which attachments should be
-   *     listed.
+   * @param parent Required. The name of the case for which attachments should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachmentsPagedResponse listAttachments(CaseName parent) {
@@ -228,7 +227,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -247,8 +246,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of Case object for which attachments should be
-   *     listed.
+   * @param parent Required. The name of the case for which attachments should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachmentsPagedResponse listAttachments(String parent) {
@@ -258,7 +256,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -291,7 +289,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *
@@ -325,7 +323,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all attachments associated with a support case.
+   * List all the attachments associated with a support case.
    *
    * <p>Sample code:
    *

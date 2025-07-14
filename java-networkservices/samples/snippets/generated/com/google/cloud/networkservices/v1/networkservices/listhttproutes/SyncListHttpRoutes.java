@@ -40,6 +40,7 @@ public class SyncListHttpRoutes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       for (HttpRoute element : networkServicesClient.listHttpRoutes(request).iterateAll()) {
         // doThingsWith(element);

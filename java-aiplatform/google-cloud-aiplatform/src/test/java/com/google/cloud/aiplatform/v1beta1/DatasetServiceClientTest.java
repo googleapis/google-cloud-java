@@ -1870,6 +1870,7 @@ public class DatasetServiceClientTest {
     AssessDataRequest request =
         AssessDataRequest.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
             .build();
 
     AssessDataResponse actualResponse = client.assessDataAsync(request).get();
@@ -1894,6 +1895,8 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
     Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(
+        request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1909,6 +1912,7 @@ public class DatasetServiceClientTest {
       AssessDataRequest request =
           AssessDataRequest.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
               .build();
       client.assessDataAsync(request).get();
       Assert.fail("No exception raised");
@@ -1936,6 +1940,7 @@ public class DatasetServiceClientTest {
     AssembleDataRequest request =
         AssembleDataRequest.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
             .build();
 
     AssembleDataResponse actualResponse = client.assembleDataAsync(request).get();
@@ -1948,6 +1953,8 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
     Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(
+        request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1963,6 +1970,7 @@ public class DatasetServiceClientTest {
       AssembleDataRequest request =
           AssembleDataRequest.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
               .build();
       client.assembleDataAsync(request).get();
       Assert.fail("No exception raised");

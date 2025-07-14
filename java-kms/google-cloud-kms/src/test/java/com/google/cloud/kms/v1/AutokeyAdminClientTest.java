@@ -106,6 +106,7 @@ public class AutokeyAdminClientTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockAutokeyAdmin.addResponse(expectedResponse);
 
@@ -148,6 +149,7 @@ public class AutokeyAdminClientTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockAutokeyAdmin.addResponse(expectedResponse);
 
@@ -187,6 +189,7 @@ public class AutokeyAdminClientTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockAutokeyAdmin.addResponse(expectedResponse);
 

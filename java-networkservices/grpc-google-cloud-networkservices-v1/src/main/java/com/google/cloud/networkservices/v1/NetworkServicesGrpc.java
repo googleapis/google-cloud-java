@@ -281,6 +281,437 @@ public final class NetworkServicesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest,
+          com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+      getListWasmPluginVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWasmPluginVersions",
+      requestType = com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest,
+          com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+      getListWasmPluginVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest,
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+        getListWasmPluginVersionsMethod;
+    if ((getListWasmPluginVersionsMethod = NetworkServicesGrpc.getListWasmPluginVersionsMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListWasmPluginVersionsMethod = NetworkServicesGrpc.getListWasmPluginVersionsMethod)
+            == null) {
+          NetworkServicesGrpc.getListWasmPluginVersionsMethod =
+              getListWasmPluginVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest,
+                          com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListWasmPluginVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListWasmPluginVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListWasmPluginVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest,
+          com.google.cloud.networkservices.v1.WasmPluginVersion>
+      getGetWasmPluginVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWasmPluginVersion",
+      requestType = com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest.class,
+      responseType = com.google.cloud.networkservices.v1.WasmPluginVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest,
+          com.google.cloud.networkservices.v1.WasmPluginVersion>
+      getGetWasmPluginVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest,
+            com.google.cloud.networkservices.v1.WasmPluginVersion>
+        getGetWasmPluginVersionMethod;
+    if ((getGetWasmPluginVersionMethod = NetworkServicesGrpc.getGetWasmPluginVersionMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetWasmPluginVersionMethod = NetworkServicesGrpc.getGetWasmPluginVersionMethod)
+            == null) {
+          NetworkServicesGrpc.getGetWasmPluginVersionMethod =
+              getGetWasmPluginVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest,
+                          com.google.cloud.networkservices.v1.WasmPluginVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetWasmPluginVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.WasmPluginVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetWasmPluginVersion"))
+                      .build();
+        }
+      }
+    }
+    return getGetWasmPluginVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest,
+          com.google.longrunning.Operation>
+      getCreateWasmPluginVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWasmPluginVersion",
+      requestType = com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest,
+          com.google.longrunning.Operation>
+      getCreateWasmPluginVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest,
+            com.google.longrunning.Operation>
+        getCreateWasmPluginVersionMethod;
+    if ((getCreateWasmPluginVersionMethod = NetworkServicesGrpc.getCreateWasmPluginVersionMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getCreateWasmPluginVersionMethod =
+                NetworkServicesGrpc.getCreateWasmPluginVersionMethod)
+            == null) {
+          NetworkServicesGrpc.getCreateWasmPluginVersionMethod =
+              getCreateWasmPluginVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateWasmPluginVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("CreateWasmPluginVersion"))
+                      .build();
+        }
+      }
+    }
+    return getCreateWasmPluginVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteWasmPluginVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWasmPluginVersion",
+      requestType = com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteWasmPluginVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest,
+            com.google.longrunning.Operation>
+        getDeleteWasmPluginVersionMethod;
+    if ((getDeleteWasmPluginVersionMethod = NetworkServicesGrpc.getDeleteWasmPluginVersionMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getDeleteWasmPluginVersionMethod =
+                NetworkServicesGrpc.getDeleteWasmPluginVersionMethod)
+            == null) {
+          NetworkServicesGrpc.getDeleteWasmPluginVersionMethod =
+              getDeleteWasmPluginVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteWasmPluginVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("DeleteWasmPluginVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteWasmPluginVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListWasmPluginsRequest,
+          com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+      getListWasmPluginsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWasmPlugins",
+      requestType = com.google.cloud.networkservices.v1.ListWasmPluginsRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListWasmPluginsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListWasmPluginsRequest,
+          com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+      getListWasmPluginsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListWasmPluginsRequest,
+            com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+        getListWasmPluginsMethod;
+    if ((getListWasmPluginsMethod = NetworkServicesGrpc.getListWasmPluginsMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListWasmPluginsMethod = NetworkServicesGrpc.getListWasmPluginsMethod) == null) {
+          NetworkServicesGrpc.getListWasmPluginsMethod =
+              getListWasmPluginsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListWasmPluginsRequest,
+                          com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWasmPlugins"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListWasmPluginsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListWasmPluginsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListWasmPlugins"))
+                      .build();
+        }
+      }
+    }
+    return getListWasmPluginsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetWasmPluginRequest,
+          com.google.cloud.networkservices.v1.WasmPlugin>
+      getGetWasmPluginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWasmPlugin",
+      requestType = com.google.cloud.networkservices.v1.GetWasmPluginRequest.class,
+      responseType = com.google.cloud.networkservices.v1.WasmPlugin.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetWasmPluginRequest,
+          com.google.cloud.networkservices.v1.WasmPlugin>
+      getGetWasmPluginMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetWasmPluginRequest,
+            com.google.cloud.networkservices.v1.WasmPlugin>
+        getGetWasmPluginMethod;
+    if ((getGetWasmPluginMethod = NetworkServicesGrpc.getGetWasmPluginMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetWasmPluginMethod = NetworkServicesGrpc.getGetWasmPluginMethod) == null) {
+          NetworkServicesGrpc.getGetWasmPluginMethod =
+              getGetWasmPluginMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetWasmPluginRequest,
+                          com.google.cloud.networkservices.v1.WasmPlugin>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWasmPlugin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetWasmPluginRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.WasmPlugin.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetWasmPlugin"))
+                      .build();
+        }
+      }
+    }
+    return getGetWasmPluginMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getCreateWasmPluginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWasmPlugin",
+      requestType = com.google.cloud.networkservices.v1.CreateWasmPluginRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getCreateWasmPluginMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.CreateWasmPluginRequest,
+            com.google.longrunning.Operation>
+        getCreateWasmPluginMethod;
+    if ((getCreateWasmPluginMethod = NetworkServicesGrpc.getCreateWasmPluginMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getCreateWasmPluginMethod = NetworkServicesGrpc.getCreateWasmPluginMethod) == null) {
+          NetworkServicesGrpc.getCreateWasmPluginMethod =
+              getCreateWasmPluginMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.CreateWasmPluginRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateWasmPlugin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.CreateWasmPluginRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("CreateWasmPlugin"))
+                      .build();
+        }
+      }
+    }
+    return getCreateWasmPluginMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getUpdateWasmPluginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateWasmPlugin",
+      requestType = com.google.cloud.networkservices.v1.UpdateWasmPluginRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getUpdateWasmPluginMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.UpdateWasmPluginRequest,
+            com.google.longrunning.Operation>
+        getUpdateWasmPluginMethod;
+    if ((getUpdateWasmPluginMethod = NetworkServicesGrpc.getUpdateWasmPluginMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getUpdateWasmPluginMethod = NetworkServicesGrpc.getUpdateWasmPluginMethod) == null) {
+          NetworkServicesGrpc.getUpdateWasmPluginMethod =
+              getUpdateWasmPluginMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.UpdateWasmPluginRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateWasmPlugin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.UpdateWasmPluginRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("UpdateWasmPlugin"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateWasmPluginMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getDeleteWasmPluginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWasmPlugin",
+      requestType = com.google.cloud.networkservices.v1.DeleteWasmPluginRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteWasmPluginRequest,
+          com.google.longrunning.Operation>
+      getDeleteWasmPluginMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.DeleteWasmPluginRequest,
+            com.google.longrunning.Operation>
+        getDeleteWasmPluginMethod;
+    if ((getDeleteWasmPluginMethod = NetworkServicesGrpc.getDeleteWasmPluginMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getDeleteWasmPluginMethod = NetworkServicesGrpc.getDeleteWasmPluginMethod) == null) {
+          NetworkServicesGrpc.getDeleteWasmPluginMethod =
+              getDeleteWasmPluginMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.DeleteWasmPluginRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWasmPlugin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.DeleteWasmPluginRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("DeleteWasmPlugin"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteWasmPluginMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networkservices.v1.ListGatewaysRequest,
           com.google.cloud.networkservices.v1.ListGatewaysResponse>
       getListGatewaysMethod;
@@ -1581,6 +2012,55 @@ public final class NetworkServicesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateServiceBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateServiceBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateServiceBinding",
+      requestType = com.google.cloud.networkservices.v1.UpdateServiceBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateServiceBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateServiceBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.UpdateServiceBindingRequest,
+            com.google.longrunning.Operation>
+        getUpdateServiceBindingMethod;
+    if ((getUpdateServiceBindingMethod = NetworkServicesGrpc.getUpdateServiceBindingMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getUpdateServiceBindingMethod = NetworkServicesGrpc.getUpdateServiceBindingMethod)
+            == null) {
+          NetworkServicesGrpc.getUpdateServiceBindingMethod =
+              getUpdateServiceBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.UpdateServiceBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateServiceBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.UpdateServiceBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("UpdateServiceBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateServiceBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networkservices.v1.DeleteServiceBindingRequest,
           com.google.longrunning.Operation>
       getDeleteServiceBindingMethod;
@@ -1850,6 +2330,445 @@ public final class NetworkServicesGrpc {
     return getDeleteMeshMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest,
+          com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+      getListServiceLbPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListServiceLbPolicies",
+      requestType = com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest,
+          com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+      getListServiceLbPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest,
+            com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+        getListServiceLbPoliciesMethod;
+    if ((getListServiceLbPoliciesMethod = NetworkServicesGrpc.getListServiceLbPoliciesMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListServiceLbPoliciesMethod = NetworkServicesGrpc.getListServiceLbPoliciesMethod)
+            == null) {
+          NetworkServicesGrpc.getListServiceLbPoliciesMethod =
+              getListServiceLbPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest,
+                          com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListServiceLbPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListServiceLbPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListServiceLbPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest,
+          com.google.cloud.networkservices.v1.ServiceLbPolicy>
+      getGetServiceLbPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetServiceLbPolicy",
+      requestType = com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ServiceLbPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest,
+          com.google.cloud.networkservices.v1.ServiceLbPolicy>
+      getGetServiceLbPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest,
+            com.google.cloud.networkservices.v1.ServiceLbPolicy>
+        getGetServiceLbPolicyMethod;
+    if ((getGetServiceLbPolicyMethod = NetworkServicesGrpc.getGetServiceLbPolicyMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetServiceLbPolicyMethod = NetworkServicesGrpc.getGetServiceLbPolicyMethod)
+            == null) {
+          NetworkServicesGrpc.getGetServiceLbPolicyMethod =
+              getGetServiceLbPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest,
+                          com.google.cloud.networkservices.v1.ServiceLbPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetServiceLbPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ServiceLbPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetServiceLbPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetServiceLbPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getCreateServiceLbPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateServiceLbPolicy",
+      requestType = com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getCreateServiceLbPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest,
+            com.google.longrunning.Operation>
+        getCreateServiceLbPolicyMethod;
+    if ((getCreateServiceLbPolicyMethod = NetworkServicesGrpc.getCreateServiceLbPolicyMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getCreateServiceLbPolicyMethod = NetworkServicesGrpc.getCreateServiceLbPolicyMethod)
+            == null) {
+          NetworkServicesGrpc.getCreateServiceLbPolicyMethod =
+              getCreateServiceLbPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateServiceLbPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("CreateServiceLbPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateServiceLbPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateServiceLbPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateServiceLbPolicy",
+      requestType = com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateServiceLbPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest,
+            com.google.longrunning.Operation>
+        getUpdateServiceLbPolicyMethod;
+    if ((getUpdateServiceLbPolicyMethod = NetworkServicesGrpc.getUpdateServiceLbPolicyMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getUpdateServiceLbPolicyMethod = NetworkServicesGrpc.getUpdateServiceLbPolicyMethod)
+            == null) {
+          NetworkServicesGrpc.getUpdateServiceLbPolicyMethod =
+              getUpdateServiceLbPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateServiceLbPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("UpdateServiceLbPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateServiceLbPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteServiceLbPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteServiceLbPolicy",
+      requestType = com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteServiceLbPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest,
+            com.google.longrunning.Operation>
+        getDeleteServiceLbPolicyMethod;
+    if ((getDeleteServiceLbPolicyMethod = NetworkServicesGrpc.getDeleteServiceLbPolicyMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getDeleteServiceLbPolicyMethod = NetworkServicesGrpc.getDeleteServiceLbPolicyMethod)
+            == null) {
+          NetworkServicesGrpc.getDeleteServiceLbPolicyMethod =
+              getDeleteServiceLbPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteServiceLbPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("DeleteServiceLbPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteServiceLbPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest,
+          com.google.cloud.networkservices.v1.GatewayRouteView>
+      getGetGatewayRouteViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGatewayRouteView",
+      requestType = com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest.class,
+      responseType = com.google.cloud.networkservices.v1.GatewayRouteView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest,
+          com.google.cloud.networkservices.v1.GatewayRouteView>
+      getGetGatewayRouteViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest,
+            com.google.cloud.networkservices.v1.GatewayRouteView>
+        getGetGatewayRouteViewMethod;
+    if ((getGetGatewayRouteViewMethod = NetworkServicesGrpc.getGetGatewayRouteViewMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetGatewayRouteViewMethod = NetworkServicesGrpc.getGetGatewayRouteViewMethod)
+            == null) {
+          NetworkServicesGrpc.getGetGatewayRouteViewMethod =
+              getGetGatewayRouteViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest,
+                          com.google.cloud.networkservices.v1.GatewayRouteView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetGatewayRouteView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GatewayRouteView
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetGatewayRouteView"))
+                      .build();
+        }
+      }
+    }
+    return getGetGatewayRouteViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetMeshRouteViewRequest,
+          com.google.cloud.networkservices.v1.MeshRouteView>
+      getGetMeshRouteViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMeshRouteView",
+      requestType = com.google.cloud.networkservices.v1.GetMeshRouteViewRequest.class,
+      responseType = com.google.cloud.networkservices.v1.MeshRouteView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetMeshRouteViewRequest,
+          com.google.cloud.networkservices.v1.MeshRouteView>
+      getGetMeshRouteViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetMeshRouteViewRequest,
+            com.google.cloud.networkservices.v1.MeshRouteView>
+        getGetMeshRouteViewMethod;
+    if ((getGetMeshRouteViewMethod = NetworkServicesGrpc.getGetMeshRouteViewMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetMeshRouteViewMethod = NetworkServicesGrpc.getGetMeshRouteViewMethod) == null) {
+          NetworkServicesGrpc.getGetMeshRouteViewMethod =
+              getGetMeshRouteViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetMeshRouteViewRequest,
+                          com.google.cloud.networkservices.v1.MeshRouteView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMeshRouteView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetMeshRouteViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.MeshRouteView
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetMeshRouteView"))
+                      .build();
+        }
+      }
+    }
+    return getGetMeshRouteViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest,
+          com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+      getListGatewayRouteViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListGatewayRouteViews",
+      requestType = com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest,
+          com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+      getListGatewayRouteViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest,
+            com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+        getListGatewayRouteViewsMethod;
+    if ((getListGatewayRouteViewsMethod = NetworkServicesGrpc.getListGatewayRouteViewsMethod)
+        == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListGatewayRouteViewsMethod = NetworkServicesGrpc.getListGatewayRouteViewsMethod)
+            == null) {
+          NetworkServicesGrpc.getListGatewayRouteViewsMethod =
+              getListGatewayRouteViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest,
+                          com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListGatewayRouteViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListGatewayRouteViews"))
+                      .build();
+        }
+      }
+    }
+    return getListGatewayRouteViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
+          com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+      getListMeshRouteViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMeshRouteViews",
+      requestType = com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
+          com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+      getListMeshRouteViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
+            com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+        getListMeshRouteViewsMethod;
+    if ((getListMeshRouteViewsMethod = NetworkServicesGrpc.getListMeshRouteViewsMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListMeshRouteViewsMethod = NetworkServicesGrpc.getListMeshRouteViewsMethod)
+            == null) {
+          NetworkServicesGrpc.getListMeshRouteViewsMethod =
+              getListMeshRouteViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
+                          com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMeshRouteViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListMeshRouteViews"))
+                      .build();
+        }
+      }
+    }
+    return getListMeshRouteViewsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetworkServicesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetworkServicesStub> factory =
@@ -1984,6 +2903,141 @@ public final class NetworkServicesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEndpointPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPluginVersion` resources in a given project and
+     * location.
+     * </pre>
+     */
+    default void listWasmPluginVersions(
+        com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWasmPluginVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    default void getWasmPluginVersion(
+        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPluginVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetWasmPluginVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPluginVersion` resource in a given project
+     * and location.
+     * </pre>
+     */
+    default void createWasmPluginVersion(
+        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWasmPluginVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    default void deleteWasmPluginVersion(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteWasmPluginVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPlugin` resources in a given project and
+     * location.
+     * </pre>
+     */
+    default void listWasmPlugins(
+        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWasmPluginsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    default void getWasmPlugin(
+        com.google.cloud.networkservices.v1.GetWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPlugin>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetWasmPluginMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPlugin` resource in a given project
+     * and location.
+     * </pre>
+     */
+    default void createWasmPlugin(
+        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWasmPluginMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    default void updateWasmPlugin(
+        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateWasmPluginMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    default void deleteWasmPlugin(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteWasmPluginMethod(), responseObserver);
     }
 
     /**
@@ -2392,6 +3446,20 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single ServiceBinding.
+     * </pre>
+     */
+    default void updateServiceBinding(
+        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateServiceBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ServiceBinding.
      * </pre>
      */
@@ -2466,6 +3534,140 @@ public final class NetworkServicesGrpc {
         com.google.cloud.networkservices.v1.DeleteMeshRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMeshMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceLbPolicies in a given project and location.
+     * </pre>
+     */
+    default void listServiceLbPolicies(
+        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListServiceLbPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceLbPolicy.
+     * </pre>
+     */
+    default void getServiceLbPolicy(
+        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ServiceLbPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetServiceLbPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceLbPolicy in a given project and location.
+     * </pre>
+     */
+    default void createServiceLbPolicy(
+        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateServiceLbPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceLbPolicy.
+     * </pre>
+     */
+    default void updateServiceLbPolicy(
+        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateServiceLbPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceLbPolicy.
+     * </pre>
+     */
+    default void deleteServiceLbPolicy(
+        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteServiceLbPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Gateway.
+     * </pre>
+     */
+    default void getGatewayRouteView(
+        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.GatewayRouteView>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGatewayRouteViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Mesh.
+     * </pre>
+     */
+    default void getMeshRouteView(
+        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.MeshRouteView>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMeshRouteViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    default void listGatewayRouteViews(
+        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGatewayRouteViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    default void listMeshRouteViews(
+        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMeshRouteViewsMethod(), responseObserver);
     }
   }
 
@@ -2582,6 +3784,159 @@ public final class NetworkServicesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEndpointPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPluginVersion` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public void listWasmPluginVersions(
+        com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWasmPluginVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public void getWasmPluginVersion(
+        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPluginVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetWasmPluginVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPluginVersion` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public void createWasmPluginVersion(
+        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateWasmPluginVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public void deleteWasmPluginVersion(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteWasmPluginVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPlugin` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public void listWasmPlugins(
+        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWasmPluginsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public void getWasmPlugin(
+        com.google.cloud.networkservices.v1.GetWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPlugin>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetWasmPluginMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPlugin` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public void createWasmPlugin(
+        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateWasmPluginMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public void updateWasmPlugin(
+        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateWasmPluginMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public void deleteWasmPlugin(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteWasmPluginMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3047,6 +4402,22 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single ServiceBinding.
+     * </pre>
+     */
+    public void updateServiceBinding(
+        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateServiceBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ServiceBinding.
      * </pre>
      */
@@ -3128,6 +4499,158 @@ public final class NetworkServicesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteMeshMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceLbPolicies in a given project and location.
+     * </pre>
+     */
+    public void listServiceLbPolicies(
+        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListServiceLbPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public void getServiceLbPolicy(
+        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ServiceLbPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetServiceLbPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceLbPolicy in a given project and location.
+     * </pre>
+     */
+    public void createServiceLbPolicy(
+        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateServiceLbPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public void updateServiceLbPolicy(
+        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateServiceLbPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceLbPolicy.
+     * </pre>
+     */
+    public void deleteServiceLbPolicy(
+        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteServiceLbPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Gateway.
+     * </pre>
+     */
+    public void getGatewayRouteView(
+        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.GatewayRouteView>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGatewayRouteViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Mesh.
+     * </pre>
+     */
+    public void getMeshRouteView(
+        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.MeshRouteView>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMeshRouteViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public void listGatewayRouteViews(
+        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListGatewayRouteViewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public void listMeshRouteViews(
+        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMeshRouteViewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -3220,6 +4743,128 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Lists `WasmPluginVersion` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse
+        listWasmPluginVersions(
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWasmPluginVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.WasmPluginVersion getWasmPluginVersion(
+        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPluginVersion` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWasmPluginVersion(
+        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWasmPluginVersion(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPlugin` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListWasmPluginsResponse listWasmPlugins(
+        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWasmPluginsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.WasmPlugin getWasmPlugin(
+        com.google.cloud.networkservices.v1.GetWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPlugin` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWasmPlugin(
+        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWasmPlugin(
+        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWasmPlugin(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Gateways in a given project and location.
      * </pre>
      */
@@ -3584,6 +5229,19 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single ServiceBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceBinding(
+        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ServiceBinding.
      * </pre>
      */
@@ -3656,6 +5314,123 @@ public final class NetworkServicesGrpc {
         com.google.cloud.networkservices.v1.DeleteMeshRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteMeshMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceLbPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse listServiceLbPolicies(
+        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceLbPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy getServiceLbPolicy(
+        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceLbPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceLbPolicy(
+        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceLbPolicy(
+        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceLbPolicy(
+        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Gateway.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.GatewayRouteView getGatewayRouteView(
+        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGatewayRouteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Mesh.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.MeshRouteView getMeshRouteView(
+        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeshRouteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse listGatewayRouteViews(
+        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGatewayRouteViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse listMeshRouteViews(
+        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeshRouteViewsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3747,6 +5522,128 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Lists `WasmPluginVersion` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse
+        listWasmPluginVersions(
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWasmPluginVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.WasmPluginVersion getWasmPluginVersion(
+        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPluginVersion` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWasmPluginVersion(
+        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWasmPluginVersion(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWasmPluginVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPlugin` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListWasmPluginsResponse listWasmPlugins(
+        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWasmPluginsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.WasmPlugin getWasmPlugin(
+        com.google.cloud.networkservices.v1.GetWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPlugin` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWasmPlugin(
+        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWasmPlugin(
+        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWasmPlugin(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWasmPluginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Gateways in a given project and location.
      * </pre>
      */
@@ -4111,6 +6008,19 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single ServiceBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceBinding(
+        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ServiceBinding.
      * </pre>
      */
@@ -4183,6 +6093,123 @@ public final class NetworkServicesGrpc {
         com.google.cloud.networkservices.v1.DeleteMeshRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteMeshMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceLbPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse listServiceLbPolicies(
+        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceLbPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy getServiceLbPolicy(
+        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceLbPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceLbPolicy(
+        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceLbPolicy(
+        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceLbPolicy(
+        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceLbPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Gateway.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.GatewayRouteView getGatewayRouteView(
+        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGatewayRouteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Mesh.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.MeshRouteView getMeshRouteView(
+        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeshRouteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse listGatewayRouteViews(
+        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGatewayRouteViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse listMeshRouteViews(
+        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeshRouteViewsMethod(), getCallOptions(), request);
     }
   }
 
@@ -4274,6 +6301,135 @@ public final class NetworkServicesGrpc {
             com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEndpointPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPluginVersion` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>
+        listWasmPluginVersions(
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWasmPluginVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.WasmPluginVersion>
+        getWasmPluginVersion(
+            com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetWasmPluginVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPluginVersion` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createWasmPluginVersion(
+            com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateWasmPluginVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPluginVersion` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteWasmPluginVersion(
+            com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteWasmPluginVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `WasmPlugin` resources in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListWasmPluginsResponse>
+        listWasmPlugins(com.google.cloud.networkservices.v1.ListWasmPluginsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWasmPluginsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.WasmPlugin>
+        getWasmPlugin(com.google.cloud.networkservices.v1.GetWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetWasmPluginMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `WasmPlugin` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createWasmPlugin(com.google.cloud.networkservices.v1.CreateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateWasmPluginMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateWasmPlugin(com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateWasmPluginMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `WasmPlugin` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteWasmPlugin(com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteWasmPluginMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4658,6 +6814,20 @@ public final class NetworkServicesGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single ServiceBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateServiceBinding(
+            com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateServiceBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ServiceBinding.
      * </pre>
      */
@@ -4734,6 +6904,135 @@ public final class NetworkServicesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteMeshMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceLbPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>
+        listServiceLbPolicies(
+            com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListServiceLbPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ServiceLbPolicy>
+        getServiceLbPolicy(com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetServiceLbPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceLbPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createServiceLbPolicy(
+            com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateServiceLbPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateServiceLbPolicy(
+            com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateServiceLbPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceLbPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteServiceLbPolicy(
+            com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteServiceLbPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Gateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.GatewayRouteView>
+        getGatewayRouteView(
+            com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGatewayRouteViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single RouteView of a Mesh.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.MeshRouteView>
+        getMeshRouteView(com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMeshRouteViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>
+        listGatewayRouteViews(
+            com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListGatewayRouteViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RouteViews
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>
+        listMeshRouteViews(com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMeshRouteViewsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ENDPOINT_POLICIES = 0;
@@ -4741,40 +7040,59 @@ public final class NetworkServicesGrpc {
   private static final int METHODID_CREATE_ENDPOINT_POLICY = 2;
   private static final int METHODID_UPDATE_ENDPOINT_POLICY = 3;
   private static final int METHODID_DELETE_ENDPOINT_POLICY = 4;
-  private static final int METHODID_LIST_GATEWAYS = 5;
-  private static final int METHODID_GET_GATEWAY = 6;
-  private static final int METHODID_CREATE_GATEWAY = 7;
-  private static final int METHODID_UPDATE_GATEWAY = 8;
-  private static final int METHODID_DELETE_GATEWAY = 9;
-  private static final int METHODID_LIST_GRPC_ROUTES = 10;
-  private static final int METHODID_GET_GRPC_ROUTE = 11;
-  private static final int METHODID_CREATE_GRPC_ROUTE = 12;
-  private static final int METHODID_UPDATE_GRPC_ROUTE = 13;
-  private static final int METHODID_DELETE_GRPC_ROUTE = 14;
-  private static final int METHODID_LIST_HTTP_ROUTES = 15;
-  private static final int METHODID_GET_HTTP_ROUTE = 16;
-  private static final int METHODID_CREATE_HTTP_ROUTE = 17;
-  private static final int METHODID_UPDATE_HTTP_ROUTE = 18;
-  private static final int METHODID_DELETE_HTTP_ROUTE = 19;
-  private static final int METHODID_LIST_TCP_ROUTES = 20;
-  private static final int METHODID_GET_TCP_ROUTE = 21;
-  private static final int METHODID_CREATE_TCP_ROUTE = 22;
-  private static final int METHODID_UPDATE_TCP_ROUTE = 23;
-  private static final int METHODID_DELETE_TCP_ROUTE = 24;
-  private static final int METHODID_LIST_TLS_ROUTES = 25;
-  private static final int METHODID_GET_TLS_ROUTE = 26;
-  private static final int METHODID_CREATE_TLS_ROUTE = 27;
-  private static final int METHODID_UPDATE_TLS_ROUTE = 28;
-  private static final int METHODID_DELETE_TLS_ROUTE = 29;
-  private static final int METHODID_LIST_SERVICE_BINDINGS = 30;
-  private static final int METHODID_GET_SERVICE_BINDING = 31;
-  private static final int METHODID_CREATE_SERVICE_BINDING = 32;
-  private static final int METHODID_DELETE_SERVICE_BINDING = 33;
-  private static final int METHODID_LIST_MESHES = 34;
-  private static final int METHODID_GET_MESH = 35;
-  private static final int METHODID_CREATE_MESH = 36;
-  private static final int METHODID_UPDATE_MESH = 37;
-  private static final int METHODID_DELETE_MESH = 38;
+  private static final int METHODID_LIST_WASM_PLUGIN_VERSIONS = 5;
+  private static final int METHODID_GET_WASM_PLUGIN_VERSION = 6;
+  private static final int METHODID_CREATE_WASM_PLUGIN_VERSION = 7;
+  private static final int METHODID_DELETE_WASM_PLUGIN_VERSION = 8;
+  private static final int METHODID_LIST_WASM_PLUGINS = 9;
+  private static final int METHODID_GET_WASM_PLUGIN = 10;
+  private static final int METHODID_CREATE_WASM_PLUGIN = 11;
+  private static final int METHODID_UPDATE_WASM_PLUGIN = 12;
+  private static final int METHODID_DELETE_WASM_PLUGIN = 13;
+  private static final int METHODID_LIST_GATEWAYS = 14;
+  private static final int METHODID_GET_GATEWAY = 15;
+  private static final int METHODID_CREATE_GATEWAY = 16;
+  private static final int METHODID_UPDATE_GATEWAY = 17;
+  private static final int METHODID_DELETE_GATEWAY = 18;
+  private static final int METHODID_LIST_GRPC_ROUTES = 19;
+  private static final int METHODID_GET_GRPC_ROUTE = 20;
+  private static final int METHODID_CREATE_GRPC_ROUTE = 21;
+  private static final int METHODID_UPDATE_GRPC_ROUTE = 22;
+  private static final int METHODID_DELETE_GRPC_ROUTE = 23;
+  private static final int METHODID_LIST_HTTP_ROUTES = 24;
+  private static final int METHODID_GET_HTTP_ROUTE = 25;
+  private static final int METHODID_CREATE_HTTP_ROUTE = 26;
+  private static final int METHODID_UPDATE_HTTP_ROUTE = 27;
+  private static final int METHODID_DELETE_HTTP_ROUTE = 28;
+  private static final int METHODID_LIST_TCP_ROUTES = 29;
+  private static final int METHODID_GET_TCP_ROUTE = 30;
+  private static final int METHODID_CREATE_TCP_ROUTE = 31;
+  private static final int METHODID_UPDATE_TCP_ROUTE = 32;
+  private static final int METHODID_DELETE_TCP_ROUTE = 33;
+  private static final int METHODID_LIST_TLS_ROUTES = 34;
+  private static final int METHODID_GET_TLS_ROUTE = 35;
+  private static final int METHODID_CREATE_TLS_ROUTE = 36;
+  private static final int METHODID_UPDATE_TLS_ROUTE = 37;
+  private static final int METHODID_DELETE_TLS_ROUTE = 38;
+  private static final int METHODID_LIST_SERVICE_BINDINGS = 39;
+  private static final int METHODID_GET_SERVICE_BINDING = 40;
+  private static final int METHODID_CREATE_SERVICE_BINDING = 41;
+  private static final int METHODID_UPDATE_SERVICE_BINDING = 42;
+  private static final int METHODID_DELETE_SERVICE_BINDING = 43;
+  private static final int METHODID_LIST_MESHES = 44;
+  private static final int METHODID_GET_MESH = 45;
+  private static final int METHODID_CREATE_MESH = 46;
+  private static final int METHODID_UPDATE_MESH = 47;
+  private static final int METHODID_DELETE_MESH = 48;
+  private static final int METHODID_LIST_SERVICE_LB_POLICIES = 49;
+  private static final int METHODID_GET_SERVICE_LB_POLICY = 50;
+  private static final int METHODID_CREATE_SERVICE_LB_POLICY = 51;
+  private static final int METHODID_UPDATE_SERVICE_LB_POLICY = 52;
+  private static final int METHODID_DELETE_SERVICE_LB_POLICY = 53;
+  private static final int METHODID_GET_GATEWAY_ROUTE_VIEW = 54;
+  private static final int METHODID_GET_MESH_ROUTE_VIEW = 55;
+  private static final int METHODID_LIST_GATEWAY_ROUTE_VIEWS = 56;
+  private static final int METHODID_LIST_MESH_ROUTE_VIEWS = 57;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4819,6 +7137,57 @@ public final class NetworkServicesGrpc {
         case METHODID_DELETE_ENDPOINT_POLICY:
           serviceImpl.deleteEndpointPolicy(
               (com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_WASM_PLUGIN_VERSIONS:
+          serviceImpl.listWasmPluginVersions(
+              (com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_WASM_PLUGIN_VERSION:
+          serviceImpl.getWasmPluginVersion(
+              (com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPluginVersion>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_WASM_PLUGIN_VERSION:
+          serviceImpl.createWasmPluginVersion(
+              (com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_WASM_PLUGIN_VERSION:
+          serviceImpl.deleteWasmPluginVersion(
+              (com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_WASM_PLUGINS:
+          serviceImpl.listWasmPlugins(
+              (com.google.cloud.networkservices.v1.ListWasmPluginsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListWasmPluginsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_WASM_PLUGIN:
+          serviceImpl.getWasmPlugin(
+              (com.google.cloud.networkservices.v1.GetWasmPluginRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.WasmPlugin>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_WASM_PLUGIN:
+          serviceImpl.createWasmPlugin(
+              (com.google.cloud.networkservices.v1.CreateWasmPluginRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_WASM_PLUGIN:
+          serviceImpl.updateWasmPlugin(
+              (com.google.cloud.networkservices.v1.UpdateWasmPluginRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_WASM_PLUGIN:
+          serviceImpl.deleteWasmPlugin(
+              (com.google.cloud.networkservices.v1.DeleteWasmPluginRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_GATEWAYS:
@@ -4979,6 +7348,11 @@ public final class NetworkServicesGrpc {
               (com.google.cloud.networkservices.v1.CreateServiceBindingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_SERVICE_BINDING:
+          serviceImpl.updateServiceBinding(
+              (com.google.cloud.networkservices.v1.UpdateServiceBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_SERVICE_BINDING:
           serviceImpl.deleteServiceBinding(
               (com.google.cloud.networkservices.v1.DeleteServiceBindingRequest) request,
@@ -5010,6 +7384,60 @@ public final class NetworkServicesGrpc {
           serviceImpl.deleteMesh(
               (com.google.cloud.networkservices.v1.DeleteMeshRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SERVICE_LB_POLICIES:
+          serviceImpl.listServiceLbPolicies(
+              (com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SERVICE_LB_POLICY:
+          serviceImpl.getServiceLbPolicy(
+              (com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ServiceLbPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SERVICE_LB_POLICY:
+          serviceImpl.createServiceLbPolicy(
+              (com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SERVICE_LB_POLICY:
+          serviceImpl.updateServiceLbPolicy(
+              (com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SERVICE_LB_POLICY:
+          serviceImpl.deleteServiceLbPolicy(
+              (com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_GATEWAY_ROUTE_VIEW:
+          serviceImpl.getGatewayRouteView(
+              (com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.GatewayRouteView>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MESH_ROUTE_VIEW:
+          serviceImpl.getMeshRouteView(
+              (com.google.cloud.networkservices.v1.GetMeshRouteViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.MeshRouteView>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_GATEWAY_ROUTE_VIEWS:
+          serviceImpl.listGatewayRouteViews(
+              (com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MESH_ROUTE_VIEWS:
+          serviceImpl.listMeshRouteViews(
+              (com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -5061,6 +7489,66 @@ public final class NetworkServicesGrpc {
                 new MethodHandlers<
                     com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_ENDPOINT_POLICY)))
+        .addMethod(
+            getListWasmPluginVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest,
+                    com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse>(
+                    service, METHODID_LIST_WASM_PLUGIN_VERSIONS)))
+        .addMethod(
+            getGetWasmPluginVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest,
+                    com.google.cloud.networkservices.v1.WasmPluginVersion>(
+                    service, METHODID_GET_WASM_PLUGIN_VERSION)))
+        .addMethod(
+            getCreateWasmPluginVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_WASM_PLUGIN_VERSION)))
+        .addMethod(
+            getDeleteWasmPluginVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_WASM_PLUGIN_VERSION)))
+        .addMethod(
+            getListWasmPluginsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListWasmPluginsRequest,
+                    com.google.cloud.networkservices.v1.ListWasmPluginsResponse>(
+                    service, METHODID_LIST_WASM_PLUGINS)))
+        .addMethod(
+            getGetWasmPluginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetWasmPluginRequest,
+                    com.google.cloud.networkservices.v1.WasmPlugin>(
+                    service, METHODID_GET_WASM_PLUGIN)))
+        .addMethod(
+            getCreateWasmPluginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.CreateWasmPluginRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WASM_PLUGIN)))
+        .addMethod(
+            getUpdateWasmPluginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.UpdateWasmPluginRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_WASM_PLUGIN)))
+        .addMethod(
+            getDeleteWasmPluginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.DeleteWasmPluginRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_WASM_PLUGIN)))
         .addMethod(
             getListGatewaysMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5239,6 +7727,12 @@ public final class NetworkServicesGrpc {
                     com.google.cloud.networkservices.v1.CreateServiceBindingRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_SERVICE_BINDING)))
         .addMethod(
+            getUpdateServiceBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.UpdateServiceBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SERVICE_BINDING)))
+        .addMethod(
             getDeleteServiceBindingMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5275,6 +7769,66 @@ public final class NetworkServicesGrpc {
                 new MethodHandlers<
                     com.google.cloud.networkservices.v1.DeleteMeshRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_MESH)))
+        .addMethod(
+            getListServiceLbPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest,
+                    com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse>(
+                    service, METHODID_LIST_SERVICE_LB_POLICIES)))
+        .addMethod(
+            getGetServiceLbPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest,
+                    com.google.cloud.networkservices.v1.ServiceLbPolicy>(
+                    service, METHODID_GET_SERVICE_LB_POLICY)))
+        .addMethod(
+            getCreateServiceLbPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SERVICE_LB_POLICY)))
+        .addMethod(
+            getUpdateServiceLbPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SERVICE_LB_POLICY)))
+        .addMethod(
+            getDeleteServiceLbPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SERVICE_LB_POLICY)))
+        .addMethod(
+            getGetGatewayRouteViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest,
+                    com.google.cloud.networkservices.v1.GatewayRouteView>(
+                    service, METHODID_GET_GATEWAY_ROUTE_VIEW)))
+        .addMethod(
+            getGetMeshRouteViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetMeshRouteViewRequest,
+                    com.google.cloud.networkservices.v1.MeshRouteView>(
+                    service, METHODID_GET_MESH_ROUTE_VIEW)))
+        .addMethod(
+            getListGatewayRouteViewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest,
+                    com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse>(
+                    service, METHODID_LIST_GATEWAY_ROUTE_VIEWS)))
+        .addMethod(
+            getListMeshRouteViewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
+                    com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>(
+                    service, METHODID_LIST_MESH_ROUTE_VIEWS)))
         .build();
   }
 
@@ -5331,6 +7885,15 @@ public final class NetworkServicesGrpc {
                       .addMethod(getCreateEndpointPolicyMethod())
                       .addMethod(getUpdateEndpointPolicyMethod())
                       .addMethod(getDeleteEndpointPolicyMethod())
+                      .addMethod(getListWasmPluginVersionsMethod())
+                      .addMethod(getGetWasmPluginVersionMethod())
+                      .addMethod(getCreateWasmPluginVersionMethod())
+                      .addMethod(getDeleteWasmPluginVersionMethod())
+                      .addMethod(getListWasmPluginsMethod())
+                      .addMethod(getGetWasmPluginMethod())
+                      .addMethod(getCreateWasmPluginMethod())
+                      .addMethod(getUpdateWasmPluginMethod())
+                      .addMethod(getDeleteWasmPluginMethod())
                       .addMethod(getListGatewaysMethod())
                       .addMethod(getGetGatewayMethod())
                       .addMethod(getCreateGatewayMethod())
@@ -5359,12 +7922,22 @@ public final class NetworkServicesGrpc {
                       .addMethod(getListServiceBindingsMethod())
                       .addMethod(getGetServiceBindingMethod())
                       .addMethod(getCreateServiceBindingMethod())
+                      .addMethod(getUpdateServiceBindingMethod())
                       .addMethod(getDeleteServiceBindingMethod())
                       .addMethod(getListMeshesMethod())
                       .addMethod(getGetMeshMethod())
                       .addMethod(getCreateMeshMethod())
                       .addMethod(getUpdateMeshMethod())
                       .addMethod(getDeleteMeshMethod())
+                      .addMethod(getListServiceLbPoliciesMethod())
+                      .addMethod(getGetServiceLbPolicyMethod())
+                      .addMethod(getCreateServiceLbPolicyMethod())
+                      .addMethod(getUpdateServiceLbPolicyMethod())
+                      .addMethod(getDeleteServiceLbPolicyMethod())
+                      .addMethod(getGetGatewayRouteViewMethod())
+                      .addMethod(getGetMeshRouteViewMethod())
+                      .addMethod(getListGatewayRouteViewsMethod())
+                      .addMethod(getListMeshRouteViewsMethod())
                       .build();
         }
       }

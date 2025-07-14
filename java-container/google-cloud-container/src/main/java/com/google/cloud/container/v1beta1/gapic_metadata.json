@@ -34,6 +34,12 @@
             "DeleteNodePool": {
               "methods": ["deleteNodePool", "deleteNodePool", "deleteNodePoolCallable"]
             },
+            "FetchClusterUpgradeInfo": {
+              "methods": ["fetchClusterUpgradeInfo", "fetchClusterUpgradeInfo", "fetchClusterUpgradeInfoCallable"]
+            },
+            "FetchNodePoolUpgradeInfo": {
+              "methods": ["fetchNodePoolUpgradeInfo", "fetchNodePoolUpgradeInfo", "fetchNodePoolUpgradeInfoCallable"]
+            },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getClusterCallable"]
             },

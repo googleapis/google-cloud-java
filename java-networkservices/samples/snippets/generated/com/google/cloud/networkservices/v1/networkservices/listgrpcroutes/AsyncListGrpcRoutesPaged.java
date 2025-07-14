@@ -42,6 +42,7 @@ public class AsyncListGrpcRoutesPaged {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         ListGrpcRoutesResponse response =

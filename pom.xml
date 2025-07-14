@@ -57,6 +57,7 @@
     <module>java-certificate-manager</module>
     <module>java-channel</module>
     <module>java-chat</module>
+    <module>java-chronicle</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
@@ -64,6 +65,7 @@
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
+    <module>java-configdelivery</module>
     <module>java-connectgateway</module>
     <module>java-contact-center-insights</module>
     <module>java-container</module>
@@ -119,8 +121,10 @@
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
+    <module>java-licensemanager</module>
     <module>java-life-sciences</module>
     <module>java-lustre</module>
+    <module>java-maintenance</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
@@ -200,6 +204,7 @@
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-shopping-merchant-reviews</module>
+    <module>java-spanneradapter</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>

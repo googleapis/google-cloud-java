@@ -525,6 +525,245 @@ public final class DepServiceGrpc {
     return getDeleteLbRouteExtensionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest,
+          com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+      getListAuthzExtensionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthzExtensions",
+      requestType = com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest,
+          com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+      getListAuthzExtensionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest,
+            com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+        getListAuthzExtensionsMethod;
+    if ((getListAuthzExtensionsMethod = DepServiceGrpc.getListAuthzExtensionsMethod) == null) {
+      synchronized (DepServiceGrpc.class) {
+        if ((getListAuthzExtensionsMethod = DepServiceGrpc.getListAuthzExtensionsMethod) == null) {
+          DepServiceGrpc.getListAuthzExtensionsMethod =
+              getListAuthzExtensionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest,
+                          com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAuthzExtensions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DepServiceMethodDescriptorSupplier("ListAuthzExtensions"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthzExtensionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetAuthzExtensionRequest,
+          com.google.cloud.networkservices.v1.AuthzExtension>
+      getGetAuthzExtensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthzExtension",
+      requestType = com.google.cloud.networkservices.v1.GetAuthzExtensionRequest.class,
+      responseType = com.google.cloud.networkservices.v1.AuthzExtension.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetAuthzExtensionRequest,
+          com.google.cloud.networkservices.v1.AuthzExtension>
+      getGetAuthzExtensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetAuthzExtensionRequest,
+            com.google.cloud.networkservices.v1.AuthzExtension>
+        getGetAuthzExtensionMethod;
+    if ((getGetAuthzExtensionMethod = DepServiceGrpc.getGetAuthzExtensionMethod) == null) {
+      synchronized (DepServiceGrpc.class) {
+        if ((getGetAuthzExtensionMethod = DepServiceGrpc.getGetAuthzExtensionMethod) == null) {
+          DepServiceGrpc.getGetAuthzExtensionMethod =
+              getGetAuthzExtensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetAuthzExtensionRequest,
+                          com.google.cloud.networkservices.v1.AuthzExtension>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthzExtension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetAuthzExtensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.AuthzExtension
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DepServiceMethodDescriptorSupplier("GetAuthzExtension"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthzExtensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getCreateAuthzExtensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAuthzExtension",
+      requestType = com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getCreateAuthzExtensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest,
+            com.google.longrunning.Operation>
+        getCreateAuthzExtensionMethod;
+    if ((getCreateAuthzExtensionMethod = DepServiceGrpc.getCreateAuthzExtensionMethod) == null) {
+      synchronized (DepServiceGrpc.class) {
+        if ((getCreateAuthzExtensionMethod = DepServiceGrpc.getCreateAuthzExtensionMethod)
+            == null) {
+          DepServiceGrpc.getCreateAuthzExtensionMethod =
+              getCreateAuthzExtensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAuthzExtension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DepServiceMethodDescriptorSupplier("CreateAuthzExtension"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAuthzExtensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getUpdateAuthzExtensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAuthzExtension",
+      requestType = com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getUpdateAuthzExtensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest,
+            com.google.longrunning.Operation>
+        getUpdateAuthzExtensionMethod;
+    if ((getUpdateAuthzExtensionMethod = DepServiceGrpc.getUpdateAuthzExtensionMethod) == null) {
+      synchronized (DepServiceGrpc.class) {
+        if ((getUpdateAuthzExtensionMethod = DepServiceGrpc.getUpdateAuthzExtensionMethod)
+            == null) {
+          DepServiceGrpc.getUpdateAuthzExtensionMethod =
+              getUpdateAuthzExtensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAuthzExtension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DepServiceMethodDescriptorSupplier("UpdateAuthzExtension"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAuthzExtensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthzExtensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthzExtension",
+      requestType = com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthzExtensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest,
+            com.google.longrunning.Operation>
+        getDeleteAuthzExtensionMethod;
+    if ((getDeleteAuthzExtensionMethod = DepServiceGrpc.getDeleteAuthzExtensionMethod) == null) {
+      synchronized (DepServiceGrpc.class) {
+        if ((getDeleteAuthzExtensionMethod = DepServiceGrpc.getDeleteAuthzExtensionMethod)
+            == null) {
+          DepServiceGrpc.getDeleteAuthzExtensionMethod =
+              getDeleteAuthzExtensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAuthzExtension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DepServiceMethodDescriptorSupplier("DeleteAuthzExtension"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthzExtensionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DepServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DepServiceStub> factory =
@@ -733,6 +972,80 @@ public final class DepServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteLbRouteExtensionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `AuthzExtension` resources in a given project and location.
+     * </pre>
+     */
+    default void listAuthzExtensions(
+        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthzExtensionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    default void getAuthzExtension(
+        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AuthzExtension>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthzExtensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `AuthzExtension` resource in a given project
+     * and location.
+     * </pre>
+     */
+    default void createAuthzExtension(
+        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAuthzExtensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `AuthzExtension`
+     * resource.
+     * </pre>
+     */
+    default void updateAuthzExtension(
+        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAuthzExtensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    default void deleteAuthzExtension(
+        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthzExtensionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -933,6 +1246,90 @@ public final class DepServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `AuthzExtension` resources in a given project and location.
+     * </pre>
+     */
+    public void listAuthzExtensions(
+        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthzExtensionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public void getAuthzExtension(
+        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AuthzExtension>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthzExtensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `AuthzExtension` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public void createAuthzExtension(
+        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAuthzExtensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `AuthzExtension`
+     * resource.
+     * </pre>
+     */
+    public void updateAuthzExtension(
+        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAuthzExtensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public void deleteAuthzExtension(
+        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthzExtensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1085,6 +1482,73 @@ public final class DepServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLbRouteExtensionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `AuthzExtension` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse listAuthzExtensions(
+        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthzExtensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.AuthzExtension getAuthzExtension(
+        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `AuthzExtension` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAuthzExtension(
+        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `AuthzExtension`
+     * resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAuthzExtension(
+        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthzExtension(
+        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthzExtensionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1236,6 +1700,73 @@ public final class DepServiceGrpc {
         com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLbRouteExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `AuthzExtension` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse listAuthzExtensions(
+        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthzExtensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.AuthzExtension getAuthzExtension(
+        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `AuthzExtension` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAuthzExtension(
+        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `AuthzExtension`
+     * resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAuthzExtension(
+        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthzExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthzExtension(
+        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthzExtensionMethod(), getCallOptions(), request);
     }
   }
 
@@ -1401,6 +1932,79 @@ public final class DepServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteLbRouteExtensionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `AuthzExtension` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>
+        listAuthzExtensions(
+            com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthzExtensionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.AuthzExtension>
+        getAuthzExtension(com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthzExtensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `AuthzExtension` resource in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAuthzExtension(
+            com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAuthzExtensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `AuthzExtension`
+     * resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAuthzExtension(
+            com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAuthzExtensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `AuthzExtension` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAuthzExtension(
+            com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthzExtensionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_LB_TRAFFIC_EXTENSIONS = 0;
@@ -1413,6 +2017,11 @@ public final class DepServiceGrpc {
   private static final int METHODID_CREATE_LB_ROUTE_EXTENSION = 7;
   private static final int METHODID_UPDATE_LB_ROUTE_EXTENSION = 8;
   private static final int METHODID_DELETE_LB_ROUTE_EXTENSION = 9;
+  private static final int METHODID_LIST_AUTHZ_EXTENSIONS = 10;
+  private static final int METHODID_GET_AUTHZ_EXTENSION = 11;
+  private static final int METHODID_CREATE_AUTHZ_EXTENSION = 12;
+  private static final int METHODID_UPDATE_AUTHZ_EXTENSION = 13;
+  private static final int METHODID_DELETE_AUTHZ_EXTENSION = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1485,6 +2094,34 @@ public final class DepServiceGrpc {
         case METHODID_DELETE_LB_ROUTE_EXTENSION:
           serviceImpl.deleteLbRouteExtension(
               (com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_AUTHZ_EXTENSIONS:
+          serviceImpl.listAuthzExtensions(
+              (com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTHZ_EXTENSION:
+          serviceImpl.getAuthzExtension(
+              (com.google.cloud.networkservices.v1.GetAuthzExtensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AuthzExtension>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_AUTHZ_EXTENSION:
+          serviceImpl.createAuthzExtension(
+              (com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_AUTHZ_EXTENSION:
+          serviceImpl.updateAuthzExtension(
+              (com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTHZ_EXTENSION:
+          serviceImpl.deleteAuthzExtension(
+              (com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1572,6 +2209,38 @@ public final class DepServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_LB_ROUTE_EXTENSION)))
+        .addMethod(
+            getListAuthzExtensionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest,
+                    com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse>(
+                    service, METHODID_LIST_AUTHZ_EXTENSIONS)))
+        .addMethod(
+            getGetAuthzExtensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetAuthzExtensionRequest,
+                    com.google.cloud.networkservices.v1.AuthzExtension>(
+                    service, METHODID_GET_AUTHZ_EXTENSION)))
+        .addMethod(
+            getCreateAuthzExtensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AUTHZ_EXTENSION)))
+        .addMethod(
+            getUpdateAuthzExtensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AUTHZ_EXTENSION)))
+        .addMethod(
+            getDeleteAuthzExtensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTHZ_EXTENSION)))
         .build();
   }
 
@@ -1633,6 +2302,11 @@ public final class DepServiceGrpc {
                       .addMethod(getCreateLbRouteExtensionMethod())
                       .addMethod(getUpdateLbRouteExtensionMethod())
                       .addMethod(getDeleteLbRouteExtensionMethod())
+                      .addMethod(getListAuthzExtensionsMethod())
+                      .addMethod(getGetAuthzExtensionMethod())
+                      .addMethod(getCreateAuthzExtensionMethod())
+                      .addMethod(getUpdateAuthzExtensionMethod())
+                      .addMethod(getDeleteAuthzExtensionMethod())
                       .build();
         }
       }

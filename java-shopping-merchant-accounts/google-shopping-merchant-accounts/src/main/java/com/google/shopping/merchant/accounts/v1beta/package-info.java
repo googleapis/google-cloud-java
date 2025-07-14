@@ -160,6 +160,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= CheckoutSettingsServiceClient =======================
+ *
+ * <p>Service Description: Service for supporting [checkout
+ * settings](https://support.google.com/merchants/answer/13945960).
+ *
+ * <p>Sample for CheckoutSettingsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CheckoutSettingsServiceClient checkoutSettingsServiceClient =
+ *     CheckoutSettingsServiceClient.create()) {
+ *   CheckoutSettingsName name = CheckoutSettingsName.of("[ACCOUNT]", "[PROGRAM]");
+ *   CheckoutSettings response = checkoutSettingsServiceClient.getCheckoutSettings(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EmailPreferencesServiceClient =======================
  *
  * <p>Service Description: Service to support the `EmailPreferences` API.
@@ -182,6 +202,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= GbpAccountsServiceClient =======================
+ *
+ * <p>Service Description: The service facilitates the management of a merchant's Google Business
+ * Profile (GBP) account settings. This API defines the following resource model: -
+ * [GbpAccount][google.shopping.merchant.accounts.v1.GbpAccount]
+ *
+ * <p>Sample for GbpAccountsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GbpAccountsServiceClient gbpAccountsServiceClient = GbpAccountsServiceClient.create()) {
+ *   AccountName parent = AccountName.of("[ACCOUNT]");
+ *   LinkGbpAccountResponse response = gbpAccountsServiceClient.linkGbpAccount(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= HomepageServiceClient =======================
  *
  * <p>Service Description: Service to support an API for a store's homepage.
@@ -200,13 +240,56 @@
  * }
  * }</pre>
  *
+ * <p>======================= LfpProvidersServiceClient =======================
+ *
+ * <p>Service Description: The service facilitates the management of a merchant's LFP provider
+ * settings. This API defines the following resource model: -
+ * [LfpProvider][google.shopping.merchant.accounts.v1.LfpProvider]
+ *
+ * <p>Sample for LfpProvidersServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LfpProvidersServiceClient lfpProvidersServiceClient = LfpProvidersServiceClient.create()) {
+ *   LfpProviderName name =
+ *       LfpProviderName.of("[ACCOUNT]", "[OMNICHANNEL_SETTING]", "[LFP_PROVIDER]");
+ *   LinkLfpProviderResponse response = lfpProvidersServiceClient.linkLfpProvider(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OmnichannelSettingsServiceClient =======================
+ *
+ * <p>Service Description: The service facilitates the management of a merchant's omnichannel
+ * settings. ## This API defines the following resource model:
+ *
+ * <p>[OmnichannelSetting][google.shopping.merchant.accounts.v1.OmnichannelSetting]
+ *
+ * <p>Sample for OmnichannelSettingsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OmnichannelSettingsServiceClient omnichannelSettingsServiceClient =
+ *     OmnichannelSettingsServiceClient.create()) {
+ *   OmnichannelSettingName name = OmnichannelSettingName.of("[ACCOUNT]", "[OMNICHANNEL_SETTING]");
+ *   OmnichannelSetting response = omnichannelSettingsServiceClient.getOmnichannelSetting(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= OnlineReturnPolicyServiceClient =======================
  *
  * <p>Service Description: The service facilitates the management of a merchant's remorse return
  * policy configuration, encompassing return policies for both ads and free listings ## programs.
  * This API defines the following resource model:
  *
- * <p>[OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+ * <p>[OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
  *
  * <p>Sample for OnlineReturnPolicyServiceClient:
  *

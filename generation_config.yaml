@@ -1,6 +1,6 @@
-gapic_generator_version: 2.56.2
-googleapis_commitish: ce291b3bc967923f89e0e54ed33d18802672b171
-libraries_bom_version: 26.59.0
+gapic_generator_version: 2.60.1
+googleapis_commitish: d4be887ef681aa9c3c1c6b10aed839d154effa53
+libraries_bom_version: 26.61.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -396,6 +396,7 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
+  - proto_path: google/cloud/bigquery/datapolicies/v2beta1
 
 - api_shortname: bigquerydatatransfer
   name_pretty: BigQuery Data Transfer Service
@@ -497,6 +498,23 @@ libraries:
   GAPICs:
   - proto_path: google/chat/v1
 
+- api_shortname: chronicle
+  name_pretty: Chronicle API
+  product_documentation: https://cloud.google.com/chronicle/docs/secops/secops-overview
+  api_description: The Google Cloud Security Operations API, popularly known as the
+    Chronicle API, serves endpoints that enable security analysts to analyze and mitigate
+    a security threat throughout its lifecycle
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-chronicle/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-chronicle
+  api_id: chronicle.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/chronicle/v1
+  requires_billing: true
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
   product_documentation: https://cloud.google.com/cloud-build/
@@ -550,6 +568,7 @@ libraries:
     support offerings.
   GAPICs:
   - proto_path: google/cloud/support/v2
+  - proto_path: google/cloud/support/v2beta
 
 - api_shortname: compute
   name_pretty: Compute Engine
@@ -574,6 +593,25 @@ libraries:
   - proto_path: google/cloud/confidentialcomputing/v1
   - proto_path: google/cloud/confidentialcomputing/v1alpha1
 
+- api_shortname: configdelivery
+  name_pretty: Config Delivery API
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
+  api_description: ConfigDelivery service manages the deployment of kubernetes configuration
+    to a fleet of kubernetes clusters.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-configdelivery
+  api_id: configdelivery.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/configdelivery/v1beta
+  requires_billing: true
+  rest_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
 - api_shortname: connectgateway
   name_pretty: Connect Gateway API
   product_documentation: 
@@ -682,6 +720,7 @@ libraries:
   api_description: Help analytics teams manage data inside BigQuery using SQL.
   GAPICs:
   - proto_path: google/cloud/dataform/v1beta1
+  - proto_path: google/cloud/dataform/v1
 
 - api_shortname: datalabeling
   name_pretty: Data Labeling
@@ -1120,6 +1159,8 @@ libraries:
   - proto_path: google/iam/v1beta
   - proto_path: google/iam/v2
   - proto_path: google/iam/v2beta
+  - proto_path: google/iam/v3
+  - proto_path: google/iam/v3beta
 
 - api_shortname: iam-admin
   name_pretty: IAM Admin API
@@ -1202,7 +1243,7 @@ libraries:
   - proto_path: google/shopping/merchant/issueresolution/v1beta
   library_name: java-shopping-merchant-issue-resolution
   requires_billing: true
-  
+
 - api_shortname: merchantapi
   name_pretty: Merchant Order Tracking API
   product_documentation: https://developers.google.com/merchant/api
@@ -1219,7 +1260,7 @@ libraries:
   - proto_path: google/shopping/merchant/ordertracking/v1beta
   library_name: java-shopping-merchant-order-tracking
   requires_billing: true
-  
+
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
@@ -1261,6 +1302,22 @@ libraries:
   - proto_path: google/cloud/language/v1beta2
   - proto_path: google/cloud/language/v2
 
+- api_shortname: licensemanager
+  name_pretty: License Manager API
+  product_documentation: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
+  api_description: License Manager is a tool to manage and track third-party licenses
+    on Google Cloud.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-licensemanager
+  api_id: licensemanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/licensemanager/v1
+  requires_billing: true
 - api_shortname: lifesciences
   name_pretty: Cloud Life Sciences
   product_documentation: https://cloud.google.com/life-sciences/docs
@@ -1287,6 +1344,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/lustre/v1
   requires_billing: true
+- api_shortname: maintenance
+  name_pretty: Maintenance API
+  product_documentation: https://cloud.google.com/unified-maintenance/docs/overview
+  api_description: The Maintenance API provides a centralized view of planned disruptive
+    maintenance events across supported Google Cloud products.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-maintenance
+  api_id: maintenance.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/maintenance/api/v1beta
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
 - api_shortname: managedidentities
   name_pretty: Managed Service for Microsoft Active Directory
   product_documentation: https://cloud.google.com/managed-microsoft-ad/
@@ -1529,6 +1603,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/modelarmor/v1
+  - proto_path: google/cloud/modelarmor/v1beta
   requires_billing: true
 - api_shortname: monitoring
   name_pretty: Stackdriver Monitoring
@@ -2288,6 +2363,7 @@ libraries:
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
+  - proto_path: google/shopping/merchant/reports/v1alpha
 
 - api_shortname: merchantapi
   name_pretty: Merchant API
@@ -2305,6 +2381,24 @@ libraries:
   requires_billing: true
   library_name: shopping-merchant-reviews
 
+- api_shortname: spanneradapter
+  name_pretty: Cloud Spanner Adapter API
+  product_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
+  api_description: The Cloud Spanner Adapter service allows native drivers of supported     database
+    dialects to interact directly with Cloud Spanner by wrapping the underlying     wire
+    protocol used by the driver in a gRPC stream.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-spanneradapter
+  api_id: spanneradapter.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/spanner/adapter/v1
+  requires_billing: true
 - api_shortname: speech
   name_pretty: Cloud Speech
   product_documentation: https://cloud.google.com/speech-to-text/docs/
@@ -2657,6 +2751,7 @@ libraries:
   rest_documentation: https://developers.google.com/workspace/events/reference/rest
   GAPICs:
   - proto_path: google/apps/events/subscriptions/v1
+  - proto_path: google/apps/events/subscriptions/v1beta
 
 - api_shortname: workstations
   name_pretty: Cloud Workstations

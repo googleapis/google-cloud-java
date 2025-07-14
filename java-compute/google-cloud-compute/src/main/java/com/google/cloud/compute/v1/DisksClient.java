@@ -124,6 +124,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BulkSetLabels</td>
+ *      <td><p> Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsAsync(BulkSetLabelsDiskRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsAsync(String project, String zone, BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsOperationCallable()
+ *           <li><p> bulkSetLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateSnapshot</td>
  *      <td><p> Creates a snapshot of a specified persistent disk. For regular snapshot creation, consider using snapshots.insert instead, as that method supports more features, such as creating snapshots in a project different from the source disk project.</td>
  *      <td>
@@ -928,6 +947,145 @@ public class DisksClient implements BackgroundResource {
    */
   public final UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable() {
     return stub.bulkInsertCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource =
+   *       BulkZoneSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient.bulkSetLabelsAsync(project, zone, bulkZoneSetLabelsRequestResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param bulkZoneSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> bulkSetLabelsAsync(
+      String project, String zone, BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource) {
+    BulkSetLabelsDiskRequest request =
+        BulkSetLabelsDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setBulkZoneSetLabelsRequestResource(bulkZoneSetLabelsRequestResource)
+            .build();
+    return bulkSetLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.bulkSetLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> bulkSetLabelsAsync(
+      BulkSetLabelsDiskRequest request) {
+    return bulkSetLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.bulkSetLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable() {
+    return stub.bulkSetLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.bulkSetLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable() {
+    return stub.bulkSetLabelsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

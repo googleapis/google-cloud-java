@@ -64,7 +64,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCase</td>
- *      <td><p> Retrieve the specified case.</td>
+ *      <td><p> Retrieve a case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,8 +83,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCases</td>
- *      <td><p> Retrieve all cases under the specified parent.
- * <p>  Note: Listing cases under an Organization returns only the cases directly parented by that organization. To retrieve all cases under an organization, including cases parented by projects under that organization, use `cases.search`.</td>
+ *      <td><p> Retrieve all cases under a parent, but not its children.
+ * <p>  For example, listing cases under an organization only returns the cases that are directly parented by that organization. To retrieve cases under an organization and its projects, use `cases.search`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchCases</td>
- *      <td><p> Search cases using the specified query.</td>
+ *      <td><p> Search for cases using a query.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -120,7 +120,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCase</td>
- *      <td><p> Create a new case and associate it with the given Google Cloud Resource. The case object must have the following fields set: `display_name`, `description`, `classification`, and `priority`.</td>
+ *      <td><p> Create a new case and associate it with a parent.
+ * <p>  It must have the following fields set: `display_name`, `description`, `classification`, and `priority`. If you're just testing the API and don't want to route your case to an agent, set `testCase=true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +141,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCase</td>
- *      <td><p> Update the specified case. Only a subset of fields can be updated.</td>
+ *      <td><p> Update a case. Only some fields can be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,8 +159,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> EscalateCase</td>
- *      <td><p> Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management process.
- * <p>  This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which tiers are able to perform escalations.</td>
+ *      <td><p> Escalate a case, starting the Google Cloud Support escalation management process.
+ * <p>  This operation is only available for some support services. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which ones let you do that.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -173,7 +174,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CloseCase</td>
- *      <td><p> Close the specified case.</td>
+ *      <td><p> Close a case.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,7 +188,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchCaseClassifications</td>
- *      <td><p> Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by " &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".</td>
+ *      <td><p> Retrieve valid classifications to use when creating a support case.
+ * <p>  Classifications are hierarchical. Each classification is a string containing all levels of the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+ * <p>  Classification IDs returned by this endpoint are valid for at least six months. When a classification is deactivated, this endpoint immediately stops returning it. After six months, `case.create` requests using the classification will fail.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -305,7 +308,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
    *
    * <p>Sample code:
    *
@@ -321,7 +324,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The fully qualified name of a case to be retrieved.
+   * @param name Required. The full name of a case to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Case getCase(CaseName name) {
@@ -332,7 +335,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
    *
    * <p>Sample code:
    *
@@ -348,7 +351,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The fully qualified name of a case to be retrieved.
+   * @param name Required. The full name of a case to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Case getCase(String name) {
@@ -358,7 +361,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
    *
    * <p>Sample code:
    *
@@ -386,7 +389,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
    *
    * <p>Sample code:
    *
@@ -413,11 +416,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -435,7 +438,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(OrganizationName parent) {
@@ -446,11 +449,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -468,7 +471,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(ProjectName parent) {
@@ -479,11 +482,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -501,7 +504,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(String parent) {
@@ -511,11 +514,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -548,11 +551,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -584,11 +587,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
    *
    * <p>Sample code:
    *
@@ -627,7 +630,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
    *
    * <p>Sample code:
    *
@@ -660,7 +663,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
    *
    * <p>Sample code:
    *
@@ -693,7 +696,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
    *
    * <p>Sample code:
    *
@@ -732,8 +735,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
    *
    * <p>Sample code:
    *
@@ -750,8 +756,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -766,8 +771,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
    *
    * <p>Sample code:
    *
@@ -784,8 +792,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -800,8 +807,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
    *
    * <p>Sample code:
    *
@@ -818,8 +828,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -831,8 +840,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
    *
    * <p>Sample code:
    *
@@ -861,8 +873,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
    *
    * <p>Sample code:
    *
@@ -890,7 +905,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
    *
    * <p>Sample code:
    *
@@ -907,11 +922,11 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param case_ Required. The case object to update.
-   * @param updateMask A list of attributes of the case object that should be updated as part of
-   *     this request. Supported values are `priority`, `display_name`, and
-   *     `subscriber_email_addresses`. If no fields are specified, all supported fields are updated.
-   *     <p>WARNING: If you do not provide a field mask, then you might accidentally clear some
+   * @param case_ Required. The case to update.
+   * @param updateMask A list of attributes of the case that should be updated. Supported values are
+   *     `priority`, `display_name`, and `subscriber_email_addresses`. If no fields are specified,
+   *     all supported fields are updated.
+   *     <p>Be careful - if you do not provide a field mask, then you might accidentally clear some
    *     fields. For example, if you leave the field mask empty and do not provide a value for
    *     `subscriber_email_addresses`, then `subscriber_email_addresses` is updated to empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -924,7 +939,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
    *
    * <p>Sample code:
    *
@@ -953,7 +968,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
    *
    * <p>Sample code:
    *
@@ -981,12 +996,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management
-   * process.
+   * Escalate a case, starting the Google Cloud Support escalation management process.
    *
-   * <p>This operation is only available to certain Customer Care tiers. Go to
+   * <p>This operation is only available for some support services. Go to
    * https://cloud.google.com/support and look for 'Technical support escalations' in the feature
-   * list to find out which tiers are able to perform escalations.
+   * list to find out which ones let you do that.
    *
    * <p>Sample code:
    *
@@ -1015,12 +1029,11 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management
-   * process.
+   * Escalate a case, starting the Google Cloud Support escalation management process.
    *
-   * <p>This operation is only available to certain Customer Care tiers. Go to
+   * <p>This operation is only available for some support services. Go to
    * https://cloud.google.com/support and look for 'Technical support escalations' in the feature
-   * list to find out which tiers are able to perform escalations.
+   * list to find out which ones let you do that.
    *
    * <p>Sample code:
    *
@@ -1048,7 +1061,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Close the specified case.
+   * Close a case.
    *
    * <p>Sample code:
    *
@@ -1076,7 +1089,7 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Close the specified case.
+   * Close a case.
    *
    * <p>Sample code:
    *
@@ -1103,9 +1116,15 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
    *
    * <p>Sample code:
    *
@@ -1139,9 +1158,15 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
    *
    * <p>Sample code:
    *
@@ -1175,9 +1200,15 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
    *
    * <p>Sample code:
    *

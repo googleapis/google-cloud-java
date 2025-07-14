@@ -24,6 +24,7 @@ import "google/cloud/alloydb/v1alpha/gemini.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
+import "google/type/date.proto";
 import "google/type/dayofweek.proto";
 import "google/type/timeofday.proto";
 
@@ -311,8 +312,7 @@ message AutomatedBackupPolicy {
 
   // Optional. The encryption config can be specified to encrypt the
   // backups with a customer-managed encryption key (CMEK). When this field is
-  // not specified, the backup will then use default encryption scheme to
-  // protect the user data.
+  // not specified, the backup will use the cluster's encryption config.
   EncryptionConfig encryption_config = 8
       [(google.api.field_behavior) = OPTIONAL];
 
@@ -339,8 +339,7 @@ message ContinuousBackupConfig {
 
   // The encryption config can be specified to encrypt the
   // backups with a customer-managed encryption key (CMEK). When this field is
-  // not specified, the backup will then use default encryption scheme to
-  // protect the user data.
+  // not specified, the backup will use the cluster's encryption config.
   EncryptionConfig encryption_config = 3;
 }
 
@@ -357,13 +356,20 @@ message ContinuousBackupInfo {
   google.protobuf.Timestamp enabled_time = 2
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Days of the week on which a continuous backup is taken. Output
-  // only field. Ignored if passed into the request.
+  // Output only. Days of the week on which a continuous backup is taken.
   repeated google.type.DayOfWeek schedule = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The earliest restorable time that can be restored to. Output
-  // only field.
+  // Output only. The earliest restorable time that can be restored to. If
+  // continuous backups and recovery was recently enabled, the earliest
+  // restorable time is the creation time of the earliest eligible backup within
+  // this cluster's continuous backup recovery window. After a cluster has had
+  // continuous backups enabled for the duration of its recovery window, the
+  // earliest restorable time becomes "now minus the recovery window". For
+  // example, assuming a point in time recovery is attempted at 04/16/2025
+  // 3:23:00PM with a 14d recovery window, the earliest restorable time would be
+  // 04/02/2025 3:23:00PM. This field is only visible if the
+  // CLUSTER_VIEW_CONTINUOUS_BACKUP cluster view is provided.
   google.protobuf.Timestamp earliest_restorable_time = 4
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
@@ -407,8 +413,34 @@ message MaintenanceUpdatePolicy {
     google.type.TimeOfDay start_time = 2;
   }
 
+  // DenyMaintenancePeriod definition. Excepting emergencies, maintenance
+  // will not be scheduled to start within this deny period. The start_date must
+  // be less than the end_date.
+  message DenyMaintenancePeriod {
+    // Deny period start date.
+    // This can be:
+    // * A full date, with non-zero year, month and day values OR
+    // * A month and day value, with a zero year for recurring
+    google.type.Date start_date = 1;
+
+    // Deny period end date.
+    // This can be:
+    // * A full date, with non-zero year, month and day values OR
+    // * A month and day value, with a zero year for recurring
+    google.type.Date end_date = 2;
+
+    // Time in UTC when the deny period starts on start_date and ends on
+    // end_date. This can be:
+    // * Full time OR
+    // * All zeros for 00:00:00 UTC
+    google.type.TimeOfDay time = 3;
+  }
+
   // Preferred windows to perform maintenance. Currently limited to 1.
   repeated MaintenanceWindow maintenance_windows = 1;
+
+  // Periods to deny maintenance. Currently limited to 1.
+  repeated DenyMaintenancePeriod deny_maintenance_periods = 2;
 }
 
 // MaintenanceSchedule stores the maintenance schedule generated from
@@ -708,10 +740,10 @@ message Cluster {
   MaintenanceSchedule maintenance_schedule = 37
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Configuration parameters related to the Gemini in Databases
-  // add-on.
+  // Optional. Deprecated and unused. This field will be removed in the near
+  // future.
   GeminiClusterConfig gemini_config = 36
-      [(google.api.field_behavior) = OPTIONAL];
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
 
   // Optional. Subscription type of the cluster.
   SubscriptionType subscription_type = 38
@@ -731,6 +763,12 @@ message Cluster {
     (google.api.field_behavior) = IMMUTABLE,
     (google.api.field_behavior) = OPTIONAL
   ];
+
+  // Output only. AlloyDB per-cluster service agent email. This service account
+  // is created per-cluster per-project, and is different from that of the
+  // primary service agent which is created per-project. The service account
+  // naming format is subject to change.
+  string service_account_email = 46 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // An Instance is a computing unit that an end customer can connect to.
@@ -748,26 +786,32 @@ message Instance {
   message MachineConfig {
     // The number of CPU's in the VM instance.
     int32 cpu_count = 1;
+
+    // Machine type of the VM instance. E.g. "n2-highmem-4",
+    // "n2-highmem-8", "c4a-highmem-4-lssd".
+    // cpu_count must match the number of vCPUs in the machine type.
+    string machine_type = 4;
   }
 
   // Details of a single node in the instance.
-  // Nodes in an AlloyDB instance are ephemereal, they can change during
+  // Nodes in an AlloyDB instance are ephemeral, they can change during
   // update, failover, autohealing and resize operations.
   message Node {
-    // The Compute Engine zone of the VM e.g. "us-central1-b".
-    string zone_id = 1;
+    // Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
+    string zone_id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-    // The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
-    string id = 2;
+    // Output only. The identifier of the VM e.g.
+    // "test-read-0601-407e52be-ms3l".
+    string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-    // The private IP address of the VM e.g. "10.57.0.34".
-    string ip = 3;
+    // Output only. The private IP address of the VM e.g. "10.57.0.34".
+    string ip = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-    // Determined by state of the compute VM and postgres-service health.
-    // Compute VM state can have values listed in
+    // Output only. Determined by state of the compute VM and postgres-service
+    // health. Compute VM state can have values listed in
     // https://cloud.google.com/compute/docs/instances/instance-life-cycle and
     // postgres-service health can have values: HEALTHY and UNHEALTHY.
-    string state = 4;
+    string state = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
   // QueryInsights Instance specific configuration.
@@ -808,7 +852,7 @@ message Instance {
     // Output only. Track wait event types during query execution for an
     // instance. This flag is turned "on" by default but tracking is enabled
     // only after observability enabled flag is also turned on. This is
-    // read-only flag and only modifiable by producer API.
+    // read-only flag and only modifiable by internal API.
     optional bool track_wait_event_types = 4
         [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -831,6 +875,9 @@ message Instance {
     // Track client address for an instance.
     // If not set, default value is "off".
     optional bool track_client_address = 9;
+
+    // Whether assistive experiences are enabled for this AlloyDB instance.
+    optional bool assistive_experiences_enabled = 10;
   }
 
   // Configuration for a read pool instance.
@@ -878,6 +925,57 @@ message Instance {
     string network_attachment_resource = 1;
   }
 
+  // Configuration for setting up PSC service automation. Consumer projects in
+  // the configs will be allowlisted automatically for the instance.
+  message PscAutoConnectionConfig {
+    // The consumer project to which the PSC service automation endpoint will
+    // be created.
+    string consumer_project = 1;
+
+    // The consumer network for the PSC service automation, example:
+    // "projects/vpc-host-project/global/networks/default".
+    // The consumer network might be hosted a different project than the
+    // consumer project.
+    string consumer_network = 2;
+
+    // Output only. The IP address of the PSC service automation endpoint.
+    string ip_address = 3 [
+      (google.api.field_info).format = IPV4,
+      (google.api.field_behavior) = OUTPUT_ONLY
+    ];
+
+    // Output only. The status of the PSC service automation connection.
+    // Possible values:
+    //   "STATE_UNSPECIFIED" - An invalid state as the default case.
+    //   "ACTIVE" - The connection has been created successfully.
+    //   "FAILED" - The connection is not functional since some resources on the
+    // connection fail to be created.
+    //   "CREATING" - The connection is being created.
+    //   "DELETING" - The connection is being deleted.
+    //   "CREATE_REPAIRING" - The connection is being repaired to complete
+    // creation.
+    //   "DELETE_REPAIRING" - The connection is being repaired to complete
+    // deletion.
+    string status = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. The status of the service connection policy.
+    // Possible values:
+    //   "STATE_UNSPECIFIED" - Default state, when Connection Map is created
+    // initially.
+    //   "VALID" - Set when policy and map configuration is valid, and their
+    // matching can lead to allowing creation of PSC Connections subject to
+    // other constraints like connections limit.
+    //   "CONNECTION_POLICY_MISSING" - No Service Connection Policy found for
+    // this network and Service Class
+    //   "POLICY_LIMIT_REACHED" - Service Connection Policy limit reached for
+    //   this network and Service Class
+    //   "CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED" - The consumer instance
+    // project is not in AllowedGoogleProducersResourceHierarchyLevels of the
+    // matching ServiceConnectionPolicy.
+    string consumer_network_status = 5
+        [(google.api.field_behavior) = OUTPUT_ONLY];
+  }
+
   // PscInstanceConfig contains PSC related configuration at an
   // instance level.
   message PscInstanceConfig {
@@ -903,6 +1001,10 @@ message Instance {
     // interface.
     repeated PscInterfaceConfig psc_interface_configs = 8
         [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Configurations for setting up PSC service automation.
+    repeated PscAutoConnectionConfig psc_auto_connections = 9
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Metadata related to instance-level network configuration.
@@ -923,6 +1025,46 @@ message Instance {
     // Optional. Enabling an outbound public IP address to support a database
     // server sending requests out into the internet.
     bool enable_outbound_public_ip = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Output only. The resource link for the VPC network in which instance
+    // resources are created and from which they are accessible via Private IP.
+    // This will be the same value as the parent cluster's network. It is
+    // specified in the form: //
+    // `projects/{project_number}/global/networks/{network_id}`.
+    string network = 4 [
+      (google.api.field_behavior) = OUTPUT_ONLY,
+      (google.api.resource_reference) = {
+        type: "compute.googleapis.com/Network"
+      }
+    ];
+
+    // Optional. Name of the allocated IP range for the private IP AlloyDB
+    // instance, for example: "google-managed-services-default". If set, the
+    // instance IPs will be created from this allocated range and will override
+    // the IP range used by the parent cluster. The range name must comply with
+    // [RFC 1035](http://datatracker.ietf.org/doc/html/rfc1035). Specifically,
+    // the name must be 1-63 characters long and match the regular expression
+    // [a-z]([-a-z0-9]*[a-z0-9])?.
+    string allocated_ip_range_override = 5
+        [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Configuration for Managed Connection Pool (MCP).
+  message ConnectionPoolConfig {
+    // The pool mode. Defaults to `POOL_MODE_TRANSACTION`.
+    enum PoolMode {
+      // The pool mode is not specified. Defaults to `POOL_MODE_TRANSACTION`.
+      POOL_MODE_UNSPECIFIED = 0;
+
+      // Server is released back to pool after a client disconnects.
+      POOL_MODE_SESSION = 1;
+
+      // Server is released back to pool after a transaction finishes.
+      POOL_MODE_TRANSACTION = 2;
+    }
+
+    // Optional. Whether to enable Managed Connection Pool (MCP).
+    bool enabled = 12 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Instance State
@@ -998,6 +1140,18 @@ message Instance {
     REGIONAL = 2;
   }
 
+  // Specifies whether an instance needs to spin up.
+  enum ActivationPolicy {
+    // The policy is not specified.
+    ACTIVATION_POLICY_UNSPECIFIED = 0;
+
+    // The instance is running.
+    ALWAYS = 1;
+
+    // The instance is not running.
+    NEVER = 2;
+  }
+
   // Output only. The name of the instance resource with the format:
   //  * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id}
   // where the cluster and instance ID segments should satisfy the regex
@@ -1057,11 +1211,13 @@ message Instance {
   // zone with available capacity.
   string gce_zone = 12;
 
-  // Database flags. Set at instance level.
-  //  * They are copied from primary instance on read instance creation.
-  //  * Read instances can set new or override existing flags that are relevant
-  //    for reads, e.g. for enabling columnar cache on a read instance. Flags
-  //    set on read instance may or may not be present on primary.
+  // Database flags. Set at the instance level.
+  // They are copied from the primary instance on secondary instance creation.
+  // Flags that have restrictions default to the value at primary
+  // instance on read instances during creation. Read instances can set new
+  // flags or override existing flags that are relevant for reads, for example,
+  // for enabling columnar cache on a read instance. Flags set on read instance
+  // might or might not be present on the primary instance.
   //
   //
   // This is a list of "key": "value" pairs.
@@ -1143,16 +1299,33 @@ message Instance {
   InstanceNetworkConfig network_config = 29
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Configuration parameters related to the Gemini in Databases
-  // add-on.
+  // Optional. Deprecated and unused. This field will be removed in the near
+  // future.
   GeminiInstanceConfig gemini_config = 33
-      [(google.api.field_behavior) = OPTIONAL];
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
 
   // Output only. All outbound public IP addresses configured for the instance.
   repeated string outbound_public_ip_addresses = 34 [
     (google.api.field_info).format = IPV4,
     (google.api.field_behavior) = OUTPUT_ONLY
   ];
+
+  // Optional. Specifies whether an instance needs to spin up. Once the instance
+  // is active, the activation policy can be updated to the `NEVER` to stop the
+  // instance. Likewise, the activation policy can be updated to `ALWAYS` to
+  // start the instance.
+  // There are restrictions around when an instance can/cannot be activated (for
+  // example, a read pool instance should be stopped before stopping primary
+  // etc.). Please refer to the API documentation for more details.
+  ActivationPolicy activation_policy = 35
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The configuration for Managed Connection Pool (MCP).
+  ConnectionPoolConfig connection_pool_config = 37
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Output only. Configuration parameters related to Gemini Cloud Assist.
+  GCAInstanceConfig gca_config = 38 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // ConnectionInfo singleton resource.
@@ -1287,11 +1460,18 @@ message Backup {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Update time stamp
+  //
+  // Users should not infer any meaning from this field. Its value is generally
+  // unrelated to the timing of the backup creation operation.
   google.protobuf.Timestamp update_time = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Delete time stamp
   google.protobuf.Timestamp delete_time = 15
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Timestamp when the resource finished being created.
+  google.protobuf.Timestamp create_completion_time = 26
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Labels as key value pairs
@@ -1431,6 +1611,18 @@ message SupportedDatabaseFlag {
     NONE = 4;
   }
 
+  // The scope of the flag.
+  enum Scope {
+    // The scope of the flag is not specified. Default is DATABASE.
+    SCOPE_UNSPECIFIED = 0;
+
+    // The flag is a database flag.
+    DATABASE = 1;
+
+    // The flag is a connection pool flag.
+    CONNECTION_POOL = 2;
+  }
+
   // The restrictions on the flag value per type.
   oneof restrictions {
     // Restriction on STRING type value.
@@ -1438,6 +1630,15 @@ message SupportedDatabaseFlag {
 
     // Restriction on INTEGER type value.
     IntegerRestrictions integer_restrictions = 8;
+  }
+
+  // The recommended value for the flag by type, if applicable.
+  oneof recommended_value {
+    // The recommended value for a STRING flag.
+    string recommended_string_value = 10;
+
+    // The recommended value for an INTEGER flag.
+    google.protobuf.Int64Value recommended_integer_value = 11;
   }
 
   // The name of the flag resource, following Google Cloud conventions, e.g.:
@@ -1463,6 +1664,9 @@ message SupportedDatabaseFlag {
   // will automatically restart the database (making sure to satisfy any
   // availability SLO's).
   bool requires_db_restart = 6;
+
+  // The scope of the flag.
+  Scope scope = 9;
 }
 
 // Message describing User object.

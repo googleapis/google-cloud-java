@@ -16,6 +16,7 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -219,6 +220,28 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to deleteReaction. */
   public UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteReactionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomEmoji. */
+  public UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).createCustomEmojiSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomEmoji. */
+  public UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getCustomEmojiSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomEmojis. */
+  public PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listCustomEmojisSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomEmoji. */
+  public UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).deleteCustomEmojiSettings();
   }
 
   /** Returns the object with the settings used for calls to getSpaceReadState. */
@@ -505,6 +528,29 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return getStubSettingsBuilder().deleteReactionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomEmoji. */
+    public UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings() {
+      return getStubSettingsBuilder().createCustomEmojiSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomEmoji. */
+    public UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+      return getStubSettingsBuilder().getCustomEmojiSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomEmojis. */
+    public PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings() {
+      return getStubSettingsBuilder().listCustomEmojisSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomEmoji. */
+    public UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+      return getStubSettingsBuilder().deleteCustomEmojiSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSpaceReadState. */

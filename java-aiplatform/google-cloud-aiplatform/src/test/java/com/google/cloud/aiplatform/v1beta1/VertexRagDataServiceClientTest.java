@@ -120,6 +120,8 @@ public class VertexRagDataServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -177,6 +179,8 @@ public class VertexRagDataServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -234,6 +238,8 @@ public class VertexRagDataServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -288,6 +294,8 @@ public class VertexRagDataServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -334,6 +342,8 @@ public class VertexRagDataServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
             .setRagFilesCount(-477680736)
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setCorpusTypeConfig(RagCorpus.CorpusTypeConfig.newBuilder().build())
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -739,6 +749,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFileStatus(FileStatus.newBuilder().build())
+            .setUserMetadata("userMetadata-1217933286")
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -784,6 +795,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFileStatus(FileStatus.newBuilder().build())
+            .setUserMetadata("userMetadata-1217933286")
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 

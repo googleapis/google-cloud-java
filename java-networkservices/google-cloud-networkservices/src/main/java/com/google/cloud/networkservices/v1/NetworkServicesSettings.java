@@ -17,14 +17,19 @@
 package com.google.cloud.networkservices.v1;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -183,6 +188,92 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
       deleteEndpointPolicyOperationSettings() {
     return ((NetworkServicesStubSettings) getStubSettings())
         .deleteEndpointPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listWasmPluginVersions. */
+  public PagedCallSettings<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listWasmPluginVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getWasmPluginVersion. */
+  public UnaryCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getWasmPluginVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPluginVersion. */
+  public UnaryCallSettings<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createWasmPluginVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPluginVersion. */
+  public OperationCallSettings<CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .createWasmPluginVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPluginVersion. */
+  public UnaryCallSettings<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteWasmPluginVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPluginVersion. */
+  public OperationCallSettings<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .deleteWasmPluginVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listWasmPlugins. */
+  public PagedCallSettings<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+      listWasmPluginsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listWasmPluginsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getWasmPlugin. */
+  public UnaryCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getWasmPluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPlugin. */
+  public UnaryCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createWasmPluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWasmPlugin. */
+  public OperationCallSettings<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createWasmPluginOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateWasmPlugin. */
+  public UnaryCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateWasmPluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateWasmPlugin. */
+  public OperationCallSettings<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateWasmPluginOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPlugin. */
+  public UnaryCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteWasmPluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteWasmPlugin. */
+  public OperationCallSettings<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteWasmPluginOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listGateways. */
@@ -431,6 +522,18 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
         .createServiceBindingOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public UnaryCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateServiceBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceBinding. */
+  public OperationCallSettings<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .updateServiceBindingOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteServiceBinding. */
   public UnaryCallSettings<DeleteServiceBindingRequest, Operation> deleteServiceBindingSettings() {
     return ((NetworkServicesStubSettings) getStubSettings()).deleteServiceBindingSettings();
@@ -485,6 +588,87 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
   public OperationCallSettings<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationSettings() {
     return ((NetworkServicesStubSettings) getStubSettings()).deleteMeshOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listServiceLbPolicies. */
+  public PagedCallSettings<
+          ListServiceLbPoliciesRequest,
+          ListServiceLbPoliciesResponse,
+          ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listServiceLbPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getServiceLbPolicy. */
+  public UnaryCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public UnaryCallSettings<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createServiceLbPolicy. */
+  public OperationCallSettings<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .createServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public UnaryCallSettings<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateServiceLbPolicy. */
+  public OperationCallSettings<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .updateServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public UnaryCallSettings<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteServiceLbPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLbPolicy. */
+  public OperationCallSettings<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings())
+        .deleteServiceLbPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGatewayRouteView. */
+  public UnaryCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getGatewayRouteViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMeshRouteView. */
+  public UnaryCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getMeshRouteViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGatewayRouteViews. */
+  public PagedCallSettings<
+          ListGatewayRouteViewsRequest,
+          ListGatewayRouteViewsResponse,
+          ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listGatewayRouteViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMeshRouteViews. */
+  public PagedCallSettings<
+          ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listMeshRouteViewsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -677,6 +861,94 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
     public OperationCallSettings.Builder<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
         deleteEndpointPolicyOperationSettings() {
       return getStubSettingsBuilder().deleteEndpointPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWasmPluginVersions. */
+    public PagedCallSettings.Builder<
+            ListWasmPluginVersionsRequest,
+            ListWasmPluginVersionsResponse,
+            ListWasmPluginVersionsPagedResponse>
+        listWasmPluginVersionsSettings() {
+      return getStubSettingsBuilder().listWasmPluginVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getWasmPluginVersion. */
+    public UnaryCallSettings.Builder<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionSettings() {
+      return getStubSettingsBuilder().getWasmPluginVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPluginVersion. */
+    public UnaryCallSettings.Builder<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionSettings() {
+      return getStubSettingsBuilder().createWasmPluginVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPluginVersion. */
+    public OperationCallSettings.Builder<
+            CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+        createWasmPluginVersionOperationSettings() {
+      return getStubSettingsBuilder().createWasmPluginVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPluginVersion. */
+    public UnaryCallSettings.Builder<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionSettings() {
+      return getStubSettingsBuilder().deleteWasmPluginVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPluginVersion. */
+    public OperationCallSettings.Builder<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+        deleteWasmPluginVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteWasmPluginVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWasmPlugins. */
+    public PagedCallSettings.Builder<
+            ListWasmPluginsRequest, ListWasmPluginsResponse, ListWasmPluginsPagedResponse>
+        listWasmPluginsSettings() {
+      return getStubSettingsBuilder().listWasmPluginsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getWasmPlugin. */
+    public UnaryCallSettings.Builder<GetWasmPluginRequest, WasmPlugin> getWasmPluginSettings() {
+      return getStubSettingsBuilder().getWasmPluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPlugin. */
+    public UnaryCallSettings.Builder<CreateWasmPluginRequest, Operation>
+        createWasmPluginSettings() {
+      return getStubSettingsBuilder().createWasmPluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWasmPlugin. */
+    public OperationCallSettings.Builder<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        createWasmPluginOperationSettings() {
+      return getStubSettingsBuilder().createWasmPluginOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateWasmPlugin. */
+    public UnaryCallSettings.Builder<UpdateWasmPluginRequest, Operation>
+        updateWasmPluginSettings() {
+      return getStubSettingsBuilder().updateWasmPluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateWasmPlugin. */
+    public OperationCallSettings.Builder<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+        updateWasmPluginOperationSettings() {
+      return getStubSettingsBuilder().updateWasmPluginOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPlugin. */
+    public UnaryCallSettings.Builder<DeleteWasmPluginRequest, Operation>
+        deleteWasmPluginSettings() {
+      return getStubSettingsBuilder().deleteWasmPluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWasmPlugin. */
+    public OperationCallSettings.Builder<DeleteWasmPluginRequest, Empty, OperationMetadata>
+        deleteWasmPluginOperationSettings() {
+      return getStubSettingsBuilder().deleteWasmPluginOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listGateways. */
@@ -932,6 +1204,19 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
       return getStubSettingsBuilder().createServiceBindingOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public UnaryCallSettings.Builder<UpdateServiceBindingRequest, Operation>
+        updateServiceBindingSettings() {
+      return getStubSettingsBuilder().updateServiceBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceBinding. */
+    public OperationCallSettings.Builder<
+            UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+        updateServiceBindingOperationSettings() {
+      return getStubSettingsBuilder().updateServiceBindingOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteServiceBinding. */
     public UnaryCallSettings.Builder<DeleteServiceBindingRequest, Operation>
         deleteServiceBindingSettings() {
@@ -986,6 +1271,87 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
     public OperationCallSettings.Builder<DeleteMeshRequest, Empty, OperationMetadata>
         deleteMeshOperationSettings() {
       return getStubSettingsBuilder().deleteMeshOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listServiceLbPolicies. */
+    public PagedCallSettings.Builder<
+            ListServiceLbPoliciesRequest,
+            ListServiceLbPoliciesResponse,
+            ListServiceLbPoliciesPagedResponse>
+        listServiceLbPoliciesSettings() {
+      return getStubSettingsBuilder().listServiceLbPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getServiceLbPolicy. */
+    public UnaryCallSettings.Builder<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicySettings() {
+      return getStubSettingsBuilder().getServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public UnaryCallSettings.Builder<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicySettings() {
+      return getStubSettingsBuilder().createServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        createServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().createServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public UnaryCallSettings.Builder<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicySettings() {
+      return getStubSettingsBuilder().updateServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateServiceLbPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+        updateServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public UnaryCallSettings.Builder<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicySettings() {
+      return getStubSettingsBuilder().deleteServiceLbPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLbPolicy. */
+    public OperationCallSettings.Builder<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+        deleteServiceLbPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteServiceLbPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewayRouteView. */
+    public UnaryCallSettings.Builder<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewSettings() {
+      return getStubSettingsBuilder().getGatewayRouteViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMeshRouteView. */
+    public UnaryCallSettings.Builder<GetMeshRouteViewRequest, MeshRouteView>
+        getMeshRouteViewSettings() {
+      return getStubSettingsBuilder().getMeshRouteViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewayRouteViews. */
+    public PagedCallSettings.Builder<
+            ListGatewayRouteViewsRequest,
+            ListGatewayRouteViewsResponse,
+            ListGatewayRouteViewsPagedResponse>
+        listGatewayRouteViewsSettings() {
+      return getStubSettingsBuilder().listGatewayRouteViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMeshRouteViews. */
+    public PagedCallSettings.Builder<
+            ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
+        listMeshRouteViewsSettings() {
+      return getStubSettingsBuilder().listMeshRouteViewsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

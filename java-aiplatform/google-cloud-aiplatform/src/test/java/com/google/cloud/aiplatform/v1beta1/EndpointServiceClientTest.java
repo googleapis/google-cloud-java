@@ -137,6 +137,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -211,6 +212,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -285,6 +287,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -362,6 +365,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -439,6 +443,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -504,6 +509,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -655,6 +661,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -721,6 +728,7 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

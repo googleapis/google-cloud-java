@@ -445,7 +445,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve the specified case.
+     * Retrieve a case.
      * </pre>
      */
     default void getCase(
@@ -458,11 +458,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all cases under the specified parent.
-     * Note: Listing cases under an Organization returns only the cases directly
-     * parented by that organization. To retrieve all cases under an organization,
-     * including cases parented by projects under that organization, use
-     * `cases.search`.
+     * Retrieve all cases under a parent, but not its children.
+     * For example, listing cases under an organization only returns the cases
+     * that are directly parented by that organization. To retrieve cases
+     * under an organization and its projects, use `cases.search`.
      * </pre>
      */
     default void listCases(
@@ -476,7 +475,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Search cases using the specified query.
+     * Search for cases using a query.
      * </pre>
      */
     default void searchCases(
@@ -491,9 +490,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Create a new case and associate it with the given Google Cloud Resource.
-     * The case object must have the following fields set: `display_name`,
-     * `description`, `classification`, and `priority`.
+     * Create a new case and associate it with a parent.
+     * It must have the following fields set: `display_name`, `description`,
+     * `classification`, and `priority`. If you're just testing the API and don't
+     * want to route your case to an agent, set `testCase=true`.
      * </pre>
      */
     default void createCase(
@@ -506,7 +506,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Update the specified case. Only a subset of fields can be updated.
+     * Update a case. Only some fields can be updated.
      * </pre>
      */
     default void updateCase(
@@ -519,12 +519,12 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Escalate a case. Escalating a case will initiate the Google Cloud Support
-     * escalation management process.
-     * This operation is only available to certain Customer Care tiers. Go to
+     * Escalate a case, starting the Google Cloud Support escalation management
+     * process.
+     * This operation is only available for some support services. Go to
      * https://cloud.google.com/support and look for 'Technical support
-     * escalations' in the feature list to find out which tiers are able to
-     * perform escalations.
+     * escalations' in the feature list to find out which ones let you
+     * do that.
      * </pre>
      */
     default void escalateCase(
@@ -538,7 +538,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Close the specified case.
+     * Close a case.
      * </pre>
      */
     default void closeCase(
@@ -551,10 +551,14 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve valid classifications to be used when creating a support case.
-     * The classications are hierarchical, with each classification containing
-     * all levels of the hierarchy, separated by " &gt; ". For example "Technical
-     * Issue &gt; Compute &gt; Compute Engine".
+     * Retrieve valid classifications to use when creating a support case.
+     * Classifications are hierarchical. Each classification is a string
+     * containing all levels of the hierarchy separated by `" &gt; "`. For example,
+     * `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+     * Classification IDs returned by this endpoint are valid for at least six
+     * months. When a classification is deactivated, this endpoint immediately
+     * stops returning it. After six months, `case.create` requests using the
+     * classification will fail.
      * </pre>
      */
     default void searchCaseClassifications(
@@ -604,7 +608,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve the specified case.
+     * Retrieve a case.
      * </pre>
      */
     public void getCase(
@@ -618,11 +622,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all cases under the specified parent.
-     * Note: Listing cases under an Organization returns only the cases directly
-     * parented by that organization. To retrieve all cases under an organization,
-     * including cases parented by projects under that organization, use
-     * `cases.search`.
+     * Retrieve all cases under a parent, but not its children.
+     * For example, listing cases under an organization only returns the cases
+     * that are directly parented by that organization. To retrieve cases
+     * under an organization and its projects, use `cases.search`.
      * </pre>
      */
     public void listCases(
@@ -637,7 +640,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Search cases using the specified query.
+     * Search for cases using a query.
      * </pre>
      */
     public void searchCases(
@@ -654,9 +657,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Create a new case and associate it with the given Google Cloud Resource.
-     * The case object must have the following fields set: `display_name`,
-     * `description`, `classification`, and `priority`.
+     * Create a new case and associate it with a parent.
+     * It must have the following fields set: `display_name`, `description`,
+     * `classification`, and `priority`. If you're just testing the API and don't
+     * want to route your case to an agent, set `testCase=true`.
      * </pre>
      */
     public void createCase(
@@ -670,7 +674,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Update the specified case. Only a subset of fields can be updated.
+     * Update a case. Only some fields can be updated.
      * </pre>
      */
     public void updateCase(
@@ -684,12 +688,12 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Escalate a case. Escalating a case will initiate the Google Cloud Support
-     * escalation management process.
-     * This operation is only available to certain Customer Care tiers. Go to
+     * Escalate a case, starting the Google Cloud Support escalation management
+     * process.
+     * This operation is only available for some support services. Go to
      * https://cloud.google.com/support and look for 'Technical support
-     * escalations' in the feature list to find out which tiers are able to
-     * perform escalations.
+     * escalations' in the feature list to find out which ones let you
+     * do that.
      * </pre>
      */
     public void escalateCase(
@@ -705,7 +709,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Close the specified case.
+     * Close a case.
      * </pre>
      */
     public void closeCase(
@@ -719,10 +723,14 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve valid classifications to be used when creating a support case.
-     * The classications are hierarchical, with each classification containing
-     * all levels of the hierarchy, separated by " &gt; ". For example "Technical
-     * Issue &gt; Compute &gt; Compute Engine".
+     * Retrieve valid classifications to use when creating a support case.
+     * Classifications are hierarchical. Each classification is a string
+     * containing all levels of the hierarchy separated by `" &gt; "`. For example,
+     * `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+     * Classification IDs returned by this endpoint are valid for at least six
+     * months. When a classification is deactivated, this endpoint immediately
+     * stops returning it. After six months, `case.create` requests using the
+     * classification will fail.
      * </pre>
      */
     public void searchCaseClassifications(
@@ -759,7 +767,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve the specified case.
+     * Retrieve a case.
      * </pre>
      */
     public com.google.cloud.support.v2.Case getCase(
@@ -772,11 +780,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all cases under the specified parent.
-     * Note: Listing cases under an Organization returns only the cases directly
-     * parented by that organization. To retrieve all cases under an organization,
-     * including cases parented by projects under that organization, use
-     * `cases.search`.
+     * Retrieve all cases under a parent, but not its children.
+     * For example, listing cases under an organization only returns the cases
+     * that are directly parented by that organization. To retrieve cases
+     * under an organization and its projects, use `cases.search`.
      * </pre>
      */
     public com.google.cloud.support.v2.ListCasesResponse listCases(
@@ -789,7 +796,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Search cases using the specified query.
+     * Search for cases using a query.
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCasesResponse searchCases(
@@ -802,9 +809,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Create a new case and associate it with the given Google Cloud Resource.
-     * The case object must have the following fields set: `display_name`,
-     * `description`, `classification`, and `priority`.
+     * Create a new case and associate it with a parent.
+     * It must have the following fields set: `display_name`, `description`,
+     * `classification`, and `priority`. If you're just testing the API and don't
+     * want to route your case to an agent, set `testCase=true`.
      * </pre>
      */
     public com.google.cloud.support.v2.Case createCase(
@@ -817,7 +825,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Update the specified case. Only a subset of fields can be updated.
+     * Update a case. Only some fields can be updated.
      * </pre>
      */
     public com.google.cloud.support.v2.Case updateCase(
@@ -830,12 +838,12 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Escalate a case. Escalating a case will initiate the Google Cloud Support
-     * escalation management process.
-     * This operation is only available to certain Customer Care tiers. Go to
+     * Escalate a case, starting the Google Cloud Support escalation management
+     * process.
+     * This operation is only available for some support services. Go to
      * https://cloud.google.com/support and look for 'Technical support
-     * escalations' in the feature list to find out which tiers are able to
-     * perform escalations.
+     * escalations' in the feature list to find out which ones let you
+     * do that.
      * </pre>
      */
     public com.google.cloud.support.v2.Case escalateCase(
@@ -848,7 +856,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Close the specified case.
+     * Close a case.
      * </pre>
      */
     public com.google.cloud.support.v2.Case closeCase(
@@ -861,10 +869,14 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve valid classifications to be used when creating a support case.
-     * The classications are hierarchical, with each classification containing
-     * all levels of the hierarchy, separated by " &gt; ". For example "Technical
-     * Issue &gt; Compute &gt; Compute Engine".
+     * Retrieve valid classifications to use when creating a support case.
+     * Classifications are hierarchical. Each classification is a string
+     * containing all levels of the hierarchy separated by `" &gt; "`. For example,
+     * `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+     * Classification IDs returned by this endpoint are valid for at least six
+     * months. When a classification is deactivated, this endpoint immediately
+     * stops returning it. After six months, `case.create` requests using the
+     * classification will fail.
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCaseClassificationsResponse searchCaseClassifications(
@@ -897,7 +909,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve the specified case.
+     * Retrieve a case.
      * </pre>
      */
     public com.google.cloud.support.v2.Case getCase(
@@ -910,11 +922,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all cases under the specified parent.
-     * Note: Listing cases under an Organization returns only the cases directly
-     * parented by that organization. To retrieve all cases under an organization,
-     * including cases parented by projects under that organization, use
-     * `cases.search`.
+     * Retrieve all cases under a parent, but not its children.
+     * For example, listing cases under an organization only returns the cases
+     * that are directly parented by that organization. To retrieve cases
+     * under an organization and its projects, use `cases.search`.
      * </pre>
      */
     public com.google.cloud.support.v2.ListCasesResponse listCases(
@@ -927,7 +938,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Search cases using the specified query.
+     * Search for cases using a query.
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCasesResponse searchCases(
@@ -940,9 +951,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Create a new case and associate it with the given Google Cloud Resource.
-     * The case object must have the following fields set: `display_name`,
-     * `description`, `classification`, and `priority`.
+     * Create a new case and associate it with a parent.
+     * It must have the following fields set: `display_name`, `description`,
+     * `classification`, and `priority`. If you're just testing the API and don't
+     * want to route your case to an agent, set `testCase=true`.
      * </pre>
      */
     public com.google.cloud.support.v2.Case createCase(
@@ -955,7 +967,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Update the specified case. Only a subset of fields can be updated.
+     * Update a case. Only some fields can be updated.
      * </pre>
      */
     public com.google.cloud.support.v2.Case updateCase(
@@ -968,12 +980,12 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Escalate a case. Escalating a case will initiate the Google Cloud Support
-     * escalation management process.
-     * This operation is only available to certain Customer Care tiers. Go to
+     * Escalate a case, starting the Google Cloud Support escalation management
+     * process.
+     * This operation is only available for some support services. Go to
      * https://cloud.google.com/support and look for 'Technical support
-     * escalations' in the feature list to find out which tiers are able to
-     * perform escalations.
+     * escalations' in the feature list to find out which ones let you
+     * do that.
      * </pre>
      */
     public com.google.cloud.support.v2.Case escalateCase(
@@ -986,7 +998,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Close the specified case.
+     * Close a case.
      * </pre>
      */
     public com.google.cloud.support.v2.Case closeCase(
@@ -999,10 +1011,14 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve valid classifications to be used when creating a support case.
-     * The classications are hierarchical, with each classification containing
-     * all levels of the hierarchy, separated by " &gt; ". For example "Technical
-     * Issue &gt; Compute &gt; Compute Engine".
+     * Retrieve valid classifications to use when creating a support case.
+     * Classifications are hierarchical. Each classification is a string
+     * containing all levels of the hierarchy separated by `" &gt; "`. For example,
+     * `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+     * Classification IDs returned by this endpoint are valid for at least six
+     * months. When a classification is deactivated, this endpoint immediately
+     * stops returning it. After six months, `case.create` requests using the
+     * classification will fail.
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCaseClassificationsResponse searchCaseClassifications(
@@ -1035,7 +1051,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve the specified case.
+     * Retrieve a case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Case>
@@ -1048,11 +1064,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all cases under the specified parent.
-     * Note: Listing cases under an Organization returns only the cases directly
-     * parented by that organization. To retrieve all cases under an organization,
-     * including cases parented by projects under that organization, use
-     * `cases.search`.
+     * Retrieve all cases under a parent, but not its children.
+     * For example, listing cases under an organization only returns the cases
+     * that are directly parented by that organization. To retrieve cases
+     * under an organization and its projects, use `cases.search`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1066,7 +1081,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Search cases using the specified query.
+     * Search for cases using a query.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1080,9 +1095,10 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Create a new case and associate it with the given Google Cloud Resource.
-     * The case object must have the following fields set: `display_name`,
-     * `description`, `classification`, and `priority`.
+     * Create a new case and associate it with a parent.
+     * It must have the following fields set: `display_name`, `description`,
+     * `classification`, and `priority`. If you're just testing the API and don't
+     * want to route your case to an agent, set `testCase=true`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Case>
@@ -1095,7 +1111,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Update the specified case. Only a subset of fields can be updated.
+     * Update a case. Only some fields can be updated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Case>
@@ -1108,12 +1124,12 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Escalate a case. Escalating a case will initiate the Google Cloud Support
-     * escalation management process.
-     * This operation is only available to certain Customer Care tiers. Go to
+     * Escalate a case, starting the Google Cloud Support escalation management
+     * process.
+     * This operation is only available for some support services. Go to
      * https://cloud.google.com/support and look for 'Technical support
-     * escalations' in the feature list to find out which tiers are able to
-     * perform escalations.
+     * escalations' in the feature list to find out which ones let you
+     * do that.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Case>
@@ -1126,7 +1142,7 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Close the specified case.
+     * Close a case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.support.v2.Case>
@@ -1139,10 +1155,14 @@ public final class CaseServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve valid classifications to be used when creating a support case.
-     * The classications are hierarchical, with each classification containing
-     * all levels of the hierarchy, separated by " &gt; ". For example "Technical
-     * Issue &gt; Compute &gt; Compute Engine".
+     * Retrieve valid classifications to use when creating a support case.
+     * Classifications are hierarchical. Each classification is a string
+     * containing all levels of the hierarchy separated by `" &gt; "`. For example,
+     * `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+     * Classification IDs returned by this endpoint are valid for at least six
+     * months. When a classification is deactivated, this endpoint immediately
+     * stops returning it. After six months, `case.create` requests using the
+     * classification will fail.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

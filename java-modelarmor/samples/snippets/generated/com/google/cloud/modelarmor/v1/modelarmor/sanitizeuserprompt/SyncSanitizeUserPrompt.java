@@ -19,6 +19,7 @@ package com.google.cloud.modelarmor.v1.samples;
 // [START modelarmor_v1_generated_ModelArmor_SanitizeUserPrompt_sync]
 import com.google.cloud.modelarmor.v1.DataItem;
 import com.google.cloud.modelarmor.v1.ModelArmorClient;
+import com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata;
 import com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest;
 import com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse;
 import com.google.cloud.modelarmor.v1.TemplateName;
@@ -40,6 +41,8 @@ public class SyncSanitizeUserPrompt {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
     }
