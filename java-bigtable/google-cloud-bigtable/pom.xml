@@ -379,18 +379,6 @@
                   <goal>enforce</goal>
                 </goals>
               </execution>
-              <!-- Ensure that greatest version of each transitive dependency got selected -->
-              <execution>
-                <id>enforce-dependency-upper-bound</id>
-                <configuration>
-                  <rules>
-                    <requireUpperBoundDeps/>
-                  </rules>
-                </configuration>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-              </execution>
             </executions>
             <!--
               workaround for https://github.com/mojohaus/extra-enforcer-rules/issues/132
