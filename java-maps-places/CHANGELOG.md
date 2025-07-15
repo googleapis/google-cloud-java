@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.39.0 (2025-07-11)
+
+### Bug Fixes
+
+* clarify behavior of primary types and weekday text ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
 ## 0.38.0 (2025-06-25)
 
 ### Dependencies
