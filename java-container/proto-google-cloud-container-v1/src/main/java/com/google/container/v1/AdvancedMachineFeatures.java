@@ -68,7 +68,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Level of PMU access
+   * Level of PMU access.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.AdvancedMachineFeatures.PerformanceMonitoringUnit}

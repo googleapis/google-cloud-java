@@ -98,12 +98,12 @@ public final class UspsDataProto {
           + "\023address_record_type\030\031 \001(\t\022\027\n"
           + "\017default_address\030\032 \001(\010\022\025\n\r"
           + "error_message\030\033 \001(\t\022\026\n"
-          + "\016cass_processed\030\034 \001(\010B\212\002\n"
+          + "\016cass_processed\030\034 \001(\010B\207\002\n"
           + "$com.google.maps.addressvalidation.v1B\r"
           + "UspsDataProtoP\001ZXcloud.google.com/go/maps/addressvalidation/api"
-          + "v1/addressvalidationpb;addressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002"
-          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidati"
-          + "on\\V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
+          + "v1/addressvalidationpb;addressvalidationpb\242\002\007GMPAVV1\252\002"
+          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidation\\"
+          + "V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

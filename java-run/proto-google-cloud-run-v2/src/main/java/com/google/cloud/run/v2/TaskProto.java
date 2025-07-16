@@ -85,7 +85,7 @@ public final class TaskProto {
           + "\014show_deleted\030\004 \001(\010\"V\n"
           + "\021ListTasksResponse\022(\n"
           + "\005tasks\030\001 \003(\0132\031.google.cloud.run.v2.Task\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\367\014\n"
+          + "\017next_page_token\030\002 \001(\t\"\315\r\n"
           + "\004Task\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\020\n"
           + "\003uid\030\002 \001(\tB\003\340A\003\022\027\n\n"
@@ -129,8 +129,9 @@ public final class TaskProto {
           + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\003\340A\003\022\024\n"
           + "\007log_uri\030  \001(\tB\003\340A\003\022\032\n\r"
           + "satisfies_pzs\030! \001(\010B\003\340A\003\022=\n\r"
-          + "node_selector\030$"
-          + " \001(\0132!.google.cloud.run.v2.NodeSelectorB\003\340A\003\022\021\n"
+          + "node_selector\030$ \001(\0132!.google.cloud.run.v2.NodeSelectorB\003\340A\003\0222\n"
+          + "\035gpu_zonal_redundancy_disabled\030%"
+          + " \001(\010B\006\340A\001\340A\003H\000\210\001\001\022\021\n"
           + "\004etag\030c \001(\tB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -138,22 +139,24 @@ public final class TaskProto {
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:w\352At\n"
-          + "\027run.googleapis.com/Task\022Vprojects/{proj"
-          + "ect}/locations/{location}/jobs/{job}/executions/{execution}/tasks/{task}R\001\001\"T\n"
+          + "\027run.googleapis.com/Task\022Vprojects/{project}/locations/{location}/jo"
+          + "bs/{job}/executions/{execution}/tasks/{task}R\001\001B \n"
+          + "\036_gpu_zonal_redundancy_disabled\"n\n"
           + "\021TaskAttemptResult\022\'\n"
           + "\006status\030\001 \001(\0132\022.google.rpc.StatusB\003\340A\003\022\026\n"
-          + "\texit_code\030\002 \001(\005B\003\340A\0032\226\003\n"
+          + "\texit_code\030\002 \001(\005B\003\340A\003\022\030\n"
+          + "\013term_signal\030\003 \001(\005B\003\340A\0032\226\003\n"
           + "\005Tasks\022\227\001\n"
-          + "\007GetTask\022#.google.cloud.run.v2.GetTaskRequest\032\031.google.cloud.run."
-          + "v2.Task\"L\332A\004name\202\323\344\223\002?\022=/v2/{name=projec"
-          + "ts/*/locations/*/jobs/*/executions/*/tasks/*}\022\252\001\n"
-          + "\tListTasks\022%.google.cloud.run.v2.ListTasksRequest\032&.google.cloud.run.v2"
-          + ".ListTasksResponse\"N\332A\006parent\202\323\344\223\002?\022=/v2"
-          + "/{parent=projects/*/locations/*/jobs/*/e"
-          + "xecutions/*}/tasks\032F\312A\022run.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/cloud-platformBQ\n"
-          + "\027com.google.cloud.run.v2B\tTaskProtoP\001Z)cloud.google.com/go/run/apiv"
-          + "2/runpb;runpbb\006proto3"
+          + "\007GetTask\022#.google.cloud.run.v2.GetTaskRequest\032\031.google.cloud.run.v2.Task\""
+          + "L\332A\004name\202\323\344\223\002?\022=/v2/{name=projects/*/loc"
+          + "ations/*/jobs/*/executions/*/tasks/*}\022\252\001\n"
+          + "\tListTasks\022%.google.cloud.run.v2.ListTasksRequest\032&.google.cloud.run.v2.ListTas"
+          + "ksResponse\"N\332A\006parent\202\323\344\223\002?\022=/v2/{parent"
+          + "=projects/*/locations/*/jobs/*/execution"
+          + "s/*}/tasks\032F\312A\022run.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platformBQ\n"
+          + "\027com.google.cloud.run.v2B\tTaskProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;"
+          + "runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -230,6 +233,7 @@ public final class TaskProto {
               "LogUri",
               "SatisfiesPzs",
               "NodeSelector",
+              "GpuZonalRedundancyDisabled",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Task_LabelsEntry_descriptor =
@@ -254,7 +258,7 @@ public final class TaskProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_TaskAttemptResult_descriptor,
             new java.lang.String[] {
-              "Status", "ExitCode",
+              "Status", "ExitCode", "TermSignal",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

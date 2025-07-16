@@ -71,14 +71,14 @@ public final class AddressProto {
           + "VEL_UNSPECIFIED\020\000\022\r\n\tCONFIRMED\020\001\022\035\n\031UNCO"
           + "NFIRMED_BUT_PLAUSIBLE\020\002\022\036\n\032UNCONFIRMED_A"
           + "ND_SUSPICIOUS\020\003\"4\n\rComponentName\022\014\n\004text"
-          + "\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tB\211\002\n$com.go"
+          + "\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tB\206\002\n$com.go"
           + "ogle.maps.addressvalidation.v1B\014AddressP"
           + "rotoP\001ZXcloud.google.com/go/maps/address"
           + "validation/apiv1/addressvalidationpb;add"
-          + "ressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002 Google.M"
-          + "aps.AddressValidation.V1\312\002 Google\\Maps\\A"
-          + "ddressValidation\\V1\352\002#Google::Maps::Addr"
-          + "essValidation::V1b\006proto3"
+          + "ressvalidationpb\242\002\007GMPAVV1\252\002 Google.Maps"
+          + ".AddressValidation.V1\312\002 Google\\Maps\\Addr"
+          + "essValidation\\V1\352\002#Google::Maps::Address"
+          + "Validation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

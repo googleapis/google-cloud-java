@@ -6449,7 +6449,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The initial node count for the pool. You must ensure that your
-   * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+   * Compute Engine [resource
+   * quota](https://cloud.google.com/compute/quotas)
    * is sufficient for this number of instances. You must also have available
    * firewall and routes quota.
    * </pre>
@@ -6474,8 +6475,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -6498,8 +6499,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -6522,8 +6523,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -6547,8 +6548,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -6881,7 +6882,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4260
+   *     google/container/v1/cluster_service.proto;l=4627
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -6912,7 +6913,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4260
+   *     google/container/v1/cluster_service.proto;l=4627
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -8843,7 +8844,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+     * Compute Engine [resource
+     * quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
@@ -8862,7 +8864,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+     * Compute Engine [resource
+     * quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
@@ -8885,7 +8888,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+     * Compute Engine [resource
+     * quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
@@ -8916,8 +8920,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -8941,8 +8945,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -8965,8 +8969,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -8990,8 +8994,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9015,8 +9019,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9048,8 +9052,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9080,8 +9084,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9109,8 +9113,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9137,8 +9141,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes should be located.
      *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -9950,7 +9954,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4260
+     *     google/container/v1/cluster_service.proto;l=4627
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -9980,7 +9984,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4260
+     *     google/container/v1/cluster_service.proto;l=4627
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -10010,7 +10014,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4260
+     *     google/container/v1/cluster_service.proto;l=4627
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10039,7 +10043,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4260
+     *     google/container/v1/cluster_service.proto;l=4627
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10064,7 +10068,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4260
+     *     google/container/v1/cluster_service.proto;l=4627
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

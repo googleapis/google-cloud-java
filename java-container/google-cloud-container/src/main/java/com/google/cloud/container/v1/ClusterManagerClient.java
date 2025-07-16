@@ -1471,6 +1471,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .addAllStoragePools(new ArrayList<String>())
    *           .setMaxRunDuration(Duration.newBuilder().build())
    *           .setFlexStart(true)
+   *           .setBootDisk(BootDisk.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1532,6 +1533,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .addAllStoragePools(new ArrayList<String>())
    *           .setMaxRunDuration(Duration.newBuilder().build())
    *           .setFlexStart(true)
+   *           .setBootDisk(BootDisk.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);

@@ -378,12 +378,18 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Indicates whether you want to enable support for GKE clients. By
-   * default, GKE clients are not supported.
+   * default, GKE clients are not supported. Deprecated. No longer required for
+   * GKE instance creation.
    * </pre>
    *
-   * <code>bool gke_support_enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool gke_support_enabled = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
+   *     google/cloud/lustre/v1/instance.proto;l=118
    * @return The gkeSupportEnabled.
    */
+  @java.lang.Deprecated
   boolean getGkeSupportEnabled();
 }

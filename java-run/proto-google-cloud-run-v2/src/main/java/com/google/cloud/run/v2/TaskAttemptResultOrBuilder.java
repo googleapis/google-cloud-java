@@ -72,6 +72,8 @@ public interface TaskAttemptResultOrBuilder
    * This may be unset if the container was unable to exit cleanly with a code
    * due to some other failure.
    * See status field for possible failure details.
+   *
+   * At most one of exit_code or term_signal will be set.
    * </pre>
    *
    * <code>int32 exit_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -79,4 +81,20 @@ public interface TaskAttemptResultOrBuilder
    * @return The exitCode.
    */
   int getExitCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Termination signal of the container. This is set to non-zero
+   * if the container is terminated by the system.
+   *
+   * At most one of exit_code or term_signal will be set.
+   * </pre>
+   *
+   * <code>int32 term_signal = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The termSignal.
+   */
+  int getTermSignal();
 }
