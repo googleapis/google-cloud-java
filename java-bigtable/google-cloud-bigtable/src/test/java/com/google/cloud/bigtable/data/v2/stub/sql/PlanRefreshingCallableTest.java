@@ -258,7 +258,10 @@ public class PlanRefreshingCallableTest {
     ExecuteQueryCallContext callContext =
         ExecuteQueryCallContext.create(preparedStatement.bind().build(), metadataFuture);
 
-    Duration originalAttemptTimeout = Duration.ofMillis(100);
+    // This deadline is used for the prepare call and the ultimate execute call after
+    // that completes. It needs to leave a lot of margin for error for the scheduler below to
+    // be slower than expected to resolve. Previously 100ms deadline was not enough.
+    Duration originalAttemptTimeout = Duration.ofMillis(5000);
     scheduler.schedule(
         () -> {
           prepareFuture.set(
@@ -278,6 +281,9 @@ public class PlanRefreshingCallableTest {
     callable.call(callContext, outerObserver, context);
     scheduler.shutdown();
     scheduler.awaitTermination(30, TimeUnit.SECONDS);
+    // Make sure prepare didn't time out and return an error.
+    // Otherwise, the observer should  not be done
+    assertFalse(outerObserver.isDone());
     GrpcCallContext grpcCallContext =
         (GrpcCallContext) innerCallable.popLastCall().getApiCallContext();
     Deadline executeDeadline = grpcCallContext.getCallOptions().getDeadline();
