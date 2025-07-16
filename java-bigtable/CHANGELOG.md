@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.62.0](https://github.com/googleapis/java-bigtable/compare/v2.61.0...v2.62.0) (2025-07-15)
+
+
+### Features
+
+* Add Idempotency to Cloud Bigtable MutateRowRequest API ([b5acca6](https://github.com/googleapis/java-bigtable/commit/b5acca6ac4f1eec420adb27bc77aa1bda0ec2dca))
+* Add SchemaBundles API ([b5acca6](https://github.com/googleapis/java-bigtable/commit/b5acca6ac4f1eec420adb27bc77aa1bda0ec2dca))
+* **bigtable:** Add schema bundle support ([#2619](https://github.com/googleapis/java-bigtable/issues/2619)) ([7d7b9a9](https://github.com/googleapis/java-bigtable/commit/7d7b9a966d3ef7b7a0ef3f82038ab73f4d791427))
+* Next release from main branch is 2.62.0 ([#2621](https://github.com/googleapis/java-bigtable/issues/2621)) ([202b211](https://github.com/googleapis/java-bigtable/commit/202b21102e71da71ff56f19a12d8a00a59cd8107))
+
+
+### Dependencies
+
+* Minor cleanup ([#2623](https://github.com/googleapis/java-bigtable/issues/2623)) ([7b230e8](https://github.com/googleapis/java-bigtable/commit/7b230e86902b5733c06e45fad90da76653ee1096))
+* Update shared dependencies ([#2616](https://github.com/googleapis/java-bigtable/issues/2616)) ([eb7cfd5](https://github.com/googleapis/java-bigtable/commit/eb7cfd526aa999c614b7b8285d32759e2739ff9a))
+
 ## [2.61.0](https://github.com/googleapis/java-bigtable/compare/v2.60.0...v2.61.0) (2025-06-27)
 
 
