@@ -85,4 +85,9 @@ public final class SampleRowKeysRequest implements Serializable {
     SampleRowKeysRequest sampleRowKeysRequest = (SampleRowKeysRequest) o;
     return Objects.equal(targetId, sampleRowKeysRequest.targetId);
   }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(targetId);
+  }
 }

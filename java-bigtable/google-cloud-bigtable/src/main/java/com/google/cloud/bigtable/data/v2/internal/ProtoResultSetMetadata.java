@@ -22,6 +22,7 @@ import com.google.bigtable.v2.Type;
 import com.google.cloud.bigtable.data.v2.models.sql.ColumnMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -93,5 +94,10 @@ public class ProtoResultSetMetadata extends ColumnToIndexMapper implements Resul
       return columns.equals(o.columns);
     }
     return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(columns);
   }
 }
