@@ -7,12 +7,12 @@
   <parent>
     <artifactId>google-cloud-bigtable-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>2.62.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.62.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <name>Google Cloud Java - Bigtable Emulator Core</name>
 
   <artifactId>google-cloud-bigtable-emulator-core</artifactId>
-  <version>0.199.0</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.199.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
 
   <description>
     A Java wrapper for the Cloud Bigtable emulator.
