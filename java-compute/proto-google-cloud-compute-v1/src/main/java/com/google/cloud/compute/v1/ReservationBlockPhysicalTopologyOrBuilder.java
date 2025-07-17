@@ -101,4 +101,73 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    * @return The bytes for cluster.
    */
   com.google.protobuf.ByteString getClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+      getInstancesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance getInstances(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  int getInstancesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>
+      getInstancesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder
+      getInstancesOrBuilder(int index);
 }
