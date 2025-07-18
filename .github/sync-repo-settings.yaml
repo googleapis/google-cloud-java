@@ -147,6 +147,21 @@ branchProtectionRules:
       - cla/google
       - javadoc
       - unmanaged_dependency_check
+  - pattern: 2.51.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - unmanaged_dependency_check
 permissionRules:
   - team: api-bigquery
     permission: admin
