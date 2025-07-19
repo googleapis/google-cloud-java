@@ -44,7 +44,7 @@ import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequestProto;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
@@ -61,7 +61,6 @@ import com.google.cloud.kms.v1.MacSignRequest;
 import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
-import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RawDecryptRequest;
 import com.google.cloud.kms.v1.RawDecryptResponse;
 import com.google.cloud.kms.v1.RawEncryptRequest;
@@ -127,7 +126,7 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listImportJobsCallable()");
   }
 
-  public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+  public UnaryCallable<GetKeyRingRequestProto, KeyRing> getKeyRingCallable() {
     throw new UnsupportedOperationException("Not implemented: getKeyRingCallable()");
   }
 
@@ -139,7 +138,8 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCryptoKeyVersionCallable()");
   }
 
-  public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+  public UnaryCallable<GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>
+      getPublicKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublicKeyCallable()");
   }
 
