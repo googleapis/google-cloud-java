@@ -77,8 +77,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs
-     * in the `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references the atom with audio inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,8 +93,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs
-     * in the `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references the atom with audio inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -105,7 +109,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -118,7 +123,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -185,7 +191,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.AudioStream.AudioMapping}
@@ -236,8 +245,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs
-     * in the `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references the atom with audio inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -261,8 +272,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs
-     * in the `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references the atom with audio inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -291,7 +304,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -315,7 +329,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -627,7 +642,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.AudioStream.AudioMapping}
@@ -886,8 +904,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs
-       * in the `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references the atom with audio inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -910,8 +930,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs
-       * in the `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references the atom with audio inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,8 +956,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs
-       * in the `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references the atom with audio inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -957,8 +981,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs
-       * in the `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references the atom with audio inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -976,8 +1002,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs
-       * in the `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references the atom with audio inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1002,7 +1030,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1025,7 +1054,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1048,7 +1078,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1070,7 +1101,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1088,7 +1120,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1420,6 +1453,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * - `mp3`
    * - `ac3`
    * - `eac3`
+   * - `vorbis`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1453,6 +1487,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * - `mp3`
    * - `ac3`
    * - `eac3`
+   * - `vorbis`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1632,7 +1667,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -1647,7 +1685,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -1663,7 +1704,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -1677,7 +1721,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -1691,7 +1738,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -2419,6 +2469,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * - `mp3`
      * - `ac3`
      * - `eac3`
+     * - `vorbis`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -2451,6 +2502,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * - `mp3`
      * - `ac3`
      * - `eac3`
+     * - `vorbis`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -2483,6 +2535,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * - `mp3`
      * - `ac3`
      * - `eac3`
+     * - `vorbis`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -2514,6 +2567,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * - `mp3`
      * - `ac3`
      * - `eac3`
+     * - `vorbis`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -2541,6 +2595,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * - `mp3`
      * - `ac3`
      * - `eac3`
+     * - `vorbis`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -2978,7 +3033,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -2996,7 +3054,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3013,7 +3074,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3030,7 +3094,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3054,7 +3121,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3076,7 +3146,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3099,7 +3172,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3123,7 +3199,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3144,7 +3223,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3166,7 +3248,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3188,7 +3273,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3208,7 +3296,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3228,7 +3319,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3242,7 +3336,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3260,7 +3357,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3279,7 +3379,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3295,7 +3398,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -3312,7 +3418,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with audio
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>

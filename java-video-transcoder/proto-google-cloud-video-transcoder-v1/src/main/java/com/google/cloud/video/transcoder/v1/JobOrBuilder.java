@@ -445,7 +445,9 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -459,7 +461,9 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -473,7 +477,9 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -555,6 +561,20 @@ public interface JobOrBuilder
    * @return The optimization.
    */
   com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy getOptimization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Insert silence and duplicate frames when timestamp gaps are
+   * detected in a given stream.
+   * </pre>
+   *
+   * <code>bool fill_content_gaps = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fillContentGaps.
+   */
+  boolean getFillContentGaps();
 
   com.google.cloud.video.transcoder.v1.Job.JobConfigCase getJobConfigCase();
 }

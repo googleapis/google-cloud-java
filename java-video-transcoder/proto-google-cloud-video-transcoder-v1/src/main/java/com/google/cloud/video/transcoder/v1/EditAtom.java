@@ -131,8 +131,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -147,8 +148,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -163,8 +165,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -180,8 +183,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -896,8 +900,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -913,8 +918,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -929,8 +935,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -946,8 +953,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -963,8 +971,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -988,8 +997,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -1012,8 +1022,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -1033,8 +1044,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>
@@ -1053,8 +1065,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Input.key`s identifying files that should be used in this atom.
-     * The listed `inputs` must have the same timeline.
+     * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+     * identifying files that should be used in this atom. The listed `inputs`
+     * must have the same timeline.
      * </pre>
      *
      * <code>repeated string inputs = 2;</code>

@@ -29,7 +29,8 @@ public interface ManifestOrBuilder
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest.type`.
+   * extension suffix corresponding to the
+   * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
    * </pre>
    *
    * <code>string file_name = 1;</code>
@@ -43,7 +44,8 @@ public interface ManifestOrBuilder
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest.type`.
+   * extension suffix corresponding to the
+   * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
    * </pre>
    *
    * <code>string file_name = 1;</code>
@@ -86,12 +88,14 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,12 +108,14 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -122,12 +128,14 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -141,12 +149,14 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -1361,7 +1361,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
    * permission for the resource. There might be another binding that overrides
    * this binding. To determine whether the principal actually has the
    * permission, use the `access` field in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    * </pre>
    *
    * <code>
@@ -1386,7 +1386,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
    * permission for the resource. There might be another binding that overrides
    * this binding. To determine whether the principal actually has the
    * permission, use the `access` field in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    * </pre>
    *
    * <code>
@@ -2439,7 +2439,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the principal actually has the
      * permission, use the `access` field in the
-     * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
      * </pre>
      *
      * <code>
@@ -2464,7 +2464,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the principal actually has the
      * permission, use the `access` field in the
-     * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
      * </pre>
      *
      * <code>
@@ -2492,7 +2492,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the principal actually has the
      * permission, use the `access` field in the
-     * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
      * </pre>
      *
      * <code>
@@ -2519,7 +2519,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the principal actually has the
      * permission, use the `access` field in the
-     * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
      * </pre>
      *
      * <code>
@@ -2550,7 +2550,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * permission for the resource. There might be another binding that overrides
      * this binding. To determine whether the principal actually has the
      * permission, use the `access` field in the
-     * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+     * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
      * </pre>
      *
      * <code>
