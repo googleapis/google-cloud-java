@@ -84,7 +84,7 @@ public interface JobConfigOrBuilder
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -96,7 +96,7 @@ public interface JobConfigOrBuilder
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -108,7 +108,7 @@ public interface JobConfigOrBuilder
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -120,7 +120,7 @@ public interface JobConfigOrBuilder
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -133,7 +133,7 @@ public interface JobConfigOrBuilder
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *

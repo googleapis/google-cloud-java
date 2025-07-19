@@ -450,8 +450,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -467,8 +467,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -484,8 +484,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -502,8 +502,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -513,6 +513,60 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    */
   public com.google.protobuf.ByteString getAutoprovisioningLocationsBytes(int index) {
     return autoprovisioningLocations_.getByteString(index);
+  }
+
+  public static final int DEFAULT_COMPUTE_CLASS_CONFIG_FIELD_NUMBER = 9;
+  private com.google.container.v1.DefaultComputeClassConfig defaultComputeClassConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+   *
+   * @return Whether the defaultComputeClassConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultComputeClassConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+   *
+   * @return The defaultComputeClassConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultComputeClassConfig getDefaultComputeClassConfig() {
+    return defaultComputeClassConfig_ == null
+        ? com.google.container.v1.DefaultComputeClassConfig.getDefaultInstance()
+        : defaultComputeClassConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultComputeClassConfigOrBuilder
+      getDefaultComputeClassConfigOrBuilder() {
+    return defaultComputeClassConfig_ == null
+        ? com.google.container.v1.DefaultComputeClassConfig.getDefaultInstance()
+        : defaultComputeClassConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -547,6 +601,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 5, autoprovisioningLocations_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getDefaultComputeClassConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -580,6 +637,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getAutoprovisioningLocationsList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getDefaultComputeClassConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -607,6 +669,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
     if (!getAutoprovisioningLocationsList().equals(other.getAutoprovisioningLocationsList()))
       return false;
+    if (hasDefaultComputeClassConfig() != other.hasDefaultComputeClassConfig()) return false;
+    if (hasDefaultComputeClassConfig()) {
+      if (!getDefaultComputeClassConfig().equals(other.getDefaultComputeClassConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -633,6 +700,10 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     if (getAutoprovisioningLocationsCount() > 0) {
       hash = (37 * hash) + AUTOPROVISIONING_LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoprovisioningLocationsList().hashCode();
+    }
+    if (hasDefaultComputeClassConfig()) {
+      hash = (37 * hash) + DEFAULT_COMPUTE_CLASS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultComputeClassConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -780,6 +851,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResourceLimitsFieldBuilder();
         getAutoprovisioningNodePoolDefaultsFieldBuilder();
+        getDefaultComputeClassConfigFieldBuilder();
       }
     }
 
@@ -802,6 +874,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         autoprovisioningNodePoolDefaultsBuilder_ = null;
       }
       autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      defaultComputeClassConfig_ = null;
+      if (defaultComputeClassConfigBuilder_ != null) {
+        defaultComputeClassConfigBuilder_.dispose();
+        defaultComputeClassConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -868,6 +945,13 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000010) != 0)) {
         autoprovisioningLocations_.makeImmutable();
         result.autoprovisioningLocations_ = autoprovisioningLocations_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.defaultComputeClassConfig_ =
+            defaultComputeClassConfigBuilder_ == null
+                ? defaultComputeClassConfig_
+                : defaultComputeClassConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -963,6 +1047,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         }
         onChanged();
       }
+      if (other.hasDefaultComputeClassConfig()) {
+        mergeDefaultComputeClassConfig(other.getDefaultComputeClassConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1029,6 +1116,13 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
                 autoprovisioningLocations_.add(s);
                 break;
               } // case 42
+            case 74:
+              {
+                input.readMessage(
+                    getDefaultComputeClassConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1842,8 +1936,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1860,8 +1954,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1877,8 +1971,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1895,8 +1989,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1913,8 +2007,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1939,8 +2033,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1964,8 +2058,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -1986,8 +2080,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -2007,8 +2101,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * NodePool's nodes can be created by NAP.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the NodePool's nodes can be created by NAP.
      * </pre>
      *
      * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -2026,6 +2120,206 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.DefaultComputeClassConfig defaultComputeClassConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultComputeClassConfig,
+            com.google.container.v1.DefaultComputeClassConfig.Builder,
+            com.google.container.v1.DefaultComputeClassConfigOrBuilder>
+        defaultComputeClassConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     *
+     * @return Whether the defaultComputeClassConfig field is set.
+     */
+    public boolean hasDefaultComputeClassConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     *
+     * @return The defaultComputeClassConfig.
+     */
+    public com.google.container.v1.DefaultComputeClassConfig getDefaultComputeClassConfig() {
+      if (defaultComputeClassConfigBuilder_ == null) {
+        return defaultComputeClassConfig_ == null
+            ? com.google.container.v1.DefaultComputeClassConfig.getDefaultInstance()
+            : defaultComputeClassConfig_;
+      } else {
+        return defaultComputeClassConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public Builder setDefaultComputeClassConfig(
+        com.google.container.v1.DefaultComputeClassConfig value) {
+      if (defaultComputeClassConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultComputeClassConfig_ = value;
+      } else {
+        defaultComputeClassConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public Builder setDefaultComputeClassConfig(
+        com.google.container.v1.DefaultComputeClassConfig.Builder builderForValue) {
+      if (defaultComputeClassConfigBuilder_ == null) {
+        defaultComputeClassConfig_ = builderForValue.build();
+      } else {
+        defaultComputeClassConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public Builder mergeDefaultComputeClassConfig(
+        com.google.container.v1.DefaultComputeClassConfig value) {
+      if (defaultComputeClassConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && defaultComputeClassConfig_ != null
+            && defaultComputeClassConfig_
+                != com.google.container.v1.DefaultComputeClassConfig.getDefaultInstance()) {
+          getDefaultComputeClassConfigBuilder().mergeFrom(value);
+        } else {
+          defaultComputeClassConfig_ = value;
+        }
+      } else {
+        defaultComputeClassConfigBuilder_.mergeFrom(value);
+      }
+      if (defaultComputeClassConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public Builder clearDefaultComputeClassConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      defaultComputeClassConfig_ = null;
+      if (defaultComputeClassConfigBuilder_ != null) {
+        defaultComputeClassConfigBuilder_.dispose();
+        defaultComputeClassConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public com.google.container.v1.DefaultComputeClassConfig.Builder
+        getDefaultComputeClassConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getDefaultComputeClassConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    public com.google.container.v1.DefaultComputeClassConfigOrBuilder
+        getDefaultComputeClassConfigOrBuilder() {
+      if (defaultComputeClassConfigBuilder_ != null) {
+        return defaultComputeClassConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultComputeClassConfig_ == null
+            ? com.google.container.v1.DefaultComputeClassConfig.getDefaultInstance()
+            : defaultComputeClassConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default compute class is a configuration for default compute class.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultComputeClassConfig default_compute_class_config = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultComputeClassConfig,
+            com.google.container.v1.DefaultComputeClassConfig.Builder,
+            com.google.container.v1.DefaultComputeClassConfigOrBuilder>
+        getDefaultComputeClassConfigFieldBuilder() {
+      if (defaultComputeClassConfigBuilder_ == null) {
+        defaultComputeClassConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DefaultComputeClassConfig,
+                com.google.container.v1.DefaultComputeClassConfig.Builder,
+                com.google.container.v1.DefaultComputeClassConfigOrBuilder>(
+                getDefaultComputeClassConfig(), getParentForChildren(), isClean());
+        defaultComputeClassConfig_ = null;
+      }
+      return defaultComputeClassConfigBuilder_;
     }
 
     @java.lang.Override

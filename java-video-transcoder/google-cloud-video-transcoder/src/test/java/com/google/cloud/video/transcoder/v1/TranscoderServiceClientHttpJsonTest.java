@@ -94,6 +94,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .setBatchModePriority(2137003131)
+            .setFillContentGaps(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -149,6 +150,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .setBatchModePriority(2137003131)
+            .setFillContentGaps(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -304,6 +306,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .setBatchModePriority(2137003131)
+            .setFillContentGaps(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -357,6 +360,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .setBatchModePriority(2137003131)
+            .setFillContentGaps(true)
             .build();
     mockService.addResponse(expectedResponse);
 

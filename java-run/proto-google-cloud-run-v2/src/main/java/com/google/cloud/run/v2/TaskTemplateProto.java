@@ -46,7 +46,7 @@ public final class TaskTemplateProto {
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032!google/cloud/run/v2/k8s.min.proto\032)g"
           + "oogle/cloud/run/v2/vendor_settings.proto"
-          + "\032\036google/protobuf/duration.proto\"\355\003\n\014Tas"
+          + "\032\036google/protobuf/duration.proto\"\300\004\n\014Tas"
           + "kTemplate\0222\n\ncontainers\030\001 \003(\0132\036.google.c"
           + "loud.run.v2.Container\0221\n\007volumes\030\002 \003(\0132\033"
           + ".google.cloud.run.v2.VolumeB\003\340A\001\022\025\n\013max_"
@@ -58,10 +58,12 @@ public final class TaskTemplateProto {
           + "A#\n!cloudkms.googleapis.com/CryptoKey\0227\n"
           + "\nvpc_access\030\010 \001(\0132\036.google.cloud.run.v2."
           + "VpcAccessB\003\340A\001\022=\n\rnode_selector\030\013 \001(\0132!."
-          + "google.cloud.run.v2.NodeSelectorB\003\340A\001B\t\n"
-          + "\007retriesBY\n\027com.google.cloud.run.v2B\021Tas"
-          + "kTemplateProtoP\001Z)cloud.google.com/go/ru"
-          + "n/apiv2/runpb;runpbb\006proto3"
+          + "google.cloud.run.v2.NodeSelectorB\003\340A\001\022/\n"
+          + "\035gpu_zonal_redundancy_disabled\030\014 \001(\010B\003\340A"
+          + "\001H\001\210\001\001B\t\n\007retriesB \n\036_gpu_zonal_redundan"
+          + "cy_disabledBY\n\027com.google.cloud.run.v2B\021"
+          + "TaskTemplateProtoP\001Z)cloud.google.com/go"
+          + "/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -88,6 +90,7 @@ public final class TaskTemplateProto {
               "EncryptionKey",
               "VpcAccess",
               "NodeSelector",
+              "GpuZonalRedundancyDisabled",
               "Retries",
             });
     com.google.protobuf.ExtensionRegistry registry =

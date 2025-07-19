@@ -62,6 +62,1054 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.VideoStream.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The conversion strategy for desired frame rate.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy}
+   */
+  public enum FrameRateConversionStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified frame rate conversion strategy.
+     * </pre>
+     *
+     * <code>FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Selectively retain frames to reduce the output frame rate.
+     * Every _n_ th frame is kept, where `n = ceil(input frame rate / target
+     * frame rate)`. When _n_ = 1 (that is, the target frame rate is greater
+     * than the input frame rate), the output frame rate matches the input frame
+     * rate. When _n_ &gt; 1, frames are dropped and the output frame rate is
+     * equal to `(input frame rate / n)`. For more information, see
+     * [Calculate frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate).
+     * </pre>
+     *
+     * <code>DOWNSAMPLE = 1;</code>
+     */
+    DOWNSAMPLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Drop or duplicate frames to match the specified frame rate.
+     * </pre>
+     *
+     * <code>DROP_DUPLICATE = 2;</code>
+     */
+    DROP_DUPLICATE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified frame rate conversion strategy.
+     * </pre>
+     *
+     * <code>FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Selectively retain frames to reduce the output frame rate.
+     * Every _n_ th frame is kept, where `n = ceil(input frame rate / target
+     * frame rate)`. When _n_ = 1 (that is, the target frame rate is greater
+     * than the input frame rate), the output frame rate matches the input frame
+     * rate. When _n_ &gt; 1, frames are dropped and the output frame rate is
+     * equal to `(input frame rate / n)`. For more information, see
+     * [Calculate frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate).
+     * </pre>
+     *
+     * <code>DOWNSAMPLE = 1;</code>
+     */
+    public static final int DOWNSAMPLE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Drop or duplicate frames to match the specified frame rate.
+     * </pre>
+     *
+     * <code>DROP_DUPLICATE = 2;</code>
+     */
+    public static final int DROP_DUPLICATE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FrameRateConversionStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FrameRateConversionStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED;
+        case 1:
+          return DOWNSAMPLE;
+        case 2:
+          return DROP_DUPLICATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FrameRateConversionStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FrameRateConversionStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FrameRateConversionStrategy>() {
+              public FrameRateConversionStrategy findValueByNumber(int number) {
+                return FrameRateConversionStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.VideoStream.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final FrameRateConversionStrategy[] VALUES = values();
+
+    public static FrameRateConversionStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FrameRateConversionStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy)
+  }
+
+  public interface H264ColorFormatSDROrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Standard Dynamic Range (SDR) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR}
+   */
+  public static final class H264ColorFormatSDR extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+      H264ColorFormatSDROrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H264ColorFormatSDR.newBuilder() to construct.
+    private H264ColorFormatSDR(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H264ColorFormatSDR() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H264ColorFormatSDR();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatSDR_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatSDR_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Standard Dynamic Range (SDR) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatSDR_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H264ColorFormatSDR> PARSER =
+        new com.google.protobuf.AbstractParser<H264ColorFormatSDR>() {
+          @java.lang.Override
+          public H264ColorFormatSDR parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H264ColorFormatSDR> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H264ColorFormatSDR> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface H264ColorFormatHLGOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Hybrid Log Gamma (HLG) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG}
+   */
+  public static final class H264ColorFormatHLG extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+      H264ColorFormatHLGOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H264ColorFormatHLG.newBuilder() to construct.
+    private H264ColorFormatHLG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H264ColorFormatHLG() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H264ColorFormatHLG();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatHLG_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatHLG_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Hybrid Log Gamma (HLG) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatHLG_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H264ColorFormatHLG> PARSER =
+        new com.google.protobuf.AbstractParser<H264ColorFormatHLG>() {
+          @java.lang.Override
+          public H264ColorFormatHLG parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H264ColorFormatHLG> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H264ColorFormatHLG> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface H264CodecSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings)
@@ -112,12 +1160,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -125,6 +1168,39 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The frameRate.
      */
     double getFrameRate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    int getFrameRateConversionStrategyValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy();
 
     /**
      *
@@ -194,7 +1270,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -212,7 +1288,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -336,7 +1412,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+     * [H264CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.rate_control_mode]
+     * must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -350,7 +1427,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be
-     * greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+     * greater than zero. The default is equal to
+     * [H264CodecSettings.bitrate_bps][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.bitrate_bps].
      * </pre>
      *
      * <code>int32 vbv_size_bits = 12;</code>
@@ -365,7 +1443,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
      * Must be greater than zero. The default is equal to 90% of
-     * `VideoStream.vbv_size_bits`.
+     * [H264CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.vbv_size_bits].
      * </pre>
      *
      * <code>int32 vbv_fullness_bits = 13;</code>
@@ -429,8 +1507,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of consecutive B-frames. Must be greater than or equal to
-     * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-     * is 0.
+     * zero. Must be less than
+     * [H264CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.gop_frame_count]
+     * if set. The default is 0.
      * </pre>
      *
      * <code>int32 b_frame_count = 16;</code>
@@ -572,7 +1651,96 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPresetBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    boolean hasSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR getSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder getSdrOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    boolean hasHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG getHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder getHlgOrBuilder();
+
     com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.GopModeCase getGopModeCase();
+
+    com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.ColorFormatCase
+        getColorFormatCase();
   }
 
   /**
@@ -596,6 +1764,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private H264CodecSettings() {
+      frameRateConversionStrategy_ = 0;
       pixelFormat_ = "";
       rateControlMode_ = "";
       entropyCoder_ = "";
@@ -675,6 +1844,56 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return GopModeCase.forNumber(gopModeCase_);
     }
 
+    private int colorFormatCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object colorFormat_;
+
+    public enum ColorFormatCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SDR(21),
+      HLG(22),
+      COLORFORMAT_NOT_SET(0);
+      private final int value;
+
+      private ColorFormatCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ColorFormatCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ColorFormatCase forNumber(int value) {
+        switch (value) {
+          case 21:
+            return SDR;
+          case 22:
+            return HLG;
+          case 0:
+            return COLORFORMAT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ColorFormatCase getColorFormatCase() {
+      return ColorFormatCase.forNumber(colorFormatCase_);
+    }
+
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
 
@@ -735,12 +1954,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -750,6 +1964,54 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getFrameRate() {
       return frameRate_;
+    }
+
+    public static final int FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER = 23;
+    private int frameRateConversionStrategy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public int getFrameRateConversionStrategyValue() {
+      return frameRateConversionStrategy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy() {
+      com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+              frameRateConversionStrategy_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .UNRECOGNIZED
+          : result;
     }
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
@@ -858,7 +2120,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -887,7 +2149,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -1065,7 +2327,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+     * [H264CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.rate_control_mode]
+     * must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -1085,7 +2348,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be
-     * greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+     * greater than zero. The default is equal to
+     * [H264CodecSettings.bitrate_bps][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.bitrate_bps].
      * </pre>
      *
      * <code>int32 vbv_size_bits = 12;</code>
@@ -1106,7 +2370,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
      * Must be greater than zero. The default is equal to 90% of
-     * `VideoStream.vbv_size_bits`.
+     * [H264CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.vbv_size_bits].
      * </pre>
      *
      * <code>int32 vbv_fullness_bits = 13;</code>
@@ -1209,8 +2473,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of consecutive B-frames. Must be greater than or equal to
-     * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-     * is 0.
+     * zero. Must be less than
+     * [H264CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.gop_frame_count]
+     * if set. The default is 0.
      * </pre>
      *
      * <code>int32 b_frame_count = 16;</code>
@@ -1442,6 +2707,132 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SDR_FIELD_NUMBER = 21;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    @java.lang.Override
+    public boolean hasSdr() {
+      return colorFormatCase_ == 21;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR getSdr() {
+      if (colorFormatCase_ == 21) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder
+        getSdrOrBuilder() {
+      if (colorFormatCase_ == 21) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    public static final int HLG_FIELD_NUMBER = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    @java.lang.Override
+    public boolean hasHlg() {
+      return colorFormatCase_ == 22;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG getHlg() {
+      if (colorFormatCase_ == 22) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H264.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder
+        getHlgOrBuilder() {
+      if (colorFormatCase_ == 22) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1516,6 +2907,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 20, preset_);
       }
+      if (colorFormatCase_ == 21) {
+        output.writeMessage(
+            21, (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 22) {
+        output.writeMessage(
+            22, (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(23, frameRateConversionStrategy_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1589,6 +2994,25 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, preset_);
       }
+      if (colorFormatCase_ == 21) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                21,
+                (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 22) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                22,
+                (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG) colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(23, frameRateConversionStrategy_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1609,6 +3033,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (getHeightPixels() != other.getHeightPixels()) return false;
       if (java.lang.Double.doubleToLongBits(getFrameRate())
           != java.lang.Double.doubleToLongBits(other.getFrameRate())) return false;
+      if (frameRateConversionStrategy_ != other.frameRateConversionStrategy_) return false;
       if (getBitrateBps() != other.getBitrateBps()) return false;
       if (!getPixelFormat().equals(other.getPixelFormat())) return false;
       if (!getRateControlMode().equals(other.getRateControlMode())) return false;
@@ -1636,6 +3061,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
+      if (!getColorFormatCase().equals(other.getColorFormatCase())) return false;
+      switch (colorFormatCase_) {
+        case 21:
+          if (!getSdr().equals(other.getSdr())) return false;
+          break;
+        case 22:
+          if (!getHlg().equals(other.getHlg())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1656,6 +3092,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getFrameRate()));
+      hash = (37 * hash) + FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + frameRateConversionStrategy_;
       hash = (37 * hash) + BITRATE_BPS_FIELD_NUMBER;
       hash = (53 * hash) + getBitrateBps();
       hash = (37 * hash) + PIXEL_FORMAT_FIELD_NUMBER;
@@ -1697,6 +3135,18 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 10:
           hash = (37 * hash) + GOP_DURATION_FIELD_NUMBER;
           hash = (53 * hash) + getGopDuration().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      switch (colorFormatCase_) {
+        case 21:
+          hash = (37 * hash) + SDR_FIELD_NUMBER;
+          hash = (53 * hash) + getSdr().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + HLG_FIELD_NUMBER;
+          hash = (53 * hash) + getHlg().hashCode();
           break;
         case 0:
         default:
@@ -1849,6 +3299,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         widthPixels_ = 0;
         heightPixels_ = 0;
         frameRate_ = 0D;
+        frameRateConversionStrategy_ = 0;
         bitrateBps_ = 0;
         pixelFormat_ = "";
         rateControlMode_ = "";
@@ -1867,8 +3318,16 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         profile_ = "";
         tune_ = "";
         preset_ = "";
+        if (sdrBuilder_ != null) {
+          sdrBuilder_.clear();
+        }
+        if (hlgBuilder_ != null) {
+          hlgBuilder_.clear();
+        }
         gopModeCase_ = 0;
         gopMode_ = null;
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         return this;
       }
 
@@ -1919,48 +3378,51 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           result.frameRate_ = frameRate_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.bitrateBps_ = bitrateBps_;
+          result.frameRateConversionStrategy_ = frameRateConversionStrategy_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pixelFormat_ = pixelFormat_;
+          result.bitrateBps_ = bitrateBps_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.rateControlMode_ = rateControlMode_;
+          result.pixelFormat_ = pixelFormat_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.crfLevel_ = crfLevel_;
+          result.rateControlMode_ = rateControlMode_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.crfLevel_ = crfLevel_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.allowOpenGop_ = allowOpenGop_;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.enableTwoPass_ = enableTwoPass_;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.vbvSizeBits_ = vbvSizeBits_;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.vbvFullnessBits_ = vbvFullnessBits_;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.entropyCoder_ = entropyCoder_;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           result.bPyramid_ = bPyramid_;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
           result.bFrameCount_ = bFrameCount_;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
           result.aqStrength_ = aqStrength_;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
           result.profile_ = profile_;
         }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
+        if (((from_bitField0_ & 0x00080000) != 0)) {
           result.tune_ = tune_;
         }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
+        if (((from_bitField0_ & 0x00100000) != 0)) {
           result.preset_ = preset_;
         }
       }
@@ -1971,6 +3433,14 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         result.gopMode_ = this.gopMode_;
         if (gopModeCase_ == 10 && gopDurationBuilder_ != null) {
           result.gopMode_ = gopDurationBuilder_.build();
+        }
+        result.colorFormatCase_ = colorFormatCase_;
+        result.colorFormat_ = this.colorFormat_;
+        if (colorFormatCase_ == 21 && sdrBuilder_ != null) {
+          result.colorFormat_ = sdrBuilder_.build();
+        }
+        if (colorFormatCase_ == 22 && hlgBuilder_ != null) {
+          result.colorFormat_ = hlgBuilder_.build();
         }
       }
 
@@ -2034,17 +3504,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (other.getFrameRate() != 0D) {
           setFrameRate(other.getFrameRate());
         }
+        if (other.frameRateConversionStrategy_ != 0) {
+          setFrameRateConversionStrategyValue(other.getFrameRateConversionStrategyValue());
+        }
         if (other.getBitrateBps() != 0) {
           setBitrateBps(other.getBitrateBps());
         }
         if (!other.getPixelFormat().isEmpty()) {
           pixelFormat_ = other.pixelFormat_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getRateControlMode().isEmpty()) {
           rateControlMode_ = other.rateControlMode_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getCrfLevel() != 0) {
@@ -2064,7 +3537,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getEntropyCoder().isEmpty()) {
           entropyCoder_ = other.entropyCoder_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
           onChanged();
         }
         if (other.getBPyramid() != false) {
@@ -2078,17 +3551,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getProfile().isEmpty()) {
           profile_ = other.profile_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
           onChanged();
         }
         if (!other.getTune().isEmpty()) {
           tune_ = other.tune_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00080000;
           onChanged();
         }
         if (!other.getPreset().isEmpty()) {
           preset_ = other.preset_;
-          bitField0_ |= 0x00080000;
+          bitField0_ |= 0x00100000;
           onChanged();
         }
         switch (other.getGopModeCase()) {
@@ -2103,6 +3576,22 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
           case GOPMODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        switch (other.getColorFormatCase()) {
+          case SDR:
+            {
+              mergeSdr(other.getSdr());
+              break;
+            }
+          case HLG:
+            {
+              mergeHlg(other.getHlg());
+              break;
+            }
+          case COLORFORMAT_NOT_SET:
             {
               break;
             }
@@ -2154,31 +3643,31 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   bitrateBps_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 42:
                 {
                   pixelFormat_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 42
               case 50:
                 {
                   rateControlMode_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
               case 56:
                 {
                   crfLevel_ = input.readInt32();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 56
               case 64:
                 {
                   allowOpenGop_ = input.readBool();
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 64
               case 72:
@@ -2196,63 +3685,81 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 88:
                 {
                   enableTwoPass_ = input.readBool();
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 88
               case 96:
                 {
                   vbvSizeBits_ = input.readInt32();
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 96
               case 104:
                 {
                   vbvFullnessBits_ = input.readInt32();
-                  bitField0_ |= 0x00001000;
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 104
               case 114:
                 {
                   entropyCoder_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00002000;
+                  bitField0_ |= 0x00004000;
                   break;
                 } // case 114
               case 120:
                 {
                   bPyramid_ = input.readBool();
-                  bitField0_ |= 0x00004000;
+                  bitField0_ |= 0x00008000;
                   break;
                 } // case 120
               case 128:
                 {
                   bFrameCount_ = input.readInt32();
-                  bitField0_ |= 0x00008000;
+                  bitField0_ |= 0x00010000;
                   break;
                 } // case 128
               case 137:
                 {
                   aqStrength_ = input.readDouble();
-                  bitField0_ |= 0x00010000;
+                  bitField0_ |= 0x00020000;
                   break;
                 } // case 137
               case 146:
                 {
                   profile_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00020000;
+                  bitField0_ |= 0x00040000;
                   break;
                 } // case 146
               case 154:
                 {
                   tune_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00040000;
+                  bitField0_ |= 0x00080000;
                   break;
                 } // case 154
               case 162:
                 {
                   preset_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00080000;
+                  bitField0_ |= 0x00100000;
                   break;
                 } // case 162
+              case 170:
+                {
+                  input.readMessage(getSdrFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 21;
+                  break;
+                } // case 170
+              case 178:
+                {
+                  input.readMessage(getHlgFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 22;
+                  break;
+                } // case 178
+              case 184:
+                {
+                  frameRateConversionStrategy_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 184
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2280,6 +3787,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearGopMode() {
         gopModeCase_ = 0;
         gopMode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int colorFormatCase_ = 0;
+      private java.lang.Object colorFormat_;
+
+      public ColorFormatCase getColorFormatCase() {
+        return ColorFormatCase.forNumber(colorFormatCase_);
+      }
+
+      public Builder clearColorFormat() {
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         onChanged();
         return this;
       }
@@ -2447,12 +3968,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2469,12 +3985,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2495,12 +4006,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2510,6 +4016,122 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearFrameRate() {
         bitField0_ = (bitField0_ & ~0x00000004);
         frameRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int frameRateConversionStrategy_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public int getFrameRateConversionStrategyValue() {
+        return frameRateConversionStrategy_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategyValue(int value) {
+        frameRateConversionStrategy_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+          getFrameRateConversionStrategy() {
+        com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+            com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+                frameRateConversionStrategy_);
+        return result == null
+            ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategy(
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        frameRateConversionStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFrameRateConversionStrategy() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        frameRateConversionStrategy_ = 0;
         onChanged();
         return this;
       }
@@ -2549,7 +4171,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBitrateBps(int value) {
 
         bitrateBps_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2567,7 +4189,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBitrateBps() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         bitrateBps_ = 0;
         onChanged();
         return this;
@@ -2674,7 +4296,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2704,7 +4326,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPixelFormat() {
         pixelFormat_ = getDefaultInstance().getPixelFormat();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -2739,7 +4361,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2750,7 +4372,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -2778,7 +4400,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -2806,7 +4428,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -2824,7 +4446,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2833,7 +4455,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -2847,7 +4469,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearRateControlMode() {
         rateControlMode_ = getDefaultInstance().getRateControlMode();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2856,7 +4478,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -2875,7 +4497,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2915,7 +4537,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setCrfLevel(int value) {
 
         crfLevel_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2933,7 +4555,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCrfLevel() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         crfLevel_ = 0;
         onChanged();
         return this;
@@ -2974,7 +4596,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAllowOpenGop(boolean value) {
 
         allowOpenGop_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2992,7 +4614,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowOpenGop() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         allowOpenGop_ = false;
         onChanged();
         return this;
@@ -3331,7 +4953,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H264CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3348,7 +4971,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H264CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3359,7 +4983,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableTwoPass(boolean value) {
 
         enableTwoPass_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3369,7 +4993,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H264CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3377,7 +5002,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableTwoPass() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         enableTwoPass_ = false;
         onChanged();
         return this;
@@ -3390,7 +5015,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be
-       * greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+       * greater than zero. The default is equal to
+       * [H264CodecSettings.bitrate_bps][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.bitrate_bps].
        * </pre>
        *
        * <code>int32 vbv_size_bits = 12;</code>
@@ -3407,7 +5033,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be
-       * greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+       * greater than zero. The default is equal to
+       * [H264CodecSettings.bitrate_bps][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.bitrate_bps].
        * </pre>
        *
        * <code>int32 vbv_size_bits = 12;</code>
@@ -3418,7 +5045,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvSizeBits(int value) {
 
         vbvSizeBits_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3428,7 +5055,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be
-       * greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+       * greater than zero. The default is equal to
+       * [H264CodecSettings.bitrate_bps][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.bitrate_bps].
        * </pre>
        *
        * <code>int32 vbv_size_bits = 12;</code>
@@ -3436,7 +5064,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvSizeBits() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         vbvSizeBits_ = 0;
         onChanged();
         return this;
@@ -3450,7 +5078,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H264CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -3468,7 +5096,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H264CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -3479,7 +5107,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvFullnessBits(int value) {
 
         vbvFullnessBits_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3490,7 +5118,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H264CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -3498,7 +5126,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvFullnessBits() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         vbvFullnessBits_ = 0;
         onChanged();
         return this;
@@ -3584,7 +5212,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         entropyCoder_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3607,7 +5235,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearEntropyCoder() {
         entropyCoder_ = getDefaultInstance().getEntropyCoder();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -3635,7 +5263,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         entropyCoder_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3675,7 +5303,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBPyramid(boolean value) {
 
         bPyramid_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3693,7 +5321,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBPyramid() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         bPyramid_ = false;
         onChanged();
         return this;
@@ -3706,8 +5334,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H264CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 16;</code>
@@ -3724,8 +5353,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H264CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 16;</code>
@@ -3736,7 +5366,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBFrameCount(int value) {
 
         bFrameCount_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3746,8 +5376,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H264CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 16;</code>
@@ -3755,7 +5386,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBFrameCount() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         bFrameCount_ = 0;
         onChanged();
         return this;
@@ -3798,7 +5429,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAqStrength(double value) {
 
         aqStrength_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3817,7 +5448,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAqStrength() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         aqStrength_ = 0D;
         onChanged();
         return this;
@@ -3921,7 +5552,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         profile_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3950,7 +5581,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearProfile() {
         profile_ = getDefaultInstance().getProfile();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
         return this;
       }
@@ -3984,7 +5615,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         profile_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -4066,7 +5697,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tune_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -4088,7 +5719,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearTune() {
         tune_ = getDefaultInstance().getTune();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
         return this;
       }
@@ -4115,7 +5746,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         tune_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -4200,7 +5831,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         preset_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -4223,7 +5854,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPreset() {
         preset_ = getDefaultInstance().getPreset();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
         return this;
       }
@@ -4251,9 +5882,513 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         preset_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder>
+          sdrBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sdr field is set.
+       */
+      @java.lang.Override
+      public boolean hasSdr() {
+        return colorFormatCase_ == 21;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sdr.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR getSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 21) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 21) {
+            return sdrBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder
+              builderForValue) {
+        if (sdrBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 21
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 21) {
+            sdrBuilder_.mergeFrom(value);
+          } else {
+            sdrBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 21) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 21) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          sdrBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder
+          getSdrBuilder() {
+        return getSdrFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder
+          getSdrOrBuilder() {
+        if ((colorFormatCase_ == 21) && (sdrBuilder_ != null)) {
+          return sdrBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 21) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR sdr = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder>
+          getSdrFieldBuilder() {
+        if (sdrBuilder_ == null) {
+          if (!(colorFormatCase_ == 21)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR
+                    .getDefaultInstance();
+          }
+          sdrBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDROrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatSDR)
+                      colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 21;
+        onChanged();
+        return sdrBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder>
+          hlgBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the hlg field is set.
+       */
+      @java.lang.Override
+      public boolean hasHlg() {
+        return colorFormatCase_ == 22;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The hlg.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG getHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 22) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 22) {
+            return hlgBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder
+              builderForValue) {
+        if (hlgBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 22
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 22) {
+            hlgBuilder_.mergeFrom(value);
+          } else {
+            hlgBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 22) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 22) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          hlgBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder
+          getHlgBuilder() {
+        return getHlgFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder
+          getHlgOrBuilder() {
+        if ((colorFormatCase_ == 22) && (hlgBuilder_ != null)) {
+          return hlgBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 22) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H264.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG hlg = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder>
+          getHlgFieldBuilder() {
+        if (hlgBuilder_ == null) {
+          if (!(colorFormatCase_ == 22)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG
+                    .getDefaultInstance();
+          }
+          hlgBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLGOrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.H264ColorFormatHLG)
+                      colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 22;
+        onChanged();
+        return hlgBuilder_;
       }
 
       @java.lang.Override
@@ -4323,6 +6458,1318 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface H265ColorFormatSDROrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Standard Dynamic Range (SDR) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR}
+   */
+  public static final class H265ColorFormatSDR extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+      H265ColorFormatSDROrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H265ColorFormatSDR.newBuilder() to construct.
+    private H265ColorFormatSDR(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H265ColorFormatSDR() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H265ColorFormatSDR();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatSDR_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatSDR_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Standard Dynamic Range (SDR) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatSDR_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H265ColorFormatSDR> PARSER =
+        new com.google.protobuf.AbstractParser<H265ColorFormatSDR>() {
+          @java.lang.Override
+          public H265ColorFormatSDR parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H265ColorFormatSDR> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H265ColorFormatSDR> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface H265ColorFormatHLGOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Hybrid Log Gamma (HLG) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG}
+   */
+  public static final class H265ColorFormatHLG extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+      H265ColorFormatHLGOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H265ColorFormatHLG.newBuilder() to construct.
+    private H265ColorFormatHLG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H265ColorFormatHLG() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H265ColorFormatHLG();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHLG_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHLG_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Hybrid Log Gamma (HLG) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHLG_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H265ColorFormatHLG> PARSER =
+        new com.google.protobuf.AbstractParser<H265ColorFormatHLG>() {
+          @java.lang.Override
+          public H265ColorFormatHLG parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H265ColorFormatHLG> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H265ColorFormatHLG> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface H265ColorFormatHDR10OrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a High Dynamic Range 10 (HDR10) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10}
+   */
+  public static final class H265ColorFormatHDR10 extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+      H265ColorFormatHDR10OrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H265ColorFormatHDR10.newBuilder() to construct.
+    private H265ColorFormatHDR10(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H265ColorFormatHDR10() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H265ColorFormatHDR10();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHDR10_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHDR10_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a High Dynamic Range 10 (HDR10) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHDR10_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHDR10_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265ColorFormatHDR10_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H265ColorFormatHDR10> PARSER =
+        new com.google.protobuf.AbstractParser<H265ColorFormatHDR10>() {
+          @java.lang.Override
+          public H265ColorFormatHDR10 parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H265ColorFormatHDR10> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H265ColorFormatHDR10> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface H265CodecSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings)
@@ -4373,12 +7820,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4386,6 +7828,39 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The frameRate.
      */
     double getFrameRate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    int getFrameRateConversionStrategyValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy();
 
     /**
      *
@@ -4455,7 +7930,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -4473,7 +7948,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -4597,7 +8072,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+     * [H265CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.rate_control_mode]
+     * must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -4626,7 +8102,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
      * Must be greater than zero. The default is equal to 90% of
-     * `VideoStream.vbv_size_bits`.
+     * [H265CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.vbv_size_bits].
      * </pre>
      *
      * <code>int32 vbv_fullness_bits = 13;</code>
@@ -4654,8 +8130,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of consecutive B-frames. Must be greater than or equal to
-     * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-     * is 0.
+     * zero. Must be less than
+     * [H265CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.gop_frame_count]
+     * if set. The default is 0.
      * </pre>
      *
      * <code>int32 b_frame_count = 15;</code>
@@ -4827,7 +8304,140 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPresetBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    boolean hasSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR getSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder getSdrOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    boolean hasHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG getHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder getHlgOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hdr10 field is set.
+     */
+    boolean hasHdr10();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hdr10.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 getHdr10();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder
+        getHdr10OrBuilder();
+
     com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.GopModeCase getGopModeCase();
+
+    com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.ColorFormatCase
+        getColorFormatCase();
   }
 
   /**
@@ -4851,6 +8461,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private H265CodecSettings() {
+      frameRateConversionStrategy_ = 0;
       pixelFormat_ = "";
       rateControlMode_ = "";
       profile_ = "";
@@ -4929,6 +8540,59 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return GopModeCase.forNumber(gopModeCase_);
     }
 
+    private int colorFormatCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object colorFormat_;
+
+    public enum ColorFormatCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SDR(20),
+      HLG(21),
+      HDR10(22),
+      COLORFORMAT_NOT_SET(0);
+      private final int value;
+
+      private ColorFormatCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ColorFormatCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ColorFormatCase forNumber(int value) {
+        switch (value) {
+          case 20:
+            return SDR;
+          case 21:
+            return HLG;
+          case 22:
+            return HDR10;
+          case 0:
+            return COLORFORMAT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ColorFormatCase getColorFormatCase() {
+      return ColorFormatCase.forNumber(colorFormatCase_);
+    }
+
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
 
@@ -4989,12 +8653,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5004,6 +8663,54 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getFrameRate() {
       return frameRate_;
+    }
+
+    public static final int FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER = 23;
+    private int frameRateConversionStrategy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public int getFrameRateConversionStrategyValue() {
+      return frameRateConversionStrategy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy() {
+      com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+              frameRateConversionStrategy_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .UNRECOGNIZED
+          : result;
     }
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
@@ -5112,7 +8819,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -5141,7 +8848,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -5319,7 +9026,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+     * [H265CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.rate_control_mode]
+     * must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -5360,7 +9068,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
      * Must be greater than zero. The default is equal to 90% of
-     * `VideoStream.vbv_size_bits`.
+     * [H265CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.vbv_size_bits].
      * </pre>
      *
      * <code>int32 vbv_fullness_bits = 13;</code>
@@ -5400,8 +9108,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of consecutive B-frames. Must be greater than or equal to
-     * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-     * is 0.
+     * zero. Must be less than
+     * [H265CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.gop_frame_count]
+     * if set. The default is 0.
      * </pre>
      *
      * <code>int32 b_frame_count = 15;</code>
@@ -5663,6 +9372,195 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SDR_FIELD_NUMBER = 20;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    @java.lang.Override
+    public boolean hasSdr() {
+      return colorFormatCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR getSdr() {
+      if (colorFormatCase_ == 20) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder
+        getSdrOrBuilder() {
+      if (colorFormatCase_ == 20) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    public static final int HLG_FIELD_NUMBER = 21;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    @java.lang.Override
+    public boolean hasHlg() {
+      return colorFormatCase_ == 21;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG getHlg() {
+      if (colorFormatCase_ == 21) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder
+        getHlgOrBuilder() {
+      if (colorFormatCase_ == 21) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+          .getDefaultInstance();
+    }
+
+    public static final int HDR10_FIELD_NUMBER = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hdr10 field is set.
+     */
+    @java.lang.Override
+    public boolean hasHdr10() {
+      return colorFormatCase_ == 22;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hdr10.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 getHdr10() {
+      if (colorFormatCase_ == 22) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HDR10 color format setting for H265.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder
+        getHdr10OrBuilder() {
+      if (colorFormatCase_ == 22) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5734,6 +9632,25 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 19, preset_);
       }
+      if (colorFormatCase_ == 20) {
+        output.writeMessage(
+            20, (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 21) {
+        output.writeMessage(
+            21, (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) colorFormat_);
+      }
+      if (colorFormatCase_ == 22) {
+        output.writeMessage(
+            22,
+            (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10) colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(23, frameRateConversionStrategy_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5804,6 +9721,32 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, preset_);
       }
+      if (colorFormatCase_ == 20) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                20,
+                (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 21) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                21,
+                (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG) colorFormat_);
+      }
+      if (colorFormatCase_ == 22) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                22,
+                (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+                    colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(23, frameRateConversionStrategy_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5824,6 +9767,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (getHeightPixels() != other.getHeightPixels()) return false;
       if (java.lang.Double.doubleToLongBits(getFrameRate())
           != java.lang.Double.doubleToLongBits(other.getFrameRate())) return false;
+      if (frameRateConversionStrategy_ != other.frameRateConversionStrategy_) return false;
       if (getBitrateBps() != other.getBitrateBps()) return false;
       if (!getPixelFormat().equals(other.getPixelFormat())) return false;
       if (!getRateControlMode().equals(other.getRateControlMode())) return false;
@@ -5850,6 +9794,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
+      if (!getColorFormatCase().equals(other.getColorFormatCase())) return false;
+      switch (colorFormatCase_) {
+        case 20:
+          if (!getSdr().equals(other.getSdr())) return false;
+          break;
+        case 21:
+          if (!getHlg().equals(other.getHlg())) return false;
+          break;
+        case 22:
+          if (!getHdr10().equals(other.getHdr10())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5870,6 +9828,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getFrameRate()));
+      hash = (37 * hash) + FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + frameRateConversionStrategy_;
       hash = (37 * hash) + BITRATE_BPS_FIELD_NUMBER;
       hash = (53 * hash) + getBitrateBps();
       hash = (37 * hash) + PIXEL_FORMAT_FIELD_NUMBER;
@@ -5909,6 +9869,22 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 10:
           hash = (37 * hash) + GOP_DURATION_FIELD_NUMBER;
           hash = (53 * hash) + getGopDuration().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      switch (colorFormatCase_) {
+        case 20:
+          hash = (37 * hash) + SDR_FIELD_NUMBER;
+          hash = (53 * hash) + getSdr().hashCode();
+          break;
+        case 21:
+          hash = (37 * hash) + HLG_FIELD_NUMBER;
+          hash = (53 * hash) + getHlg().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + HDR10_FIELD_NUMBER;
+          hash = (53 * hash) + getHdr10().hashCode();
           break;
         case 0:
         default:
@@ -6061,6 +10037,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         widthPixels_ = 0;
         heightPixels_ = 0;
         frameRate_ = 0D;
+        frameRateConversionStrategy_ = 0;
         bitrateBps_ = 0;
         pixelFormat_ = "";
         rateControlMode_ = "";
@@ -6078,8 +10055,19 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         profile_ = "";
         tune_ = "";
         preset_ = "";
+        if (sdrBuilder_ != null) {
+          sdrBuilder_.clear();
+        }
+        if (hlgBuilder_ != null) {
+          hlgBuilder_.clear();
+        }
+        if (hdr10Builder_ != null) {
+          hdr10Builder_.clear();
+        }
         gopModeCase_ = 0;
         gopMode_ = null;
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         return this;
       }
 
@@ -6130,45 +10118,48 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           result.frameRate_ = frameRate_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.bitrateBps_ = bitrateBps_;
+          result.frameRateConversionStrategy_ = frameRateConversionStrategy_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pixelFormat_ = pixelFormat_;
+          result.bitrateBps_ = bitrateBps_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.rateControlMode_ = rateControlMode_;
+          result.pixelFormat_ = pixelFormat_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.crfLevel_ = crfLevel_;
+          result.rateControlMode_ = rateControlMode_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.crfLevel_ = crfLevel_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.allowOpenGop_ = allowOpenGop_;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.enableTwoPass_ = enableTwoPass_;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.vbvSizeBits_ = vbvSizeBits_;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.vbvFullnessBits_ = vbvFullnessBits_;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.bPyramid_ = bPyramid_;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           result.bFrameCount_ = bFrameCount_;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
           result.aqStrength_ = aqStrength_;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
           result.profile_ = profile_;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
           result.tune_ = tune_;
         }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
+        if (((from_bitField0_ & 0x00080000) != 0)) {
           result.preset_ = preset_;
         }
       }
@@ -6179,6 +10170,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         result.gopMode_ = this.gopMode_;
         if (gopModeCase_ == 10 && gopDurationBuilder_ != null) {
           result.gopMode_ = gopDurationBuilder_.build();
+        }
+        result.colorFormatCase_ = colorFormatCase_;
+        result.colorFormat_ = this.colorFormat_;
+        if (colorFormatCase_ == 20 && sdrBuilder_ != null) {
+          result.colorFormat_ = sdrBuilder_.build();
+        }
+        if (colorFormatCase_ == 21 && hlgBuilder_ != null) {
+          result.colorFormat_ = hlgBuilder_.build();
+        }
+        if (colorFormatCase_ == 22 && hdr10Builder_ != null) {
+          result.colorFormat_ = hdr10Builder_.build();
         }
       }
 
@@ -6242,17 +10244,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (other.getFrameRate() != 0D) {
           setFrameRate(other.getFrameRate());
         }
+        if (other.frameRateConversionStrategy_ != 0) {
+          setFrameRateConversionStrategyValue(other.getFrameRateConversionStrategyValue());
+        }
         if (other.getBitrateBps() != 0) {
           setBitrateBps(other.getBitrateBps());
         }
         if (!other.getPixelFormat().isEmpty()) {
           pixelFormat_ = other.pixelFormat_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getRateControlMode().isEmpty()) {
           rateControlMode_ = other.rateControlMode_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getCrfLevel() != 0) {
@@ -6281,17 +10286,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getProfile().isEmpty()) {
           profile_ = other.profile_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00020000;
           onChanged();
         }
         if (!other.getTune().isEmpty()) {
           tune_ = other.tune_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
           onChanged();
         }
         if (!other.getPreset().isEmpty()) {
           preset_ = other.preset_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00080000;
           onChanged();
         }
         switch (other.getGopModeCase()) {
@@ -6306,6 +10311,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
           case GOPMODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        switch (other.getColorFormatCase()) {
+          case SDR:
+            {
+              mergeSdr(other.getSdr());
+              break;
+            }
+          case HLG:
+            {
+              mergeHlg(other.getHlg());
+              break;
+            }
+          case HDR10:
+            {
+              mergeHdr10(other.getHdr10());
+              break;
+            }
+          case COLORFORMAT_NOT_SET:
             {
               break;
             }
@@ -6357,31 +10383,31 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   bitrateBps_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 42:
                 {
                   pixelFormat_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 42
               case 50:
                 {
                   rateControlMode_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
               case 56:
                 {
                   crfLevel_ = input.readInt32();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 56
               case 64:
                 {
                   allowOpenGop_ = input.readBool();
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 64
               case 72:
@@ -6399,57 +10425,81 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 88:
                 {
                   enableTwoPass_ = input.readBool();
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 88
               case 96:
                 {
                   vbvSizeBits_ = input.readInt32();
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 96
               case 104:
                 {
                   vbvFullnessBits_ = input.readInt32();
-                  bitField0_ |= 0x00001000;
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 104
               case 112:
                 {
                   bPyramid_ = input.readBool();
-                  bitField0_ |= 0x00002000;
+                  bitField0_ |= 0x00004000;
                   break;
                 } // case 112
               case 120:
                 {
                   bFrameCount_ = input.readInt32();
-                  bitField0_ |= 0x00004000;
+                  bitField0_ |= 0x00008000;
                   break;
                 } // case 120
               case 129:
                 {
                   aqStrength_ = input.readDouble();
-                  bitField0_ |= 0x00008000;
+                  bitField0_ |= 0x00010000;
                   break;
                 } // case 129
               case 138:
                 {
                   profile_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00010000;
+                  bitField0_ |= 0x00020000;
                   break;
                 } // case 138
               case 146:
                 {
                   tune_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00020000;
+                  bitField0_ |= 0x00040000;
                   break;
                 } // case 146
               case 154:
                 {
                   preset_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00040000;
+                  bitField0_ |= 0x00080000;
                   break;
                 } // case 154
+              case 162:
+                {
+                  input.readMessage(getSdrFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 20;
+                  break;
+                } // case 162
+              case 170:
+                {
+                  input.readMessage(getHlgFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 21;
+                  break;
+                } // case 170
+              case 178:
+                {
+                  input.readMessage(getHdr10FieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 22;
+                  break;
+                } // case 178
+              case 184:
+                {
+                  frameRateConversionStrategy_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 184
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6477,6 +10527,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearGopMode() {
         gopModeCase_ = 0;
         gopMode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int colorFormatCase_ = 0;
+      private java.lang.Object colorFormat_;
+
+      public ColorFormatCase getColorFormatCase() {
+        return ColorFormatCase.forNumber(colorFormatCase_);
+      }
+
+      public Builder clearColorFormat() {
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         onChanged();
         return this;
       }
@@ -6644,12 +10708,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6666,12 +10725,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6692,12 +10746,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6707,6 +10756,122 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearFrameRate() {
         bitField0_ = (bitField0_ & ~0x00000004);
         frameRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int frameRateConversionStrategy_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public int getFrameRateConversionStrategyValue() {
+        return frameRateConversionStrategy_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategyValue(int value) {
+        frameRateConversionStrategy_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+          getFrameRateConversionStrategy() {
+        com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+            com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+                frameRateConversionStrategy_);
+        return result == null
+            ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategy(
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        frameRateConversionStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 23 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFrameRateConversionStrategy() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        frameRateConversionStrategy_ = 0;
         onChanged();
         return this;
       }
@@ -6746,7 +10911,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBitrateBps(int value) {
 
         bitrateBps_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6764,7 +10929,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBitrateBps() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         bitrateBps_ = 0;
         onChanged();
         return this;
@@ -6871,7 +11036,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -6901,7 +11066,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPixelFormat() {
         pixelFormat_ = getDefaultInstance().getPixelFormat();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -6936,7 +11101,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -6947,7 +11112,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -6975,7 +11140,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -7003,7 +11168,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -7021,7 +11186,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -7030,7 +11195,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -7044,7 +11209,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearRateControlMode() {
         rateControlMode_ = getDefaultInstance().getRateControlMode();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -7053,7 +11218,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -7072,7 +11237,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -7112,7 +11277,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setCrfLevel(int value) {
 
         crfLevel_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7130,7 +11295,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCrfLevel() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         crfLevel_ = 0;
         onChanged();
         return this;
@@ -7171,7 +11336,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAllowOpenGop(boolean value) {
 
         allowOpenGop_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -7189,7 +11354,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowOpenGop() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         allowOpenGop_ = false;
         onChanged();
         return this;
@@ -7528,7 +11693,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H265CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7545,7 +11711,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H265CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7556,7 +11723,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableTwoPass(boolean value) {
 
         enableTwoPass_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -7566,7 +11733,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
+       * [H265CodecSettings.rate_control_mode][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.rate_control_mode]
+       * must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7574,7 +11742,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableTwoPass() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         enableTwoPass_ = false;
         onChanged();
         return this;
@@ -7615,7 +11783,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvSizeBits(int value) {
 
         vbvSizeBits_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -7633,7 +11801,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvSizeBits() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         vbvSizeBits_ = 0;
         onChanged();
         return this;
@@ -7647,7 +11815,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H265CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -7665,7 +11833,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H265CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -7676,7 +11844,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvFullnessBits(int value) {
 
         vbvFullnessBits_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -7687,7 +11855,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
        * Must be greater than zero. The default is equal to 90% of
-       * `VideoStream.vbv_size_bits`.
+       * [H265CodecSettings.vbv_size_bits][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.vbv_size_bits].
        * </pre>
        *
        * <code>int32 vbv_fullness_bits = 13;</code>
@@ -7695,7 +11863,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvFullnessBits() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         vbvFullnessBits_ = 0;
         onChanged();
         return this;
@@ -7736,7 +11904,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBPyramid(boolean value) {
 
         bPyramid_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -7754,7 +11922,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBPyramid() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         bPyramid_ = false;
         onChanged();
         return this;
@@ -7767,8 +11935,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H265CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 15;</code>
@@ -7785,8 +11954,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H265CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 15;</code>
@@ -7797,7 +11967,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBFrameCount(int value) {
 
         bFrameCount_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -7807,8 +11977,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The number of consecutive B-frames. Must be greater than or equal to
-       * zero. Must be less than `VideoStream.gop_frame_count` if set. The default
-       * is 0.
+       * zero. Must be less than
+       * [H265CodecSettings.gop_frame_count][google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
        * </pre>
        *
        * <code>int32 b_frame_count = 15;</code>
@@ -7816,7 +11987,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBFrameCount() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         bFrameCount_ = 0;
         onChanged();
         return this;
@@ -7859,7 +12030,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAqStrength(double value) {
 
         aqStrength_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -7878,7 +12049,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAqStrength() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         aqStrength_ = 0D;
         onChanged();
         return this;
@@ -8027,7 +12198,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         profile_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -8071,7 +12242,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearProfile() {
         profile_ = getDefaultInstance().getProfile();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
         return this;
       }
@@ -8120,7 +12291,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         profile_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -8202,7 +12373,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tune_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -8224,7 +12395,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearTune() {
         tune_ = getDefaultInstance().getTune();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
         return this;
       }
@@ -8251,7 +12422,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         tune_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -8336,7 +12507,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         preset_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -8359,7 +12530,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPreset() {
         preset_ = getDefaultInstance().getPreset();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
         return this;
       }
@@ -8387,9 +12558,765 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         preset_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder>
+          sdrBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sdr field is set.
+       */
+      @java.lang.Override
+      public boolean hasSdr() {
+        return colorFormatCase_ == 20;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sdr.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR getSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 20) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 20) {
+            return sdrBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 20;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder
+              builderForValue) {
+        if (sdrBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 20;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 20
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 20) {
+            sdrBuilder_.mergeFrom(value);
+          } else {
+            sdrBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 20;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 20) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 20) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          sdrBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder
+          getSdrBuilder() {
+        return getSdrFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder
+          getSdrOrBuilder() {
+        if ((colorFormatCase_ == 20) && (sdrBuilder_ != null)) {
+          return sdrBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 20) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR sdr = 20 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder>
+          getSdrFieldBuilder() {
+        if (sdrBuilder_ == null) {
+          if (!(colorFormatCase_ == 20)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR
+                    .getDefaultInstance();
+          }
+          sdrBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDROrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatSDR)
+                      colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 20;
+        onChanged();
+        return sdrBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder>
+          hlgBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the hlg field is set.
+       */
+      @java.lang.Override
+      public boolean hasHlg() {
+        return colorFormatCase_ == 21;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The hlg.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG getHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 21) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 21) {
+            return hlgBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder
+              builderForValue) {
+        if (hlgBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 21
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 21) {
+            hlgBuilder_.mergeFrom(value);
+          } else {
+            hlgBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 21;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 21) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 21) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          hlgBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder
+          getHlgBuilder() {
+        return getHlgFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder
+          getHlgOrBuilder() {
+        if ((colorFormatCase_ == 21) && (hlgBuilder_ != null)) {
+          return hlgBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 21) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG hlg = 21 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder>
+          getHlgFieldBuilder() {
+        if (hlgBuilder_ == null) {
+          if (!(colorFormatCase_ == 21)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG
+                    .getDefaultInstance();
+          }
+          hlgBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLGOrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHLG)
+                      colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 21;
+        onChanged();
+        return hlgBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder>
+          hdr10Builder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the hdr10 field is set.
+       */
+      @java.lang.Override
+      public boolean hasHdr10() {
+        return colorFormatCase_ == 22;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The hdr10.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 getHdr10() {
+        if (hdr10Builder_ == null) {
+          if (colorFormatCase_ == 22) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 22) {
+            return hdr10Builder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHdr10(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 value) {
+        if (hdr10Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          hdr10Builder_.setMessage(value);
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHdr10(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder
+              builderForValue) {
+        if (hdr10Builder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          hdr10Builder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeHdr10(
+          com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 value) {
+        if (hdr10Builder_ == null) {
+          if (colorFormatCase_ == 22
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 22) {
+            hdr10Builder_.mergeFrom(value);
+          } else {
+            hdr10Builder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 22;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearHdr10() {
+        if (hdr10Builder_ == null) {
+          if (colorFormatCase_ == 22) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 22) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          hdr10Builder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder
+          getHdr10Builder() {
+        return getHdr10FieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder
+          getHdr10OrBuilder() {
+        if ((colorFormatCase_ == 22) && (hdr10Builder_ != null)) {
+          return hdr10Builder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 22) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HDR10 color format setting for H265.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10 hdr10 = 22 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder>
+          getHdr10FieldBuilder() {
+        if (hdr10Builder_ == null) {
+          if (!(colorFormatCase_ == 22)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10
+                    .getDefaultInstance();
+          }
+          hdr10Builder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10OrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.H265ColorFormatHDR10)
+                      colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 22;
+        onChanged();
+        return hdr10Builder_;
       }
 
       @java.lang.Override
@@ -8459,6 +13386,878 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface Vp9ColorFormatSDROrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Standard Dynamic Range (SDR) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR}
+   */
+  public static final class Vp9ColorFormatSDR extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+      Vp9ColorFormatSDROrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Vp9ColorFormatSDR.newBuilder() to construct.
+    private Vp9ColorFormatSDR(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Vp9ColorFormatSDR() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Vp9ColorFormatSDR();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatSDR_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatSDR_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Standard Dynamic Range (SDR) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatSDR_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatSDR_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Vp9ColorFormatSDR> PARSER =
+        new com.google.protobuf.AbstractParser<Vp9ColorFormatSDR>() {
+          @java.lang.Override
+          public Vp9ColorFormatSDR parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Vp9ColorFormatSDR> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Vp9ColorFormatSDR> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface Vp9ColorFormatHLGOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Convert the input video to a Hybrid Log Gamma (HLG) video.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG}
+   */
+  public static final class Vp9ColorFormatHLG extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+      Vp9ColorFormatHLGOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Vp9ColorFormatHLG.newBuilder() to construct.
+    private Vp9ColorFormatHLG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Vp9ColorFormatHLG() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Vp9ColorFormatHLG();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatHLG_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatHLG_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.class,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG other =
+          (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Convert the input video to a Hybrid Log Gamma (HLG) video.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatHLG_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.class,
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9ColorFormatHLG_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG build() {
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG buildPartial() {
+        com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG result =
+            new com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) {
+          return mergeFrom(
+              (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG other) {
+        if (other
+            == com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+    private static final com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Vp9ColorFormatHLG> PARSER =
+        new com.google.protobuf.AbstractParser<Vp9ColorFormatHLG>() {
+          @java.lang.Override
+          public Vp9ColorFormatHLG parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Vp9ColorFormatHLG> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Vp9ColorFormatHLG> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface Vp9CodecSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings)
@@ -8509,12 +14308,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8522,6 +14316,39 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The frameRate.
      */
     double getFrameRate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    int getFrameRateConversionStrategyValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy();
 
     /**
      *
@@ -8591,7 +14418,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -8608,7 +14435,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -8764,7 +14591,96 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getProfileBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    boolean hasSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR getSdr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder getSdrOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    boolean hasHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG getHlg();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder getHlgOrBuilder();
+
     com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.GopModeCase getGopModeCase();
+
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.ColorFormatCase
+        getColorFormatCase();
   }
 
   /**
@@ -8788,6 +14704,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Vp9CodecSettings() {
+      frameRateConversionStrategy_ = 0;
       pixelFormat_ = "";
       rateControlMode_ = "";
       profile_ = "";
@@ -8864,6 +14781,56 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return GopModeCase.forNumber(gopModeCase_);
     }
 
+    private int colorFormatCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object colorFormat_;
+
+    public enum ColorFormatCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SDR(11),
+      HLG(12),
+      COLORFORMAT_NOT_SET(0);
+      private final int value;
+
+      private ColorFormatCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ColorFormatCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ColorFormatCase forNumber(int value) {
+        switch (value) {
+          case 11:
+            return SDR;
+          case 12:
+            return HLG;
+          case 0:
+            return COLORFORMAT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ColorFormatCase getColorFormatCase() {
+      return ColorFormatCase.forNumber(colorFormatCase_);
+    }
+
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
 
@@ -8924,12 +14891,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The target video frame rate in frames per second (FPS). Must be
-     * less than or equal to 120. Will default to the input frame rate if larger
-     * than the input frame rate. The API will generate an output FPS that is
-     * divisible by the input FPS, and smaller or equal to the target FPS. See
-     * [Calculating frame
-     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-     * more information.
+     * less than or equal to 120.
      * </pre>
      *
      * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8939,6 +14901,54 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getFrameRate() {
       return frameRate_;
+    }
+
+    public static final int FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER = 13;
+    private int frameRateConversionStrategy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public int getFrameRateConversionStrategyValue() {
+      return frameRateConversionStrategy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Frame rate conversion strategy for desired frame rate. The
+     * default is `DOWNSAMPLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The frameRateConversionStrategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+        getFrameRateConversionStrategy() {
+      com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+              frameRateConversionStrategy_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .UNRECOGNIZED
+          : result;
     }
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
@@ -9047,7 +15057,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -9075,7 +15085,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `vbr`.
+     * Specify the mode. The default is `vbr`.
      *
      * Supported rate control modes:
      *
@@ -9303,6 +15313,132 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SDR_FIELD_NUMBER = 11;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sdr field is set.
+     */
+    @java.lang.Override
+    public boolean hasSdr() {
+      return colorFormatCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sdr.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR getSdr() {
+      if (colorFormatCase_ == 11) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDR color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder
+        getSdrOrBuilder() {
+      if (colorFormatCase_ == 11) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+          .getDefaultInstance();
+    }
+
+    public static final int HLG_FIELD_NUMBER = 12;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hlg field is set.
+     */
+    @java.lang.Override
+    public boolean hasHlg() {
+      return colorFormatCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hlg.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG getHlg() {
+      if (colorFormatCase_ == 12) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HLG color format setting for VP9.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder
+        getHlgOrBuilder() {
+      if (colorFormatCase_ == 12) {
+        return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) colorFormat_;
+      }
+      return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9347,6 +15483,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, profile_);
       }
+      if (colorFormatCase_ == 11) {
+        output.writeMessage(
+            11, (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 12) {
+        output.writeMessage(
+            12, (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(13, frameRateConversionStrategy_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9390,6 +15540,25 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, profile_);
       }
+      if (colorFormatCase_ == 11) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11,
+                (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) colorFormat_);
+      }
+      if (colorFormatCase_ == 12) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                12,
+                (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) colorFormat_);
+      }
+      if (frameRateConversionStrategy_
+          != com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+              .FRAME_RATE_CONVERSION_STRATEGY_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(13, frameRateConversionStrategy_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9410,6 +15579,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (getHeightPixels() != other.getHeightPixels()) return false;
       if (java.lang.Double.doubleToLongBits(getFrameRate())
           != java.lang.Double.doubleToLongBits(other.getFrameRate())) return false;
+      if (frameRateConversionStrategy_ != other.frameRateConversionStrategy_) return false;
       if (getBitrateBps() != other.getBitrateBps()) return false;
       if (!getPixelFormat().equals(other.getPixelFormat())) return false;
       if (!getRateControlMode().equals(other.getRateControlMode())) return false;
@@ -9422,6 +15592,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           break;
         case 9:
           if (!getGopDuration().equals(other.getGopDuration())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getColorFormatCase().equals(other.getColorFormatCase())) return false;
+      switch (colorFormatCase_) {
+        case 11:
+          if (!getSdr().equals(other.getSdr())) return false;
+          break;
+        case 12:
+          if (!getHlg().equals(other.getHlg())) return false;
           break;
         case 0:
         default:
@@ -9446,6 +15627,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getFrameRate()));
+      hash = (37 * hash) + FRAME_RATE_CONVERSION_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + frameRateConversionStrategy_;
       hash = (37 * hash) + BITRATE_BPS_FIELD_NUMBER;
       hash = (53 * hash) + getBitrateBps();
       hash = (37 * hash) + PIXEL_FORMAT_FIELD_NUMBER;
@@ -9464,6 +15647,18 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 9:
           hash = (37 * hash) + GOP_DURATION_FIELD_NUMBER;
           hash = (53 * hash) + getGopDuration().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      switch (colorFormatCase_) {
+        case 11:
+          hash = (37 * hash) + SDR_FIELD_NUMBER;
+          hash = (53 * hash) + getSdr().hashCode();
+          break;
+        case 12:
+          hash = (37 * hash) + HLG_FIELD_NUMBER;
+          hash = (53 * hash) + getHlg().hashCode();
           break;
         case 0:
         default:
@@ -9616,6 +15811,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         widthPixels_ = 0;
         heightPixels_ = 0;
         frameRate_ = 0D;
+        frameRateConversionStrategy_ = 0;
         bitrateBps_ = 0;
         pixelFormat_ = "";
         rateControlMode_ = "";
@@ -9624,8 +15820,16 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           gopDurationBuilder_.clear();
         }
         profile_ = "";
+        if (sdrBuilder_ != null) {
+          sdrBuilder_.clear();
+        }
+        if (hlgBuilder_ != null) {
+          hlgBuilder_.clear();
+        }
         gopModeCase_ = 0;
         gopMode_ = null;
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         return this;
       }
 
@@ -9676,18 +15880,21 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           result.frameRate_ = frameRate_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.bitrateBps_ = bitrateBps_;
+          result.frameRateConversionStrategy_ = frameRateConversionStrategy_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.pixelFormat_ = pixelFormat_;
+          result.bitrateBps_ = bitrateBps_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.rateControlMode_ = rateControlMode_;
+          result.pixelFormat_ = pixelFormat_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.rateControlMode_ = rateControlMode_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.crfLevel_ = crfLevel_;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.profile_ = profile_;
         }
       }
@@ -9698,6 +15905,14 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         result.gopMode_ = this.gopMode_;
         if (gopModeCase_ == 9 && gopDurationBuilder_ != null) {
           result.gopMode_ = gopDurationBuilder_.build();
+        }
+        result.colorFormatCase_ = colorFormatCase_;
+        result.colorFormat_ = this.colorFormat_;
+        if (colorFormatCase_ == 11 && sdrBuilder_ != null) {
+          result.colorFormat_ = sdrBuilder_.build();
+        }
+        if (colorFormatCase_ == 12 && hlgBuilder_ != null) {
+          result.colorFormat_ = hlgBuilder_.build();
         }
       }
 
@@ -9761,17 +15976,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (other.getFrameRate() != 0D) {
           setFrameRate(other.getFrameRate());
         }
+        if (other.frameRateConversionStrategy_ != 0) {
+          setFrameRateConversionStrategyValue(other.getFrameRateConversionStrategyValue());
+        }
         if (other.getBitrateBps() != 0) {
           setBitrateBps(other.getBitrateBps());
         }
         if (!other.getPixelFormat().isEmpty()) {
           pixelFormat_ = other.pixelFormat_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getRateControlMode().isEmpty()) {
           rateControlMode_ = other.rateControlMode_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getCrfLevel() != 0) {
@@ -9779,7 +15997,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getProfile().isEmpty()) {
           profile_ = other.profile_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         switch (other.getGopModeCase()) {
@@ -9794,6 +16012,22 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
           case GOPMODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        switch (other.getColorFormatCase()) {
+          case SDR:
+            {
+              mergeSdr(other.getSdr());
+              break;
+            }
+          case HLG:
+            {
+              mergeHlg(other.getHlg());
+              break;
+            }
+          case COLORFORMAT_NOT_SET:
             {
               break;
             }
@@ -9845,25 +16079,25 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   bitrateBps_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 42:
                 {
                   pixelFormat_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 42
               case 50:
                 {
                   rateControlMode_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
               case 56:
                 {
                   crfLevel_ = input.readInt32();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 56
               case 64:
@@ -9881,9 +16115,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 82:
                 {
                   profile_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 82
+              case 90:
+                {
+                  input.readMessage(getSdrFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 11;
+                  break;
+                } // case 90
+              case 98:
+                {
+                  input.readMessage(getHlgFieldBuilder().getBuilder(), extensionRegistry);
+                  colorFormatCase_ = 12;
+                  break;
+                } // case 98
+              case 104:
+                {
+                  frameRateConversionStrategy_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 104
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9911,6 +16163,20 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearGopMode() {
         gopModeCase_ = 0;
         gopMode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int colorFormatCase_ = 0;
+      private java.lang.Object colorFormat_;
+
+      public ColorFormatCase getColorFormatCase() {
+        return ColorFormatCase.forNumber(colorFormatCase_);
+      }
+
+      public Builder clearColorFormat() {
+        colorFormatCase_ = 0;
+        colorFormat_ = null;
         onChanged();
         return this;
       }
@@ -10078,12 +16344,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10100,12 +16361,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10126,12 +16382,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The target video frame rate in frames per second (FPS). Must be
-       * less than or equal to 120. Will default to the input frame rate if larger
-       * than the input frame rate. The API will generate an output FPS that is
-       * divisible by the input FPS, and smaller or equal to the target FPS. See
-       * [Calculating frame
-       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
-       * more information.
+       * less than or equal to 120.
        * </pre>
        *
        * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10141,6 +16392,122 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearFrameRate() {
         bitField0_ = (bitField0_ & ~0x00000004);
         frameRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int frameRateConversionStrategy_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public int getFrameRateConversionStrategyValue() {
+        return frameRateConversionStrategy_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategyValue(int value) {
+        frameRateConversionStrategy_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The frameRateConversionStrategy.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+          getFrameRateConversionStrategy() {
+        com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy result =
+            com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy.forNumber(
+                frameRateConversionStrategy_);
+        return result == null
+            ? com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The frameRateConversionStrategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRateConversionStrategy(
+          com.google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        frameRateConversionStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Frame rate conversion strategy for desired frame rate. The
+       * default is `DOWNSAMPLE`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.FrameRateConversionStrategy frame_rate_conversion_strategy = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFrameRateConversionStrategy() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        frameRateConversionStrategy_ = 0;
         onChanged();
         return this;
       }
@@ -10180,7 +16547,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBitrateBps(int value) {
 
         bitrateBps_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -10198,7 +16565,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBitrateBps() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         bitrateBps_ = 0;
         onChanged();
         return this;
@@ -10305,7 +16672,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -10335,7 +16702,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPixelFormat() {
         pixelFormat_ = getDefaultInstance().getPixelFormat();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -10370,7 +16737,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         pixelFormat_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -10381,7 +16748,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -10408,7 +16775,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -10435,7 +16802,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -10452,7 +16819,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -10461,7 +16828,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -10474,7 +16841,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearRateControlMode() {
         rateControlMode_ = getDefaultInstance().getRateControlMode();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -10483,7 +16850,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `vbr`.
+       * Specify the mode. The default is `vbr`.
        *
        * Supported rate control modes:
        *
@@ -10501,7 +16868,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         rateControlMode_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -10545,7 +16912,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setCrfLevel(int value) {
 
         crfLevel_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -10565,7 +16932,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCrfLevel() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         crfLevel_ = 0;
         onChanged();
         return this;
@@ -10998,7 +17365,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         profile_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -11028,7 +17395,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearProfile() {
         profile_ = getDefaultInstance().getProfile();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -11063,9 +17430,511 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         profile_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder>
+          sdrBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sdr field is set.
+       */
+      @java.lang.Override
+      public boolean hasSdr() {
+        return colorFormatCase_ == 11;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sdr.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR getSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 11) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 11) {
+            return sdrBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 11;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder
+              builderForValue) {
+        if (sdrBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          sdrBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 11;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSdr(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR value) {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 11
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 11) {
+            sdrBuilder_.mergeFrom(value);
+          } else {
+            sdrBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 11;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSdr() {
+        if (sdrBuilder_ == null) {
+          if (colorFormatCase_ == 11) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 11) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          sdrBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder
+          getSdrBuilder() {
+        return getSdrFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder
+          getSdrOrBuilder() {
+        if ((colorFormatCase_ == 11) && (sdrBuilder_ != null)) {
+          return sdrBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 11) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDR color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR sdr = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder>
+          getSdrFieldBuilder() {
+        if (sdrBuilder_ == null) {
+          if (!(colorFormatCase_ == 11)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR
+                    .getDefaultInstance();
+          }
+          sdrBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR,
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDROrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatSDR) colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 11;
+        onChanged();
+        return sdrBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder>
+          hlgBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the hlg field is set.
+       */
+      @java.lang.Override
+      public boolean hasHlg() {
+        return colorFormatCase_ == 12;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The hlg.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG getHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 12) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+              .getDefaultInstance();
+        } else {
+          if (colorFormatCase_ == 12) {
+            return hlgBuilder_.getMessage();
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colorFormat_ = value;
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(value);
+        }
+        colorFormatCase_ = 12;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder
+              builderForValue) {
+        if (hlgBuilder_ == null) {
+          colorFormat_ = builderForValue.build();
+          onChanged();
+        } else {
+          hlgBuilder_.setMessage(builderForValue.build());
+        }
+        colorFormatCase_ = 12;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeHlg(
+          com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG value) {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 12
+              && colorFormat_
+                  != com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+                      .getDefaultInstance()) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.newBuilder(
+                        (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+                            colorFormat_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            colorFormat_ = value;
+          }
+          onChanged();
+        } else {
+          if (colorFormatCase_ == 12) {
+            hlgBuilder_.mergeFrom(value);
+          } else {
+            hlgBuilder_.setMessage(value);
+          }
+        }
+        colorFormatCase_ = 12;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearHlg() {
+        if (hlgBuilder_ == null) {
+          if (colorFormatCase_ == 12) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+            onChanged();
+          }
+        } else {
+          if (colorFormatCase_ == 12) {
+            colorFormatCase_ = 0;
+            colorFormat_ = null;
+          }
+          hlgBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder
+          getHlgBuilder() {
+        return getHlgFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder
+          getHlgOrBuilder() {
+        if ((colorFormatCase_ == 12) && (hlgBuilder_ != null)) {
+          return hlgBuilder_.getMessageOrBuilder();
+        } else {
+          if (colorFormatCase_ == 12) {
+            return (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG)
+                colorFormat_;
+          }
+          return com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HLG color format setting for VP9.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG hlg = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder,
+              com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder>
+          getHlgFieldBuilder() {
+        if (hlgBuilder_ == null) {
+          if (!(colorFormatCase_ == 12)) {
+            colorFormat_ =
+                com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG
+                    .getDefaultInstance();
+          }
+          hlgBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG,
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG.Builder,
+                  com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLGOrBuilder>(
+                  (com.google.cloud.video.transcoder.v1.VideoStream.Vp9ColorFormatHLG) colorFormat_,
+                  getParentForChildren(),
+                  isClean());
+          colorFormat_ = null;
+        }
+        colorFormatCase_ = 12;
+        onChanged();
+        return hlgBuilder_;
       }
 
       @java.lang.Override

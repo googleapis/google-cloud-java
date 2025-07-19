@@ -158,7 +158,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -173,7 +173,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -189,7 +189,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -204,7 +204,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -219,7 +219,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+   * List of edit atoms. Defines the ultimate timeline of the resulting
    * file or manifest.
    * </pre>
    *
@@ -2308,7 +2308,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2326,7 +2326,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2344,7 +2344,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2362,7 +2362,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2386,7 +2386,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2408,7 +2408,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2432,7 +2432,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2456,7 +2456,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2478,7 +2478,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2500,7 +2500,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2522,7 +2522,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2543,7 +2543,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2564,7 +2564,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2578,7 +2578,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2596,7 +2596,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2615,7 +2615,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2630,7 +2630,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *
@@ -2645,7 +2645,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `Edit atom`s. Defines the ultimate timeline of the resulting
+     * List of edit atoms. Defines the ultimate timeline of the resulting
      * file or manifest.
      * </pre>
      *

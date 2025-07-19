@@ -93,7 +93,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The number of nodes to create in this cluster. You must ensure that your
-   * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+   * Compute Engine [resource
+   * quota](https://cloud.google.com/compute/quotas)
    * is sufficient for this number of instances. You must also have available
    * firewall and routes quota.
    * For requests, this field should only be used in lieu of a
@@ -107,7 +108,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2098
+   *     google/container/v1/cluster_service.proto;l=2393
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -133,7 +134,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2111
+   *     google/container/v1/cluster_service.proto;l=2406
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -159,7 +160,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2111
+   *     google/container/v1/cluster_service.proto;l=2406
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -434,8 +435,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
-   * the cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks)
+   * to which the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -449,8 +450,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
-   * the cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks)
+   * to which the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -529,8 +530,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
@@ -552,8 +553,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
@@ -575,8 +576,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
@@ -599,8 +600,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
@@ -919,7 +920,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2218
+   *     google/container/v1/cluster_service.proto;l=2513
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -941,7 +942,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2218
+   *     google/container/v1/cluster_service.proto;l=2513
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -1698,14 +1699,15 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field is deprecated, use location
+   * instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2292
+   *     google/container/v1/cluster_service.proto;l=2588
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1716,14 +1718,15 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field is deprecated, use location
+   * instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2292
+   *     google/container/v1/cluster_service.proto;l=2588
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1857,7 +1860,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2327
+   *     google/container/v1/cluster_service.proto;l=2623
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1879,7 +1882,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2327
+   *     google/container/v1/cluster_service.proto;l=2623
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1957,7 +1960,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2340
+   *     google/container/v1/cluster_service.proto;l=2636
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1977,7 +1980,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2340
+   *     google/container/v1/cluster_service.proto;l=2636
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -2045,7 +2048,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2357
+   *     google/container/v1/cluster_service.proto;l=2653
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2063,7 +2066,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2357
+   *     google/container/v1/cluster_service.proto;l=2653
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2081,7 +2084,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2357
+   *     google/container/v1/cluster_service.proto;l=2653
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2100,7 +2103,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2357
+   *     google/container/v1/cluster_service.proto;l=2653
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2120,7 +2123,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2362
+   *     google/container/v1/cluster_service.proto;l=2658
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2200,7 +2203,7 @@ public interface ClusterOrBuilder
    * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2379
+   *     google/container/v1/cluster_service.proto;l=2675
    * @return The enableTpu.
    */
   @java.lang.Deprecated
@@ -2222,7 +2225,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2386
+   *     google/container/v1/cluster_service.proto;l=2682
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2244,7 +2247,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2386
+   *     google/container/v1/cluster_service.proto;l=2682
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2984,6 +2987,43 @@ public interface ClusterOrBuilder
    * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
    */
   com.google.container.v1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrades.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 163;</code>
+   *
+   * @return Whether the gkeAutoUpgradeConfig field is set.
+   */
+  boolean hasGkeAutoUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrades.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 163;</code>
+   *
+   * @return The gkeAutoUpgradeConfig.
+   */
+  com.google.container.v1.GkeAutoUpgradeConfig getGkeAutoUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrades.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 163;</code>
+   */
+  com.google.container.v1.GkeAutoUpgradeConfigOrBuilder getGkeAutoUpgradeConfigOrBuilder();
 
   /**
    *

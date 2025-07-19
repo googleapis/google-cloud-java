@@ -65,7 +65,7 @@ public interface OverlayOrBuilder
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -77,7 +77,7 @@ public interface OverlayOrBuilder
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -89,7 +89,7 @@ public interface OverlayOrBuilder
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface OverlayOrBuilder
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -114,7 +114,7 @@ public interface OverlayOrBuilder
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *

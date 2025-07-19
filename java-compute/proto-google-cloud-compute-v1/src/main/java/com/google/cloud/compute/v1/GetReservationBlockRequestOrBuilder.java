@@ -106,6 +106,48 @@ public interface GetReservationBlockRequestOrBuilder
    *
    *
    * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return Whether the view field is set.
+   */
+  boolean hasView();
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The view.
+   */
+  java.lang.String getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The bytes for view.
+   */
+  com.google.protobuf.ByteString getViewBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the zone for this request. Zone name should conform to RFC1035.
    * </pre>
    *

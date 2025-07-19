@@ -50,12 +50,12 @@ public final class MetadataProto {
           + "\013residential\030\006 \001(\010H\002\210\001\001B\013\n"
           + "\t_businessB\t\n"
           + "\007_po_boxB\016\n"
-          + "\014_residentialB\212\002\n"
+          + "\014_residentialB\207\002\n"
           + "$com.google.maps.addressvalidation.v1B\r"
           + "MetadataProtoP\001ZXcloud.google.com/go/maps/addressvalidation/apiv1"
-          + "/addressvalidationpb;addressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002"
-          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidation"
-          + "\\V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
+          + "/addressvalidationpb;addressvalidationpb\242\002\007GMPAVV1\252\002"
+          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidation\\V1"
+          + "\352\002#Google::Maps::AddressValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

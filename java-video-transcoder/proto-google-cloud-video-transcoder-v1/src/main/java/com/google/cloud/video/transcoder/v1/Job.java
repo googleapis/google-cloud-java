@@ -135,8 +135,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job has failed. For additional information, see `failure_reason` and
-     * `failure_details`
+     * The job has failed. For additional information, see
+     * [Troubleshooting](https://cloud.google.com/transcoder/docs/troubleshooting).
      * </pre>
      *
      * <code>FAILED = 4;</code>
@@ -193,8 +193,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job has failed. For additional information, see `failure_reason` and
-     * `failure_details`
+     * The job has failed. For additional information, see
+     * [Troubleshooting](https://cloud.google.com/transcoder/docs/troubleshooting).
      * </pre>
      *
      * <code>FAILED = 4;</code>
@@ -1322,7 +1322,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1339,7 +1341,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1356,7 +1360,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An error object that describes the reason for the failure.
-   * This property is always present when `state` is `FAILED`.
+   * This property is always present when
+   * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+   * `FAILED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1474,6 +1480,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int FILL_CONTENT_GAPS_FIELD_NUMBER = 25;
+  private boolean fillContentGaps_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Insert silence and duplicate frames when timestamp gaps are
+   * detected in a given stream.
+   * </pre>
+   *
+   * <code>bool fill_content_gaps = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fillContentGaps.
+   */
+  @java.lang.Override
+  public boolean getFillContentGaps() {
+    return fillContentGaps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1538,6 +1564,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             .OPTIMIZATION_STRATEGY_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(22, optimization_);
+    }
+    if (fillContentGaps_ != false) {
+      output.writeBool(25, fillContentGaps_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1609,6 +1638,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, optimization_);
     }
+    if (fillContentGaps_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, fillContentGaps_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1649,6 +1681,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (mode_ != other.mode_) return false;
     if (getBatchModePriority() != other.getBatchModePriority()) return false;
     if (optimization_ != other.optimization_) return false;
+    if (getFillContentGaps() != other.getFillContentGaps()) return false;
     if (!getJobConfigCase().equals(other.getJobConfigCase())) return false;
     switch (jobConfigCase_) {
       case 4:
@@ -1707,6 +1740,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getBatchModePriority();
     hash = (37 * hash) + OPTIMIZATION_FIELD_NUMBER;
     hash = (53 * hash) + optimization_;
+    hash = (37 * hash) + FILL_CONTENT_GAPS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFillContentGaps());
     switch (jobConfigCase_) {
       case 4:
         hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
@@ -1925,6 +1960,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       mode_ = 0;
       batchModePriority_ = 0;
       optimization_ = 0;
+      fillContentGaps_ = false;
       jobConfigCase_ = 0;
       jobConfig_ = null;
       return this;
@@ -2008,6 +2044,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.optimization_ = optimization_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.fillContentGaps_ = fillContentGaps_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2108,6 +2147,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.optimization_ != 0) {
         setOptimizationValue(other.getOptimizationValue());
+      }
+      if (other.getFillContentGaps() != false) {
+        setFillContentGaps(other.getFillContentGaps());
       }
       switch (other.getJobConfigCase()) {
         case TEMPLATE_ID:
@@ -2250,6 +2292,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 176
+            case 200:
+              {
+                fillContentGaps_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 200
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4018,7 +4066,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4034,7 +4084,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4054,7 +4106,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4078,7 +4132,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4099,7 +4155,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4128,7 +4186,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4149,7 +4209,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4165,7 +4227,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4183,7 +4247,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An error object that describes the reason for the failure.
-     * This property is always present when `state` is `FAILED`.
+     * This property is always present when
+     * [ProcessingState][google.cloud.video.transcoder.v1.Job.ProcessingState] is
+     * `FAILED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4478,6 +4544,65 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOptimization() {
       bitField0_ = (bitField0_ & ~0x00004000);
       optimization_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean fillContentGaps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Insert silence and duplicate frames when timestamp gaps are
+     * detected in a given stream.
+     * </pre>
+     *
+     * <code>bool fill_content_gaps = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fillContentGaps.
+     */
+    @java.lang.Override
+    public boolean getFillContentGaps() {
+      return fillContentGaps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Insert silence and duplicate frames when timestamp gaps are
+     * detected in a given stream.
+     * </pre>
+     *
+     * <code>bool fill_content_gaps = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The fillContentGaps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFillContentGaps(boolean value) {
+
+      fillContentGaps_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Insert silence and duplicate frames when timestamp gaps are
+     * detected in a given stream.
+     * </pre>
+     *
+     * <code>bool fill_content_gaps = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFillContentGaps() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      fillContentGaps_ = false;
       onChanged();
       return this;
     }

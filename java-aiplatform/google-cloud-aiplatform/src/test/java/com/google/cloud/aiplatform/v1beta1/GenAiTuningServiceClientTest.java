@@ -114,6 +114,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -130,6 +131,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -173,6 +175,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -189,6 +192,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -232,6 +236,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -248,6 +253,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -288,6 +294,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -304,6 +311,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -500,6 +508,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -516,6 +525,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -567,6 +577,7 @@ public class GenAiTuningServiceClientTest {
             .setName(TuningJobName.of("[PROJECT]", "[LOCATION]", "[TUNING_JOB]").toString())
             .setTunedModelDisplayName("tunedModelDisplayName759401232")
             .setDescription("description-1724546052")
+            .setCustomBaseModel("customBaseModel942572135")
             .setState(JobState.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
@@ -583,6 +594,7 @@ public class GenAiTuningServiceClientTest {
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setOutputUri("outputUri-2119300949")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

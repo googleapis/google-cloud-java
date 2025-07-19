@@ -4971,7 +4971,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End previous overlay animation from the video. Without AnimationEnd, the
+   * End previous overlay animation from the video. Without `AnimationEnd`, the
    * overlay object will keep the state of previous animation until the end of
    * the video.
    * </pre>
@@ -5237,7 +5237,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End previous overlay animation from the video. Without AnimationEnd, the
+     * End previous overlay animation from the video. Without `AnimationEnd`, the
      * overlay object will keep the state of previous animation until the end of
      * the video.
      * </pre>
@@ -7350,7 +7350,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -7366,7 +7366,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -7382,7 +7382,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -7397,7 +7397,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -7412,7 +7412,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Animations. The list should be chronological, without any time
+   * List of animations. The list should be chronological, without any time
    * overlap.
    * </pre>
    *
@@ -8075,7 +8075,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8094,7 +8094,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8112,7 +8112,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8130,7 +8130,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8155,7 +8155,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8177,7 +8177,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8201,7 +8201,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8226,7 +8226,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8248,7 +8248,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8270,7 +8270,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8293,7 +8293,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8314,7 +8314,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8335,7 +8335,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8350,7 +8350,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8369,7 +8369,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8388,7 +8388,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8403,7 +8403,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *
@@ -8420,7 +8420,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Animations. The list should be chronological, without any time
+     * List of animations. The list should be chronological, without any time
      * overlap.
      * </pre>
      *

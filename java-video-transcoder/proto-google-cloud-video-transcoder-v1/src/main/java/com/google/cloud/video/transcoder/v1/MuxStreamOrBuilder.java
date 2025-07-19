@@ -28,8 +28,7 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `.m3u8` extension suffix.
+   * A unique key for this multiplexed stream.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -42,8 +41,7 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `.m3u8` extension suffix.
+   * A unique key for this multiplexed stream.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -56,8 +54,10 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `MuxStream.key` with the
-   * extension suffix corresponding to the `MuxStream.container`.
+   * The name of the generated file. The default is
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+   * extension suffix corresponding to the
+   * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
    *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -73,8 +73,10 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `MuxStream.key` with the
-   * extension suffix corresponding to the `MuxStream.container`.
+   * The name of the generated file. The default is
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+   * extension suffix corresponding to the
+   * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
    *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -92,11 +94,16 @@ public interface MuxStreamOrBuilder
    * <pre>
    * The container format. The default is `mp4`
    *
-   * Supported container formats:
+   * Supported streaming formats:
    *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
+   *
+   * Supported standalone file formats:
+   *
    * - `mp4`
+   * - `mp3`
+   * - `ogg`
    * - `vtt`
    *
    * See also:
@@ -116,11 +123,16 @@ public interface MuxStreamOrBuilder
    * <pre>
    * The container format. The default is `mp4`
    *
-   * Supported container formats:
+   * Supported streaming formats:
    *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
+   *
+   * Supported standalone file formats:
+   *
    * - `mp4`
+   * - `mp3`
+   * - `ogg`
    * - `vtt`
    *
    * See also:
@@ -138,7 +150,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -151,7 +165,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -164,7 +180,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -178,7 +196,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -252,4 +272,49 @@ public interface MuxStreamOrBuilder
    * @return The bytes for encryptionId.
    */
   com.google.protobuf.ByteString getEncryptionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fmp4 field is set.
+   */
+  boolean hasFmp4();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fmp4.
+   */
+  com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getFmp4();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder getFmp4OrBuilder();
+
+  com.google.cloud.video.transcoder.v1.MuxStream.ContainerConfigCase getContainerConfigCase();
 }

@@ -122,7 +122,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1544
+   *     google/container/v1/cluster_service.proto;l=1814
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1544
+   *     google/container/v1/cluster_service.proto;l=1814
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -652,4 +652,41 @@ public interface AddonsConfigOrBuilder
    */
   com.google.container.v1.HighScaleCheckpointingConfigOrBuilder
       getHighScaleCheckpointingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return Whether the lustreCsiDriverConfig field is set.
+   */
+  boolean hasLustreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return The lustreCsiDriverConfig.
+   */
+  com.google.container.v1.LustreCsiDriverConfig getLustreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   */
+  com.google.container.v1.LustreCsiDriverConfigOrBuilder getLustreCsiDriverConfigOrBuilder();
 }

@@ -115,6 +115,7 @@ public class TasksClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -192,6 +193,7 @@ public class TasksClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);

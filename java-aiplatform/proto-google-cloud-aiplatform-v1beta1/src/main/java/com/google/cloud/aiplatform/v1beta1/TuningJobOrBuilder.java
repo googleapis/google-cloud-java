@@ -276,6 +276,42 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * Optional. The user-provided path to custom model weights. Set this field
+   * to tune a custom model. The path must be a Cloud Storage directory that
+   * contains the model weights in .safetensors format along with associated
+   * model metadata files. If this field is set, the base_model field must still
+   * be set to indicate which base model the custom model is derived from. This
+   * feature is only available for open source models.
+   * </pre>
+   *
+   * <code>string custom_base_model = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customBaseModel.
+   */
+  java.lang.String getCustomBaseModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided path to custom model weights. Set this field
+   * to tune a custom model. The path must be a Cloud Storage directory that
+   * contains the model weights in .safetensors format along with associated
+   * model metadata files. If this field is set, the base_model field must still
+   * be set to indicate which base model the custom model is derived from. This
+   * feature is only available for open source models.
+   * </pre>
+   *
+   * <code>string custom_base_model = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customBaseModel.
+   */
+  com.google.protobuf.ByteString getCustomBaseModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The detailed state of the job.
    * </pre>
    *
@@ -869,6 +905,36 @@ public interface TuningJobOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage path to the directory where tuning job outputs are
+   * written to. This field is only available and required for open source
+   * models.
+   * </pre>
+   *
+   * <code>string output_uri = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputUri.
+   */
+  java.lang.String getOutputUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage path to the directory where tuning job outputs are
+   * written to. This field is only available and required for open source
+   * models.
+   * </pre>
+   *
+   * <code>string output_uri = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputUri.
+   */
+  com.google.protobuf.ByteString getOutputUriBytes();
 
   com.google.cloud.aiplatform.v1beta1.TuningJob.SourceModelCase getSourceModelCase();
 

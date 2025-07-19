@@ -342,9 +342,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * signals, refer to `validation_granularity` below.
    *
    * For example, if the input address includes a specific apartment number,
-   * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-   * the apartment number in the databases or the apartment number is invalid,
-   * the `validation_granularity` will likely be `PREMISE` or below.
+   * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+   * validation service cannot match the apartment number in the databases or
+   * the apartment number is invalid, the `validation_granularity` will likely
+   * be `PREMISE` or more coarse.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -365,9 +366,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * signals, refer to `validation_granularity` below.
    *
    * For example, if the input address includes a specific apartment number,
-   * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-   * the apartment number in the databases or the apartment number is invalid,
-   * the `validation_granularity` will likely be `PREMISE` or below.
+   * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+   * validation service cannot match the apartment number in the databases or
+   * the apartment number is invalid, the `validation_granularity` will likely
+   * be `PREMISE` or more coarse.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -390,9 +392,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The granularity level that the API can fully **validate** the address to.
-   * For example, an `validation_granularity` of `PREMISE` indicates all address
-   * components at the level of `PREMISE` or more coarse can be validated.
+   * The level of granularity for the post-processed address that the API can
+   * fully validate. For example, a `validation_granularity` of `PREMISE`
+   * indicates all address components at the level of `PREMISE` or more coarse
+   * can be validated.
    *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
@@ -411,9 +414,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The granularity level that the API can fully **validate** the address to.
-   * For example, an `validation_granularity` of `PREMISE` indicates all address
-   * components at the level of `PREMISE` or more coarse can be validated.
+   * The level of granularity for the post-processed address that the API can
+   * fully validate. For example, a `validation_granularity` of `PREMISE`
+   * indicates all address components at the level of `PREMISE` or more coarse
+   * can be validated.
    *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
@@ -496,8 +500,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The address is considered complete if there are no unresolved tokens, no
-   * unexpected or missing address components. See
+   * The post-processed address is considered complete if there are no
+   * unresolved tokens, no unexpected or missing address components. If unset,
+   * indicates that the value is `false`. See
    * [`missing_component_types`][google.maps.addressvalidation.v1.Address.missing_component_types],
    * [`unresolved_tokens`][google.maps.addressvalidation.v1.Address.unresolved_tokens]
    * or
@@ -578,6 +583,27 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     return hasReplacedComponents_;
   }
 
+  public static final int HAS_SPELL_CORRECTED_COMPONENTS_FIELD_NUMBER = 9;
+  private boolean hasSpellCorrectedComponents_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * At least one address component was spell-corrected, see
+   * [google.maps.addressvalidation.v1.Address.address_components] for
+   * details.
+   * </pre>
+   *
+   * <code>bool has_spell_corrected_components = 9;</code>
+   *
+   * @return The hasSpellCorrectedComponents.
+   */
+  @java.lang.Override
+  public boolean getHasSpellCorrectedComponents() {
+    return hasSpellCorrectedComponents_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -619,6 +645,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     if (hasReplacedComponents_ != false) {
       output.writeBool(7, hasReplacedComponents_);
     }
+    if (hasSpellCorrectedComponents_ != false) {
+      output.writeBool(9, hasSpellCorrectedComponents_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -655,6 +684,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     if (hasReplacedComponents_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, hasReplacedComponents_);
     }
+    if (hasSpellCorrectedComponents_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(9, hasSpellCorrectedComponents_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -678,6 +711,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     if (getHasUnconfirmedComponents() != other.getHasUnconfirmedComponents()) return false;
     if (getHasInferredComponents() != other.getHasInferredComponents()) return false;
     if (getHasReplacedComponents() != other.getHasReplacedComponents()) return false;
+    if (getHasSpellCorrectedComponents() != other.getHasSpellCorrectedComponents()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -703,6 +737,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasInferredComponents());
     hash = (37 * hash) + HAS_REPLACED_COMPONENTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasReplacedComponents());
+    hash = (37 * hash) + HAS_SPELL_CORRECTED_COMPONENTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasSpellCorrectedComponents());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -850,6 +886,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       hasUnconfirmedComponents_ = false;
       hasInferredComponents_ = false;
       hasReplacedComponents_ = false;
+      hasSpellCorrectedComponents_ = false;
       return this;
     }
 
@@ -906,6 +943,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.hasReplacedComponents_ = hasReplacedComponents_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.hasSpellCorrectedComponents_ = hasSpellCorrectedComponents_;
       }
     }
 
@@ -975,6 +1015,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       if (other.getHasReplacedComponents() != false) {
         setHasReplacedComponents(other.getHasReplacedComponents());
       }
+      if (other.getHasSpellCorrectedComponents() != false) {
+        setHasSpellCorrectedComponents(other.getHasSpellCorrectedComponents());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1043,6 +1086,12 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+            case 72:
+              {
+                hasSpellCorrectedComponents_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1073,9 +1122,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * signals, refer to `validation_granularity` below.
      *
      * For example, if the input address includes a specific apartment number,
-     * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-     * the apartment number in the databases or the apartment number is invalid,
-     * the `validation_granularity` will likely be `PREMISE` or below.
+     * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+     * validation service cannot match the apartment number in the databases or
+     * the apartment number is invalid, the `validation_granularity` will likely
+     * be `PREMISE` or more coarse.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -1096,9 +1146,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * signals, refer to `validation_granularity` below.
      *
      * For example, if the input address includes a specific apartment number,
-     * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-     * the apartment number in the databases or the apartment number is invalid,
-     * the `validation_granularity` will likely be `PREMISE` or below.
+     * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+     * validation service cannot match the apartment number in the databases or
+     * the apartment number is invalid, the `validation_granularity` will likely
+     * be `PREMISE` or more coarse.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -1122,9 +1173,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * signals, refer to `validation_granularity` below.
      *
      * For example, if the input address includes a specific apartment number,
-     * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-     * the apartment number in the databases or the apartment number is invalid,
-     * the `validation_granularity` will likely be `PREMISE` or below.
+     * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+     * validation service cannot match the apartment number in the databases or
+     * the apartment number is invalid, the `validation_granularity` will likely
+     * be `PREMISE` or more coarse.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -1149,9 +1201,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * signals, refer to `validation_granularity` below.
      *
      * For example, if the input address includes a specific apartment number,
-     * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-     * the apartment number in the databases or the apartment number is invalid,
-     * the `validation_granularity` will likely be `PREMISE` or below.
+     * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+     * validation service cannot match the apartment number in the databases or
+     * the apartment number is invalid, the `validation_granularity` will likely
+     * be `PREMISE` or more coarse.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -1179,9 +1232,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * signals, refer to `validation_granularity` below.
      *
      * For example, if the input address includes a specific apartment number,
-     * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-     * the apartment number in the databases or the apartment number is invalid,
-     * the `validation_granularity` will likely be `PREMISE` or below.
+     * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+     * validation service cannot match the apartment number in the databases or
+     * the apartment number is invalid, the `validation_granularity` will likely
+     * be `PREMISE` or more coarse.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -1201,9 +1255,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The granularity level that the API can fully **validate** the address to.
-     * For example, an `validation_granularity` of `PREMISE` indicates all address
-     * components at the level of `PREMISE` or more coarse can be validated.
+     * The level of granularity for the post-processed address that the API can
+     * fully validate. For example, a `validation_granularity` of `PREMISE`
+     * indicates all address components at the level of `PREMISE` or more coarse
+     * can be validated.
      *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
@@ -1223,9 +1278,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The granularity level that the API can fully **validate** the address to.
-     * For example, an `validation_granularity` of `PREMISE` indicates all address
-     * components at the level of `PREMISE` or more coarse can be validated.
+     * The level of granularity for the post-processed address that the API can
+     * fully validate. For example, a `validation_granularity` of `PREMISE`
+     * indicates all address components at the level of `PREMISE` or more coarse
+     * can be validated.
      *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
@@ -1248,9 +1304,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The granularity level that the API can fully **validate** the address to.
-     * For example, an `validation_granularity` of `PREMISE` indicates all address
-     * components at the level of `PREMISE` or more coarse can be validated.
+     * The level of granularity for the post-processed address that the API can
+     * fully validate. For example, a `validation_granularity` of `PREMISE`
+     * indicates all address components at the level of `PREMISE` or more coarse
+     * can be validated.
      *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
@@ -1275,9 +1332,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The granularity level that the API can fully **validate** the address to.
-     * For example, an `validation_granularity` of `PREMISE` indicates all address
-     * components at the level of `PREMISE` or more coarse can be validated.
+     * The level of granularity for the post-processed address that the API can
+     * fully validate. For example, a `validation_granularity` of `PREMISE`
+     * indicates all address components at the level of `PREMISE` or more coarse
+     * can be validated.
      *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
@@ -1304,9 +1362,10 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The granularity level that the API can fully **validate** the address to.
-     * For example, an `validation_granularity` of `PREMISE` indicates all address
-     * components at the level of `PREMISE` or more coarse can be validated.
+     * The level of granularity for the post-processed address that the API can
+     * fully validate. For example, a `validation_granularity` of `PREMISE`
+     * indicates all address components at the level of `PREMISE` or more coarse
+     * can be validated.
      *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
@@ -1473,8 +1532,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address is considered complete if there are no unresolved tokens, no
-     * unexpected or missing address components. See
+     * The post-processed address is considered complete if there are no
+     * unresolved tokens, no unexpected or missing address components. If unset,
+     * indicates that the value is `false`. See
      * [`missing_component_types`][google.maps.addressvalidation.v1.Address.missing_component_types],
      * [`unresolved_tokens`][google.maps.addressvalidation.v1.Address.unresolved_tokens]
      * or
@@ -1495,8 +1555,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address is considered complete if there are no unresolved tokens, no
-     * unexpected or missing address components. See
+     * The post-processed address is considered complete if there are no
+     * unresolved tokens, no unexpected or missing address components. If unset,
+     * indicates that the value is `false`. See
      * [`missing_component_types`][google.maps.addressvalidation.v1.Address.missing_component_types],
      * [`unresolved_tokens`][google.maps.addressvalidation.v1.Address.unresolved_tokens]
      * or
@@ -1521,8 +1582,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address is considered complete if there are no unresolved tokens, no
-     * unexpected or missing address components. See
+     * The post-processed address is considered complete if there are no
+     * unresolved tokens, no unexpected or missing address components. If unset,
+     * indicates that the value is `false`. See
      * [`missing_component_types`][google.maps.addressvalidation.v1.Address.missing_component_types],
      * [`unresolved_tokens`][google.maps.addressvalidation.v1.Address.unresolved_tokens]
      * or
@@ -1726,6 +1788,68 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHasReplacedComponents() {
       bitField0_ = (bitField0_ & ~0x00000040);
       hasReplacedComponents_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean hasSpellCorrectedComponents_;
+
+    /**
+     *
+     *
+     * <pre>
+     * At least one address component was spell-corrected, see
+     * [google.maps.addressvalidation.v1.Address.address_components] for
+     * details.
+     * </pre>
+     *
+     * <code>bool has_spell_corrected_components = 9;</code>
+     *
+     * @return The hasSpellCorrectedComponents.
+     */
+    @java.lang.Override
+    public boolean getHasSpellCorrectedComponents() {
+      return hasSpellCorrectedComponents_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * At least one address component was spell-corrected, see
+     * [google.maps.addressvalidation.v1.Address.address_components] for
+     * details.
+     * </pre>
+     *
+     * <code>bool has_spell_corrected_components = 9;</code>
+     *
+     * @param value The hasSpellCorrectedComponents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasSpellCorrectedComponents(boolean value) {
+
+      hasSpellCorrectedComponents_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * At least one address component was spell-corrected, see
+     * [google.maps.addressvalidation.v1.Address.address_components] for
+     * details.
+     * </pre>
+     *
+     * <code>bool has_spell_corrected_components = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHasSpellCorrectedComponents() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      hasSpellCorrectedComponents_ = false;
       onChanged();
       return this;
     }

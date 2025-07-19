@@ -76,8 +76,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references atom with text inputs in the
-     * `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references atom with text inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,8 +92,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references atom with text inputs in the
-     * `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references atom with text inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,7 +108,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -117,7 +122,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -144,7 +150,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.TextStream.TextMapping}
@@ -195,8 +204,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references atom with text inputs in the
-     * `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references atom with text inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -220,8 +231,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references atom with text inputs in the
-     * `Job.edit_list`.
+     * Required. The
+     * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+     * references atom with text inputs in the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -250,7 +263,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -274,7 +288,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Input.key` that identifies the input file.
+     * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+     * that identifies the input file.
      * </pre>
      *
      * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -497,7 +512,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.TextStream.TextMapping}
@@ -716,8 +734,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references atom with text inputs in the
-       * `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references atom with text inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,8 +760,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references atom with text inputs in the
-       * `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references atom with text inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -764,8 +786,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references atom with text inputs in the
-       * `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references atom with text inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -787,8 +811,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references atom with text inputs in the
-       * `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references atom with text inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -806,8 +832,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references atom with text inputs in the
-       * `Job.edit_list`.
+       * Required. The
+       * [EditAtom.key][google.cloud.video.transcoder.v1.EditAtom.key] that
+       * references atom with text inputs in the
+       * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list].
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,7 +860,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -855,7 +884,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -878,7 +908,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -900,7 +931,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,7 +950,8 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Input.key` that identifies the input file.
+       * Required. The [Input.key][google.cloud.video.transcoder.v1.Input.key]
+       * that identifies the input file.
        * </pre>
        *
        * <code>string input_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1195,7 +1228,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -1210,7 +1246,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -1226,7 +1265,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -1240,7 +1282,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -1254,7 +1299,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2083,7 +2131,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2101,7 +2152,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2118,7 +2172,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2135,7 +2192,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2159,7 +2219,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2181,7 +2244,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2204,7 +2270,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2228,7 +2297,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2249,7 +2321,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2271,7 +2346,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2293,7 +2371,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2313,7 +2394,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2333,7 +2417,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2347,7 +2434,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2365,7 +2455,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2384,7 +2477,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2399,7 +2495,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -2416,7 +2515,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+     * The mapping for the
+     * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+     * atoms with text
+     * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>

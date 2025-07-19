@@ -102,7 +102,10 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -113,7 +116,10 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -124,7 +130,10 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -135,7 +144,10 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>
@@ -147,7 +159,10 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with text
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.TextStream.TextMapping mapping = 3;</code>

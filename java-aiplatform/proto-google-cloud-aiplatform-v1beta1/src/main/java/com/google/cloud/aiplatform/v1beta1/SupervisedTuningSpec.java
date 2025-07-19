@@ -42,6 +42,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
   private SupervisedTuningSpec() {
     trainingDatasetUri_ = "";
     validationDatasetUri_ = "";
+    tuningMode_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +66,167 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Supported tuning modes.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode}
+   */
+  public enum TuningMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode is unspecified.
+     * </pre>
+     *
+     * <code>TUNING_MODE_UNSPECIFIED = 0;</code>
+     */
+    TUNING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Full fine-tuning mode.
+     * </pre>
+     *
+     * <code>TUNING_MODE_FULL = 1;</code>
+     */
+    TUNING_MODE_FULL(1),
+    /**
+     *
+     *
+     * <pre>
+     * PEFT adapter tuning mode.
+     * </pre>
+     *
+     * <code>TUNING_MODE_PEFT_ADAPTER = 2;</code>
+     */
+    TUNING_MODE_PEFT_ADAPTER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode is unspecified.
+     * </pre>
+     *
+     * <code>TUNING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TUNING_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Full fine-tuning mode.
+     * </pre>
+     *
+     * <code>TUNING_MODE_FULL = 1;</code>
+     */
+    public static final int TUNING_MODE_FULL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * PEFT adapter tuning mode.
+     * </pre>
+     *
+     * <code>TUNING_MODE_PEFT_ADAPTER = 2;</code>
+     */
+    public static final int TUNING_MODE_PEFT_ADAPTER_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TuningMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TuningMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TUNING_MODE_UNSPECIFIED;
+        case 1:
+          return TUNING_MODE_FULL;
+        case 2:
+          return TUNING_MODE_PEFT_ADAPTER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TuningMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TuningMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TuningMode>() {
+          public TuningMode findValueByNumber(int number) {
+            return TuningMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TuningMode[] VALUES = values();
+
+    public static TuningMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TuningMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode)
+  }
+
   private int bitField0_;
   public static final int TRAINING_DATASET_URI_FIELD_NUMBER = 1;
 
@@ -75,8 +237,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Cloud Storage path to file containing training dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Required. Training dataset used for tuning. The dataset can be specified as
+   * either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,8 +263,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Cloud Storage path to file containing training dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Required. Training dataset used for tuning. The dataset can be specified as
+   * either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -130,8 +294,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Optional. Validation dataset used for tuning. The dataset can be specified
+   * as either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -155,8 +320,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Optional. Validation dataset used for tuning. The dataset can be specified
+   * as either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -257,6 +423,45 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     return exportLastCheckpointOnly_;
   }
 
+  public static final int TUNING_MODE_FIELD_NUMBER = 7;
+  private int tuningMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning mode.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;</code>
+   *
+   * @return The enum numeric value on the wire for tuningMode.
+   */
+  @java.lang.Override
+  public int getTuningModeValue() {
+    return tuningMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning mode.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;</code>
+   *
+   * @return The tuningMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode getTuningMode() {
+    com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode result =
+        com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode.forNumber(tuningMode_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -283,6 +488,12 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     if (exportLastCheckpointOnly_ != false) {
       output.writeBool(6, exportLastCheckpointOnly_);
     }
+    if (tuningMode_
+        != com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode
+            .TUNING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, tuningMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -303,6 +514,12 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     }
     if (exportLastCheckpointOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, exportLastCheckpointOnly_);
+    }
+    if (tuningMode_
+        != com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode
+            .TUNING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, tuningMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -327,6 +544,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       if (!getHyperParameters().equals(other.getHyperParameters())) return false;
     }
     if (getExportLastCheckpointOnly() != other.getExportLastCheckpointOnly()) return false;
+    if (tuningMode_ != other.tuningMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,6 +566,8 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + EXPORT_LAST_CHECKPOINT_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportLastCheckpointOnly());
+    hash = (37 * hash) + TUNING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + tuningMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -506,6 +726,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
         hyperParametersBuilder_ = null;
       }
       exportLastCheckpointOnly_ = false;
+      tuningMode_ = 0;
       return this;
     }
 
@@ -556,6 +777,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.exportLastCheckpointOnly_ = exportLastCheckpointOnly_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tuningMode_ = tuningMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -622,6 +846,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       if (other.getExportLastCheckpointOnly() != false) {
         setExportLastCheckpointOnly(other.getExportLastCheckpointOnly());
       }
+      if (other.tuningMode_ != 0) {
+        setTuningModeValue(other.getTuningModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -672,6 +899,12 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 48
+            case 56:
+              {
+                tuningMode_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -697,8 +930,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud Storage path to file containing training dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Required. Training dataset used for tuning. The dataset can be specified as
+     * either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -721,8 +955,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud Storage path to file containing training dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Required. Training dataset used for tuning. The dataset can be specified as
+     * either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -745,8 +980,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud Storage path to file containing training dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Required. Training dataset used for tuning. The dataset can be specified as
+     * either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,8 +1004,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud Storage path to file containing training dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Required. Training dataset used for tuning. The dataset can be specified as
+     * either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -787,8 +1024,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud Storage path to file containing training dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Required. Training dataset used for tuning. The dataset can be specified as
+     * either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -813,8 +1051,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Optional. Validation dataset used for tuning. The dataset can be specified
+     * as either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,8 +1076,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Optional. Validation dataset used for tuning. The dataset can be specified
+     * as either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -861,8 +1101,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Optional. Validation dataset used for tuning. The dataset can be specified
+     * as either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -884,8 +1125,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Optional. Validation dataset used for tuning. The dataset can be specified
+     * as either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -903,8 +1145,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning. The dataset must be formatted as a JSONL file.
+     * Optional. Validation dataset used for tuning. The dataset can be specified
+     * as either a Cloud Storage path to a JSONL file or as the resource name of a
+     * Vertex Multimodal Dataset.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1200,6 +1443,110 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     public Builder clearExportLastCheckpointOnly() {
       bitField0_ = (bitField0_ & ~0x00000008);
       exportLastCheckpointOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int tuningMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tuningMode.
+     */
+    @java.lang.Override
+    public int getTuningModeValue() {
+      return tuningMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for tuningMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTuningModeValue(int value) {
+      tuningMode_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;
+     * </code>
+     *
+     * @return The tuningMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode getTuningMode() {
+      com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode result =
+          com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode.forNumber(
+              tuningMode_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;
+     * </code>
+     *
+     * @param value The tuningMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTuningMode(
+        com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      tuningMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning mode.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTuningMode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tuningMode_ = 0;
       onChanged();
       return this;
     }
