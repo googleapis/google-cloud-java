@@ -90,7 +90,6 @@ public class GCRulesTest {
   public void versions() {
     VersionRule actual = GCRULES.maxVersions(10);
     GcRule expected = buildVersionsRule(10);
-    assertNotNull(actual.getMaxVersions());
     assertThat(actual.toProto()).isEqualTo(expected);
   }
 

@@ -28,8 +28,10 @@ import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.*;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.collect.Lists;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -132,7 +134,8 @@ public class ErrorCountPerConnectionTest {
           query = Query.create(SUCCESS_TABLE_NAME);
         }
         try {
-          stub.readRowsCallable().call(query).iterator().hasNext();
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(stub.readRowsCallable().call(query));
         } catch (Exception e) {
           // noop
         }
@@ -168,9 +171,12 @@ public class ErrorCountPerConnectionTest {
         try {
           if (i < 10) {
             totalErrorCount += 1;
-            stub.readRowsCallable().call(Query.create(ERROR_TABLE_NAME)).iterator().hasNext();
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<Row> ignored =
+                Lists.newArrayList(stub.readRowsCallable().call(Query.create(ERROR_TABLE_NAME)));
           } else {
-            stub.readRowsCallable().call(Query.create(SUCCESS_TABLE_NAME)).iterator().hasNext();
+            ArrayList<Row> ignored =
+                Lists.newArrayList(stub.readRowsCallable().call(Query.create(SUCCESS_TABLE_NAME)));
           }
         } catch (Exception e) {
           // noop
@@ -210,7 +216,8 @@ public class ErrorCountPerConnectionTest {
           query = Query.create(SUCCESS_TABLE_NAME);
         }
         try {
-          stub.readRowsCallable().call(query).iterator().hasNext();
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(stub.readRowsCallable().call(query));
         } catch (Exception e) {
           // noop
         }
@@ -227,7 +234,8 @@ public class ErrorCountPerConnectionTest {
           errorCount2 += 1;
         }
         try {
-          stub.readRowsCallable().call(query).iterator().hasNext();
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(stub.readRowsCallable().call(query));
         } catch (Exception e) {
           // noop
         }
@@ -255,7 +263,9 @@ public class ErrorCountPerConnectionTest {
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(builder.build())) {
       for (int i = 0; i < 20; i++) {
         try {
-          stub.readRowsCallable().call(Query.create(SUCCESS_TABLE_NAME)).iterator().hasNext();
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored =
+              Lists.newArrayList(stub.readRowsCallable().call(Query.create(SUCCESS_TABLE_NAME)));
         } catch (Exception e) {
           // noop
         }

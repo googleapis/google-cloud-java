@@ -73,6 +73,7 @@ import org.junit.runners.JUnit4;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 
+@SuppressWarnings("DoubleBraceInitialization")
 @RunWith(Enclosed.class)
 public class AbstractProtoStructReaderTest {
 

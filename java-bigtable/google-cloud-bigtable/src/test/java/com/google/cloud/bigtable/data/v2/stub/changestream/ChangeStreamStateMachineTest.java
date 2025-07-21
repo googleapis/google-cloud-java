@@ -92,6 +92,6 @@ public class ChangeStreamStateMachineTest {
     ReadChangeStreamResponse.DataChange dataChange = createDataChangeWithDeleteFamilyMods(500000);
     changeStreamStateMachine.handleDataChange(dataChange);
     ChangeStreamRecord result = changeStreamStateMachine.consumeChangeStreamRecord();
-    assertThat(result instanceof ChangeStreamMutation);
+    assertThat(result).isInstanceOf(ChangeStreamMutation.class);
   }
 }

@@ -152,6 +152,7 @@ public class ExecuteQueryIT {
     }
   }
 
+  @SuppressWarnings("DoubleBraceInitialization")
   @Test
   public void allTypes() {
     PreparedStatement preparedStatement =

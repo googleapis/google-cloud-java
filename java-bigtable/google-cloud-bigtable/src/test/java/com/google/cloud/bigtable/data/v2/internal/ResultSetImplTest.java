@@ -82,6 +82,7 @@ public class ResultSetImplTest {
     return ResultSetImpl.create(SqlServerStreamImpl.create(future, stream.call(fakeCallContext)));
   }
 
+  @SuppressWarnings("DoubleBraceInitialization")
   @Test
   public void testSingleRow() throws ExecutionException, InterruptedException {
     com.google.bigtable.v2.ResultSetMetadata protoMetadata =

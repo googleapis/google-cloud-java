@@ -49,18 +49,22 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range;
 import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
 import com.google.protobuf.Any;
 import com.google.rpc.RetryInfo;
@@ -76,6 +80,7 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Queue;
@@ -156,7 +161,12 @@ public class RetryInfoTest {
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
-        () -> client.readRows(Query.create(TableId.of("table"))).iterator().hasNext(), true);
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored =
+              Lists.newArrayList(client.readRows(Query.create(TableId.of("table"))));
+        },
+        true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
@@ -194,12 +204,21 @@ public class RetryInfoTest {
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
-        () -> client.readChangeStream(ReadChangeStreamQuery.create("table")).iterator().hasNext(),
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
         true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
-        () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), true);
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
@@ -249,7 +268,12 @@ public class RetryInfoTest {
 
   @Test
   public void testReadRowsNonRetraybleErrorWithRetryInfo() {
-    verifyRetryInfoIsUsed(() -> client.readRows(Query.create("table")).iterator().hasNext(), false);
+    verifyRetryInfoIsUsed(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
+        },
+        false);
   }
 
   @Test
@@ -258,13 +282,21 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyRetryInfoCanBeDisabled(
-          () -> newClient.readRows(Query.create("table")).iterator().hasNext());
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<Row> ignored = Lists.newArrayList(newClient.readRows(Query.create("table")));
+          });
     }
   }
 
   @Test
   public void testReadRowsServerNotReturningRetryInfo() {
-    verifyNoRetryInfo(() -> client.readRows(Query.create("table")).iterator().hasNext(), true);
+    verifyNoRetryInfo(
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
+        },
+        true);
   }
 
   @Test
@@ -272,7 +304,12 @@ public class RetryInfoTest {
     settings.stubSettings().setEnableRetryInfo(false);
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(() -> newClient.readRows(Query.create("table")).iterator().hasNext(), true);
+      verifyNoRetryInfo(
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<Row> ignored = Lists.newArrayList(newClient.readRows(Query.create("table")));
+          },
+          true);
     }
   }
 
@@ -471,7 +508,11 @@ public class RetryInfoTest {
   @Test
   public void testReadChangeStreamNonRetryableErrorWithRetryInfo() {
     verifyRetryInfoIsUsed(
-        () -> client.readChangeStream(ReadChangeStreamQuery.create("table")).iterator().hasNext(),
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
         false);
   }
 
@@ -481,18 +522,23 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyRetryInfoCanBeDisabled(
-          () ->
-              newClient
-                  .readChangeStream(ReadChangeStreamQuery.create("table"))
-                  .iterator()
-                  .hasNext());
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<ChangeStreamRecord> ignored =
+                Lists.newArrayList(
+                    newClient.readChangeStream(ReadChangeStreamQuery.create("table")));
+          });
     }
   }
 
   @Test
   public void testReadChangeStreamServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
-        () -> client.readChangeStream(ReadChangeStreamQuery.create("table")).iterator().hasNext(),
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<ChangeStreamRecord> ignored =
+              Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
+        },
         true);
   }
 
@@ -502,11 +548,12 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyNoRetryInfo(
-          () ->
-              newClient
-                  .readChangeStream(ReadChangeStreamQuery.create("table"))
-                  .iterator()
-                  .hasNext(),
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<ChangeStreamRecord> ignored =
+                Lists.newArrayList(
+                    newClient.readChangeStream(ReadChangeStreamQuery.create("table")));
+          },
           true,
           com.google.protobuf.Duration.newBuilder().setSeconds(5).setNanos(0).build());
     }
@@ -515,7 +562,12 @@ public class RetryInfoTest {
   @Test
   public void testGenerateInitialChangeStreamPartitionNonRetryableError() {
     verifyRetryInfoIsUsed(
-        () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), false);
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        false);
   }
 
   @Test
@@ -524,14 +576,23 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyRetryInfoCanBeDisabled(
-          () -> newClient.generateInitialChangeStreamPartitions("table").iterator().hasNext());
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<Range.ByteStringRange> ignored =
+                Lists.newArrayList(newClient.generateInitialChangeStreamPartitions("table"));
+          });
     }
   }
 
   @Test
   public void testGenerateInitialChangeStreamServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
-        () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), true);
+        () -> {
+          @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+          ArrayList<Range.ByteStringRange> ignored =
+              Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
+        },
+        true);
   }
 
   @Test
@@ -541,7 +602,11 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyNoRetryInfo(
-          () -> newClient.generateInitialChangeStreamPartitions("table").iterator().hasNext(),
+          () -> {
+            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+            ArrayList<Range.ByteStringRange> ignored =
+                Lists.newArrayList(newClient.generateInitialChangeStreamPartitions("table"));
+          },
           true);
     }
   }

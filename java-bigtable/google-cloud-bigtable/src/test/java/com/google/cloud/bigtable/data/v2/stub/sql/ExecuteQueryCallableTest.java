@@ -157,7 +157,7 @@ public class ExecuteQueryCallableTest {
           overrideDeadline.executeQueryCallable().call(PREPARED_STATEMENT.bind().build());
       Iterator<SqlRow> overrideIterator = streamOverride.rows().iterator();
       // We don't care about this but are reusing the fake service that tests retries
-      assertThrows(DeadlineExceededException.class, overrideIterator::next).getCause();
+      assertThrows(DeadlineExceededException.class, overrideIterator::next);
     }
   }
 

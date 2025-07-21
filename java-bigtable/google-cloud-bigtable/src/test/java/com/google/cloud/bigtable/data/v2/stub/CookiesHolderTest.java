@@ -52,10 +52,13 @@ import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range;
 import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.common.collect.Lists;
 import io.grpc.ForwardingServerCall;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
@@ -185,7 +188,8 @@ public class CookiesHolderTest {
 
   @Test
   public void testReadRows() {
-    client.readRows(Query.create("fake-table")).iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -321,7 +325,9 @@ public class CookiesHolderTest {
 
   @Test
   public void testGenerateInitialChangeStreamPartition() {
-    client.generateInitialChangeStreamPartitions("table").iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Range.ByteStringRange> ignored =
+        Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -368,7 +374,8 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedReadRows() {
     fakeService.returnCookie = false;
 
-    client.readRows(Query.create("fake-table")).iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -476,7 +483,9 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedGenerateInitialChangeStreamParition() {
     fakeService.returnCookie = false;
 
-    client.generateInitialChangeStreamPartitions("table").iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Range.ByteStringRange> ignored =
+        Lists.newArrayList(client.generateInitialChangeStreamPartitions("table"));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -546,8 +555,8 @@ public class CookiesHolderTest {
               .setInstanceId("fake-instance");
 
       try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-
-        client.readRows(Query.create("table")).iterator().hasNext();
+        @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+        ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
 
         Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
 
@@ -567,7 +576,8 @@ public class CookiesHolderTest {
     // This test ensures that all methods respect the retry cookie except for the ones that are
     // explicitly added to the methods list. It requires that any newly method is exercised in this
     // test. This is enforced by introspecting grpc method descriptors.
-    client.readRows(Query.create("fake-table")).iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
 
     fakeService.count.set(0);
     client.mutateRow(RowMutation.create("fake-table", "key").setCell("cf", "q", "v"));
@@ -590,7 +600,9 @@ public class CookiesHolderTest {
         ReadModifyWriteRow.create("fake-table", "key").append("cf", "q", "v"));
 
     fakeService.count.set(0);
-    client.generateInitialChangeStreamPartitions("fake-table").iterator().hasNext();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Range.ByteStringRange> ignored2 =
+        Lists.newArrayList(client.generateInitialChangeStreamPartitions("fake-table"));
 
     fakeService.count.set(0);
     for (ChangeStreamRecord record :
@@ -617,7 +629,8 @@ public class CookiesHolderTest {
       BigtableDataClient client1 = factory.createDefault();
       BigtableDataClient client2 = factory.createForAppProfile("app-profile");
 
-      client1.readRows(Query.create("fake-table")).iterator().hasNext();
+      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      ArrayList<Row> ignored = Lists.newArrayList(client1.readRows(Query.create("fake-table")));
 
       assertThat(fakeService.count.get()).isGreaterThan(1);
       assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -638,7 +651,8 @@ public class CookiesHolderTest {
       fakeService.count.set(0);
       serverMetadata.clear();
 
-      client2.readRows(Query.create("fake-table")).iterator().hasNext();
+      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      ArrayList<Row> ignored2 = Lists.newArrayList(client2.readRows(Query.create("fake-table")));
 
       assertThat(fakeService.count.get()).isGreaterThan(1);
       assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -666,7 +680,8 @@ public class CookiesHolderTest {
     // is added.
     settings.stubSettings().setEnableRoutingCookie(false);
     try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      client.readRows(Query.create("fake-table")).iterator().hasNext();
+      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
       assertThat(fakeService.count.get()).isEqualTo(2);
       fakeService.count.set(0);
 
@@ -695,7 +710,9 @@ public class CookiesHolderTest {
       assertThat(fakeService.count.get()).isEqualTo(2);
       fakeService.count.set(0);
 
-      client.generateInitialChangeStreamPartitions("fake-table").iterator().hasNext();
+      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      ArrayList<Range.ByteStringRange> ignored2 =
+          Lists.newArrayList(client.generateInitialChangeStreamPartitions("fake-table"));
       assertThat(fakeService.count.get()).isEqualTo(2);
       fakeService.count.set(0);
 

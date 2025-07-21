@@ -100,7 +100,7 @@ public class BigtableCmekIT {
         Sets.difference(
                 ImmutableSet.of(
                     testEnvRule.env().getPrimaryZone(), testEnvRule.env().getSecondaryZone()),
-                ImmutableSet.of(zones))
+                ImmutableSet.copyOf(zones))
             .iterator()
             .next();
 

@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,12 +42,11 @@ public class ConsistencyRequestTest {
     CheckConsistencyRequest checkConsistencyRequest =
         consistencyRequest.toCheckConsistencyProto(requestContext, CONSISTENCY_TOKEN);
 
-    assertThat(checkConsistencyRequest.getName().equals(TABLE_ID));
-    assertThat(checkConsistencyRequest.getConsistencyToken().equals(CONSISTENCY_TOKEN));
-    assertThat(
-        checkConsistencyRequest
-            .getModeCase()
-            .equals(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES));
+    assertThat(checkConsistencyRequest.getName())
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(checkConsistencyRequest.getConsistencyToken()).isEqualTo(CONSISTENCY_TOKEN);
+    assertThat(checkConsistencyRequest.getModeCase())
+        .isEqualTo(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES);
   }
 
   @Test
@@ -59,12 +59,11 @@ public class ConsistencyRequestTest {
     CheckConsistencyRequest checkConsistencyRequest =
         consistencyRequest.toCheckConsistencyProto(requestContext, CONSISTENCY_TOKEN);
 
-    assertThat(checkConsistencyRequest.getName().equals(TABLE_ID));
-    assertThat(checkConsistencyRequest.getConsistencyToken().equals(CONSISTENCY_TOKEN));
-    assertThat(
-        checkConsistencyRequest
-            .getModeCase()
-            .equals(CheckConsistencyRequest.ModeCase.DATA_BOOST_READ_LOCAL_WRITES));
+    assertThat(checkConsistencyRequest.getName())
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(checkConsistencyRequest.getConsistencyToken()).isEqualTo(CONSISTENCY_TOKEN);
+    assertThat(checkConsistencyRequest.getModeCase())
+        .isEqualTo(CheckConsistencyRequest.ModeCase.DATA_BOOST_READ_LOCAL_WRITES);
   }
 
   @Test
@@ -77,6 +76,7 @@ public class ConsistencyRequestTest {
     GenerateConsistencyTokenRequest generateRequest =
         consistencyRequest.toGenerateTokenProto(requestContext);
 
-    assertThat(generateRequest.getName().equals(TABLE_ID));
+    assertThat(generateRequest.getName())
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
   }
 }

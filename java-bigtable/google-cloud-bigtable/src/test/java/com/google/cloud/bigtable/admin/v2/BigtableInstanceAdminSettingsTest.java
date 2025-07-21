@@ -163,6 +163,6 @@ public class BigtableInstanceAdminSettingsTest {
     for (String subSettings : SETTINGS_LIST) {
       assertThat(toString).contains(subSettings + "=");
     }
-    assertThat(toString.contains(settings.getStubSettings().toString()));
+    assertThat(toString).contains(settings.getStubSettings().toString());
   }
 }

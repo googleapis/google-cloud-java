@@ -138,8 +138,9 @@ public class StreamingMetricsMetadataIT {
   public void testFailure() {
     Query query = Query.create("non-exist-table");
     try {
-      Lists.newArrayList(client.readRows(query));
-    } catch (NotFoundException e) {
+      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      ArrayList<Row> ignored = Lists.newArrayList(client.readRows(query));
+    } catch (NotFoundException ignored) {
     }
 
     Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
