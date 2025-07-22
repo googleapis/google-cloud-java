@@ -24,9 +24,6 @@ package com.google.bigtable.v2;
  *
  * <pre>
  * Response metadata proto
- * This is an experimental feature that will be used to get zone_id and
- * cluster_id from response trailers to tag the metrics. This should not be
- * used by customers directly
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.ResponseParams}
@@ -392,9 +389,6 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Response metadata proto
-   * This is an experimental feature that will be used to get zone_id and
-   * cluster_id from response trailers to tag the metrics. This should not be
-   * used by customers directly
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.ResponseParams}

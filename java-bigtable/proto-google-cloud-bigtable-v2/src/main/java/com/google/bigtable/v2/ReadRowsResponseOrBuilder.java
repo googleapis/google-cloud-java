@@ -103,26 +103,11 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
-   *
-   * If requested, provide enhanced query performance statistics. The semantics
-   * dictate:
-   *   * request_stats is empty on every (streamed) response, except
-   *   * request_stats has non-empty information after all chunks have been
-   *     streamed, where the ReadRowsResponse message only contains
-   *     request_stats.
-   *       * For example, if a read request would have returned an empty
-   *         response instead a single ReadRowsResponse is streamed with empty
-   *         chunks and request_stats filled.
-   *
-   * Visually, response messages will stream as follows:
-   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
-   *   &#92;______________________/  &#92;________________________________/
-   *       Primary response         Trailer of RequestStats info
-   *
-   * Or if the read did not return any values:
-   *   {chunks: [], request_stats: {...}}
-   *   &#92;________________________________/
-   *      Trailer of RequestStats info
+   * If requested, return enhanced query performance statistics. The field
+   * request_stats is empty in a streamed response unless the ReadRowsResponse
+   * message contains request_stats in the last message of the stream. Always
+   * returned when requested, even when the read request returns an empty
+   * response.
    * </pre>
    *
    * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
@@ -135,26 +120,11 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
-   *
-   * If requested, provide enhanced query performance statistics. The semantics
-   * dictate:
-   *   * request_stats is empty on every (streamed) response, except
-   *   * request_stats has non-empty information after all chunks have been
-   *     streamed, where the ReadRowsResponse message only contains
-   *     request_stats.
-   *       * For example, if a read request would have returned an empty
-   *         response instead a single ReadRowsResponse is streamed with empty
-   *         chunks and request_stats filled.
-   *
-   * Visually, response messages will stream as follows:
-   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
-   *   &#92;______________________/  &#92;________________________________/
-   *       Primary response         Trailer of RequestStats info
-   *
-   * Or if the read did not return any values:
-   *   {chunks: [], request_stats: {...}}
-   *   &#92;________________________________/
-   *      Trailer of RequestStats info
+   * If requested, return enhanced query performance statistics. The field
+   * request_stats is empty in a streamed response unless the ReadRowsResponse
+   * message contains request_stats in the last message of the stream. Always
+   * returned when requested, even when the read request returns an empty
+   * response.
    * </pre>
    *
    * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
@@ -167,26 +137,11 @@ public interface ReadRowsResponseOrBuilder
    *
    *
    * <pre>
-   *
-   * If requested, provide enhanced query performance statistics. The semantics
-   * dictate:
-   *   * request_stats is empty on every (streamed) response, except
-   *   * request_stats has non-empty information after all chunks have been
-   *     streamed, where the ReadRowsResponse message only contains
-   *     request_stats.
-   *       * For example, if a read request would have returned an empty
-   *         response instead a single ReadRowsResponse is streamed with empty
-   *         chunks and request_stats filled.
-   *
-   * Visually, response messages will stream as follows:
-   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
-   *   &#92;______________________/  &#92;________________________________/
-   *       Primary response         Trailer of RequestStats info
-   *
-   * Or if the read did not return any values:
-   *   {chunks: [], request_stats: {...}}
-   *   &#92;________________________________/
-   *      Trailer of RequestStats info
+   * If requested, return enhanced query performance statistics. The field
+   * request_stats is empty in a streamed response unless the ReadRowsResponse
+   * message contains request_stats in the last message of the stream. Always
+   * returned when requested, even when the read request returns an empty
+   * response.
    * </pre>
    *
    * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>

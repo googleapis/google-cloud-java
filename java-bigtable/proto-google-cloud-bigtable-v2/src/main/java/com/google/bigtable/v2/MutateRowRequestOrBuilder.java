@@ -220,8 +220,8 @@ public interface MutateRowRequestOrBuilder
    *
    *
    * <pre>
-   * Optional parameter for ensuring a MutateRow request is only applied once.
-   * Currently applicable only for certain aggregate types.
+   * If set consistently across retries, prevents this mutation from being
+   * double applied to aggregate column families within a 15m window.
    * </pre>
    *
    * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>
@@ -234,8 +234,8 @@ public interface MutateRowRequestOrBuilder
    *
    *
    * <pre>
-   * Optional parameter for ensuring a MutateRow request is only applied once.
-   * Currently applicable only for certain aggregate types.
+   * If set consistently across retries, prevents this mutation from being
+   * double applied to aggregate column families within a 15m window.
    * </pre>
    *
    * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>
@@ -248,8 +248,8 @@ public interface MutateRowRequestOrBuilder
    *
    *
    * <pre>
-   * Optional parameter for ensuring a MutateRow request is only applied once.
-   * Currently applicable only for certain aggregate types.
+   * If set consistently across retries, prevents this mutation from being
+   * double applied to aggregate column families within a 15m window.
    * </pre>
    *
    * <code>.google.bigtable.v2.Idempotency idempotency = 8;</code>

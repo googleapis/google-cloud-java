@@ -275,6 +275,7 @@ public interface ValueOrBuilder
    *
    * <pre>
    * Represents a typed value transported as a floating point number.
+   * Does not support NaN or infinities.
    * </pre>
    *
    * <code>double float_value = 11;</code>
@@ -288,6 +289,7 @@ public interface ValueOrBuilder
    *
    * <pre>
    * Represents a typed value transported as a floating point number.
+   * Does not support NaN or infinities.
    * </pre>
    *
    * <code>double float_value = 11;</code>

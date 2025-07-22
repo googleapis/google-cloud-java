@@ -125,6 +125,14 @@ public final class TypesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Type_Struct_Encoding_OrderedCodeBytes_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_Type_Proto_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_Type_Proto_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_Type_Enum_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_Type_Enum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_Type_Array_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Type_Array_fieldAccessorTable;
@@ -163,7 +171,7 @@ public final class TypesProto {
     java.lang.String[] descriptorData = {
       "\n$google/bigtable/admin/v2/types.proto\022\030"
           + "google.bigtable.admin.v2\032\037google/api/fie"
-          + "ld_behavior.proto\"\343\027\n\004Type\022:\n\nbytes_type"
+          + "ld_behavior.proto\"\307\031\n\004Type\022:\n\nbytes_type"
           + "\030\001 \001(\0132$.google.bigtable.admin.v2.Type.B"
           + "ytesH\000\022<\n\013string_type\030\002 \001(\0132%.google.big"
           + "table.admin.v2.Type.StringH\000\022:\n\nint64_ty"
@@ -182,69 +190,75 @@ public final class TypesProto {
           + "e.StructH\000\022:\n\narray_type\030\003 \001(\0132$.google."
           + "bigtable.admin.v2.Type.ArrayH\000\0226\n\010map_ty"
           + "pe\030\004 \001(\0132\".google.bigtable.admin.v2.Type"
-          + ".MapH\000\032\251\001\n\005Bytes\022?\n\010encoding\030\001 \001(\0132-.goo"
-          + "gle.bigtable.admin.v2.Type.Bytes.Encodin"
-          + "g\032_\n\010Encoding\022@\n\003raw\030\001 \001(\01321.google.bigt"
-          + "able.admin.v2.Type.Bytes.Encoding.RawH\000\032"
-          + "\005\n\003RawB\n\n\010encoding\032\237\002\n\006String\022@\n\010encodin"
-          + "g\030\001 \001(\0132..google.bigtable.admin.v2.Type."
-          + "String.Encoding\032\322\001\n\010Encoding\022N\n\010utf8_raw"
-          + "\030\001 \001(\01326.google.bigtable.admin.v2.Type.S"
-          + "tring.Encoding.Utf8RawB\002\030\001H\000\022N\n\nutf8_byt"
-          + "es\030\002 \001(\01328.google.bigtable.admin.v2.Type"
-          + ".String.Encoding.Utf8BytesH\000\032\r\n\007Utf8Raw:"
-          + "\002\030\001\032\013\n\tUtf8BytesB\n\n\010encoding\032\375\002\n\005Int64\022?"
-          + "\n\010encoding\030\001 \001(\0132-.google.bigtable.admin"
-          + ".v2.Type.Int64.Encoding\032\262\002\n\010Encoding\022X\n\020"
-          + "big_endian_bytes\030\001 \001(\0132<.google.bigtable"
-          + ".admin.v2.Type.Int64.Encoding.BigEndianB"
-          + "ytesH\000\022\\\n\022ordered_code_bytes\030\002 \001(\0132>.goo"
-          + "gle.bigtable.admin.v2.Type.Int64.Encodin"
-          + "g.OrderedCodeBytesH\000\032N\n\016BigEndianBytes\022<"
-          + "\n\nbytes_type\030\001 \001(\0132$.google.bigtable.adm"
-          + "in.v2.Type.BytesB\002\030\001\032\022\n\020OrderedCodeBytes"
-          + "B\n\n\010encoding\032\006\n\004Bool\032\t\n\007Float32\032\t\n\007Float"
-          + "64\032\264\001\n\tTimestamp\022C\n\010encoding\030\001 \001(\01321.goo"
-          + "gle.bigtable.admin.v2.Type.Timestamp.Enc"
-          + "oding\032b\n\010Encoding\022J\n\021unix_micros_int64\030\001"
-          + " \001(\0132-.google.bigtable.admin.v2.Type.Int"
-          + "64.EncodingH\000B\n\n\010encoding\032\006\n\004Date\032\271\004\n\006St"
-          + "ruct\022;\n\006fields\030\001 \003(\0132+.google.bigtable.a"
-          + "dmin.v2.Type.Struct.Field\022@\n\010encoding\030\002 "
-          + "\001(\0132..google.bigtable.admin.v2.Type.Stru"
-          + "ct.Encoding\032I\n\005Field\022\022\n\nfield_name\030\001 \001(\t"
-          + "\022,\n\004type\030\002 \001(\0132\036.google.bigtable.admin.v"
-          + "2.Type\032\344\002\n\010Encoding\022M\n\tsingleton\030\001 \001(\01328"
-          + ".google.bigtable.admin.v2.Type.Struct.En"
-          + "coding.SingletonH\000\022X\n\017delimited_bytes\030\002 "
-          + "\001(\0132=.google.bigtable.admin.v2.Type.Stru"
-          + "ct.Encoding.DelimitedBytesH\000\022]\n\022ordered_"
-          + "code_bytes\030\003 \001(\0132?.google.bigtable.admin"
-          + ".v2.Type.Struct.Encoding.OrderedCodeByte"
-          + "sH\000\032\013\n\tSingleton\032#\n\016DelimitedBytes\022\021\n\tde"
-          + "limiter\030\001 \001(\014\032\022\n\020OrderedCodeBytesB\n\n\010enc"
-          + "oding\032=\n\005Array\0224\n\014element_type\030\001 \001(\0132\036.g"
-          + "oogle.bigtable.admin.v2.Type\032k\n\003Map\0220\n\010k"
-          + "ey_type\030\001 \001(\0132\036.google.bigtable.admin.v2"
-          + ".Type\0222\n\nvalue_type\030\002 \001(\0132\036.google.bigta"
-          + "ble.admin.v2.Type\032\333\003\n\tAggregate\0222\n\ninput"
-          + "_type\030\001 \001(\0132\036.google.bigtable.admin.v2.T"
-          + "ype\0227\n\nstate_type\030\002 \001(\0132\036.google.bigtabl"
-          + "e.admin.v2.TypeB\003\340A\003\022;\n\003sum\030\004 \001(\0132,.goog"
-          + "le.bigtable.admin.v2.Type.Aggregate.SumH"
-          + "\000\022e\n\022hllpp_unique_count\030\005 \001(\0132G.google.b"
-          + "igtable.admin.v2.Type.Aggregate.HyperLog"
-          + "LogPlusPlusUniqueCountH\000\022;\n\003max\030\006 \001(\0132,."
-          + "google.bigtable.admin.v2.Type.Aggregate."
-          + "MaxH\000\022;\n\003min\030\007 \001(\0132,.google.bigtable.adm"
-          + "in.v2.Type.Aggregate.MinH\000\032\005\n\003Sum\032\005\n\003Max"
-          + "\032\005\n\003Min\032 \n\036HyperLogLogPlusPlusUniqueCoun"
-          + "tB\014\n\naggregatorB\006\n\004kindB\315\001\n\034com.google.b"
-          + "igtable.admin.v2B\nTypesProtoP\001Z8cloud.go"
-          + "ogle.com/go/bigtable/admin/apiv2/adminpb"
-          + ";adminpb\252\002\036Google.Cloud.Bigtable.Admin.V"
-          + "2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Goo"
-          + "gle::Cloud::Bigtable::Admin::V2b\006proto3"
+          + ".MapH\000\022:\n\nproto_type\030\r \001(\0132$.google.bigt"
+          + "able.admin.v2.Type.ProtoH\000\0228\n\tenum_type\030"
+          + "\016 \001(\0132#.google.bigtable.admin.v2.Type.En"
+          + "umH\000\032\251\001\n\005Bytes\022?\n\010encoding\030\001 \001(\0132-.googl"
+          + "e.bigtable.admin.v2.Type.Bytes.Encoding\032"
+          + "_\n\010Encoding\022@\n\003raw\030\001 \001(\01321.google.bigtab"
+          + "le.admin.v2.Type.Bytes.Encoding.RawH\000\032\005\n"
+          + "\003RawB\n\n\010encoding\032\237\002\n\006String\022@\n\010encoding\030"
+          + "\001 \001(\0132..google.bigtable.admin.v2.Type.St"
+          + "ring.Encoding\032\322\001\n\010Encoding\022N\n\010utf8_raw\030\001"
+          + " \001(\01326.google.bigtable.admin.v2.Type.Str"
+          + "ing.Encoding.Utf8RawB\002\030\001H\000\022N\n\nutf8_bytes"
+          + "\030\002 \001(\01328.google.bigtable.admin.v2.Type.S"
+          + "tring.Encoding.Utf8BytesH\000\032\r\n\007Utf8Raw:\002\030"
+          + "\001\032\013\n\tUtf8BytesB\n\n\010encoding\032\375\002\n\005Int64\022?\n\010"
+          + "encoding\030\001 \001(\0132-.google.bigtable.admin.v"
+          + "2.Type.Int64.Encoding\032\262\002\n\010Encoding\022X\n\020bi"
+          + "g_endian_bytes\030\001 \001(\0132<.google.bigtable.a"
+          + "dmin.v2.Type.Int64.Encoding.BigEndianByt"
+          + "esH\000\022\\\n\022ordered_code_bytes\030\002 \001(\0132>.googl"
+          + "e.bigtable.admin.v2.Type.Int64.Encoding."
+          + "OrderedCodeBytesH\000\032N\n\016BigEndianBytes\022<\n\n"
+          + "bytes_type\030\001 \001(\0132$.google.bigtable.admin"
+          + ".v2.Type.BytesB\002\030\001\032\022\n\020OrderedCodeBytesB\n"
+          + "\n\010encoding\032\006\n\004Bool\032\t\n\007Float32\032\t\n\007Float64"
+          + "\032\264\001\n\tTimestamp\022C\n\010encoding\030\001 \001(\01321.googl"
+          + "e.bigtable.admin.v2.Type.Timestamp.Encod"
+          + "ing\032b\n\010Encoding\022J\n\021unix_micros_int64\030\001 \001"
+          + "(\0132-.google.bigtable.admin.v2.Type.Int64"
+          + ".EncodingH\000B\n\n\010encoding\032\006\n\004Date\032\271\004\n\006Stru"
+          + "ct\022;\n\006fields\030\001 \003(\0132+.google.bigtable.adm"
+          + "in.v2.Type.Struct.Field\022@\n\010encoding\030\002 \001("
+          + "\0132..google.bigtable.admin.v2.Type.Struct"
+          + ".Encoding\032I\n\005Field\022\022\n\nfield_name\030\001 \001(\t\022,"
+          + "\n\004type\030\002 \001(\0132\036.google.bigtable.admin.v2."
+          + "Type\032\344\002\n\010Encoding\022M\n\tsingleton\030\001 \001(\01328.g"
+          + "oogle.bigtable.admin.v2.Type.Struct.Enco"
+          + "ding.SingletonH\000\022X\n\017delimited_bytes\030\002 \001("
+          + "\0132=.google.bigtable.admin.v2.Type.Struct"
+          + ".Encoding.DelimitedBytesH\000\022]\n\022ordered_co"
+          + "de_bytes\030\003 \001(\0132?.google.bigtable.admin.v"
+          + "2.Type.Struct.Encoding.OrderedCodeBytesH"
+          + "\000\032\013\n\tSingleton\032#\n\016DelimitedBytes\022\021\n\tdeli"
+          + "miter\030\001 \001(\014\032\022\n\020OrderedCodeBytesB\n\n\010encod"
+          + "ing\0327\n\005Proto\022\030\n\020schema_bundle_id\030\001 \001(\t\022\024"
+          + "\n\014message_name\030\002 \001(\t\0323\n\004Enum\022\030\n\020schema_b"
+          + "undle_id\030\001 \001(\t\022\021\n\tenum_name\030\002 \001(\t\032=\n\005Arr"
+          + "ay\0224\n\014element_type\030\001 \001(\0132\036.google.bigtab"
+          + "le.admin.v2.Type\032k\n\003Map\0220\n\010key_type\030\001 \001("
+          + "\0132\036.google.bigtable.admin.v2.Type\0222\n\nval"
+          + "ue_type\030\002 \001(\0132\036.google.bigtable.admin.v2"
+          + ".Type\032\333\003\n\tAggregate\0222\n\ninput_type\030\001 \001(\0132"
+          + "\036.google.bigtable.admin.v2.Type\0227\n\nstate"
+          + "_type\030\002 \001(\0132\036.google.bigtable.admin.v2.T"
+          + "ypeB\003\340A\003\022;\n\003sum\030\004 \001(\0132,.google.bigtable."
+          + "admin.v2.Type.Aggregate.SumH\000\022e\n\022hllpp_u"
+          + "nique_count\030\005 \001(\0132G.google.bigtable.admi"
+          + "n.v2.Type.Aggregate.HyperLogLogPlusPlusU"
+          + "niqueCountH\000\022;\n\003max\030\006 \001(\0132,.google.bigta"
+          + "ble.admin.v2.Type.Aggregate.MaxH\000\022;\n\003min"
+          + "\030\007 \001(\0132,.google.bigtable.admin.v2.Type.A"
+          + "ggregate.MinH\000\032\005\n\003Sum\032\005\n\003Max\032\005\n\003Min\032 \n\036H"
+          + "yperLogLogPlusPlusUniqueCountB\014\n\naggrega"
+          + "torB\006\n\004kindB\315\001\n\034com.google.bigtable.admi"
+          + "n.v2B\nTypesProtoP\001Z8cloud.google.com/go/"
+          + "bigtable/admin/apiv2/adminpb;adminpb\252\002\036G"
+          + "oogle.Cloud.Bigtable.Admin.V2\312\002\036Google\\C"
+          + "loud\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::"
+          + "Bigtable::Admin::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -270,6 +284,8 @@ public final class TypesProto {
               "StructType",
               "ArrayType",
               "MapType",
+              "ProtoType",
+              "EnumType",
               "Kind",
             });
     internal_static_google_bigtable_admin_v2_Type_Bytes_descriptor =
@@ -452,8 +468,24 @@ public final class TypesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Type_Struct_Encoding_OrderedCodeBytes_descriptor,
             new java.lang.String[] {});
-    internal_static_google_bigtable_admin_v2_Type_Array_descriptor =
+    internal_static_google_bigtable_admin_v2_Type_Proto_descriptor =
         internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(9);
+    internal_static_google_bigtable_admin_v2_Type_Proto_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_Type_Proto_descriptor,
+            new java.lang.String[] {
+              "SchemaBundleId", "MessageName",
+            });
+    internal_static_google_bigtable_admin_v2_Type_Enum_descriptor =
+        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(10);
+    internal_static_google_bigtable_admin_v2_Type_Enum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_Type_Enum_descriptor,
+            new java.lang.String[] {
+              "SchemaBundleId", "EnumName",
+            });
+    internal_static_google_bigtable_admin_v2_Type_Array_descriptor =
+        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(11);
     internal_static_google_bigtable_admin_v2_Type_Array_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Type_Array_descriptor,
@@ -461,7 +493,7 @@ public final class TypesProto {
               "ElementType",
             });
     internal_static_google_bigtable_admin_v2_Type_Map_descriptor =
-        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(10);
+        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(12);
     internal_static_google_bigtable_admin_v2_Type_Map_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Type_Map_descriptor,
@@ -469,7 +501,7 @@ public final class TypesProto {
               "KeyType", "ValueType",
             });
     internal_static_google_bigtable_admin_v2_Type_Aggregate_descriptor =
-        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(11);
+        internal_static_google_bigtable_admin_v2_Type_descriptor.getNestedTypes().get(13);
     internal_static_google_bigtable_admin_v2_Type_Aggregate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Type_Aggregate_descriptor,

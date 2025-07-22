@@ -468,5 +468,79 @@ public interface TypeOrBuilder
    */
   com.google.bigtable.admin.v2.Type.MapOrBuilder getMapTypeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   *
+   * @return Whether the protoType field is set.
+   */
+  boolean hasProtoType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   *
+   * @return The protoType.
+   */
+  com.google.bigtable.admin.v2.Type.Proto getProtoType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   */
+  com.google.bigtable.admin.v2.Type.ProtoOrBuilder getProtoTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   *
+   * @return Whether the enumType field is set.
+   */
+  boolean hasEnumType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   *
+   * @return The enumType.
+   */
+  com.google.bigtable.admin.v2.Type.Enum getEnumType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   */
+  com.google.bigtable.admin.v2.Type.EnumOrBuilder getEnumTypeOrBuilder();
+
   com.google.bigtable.admin.v2.Type.KindCase getKindCase();
 }

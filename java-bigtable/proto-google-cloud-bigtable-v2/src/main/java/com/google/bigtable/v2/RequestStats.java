@@ -25,8 +25,7 @@ package com.google.bigtable.v2;
  * <pre>
  * RequestStats is the container for additional information pertaining to a
  * single request, helpful for evaluating the performance of the sent request.
- * Currently, there are the following supported methods:
- *   * google.bigtable.v2.ReadRows
+ * Currently, the following method is supported: google.bigtable.v2.ReadRows
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.RequestStats}
@@ -348,8 +347,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * RequestStats is the container for additional information pertaining to a
    * single request, helpful for evaluating the performance of the sent request.
-   * Currently, there are the following supported methods:
-   *   * google.bigtable.v2.ReadRows
+   * Currently, the following method is supported: google.bigtable.v2.ReadRows
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.RequestStats}

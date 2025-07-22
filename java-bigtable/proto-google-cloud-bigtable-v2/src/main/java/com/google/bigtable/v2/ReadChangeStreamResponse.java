@@ -2270,8 +2270,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -2288,8 +2288,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -2306,8 +2306,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -2924,8 +2924,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -2945,8 +2945,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -2968,8 +2968,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -4786,8 +4786,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4806,8 +4806,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4832,8 +4832,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4860,8 +4860,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4886,8 +4886,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4919,8 +4919,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4944,8 +4944,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4964,8 +4964,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -4988,8 +4988,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -5129,8 +5129,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5147,8 +5147,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5165,8 +5165,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5286,8 +5286,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5307,8 +5307,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5330,8 +5330,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * An estimate of the commit timestamp that is usually lower than or equal
      * to any timestamp for a record that will be delivered in the future on the
      * stream. It is possible that, under particular circumstances that a future
-     * record has a timestamp is is lower than a previously seen timestamp. For
-     * an example usage see
+     * record has a timestamp that is lower than a previously seen timestamp.
+     * For an example usage see
      * https://beam.apache.org/documentation/basics/#watermarks
      * </pre>
      *
@@ -5974,8 +5974,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -5994,8 +5994,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6020,8 +6020,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6048,8 +6048,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6074,8 +6074,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6107,8 +6107,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6132,8 +6132,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6152,8 +6152,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6176,8 +6176,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * An estimate of the commit timestamp that is usually lower than or equal
        * to any timestamp for a record that will be delivered in the future on the
        * stream. It is possible that, under particular circumstances that a future
-       * record has a timestamp is is lower than a previously seen timestamp. For
-       * an example usage see
+       * record has a timestamp that is lower than a previously seen timestamp.
+       * For an example usage see
        * https://beam.apache.org/documentation/basics/#watermarks
        * </pre>
        *
@@ -6445,17 +6445,19 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
    * If `continuation_tokens` &amp; `new_partitions` are present, then a change in
    * partitioning requires the client to open a new stream for each token to
    * resume reading. Example:
-   *                                  [B,      D) ends
-   *                                       |
-   *                                       v
-   *               new_partitions:  [A,  C) [C,  E)
-   * continuation_tokens.partitions:  [B,C) [C,D)
-   *                                  ^---^ ^---^
-   *                                  ^     ^
-   *                                  |     |
-   *                                  |     StreamContinuationToken 2
-   *                                  |
-   *                                  StreamContinuationToken 1
+   *
+   *                                      [B,      D) ends
+   *                                           |
+   *                                           v
+   *                   new_partitions:  [A,  C) [C,  E)
+   *     continuation_tokens.partitions:  [B,C) [C,D)
+   *                                      ^---^ ^---^
+   *                                      ^     ^
+   *                                      |     |
+   *                                      |     StreamContinuationToken 2
+   *                                      |
+   *                                      StreamContinuationToken 1
+   *
    * To read the new partition [A,C), supply the continuation tokens whose
    * ranges cover the new partition, for example ContinuationToken[A,B) &amp;
    * ContinuationToken[B,C).
@@ -6919,17 +6921,19 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * If `continuation_tokens` &amp; `new_partitions` are present, then a change in
      * partitioning requires the client to open a new stream for each token to
      * resume reading. Example:
-     *                                  [B,      D) ends
-     *                                       |
-     *                                       v
-     *               new_partitions:  [A,  C) [C,  E)
-     * continuation_tokens.partitions:  [B,C) [C,D)
-     *                                  ^---^ ^---^
-     *                                  ^     ^
-     *                                  |     |
-     *                                  |     StreamContinuationToken 2
-     *                                  |
-     *                                  StreamContinuationToken 1
+     *
+     *                                      [B,      D) ends
+     *                                           |
+     *                                           v
+     *                   new_partitions:  [A,  C) [C,  E)
+     *     continuation_tokens.partitions:  [B,C) [C,D)
+     *                                      ^---^ ^---^
+     *                                      ^     ^
+     *                                      |     |
+     *                                      |     StreamContinuationToken 2
+     *                                      |
+     *                                      StreamContinuationToken 1
+     *
      * To read the new partition [A,C), supply the continuation tokens whose
      * ranges cover the new partition, for example ContinuationToken[A,B) &amp;
      * ContinuationToken[B,C).

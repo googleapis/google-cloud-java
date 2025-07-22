@@ -140,7 +140,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
    * target load should be 80. After adjusting, the client should ignore
    * `factor` until another `period` has passed.
    *
-   * The client can measure its load using any unit that's comparable over time
+   * The client can measure its load using any unit that's comparable over time.
    * For example, QPS can be used as long as each request involves a similar
    * amount of work.
    * </pre>
@@ -784,7 +784,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
      * target load should be 80. After adjusting, the client should ignore
      * `factor` until another `period` has passed.
      *
-     * The client can measure its load using any unit that's comparable over time
+     * The client can measure its load using any unit that's comparable over time.
      * For example, QPS can be used as long as each request involves a similar
      * amount of work.
      * </pre>
@@ -808,7 +808,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
      * target load should be 80. After adjusting, the client should ignore
      * `factor` until another `period` has passed.
      *
-     * The client can measure its load using any unit that's comparable over time
+     * The client can measure its load using any unit that's comparable over time.
      * For example, QPS can be used as long as each request involves a similar
      * amount of work.
      * </pre>
@@ -836,7 +836,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
      * target load should be 80. After adjusting, the client should ignore
      * `factor` until another `period` has passed.
      *
-     * The client can measure its load using any unit that's comparable over time
+     * The client can measure its load using any unit that's comparable over time.
      * For example, QPS can be used as long as each request involves a similar
      * amount of work.
      * </pre>

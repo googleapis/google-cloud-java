@@ -492,6 +492,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents a typed value transported as a floating point number.
+   * Does not support NaN or infinities.
    * </pre>
    *
    * <code>double float_value = 11;</code>
@@ -508,6 +509,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents a typed value transported as a floating point number.
+   * Does not support NaN or infinities.
    * </pre>
    *
    * <code>double float_value = 11;</code>
@@ -2192,6 +2194,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as a floating point number.
+     * Does not support NaN or infinities.
      * </pre>
      *
      * <code>double float_value = 11;</code>
@@ -2207,6 +2210,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as a floating point number.
+     * Does not support NaN or infinities.
      * </pre>
      *
      * <code>double float_value = 11;</code>
@@ -2225,6 +2229,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as a floating point number.
+     * Does not support NaN or infinities.
      * </pre>
      *
      * <code>double float_value = 11;</code>
@@ -2245,6 +2250,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as a floating point number.
+     * Does not support NaN or infinities.
      * </pre>
      *
      * <code>double float_value = 11;</code>

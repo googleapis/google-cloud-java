@@ -693,10 +693,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Returns the current list of partitions that make up the table's
      * change stream. The union of partitions will cover the entire keyspace.
      * Partitions can be read with `ReadChangeStream`.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     default void generateInitialChangeStreamPartitions(
@@ -712,10 +712,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Reads changes from a table's change stream. Changes will
      * reflect both user-initiated mutations and mutations that are caused by
      * garbage collection.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     default void readChangeStream(
@@ -915,10 +915,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Returns the current list of partitions that make up the table's
      * change stream. The union of partitions will cover the entire keyspace.
      * Partitions can be read with `ReadChangeStream`.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     public void generateInitialChangeStreamPartitions(
@@ -936,10 +936,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Reads changes from a table's change stream. Changes will
      * reflect both user-initiated mutations and mutations that are caused by
      * garbage collection.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     public void readChangeStream(
@@ -1117,10 +1117,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Returns the current list of partitions that make up the table's
      * change stream. The union of partitions will cover the entire keyspace.
      * Partitions can be read with `ReadChangeStream`.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
@@ -1139,10 +1139,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Reads changes from a table's change stream. Changes will
      * reflect both user-initiated mutations and mutations that are caused by
      * garbage collection.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
@@ -1308,10 +1308,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Returns the current list of partitions that make up the table's
      * change stream. The union of partitions will cover the entire keyspace.
      * Partitions can be read with `ReadChangeStream`.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     public java.util.Iterator<com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse>
@@ -1328,10 +1328,10 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
-     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
      * Reads changes from a table's change stream. Changes will
      * reflect both user-initiated mutations and mutations that are caused by
      * garbage collection.
+     * NOTE: This API is only intended to be used by Apache Beam BigtableIO.
      * </pre>
      */
     public java.util.Iterator<com.google.bigtable.v2.ReadChangeStreamResponse> readChangeStream(

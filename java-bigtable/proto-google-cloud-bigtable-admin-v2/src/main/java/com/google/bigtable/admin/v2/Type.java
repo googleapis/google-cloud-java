@@ -17385,6 +17385,1758 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ProtoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Proto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this proto is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The schemaBundleId.
+     */
+    java.lang.String getSchemaBundleId();
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this proto is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The bytes for schemaBundleId.
+     */
+    com.google.protobuf.ByteString getSchemaBundleIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf message, including package. In
+     * the format of "foo.bar.Message".
+     * </pre>
+     *
+     * <code>string message_name = 2;</code>
+     *
+     * @return The messageName.
+     */
+    java.lang.String getMessageName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf message, including package. In
+     * the format of "foo.bar.Message".
+     * </pre>
+     *
+     * <code>string message_name = 2;</code>
+     *
+     * @return The bytes for messageName.
+     */
+    com.google.protobuf.ByteString getMessageNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A protobuf message type.
+   * Values of type `Proto` are stored in `Value.bytes_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Proto}
+   */
+  public static final class Proto extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Proto)
+      ProtoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Proto.newBuilder() to construct.
+    private Proto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Proto() {
+      schemaBundleId_ = "";
+      messageName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Proto();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Proto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Proto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Proto.class,
+              com.google.bigtable.admin.v2.Type.Proto.Builder.class);
+    }
+
+    public static final int SCHEMA_BUNDLE_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schemaBundleId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this proto is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The schemaBundleId.
+     */
+    @java.lang.Override
+    public java.lang.String getSchemaBundleId() {
+      java.lang.Object ref = schemaBundleId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaBundleId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this proto is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The bytes for schemaBundleId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+      java.lang.Object ref = schemaBundleId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schemaBundleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object messageName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf message, including package. In
+     * the format of "foo.bar.Message".
+     * </pre>
+     *
+     * <code>string message_name = 2;</code>
+     *
+     * @return The messageName.
+     */
+    @java.lang.Override
+    public java.lang.String getMessageName() {
+      java.lang.Object ref = messageName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        messageName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf message, including package. In
+     * the format of "foo.bar.Message".
+     * </pre>
+     *
+     * <code>string message_name = 2;</code>
+     *
+     * @return The bytes for messageName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMessageNameBytes() {
+      java.lang.Object ref = messageName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        messageName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schemaBundleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, messageName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schemaBundleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, messageName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Proto)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Proto other = (com.google.bigtable.admin.v2.Type.Proto) obj;
+
+      if (!getSchemaBundleId().equals(other.getSchemaBundleId())) return false;
+      if (!getMessageName().equals(other.getMessageName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMA_BUNDLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaBundleId().hashCode();
+      hash = (37 * hash) + MESSAGE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Proto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A protobuf message type.
+     * Values of type `Proto` are stored in `Value.bytes_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Proto}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Proto)
+        com.google.bigtable.admin.v2.Type.ProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Proto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Proto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Proto.class,
+                com.google.bigtable.admin.v2.Type.Proto.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Proto.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        schemaBundleId_ = "";
+        messageName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Proto_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Proto getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Proto build() {
+        com.google.bigtable.admin.v2.Type.Proto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Proto buildPartial() {
+        com.google.bigtable.admin.v2.Type.Proto result =
+            new com.google.bigtable.admin.v2.Type.Proto(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Type.Proto result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schemaBundleId_ = schemaBundleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.messageName_ = messageName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Proto) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Proto) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Proto other) {
+        if (other == com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance()) return this;
+        if (!other.getSchemaBundleId().isEmpty()) {
+          schemaBundleId_ = other.schemaBundleId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getMessageName().isEmpty()) {
+          messageName_ = other.messageName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  schemaBundleId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  messageName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object schemaBundleId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this proto is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return The schemaBundleId.
+       */
+      public java.lang.String getSchemaBundleId() {
+        java.lang.Object ref = schemaBundleId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schemaBundleId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this proto is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return The bytes for schemaBundleId.
+       */
+      public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+        java.lang.Object ref = schemaBundleId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schemaBundleId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this proto is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @param value The schemaBundleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBundleId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaBundleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this proto is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchemaBundleId() {
+        schemaBundleId_ = getDefaultInstance().getSchemaBundleId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this proto is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @param value The bytes for schemaBundleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBundleIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        schemaBundleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object messageName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf message, including package. In
+       * the format of "foo.bar.Message".
+       * </pre>
+       *
+       * <code>string message_name = 2;</code>
+       *
+       * @return The messageName.
+       */
+      public java.lang.String getMessageName() {
+        java.lang.Object ref = messageName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          messageName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf message, including package. In
+       * the format of "foo.bar.Message".
+       * </pre>
+       *
+       * <code>string message_name = 2;</code>
+       *
+       * @return The bytes for messageName.
+       */
+      public com.google.protobuf.ByteString getMessageNameBytes() {
+        java.lang.Object ref = messageName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          messageName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf message, including package. In
+       * the format of "foo.bar.Message".
+       * </pre>
+       *
+       * <code>string message_name = 2;</code>
+       *
+       * @param value The messageName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        messageName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf message, including package. In
+       * the format of "foo.bar.Message".
+       * </pre>
+       *
+       * <code>string message_name = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMessageName() {
+        messageName_ = getDefaultInstance().getMessageName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf message, including package. In
+       * the format of "foo.bar.Message".
+       * </pre>
+       *
+       * <code>string message_name = 2;</code>
+       *
+       * @param value The bytes for messageName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        messageName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Proto)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Proto)
+    private static final com.google.bigtable.admin.v2.Type.Proto DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Proto();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Proto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Proto> PARSER =
+        new com.google.protobuf.AbstractParser<Proto>() {
+          @java.lang.Override
+          public Proto parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Proto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Proto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Proto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EnumOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Enum)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this enum is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The schemaBundleId.
+     */
+    java.lang.String getSchemaBundleId();
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this enum is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The bytes for schemaBundleId.
+     */
+    com.google.protobuf.ByteString getSchemaBundleIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf enum message, including package.
+     * In the format of "foo.bar.EnumMessage".
+     * </pre>
+     *
+     * <code>string enum_name = 2;</code>
+     *
+     * @return The enumName.
+     */
+    java.lang.String getEnumName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf enum message, including package.
+     * In the format of "foo.bar.EnumMessage".
+     * </pre>
+     *
+     * <code>string enum_name = 2;</code>
+     *
+     * @return The bytes for enumName.
+     */
+    com.google.protobuf.ByteString getEnumNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A protobuf enum type.
+   * Values of type `Enum` are stored in `Value.int_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Enum}
+   */
+  public static final class Enum extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Enum)
+      EnumOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Enum.newBuilder() to construct.
+    private Enum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Enum() {
+      schemaBundleId_ = "";
+      enumName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Enum();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Enum_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Enum_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Enum.class,
+              com.google.bigtable.admin.v2.Type.Enum.Builder.class);
+    }
+
+    public static final int SCHEMA_BUNDLE_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schemaBundleId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this enum is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The schemaBundleId.
+     */
+    @java.lang.Override
+    public java.lang.String getSchemaBundleId() {
+      java.lang.Object ref = schemaBundleId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaBundleId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the schema bundle that this enum is defined in.
+     * </pre>
+     *
+     * <code>string schema_bundle_id = 1;</code>
+     *
+     * @return The bytes for schemaBundleId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+      java.lang.Object ref = schemaBundleId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schemaBundleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENUM_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object enumName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf enum message, including package.
+     * In the format of "foo.bar.EnumMessage".
+     * </pre>
+     *
+     * <code>string enum_name = 2;</code>
+     *
+     * @return The enumName.
+     */
+    @java.lang.Override
+    public java.lang.String getEnumName() {
+      java.lang.Object ref = enumName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enumName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified name of the protobuf enum message, including package.
+     * In the format of "foo.bar.EnumMessage".
+     * </pre>
+     *
+     * <code>string enum_name = 2;</code>
+     *
+     * @return The bytes for enumName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEnumNameBytes() {
+      java.lang.Object ref = enumName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        enumName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schemaBundleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enumName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, enumName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaBundleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schemaBundleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enumName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, enumName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Enum)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Enum other = (com.google.bigtable.admin.v2.Type.Enum) obj;
+
+      if (!getSchemaBundleId().equals(other.getSchemaBundleId())) return false;
+      if (!getEnumName().equals(other.getEnumName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMA_BUNDLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaBundleId().hashCode();
+      hash = (37 * hash) + ENUM_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getEnumName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Enum prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A protobuf enum type.
+     * Values of type `Enum` are stored in `Value.int_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Enum}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Enum)
+        com.google.bigtable.admin.v2.Type.EnumOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Enum_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Enum_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Enum.class,
+                com.google.bigtable.admin.v2.Type.Enum.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Enum.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        schemaBundleId_ = "";
+        enumName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Enum_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Enum getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Enum build() {
+        com.google.bigtable.admin.v2.Type.Enum result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Enum buildPartial() {
+        com.google.bigtable.admin.v2.Type.Enum result =
+            new com.google.bigtable.admin.v2.Type.Enum(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Type.Enum result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schemaBundleId_ = schemaBundleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enumName_ = enumName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Enum) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Enum) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Enum other) {
+        if (other == com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance()) return this;
+        if (!other.getSchemaBundleId().isEmpty()) {
+          schemaBundleId_ = other.schemaBundleId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getEnumName().isEmpty()) {
+          enumName_ = other.enumName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  schemaBundleId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  enumName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object schemaBundleId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this enum is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return The schemaBundleId.
+       */
+      public java.lang.String getSchemaBundleId() {
+        java.lang.Object ref = schemaBundleId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schemaBundleId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this enum is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return The bytes for schemaBundleId.
+       */
+      public com.google.protobuf.ByteString getSchemaBundleIdBytes() {
+        java.lang.Object ref = schemaBundleId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schemaBundleId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this enum is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @param value The schemaBundleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBundleId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaBundleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this enum is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchemaBundleId() {
+        schemaBundleId_ = getDefaultInstance().getSchemaBundleId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the schema bundle that this enum is defined in.
+       * </pre>
+       *
+       * <code>string schema_bundle_id = 1;</code>
+       *
+       * @param value The bytes for schemaBundleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBundleIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        schemaBundleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enumName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf enum message, including package.
+       * In the format of "foo.bar.EnumMessage".
+       * </pre>
+       *
+       * <code>string enum_name = 2;</code>
+       *
+       * @return The enumName.
+       */
+      public java.lang.String getEnumName() {
+        java.lang.Object ref = enumName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enumName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf enum message, including package.
+       * In the format of "foo.bar.EnumMessage".
+       * </pre>
+       *
+       * <code>string enum_name = 2;</code>
+       *
+       * @return The bytes for enumName.
+       */
+      public com.google.protobuf.ByteString getEnumNameBytes() {
+        java.lang.Object ref = enumName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          enumName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf enum message, including package.
+       * In the format of "foo.bar.EnumMessage".
+       * </pre>
+       *
+       * <code>string enum_name = 2;</code>
+       *
+       * @param value The enumName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnumName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enumName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf enum message, including package.
+       * In the format of "foo.bar.EnumMessage".
+       * </pre>
+       *
+       * <code>string enum_name = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnumName() {
+        enumName_ = getDefaultInstance().getEnumName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fully qualified name of the protobuf enum message, including package.
+       * In the format of "foo.bar.EnumMessage".
+       * </pre>
+       *
+       * <code>string enum_name = 2;</code>
+       *
+       * @param value The bytes for enumName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnumNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        enumName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Enum)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Enum)
+    private static final com.google.bigtable.admin.v2.Type.Enum DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Enum();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Enum getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Enum> PARSER =
+        new com.google.protobuf.AbstractParser<Enum>() {
+          @java.lang.Override
+          public Enum parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Enum> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Enum> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Enum getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ArrayOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Array)
@@ -23732,6 +25484,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     STRUCT_TYPE(7),
     ARRAY_TYPE(3),
     MAP_TYPE(4),
+    PROTO_TYPE(13),
+    ENUM_TYPE(14),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -23775,6 +25529,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return ARRAY_TYPE;
         case 4:
           return MAP_TYPE;
+        case 13:
+          return PROTO_TYPE;
+        case 14:
+          return ENUM_TYPE;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -24439,6 +26197,114 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
   }
 
+  public static final int PROTO_TYPE_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   *
+   * @return Whether the protoType field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtoType() {
+    return kindCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   *
+   * @return The protoType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Proto getProtoType() {
+    if (kindCase_ == 13) {
+      return (com.google.bigtable.admin.v2.Type.Proto) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Proto
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.ProtoOrBuilder getProtoTypeOrBuilder() {
+    if (kindCase_ == 13) {
+      return (com.google.bigtable.admin.v2.Type.Proto) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+  }
+
+  public static final int ENUM_TYPE_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   *
+   * @return Whether the enumType field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnumType() {
+    return kindCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   *
+   * @return The enumType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Enum getEnumType() {
+    if (kindCase_ == 14) {
+      return (com.google.bigtable.admin.v2.Type.Enum) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.EnumOrBuilder getEnumTypeOrBuilder() {
+    if (kindCase_ == 14) {
+      return (com.google.bigtable.admin.v2.Type.Enum) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -24488,6 +26354,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     if (kindCase_ == 12) {
       output.writeMessage(12, (com.google.bigtable.admin.v2.Type.Float32) kind_);
+    }
+    if (kindCase_ == 13) {
+      output.writeMessage(13, (com.google.bigtable.admin.v2.Type.Proto) kind_);
+    }
+    if (kindCase_ == 14) {
+      output.writeMessage(14, (com.google.bigtable.admin.v2.Type.Enum) kind_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -24558,6 +26430,16 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.bigtable.admin.v2.Type.Float32) kind_);
     }
+    if (kindCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.bigtable.admin.v2.Type.Proto) kind_);
+    }
+    if (kindCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.bigtable.admin.v2.Type.Enum) kind_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -24610,6 +26492,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         break;
       case 4:
         if (!getMapType().equals(other.getMapType())) return false;
+        break;
+      case 13:
+        if (!getProtoType().equals(other.getProtoType())) return false;
+        break;
+      case 14:
+        if (!getEnumType().equals(other.getEnumType())) return false;
         break;
       case 0:
       default:
@@ -24673,6 +26561,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + MAP_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getMapType().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + PROTO_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getProtoType().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + ENUM_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getEnumType().hashCode();
         break;
       case 0:
       default:
@@ -24873,6 +26769,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (mapTypeBuilder_ != null) {
         mapTypeBuilder_.clear();
       }
+      if (protoTypeBuilder_ != null) {
+        protoTypeBuilder_.clear();
+      }
+      if (enumTypeBuilder_ != null) {
+        enumTypeBuilder_.clear();
+      }
       kindCase_ = 0;
       kind_ = null;
       return this;
@@ -24951,6 +26853,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       if (kindCase_ == 4 && mapTypeBuilder_ != null) {
         result.kind_ = mapTypeBuilder_.build();
+      }
+      if (kindCase_ == 13 && protoTypeBuilder_ != null) {
+        result.kind_ = protoTypeBuilder_.build();
+      }
+      if (kindCase_ == 14 && enumTypeBuilder_ != null) {
+        result.kind_ = enumTypeBuilder_.build();
       }
     }
 
@@ -25060,6 +26968,16 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             mergeMapType(other.getMapType());
             break;
           }
+        case PROTO_TYPE:
+          {
+            mergeProtoType(other.getProtoType());
+            break;
+          }
+        case ENUM_TYPE:
+          {
+            mergeEnumType(other.getEnumType());
+            break;
+          }
         case KIND_NOT_SET:
           {
             break;
@@ -25163,6 +27081,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 kindCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getProtoTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getEnumTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -27789,6 +29719,436 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       onChanged();
       return mapTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Proto,
+            com.google.bigtable.admin.v2.Type.Proto.Builder,
+            com.google.bigtable.admin.v2.Type.ProtoOrBuilder>
+        protoTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     *
+     * @return Whether the protoType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProtoType() {
+      return kindCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     *
+     * @return The protoType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Proto getProtoType() {
+      if (protoTypeBuilder_ == null) {
+        if (kindCase_ == 13) {
+          return (com.google.bigtable.admin.v2.Type.Proto) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+      } else {
+        if (kindCase_ == 13) {
+          return protoTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    public Builder setProtoType(com.google.bigtable.admin.v2.Type.Proto value) {
+      if (protoTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        protoTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    public Builder setProtoType(com.google.bigtable.admin.v2.Type.Proto.Builder builderForValue) {
+      if (protoTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        protoTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    public Builder mergeProtoType(com.google.bigtable.admin.v2.Type.Proto value) {
+      if (protoTypeBuilder_ == null) {
+        if (kindCase_ == 13
+            && kind_ != com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Proto.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Proto) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 13) {
+          protoTypeBuilder_.mergeFrom(value);
+        } else {
+          protoTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    public Builder clearProtoType() {
+      if (protoTypeBuilder_ == null) {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        protoTypeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Proto.Builder getProtoTypeBuilder() {
+      return getProtoTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.ProtoOrBuilder getProtoTypeOrBuilder() {
+      if ((kindCase_ == 13) && (protoTypeBuilder_ != null)) {
+        return protoTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 13) {
+          return (com.google.bigtable.admin.v2.Type.Proto) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Proto
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Proto proto_type = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Proto,
+            com.google.bigtable.admin.v2.Type.Proto.Builder,
+            com.google.bigtable.admin.v2.Type.ProtoOrBuilder>
+        getProtoTypeFieldBuilder() {
+      if (protoTypeBuilder_ == null) {
+        if (!(kindCase_ == 13)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Proto.getDefaultInstance();
+        }
+        protoTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Proto,
+                com.google.bigtable.admin.v2.Type.Proto.Builder,
+                com.google.bigtable.admin.v2.Type.ProtoOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Proto) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 13;
+      onChanged();
+      return protoTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Enum,
+            com.google.bigtable.admin.v2.Type.Enum.Builder,
+            com.google.bigtable.admin.v2.Type.EnumOrBuilder>
+        enumTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     *
+     * @return Whether the enumType field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnumType() {
+      return kindCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     *
+     * @return The enumType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Enum getEnumType() {
+      if (enumTypeBuilder_ == null) {
+        if (kindCase_ == 14) {
+          return (com.google.bigtable.admin.v2.Type.Enum) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+      } else {
+        if (kindCase_ == 14) {
+          return enumTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    public Builder setEnumType(com.google.bigtable.admin.v2.Type.Enum value) {
+      if (enumTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        enumTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    public Builder setEnumType(com.google.bigtable.admin.v2.Type.Enum.Builder builderForValue) {
+      if (enumTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        enumTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    public Builder mergeEnumType(com.google.bigtable.admin.v2.Type.Enum value) {
+      if (enumTypeBuilder_ == null) {
+        if (kindCase_ == 14
+            && kind_ != com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Enum.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Enum) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 14) {
+          enumTypeBuilder_.mergeFrom(value);
+        } else {
+          enumTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    public Builder clearEnumType() {
+      if (enumTypeBuilder_ == null) {
+        if (kindCase_ == 14) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 14) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        enumTypeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Enum.Builder getEnumTypeBuilder() {
+      return getEnumTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.EnumOrBuilder getEnumTypeOrBuilder() {
+      if ((kindCase_ == 14) && (enumTypeBuilder_ != null)) {
+        return enumTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 14) {
+          return (com.google.bigtable.admin.v2.Type.Enum) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Enum enum_type = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Enum,
+            com.google.bigtable.admin.v2.Type.Enum.Builder,
+            com.google.bigtable.admin.v2.Type.EnumOrBuilder>
+        getEnumTypeFieldBuilder() {
+      if (enumTypeBuilder_ == null) {
+        if (!(kindCase_ == 14)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Enum.getDefaultInstance();
+        }
+        enumTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Enum,
+                com.google.bigtable.admin.v2.Type.Enum.Builder,
+                com.google.bigtable.admin.v2.Type.EnumOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Enum) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 14;
+      onChanged();
+      return enumTypeBuilder_;
     }
 
     @java.lang.Override

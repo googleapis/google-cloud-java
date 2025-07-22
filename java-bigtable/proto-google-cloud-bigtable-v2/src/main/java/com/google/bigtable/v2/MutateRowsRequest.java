@@ -159,6 +159,46 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     *
+     * @return Whether the idempotency field is set.
+     */
+    boolean hasIdempotency();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     *
+     * @return The idempotency.
+     */
+    com.google.bigtable.v2.Idempotency getIdempotency();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     */
+    com.google.bigtable.v2.IdempotencyOrBuilder getIdempotencyOrBuilder();
   }
 
   /**
@@ -207,6 +247,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               com.google.bigtable.v2.MutateRowsRequest.Entry.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ROW_KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -322,6 +363,62 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       return mutations_.get(index);
     }
 
+    public static final int IDEMPOTENCY_FIELD_NUMBER = 3;
+    private com.google.bigtable.v2.Idempotency idempotency_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     *
+     * @return Whether the idempotency field is set.
+     */
+    @java.lang.Override
+    public boolean hasIdempotency() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     *
+     * @return The idempotency.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Idempotency getIdempotency() {
+      return idempotency_ == null
+          ? com.google.bigtable.v2.Idempotency.getDefaultInstance()
+          : idempotency_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set consistently across retries, prevents this mutation from being
+     * double applied to aggregate column families within a 15m window.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.IdempotencyOrBuilder getIdempotencyOrBuilder() {
+      return idempotency_ == null
+          ? com.google.bigtable.v2.Idempotency.getDefaultInstance()
+          : idempotency_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -342,6 +439,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       for (int i = 0; i < mutations_.size(); i++) {
         output.writeMessage(2, mutations_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getIdempotency());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -356,6 +456,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       for (int i = 0; i < mutations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, mutations_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getIdempotency());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -375,6 +478,10 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
 
       if (!getRowKey().equals(other.getRowKey())) return false;
       if (!getMutationsList().equals(other.getMutationsList())) return false;
+      if (hasIdempotency() != other.hasIdempotency()) return false;
+      if (hasIdempotency()) {
+        if (!getIdempotency().equals(other.getIdempotency())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -391,6 +498,10 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       if (getMutationsCount() > 0) {
         hash = (37 * hash) + MUTATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getMutationsList().hashCode();
+      }
+      if (hasIdempotency()) {
+        hash = (37 * hash) + IDEMPOTENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getIdempotency().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -524,10 +635,20 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       }
 
       // Construct using com.google.bigtable.v2.MutateRowsRequest.Entry.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getMutationsFieldBuilder();
+          getIdempotencyFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -542,6 +663,11 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           mutationsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        idempotency_ = null;
+        if (idempotencyBuilder_ != null) {
+          idempotencyBuilder_.dispose();
+          idempotencyBuilder_ = null;
+        }
         return this;
       }
 
@@ -595,6 +721,13 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.rowKey_ = rowKey_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.idempotency_ =
+              idempotencyBuilder_ == null ? idempotency_ : idempotencyBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -675,6 +808,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             }
           }
         }
+        if (other.hasIdempotency()) {
+          mergeIdempotency(other.getIdempotency());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -720,6 +856,12 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(getIdempotencyFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1232,6 +1374,209 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           mutations_ = null;
         }
         return mutationsBuilder_;
+      }
+
+      private com.google.bigtable.v2.Idempotency idempotency_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Idempotency,
+              com.google.bigtable.v2.Idempotency.Builder,
+              com.google.bigtable.v2.IdempotencyOrBuilder>
+          idempotencyBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       *
+       * @return Whether the idempotency field is set.
+       */
+      public boolean hasIdempotency() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       *
+       * @return The idempotency.
+       */
+      public com.google.bigtable.v2.Idempotency getIdempotency() {
+        if (idempotencyBuilder_ == null) {
+          return idempotency_ == null
+              ? com.google.bigtable.v2.Idempotency.getDefaultInstance()
+              : idempotency_;
+        } else {
+          return idempotencyBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public Builder setIdempotency(com.google.bigtable.v2.Idempotency value) {
+        if (idempotencyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          idempotency_ = value;
+        } else {
+          idempotencyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public Builder setIdempotency(com.google.bigtable.v2.Idempotency.Builder builderForValue) {
+        if (idempotencyBuilder_ == null) {
+          idempotency_ = builderForValue.build();
+        } else {
+          idempotencyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public Builder mergeIdempotency(com.google.bigtable.v2.Idempotency value) {
+        if (idempotencyBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && idempotency_ != null
+              && idempotency_ != com.google.bigtable.v2.Idempotency.getDefaultInstance()) {
+            getIdempotencyBuilder().mergeFrom(value);
+          } else {
+            idempotency_ = value;
+          }
+        } else {
+          idempotencyBuilder_.mergeFrom(value);
+        }
+        if (idempotency_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public Builder clearIdempotency() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        idempotency_ = null;
+        if (idempotencyBuilder_ != null) {
+          idempotencyBuilder_.dispose();
+          idempotencyBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public com.google.bigtable.v2.Idempotency.Builder getIdempotencyBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getIdempotencyFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      public com.google.bigtable.v2.IdempotencyOrBuilder getIdempotencyOrBuilder() {
+        if (idempotencyBuilder_ != null) {
+          return idempotencyBuilder_.getMessageOrBuilder();
+        } else {
+          return idempotency_ == null
+              ? com.google.bigtable.v2.Idempotency.getDefaultInstance()
+              : idempotency_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set consistently across retries, prevents this mutation from being
+       * double applied to aggregate column families within a 15m window.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Idempotency idempotency = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Idempotency,
+              com.google.bigtable.v2.Idempotency.Builder,
+              com.google.bigtable.v2.IdempotencyOrBuilder>
+          getIdempotencyFieldBuilder() {
+        if (idempotencyBuilder_ == null) {
+          idempotencyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Idempotency,
+                  com.google.bigtable.v2.Idempotency.Builder,
+                  com.google.bigtable.v2.IdempotencyOrBuilder>(
+                  getIdempotency(), getParentForChildren(), isClean());
+          idempotency_ = null;
+        }
+        return idempotencyBuilder_;
       }
 
       @java.lang.Override

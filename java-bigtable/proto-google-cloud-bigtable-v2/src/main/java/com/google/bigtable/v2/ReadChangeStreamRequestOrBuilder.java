@@ -182,10 +182,10 @@ public interface ReadChangeStreamRequestOrBuilder
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
    *
-   * If a single token is provided, the token’s partition must exactly match
-   * the request’s partition. If multiple tokens are provided, as in the case
+   * If a single token is provided, the token's partition must exactly match
+   * the request's partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
-   * cover the request’s partition. Otherwise, INVALID_ARGUMENT will be
+   * cover the request's partition. Otherwise, INVALID_ARGUMENT will be
    * returned.
    * </pre>
    *
@@ -204,10 +204,10 @@ public interface ReadChangeStreamRequestOrBuilder
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
    *
-   * If a single token is provided, the token’s partition must exactly match
-   * the request’s partition. If multiple tokens are provided, as in the case
+   * If a single token is provided, the token's partition must exactly match
+   * the request's partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
-   * cover the request’s partition. Otherwise, INVALID_ARGUMENT will be
+   * cover the request's partition. Otherwise, INVALID_ARGUMENT will be
    * returned.
    * </pre>
    *
@@ -226,10 +226,10 @@ public interface ReadChangeStreamRequestOrBuilder
    * the position. Tokens are delivered on the stream as part of `Heartbeat`
    * and `CloseStream` messages.
    *
-   * If a single token is provided, the token’s partition must exactly match
-   * the request’s partition. If multiple tokens are provided, as in the case
+   * If a single token is provided, the token's partition must exactly match
+   * the request's partition. If multiple tokens are provided, as in the case
    * of a partition merge, the union of the token partitions must exactly
-   * cover the request’s partition. Otherwise, INVALID_ARGUMENT will be
+   * cover the request's partition. Otherwise, INVALID_ARGUMENT will be
    * returned.
    * </pre>
    *
