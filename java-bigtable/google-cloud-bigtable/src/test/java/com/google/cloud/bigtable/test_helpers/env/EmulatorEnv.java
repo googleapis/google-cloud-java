@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.emulator.v2.Emulator;
 import com.google.common.base.Strings;
 import java.io.IOException;
@@ -62,6 +63,7 @@ public class EmulatorEnv extends AbstractTestEnv {
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
             .setRefreshingChannel(false)
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
             .build();
 
     dataClient = BigtableDataClient.create(dataSettings);
