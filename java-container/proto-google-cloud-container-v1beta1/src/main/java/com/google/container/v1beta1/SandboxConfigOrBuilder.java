@@ -34,7 +34,7 @@ public interface SandboxConfigOrBuilder
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1295
+   *     google/container/v1beta1/cluster_service.proto;l=1556
    * @return The sandboxType.
    */
   @java.lang.Deprecated
@@ -50,7 +50,7 @@ public interface SandboxConfigOrBuilder
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1295
+   *     google/container/v1beta1/cluster_service.proto;l=1556
    * @return The bytes for sandboxType.
    */
   @java.lang.Deprecated

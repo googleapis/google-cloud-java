@@ -66,6 +66,53 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
             com.google.cloud.backupdr.v1.InitializeServiceRequest.Builder.class);
   }
 
+  private int initializationConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object initializationConfig_;
+
+  public enum InitializationConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CLOUD_SQL_INSTANCE_INITIALIZATION_CONFIG(4),
+    INITIALIZATIONCONFIG_NOT_SET(0);
+    private final int value;
+
+    private InitializationConfigCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InitializationConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static InitializationConfigCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return CLOUD_SQL_INSTANCE_INITIALIZATION_CONFIG;
+        case 0:
+          return INITIALIZATIONCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public InitializationConfigCase getInitializationConfigCase() {
+    return InitializationConfigCase.forNumber(initializationConfigCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -261,6 +308,70 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int CLOUD_SQL_INSTANCE_INITIALIZATION_CONFIG_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceInitializationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlInstanceInitializationConfig() {
+    return initializationConfigCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudSqlInstanceInitializationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+      getCloudSqlInstanceInitializationConfig() {
+    if (initializationConfigCase_ == 4) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+          initializationConfig_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder
+      getCloudSqlInstanceInitializationConfigOrBuilder() {
+    if (initializationConfigCase_ == 4) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+          initializationConfig_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -284,6 +395,12 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
     }
+    if (initializationConfigCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+              initializationConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -301,6 +418,13 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
+    }
+    if (initializationConfigCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+                  initializationConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -321,6 +445,15 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
     if (!getName().equals(other.getName())) return false;
     if (!getResourceType().equals(other.getResourceType())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getInitializationConfigCase().equals(other.getInitializationConfigCase())) return false;
+    switch (initializationConfigCase_) {
+      case 4:
+        if (!getCloudSqlInstanceInitializationConfig()
+            .equals(other.getCloudSqlInstanceInitializationConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -338,6 +471,14 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + getResourceType().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    switch (initializationConfigCase_) {
+      case 4:
+        hash = (37 * hash) + CLOUD_SQL_INSTANCE_INITIALIZATION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlInstanceInitializationConfig().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -482,6 +623,11 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
       name_ = "";
       resourceType_ = "";
       requestId_ = "";
+      if (cloudSqlInstanceInitializationConfigBuilder_ != null) {
+        cloudSqlInstanceInitializationConfigBuilder_.clear();
+      }
+      initializationConfigCase_ = 0;
+      initializationConfig_ = null;
       return this;
     }
 
@@ -512,6 +658,7 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -526,6 +673,14 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.requestId_ = requestId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.backupdr.v1.InitializeServiceRequest result) {
+      result.initializationConfigCase_ = initializationConfigCase_;
+      result.initializationConfig_ = this.initializationConfig_;
+      if (initializationConfigCase_ == 4 && cloudSqlInstanceInitializationConfigBuilder_ != null) {
+        result.initializationConfig_ = cloudSqlInstanceInitializationConfigBuilder_.build();
       }
     }
 
@@ -590,6 +745,18 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      switch (other.getInitializationConfigCase()) {
+        case CLOUD_SQL_INSTANCE_INITIALIZATION_CONFIG:
+          {
+            mergeCloudSqlInstanceInitializationConfig(
+                other.getCloudSqlInstanceInitializationConfig());
+            break;
+          }
+        case INITIALIZATIONCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -634,6 +801,14 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getCloudSqlInstanceInitializationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                initializationConfigCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -648,6 +823,20 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int initializationConfigCase_ = 0;
+    private java.lang.Object initializationConfig_;
+
+    public InitializationConfigCase getInitializationConfigCase() {
+      return InitializationConfigCase.forNumber(initializationConfigCase_);
+    }
+
+    public Builder clearInitializationConfig() {
+      initializationConfigCase_ = 0;
+      initializationConfig_ = null;
+      onChanged();
       return this;
     }
 
@@ -1074,6 +1263,259 @@ public final class InitializeServiceRequest extends com.google.protobuf.Generate
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder>
+        cloudSqlInstanceInitializationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the cloudSqlInstanceInitializationConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlInstanceInitializationConfig() {
+      return initializationConfigCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cloudSqlInstanceInitializationConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+        getCloudSqlInstanceInitializationConfig() {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        if (initializationConfigCase_ == 4) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+              initializationConfig_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+            .getDefaultInstance();
+      } else {
+        if (initializationConfigCase_ == 4) {
+          return cloudSqlInstanceInitializationConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceInitializationConfig(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig value) {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        initializationConfig_ = value;
+        onChanged();
+      } else {
+        cloudSqlInstanceInitializationConfigBuilder_.setMessage(value);
+      }
+      initializationConfigCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceInitializationConfig(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.Builder builderForValue) {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        initializationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlInstanceInitializationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      initializationConfigCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCloudSqlInstanceInitializationConfig(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig value) {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        if (initializationConfigCase_ == 4
+            && initializationConfig_
+                != com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+                    .getDefaultInstance()) {
+          initializationConfig_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.newBuilder(
+                      (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+                          initializationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          initializationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (initializationConfigCase_ == 4) {
+          cloudSqlInstanceInitializationConfigBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceInitializationConfigBuilder_.setMessage(value);
+        }
+      }
+      initializationConfigCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCloudSqlInstanceInitializationConfig() {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        if (initializationConfigCase_ == 4) {
+          initializationConfigCase_ = 0;
+          initializationConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (initializationConfigCase_ == 4) {
+          initializationConfigCase_ = 0;
+          initializationConfig_ = null;
+        }
+        cloudSqlInstanceInitializationConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.Builder
+        getCloudSqlInstanceInitializationConfigBuilder() {
+      return getCloudSqlInstanceInitializationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder
+        getCloudSqlInstanceInitializationConfigOrBuilder() {
+      if ((initializationConfigCase_ == 4)
+          && (cloudSqlInstanceInitializationConfigBuilder_ != null)) {
+        return cloudSqlInstanceInitializationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (initializationConfigCase_ == 4) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+              initializationConfig_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for initializing a Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder>
+        getCloudSqlInstanceInitializationConfigFieldBuilder() {
+      if (cloudSqlInstanceInitializationConfigBuilder_ == null) {
+        if (!(initializationConfigCase_ == 4)) {
+          initializationConfig_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+                  .getDefaultInstance();
+        }
+        cloudSqlInstanceInitializationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig.Builder,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder>(
+                (com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig)
+                    initializationConfig_,
+                getParentForChildren(),
+                isClean());
+        initializationConfig_ = null;
+      }
+      initializationConfigCase_ = 4;
+      onChanged();
+      return cloudSqlInstanceInitializationConfigBuilder_;
     }
 
     @java.lang.Override

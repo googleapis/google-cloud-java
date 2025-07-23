@@ -46,6 +46,8 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     backupPlanDescription_ = "";
     backupPlanAssociation_ = "";
     backupPlanRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    backupPlanRevisionName_ = "";
+    backupPlanRevisionId_ = "";
   }
 
   @java.lang.Override
@@ -296,6 +298,114 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     return backupPlanRules_.getByteString(index);
   }
 
+  public static final int BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlanRevisionName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the backup plan revision.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 5;</code>
+   *
+   * @return The backupPlanRevisionName.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupPlanRevisionName() {
+    java.lang.Object ref = backupPlanRevisionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupPlanRevisionName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the backup plan revision.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 5;</code>
+   *
+   * @return The bytes for backupPlanRevisionName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+    java.lang.Object ref = backupPlanRevisionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupPlanRevisionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BACKUP_PLAN_REVISION_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlanRevisionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The user friendly id of the backup plan revision.
+   * E.g. v0, v1 etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 6;</code>
+   *
+   * @return The backupPlanRevisionId.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupPlanRevisionId() {
+    java.lang.Object ref = backupPlanRevisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupPlanRevisionId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The user friendly id of the backup plan revision.
+   * E.g. v0, v1 etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 6;</code>
+   *
+   * @return The bytes for backupPlanRevisionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+    java.lang.Object ref = backupPlanRevisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupPlanRevisionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -321,6 +431,12 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < backupPlanRules_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, backupPlanRules_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, backupPlanRevisionName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, backupPlanRevisionId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -348,6 +464,12 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 1 * getBackupPlanRulesList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, backupPlanRevisionName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, backupPlanRevisionId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -368,6 +490,8 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     if (!getBackupPlanDescription().equals(other.getBackupPlanDescription())) return false;
     if (!getBackupPlanAssociation().equals(other.getBackupPlanAssociation())) return false;
     if (!getBackupPlanRulesList().equals(other.getBackupPlanRulesList())) return false;
+    if (!getBackupPlanRevisionName().equals(other.getBackupPlanRevisionName())) return false;
+    if (!getBackupPlanRevisionId().equals(other.getBackupPlanRevisionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -389,6 +513,10 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + BACKUP_PLAN_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getBackupPlanRulesList().hashCode();
     }
+    hash = (37 * hash) + BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupPlanRevisionName().hashCode();
+    hash = (37 * hash) + BACKUP_PLAN_REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupPlanRevisionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -535,6 +663,8 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       backupPlanDescription_ = "";
       backupPlanAssociation_ = "";
       backupPlanRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      backupPlanRevisionName_ = "";
+      backupPlanRevisionId_ = "";
       return this;
     }
 
@@ -583,6 +713,12 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000008) != 0)) {
         backupPlanRules_.makeImmutable();
         result.backupPlanRules_ = backupPlanRules_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.backupPlanRevisionName_ = backupPlanRevisionName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.backupPlanRevisionId_ = backupPlanRevisionId_;
       }
     }
 
@@ -656,6 +792,16 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         }
         onChanged();
       }
+      if (!other.getBackupPlanRevisionName().isEmpty()) {
+        backupPlanRevisionName_ = other.backupPlanRevisionName_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getBackupPlanRevisionId().isEmpty()) {
+        backupPlanRevisionId_ = other.backupPlanRevisionId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -707,6 +853,18 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
                 backupPlanRules_.add(s);
                 break;
               } // case 34
+            case 42:
+              {
+                backupPlanRevisionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                backupPlanRevisionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1238,6 +1396,233 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       ensureBackupPlanRulesIsMutable();
       backupPlanRules_.add(value);
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupPlanRevisionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the backup plan revision.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 5;</code>
+     *
+     * @return The backupPlanRevisionName.
+     */
+    public java.lang.String getBackupPlanRevisionName() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the backup plan revision.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 5;</code>
+     *
+     * @return The bytes for backupPlanRevisionName.
+     */
+    public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the backup plan revision.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 5;</code>
+     *
+     * @param value The backupPlanRevisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupPlanRevisionName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the backup plan revision.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupPlanRevisionName() {
+      backupPlanRevisionName_ = getDefaultInstance().getBackupPlanRevisionName();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the backup plan revision.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 5;</code>
+     *
+     * @param value The bytes for backupPlanRevisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupPlanRevisionName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupPlanRevisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision.
+     * E.g. v0, v1 etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 6;</code>
+     *
+     * @return The backupPlanRevisionId.
+     */
+    public java.lang.String getBackupPlanRevisionId() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision.
+     * E.g. v0, v1 etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 6;</code>
+     *
+     * @return The bytes for backupPlanRevisionId.
+     */
+    public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision.
+     * E.g. v0, v1 etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 6;</code>
+     *
+     * @param value The backupPlanRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupPlanRevisionId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision.
+     * E.g. v0, v1 etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupPlanRevisionId() {
+      backupPlanRevisionId_ = getDefaultInstance().getBackupPlanRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision.
+     * E.g. v0, v1 etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 6;</code>
+     *
+     * @param value The bytes for backupPlanRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupPlanRevisionId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

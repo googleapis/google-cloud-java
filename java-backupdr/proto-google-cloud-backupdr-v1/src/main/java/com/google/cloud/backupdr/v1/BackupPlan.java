@@ -51,6 +51,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     backupVault_ = "";
     backupVaultServiceAccount_ = "";
+    supportedResourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    revisionId_ = "";
+    revisionName_ = "";
   }
 
   @java.lang.Override
@@ -146,6 +149,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <code>INACTIVE = 4;</code>
      */
     INACTIVE(4),
+    /**
+     *
+     *
+     * <pre>
+     * The resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    UPDATING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -204,6 +217,17 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int INACTIVE_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * The resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    public static final int UPDATING_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -238,6 +262,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return INACTIVE;
+        case 5:
+          return UPDATING;
         default:
           return null;
       }
@@ -774,7 +800,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
    * Examples include, "compute.googleapis.com/Instance",
-   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+   * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+   * "compute.googleapis.com/Disk".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -800,7 +827,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
    * Examples include, "compute.googleapis.com/Instance",
-   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+   * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+   * "compute.googleapis.com/Disk".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -997,6 +1025,221 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LOG_RETENTION_DAYS_FIELD_NUMBER = 12;
+  private long logRetentionDays_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Applicable only for CloudSQL resource_type.
+   *
+   * Configures how long logs will be stored. It is defined in “days”. This
+   * value should be greater than or equal to minimum enforced log retention
+   * duration of the backup vault.
+   * </pre>
+   *
+   * <code>int64 log_retention_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The logRetentionDays.
+   */
+  @java.lang.Override
+  public long getLogRetentionDays() {
+    return logRetentionDays_;
+  }
+
+  public static final int SUPPORTED_RESOURCE_TYPES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList supportedResourceTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedResourceTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getSupportedResourceTypesList() {
+    return supportedResourceTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedResourceTypes.
+   */
+  public int getSupportedResourceTypesCount() {
+    return supportedResourceTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedResourceTypes at the given index.
+   */
+  public java.lang.String getSupportedResourceTypes(int index) {
+    return supportedResourceTypes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedResourceTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getSupportedResourceTypesBytes(int index) {
+    return supportedResourceTypes_.getByteString(index);
+  }
+
+  public static final int REVISION_ID_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The revisionId.
+   */
+  @java.lang.Override
+  public java.lang.String getRevisionId() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revisionId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for revisionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRevisionIdBytes() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revisionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REVISION_NAME_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The revisionName.
+   */
+  @java.lang.Override
+  public java.lang.String getRevisionName() {
+    java.lang.Object ref = revisionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revisionName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for revisionName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRevisionNameBytes() {
+    java.lang.Object ref = revisionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revisionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1042,6 +1285,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupVaultServiceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, backupVaultServiceAccount_);
+    }
+    if (logRetentionDays_ != 0L) {
+      output.writeInt64(12, logRetentionDays_);
+    }
+    for (int i = 0; i < supportedResourceTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 13, supportedResourceTypes_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, revisionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, revisionName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1093,6 +1349,23 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(11, backupVaultServiceAccount_);
     }
+    if (logRetentionDays_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, logRetentionDays_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedResourceTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(supportedResourceTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSupportedResourceTypesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, revisionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, revisionName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1125,6 +1398,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getBackupVault().equals(other.getBackupVault())) return false;
     if (!getBackupVaultServiceAccount().equals(other.getBackupVaultServiceAccount())) return false;
+    if (getLogRetentionDays() != other.getLogRetentionDays()) return false;
+    if (!getSupportedResourceTypesList().equals(other.getSupportedResourceTypesList()))
+      return false;
+    if (!getRevisionId().equals(other.getRevisionId())) return false;
+    if (!getRevisionName().equals(other.getRevisionName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1166,6 +1444,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getBackupVault().hashCode();
     hash = (37 * hash) + BACKUP_VAULT_SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getBackupVaultServiceAccount().hashCode();
+    hash = (37 * hash) + LOG_RETENTION_DAYS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLogRetentionDays());
+    if (getSupportedResourceTypesCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_RESOURCE_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getSupportedResourceTypesList().hashCode();
+    }
+    hash = (37 * hash) + REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRevisionId().hashCode();
+    hash = (37 * hash) + REVISION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRevisionName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1367,6 +1655,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       etag_ = "";
       backupVault_ = "";
       backupVaultServiceAccount_ = "";
+      logRetentionDays_ = 0L;
+      supportedResourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      revisionId_ = "";
+      revisionName_ = "";
       return this;
     }
 
@@ -1449,6 +1741,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.backupVaultServiceAccount_ = backupVaultServiceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.logRetentionDays_ = logRetentionDays_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        supportedResourceTypes_.makeImmutable();
+        result.supportedResourceTypes_ = supportedResourceTypes_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.revisionId_ = revisionId_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.revisionName_ = revisionName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1566,6 +1871,29 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (other.getLogRetentionDays() != 0L) {
+        setLogRetentionDays(other.getLogRetentionDays());
+      }
+      if (!other.supportedResourceTypes_.isEmpty()) {
+        if (supportedResourceTypes_.isEmpty()) {
+          supportedResourceTypes_ = other.supportedResourceTypes_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureSupportedResourceTypesIsMutable();
+          supportedResourceTypes_.addAll(other.supportedResourceTypes_);
+        }
+        onChanged();
+      }
+      if (!other.getRevisionId().isEmpty()) {
+        revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (!other.getRevisionName().isEmpty()) {
+        revisionName_ = other.revisionName_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1671,6 +1999,31 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 96:
+              {
+                logRetentionDays_ = input.readInt64();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSupportedResourceTypesIsMutable();
+                supportedResourceTypes_.add(s);
+                break;
+              } // case 106
+            case 114:
+              {
+                revisionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+            case 122:
+              {
+                revisionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3094,7 +3447,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource type to which the `BackupPlan` will be applied.
      * Examples include, "compute.googleapis.com/Instance",
-     * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+     * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+     * "compute.googleapis.com/Disk".
      * </pre>
      *
      * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3119,7 +3473,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource type to which the `BackupPlan` will be applied.
      * Examples include, "compute.googleapis.com/Instance",
-     * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+     * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+     * "compute.googleapis.com/Disk".
      * </pre>
      *
      * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3144,7 +3499,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource type to which the `BackupPlan` will be applied.
      * Examples include, "compute.googleapis.com/Instance",
-     * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+     * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+     * "compute.googleapis.com/Disk".
      * </pre>
      *
      * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3168,7 +3524,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource type to which the `BackupPlan` will be applied.
      * Examples include, "compute.googleapis.com/Instance",
-     * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+     * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+     * "compute.googleapis.com/Disk".
      * </pre>
      *
      * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3188,7 +3545,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource type to which the `BackupPlan` will be applied.
      * Examples include, "compute.googleapis.com/Instance",
-     * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+     * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+     * "compute.googleapis.com/Disk".
      * </pre>
      *
      * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3581,6 +3939,523 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       backupVaultServiceAccount_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private long logRetentionDays_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applicable only for CloudSQL resource_type.
+     *
+     * Configures how long logs will be stored. It is defined in “days”. This
+     * value should be greater than or equal to minimum enforced log retention
+     * duration of the backup vault.
+     * </pre>
+     *
+     * <code>int64 log_retention_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The logRetentionDays.
+     */
+    @java.lang.Override
+    public long getLogRetentionDays() {
+      return logRetentionDays_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applicable only for CloudSQL resource_type.
+     *
+     * Configures how long logs will be stored. It is defined in “days”. This
+     * value should be greater than or equal to minimum enforced log retention
+     * duration of the backup vault.
+     * </pre>
+     *
+     * <code>int64 log_retention_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The logRetentionDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogRetentionDays(long value) {
+
+      logRetentionDays_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applicable only for CloudSQL resource_type.
+     *
+     * Configures how long logs will be stored. It is defined in “days”. This
+     * value should be greater than or equal to minimum enforced log retention
+     * duration of the backup vault.
+     * </pre>
+     *
+     * <code>int64 log_retention_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogRetentionDays() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      logRetentionDays_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList supportedResourceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSupportedResourceTypesIsMutable() {
+      if (!supportedResourceTypes_.isModifiable()) {
+        supportedResourceTypes_ =
+            new com.google.protobuf.LazyStringArrayList(supportedResourceTypes_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the supportedResourceTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getSupportedResourceTypesList() {
+      supportedResourceTypes_.makeImmutable();
+      return supportedResourceTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of supportedResourceTypes.
+     */
+    public int getSupportedResourceTypesCount() {
+      return supportedResourceTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedResourceTypes at the given index.
+     */
+    public java.lang.String getSupportedResourceTypes(int index) {
+      return supportedResourceTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedResourceTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getSupportedResourceTypesBytes(int index) {
+      return supportedResourceTypes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedResourceTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedResourceTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedResourceTypesIsMutable();
+      supportedResourceTypes_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The supportedResourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedResourceTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedResourceTypesIsMutable();
+      supportedResourceTypes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The supportedResourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedResourceTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureSupportedResourceTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedResourceTypes_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedResourceTypes() {
+      supportedResourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All resource types to which backupPlan can be applied.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the supportedResourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedResourceTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSupportedResourceTypesIsMutable();
+      supportedResourceTypes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object revisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The revisionId.
+     */
+    public java.lang.String getRevisionId() {
+      java.lang.Object ref = revisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for revisionId.
+     */
+    public com.google.protobuf.ByteString getRevisionIdBytes() {
+      java.lang.Object ref = revisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The revisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      revisionId_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevisionId() {
+      revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      revisionId_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object revisionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The revisionName.
+     */
+    public java.lang.String getRevisionName() {
+      java.lang.Object ref = revisionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revisionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for revisionName.
+     */
+    public com.google.protobuf.ByteString getRevisionNameBytes() {
+      java.lang.Object ref = revisionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revisionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The revisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      revisionName_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevisionName() {
+      revisionName_ = getDefaultInstance().getRevisionName();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for revisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      revisionName_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

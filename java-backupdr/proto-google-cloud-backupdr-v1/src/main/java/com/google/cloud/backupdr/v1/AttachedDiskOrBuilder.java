@@ -164,7 +164,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return Whether the diskTypeDeprecated field is set.
    */
   @java.lang.Deprecated
@@ -182,7 +182,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return The enum numeric value on the wire for diskTypeDeprecated.
    */
   @java.lang.Deprecated
@@ -200,7 +200,7 @@ public interface AttachedDiskOrBuilder
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return The diskTypeDeprecated.
    */
   @java.lang.Deprecated

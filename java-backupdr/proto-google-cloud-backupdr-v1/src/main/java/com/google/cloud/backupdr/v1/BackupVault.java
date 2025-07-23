@@ -144,6 +144,16 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 4;</code>
      */
     ERROR(4),
+    /**
+     *
+     *
+     * <pre>
+     * The backup vault is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    UPDATING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -202,6 +212,17 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ERROR_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * The backup vault is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    public static final int UPDATING_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -236,6 +257,8 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return ERROR;
+        case 5:
+          return UPDATING;
         default:
           return null;
       }

@@ -16,8 +16,11 @@
 
 package com.google.cloud.backupdr.v1.stub;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
@@ -36,29 +39,39 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
+import com.google.cloud.backupdr.v1.BackupPlanRevision;
 import com.google.cloud.backupdr.v1.BackupVault;
 import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
 import com.google.cloud.backupdr.v1.DataSource;
+import com.google.cloud.backupdr.v1.DataSourceReference;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest;
 import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
+import com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlansResponse;
 import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
@@ -74,6 +87,8 @@ import com.google.cloud.backupdr.v1.OperationMetadata;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.UpdateDataSourceRequest;
@@ -295,6 +310,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateBackupPlanRequest, Operation>
+      updateBackupPlanMethodDescriptor =
+          MethodDescriptor.<UpdateBackupPlanRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackupPlan")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBackupPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetBackupPlanRequest, BackupPlan>
       getBackupPlanMethodDescriptor =
           MethodDescriptor.<GetBackupPlanRequest, BackupPlan>newBuilder()
@@ -326,6 +351,29 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionMethodDescriptor =
+          MethodDescriptor.<GetBackupPlanRevisionRequest, BackupPlanRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackupPlanRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetBackupPlanRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BackupPlanRevision.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBackupPlanRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBackupPlanRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupPlanRevisionsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationMethodDescriptor =
           MethodDescriptor.<CreateBackupPlanAssociationRequest, Operation>newBuilder()
@@ -333,6 +381,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setFullMethodName("google.cloud.backupdr.v1.BackupDR/CreateBackupPlanAssociation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPlanAssociationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationMethodDescriptor =
+          MethodDescriptor.<UpdateBackupPlanAssociationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackupPlanAssociation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBackupPlanAssociationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -360,6 +418,25 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListBackupPlanAssociationsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeMethodDescriptor =
+          MethodDescriptor
+              .<FetchBackupPlanAssociationsForResourceTypeRequest,
+                  FetchBackupPlanAssociationsForResourceTypeResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/FetchBackupPlanAssociationsForResourceType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchBackupPlanAssociationsForResourceTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchBackupPlanAssociationsForResourceTypeResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteBackupPlanAssociationRequest, Operation>
       deleteBackupPlanAssociationMethodDescriptor =
           MethodDescriptor.<DeleteBackupPlanAssociationRequest, Operation>newBuilder()
@@ -378,6 +455,36 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TriggerBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceMethodDescriptor =
+          MethodDescriptor.<GetDataSourceReferenceRequest, DataSourceReference>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetDataSourceReference")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDataSourceReferenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataSourceReference.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeMethodDescriptor =
+          MethodDescriptor
+              .<FetchDataSourceReferencesForResourceTypeRequest,
+                  FetchDataSourceReferencesForResourceTypeResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/FetchDataSourceReferencesForResourceType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchDataSourceReferencesForResourceTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchDataSourceReferencesForResourceTypeResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<InitializeServiceRequest, Operation>
@@ -493,6 +600,9 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<CreateBackupPlanRequest, Operation> createBackupPlanCallable;
   private final OperationCallable<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
       createBackupPlanOperationCallable;
+  private final UnaryCallable<UpdateBackupPlanRequest, Operation> updateBackupPlanCallable;
+  private final OperationCallable<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationCallable;
   private final UnaryCallable<GetBackupPlanRequest, BackupPlan> getBackupPlanCallable;
   private final UnaryCallable<ListBackupPlansRequest, ListBackupPlansResponse>
       listBackupPlansCallable;
@@ -501,11 +611,22 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable;
   private final OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationCallable;
+  private final UnaryCallable<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionCallable;
+  private final UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsCallable;
+  private final UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsPagedCallable;
   private final UnaryCallable<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationCallable;
   private final OperationCallable<
           CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
       createBackupPlanAssociationOperationCallable;
+  private final UnaryCallable<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationCallable;
+  private final OperationCallable<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationCallable;
   private final UnaryCallable<GetBackupPlanAssociationRequest, BackupPlanAssociation>
       getBackupPlanAssociationCallable;
   private final UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
@@ -513,6 +634,14 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<
           ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsPagedResponse>
       listBackupPlanAssociationsPagedCallable;
+  private final UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypePagedCallable;
   private final UnaryCallable<DeleteBackupPlanAssociationRequest, Operation>
       deleteBackupPlanAssociationCallable;
   private final OperationCallable<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
@@ -520,6 +649,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable;
   private final OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable;
+  private final UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceCallable;
+  private final UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypePagedCallable;
   private final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable;
   private final OperationCallable<
           InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
@@ -773,6 +912,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
+        GrpcCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupPlanMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_plan.name", String.valueOf(request.getBackupPlan().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
         GrpcCallSettings.<GetBackupPlanRequest, BackupPlan>newBuilder()
             .setMethodDescriptor(getBackupPlanMethodDescriptor)
@@ -804,6 +954,29 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
+        getBackupPlanRevisionTransportSettings =
+            GrpcCallSettings.<GetBackupPlanRevisionRequest, BackupPlanRevision>newBuilder()
+                .setMethodDescriptor(getBackupPlanRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+        listBackupPlanRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listBackupPlanRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationTransportSettings =
             GrpcCallSettings.<CreateBackupPlanAssociationRequest, Operation>newBuilder()
@@ -812,6 +985,19 @@ public class GrpcBackupDRStub extends BackupDRStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateBackupPlanAssociationRequest, Operation>
+        updateBackupPlanAssociationTransportSettings =
+            GrpcCallSettings.<UpdateBackupPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateBackupPlanAssociationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "backup_plan_association.name",
+                          String.valueOf(request.getBackupPlanAssociation().getName()));
                       return builder.build();
                     })
                 .build();
@@ -831,6 +1017,22 @@ public class GrpcBackupDRStub extends BackupDRStub {
             GrpcCallSettings
                 .<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>newBuilder()
                 .setMethodDescriptor(listBackupPlanAssociationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            FetchBackupPlanAssociationsForResourceTypeRequest,
+            FetchBackupPlanAssociationsForResourceTypeResponse>
+        fetchBackupPlanAssociationsForResourceTypeTransportSettings =
+            GrpcCallSettings
+                .<FetchBackupPlanAssociationsForResourceTypeRequest,
+                    FetchBackupPlanAssociationsForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchBackupPlanAssociationsForResourceTypeMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -859,6 +1061,33 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
+        getDataSourceReferenceTransportSettings =
+            GrpcCallSettings.<GetDataSourceReferenceRequest, DataSourceReference>newBuilder()
+                .setMethodDescriptor(getDataSourceReferenceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            FetchDataSourceReferencesForResourceTypeRequest,
+            FetchDataSourceReferencesForResourceTypeResponse>
+        fetchDataSourceReferencesForResourceTypeTransportSettings =
+            GrpcCallSettings
+                .<FetchDataSourceReferencesForResourceTypeRequest,
+                    FetchDataSourceReferencesForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchDataSourceReferencesForResourceTypeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
         GrpcCallSettings.<InitializeServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(initializeServiceMethodDescriptor)
@@ -1073,6 +1302,15 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.createBackupPlanOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateBackupPlanCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupPlanTransportSettings, settings.updateBackupPlanSettings(), clientContext);
+    this.updateBackupPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupPlanTransportSettings,
+            settings.updateBackupPlanOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getBackupPlanCallable =
         callableFactory.createUnaryCallable(
             getBackupPlanTransportSettings, settings.getBackupPlanSettings(), clientContext);
@@ -1091,6 +1329,21 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.deleteBackupPlanOperationSettings(),
             clientContext,
             operationsStub);
+    this.getBackupPlanRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getBackupPlanRevisionTransportSettings,
+            settings.getBackupPlanRevisionSettings(),
+            clientContext);
+    this.listBackupPlanRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupPlanRevisionsTransportSettings,
+            settings.listBackupPlanRevisionsSettings(),
+            clientContext);
+    this.listBackupPlanRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupPlanRevisionsTransportSettings,
+            settings.listBackupPlanRevisionsSettings(),
+            clientContext);
     this.createBackupPlanAssociationCallable =
         callableFactory.createUnaryCallable(
             createBackupPlanAssociationTransportSettings,
@@ -1100,6 +1353,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
         callableFactory.createOperationCallable(
             createBackupPlanAssociationTransportSettings,
             settings.createBackupPlanAssociationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateBackupPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupPlanAssociationTransportSettings,
+            settings.updateBackupPlanAssociationSettings(),
+            clientContext);
+    this.updateBackupPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupPlanAssociationTransportSettings,
+            settings.updateBackupPlanAssociationOperationSettings(),
             clientContext,
             operationsStub);
     this.getBackupPlanAssociationCallable =
@@ -1116,6 +1380,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
         callableFactory.createPagedCallable(
             listBackupPlanAssociationsTransportSettings,
             settings.listBackupPlanAssociationsSettings(),
+            clientContext);
+    this.fetchBackupPlanAssociationsForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchBackupPlanAssociationsForResourceTypeTransportSettings,
+            settings.fetchBackupPlanAssociationsForResourceTypeSettings(),
+            clientContext);
+    this.fetchBackupPlanAssociationsForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchBackupPlanAssociationsForResourceTypeTransportSettings,
+            settings.fetchBackupPlanAssociationsForResourceTypeSettings(),
             clientContext);
     this.deleteBackupPlanAssociationCallable =
         callableFactory.createUnaryCallable(
@@ -1137,6 +1411,21 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.triggerBackupOperationSettings(),
             clientContext,
             operationsStub);
+    this.getDataSourceReferenceCallable =
+        callableFactory.createUnaryCallable(
+            getDataSourceReferenceTransportSettings,
+            settings.getDataSourceReferenceSettings(),
+            clientContext);
+    this.fetchDataSourceReferencesForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchDataSourceReferencesForResourceTypeTransportSettings,
+            settings.fetchDataSourceReferencesForResourceTypeSettings(),
+            clientContext);
+    this.fetchDataSourceReferencesForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchDataSourceReferencesForResourceTypeTransportSettings,
+            settings.fetchDataSourceReferencesForResourceTypeSettings(),
+            clientContext);
     this.initializeServiceCallable =
         callableFactory.createUnaryCallable(
             initializeServiceTransportSettings,
@@ -1365,6 +1654,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
   }
 
   @Override
+  public UnaryCallable<UpdateBackupPlanRequest, Operation> updateBackupPlanCallable() {
+    return updateBackupPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationCallable() {
+    return updateBackupPlanOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetBackupPlanRequest, BackupPlan> getBackupPlanCallable() {
     return getBackupPlanCallable;
   }
@@ -1392,6 +1692,24 @@ public class GrpcBackupDRStub extends BackupDRStub {
   }
 
   @Override
+  public UnaryCallable<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionCallable() {
+    return getBackupPlanRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+      listBackupPlanRevisionsCallable() {
+    return listBackupPlanRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsPagedCallable() {
+    return listBackupPlanRevisionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationCallable() {
     return createBackupPlanAssociationCallable;
@@ -1402,6 +1720,19 @@ public class GrpcBackupDRStub extends BackupDRStub {
           CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
       createBackupPlanAssociationOperationCallable() {
     return createBackupPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationCallable() {
+    return updateBackupPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationCallable() {
+    return updateBackupPlanAssociationOperationCallable;
   }
 
   @Override
@@ -1420,6 +1751,22 @@ public class GrpcBackupDRStub extends BackupDRStub {
   public UnaryCallable<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsPagedResponse>
       listBackupPlanAssociationsPagedCallable() {
     return listBackupPlanAssociationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse>
+      fetchBackupPlanAssociationsForResourceTypeCallable() {
+    return fetchBackupPlanAssociationsForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypePagedCallable() {
+    return fetchBackupPlanAssociationsForResourceTypePagedCallable;
   }
 
   @Override
@@ -1443,6 +1790,28 @@ public class GrpcBackupDRStub extends BackupDRStub {
   public OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable() {
     return triggerBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceCallable() {
+    return getDataSourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse>
+      fetchDataSourceReferencesForResourceTypeCallable() {
+    return fetchDataSourceReferencesForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypePagedCallable() {
+    return fetchDataSourceReferencesForResourceTypePagedCallable;
   }
 
   @Override

@@ -1012,8 +1012,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-   * cluster is connected. Example:
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+   * to which the cluster is connected. Example:
    * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
@@ -1039,8 +1039,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-   * cluster is connected. Example:
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+   * to which the cluster is connected. Example:
    * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
@@ -2670,8 +2670,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-     * cluster is connected. Example:
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+     * to which the cluster is connected. Example:
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
@@ -2696,8 +2696,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-     * cluster is connected. Example:
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+     * to which the cluster is connected. Example:
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
@@ -2722,8 +2722,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-     * cluster is connected. Example:
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+     * to which the cluster is connected. Example:
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
@@ -2747,8 +2747,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-     * cluster is connected. Example:
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+     * to which the cluster is connected. Example:
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
@@ -2768,8 +2768,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-     * cluster is connected. Example:
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc)
+     * to which the cluster is connected. Example:
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *

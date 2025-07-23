@@ -56,6 +56,14 @@ public final class AnnotationProto {
       internal_static_google_chat_v1_ChatSpaceLinkData_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_ChatSpaceLinkData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_MeetSpaceLinkData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_MeetSpaceLinkData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_CalendarEventLinkData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_CalendarEventLinkData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,9 +75,10 @@ public final class AnnotationProto {
     java.lang.String[] descriptorData = {
       "\n"
           + "\037google/chat/v1/annotation.proto\022\016googl"
-          + "e.chat.v1\032\031google/api/resource.proto\032\037go"
-          + "ogle/chat/v1/attachment.proto\032\035google/ch"
-          + "at/v1/reaction.proto\032\031google/chat/v1/user.proto\"\202\003\n\n"
+          + "e.chat.v1\032\037google/api/field_behavior.pro"
+          + "to\032\031google/api/resource.proto\032\037google/ch"
+          + "at/v1/attachment.proto\032\035google/chat/v1/r"
+          + "eaction.proto\032\031google/chat/v1/user.proto\"\202\003\n\n"
           + "Annotation\022,\n"
           + "\004type\030\001 \001(\0162\036.google.chat.v1.AnnotationType\022\030\n"
           + "\013start_index\030\002 \001(\005H\001\210\001\001\022\016\n"
@@ -77,8 +86,8 @@ public final class AnnotationProto {
           + "\014user_mention\030\004 \001(\0132#.google.chat.v1.UserMentionMetadataH\000\022=\n\r"
           + "slash_command\030\005 \001(\0132$.google.chat.v1.SlashCommandMetadataH\000\022>\n"
           + "\022rich_link_metadata\030\006 \001(\0132 .google.chat.v1.RichLinkMetadataH\000\022D\n"
-          + "\025custom_emoji_metadata\030\007"
-          + " \001(\0132#.google.chat.v1.CustomEmojiMetadataH\000B\n\n"
+          + "\025custom_emoji_metadata\030\007 \001"
+          + "(\0132#.google.chat.v1.CustomEmojiMetadataH\000B\n\n"
           + "\010metadataB\016\n"
           + "\014_start_index\"\245\001\n"
           + "\023UserMentionMetadata\022\"\n"
@@ -97,19 +106,24 @@ public final class AnnotationProto {
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003ADD\020\001\022\n\n"
-          + "\006INVOKE\020\002\"\273\002\n"
+          + "\006INVOKE\020\002\"\355\003\n"
           + "\020RichLinkMetadata\022\013\n"
           + "\003uri\030\001 \001(\t\022E\n"
           + "\016rich_link_type\030\002"
           + " \001(\0162-.google.chat.v1.RichLinkMetadata.RichLinkType\0228\n"
           + "\017drive_link_data\030\003 \001(\0132\035.google.chat.v1.DriveLinkDataH\000\022A\n"
           + "\024chat_space_link_data\030\004"
-          + " \001(\0132!.google.chat.v1.ChatSpaceLinkDataH\000\"N\n"
+          + " \001(\0132!.google.chat.v1.ChatSpaceLinkDataH\000\022A\n"
+          + "\024meet_space_link_data\030\005"
+          + " \001(\0132!.google.chat.v1.MeetSpaceLinkDataH\000\022I\n"
+          + "\030calendar_event_link_data\030\006 "
+          + "\001(\0132%.google.chat.v1.CalendarEventLinkDataH\000\"r\n"
           + "\014RichLinkType\022\036\n"
-          + "\032RICH_LINK_TYPE_UNSPECIFIED\020\000\022\016\n"
-          + "\n"
+          + "\032RICH_LINK_TYPE_UNSPECIFIED\020\000\022\016\n\n"
           + "DRIVE_FILE\020\001\022\016\n\n"
-          + "CHAT_SPACE\020\002B\006\n"
+          + "CHAT_SPACE\020\002\022\016\n\n"
+          + "MEET_SPACE\020\004\022\022\n"
+          + "\016CALENDAR_EVENT\020\005B\006\n"
           + "\004data\"H\n"
           + "\023CustomEmojiMetadata\0221\n"
           + "\014custom_emoji\030\001 \001(\0132\033.google.chat.v1.CustomEmoji\"X\n\r"
@@ -122,22 +136,39 @@ public final class AnnotationProto {
           + "\006thread\030\002 \001(\tB\037\372A\034\n"
           + "\032chat.googleapis.com/Thread\0221\n"
           + "\007message\030\003 \001(\tB \372A\035\n"
-          + "\033chat.googleapis.com/Message*w\n"
+          + "\033chat.googleapis.com/Message\"\270\002\n"
+          + "\021MeetSpaceLinkData\022\024\n"
+          + "\014meeting_code\030\001 \001(\t\0224\n"
+          + "\004type\030\002 \001(\0162&.google.chat.v1.MeetSpaceLinkData.Type\022M\n\r"
+          + "huddle_status\030\003 \001(\0162..google.chat.v1."
+          + "MeetSpaceLinkData.HuddleStatusB\006\340A\001\340A\003\"5\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007MEETING\020\001\022\n\n"
+          + "\006HUDDLE\020\002\"Q\n"
+          + "\014HuddleStatus\022\035\n"
+          + "\031HUDDLE_STATUS_UNSPECIFIED\020\000\022\013\n"
+          + "\007STARTED\020\001\022\t\n"
+          + "\005ENDED\020\002\022\n\n"
+          + "\006MISSED\020\003\">\n"
+          + "\025CalendarEventLinkData\022\023\n"
+          + "\013calendar_id\030\001 \001(\t\022\020\n"
+          + "\010event_id\030\002 \001(\t*w\n"
           + "\016AnnotationType\022\037\n"
           + "\033ANNOTATION_TYPE_UNSPECIFIED\020\000\022\020\n"
           + "\014USER_MENTION\020\001\022\021\n\r"
           + "SLASH_COMMAND\020\002\022\r\n"
           + "\tRICH_LINK\020\003\022\020\n"
           + "\014CUSTOM_EMOJI\020\004B\250\001\n"
-          + "\022com.google.chat.v1B\017AnnotationProtoP\001Z,cloud.google.com/go/chat/"
-          + "apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Goog"
-          + "le.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026"
-          + "Google::Apps::Chat::V1b\006proto3"
+          + "\022com.google.chat.v1B\017AnnotationProtoP\001Z,cloud.google.com/go/chat/apiv1/chat"
+          + "pb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Ch"
+          + "at.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.chat.v1.AttachmentProto.getDescriptor(),
               com.google.chat.v1.ReactionProto.getDescriptor(),
@@ -179,7 +210,13 @@ public final class AnnotationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_RichLinkMetadata_descriptor,
             new java.lang.String[] {
-              "Uri", "RichLinkType", "DriveLinkData", "ChatSpaceLinkData", "Data",
+              "Uri",
+              "RichLinkType",
+              "DriveLinkData",
+              "ChatSpaceLinkData",
+              "MeetSpaceLinkData",
+              "CalendarEventLinkData",
+              "Data",
             });
     internal_static_google_chat_v1_CustomEmojiMetadata_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -205,11 +242,29 @@ public final class AnnotationProto {
             new java.lang.String[] {
               "Space", "Thread", "Message",
             });
+    internal_static_google_chat_v1_MeetSpaceLinkData_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_chat_v1_MeetSpaceLinkData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_MeetSpaceLinkData_descriptor,
+            new java.lang.String[] {
+              "MeetingCode", "Type", "HuddleStatus",
+            });
+    internal_static_google_chat_v1_CalendarEventLinkData_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_chat_v1_CalendarEventLinkData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_CalendarEventLinkData_descriptor,
+            new java.lang.String[] {
+              "CalendarId", "EventId",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.chat.v1.AttachmentProto.getDescriptor();
     com.google.chat.v1.ReactionProto.getDescriptor();

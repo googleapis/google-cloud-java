@@ -19,6 +19,42 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AssistantServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Assistant configuration and assisting users.
+ *
+ * <p>Sample for AssistantServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AssistantServiceClient assistantServiceClient = AssistantServiceClient.create()) {
+ *   StreamAssistRequest request =
+ *       StreamAssistRequest.newBuilder()
+ *           .setName(
+ *               AssistantName.of(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]", "[ASSISTANT]")
+ *                   .toString())
+ *           .setQuery(Query.newBuilder().build())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+ *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
+ *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
+ *           .build();
+ *   ServerStream<StreamAssistResponse> stream =
+ *       assistantServiceClient.streamAssistCallable().call(request);
+ *   for (StreamAssistResponse response : stream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= CmekConfigServiceClient =======================
  *
  * <p>Service Description: Service for managing CMEK related tasks
