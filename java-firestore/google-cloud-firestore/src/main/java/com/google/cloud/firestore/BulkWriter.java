@@ -160,6 +160,12 @@ public final class BulkWriter implements AutoCloseable {
   // don't want to block a gax/grpc executor while running user error and success callbacks.
   private final ScheduledExecutorService bulkWriterExecutor;
 
+  /**
+   * The BulkWriter will shutdown executor when closed and all writes are done. This is important to
+   * prevent leaking threads.
+   */
+  boolean autoShutdownBulkWriterExecutor;
+
   /** The maximum number of writes that can be in a single batch. */
   private int maxBatchSize = MAX_BATCH_SIZE;
 
@@ -230,7 +236,7 @@ public final class BulkWriter implements AutoCloseable {
   @GuardedBy("lock")
   private Executor errorExecutor;
 
-  Context traceContext;
+  private final Context traceContext;
 
   /**
    * Used to track when writes are enqueued. The user handler executors cannot be changed after a
@@ -241,10 +247,13 @@ public final class BulkWriter implements AutoCloseable {
 
   BulkWriter(FirestoreImpl firestore, BulkWriterOptions options) {
     this.firestore = firestore;
-    this.bulkWriterExecutor =
-        options.getExecutor() != null
-            ? options.getExecutor()
-            : Executors.newSingleThreadScheduledExecutor();
+    if (options.getExecutor() != null) {
+      this.bulkWriterExecutor = options.getExecutor();
+      this.autoShutdownBulkWriterExecutor = false;
+    } else {
+      this.bulkWriterExecutor = Executors.newSingleThreadScheduledExecutor();
+      this.autoShutdownBulkWriterExecutor = true;
+    }
     this.successExecutor = MoreExecutors.directExecutor();
     this.errorExecutor = MoreExecutors.directExecutor();
     this.bulkCommitBatch = new BulkCommitBatch(firestore, bulkWriterExecutor, maxBatchSize);
@@ -707,7 +716,7 @@ public final class BulkWriter implements AutoCloseable {
       lastFlushOperation = lastOperation;
       scheduleCurrentBatchLocked();
     }
-    return lastOperation;
+    return lastFlushOperation;
   }
 
   /**
@@ -722,10 +731,16 @@ public final class BulkWriter implements AutoCloseable {
   public void close() throws InterruptedException, ExecutionException {
     ApiFuture<Void> flushFuture;
     synchronized (lock) {
-      flushFuture = flushLocked();
-      closed = true;
+      if (!closed) {
+        flushLocked();
+        closed = true;
+      }
+      flushFuture = lastFlushOperation;
     }
     flushFuture.get();
+    if (autoShutdownBulkWriterExecutor) {
+      bulkWriterExecutor.shutdown();
+    }
   }
 
   /**

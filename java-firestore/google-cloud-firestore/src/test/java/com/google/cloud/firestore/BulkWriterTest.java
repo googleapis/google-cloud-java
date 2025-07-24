@@ -24,6 +24,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.set;
 import static com.google.cloud.firestore.LocalFirestoreHelper.update;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
@@ -97,24 +98,13 @@ public class BulkWriterTest {
 
   @Rule public Timeout timeout = new Timeout(2, TimeUnit.SECONDS);
 
-  @Spy private final FirestoreRpc firestoreRpc = Mockito.mock(FirestoreRpc.class);
-
   private ScheduledExecutorService testExecutor;
-
-  /** Executor that executes delayed tasks without delay. */
-  private final ScheduledExecutorService immediateExecutor =
-      new ScheduledThreadPoolExecutor(1) {
-        @Override
-        @Nonnull
-        public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
-          return super.schedule(command, 0, TimeUnit.MILLISECONDS);
-        }
-      };
 
   @Spy
   private final FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<BatchWriteRequest> batchWriteCapture;
 
@@ -155,7 +145,6 @@ public class BulkWriterTest {
 
   @Before
   public void before() {
-    lenient().doReturn(immediateExecutor).when(firestoreRpc).getExecutor();
     testExecutor = Executors.newSingleThreadScheduledExecutor();
 
     timeoutExecutor =
@@ -169,23 +158,27 @@ public class BulkWriterTest {
 
     bulkWriter =
         firestoreMock.bulkWriter(BulkWriterOptions.builder().setExecutor(timeoutExecutor).build());
+    bulkWriter.autoShutdownBulkWriterExecutor = true;
     doc1 = firestoreMock.document("coll/doc1");
     doc2 = firestoreMock.document("coll/doc2");
   }
 
   @After
   public void after() throws InterruptedException {
+    shutdownScheduledExecutorService(testExecutor);
     shutdownScheduledExecutorService(timeoutExecutor);
   }
 
   void shutdownScheduledExecutorService(ScheduledExecutorService executorService)
       throws InterruptedException {
+    executorService.shutdown();
     // Wait for the executor to finish after each test.
     //
     // This ensures the executor service is shut down properly within the given timeout, and thereby
     // avoids potential hangs caused by lingering threads. Note that if a given thread is terminated
     // because of the timeout, the associated test will fail, which is what we want.
     executorService.awaitTermination(100, TimeUnit.MILLISECONDS);
+    assertTrue(executorService.isTerminated());
   }
 
   @Test
@@ -369,12 +362,19 @@ public class BulkWriterTest {
     } catch (Exception e) {
       assertEquals(expected, e.getMessage());
     }
-    try {
-      bulkWriter.close();
-      fail("close() should have failed");
-    } catch (Exception e) {
-      assertEquals(expected, e.getMessage());
-    }
+    // Close is idempotent and can be called multiple time.
+    bulkWriter.close();
+  }
+
+  @Test
+  public void closeWillShutdownExecutor() throws Exception {
+    // We ONLY shutdown executor when the executor was created within the BulkWriter.
+    // To simulate this, we set the autoShutdownBulkWriterExecutor field to true.
+    bulkWriter.autoShutdownBulkWriterExecutor = true;
+
+    assertFalse(timeoutExecutor.isShutdown());
+    bulkWriter.close();
+    assertTrue(timeoutExecutor.isShutdown());
   }
 
   @Test
