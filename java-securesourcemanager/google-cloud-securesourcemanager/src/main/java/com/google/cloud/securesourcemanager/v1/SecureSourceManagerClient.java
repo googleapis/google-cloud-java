@@ -55,23 +55,6 @@ import javax.annotation.Generated;
  *
  * <p>Access Secure Source Manager instances, resources, and repositories.
  *
- * <p>This API is split across two servers: the Control Plane and the Data Plane.
- *
- * <p>Data Plane endpoints are hosted directly by your Secure Source Manager instance, so you must
- * connect to your instance's API hostname to access them. The API hostname looks like the
- * following:
- *
- * <p>https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
- *
- * <p>For example,
- *
- * <p>https://my-instance-702770452863-api.us-central1.sourcemanager.dev
- *
- * <p>Data Plane endpoints are denoted with &#42;&#42;Host: Data Plane&#42;&#42;.
- *
- * <p>All other endpoints are found in the normal Cloud API location, namely,
- * `securcesourcemanager.googleapis.com`.
- *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -180,7 +163,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListRepositories</td>
  *      <td><p> Lists Repositories in a given project and location.
- * <p>  &#42;&#42;Host: Data Plane&#42;&#42;</td>
+ * <p>  The instance field is required in the query parameter for requests using the securesourcemanager.googleapis.com endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -200,8 +183,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetRepository</td>
- *      <td><p> Gets metadata of a repository.
- * <p>  &#42;&#42;Host: Data Plane&#42;&#42;</td>
+ *      <td><p> Gets metadata of a repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -221,7 +203,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateRepository</td>
  *      <td><p> Creates a new repository in a given project and location.
- * <p>  &#42;&#42;Host: Data Plane&#42;&#42;</td>
+ * <p>  The Repository.Instance field is required in the request body for requests using the securesourcemanager.googleapis.com endpoint.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -240,9 +222,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateRepository</td>
+ *      <td><p> Updates the metadata of a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRepositoryAsync(UpdateRepositoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRepositoryAsync(Repository repository, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRepositoryOperationCallable()
+ *           <li><p> updateRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteRepository</td>
- *      <td><p> Deletes a Repository.
- * <p>  &#42;&#42;Host: Data Plane&#42;&#42;</td>
+ *      <td><p> Deletes a Repository.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -257,6 +257,104 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteRepositoryOperationCallable()
  *           <li><p> deleteRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHooks</td>
+ *      <td><p> Lists hooks in a given repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHooks(ListHooksRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHooks(RepositoryName parent)
+ *           <li><p> listHooks(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHooksPagedCallable()
+ *           <li><p> listHooksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHook</td>
+ *      <td><p> Gets metadata of a hook.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHook(GetHookRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHook(HookName name)
+ *           <li><p> getHook(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateHook</td>
+ *      <td><p> Creates a new hook in a given repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createHookAsync(CreateHookRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createHookAsync(RepositoryName parent, Hook hook, String hookId)
+ *           <li><p> createHookAsync(String parent, Hook hook, String hookId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createHookOperationCallable()
+ *           <li><p> createHookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateHook</td>
+ *      <td><p> Updates the metadata of a hook.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateHookAsync(UpdateHookRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateHookAsync(Hook hook, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateHookOperationCallable()
+ *           <li><p> updateHookCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteHook</td>
+ *      <td><p> Deletes a Hook.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteHookAsync(DeleteHookRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteHookAsync(HookName name)
+ *           <li><p> deleteHookAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteHookOperationCallable()
+ *           <li><p> deleteHookCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -412,6 +510,584 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteBranchRuleOperationCallable()
  *           <li><p> deleteBranchRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreatePullRequest</td>
+ *      <td><p> Creates a pull request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createPullRequestAsync(CreatePullRequestRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createPullRequestAsync(RepositoryName parent, PullRequest pullRequest)
+ *           <li><p> createPullRequestAsync(String parent, PullRequest pullRequest)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createPullRequestOperationCallable()
+ *           <li><p> createPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPullRequest</td>
+ *      <td><p> Gets a pull request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPullRequest(GetPullRequestRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPullRequest(PullRequestName name)
+ *           <li><p> getPullRequest(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPullRequests</td>
+ *      <td><p> Lists pull requests in a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPullRequests(ListPullRequestsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPullRequests(RepositoryName parent)
+ *           <li><p> listPullRequests(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPullRequestsPagedCallable()
+ *           <li><p> listPullRequestsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePullRequest</td>
+ *      <td><p> Updates a pull request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestAsync(UpdatePullRequestRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestAsync(PullRequest pullRequest, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestOperationCallable()
+ *           <li><p> updatePullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MergePullRequest</td>
+ *      <td><p> Merges a pull request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> mergePullRequestAsync(MergePullRequestRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> mergePullRequestAsync(PullRequestName name)
+ *           <li><p> mergePullRequestAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> mergePullRequestOperationCallable()
+ *           <li><p> mergePullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> OpenPullRequest</td>
+ *      <td><p> Opens a pull request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> openPullRequestAsync(OpenPullRequestRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> openPullRequestAsync(PullRequestName name)
+ *           <li><p> openPullRequestAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> openPullRequestOperationCallable()
+ *           <li><p> openPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ClosePullRequest</td>
+ *      <td><p> Closes a pull request without merging.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> closePullRequestAsync(ClosePullRequestRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> closePullRequestAsync(PullRequestName name)
+ *           <li><p> closePullRequestAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> closePullRequestOperationCallable()
+ *           <li><p> closePullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPullRequestFileDiffs</td>
+ *      <td><p> Lists a pull request's file diffs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPullRequestFileDiffs(ListPullRequestFileDiffsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPullRequestFileDiffs(PullRequestName name)
+ *           <li><p> listPullRequestFileDiffs(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPullRequestFileDiffsPagedCallable()
+ *           <li><p> listPullRequestFileDiffsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchTree</td>
+ *      <td><p> Fetches a tree from a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchTree(FetchTreeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchTreePagedCallable()
+ *           <li><p> fetchTreeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchBlob</td>
+ *      <td><p> Fetches a blob from a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchBlob(FetchBlobRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchBlobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateIssue</td>
+ *      <td><p> Creates an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createIssueAsync(CreateIssueRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createIssueAsync(RepositoryName parent, Issue issue)
+ *           <li><p> createIssueAsync(String parent, Issue issue)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createIssueOperationCallable()
+ *           <li><p> createIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIssue</td>
+ *      <td><p> Gets an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIssue(GetIssueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIssue(IssueName name)
+ *           <li><p> getIssue(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListIssues</td>
+ *      <td><p> Lists issues in a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listIssues(ListIssuesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listIssues(RepositoryName parent)
+ *           <li><p> listIssues(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listIssuesPagedCallable()
+ *           <li><p> listIssuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateIssue</td>
+ *      <td><p> Updates a issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateIssueAsync(UpdateIssueRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateIssueAsync(Issue issue, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateIssueOperationCallable()
+ *           <li><p> updateIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteIssue</td>
+ *      <td><p> Deletes an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteIssueAsync(DeleteIssueRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteIssueAsync(IssueName name)
+ *           <li><p> deleteIssueAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteIssueOperationCallable()
+ *           <li><p> deleteIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> OpenIssue</td>
+ *      <td><p> Opens an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> openIssueAsync(OpenIssueRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> openIssueAsync(IssueName name)
+ *           <li><p> openIssueAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> openIssueOperationCallable()
+ *           <li><p> openIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CloseIssue</td>
+ *      <td><p> Closes an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> closeIssueAsync(CloseIssueRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> closeIssueAsync(IssueName name)
+ *           <li><p> closeIssueAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> closeIssueOperationCallable()
+ *           <li><p> closeIssueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPullRequestComment</td>
+ *      <td><p> Gets a pull request comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPullRequestComment(GetPullRequestCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPullRequestComment(PullRequestCommentName name)
+ *           <li><p> getPullRequestComment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPullRequestCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPullRequestComments</td>
+ *      <td><p> Lists pull request comments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPullRequestComments(ListPullRequestCommentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPullRequestComments(PullRequestName parent)
+ *           <li><p> listPullRequestComments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPullRequestCommentsPagedCallable()
+ *           <li><p> listPullRequestCommentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreatePullRequestComment</td>
+ *      <td><p> Creates a pull request comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createPullRequestCommentAsync(CreatePullRequestCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createPullRequestCommentAsync(PullRequestName parent, PullRequestComment pullRequestComment)
+ *           <li><p> createPullRequestCommentAsync(String parent, PullRequestComment pullRequestComment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createPullRequestCommentOperationCallable()
+ *           <li><p> createPullRequestCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePullRequestComment</td>
+ *      <td><p> Updates a pull request comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestCommentAsync(UpdatePullRequestCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestCommentAsync(PullRequestComment pullRequestComment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePullRequestCommentOperationCallable()
+ *           <li><p> updatePullRequestCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeletePullRequestComment</td>
+ *      <td><p> Deletes a pull request comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deletePullRequestCommentAsync(DeletePullRequestCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deletePullRequestCommentAsync(PullRequestCommentName name)
+ *           <li><p> deletePullRequestCommentAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deletePullRequestCommentOperationCallable()
+ *           <li><p> deletePullRequestCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreatePullRequestComments</td>
+ *      <td><p> Batch creates pull request comments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreatePullRequestCommentsAsync(PullRequestName parent, List&lt;CreatePullRequestCommentRequest&gt; requests)
+ *           <li><p> batchCreatePullRequestCommentsAsync(String parent, List&lt;CreatePullRequestCommentRequest&gt; requests)
+ *           <li><p> batchCreatePullRequestCommentsAsync(BatchCreatePullRequestCommentsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreatePullRequestCommentsOperationCallable()
+ *           <li><p> batchCreatePullRequestCommentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResolvePullRequestComments</td>
+ *      <td><p> Resolves pull request comments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resolvePullRequestCommentsAsync(ResolvePullRequestCommentsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resolvePullRequestCommentsAsync(PullRequestName parent, List&lt;String&gt; names)
+ *           <li><p> resolvePullRequestCommentsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resolvePullRequestCommentsOperationCallable()
+ *           <li><p> resolvePullRequestCommentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UnresolvePullRequestComments</td>
+ *      <td><p> Unresolves pull request comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> unresolvePullRequestCommentsAsync(UnresolvePullRequestCommentsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> unresolvePullRequestCommentsAsync(PullRequestName parent, List&lt;String&gt; names)
+ *           <li><p> unresolvePullRequestCommentsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> unresolvePullRequestCommentsOperationCallable()
+ *           <li><p> unresolvePullRequestCommentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateIssueComment</td>
+ *      <td><p> Creates an issue comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createIssueCommentAsync(CreateIssueCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createIssueCommentAsync(IssueName parent, IssueComment issueComment)
+ *           <li><p> createIssueCommentAsync(String parent, IssueComment issueComment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createIssueCommentOperationCallable()
+ *           <li><p> createIssueCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIssueComment</td>
+ *      <td><p> Gets an issue comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIssueComment(GetIssueCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIssueComment(IssueCommentName name)
+ *           <li><p> getIssueComment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIssueCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListIssueComments</td>
+ *      <td><p> Lists comments in an issue.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listIssueComments(ListIssueCommentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listIssueComments(IssueName parent)
+ *           <li><p> listIssueComments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listIssueCommentsPagedCallable()
+ *           <li><p> listIssueCommentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateIssueComment</td>
+ *      <td><p> Updates an issue comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateIssueCommentAsync(UpdateIssueCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateIssueCommentAsync(IssueComment issueComment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateIssueCommentOperationCallable()
+ *           <li><p> updateIssueCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteIssueComment</td>
+ *      <td><p> Deletes an issue comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteIssueCommentAsync(DeleteIssueCommentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteIssueCommentAsync(IssueCommentName name)
+ *           <li><p> deleteIssueCommentAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteIssueCommentOperationCallable()
+ *           <li><p> deleteIssueCommentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1214,7 +1890,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The instance field is required in the query parameter for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1247,7 +1924,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The instance field is required in the query parameter for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1278,7 +1956,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The instance field is required in the query parameter for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1314,7 +1993,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The instance field is required in the query parameter for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1351,7 +2031,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The instance field is required in the query parameter for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1395,8 +2076,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Gets metadata of a repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1425,8 +2104,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Gets metadata of a repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1453,8 +2130,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets metadata of a repository.
-   *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
    *
    * <p>Sample code:
    *
@@ -1484,8 +2159,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Gets metadata of a repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1514,7 +2187,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Creates a new repository in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The Repository.Instance field is required in the request body for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1556,7 +2230,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Creates a new repository in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The Repository.Instance field is required in the request body for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1598,7 +2273,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Creates a new repository in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The Repository.Instance field is required in the request body for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1631,7 +2307,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Creates a new repository in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The Repository.Instance field is required in the request body for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1664,7 +2341,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Creates a new repository in a given project and location.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>The Repository.Instance field is required in the request body for requests using the
+   * securesourcemanager.googleapis.com endpoint.
    *
    * <p>Sample code:
    *
@@ -1694,9 +2372,136 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Repository.
+   * Updates the metadata of a repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   Repository repository = Repository.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Repository response =
+   *       secureSourceManagerClient.updateRepositoryAsync(repository, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param repository Required. The repository being updated.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     repository resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Repository, OperationMetadata> updateRepositoryAsync(
+      Repository repository, FieldMask updateMask) {
+    UpdateRepositoryRequest request =
+        UpdateRepositoryRequest.newBuilder()
+            .setRepository(repository)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateRepositoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateRepositoryRequest request =
+   *       UpdateRepositoryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRepository(Repository.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Repository response = secureSourceManagerClient.updateRepositoryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Repository, OperationMetadata> updateRepositoryAsync(
+      UpdateRepositoryRequest request) {
+    return updateRepositoryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateRepositoryRequest request =
+   *       UpdateRepositoryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRepository(Repository.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Repository, OperationMetadata> future =
+   *       secureSourceManagerClient.updateRepositoryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Repository response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRepositoryRequest, Repository, OperationMetadata>
+      updateRepositoryOperationCallable() {
+    return stub.updateRepositoryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateRepositoryRequest request =
+   *       UpdateRepositoryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRepository(Repository.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updateRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRepositoryRequest, Operation> updateRepositoryCallable() {
+    return stub.updateRepositoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Repository.
    *
    * <p>Sample code:
    *
@@ -1713,7 +2518,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the repository to delete. The format is
-   *     projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRepositoryAsync(
@@ -1726,8 +2531,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Repository.
-   *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
    *
    * <p>Sample code:
    *
@@ -1744,7 +2547,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the repository to delete. The format is
-   *     projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRepositoryAsync(String name) {
@@ -1755,8 +2558,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Repository.
-   *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
    *
    * <p>Sample code:
    *
@@ -1788,8 +2589,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Deletes a Repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1820,8 +2619,6 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Deletes a Repository.
    *
-   * <p>&#42;&#42;Host: Data Plane&#42;&#42;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1845,6 +2642,704 @@ public class SecureSourceManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRepositoryRequest, Operation> deleteRepositoryCallable() {
     return stub.deleteRepositoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists hooks in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (Hook element : secureSourceManagerClient.listHooks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHooksRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHooksPagedResponse listHooks(RepositoryName parent) {
+    ListHooksRequest request =
+        ListHooksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listHooks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists hooks in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (Hook element : secureSourceManagerClient.listHooks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHooksRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHooksPagedResponse listHooks(String parent) {
+    ListHooksRequest request = ListHooksRequest.newBuilder().setParent(parent).build();
+    return listHooks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists hooks in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListHooksRequest request =
+   *       ListHooksRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Hook element : secureSourceManagerClient.listHooks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHooksPagedResponse listHooks(ListHooksRequest request) {
+    return listHooksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists hooks in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListHooksRequest request =
+   *       ListHooksRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Hook> future =
+   *       secureSourceManagerClient.listHooksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Hook element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHooksRequest, ListHooksPagedResponse> listHooksPagedCallable() {
+    return stub.listHooksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists hooks in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListHooksRequest request =
+   *       ListHooksRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListHooksResponse response = secureSourceManagerClient.listHooksCallable().call(request);
+   *     for (Hook element : response.getHooksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHooksRequest, ListHooksResponse> listHooksCallable() {
+    return stub.listHooksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   HookName name = HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]");
+   *   Hook response = secureSourceManagerClient.getHook(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the hook to retrieve. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Hook getHook(HookName name) {
+    GetHookRequest request =
+        GetHookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getHook(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString();
+   *   Hook response = secureSourceManagerClient.getHook(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the hook to retrieve. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Hook getHook(String name) {
+    GetHookRequest request = GetHookRequest.newBuilder().setName(name).build();
+    return getHook(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetHookRequest request =
+   *       GetHookRequest.newBuilder()
+   *           .setName(HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString())
+   *           .build();
+   *   Hook response = secureSourceManagerClient.getHook(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Hook getHook(GetHookRequest request) {
+    return getHookCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetHookRequest request =
+   *       GetHookRequest.newBuilder()
+   *           .setName(HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString())
+   *           .build();
+   *   ApiFuture<Hook> future = secureSourceManagerClient.getHookCallable().futureCall(request);
+   *   // Do something.
+   *   Hook response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHookRequest, Hook> getHookCallable() {
+    return stub.getHookCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new hook in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   Hook hook = Hook.newBuilder().build();
+   *   String hookId = "hookId-1211612770";
+   *   Hook response = secureSourceManagerClient.createHookAsync(parent, hook, hookId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the hook. Values are of the form
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param hook Required. The resource being created.
+   * @param hookId Required. The ID to use for the hook, which will become the final component of
+   *     the hook's resource name. This value restricts to lower-case letters, numbers, and hyphen,
+   *     with the first character a letter, the last a letter or a number, and a 63 character
+   *     maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Hook, OperationMetadata> createHookAsync(
+      RepositoryName parent, Hook hook, String hookId) {
+    CreateHookRequest request =
+        CreateHookRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setHook(hook)
+            .setHookId(hookId)
+            .build();
+    return createHookAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new hook in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   Hook hook = Hook.newBuilder().build();
+   *   String hookId = "hookId-1211612770";
+   *   Hook response = secureSourceManagerClient.createHookAsync(parent, hook, hookId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the hook. Values are of the form
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param hook Required. The resource being created.
+   * @param hookId Required. The ID to use for the hook, which will become the final component of
+   *     the hook's resource name. This value restricts to lower-case letters, numbers, and hyphen,
+   *     with the first character a letter, the last a letter or a number, and a 63 character
+   *     maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Hook, OperationMetadata> createHookAsync(
+      String parent, Hook hook, String hookId) {
+    CreateHookRequest request =
+        CreateHookRequest.newBuilder().setParent(parent).setHook(hook).setHookId(hookId).build();
+    return createHookAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new hook in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateHookRequest request =
+   *       CreateHookRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setHook(Hook.newBuilder().build())
+   *           .setHookId("hookId-1211612770")
+   *           .build();
+   *   Hook response = secureSourceManagerClient.createHookAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Hook, OperationMetadata> createHookAsync(CreateHookRequest request) {
+    return createHookOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new hook in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateHookRequest request =
+   *       CreateHookRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setHook(Hook.newBuilder().build())
+   *           .setHookId("hookId-1211612770")
+   *           .build();
+   *   OperationFuture<Hook, OperationMetadata> future =
+   *       secureSourceManagerClient.createHookOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Hook response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateHookRequest, Hook, OperationMetadata>
+      createHookOperationCallable() {
+    return stub.createHookOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new hook in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateHookRequest request =
+   *       CreateHookRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setHook(Hook.newBuilder().build())
+   *           .setHookId("hookId-1211612770")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createHookCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateHookRequest, Operation> createHookCallable() {
+    return stub.createHookCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   Hook hook = Hook.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Hook response = secureSourceManagerClient.updateHookAsync(hook, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param hook Required. The hook being updated.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     hook resource by the update. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. The
+   *     special value "&#42;" means full replacement.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Hook, OperationMetadata> updateHookAsync(
+      Hook hook, FieldMask updateMask) {
+    UpdateHookRequest request =
+        UpdateHookRequest.newBuilder().setHook(hook).setUpdateMask(updateMask).build();
+    return updateHookAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateHookRequest request =
+   *       UpdateHookRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHook(Hook.newBuilder().build())
+   *           .build();
+   *   Hook response = secureSourceManagerClient.updateHookAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Hook, OperationMetadata> updateHookAsync(UpdateHookRequest request) {
+    return updateHookOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateHookRequest request =
+   *       UpdateHookRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHook(Hook.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Hook, OperationMetadata> future =
+   *       secureSourceManagerClient.updateHookOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Hook response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateHookRequest, Hook, OperationMetadata>
+      updateHookOperationCallable() {
+    return stub.updateHookOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the metadata of a hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateHookRequest request =
+   *       UpdateHookRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHook(Hook.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updateHookCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateHookRequest, Operation> updateHookCallable() {
+    return stub.updateHookCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   HookName name = HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]");
+   *   secureSourceManagerClient.deleteHookAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the hook to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHookAsync(HookName name) {
+    DeleteHookRequest request =
+        DeleteHookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteHookAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString();
+   *   secureSourceManagerClient.deleteHookAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the hook to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHookAsync(String name) {
+    DeleteHookRequest request = DeleteHookRequest.newBuilder().setName(name).build();
+    return deleteHookAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteHookRequest request =
+   *       DeleteHookRequest.newBuilder()
+   *           .setName(HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString())
+   *           .build();
+   *   secureSourceManagerClient.deleteHookAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHookAsync(
+      DeleteHookRequest request) {
+    return deleteHookOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteHookRequest request =
+   *       DeleteHookRequest.newBuilder()
+   *           .setName(HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       secureSourceManagerClient.deleteHookOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteHookRequest, Empty, OperationMetadata>
+      deleteHookOperationCallable() {
+    return stub.deleteHookOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Hook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteHookRequest request =
+   *       DeleteHookRequest.newBuilder()
+   *           .setName(HookName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[HOOK]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.deleteHookCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteHookRequest, Operation> deleteHookCallable() {
+    return stub.deleteHookCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2929,6 +4424,4418 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   PullRequest pullRequest = PullRequest.newBuilder().build();
+   *   PullRequest response =
+   *       secureSourceManagerClient.createPullRequestAsync(parent, pullRequest).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository that the pull request is created from. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param pullRequest Required. The pull request to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> createPullRequestAsync(
+      RepositoryName parent, PullRequest pullRequest) {
+    CreatePullRequestRequest request =
+        CreatePullRequestRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPullRequest(pullRequest)
+            .build();
+    return createPullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   PullRequest pullRequest = PullRequest.newBuilder().build();
+   *   PullRequest response =
+   *       secureSourceManagerClient.createPullRequestAsync(parent, pullRequest).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository that the pull request is created from. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param pullRequest Required. The pull request to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> createPullRequestAsync(
+      String parent, PullRequest pullRequest) {
+    CreatePullRequestRequest request =
+        CreatePullRequestRequest.newBuilder().setParent(parent).setPullRequest(pullRequest).build();
+    return createPullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestRequest request =
+   *       CreatePullRequestRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.createPullRequestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> createPullRequestAsync(
+      CreatePullRequestRequest request) {
+    return createPullRequestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestRequest request =
+   *       CreatePullRequestRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PullRequest, OperationMetadata> future =
+   *       secureSourceManagerClient.createPullRequestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreatePullRequestRequest, PullRequest, OperationMetadata>
+      createPullRequestOperationCallable() {
+    return stub.createPullRequestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestRequest request =
+   *       CreatePullRequestRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePullRequestRequest, Operation> createPullRequestCallable() {
+    return stub.createPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   PullRequest response = secureSourceManagerClient.getPullRequest(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest getPullRequest(PullRequestName name) {
+    GetPullRequestRequest request =
+        GetPullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   PullRequest response = secureSourceManagerClient.getPullRequest(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest getPullRequest(String name) {
+    GetPullRequestRequest request = GetPullRequestRequest.newBuilder().setName(name).build();
+    return getPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetPullRequestRequest request =
+   *       GetPullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.getPullRequest(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest getPullRequest(GetPullRequestRequest request) {
+    return getPullRequestCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetPullRequestRequest request =
+   *       GetPullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       secureSourceManagerClient.getPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPullRequestRequest, PullRequest> getPullRequestCallable() {
+    return stub.getPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull requests in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (PullRequest element : secureSourceManagerClient.listPullRequests(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to list pull requests. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestsPagedResponse listPullRequests(RepositoryName parent) {
+    ListPullRequestsRequest request =
+        ListPullRequestsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPullRequests(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull requests in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (PullRequest element : secureSourceManagerClient.listPullRequests(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to list pull requests. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestsPagedResponse listPullRequests(String parent) {
+    ListPullRequestsRequest request =
+        ListPullRequestsRequest.newBuilder().setParent(parent).build();
+    return listPullRequests(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull requests in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestsRequest request =
+   *       ListPullRequestsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PullRequest element : secureSourceManagerClient.listPullRequests(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestsPagedResponse listPullRequests(ListPullRequestsRequest request) {
+    return listPullRequestsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull requests in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestsRequest request =
+   *       ListPullRequestsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       secureSourceManagerClient.listPullRequestsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PullRequest element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestsRequest, ListPullRequestsPagedResponse>
+      listPullRequestsPagedCallable() {
+    return stub.listPullRequestsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull requests in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestsRequest request =
+   *       ListPullRequestsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPullRequestsResponse response =
+   *         secureSourceManagerClient.listPullRequestsCallable().call(request);
+   *     for (PullRequest element : response.getPullRequestsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestsRequest, ListPullRequestsResponse>
+      listPullRequestsCallable() {
+    return stub.listPullRequestsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequest pullRequest = PullRequest.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PullRequest response =
+   *       secureSourceManagerClient.updatePullRequestAsync(pullRequest, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param pullRequest Required. The pull request to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     pull request resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask.
+   *     The special value "&#42;" means full replacement.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> updatePullRequestAsync(
+      PullRequest pullRequest, FieldMask updateMask) {
+    UpdatePullRequestRequest request =
+        UpdatePullRequestRequest.newBuilder()
+            .setPullRequest(pullRequest)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestRequest request =
+   *       UpdatePullRequestRequest.newBuilder()
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.updatePullRequestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> updatePullRequestAsync(
+      UpdatePullRequestRequest request) {
+    return updatePullRequestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestRequest request =
+   *       UpdatePullRequestRequest.newBuilder()
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PullRequest, OperationMetadata> future =
+   *       secureSourceManagerClient.updatePullRequestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdatePullRequestRequest, PullRequest, OperationMetadata>
+      updatePullRequestOperationCallable() {
+    return stub.updatePullRequestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestRequest request =
+   *       UpdatePullRequestRequest.newBuilder()
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updatePullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePullRequestRequest, Operation> updatePullRequestCallable() {
+    return stub.updatePullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   PullRequest response = secureSourceManagerClient.mergePullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to merge. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> mergePullRequestAsync(
+      PullRequestName name) {
+    MergePullRequestRequest request =
+        MergePullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return mergePullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   PullRequest response = secureSourceManagerClient.mergePullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to merge. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> mergePullRequestAsync(String name) {
+    MergePullRequestRequest request = MergePullRequestRequest.newBuilder().setName(name).build();
+    return mergePullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   MergePullRequestRequest request =
+   *       MergePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.mergePullRequestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> mergePullRequestAsync(
+      MergePullRequestRequest request) {
+    return mergePullRequestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   MergePullRequestRequest request =
+   *       MergePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<PullRequest, OperationMetadata> future =
+   *       secureSourceManagerClient.mergePullRequestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MergePullRequestRequest, PullRequest, OperationMetadata>
+      mergePullRequestOperationCallable() {
+    return stub.mergePullRequestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   MergePullRequestRequest request =
+   *       MergePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.mergePullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MergePullRequestRequest, Operation> mergePullRequestCallable() {
+    return stub.mergePullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   PullRequest response = secureSourceManagerClient.openPullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to open. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> openPullRequestAsync(
+      PullRequestName name) {
+    OpenPullRequestRequest request =
+        OpenPullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return openPullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   PullRequest response = secureSourceManagerClient.openPullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to open. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> openPullRequestAsync(String name) {
+    OpenPullRequestRequest request = OpenPullRequestRequest.newBuilder().setName(name).build();
+    return openPullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenPullRequestRequest request =
+   *       OpenPullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.openPullRequestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> openPullRequestAsync(
+      OpenPullRequestRequest request) {
+    return openPullRequestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenPullRequestRequest request =
+   *       OpenPullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<PullRequest, OperationMetadata> future =
+   *       secureSourceManagerClient.openPullRequestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<OpenPullRequestRequest, PullRequest, OperationMetadata>
+      openPullRequestOperationCallable() {
+    return stub.openPullRequestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a pull request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenPullRequestRequest request =
+   *       OpenPullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.openPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<OpenPullRequestRequest, Operation> openPullRequestCallable() {
+    return stub.openPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes a pull request without merging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   PullRequest response = secureSourceManagerClient.closePullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to close. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> closePullRequestAsync(
+      PullRequestName name) {
+    ClosePullRequestRequest request =
+        ClosePullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return closePullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes a pull request without merging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   PullRequest response = secureSourceManagerClient.closePullRequestAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to close. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> closePullRequestAsync(String name) {
+    ClosePullRequestRequest request = ClosePullRequestRequest.newBuilder().setName(name).build();
+    return closePullRequestAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes a pull request without merging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ClosePullRequestRequest request =
+   *       ClosePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   PullRequest response = secureSourceManagerClient.closePullRequestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequest, OperationMetadata> closePullRequestAsync(
+      ClosePullRequestRequest request) {
+    return closePullRequestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes a pull request without merging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ClosePullRequestRequest request =
+   *       ClosePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<PullRequest, OperationMetadata> future =
+   *       secureSourceManagerClient.closePullRequestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ClosePullRequestRequest, PullRequest, OperationMetadata>
+      closePullRequestOperationCallable() {
+    return stub.closePullRequestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes a pull request without merging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ClosePullRequestRequest request =
+   *       ClosePullRequestRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.closePullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ClosePullRequestRequest, Operation> closePullRequestCallable() {
+    return stub.closePullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists a pull request's file diffs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   for (FileDiff element :
+   *       secureSourceManagerClient.listPullRequestFileDiffs(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to list file diffs for. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestFileDiffsPagedResponse listPullRequestFileDiffs(
+      PullRequestName name) {
+    ListPullRequestFileDiffsRequest request =
+        ListPullRequestFileDiffsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listPullRequestFileDiffs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists a pull request's file diffs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   for (FileDiff element :
+   *       secureSourceManagerClient.listPullRequestFileDiffs(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The pull request to list file diffs for. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestFileDiffsPagedResponse listPullRequestFileDiffs(String name) {
+    ListPullRequestFileDiffsRequest request =
+        ListPullRequestFileDiffsRequest.newBuilder().setName(name).build();
+    return listPullRequestFileDiffs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists a pull request's file diffs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestFileDiffsRequest request =
+   *       ListPullRequestFileDiffsRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (FileDiff element :
+   *       secureSourceManagerClient.listPullRequestFileDiffs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestFileDiffsPagedResponse listPullRequestFileDiffs(
+      ListPullRequestFileDiffsRequest request) {
+    return listPullRequestFileDiffsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists a pull request's file diffs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestFileDiffsRequest request =
+   *       ListPullRequestFileDiffsRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<FileDiff> future =
+   *       secureSourceManagerClient.listPullRequestFileDiffsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FileDiff element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsPagedResponse>
+      listPullRequestFileDiffsPagedCallable() {
+    return stub.listPullRequestFileDiffsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists a pull request's file diffs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestFileDiffsRequest request =
+   *       ListPullRequestFileDiffsRequest.newBuilder()
+   *           .setName(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPullRequestFileDiffsResponse response =
+   *         secureSourceManagerClient.listPullRequestFileDiffsCallable().call(request);
+   *     for (FileDiff element : response.getFileDiffsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse>
+      listPullRequestFileDiffsCallable() {
+    return stub.listPullRequestFileDiffsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a tree from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchTreeRequest request =
+   *       FetchTreeRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setRef("ref112787")
+   *           .setRecursive(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (TreeEntry element : secureSourceManagerClient.fetchTree(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchTreePagedResponse fetchTree(FetchTreeRequest request) {
+    return fetchTreePagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a tree from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchTreeRequest request =
+   *       FetchTreeRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setRef("ref112787")
+   *           .setRecursive(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<TreeEntry> future =
+   *       secureSourceManagerClient.fetchTreePagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TreeEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchTreeRequest, FetchTreePagedResponse> fetchTreePagedCallable() {
+    return stub.fetchTreePagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a tree from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchTreeRequest request =
+   *       FetchTreeRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setRef("ref112787")
+   *           .setRecursive(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchTreeResponse response = secureSourceManagerClient.fetchTreeCallable().call(request);
+   *     for (TreeEntry element : response.getTreeEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchTreeRequest, FetchTreeResponse> fetchTreeCallable() {
+    return stub.fetchTreeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a blob from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchBlobRequest request =
+   *       FetchBlobRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setSha("sha113836")
+   *           .build();
+   *   FetchBlobResponse response = secureSourceManagerClient.fetchBlob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchBlobResponse fetchBlob(FetchBlobRequest request) {
+    return fetchBlobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a blob from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchBlobRequest request =
+   *       FetchBlobRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setSha("sha113836")
+   *           .build();
+   *   ApiFuture<FetchBlobResponse> future =
+   *       secureSourceManagerClient.fetchBlobCallable().futureCall(request);
+   *   // Do something.
+   *   FetchBlobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchBlobRequest, FetchBlobResponse> fetchBlobCallable() {
+    return stub.fetchBlobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   Issue issue = Issue.newBuilder().build();
+   *   Issue response = secureSourceManagerClient.createIssueAsync(parent, issue).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the issue. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param issue Required. The issue to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> createIssueAsync(
+      RepositoryName parent, Issue issue) {
+    CreateIssueRequest request =
+        CreateIssueRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIssue(issue)
+            .build();
+    return createIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   Issue issue = Issue.newBuilder().build();
+   *   Issue response = secureSourceManagerClient.createIssueAsync(parent, issue).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the issue. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @param issue Required. The issue to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> createIssueAsync(
+      String parent, Issue issue) {
+    CreateIssueRequest request =
+        CreateIssueRequest.newBuilder().setParent(parent).setIssue(issue).build();
+    return createIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueRequest request =
+   *       CreateIssueRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setIssue(Issue.newBuilder().build())
+   *           .build();
+   *   Issue response = secureSourceManagerClient.createIssueAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> createIssueAsync(
+      CreateIssueRequest request) {
+    return createIssueOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueRequest request =
+   *       CreateIssueRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setIssue(Issue.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Issue, OperationMetadata> future =
+   *       secureSourceManagerClient.createIssueOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateIssueRequest, Issue, OperationMetadata>
+      createIssueOperationCallable() {
+    return stub.createIssueOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueRequest request =
+   *       CreateIssueRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setIssue(Issue.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateIssueRequest, Operation> createIssueCallable() {
+    return stub.createIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   Issue response = secureSourceManagerClient.getIssue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Issue getIssue(IssueName name) {
+    GetIssueRequest request =
+        GetIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getIssue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   Issue response = secureSourceManagerClient.getIssue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Issue getIssue(String name) {
+    GetIssueRequest request = GetIssueRequest.newBuilder().setName(name).build();
+    return getIssue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetIssueRequest request =
+   *       GetIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .build();
+   *   Issue response = secureSourceManagerClient.getIssue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Issue getIssue(GetIssueRequest request) {
+    return getIssueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetIssueRequest request =
+   *       GetIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .build();
+   *   ApiFuture<Issue> future = secureSourceManagerClient.getIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
+    return stub.getIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists issues in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (Issue element : secureSourceManagerClient.listIssues(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to list issues. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssuesPagedResponse listIssues(RepositoryName parent) {
+    ListIssuesRequest request =
+        ListIssuesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listIssues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists issues in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (Issue element : secureSourceManagerClient.listIssues(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to list issues. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssuesPagedResponse listIssues(String parent) {
+    ListIssuesRequest request = ListIssuesRequest.newBuilder().setParent(parent).build();
+    return listIssues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists issues in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssuesRequest request =
+   *       ListIssuesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Issue element : secureSourceManagerClient.listIssues(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssuesPagedResponse listIssues(ListIssuesRequest request) {
+    return listIssuesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists issues in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssuesRequest request =
+   *       ListIssuesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Issue> future =
+   *       secureSourceManagerClient.listIssuesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Issue element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIssuesRequest, ListIssuesPagedResponse> listIssuesPagedCallable() {
+    return stub.listIssuesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists issues in a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssuesRequest request =
+   *       ListIssuesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListIssuesResponse response = secureSourceManagerClient.listIssuesCallable().call(request);
+   *     for (Issue element : response.getIssuesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable() {
+    return stub.listIssuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   Issue issue = Issue.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Issue response = secureSourceManagerClient.updateIssueAsync(issue, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param issue Required. The issue to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     issue resource by the update. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. The
+   *     special value "&#42;" means full replacement.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> updateIssueAsync(
+      Issue issue, FieldMask updateMask) {
+    UpdateIssueRequest request =
+        UpdateIssueRequest.newBuilder().setIssue(issue).setUpdateMask(updateMask).build();
+    return updateIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueRequest request =
+   *       UpdateIssueRequest.newBuilder()
+   *           .setIssue(Issue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Issue response = secureSourceManagerClient.updateIssueAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> updateIssueAsync(
+      UpdateIssueRequest request) {
+    return updateIssueOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueRequest request =
+   *       UpdateIssueRequest.newBuilder()
+   *           .setIssue(Issue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Issue, OperationMetadata> future =
+   *       secureSourceManagerClient.updateIssueOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateIssueRequest, Issue, OperationMetadata>
+      updateIssueOperationCallable() {
+    return stub.updateIssueOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueRequest request =
+   *       UpdateIssueRequest.newBuilder()
+   *           .setIssue(Issue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updateIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateIssueRequest, Operation> updateIssueCallable() {
+    return stub.updateIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   secureSourceManagerClient.deleteIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueAsync(IssueName name) {
+    DeleteIssueRequest request =
+        DeleteIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   secureSourceManagerClient.deleteIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueAsync(String name) {
+    DeleteIssueRequest request = DeleteIssueRequest.newBuilder().setName(name).build();
+    return deleteIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueRequest request =
+   *       DeleteIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   secureSourceManagerClient.deleteIssueAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueAsync(
+      DeleteIssueRequest request) {
+    return deleteIssueOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueRequest request =
+   *       DeleteIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       secureSourceManagerClient.deleteIssueOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteIssueRequest, Empty, OperationMetadata>
+      deleteIssueOperationCallable() {
+    return stub.deleteIssueOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueRequest request =
+   *       DeleteIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.deleteIssueCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteIssueRequest, Operation> deleteIssueCallable() {
+    return stub.deleteIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   Issue response = secureSourceManagerClient.openIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to open. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> openIssueAsync(IssueName name) {
+    OpenIssueRequest request =
+        OpenIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return openIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   Issue response = secureSourceManagerClient.openIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to open. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> openIssueAsync(String name) {
+    OpenIssueRequest request = OpenIssueRequest.newBuilder().setName(name).build();
+    return openIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenIssueRequest request =
+   *       OpenIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   Issue response = secureSourceManagerClient.openIssueAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> openIssueAsync(OpenIssueRequest request) {
+    return openIssueOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenIssueRequest request =
+   *       OpenIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Issue, OperationMetadata> future =
+   *       secureSourceManagerClient.openIssueOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<OpenIssueRequest, Issue, OperationMetadata>
+      openIssueOperationCallable() {
+    return stub.openIssueOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   OpenIssueRequest request =
+   *       OpenIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.openIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<OpenIssueRequest, Operation> openIssueCallable() {
+    return stub.openIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   Issue response = secureSourceManagerClient.closeIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to close. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> closeIssueAsync(IssueName name) {
+    CloseIssueRequest request =
+        CloseIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return closeIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   Issue response = secureSourceManagerClient.closeIssueAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue to close. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> closeIssueAsync(String name) {
+    CloseIssueRequest request = CloseIssueRequest.newBuilder().setName(name).build();
+    return closeIssueAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CloseIssueRequest request =
+   *       CloseIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   Issue response = secureSourceManagerClient.closeIssueAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Issue, OperationMetadata> closeIssueAsync(
+      CloseIssueRequest request) {
+    return closeIssueOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CloseIssueRequest request =
+   *       CloseIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Issue, OperationMetadata> future =
+   *       secureSourceManagerClient.closeIssueOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CloseIssueRequest, Issue, OperationMetadata>
+      closeIssueOperationCallable() {
+    return stub.closeIssueOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Closes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CloseIssueRequest request =
+   *       CloseIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.closeIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CloseIssueRequest, Operation> closeIssueCallable() {
+    return stub.closeIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestCommentName name =
+   *       PullRequestCommentName.of(
+   *           "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]");
+   *   PullRequestComment response = secureSourceManagerClient.getPullRequestComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request comment to retrieve. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment getPullRequestComment(PullRequestCommentName name) {
+    GetPullRequestCommentRequest request =
+        GetPullRequestCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getPullRequestComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestCommentName.of(
+   *               "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *           .toString();
+   *   PullRequestComment response = secureSourceManagerClient.getPullRequestComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request comment to retrieve. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment getPullRequestComment(String name) {
+    GetPullRequestCommentRequest request =
+        GetPullRequestCommentRequest.newBuilder().setName(name).build();
+    return getPullRequestComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetPullRequestCommentRequest request =
+   *       GetPullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               PullRequestCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   PullRequestComment response = secureSourceManagerClient.getPullRequestComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment getPullRequestComment(GetPullRequestCommentRequest request) {
+    return getPullRequestCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetPullRequestCommentRequest request =
+   *       GetPullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               PullRequestCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<PullRequestComment> future =
+   *       secureSourceManagerClient.getPullRequestCommentCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequestComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPullRequestCommentRequest, PullRequestComment>
+      getPullRequestCommentCallable() {
+    return stub.getPullRequestCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   for (PullRequestComment element :
+   *       secureSourceManagerClient.listPullRequestComments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to list pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestCommentsPagedResponse listPullRequestComments(
+      PullRequestName parent) {
+    ListPullRequestCommentsRequest request =
+        ListPullRequestCommentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPullRequestComments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   for (PullRequestComment element :
+   *       secureSourceManagerClient.listPullRequestComments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to list pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestCommentsPagedResponse listPullRequestComments(String parent) {
+    ListPullRequestCommentsRequest request =
+        ListPullRequestCommentsRequest.newBuilder().setParent(parent).build();
+    return listPullRequestComments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestCommentsRequest request =
+   *       ListPullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PullRequestComment element :
+   *       secureSourceManagerClient.listPullRequestComments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPullRequestCommentsPagedResponse listPullRequestComments(
+      ListPullRequestCommentsRequest request) {
+    return listPullRequestCommentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestCommentsRequest request =
+   *       ListPullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PullRequestComment> future =
+   *       secureSourceManagerClient.listPullRequestCommentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PullRequestComment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestCommentsRequest, ListPullRequestCommentsPagedResponse>
+      listPullRequestCommentsPagedCallable() {
+    return stub.listPullRequestCommentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListPullRequestCommentsRequest request =
+   *       ListPullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPullRequestCommentsResponse response =
+   *         secureSourceManagerClient.listPullRequestCommentsCallable().call(request);
+   *     for (PullRequestComment element : response.getPullRequestCommentsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>
+      listPullRequestCommentsCallable() {
+    return stub.listPullRequestCommentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   PullRequestComment pullRequestComment = PullRequestComment.newBuilder().build();
+   *   PullRequestComment response =
+   *       secureSourceManagerClient.createPullRequestCommentAsync(parent, pullRequestComment).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to create the pull request comment. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param pullRequestComment Required. The pull request comment to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequestComment, OperationMetadata> createPullRequestCommentAsync(
+      PullRequestName parent, PullRequestComment pullRequestComment) {
+    CreatePullRequestCommentRequest request =
+        CreatePullRequestCommentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPullRequestComment(pullRequestComment)
+            .build();
+    return createPullRequestCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   PullRequestComment pullRequestComment = PullRequestComment.newBuilder().build();
+   *   PullRequestComment response =
+   *       secureSourceManagerClient.createPullRequestCommentAsync(parent, pullRequestComment).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to create the pull request comment. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param pullRequestComment Required. The pull request comment to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequestComment, OperationMetadata> createPullRequestCommentAsync(
+      String parent, PullRequestComment pullRequestComment) {
+    CreatePullRequestCommentRequest request =
+        CreatePullRequestCommentRequest.newBuilder()
+            .setParent(parent)
+            .setPullRequestComment(pullRequestComment)
+            .build();
+    return createPullRequestCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestCommentRequest request =
+   *       CreatePullRequestCommentRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .build();
+   *   PullRequestComment response =
+   *       secureSourceManagerClient.createPullRequestCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequestComment, OperationMetadata> createPullRequestCommentAsync(
+      CreatePullRequestCommentRequest request) {
+    return createPullRequestCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestCommentRequest request =
+   *       CreatePullRequestCommentRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PullRequestComment, OperationMetadata> future =
+   *       secureSourceManagerClient.createPullRequestCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequestComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+      createPullRequestCommentOperationCallable() {
+    return stub.createPullRequestCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreatePullRequestCommentRequest request =
+   *       CreatePullRequestCommentRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createPullRequestCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePullRequestCommentRequest, Operation>
+      createPullRequestCommentCallable() {
+    return stub.createPullRequestCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestComment pullRequestComment = PullRequestComment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PullRequestComment response =
+   *       secureSourceManagerClient
+   *           .updatePullRequestCommentAsync(pullRequestComment, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param pullRequestComment Required. The pull request comment to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     pull request comment resource by the update. Updatable fields are `body`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequestComment, OperationMetadata> updatePullRequestCommentAsync(
+      PullRequestComment pullRequestComment, FieldMask updateMask) {
+    UpdatePullRequestCommentRequest request =
+        UpdatePullRequestCommentRequest.newBuilder()
+            .setPullRequestComment(pullRequestComment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePullRequestCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestCommentRequest request =
+   *       UpdatePullRequestCommentRequest.newBuilder()
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   PullRequestComment response =
+   *       secureSourceManagerClient.updatePullRequestCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PullRequestComment, OperationMetadata> updatePullRequestCommentAsync(
+      UpdatePullRequestCommentRequest request) {
+    return updatePullRequestCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestCommentRequest request =
+   *       UpdatePullRequestCommentRequest.newBuilder()
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PullRequestComment, OperationMetadata> future =
+   *       secureSourceManagerClient.updatePullRequestCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequestComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+      updatePullRequestCommentOperationCallable() {
+    return stub.updatePullRequestCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdatePullRequestCommentRequest request =
+   *       UpdatePullRequestCommentRequest.newBuilder()
+   *           .setPullRequestComment(PullRequestComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updatePullRequestCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePullRequestCommentRequest, Operation>
+      updatePullRequestCommentCallable() {
+    return stub.updatePullRequestCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestCommentName name =
+   *       PullRequestCommentName.of(
+   *           "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]");
+   *   secureSourceManagerClient.deletePullRequestCommentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request comment to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePullRequestCommentAsync(
+      PullRequestCommentName name) {
+    DeletePullRequestCommentRequest request =
+        DeletePullRequestCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deletePullRequestCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       PullRequestCommentName.of(
+   *               "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *           .toString();
+   *   secureSourceManagerClient.deletePullRequestCommentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the pull request comment to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePullRequestCommentAsync(
+      String name) {
+    DeletePullRequestCommentRequest request =
+        DeletePullRequestCommentRequest.newBuilder().setName(name).build();
+    return deletePullRequestCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeletePullRequestCommentRequest request =
+   *       DeletePullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               PullRequestCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   secureSourceManagerClient.deletePullRequestCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePullRequestCommentAsync(
+      DeletePullRequestCommentRequest request) {
+    return deletePullRequestCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeletePullRequestCommentRequest request =
+   *       DeletePullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               PullRequestCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       secureSourceManagerClient.deletePullRequestCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePullRequestCommentRequest, Empty, OperationMetadata>
+      deletePullRequestCommentOperationCallable() {
+    return stub.deletePullRequestCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeletePullRequestCommentRequest request =
+   *       DeletePullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               PullRequestCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.deletePullRequestCommentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeletePullRequestCommentRequest, Operation>
+      deletePullRequestCommentCallable() {
+    return stub.deletePullRequestCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch creates pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   List<CreatePullRequestCommentRequest> requests = new ArrayList<>();
+   *   BatchCreatePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.batchCreatePullRequestCommentsAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to create the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param requests Required. The request message specifying the resources to create. There should
+   *     be exactly one CreatePullRequestCommentRequest with CommentDetail being REVIEW in the list,
+   *     and no more than 100 CreatePullRequestCommentRequests with CommentDetail being CODE in the
+   *     list
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreatePullRequestCommentsResponse, OperationMetadata>
+      batchCreatePullRequestCommentsAsync(
+          PullRequestName parent, List<CreatePullRequestCommentRequest> requests) {
+    BatchCreatePullRequestCommentsRequest request =
+        BatchCreatePullRequestCommentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreatePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch creates pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   List<CreatePullRequestCommentRequest> requests = new ArrayList<>();
+   *   BatchCreatePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.batchCreatePullRequestCommentsAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to create the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param requests Required. The request message specifying the resources to create. There should
+   *     be exactly one CreatePullRequestCommentRequest with CommentDetail being REVIEW in the list,
+   *     and no more than 100 CreatePullRequestCommentRequests with CommentDetail being CODE in the
+   *     list
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreatePullRequestCommentsResponse, OperationMetadata>
+      batchCreatePullRequestCommentsAsync(
+          String parent, List<CreatePullRequestCommentRequest> requests) {
+    BatchCreatePullRequestCommentsRequest request =
+        BatchCreatePullRequestCommentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreatePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch creates pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BatchCreatePullRequestCommentsRequest request =
+   *       BatchCreatePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreatePullRequestCommentRequest>())
+   *           .build();
+   *   BatchCreatePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.batchCreatePullRequestCommentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreatePullRequestCommentsResponse, OperationMetadata>
+      batchCreatePullRequestCommentsAsync(BatchCreatePullRequestCommentsRequest request) {
+    return batchCreatePullRequestCommentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch creates pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BatchCreatePullRequestCommentsRequest request =
+   *       BatchCreatePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreatePullRequestCommentRequest>())
+   *           .build();
+   *   OperationFuture<BatchCreatePullRequestCommentsResponse, OperationMetadata> future =
+   *       secureSourceManagerClient
+   *           .batchCreatePullRequestCommentsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchCreatePullRequestCommentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCreatePullRequestCommentsRequest,
+          BatchCreatePullRequestCommentsResponse,
+          OperationMetadata>
+      batchCreatePullRequestCommentsOperationCallable() {
+    return stub.batchCreatePullRequestCommentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch creates pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BatchCreatePullRequestCommentsRequest request =
+   *       BatchCreatePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreatePullRequestCommentRequest>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.batchCreatePullRequestCommentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreatePullRequestCommentsRequest, Operation>
+      batchCreatePullRequestCommentsCallable() {
+    return stub.batchCreatePullRequestCommentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   List<String> names = new ArrayList<>();
+   *   ResolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.resolvePullRequestCommentsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to resolve the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param names Required. The names of the pull request comments to resolve. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`
+   *     Only comments from the same threads are allowed in the same request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ResolvePullRequestCommentsResponse, OperationMetadata>
+      resolvePullRequestCommentsAsync(PullRequestName parent, List<String> names) {
+    ResolvePullRequestCommentsRequest request =
+        ResolvePullRequestCommentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return resolvePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   List<String> names = new ArrayList<>();
+   *   ResolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.resolvePullRequestCommentsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to resolve the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param names Required. The names of the pull request comments to resolve. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`
+   *     Only comments from the same threads are allowed in the same request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ResolvePullRequestCommentsResponse, OperationMetadata>
+      resolvePullRequestCommentsAsync(String parent, List<String> names) {
+    ResolvePullRequestCommentsRequest request =
+        ResolvePullRequestCommentsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return resolvePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ResolvePullRequestCommentsRequest request =
+   *       ResolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   ResolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.resolvePullRequestCommentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ResolvePullRequestCommentsResponse, OperationMetadata>
+      resolvePullRequestCommentsAsync(ResolvePullRequestCommentsRequest request) {
+    return resolvePullRequestCommentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ResolvePullRequestCommentsRequest request =
+   *       ResolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   OperationFuture<ResolvePullRequestCommentsResponse, OperationMetadata> future =
+   *       secureSourceManagerClient
+   *           .resolvePullRequestCommentsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ResolvePullRequestCommentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ResolvePullRequestCommentsRequest, ResolvePullRequestCommentsResponse, OperationMetadata>
+      resolvePullRequestCommentsOperationCallable() {
+    return stub.resolvePullRequestCommentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves pull request comments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ResolvePullRequestCommentsRequest request =
+   *       ResolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.resolvePullRequestCommentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResolvePullRequestCommentsRequest, Operation>
+      resolvePullRequestCommentsCallable() {
+    return stub.resolvePullRequestCommentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unresolves pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   PullRequestName parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]");
+   *   List<String> names = new ArrayList<>();
+   *   UnresolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.unresolvePullRequestCommentsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to resolve the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param names Required. The names of the pull request comments to unresolve. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`
+   *     Only comments from the same threads are allowed in the same request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UnresolvePullRequestCommentsResponse, OperationMetadata>
+      unresolvePullRequestCommentsAsync(PullRequestName parent, List<String> names) {
+    UnresolvePullRequestCommentsRequest request =
+        UnresolvePullRequestCommentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return unresolvePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unresolves pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent =
+   *       PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *           .toString();
+   *   List<String> names = new ArrayList<>();
+   *   UnresolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.unresolvePullRequestCommentsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The pull request in which to resolve the pull request comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
+   * @param names Required. The names of the pull request comments to unresolve. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`
+   *     Only comments from the same threads are allowed in the same request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UnresolvePullRequestCommentsResponse, OperationMetadata>
+      unresolvePullRequestCommentsAsync(String parent, List<String> names) {
+    UnresolvePullRequestCommentsRequest request =
+        UnresolvePullRequestCommentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return unresolvePullRequestCommentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unresolves pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UnresolvePullRequestCommentsRequest request =
+   *       UnresolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   UnresolvePullRequestCommentsResponse response =
+   *       secureSourceManagerClient.unresolvePullRequestCommentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UnresolvePullRequestCommentsResponse, OperationMetadata>
+      unresolvePullRequestCommentsAsync(UnresolvePullRequestCommentsRequest request) {
+    return unresolvePullRequestCommentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unresolves pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UnresolvePullRequestCommentsRequest request =
+   *       UnresolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   OperationFuture<UnresolvePullRequestCommentsResponse, OperationMetadata> future =
+   *       secureSourceManagerClient
+   *           .unresolvePullRequestCommentsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   UnresolvePullRequestCommentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UnresolvePullRequestCommentsRequest,
+          UnresolvePullRequestCommentsResponse,
+          OperationMetadata>
+      unresolvePullRequestCommentsOperationCallable() {
+    return stub.unresolvePullRequestCommentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unresolves pull request comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UnresolvePullRequestCommentsRequest request =
+   *       UnresolvePullRequestCommentsRequest.newBuilder()
+   *           .setParent(
+   *               PullRequestName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PULL_REQUEST]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setAutoFill(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.unresolvePullRequestCommentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UnresolvePullRequestCommentsRequest, Operation>
+      unresolvePullRequestCommentsCallable() {
+    return stub.unresolvePullRequestCommentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName parent = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   IssueComment issueComment = IssueComment.newBuilder().build();
+   *   IssueComment response =
+   *       secureSourceManagerClient.createIssueCommentAsync(parent, issueComment).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The issue in which to create the issue comment. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`
+   * @param issueComment Required. The issue comment to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueComment, OperationMetadata> createIssueCommentAsync(
+      IssueName parent, IssueComment issueComment) {
+    CreateIssueCommentRequest request =
+        CreateIssueCommentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIssueComment(issueComment)
+            .build();
+    return createIssueCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   IssueComment issueComment = IssueComment.newBuilder().build();
+   *   IssueComment response =
+   *       secureSourceManagerClient.createIssueCommentAsync(parent, issueComment).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The issue in which to create the issue comment. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`
+   * @param issueComment Required. The issue comment to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueComment, OperationMetadata> createIssueCommentAsync(
+      String parent, IssueComment issueComment) {
+    CreateIssueCommentRequest request =
+        CreateIssueCommentRequest.newBuilder()
+            .setParent(parent)
+            .setIssueComment(issueComment)
+            .build();
+    return createIssueCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueCommentRequest request =
+   *       CreateIssueCommentRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .build();
+   *   IssueComment response = secureSourceManagerClient.createIssueCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueComment, OperationMetadata> createIssueCommentAsync(
+      CreateIssueCommentRequest request) {
+    return createIssueCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueCommentRequest request =
+   *       CreateIssueCommentRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<IssueComment, OperationMetadata> future =
+   *       secureSourceManagerClient.createIssueCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   IssueComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateIssueCommentRequest, IssueComment, OperationMetadata>
+      createIssueCommentOperationCallable() {
+    return stub.createIssueCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateIssueCommentRequest request =
+   *       CreateIssueCommentRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createIssueCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateIssueCommentRequest, Operation> createIssueCommentCallable() {
+    return stub.createIssueCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueCommentName name =
+   *       IssueCommentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]");
+   *   IssueComment response = secureSourceManagerClient.getIssueComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue comment to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}/issueComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IssueComment getIssueComment(IssueCommentName name) {
+    GetIssueCommentRequest request =
+        GetIssueCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getIssueComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       IssueCommentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *           .toString();
+   *   IssueComment response = secureSourceManagerClient.getIssueComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue comment to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}/issueComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IssueComment getIssueComment(String name) {
+    GetIssueCommentRequest request = GetIssueCommentRequest.newBuilder().setName(name).build();
+    return getIssueComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetIssueCommentRequest request =
+   *       GetIssueCommentRequest.newBuilder()
+   *           .setName(
+   *               IssueCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   IssueComment response = secureSourceManagerClient.getIssueComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IssueComment getIssueComment(GetIssueCommentRequest request) {
+    return getIssueCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetIssueCommentRequest request =
+   *       GetIssueCommentRequest.newBuilder()
+   *           .setName(
+   *               IssueCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<IssueComment> future =
+   *       secureSourceManagerClient.getIssueCommentCallable().futureCall(request);
+   *   // Do something.
+   *   IssueComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIssueCommentRequest, IssueComment> getIssueCommentCallable() {
+    return stub.getIssueCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists comments in an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueName parent = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]");
+   *   for (IssueComment element :
+   *       secureSourceManagerClient.listIssueComments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The issue in which to list the comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssueCommentsPagedResponse listIssueComments(IssueName parent) {
+    ListIssueCommentsRequest request =
+        ListIssueCommentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listIssueComments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists comments in an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString();
+   *   for (IssueComment element :
+   *       secureSourceManagerClient.listIssueComments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The issue in which to list the comments. Format:
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssueCommentsPagedResponse listIssueComments(String parent) {
+    ListIssueCommentsRequest request =
+        ListIssueCommentsRequest.newBuilder().setParent(parent).build();
+    return listIssueComments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists comments in an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssueCommentsRequest request =
+   *       ListIssueCommentsRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IssueComment element :
+   *       secureSourceManagerClient.listIssueComments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIssueCommentsPagedResponse listIssueComments(ListIssueCommentsRequest request) {
+    return listIssueCommentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists comments in an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssueCommentsRequest request =
+   *       ListIssueCommentsRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IssueComment> future =
+   *       secureSourceManagerClient.listIssueCommentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IssueComment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIssueCommentsRequest, ListIssueCommentsPagedResponse>
+      listIssueCommentsPagedCallable() {
+    return stub.listIssueCommentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists comments in an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListIssueCommentsRequest request =
+   *       ListIssueCommentsRequest.newBuilder()
+   *           .setParent(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListIssueCommentsResponse response =
+   *         secureSourceManagerClient.listIssueCommentsCallable().call(request);
+   *     for (IssueComment element : response.getIssueCommentsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIssueCommentsRequest, ListIssueCommentsResponse>
+      listIssueCommentsCallable() {
+    return stub.listIssueCommentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueComment issueComment = IssueComment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   IssueComment response =
+   *       secureSourceManagerClient.updateIssueCommentAsync(issueComment, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param issueComment Required. The issue comment to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     issue comment resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask.
+   *     The special value "&#42;" means full replacement.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueComment, OperationMetadata> updateIssueCommentAsync(
+      IssueComment issueComment, FieldMask updateMask) {
+    UpdateIssueCommentRequest request =
+        UpdateIssueCommentRequest.newBuilder()
+            .setIssueComment(issueComment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateIssueCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueCommentRequest request =
+   *       UpdateIssueCommentRequest.newBuilder()
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   IssueComment response = secureSourceManagerClient.updateIssueCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueComment, OperationMetadata> updateIssueCommentAsync(
+      UpdateIssueCommentRequest request) {
+    return updateIssueCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueCommentRequest request =
+   *       UpdateIssueCommentRequest.newBuilder()
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<IssueComment, OperationMetadata> future =
+   *       secureSourceManagerClient.updateIssueCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   IssueComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateIssueCommentRequest, IssueComment, OperationMetadata>
+      updateIssueCommentOperationCallable() {
+    return stub.updateIssueCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateIssueCommentRequest request =
+   *       UpdateIssueCommentRequest.newBuilder()
+   *           .setIssueComment(IssueComment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updateIssueCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateIssueCommentRequest, Operation> updateIssueCommentCallable() {
+    return stub.updateIssueCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   IssueCommentName name =
+   *       IssueCommentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]");
+   *   secureSourceManagerClient.deleteIssueCommentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue comment to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}/issueComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueCommentAsync(
+      IssueCommentName name) {
+    DeleteIssueCommentRequest request =
+        DeleteIssueCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteIssueCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       IssueCommentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *           .toString();
+   *   secureSourceManagerClient.deleteIssueCommentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the issue comment to delete. The format is
+   *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}/issueComments/{comment_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueCommentAsync(String name) {
+    DeleteIssueCommentRequest request =
+        DeleteIssueCommentRequest.newBuilder().setName(name).build();
+    return deleteIssueCommentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueCommentRequest request =
+   *       DeleteIssueCommentRequest.newBuilder()
+   *           .setName(
+   *               IssueCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   secureSourceManagerClient.deleteIssueCommentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueCommentAsync(
+      DeleteIssueCommentRequest request) {
+    return deleteIssueCommentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueCommentRequest request =
+   *       DeleteIssueCommentRequest.newBuilder()
+   *           .setName(
+   *               IssueCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       secureSourceManagerClient.deleteIssueCommentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteIssueCommentRequest, Empty, OperationMetadata>
+      deleteIssueCommentOperationCallable() {
+    return stub.deleteIssueCommentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteIssueCommentRequest request =
+   *       DeleteIssueCommentRequest.newBuilder()
+   *           .setName(
+   *               IssueCommentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ISSUE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.deleteIssueCommentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteIssueCommentRequest, Operation> deleteIssueCommentCallable() {
+    return stub.deleteIssueCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3460,6 +9367,71 @@ public class SecureSourceManagerClient implements BackgroundResource {
     }
   }
 
+  public static class ListHooksPagedResponse
+      extends AbstractPagedListResponse<
+          ListHooksRequest, ListHooksResponse, Hook, ListHooksPage, ListHooksFixedSizeCollection> {
+
+    public static ApiFuture<ListHooksPagedResponse> createAsync(
+        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        ApiFuture<ListHooksResponse> futureResponse) {
+      ApiFuture<ListHooksPage> futurePage =
+          ListHooksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListHooksPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListHooksPagedResponse(ListHooksPage page) {
+      super(page, ListHooksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListHooksPage
+      extends AbstractPage<ListHooksRequest, ListHooksResponse, Hook, ListHooksPage> {
+
+    private ListHooksPage(
+        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        ListHooksResponse response) {
+      super(context, response);
+    }
+
+    private static ListHooksPage createEmptyPage() {
+      return new ListHooksPage(null, null);
+    }
+
+    @Override
+    protected ListHooksPage createPage(
+        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        ListHooksResponse response) {
+      return new ListHooksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListHooksPage> createPageAsync(
+        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        ApiFuture<ListHooksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListHooksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListHooksRequest, ListHooksResponse, Hook, ListHooksPage, ListHooksFixedSizeCollection> {
+
+    private ListHooksFixedSizeCollection(List<ListHooksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListHooksFixedSizeCollection createEmptyCollection() {
+      return new ListHooksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListHooksFixedSizeCollection createCollection(
+        List<ListHooksPage> pages, int collectionSize) {
+      return new ListHooksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListBranchRulesPagedResponse
       extends AbstractPagedListResponse<
           ListBranchRulesRequest,
@@ -3534,6 +9506,481 @@ public class SecureSourceManagerClient implements BackgroundResource {
     protected ListBranchRulesFixedSizeCollection createCollection(
         List<ListBranchRulesPage> pages, int collectionSize) {
       return new ListBranchRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPullRequestsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPullRequestsRequest,
+          ListPullRequestsResponse,
+          PullRequest,
+          ListPullRequestsPage,
+          ListPullRequestsFixedSizeCollection> {
+
+    public static ApiFuture<ListPullRequestsPagedResponse> createAsync(
+        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
+        ApiFuture<ListPullRequestsResponse> futureResponse) {
+      ApiFuture<ListPullRequestsPage> futurePage =
+          ListPullRequestsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPullRequestsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPullRequestsPagedResponse(ListPullRequestsPage page) {
+      super(page, ListPullRequestsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPullRequestsPage
+      extends AbstractPage<
+          ListPullRequestsRequest, ListPullRequestsResponse, PullRequest, ListPullRequestsPage> {
+
+    private ListPullRequestsPage(
+        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
+        ListPullRequestsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPullRequestsPage createEmptyPage() {
+      return new ListPullRequestsPage(null, null);
+    }
+
+    @Override
+    protected ListPullRequestsPage createPage(
+        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
+        ListPullRequestsResponse response) {
+      return new ListPullRequestsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPullRequestsPage> createPageAsync(
+        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
+        ApiFuture<ListPullRequestsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPullRequestsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPullRequestsRequest,
+          ListPullRequestsResponse,
+          PullRequest,
+          ListPullRequestsPage,
+          ListPullRequestsFixedSizeCollection> {
+
+    private ListPullRequestsFixedSizeCollection(
+        List<ListPullRequestsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPullRequestsFixedSizeCollection createEmptyCollection() {
+      return new ListPullRequestsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPullRequestsFixedSizeCollection createCollection(
+        List<ListPullRequestsPage> pages, int collectionSize) {
+      return new ListPullRequestsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPullRequestFileDiffsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPullRequestFileDiffsRequest,
+          ListPullRequestFileDiffsResponse,
+          FileDiff,
+          ListPullRequestFileDiffsPage,
+          ListPullRequestFileDiffsFixedSizeCollection> {
+
+    public static ApiFuture<ListPullRequestFileDiffsPagedResponse> createAsync(
+        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+            context,
+        ApiFuture<ListPullRequestFileDiffsResponse> futureResponse) {
+      ApiFuture<ListPullRequestFileDiffsPage> futurePage =
+          ListPullRequestFileDiffsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPullRequestFileDiffsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPullRequestFileDiffsPagedResponse(ListPullRequestFileDiffsPage page) {
+      super(page, ListPullRequestFileDiffsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPullRequestFileDiffsPage
+      extends AbstractPage<
+          ListPullRequestFileDiffsRequest,
+          ListPullRequestFileDiffsResponse,
+          FileDiff,
+          ListPullRequestFileDiffsPage> {
+
+    private ListPullRequestFileDiffsPage(
+        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+            context,
+        ListPullRequestFileDiffsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPullRequestFileDiffsPage createEmptyPage() {
+      return new ListPullRequestFileDiffsPage(null, null);
+    }
+
+    @Override
+    protected ListPullRequestFileDiffsPage createPage(
+        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+            context,
+        ListPullRequestFileDiffsResponse response) {
+      return new ListPullRequestFileDiffsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPullRequestFileDiffsPage> createPageAsync(
+        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+            context,
+        ApiFuture<ListPullRequestFileDiffsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPullRequestFileDiffsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPullRequestFileDiffsRequest,
+          ListPullRequestFileDiffsResponse,
+          FileDiff,
+          ListPullRequestFileDiffsPage,
+          ListPullRequestFileDiffsFixedSizeCollection> {
+
+    private ListPullRequestFileDiffsFixedSizeCollection(
+        List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPullRequestFileDiffsFixedSizeCollection createEmptyCollection() {
+      return new ListPullRequestFileDiffsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPullRequestFileDiffsFixedSizeCollection createCollection(
+        List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
+      return new ListPullRequestFileDiffsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchTreePagedResponse
+      extends AbstractPagedListResponse<
+          FetchTreeRequest,
+          FetchTreeResponse,
+          TreeEntry,
+          FetchTreePage,
+          FetchTreeFixedSizeCollection> {
+
+    public static ApiFuture<FetchTreePagedResponse> createAsync(
+        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        ApiFuture<FetchTreeResponse> futureResponse) {
+      ApiFuture<FetchTreePage> futurePage =
+          FetchTreePage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new FetchTreePagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private FetchTreePagedResponse(FetchTreePage page) {
+      super(page, FetchTreeFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchTreePage
+      extends AbstractPage<FetchTreeRequest, FetchTreeResponse, TreeEntry, FetchTreePage> {
+
+    private FetchTreePage(
+        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        FetchTreeResponse response) {
+      super(context, response);
+    }
+
+    private static FetchTreePage createEmptyPage() {
+      return new FetchTreePage(null, null);
+    }
+
+    @Override
+    protected FetchTreePage createPage(
+        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        FetchTreeResponse response) {
+      return new FetchTreePage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchTreePage> createPageAsync(
+        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        ApiFuture<FetchTreeResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchTreeFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchTreeRequest,
+          FetchTreeResponse,
+          TreeEntry,
+          FetchTreePage,
+          FetchTreeFixedSizeCollection> {
+
+    private FetchTreeFixedSizeCollection(List<FetchTreePage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchTreeFixedSizeCollection createEmptyCollection() {
+      return new FetchTreeFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchTreeFixedSizeCollection createCollection(
+        List<FetchTreePage> pages, int collectionSize) {
+      return new FetchTreeFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListIssuesPagedResponse
+      extends AbstractPagedListResponse<
+          ListIssuesRequest,
+          ListIssuesResponse,
+          Issue,
+          ListIssuesPage,
+          ListIssuesFixedSizeCollection> {
+
+    public static ApiFuture<ListIssuesPagedResponse> createAsync(
+        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        ApiFuture<ListIssuesResponse> futureResponse) {
+      ApiFuture<ListIssuesPage> futurePage =
+          ListIssuesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListIssuesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListIssuesPagedResponse(ListIssuesPage page) {
+      super(page, ListIssuesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIssuesPage
+      extends AbstractPage<ListIssuesRequest, ListIssuesResponse, Issue, ListIssuesPage> {
+
+    private ListIssuesPage(
+        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        ListIssuesResponse response) {
+      super(context, response);
+    }
+
+    private static ListIssuesPage createEmptyPage() {
+      return new ListIssuesPage(null, null);
+    }
+
+    @Override
+    protected ListIssuesPage createPage(
+        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        ListIssuesResponse response) {
+      return new ListIssuesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIssuesPage> createPageAsync(
+        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        ApiFuture<ListIssuesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIssuesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIssuesRequest,
+          ListIssuesResponse,
+          Issue,
+          ListIssuesPage,
+          ListIssuesFixedSizeCollection> {
+
+    private ListIssuesFixedSizeCollection(List<ListIssuesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIssuesFixedSizeCollection createEmptyCollection() {
+      return new ListIssuesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIssuesFixedSizeCollection createCollection(
+        List<ListIssuesPage> pages, int collectionSize) {
+      return new ListIssuesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPullRequestCommentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPullRequestCommentsRequest,
+          ListPullRequestCommentsResponse,
+          PullRequestComment,
+          ListPullRequestCommentsPage,
+          ListPullRequestCommentsFixedSizeCollection> {
+
+    public static ApiFuture<ListPullRequestCommentsPagedResponse> createAsync(
+        PageContext<
+                ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
+            context,
+        ApiFuture<ListPullRequestCommentsResponse> futureResponse) {
+      ApiFuture<ListPullRequestCommentsPage> futurePage =
+          ListPullRequestCommentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPullRequestCommentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPullRequestCommentsPagedResponse(ListPullRequestCommentsPage page) {
+      super(page, ListPullRequestCommentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPullRequestCommentsPage
+      extends AbstractPage<
+          ListPullRequestCommentsRequest,
+          ListPullRequestCommentsResponse,
+          PullRequestComment,
+          ListPullRequestCommentsPage> {
+
+    private ListPullRequestCommentsPage(
+        PageContext<
+                ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
+            context,
+        ListPullRequestCommentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPullRequestCommentsPage createEmptyPage() {
+      return new ListPullRequestCommentsPage(null, null);
+    }
+
+    @Override
+    protected ListPullRequestCommentsPage createPage(
+        PageContext<
+                ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
+            context,
+        ListPullRequestCommentsResponse response) {
+      return new ListPullRequestCommentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPullRequestCommentsPage> createPageAsync(
+        PageContext<
+                ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
+            context,
+        ApiFuture<ListPullRequestCommentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPullRequestCommentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPullRequestCommentsRequest,
+          ListPullRequestCommentsResponse,
+          PullRequestComment,
+          ListPullRequestCommentsPage,
+          ListPullRequestCommentsFixedSizeCollection> {
+
+    private ListPullRequestCommentsFixedSizeCollection(
+        List<ListPullRequestCommentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPullRequestCommentsFixedSizeCollection createEmptyCollection() {
+      return new ListPullRequestCommentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPullRequestCommentsFixedSizeCollection createCollection(
+        List<ListPullRequestCommentsPage> pages, int collectionSize) {
+      return new ListPullRequestCommentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListIssueCommentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListIssueCommentsRequest,
+          ListIssueCommentsResponse,
+          IssueComment,
+          ListIssueCommentsPage,
+          ListIssueCommentsFixedSizeCollection> {
+
+    public static ApiFuture<ListIssueCommentsPagedResponse> createAsync(
+        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
+        ApiFuture<ListIssueCommentsResponse> futureResponse) {
+      ApiFuture<ListIssueCommentsPage> futurePage =
+          ListIssueCommentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListIssueCommentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListIssueCommentsPagedResponse(ListIssueCommentsPage page) {
+      super(page, ListIssueCommentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIssueCommentsPage
+      extends AbstractPage<
+          ListIssueCommentsRequest,
+          ListIssueCommentsResponse,
+          IssueComment,
+          ListIssueCommentsPage> {
+
+    private ListIssueCommentsPage(
+        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
+        ListIssueCommentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListIssueCommentsPage createEmptyPage() {
+      return new ListIssueCommentsPage(null, null);
+    }
+
+    @Override
+    protected ListIssueCommentsPage createPage(
+        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
+        ListIssueCommentsResponse response) {
+      return new ListIssueCommentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIssueCommentsPage> createPageAsync(
+        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
+        ApiFuture<ListIssueCommentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIssueCommentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIssueCommentsRequest,
+          ListIssueCommentsResponse,
+          IssueComment,
+          ListIssueCommentsPage,
+          ListIssueCommentsFixedSizeCollection> {
+
+    private ListIssueCommentsFixedSizeCollection(
+        List<ListIssueCommentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIssueCommentsFixedSizeCollection createEmptyCollection() {
+      return new ListIssueCommentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIssueCommentsFixedSizeCollection createCollection(
+        List<ListIssueCommentsPage> pages, int collectionSize) {
+      return new ListIssueCommentsFixedSizeCollection(pages, collectionSize);
     }
   }
 

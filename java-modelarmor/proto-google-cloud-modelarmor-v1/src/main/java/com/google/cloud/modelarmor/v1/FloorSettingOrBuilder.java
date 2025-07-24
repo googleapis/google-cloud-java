@@ -202,4 +202,175 @@ public interface FloorSettingOrBuilder
    * @return The enableFloorSettingEnforcement.
    */
   boolean getEnableFloorSettingEnforcement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the integratedServices.
+   */
+  java.util.List<com.google.cloud.modelarmor.v1.FloorSetting.IntegratedService>
+      getIntegratedServicesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of integratedServices.
+   */
+  int getIntegratedServicesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The integratedServices at the given index.
+   */
+  com.google.cloud.modelarmor.v1.FloorSetting.IntegratedService getIntegratedServices(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for integratedServices.
+   */
+  java.util.List<java.lang.Integer> getIntegratedServicesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of integratedServices at the given index.
+   */
+  int getIntegratedServicesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the aiPlatformFloorSetting field is set.
+   */
+  boolean hasAiPlatformFloorSetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The aiPlatformFloorSetting.
+   */
+  com.google.cloud.modelarmor.v1.AiPlatformFloorSetting getAiPlatformFloorSetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.AiPlatformFloorSettingOrBuilder
+      getAiPlatformFloorSettingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the floorSettingMetadata field is set.
+   */
+  boolean hasFloorSettingMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The floorSettingMetadata.
+   */
+  com.google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadata getFloorSettingMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadataOrBuilder
+      getFloorSettingMetadataOrBuilder();
 }

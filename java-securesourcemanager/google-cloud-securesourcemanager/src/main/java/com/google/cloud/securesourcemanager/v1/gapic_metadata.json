@@ -10,11 +10,35 @@
         "grpc": {
           "libraryClient": "SecureSourceManagerClient",
           "rpcs": {
+            "BatchCreatePullRequestComments": {
+              "methods": ["batchCreatePullRequestCommentsAsync", "batchCreatePullRequestCommentsAsync", "batchCreatePullRequestCommentsAsync", "batchCreatePullRequestCommentsOperationCallable", "batchCreatePullRequestCommentsCallable"]
+            },
+            "CloseIssue": {
+              "methods": ["closeIssueAsync", "closeIssueAsync", "closeIssueAsync", "closeIssueOperationCallable", "closeIssueCallable"]
+            },
+            "ClosePullRequest": {
+              "methods": ["closePullRequestAsync", "closePullRequestAsync", "closePullRequestAsync", "closePullRequestOperationCallable", "closePullRequestCallable"]
+            },
             "CreateBranchRule": {
               "methods": ["createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleOperationCallable", "createBranchRuleCallable"]
             },
+            "CreateHook": {
+              "methods": ["createHookAsync", "createHookAsync", "createHookAsync", "createHookOperationCallable", "createHookCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateIssue": {
+              "methods": ["createIssueAsync", "createIssueAsync", "createIssueAsync", "createIssueOperationCallable", "createIssueCallable"]
+            },
+            "CreateIssueComment": {
+              "methods": ["createIssueCommentAsync", "createIssueCommentAsync", "createIssueCommentAsync", "createIssueCommentOperationCallable", "createIssueCommentCallable"]
+            },
+            "CreatePullRequest": {
+              "methods": ["createPullRequestAsync", "createPullRequestAsync", "createPullRequestAsync", "createPullRequestOperationCallable", "createPullRequestCallable"]
+            },
+            "CreatePullRequestComment": {
+              "methods": ["createPullRequestCommentAsync", "createPullRequestCommentAsync", "createPullRequestCommentAsync", "createPullRequestCommentOperationCallable", "createPullRequestCommentCallable"]
             },
             "CreateRepository": {
               "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
@@ -22,14 +46,35 @@
             "DeleteBranchRule": {
               "methods": ["deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleOperationCallable", "deleteBranchRuleCallable"]
             },
+            "DeleteHook": {
+              "methods": ["deleteHookAsync", "deleteHookAsync", "deleteHookAsync", "deleteHookOperationCallable", "deleteHookCallable"]
+            },
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "DeleteIssue": {
+              "methods": ["deleteIssueAsync", "deleteIssueAsync", "deleteIssueAsync", "deleteIssueOperationCallable", "deleteIssueCallable"]
+            },
+            "DeleteIssueComment": {
+              "methods": ["deleteIssueCommentAsync", "deleteIssueCommentAsync", "deleteIssueCommentAsync", "deleteIssueCommentOperationCallable", "deleteIssueCommentCallable"]
+            },
+            "DeletePullRequestComment": {
+              "methods": ["deletePullRequestCommentAsync", "deletePullRequestCommentAsync", "deletePullRequestCommentAsync", "deletePullRequestCommentOperationCallable", "deletePullRequestCommentCallable"]
             },
             "DeleteRepository": {
               "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
             },
+            "FetchBlob": {
+              "methods": ["fetchBlob", "fetchBlobCallable"]
+            },
+            "FetchTree": {
+              "methods": ["fetchTree", "fetchTreePagedCallable", "fetchTreeCallable"]
+            },
             "GetBranchRule": {
               "methods": ["getBranchRule", "getBranchRule", "getBranchRule", "getBranchRuleCallable"]
+            },
+            "GetHook": {
+              "methods": ["getHook", "getHook", "getHook", "getHookCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -40,8 +85,20 @@
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
             },
+            "GetIssue": {
+              "methods": ["getIssue", "getIssue", "getIssue", "getIssueCallable"]
+            },
+            "GetIssueComment": {
+              "methods": ["getIssueComment", "getIssueComment", "getIssueComment", "getIssueCommentCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPullRequest": {
+              "methods": ["getPullRequest", "getPullRequest", "getPullRequest", "getPullRequestCallable"]
+            },
+            "GetPullRequestComment": {
+              "methods": ["getPullRequestComment", "getPullRequestComment", "getPullRequestComment", "getPullRequestCommentCallable"]
             },
             "GetRepository": {
               "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
@@ -49,14 +106,44 @@
             "ListBranchRules": {
               "methods": ["listBranchRules", "listBranchRules", "listBranchRules", "listBranchRulesPagedCallable", "listBranchRulesCallable"]
             },
+            "ListHooks": {
+              "methods": ["listHooks", "listHooks", "listHooks", "listHooksPagedCallable", "listHooksCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListIssueComments": {
+              "methods": ["listIssueComments", "listIssueComments", "listIssueComments", "listIssueCommentsPagedCallable", "listIssueCommentsCallable"]
+            },
+            "ListIssues": {
+              "methods": ["listIssues", "listIssues", "listIssues", "listIssuesPagedCallable", "listIssuesCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListPullRequestComments": {
+              "methods": ["listPullRequestComments", "listPullRequestComments", "listPullRequestComments", "listPullRequestCommentsPagedCallable", "listPullRequestCommentsCallable"]
+            },
+            "ListPullRequestFileDiffs": {
+              "methods": ["listPullRequestFileDiffs", "listPullRequestFileDiffs", "listPullRequestFileDiffs", "listPullRequestFileDiffsPagedCallable", "listPullRequestFileDiffsCallable"]
+            },
+            "ListPullRequests": {
+              "methods": ["listPullRequests", "listPullRequests", "listPullRequests", "listPullRequestsPagedCallable", "listPullRequestsCallable"]
+            },
             "ListRepositories": {
               "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
+            },
+            "MergePullRequest": {
+              "methods": ["mergePullRequestAsync", "mergePullRequestAsync", "mergePullRequestAsync", "mergePullRequestOperationCallable", "mergePullRequestCallable"]
+            },
+            "OpenIssue": {
+              "methods": ["openIssueAsync", "openIssueAsync", "openIssueAsync", "openIssueOperationCallable", "openIssueCallable"]
+            },
+            "OpenPullRequest": {
+              "methods": ["openPullRequestAsync", "openPullRequestAsync", "openPullRequestAsync", "openPullRequestOperationCallable", "openPullRequestCallable"]
+            },
+            "ResolvePullRequestComments": {
+              "methods": ["resolvePullRequestCommentsAsync", "resolvePullRequestCommentsAsync", "resolvePullRequestCommentsAsync", "resolvePullRequestCommentsOperationCallable", "resolvePullRequestCommentsCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -70,8 +157,29 @@
             "TestIamPermissionsRepo": {
               "methods": ["testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepoCallable"]
             },
+            "UnresolvePullRequestComments": {
+              "methods": ["unresolvePullRequestCommentsAsync", "unresolvePullRequestCommentsAsync", "unresolvePullRequestCommentsAsync", "unresolvePullRequestCommentsOperationCallable", "unresolvePullRequestCommentsCallable"]
+            },
             "UpdateBranchRule": {
               "methods": ["updateBranchRuleAsync", "updateBranchRuleAsync", "updateBranchRuleOperationCallable", "updateBranchRuleCallable"]
+            },
+            "UpdateHook": {
+              "methods": ["updateHookAsync", "updateHookAsync", "updateHookOperationCallable", "updateHookCallable"]
+            },
+            "UpdateIssue": {
+              "methods": ["updateIssueAsync", "updateIssueAsync", "updateIssueOperationCallable", "updateIssueCallable"]
+            },
+            "UpdateIssueComment": {
+              "methods": ["updateIssueCommentAsync", "updateIssueCommentAsync", "updateIssueCommentOperationCallable", "updateIssueCommentCallable"]
+            },
+            "UpdatePullRequest": {
+              "methods": ["updatePullRequestAsync", "updatePullRequestAsync", "updatePullRequestOperationCallable", "updatePullRequestCallable"]
+            },
+            "UpdatePullRequestComment": {
+              "methods": ["updatePullRequestCommentAsync", "updatePullRequestCommentAsync", "updatePullRequestCommentOperationCallable", "updatePullRequestCommentCallable"]
+            },
+            "UpdateRepository": {
+              "methods": ["updateRepositoryAsync", "updateRepositoryAsync", "updateRepositoryOperationCallable", "updateRepositoryCallable"]
             }
           }
         }

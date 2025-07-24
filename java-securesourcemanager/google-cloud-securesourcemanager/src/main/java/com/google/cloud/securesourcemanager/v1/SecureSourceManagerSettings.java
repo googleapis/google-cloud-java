@@ -16,9 +16,16 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListIssueCommentsPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListIssuesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListPullRequestCommentsPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListPullRequestFileDiffsPagedResponse;
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListPullRequestsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -188,6 +195,18 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
         .createRepositoryOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateRepository. */
+  public UnaryCallSettings<UpdateRepositoryRequest, Operation> updateRepositorySettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateRepositorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRepository. */
+  public OperationCallSettings<UpdateRepositoryRequest, Repository, OperationMetadata>
+      updateRepositoryOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .updateRepositoryOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Operation> deleteRepositorySettings() {
     return ((SecureSourceManagerStubSettings) getStubSettings()).deleteRepositorySettings();
@@ -198,6 +217,50 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
       deleteRepositoryOperationSettings() {
     return ((SecureSourceManagerStubSettings) getStubSettings())
         .deleteRepositoryOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listHooks. */
+  public PagedCallSettings<ListHooksRequest, ListHooksResponse, ListHooksPagedResponse>
+      listHooksSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listHooksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getHook. */
+  public UnaryCallSettings<GetHookRequest, Hook> getHookSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getHookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createHook. */
+  public UnaryCallSettings<CreateHookRequest, Operation> createHookSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createHookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createHook. */
+  public OperationCallSettings<CreateHookRequest, Hook, OperationMetadata>
+      createHookOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createHookOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateHook. */
+  public UnaryCallSettings<UpdateHookRequest, Operation> updateHookSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateHookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateHook. */
+  public OperationCallSettings<UpdateHookRequest, Hook, OperationMetadata>
+      updateHookOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateHookOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteHook. */
+  public UnaryCallSettings<DeleteHookRequest, Operation> deleteHookSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteHookSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteHook. */
+  public OperationCallSettings<DeleteHookRequest, Empty, OperationMetadata>
+      deleteHookOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteHookOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicyRepo. */
@@ -262,6 +325,316 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
       deleteBranchRuleOperationSettings() {
     return ((SecureSourceManagerStubSettings) getStubSettings())
         .deleteBranchRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPullRequest. */
+  public UnaryCallSettings<CreatePullRequestRequest, Operation> createPullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createPullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPullRequest. */
+  public OperationCallSettings<CreatePullRequestRequest, PullRequest, OperationMetadata>
+      createPullRequestOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .createPullRequestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPullRequest. */
+  public UnaryCallSettings<GetPullRequestRequest, PullRequest> getPullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getPullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPullRequests. */
+  public PagedCallSettings<
+          ListPullRequestsRequest, ListPullRequestsResponse, ListPullRequestsPagedResponse>
+      listPullRequestsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listPullRequestsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePullRequest. */
+  public UnaryCallSettings<UpdatePullRequestRequest, Operation> updatePullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updatePullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePullRequest. */
+  public OperationCallSettings<UpdatePullRequestRequest, PullRequest, OperationMetadata>
+      updatePullRequestOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .updatePullRequestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mergePullRequest. */
+  public UnaryCallSettings<MergePullRequestRequest, Operation> mergePullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).mergePullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mergePullRequest. */
+  public OperationCallSettings<MergePullRequestRequest, PullRequest, OperationMetadata>
+      mergePullRequestOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .mergePullRequestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to openPullRequest. */
+  public UnaryCallSettings<OpenPullRequestRequest, Operation> openPullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).openPullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to openPullRequest. */
+  public OperationCallSettings<OpenPullRequestRequest, PullRequest, OperationMetadata>
+      openPullRequestOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).openPullRequestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to closePullRequest. */
+  public UnaryCallSettings<ClosePullRequestRequest, Operation> closePullRequestSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).closePullRequestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to closePullRequest. */
+  public OperationCallSettings<ClosePullRequestRequest, PullRequest, OperationMetadata>
+      closePullRequestOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .closePullRequestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPullRequestFileDiffs. */
+  public PagedCallSettings<
+          ListPullRequestFileDiffsRequest,
+          ListPullRequestFileDiffsResponse,
+          ListPullRequestFileDiffsPagedResponse>
+      listPullRequestFileDiffsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listPullRequestFileDiffsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchTree. */
+  public PagedCallSettings<FetchTreeRequest, FetchTreeResponse, FetchTreePagedResponse>
+      fetchTreeSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).fetchTreeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchBlob. */
+  public UnaryCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).fetchBlobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIssue. */
+  public UnaryCallSettings<CreateIssueRequest, Operation> createIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIssue. */
+  public OperationCallSettings<CreateIssueRequest, Issue, OperationMetadata>
+      createIssueOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createIssueOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIssue. */
+  public UnaryCallSettings<GetIssueRequest, Issue> getIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIssues. */
+  public PagedCallSettings<ListIssuesRequest, ListIssuesResponse, ListIssuesPagedResponse>
+      listIssuesSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listIssuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssue. */
+  public UnaryCallSettings<UpdateIssueRequest, Operation> updateIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssue. */
+  public OperationCallSettings<UpdateIssueRequest, Issue, OperationMetadata>
+      updateIssueOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateIssueOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssue. */
+  public UnaryCallSettings<DeleteIssueRequest, Operation> deleteIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssue. */
+  public OperationCallSettings<DeleteIssueRequest, Empty, OperationMetadata>
+      deleteIssueOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteIssueOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to openIssue. */
+  public UnaryCallSettings<OpenIssueRequest, Operation> openIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).openIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to openIssue. */
+  public OperationCallSettings<OpenIssueRequest, Issue, OperationMetadata>
+      openIssueOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).openIssueOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to closeIssue. */
+  public UnaryCallSettings<CloseIssueRequest, Operation> closeIssueSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).closeIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to closeIssue. */
+  public OperationCallSettings<CloseIssueRequest, Issue, OperationMetadata>
+      closeIssueOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).closeIssueOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPullRequestComment. */
+  public UnaryCallSettings<GetPullRequestCommentRequest, PullRequestComment>
+      getPullRequestCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getPullRequestCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPullRequestComments. */
+  public PagedCallSettings<
+          ListPullRequestCommentsRequest,
+          ListPullRequestCommentsResponse,
+          ListPullRequestCommentsPagedResponse>
+      listPullRequestCommentsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listPullRequestCommentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPullRequestComment. */
+  public UnaryCallSettings<CreatePullRequestCommentRequest, Operation>
+      createPullRequestCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createPullRequestCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPullRequestComment. */
+  public OperationCallSettings<
+          CreatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+      createPullRequestCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .createPullRequestCommentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePullRequestComment. */
+  public UnaryCallSettings<UpdatePullRequestCommentRequest, Operation>
+      updatePullRequestCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updatePullRequestCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePullRequestComment. */
+  public OperationCallSettings<
+          UpdatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+      updatePullRequestCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .updatePullRequestCommentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePullRequestComment. */
+  public UnaryCallSettings<DeletePullRequestCommentRequest, Operation>
+      deletePullRequestCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deletePullRequestCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePullRequestComment. */
+  public OperationCallSettings<DeletePullRequestCommentRequest, Empty, OperationMetadata>
+      deletePullRequestCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .deletePullRequestCommentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreatePullRequestComments. */
+  public UnaryCallSettings<BatchCreatePullRequestCommentsRequest, Operation>
+      batchCreatePullRequestCommentsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .batchCreatePullRequestCommentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreatePullRequestComments. */
+  public OperationCallSettings<
+          BatchCreatePullRequestCommentsRequest,
+          BatchCreatePullRequestCommentsResponse,
+          OperationMetadata>
+      batchCreatePullRequestCommentsOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .batchCreatePullRequestCommentsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resolvePullRequestComments. */
+  public UnaryCallSettings<ResolvePullRequestCommentsRequest, Operation>
+      resolvePullRequestCommentsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .resolvePullRequestCommentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resolvePullRequestComments. */
+  public OperationCallSettings<
+          ResolvePullRequestCommentsRequest, ResolvePullRequestCommentsResponse, OperationMetadata>
+      resolvePullRequestCommentsOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .resolvePullRequestCommentsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unresolvePullRequestComments. */
+  public UnaryCallSettings<UnresolvePullRequestCommentsRequest, Operation>
+      unresolvePullRequestCommentsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .unresolvePullRequestCommentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unresolvePullRequestComments. */
+  public OperationCallSettings<
+          UnresolvePullRequestCommentsRequest,
+          UnresolvePullRequestCommentsResponse,
+          OperationMetadata>
+      unresolvePullRequestCommentsOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .unresolvePullRequestCommentsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIssueComment. */
+  public UnaryCallSettings<CreateIssueCommentRequest, Operation> createIssueCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createIssueCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIssueComment. */
+  public OperationCallSettings<CreateIssueCommentRequest, IssueComment, OperationMetadata>
+      createIssueCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .createIssueCommentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIssueComment. */
+  public UnaryCallSettings<GetIssueCommentRequest, IssueComment> getIssueCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getIssueCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIssueComments. */
+  public PagedCallSettings<
+          ListIssueCommentsRequest, ListIssueCommentsResponse, ListIssueCommentsPagedResponse>
+      listIssueCommentsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listIssueCommentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssueComment. */
+  public UnaryCallSettings<UpdateIssueCommentRequest, Operation> updateIssueCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateIssueCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssueComment. */
+  public OperationCallSettings<UpdateIssueCommentRequest, IssueComment, OperationMetadata>
+      updateIssueCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .updateIssueCommentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssueComment. */
+  public UnaryCallSettings<DeleteIssueCommentRequest, Operation> deleteIssueCommentSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteIssueCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssueComment. */
+  public OperationCallSettings<DeleteIssueCommentRequest, Empty, OperationMetadata>
+      deleteIssueCommentOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .deleteIssueCommentOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -461,6 +834,18 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
       return getStubSettingsBuilder().createRepositoryOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateRepository. */
+    public UnaryCallSettings.Builder<UpdateRepositoryRequest, Operation>
+        updateRepositorySettings() {
+      return getStubSettingsBuilder().updateRepositorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRepository. */
+    public OperationCallSettings.Builder<UpdateRepositoryRequest, Repository, OperationMetadata>
+        updateRepositoryOperationSettings() {
+      return getStubSettingsBuilder().updateRepositoryOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Operation>
         deleteRepositorySettings() {
@@ -471,6 +856,50 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
     public OperationCallSettings.Builder<DeleteRepositoryRequest, Empty, OperationMetadata>
         deleteRepositoryOperationSettings() {
       return getStubSettingsBuilder().deleteRepositoryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listHooks. */
+    public PagedCallSettings.Builder<ListHooksRequest, ListHooksResponse, ListHooksPagedResponse>
+        listHooksSettings() {
+      return getStubSettingsBuilder().listHooksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHook. */
+    public UnaryCallSettings.Builder<GetHookRequest, Hook> getHookSettings() {
+      return getStubSettingsBuilder().getHookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createHook. */
+    public UnaryCallSettings.Builder<CreateHookRequest, Operation> createHookSettings() {
+      return getStubSettingsBuilder().createHookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createHook. */
+    public OperationCallSettings.Builder<CreateHookRequest, Hook, OperationMetadata>
+        createHookOperationSettings() {
+      return getStubSettingsBuilder().createHookOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateHook. */
+    public UnaryCallSettings.Builder<UpdateHookRequest, Operation> updateHookSettings() {
+      return getStubSettingsBuilder().updateHookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateHook. */
+    public OperationCallSettings.Builder<UpdateHookRequest, Hook, OperationMetadata>
+        updateHookOperationSettings() {
+      return getStubSettingsBuilder().updateHookOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHook. */
+    public UnaryCallSettings.Builder<DeleteHookRequest, Operation> deleteHookSettings() {
+      return getStubSettingsBuilder().deleteHookSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHook. */
+    public OperationCallSettings.Builder<DeleteHookRequest, Empty, OperationMetadata>
+        deleteHookOperationSettings() {
+      return getStubSettingsBuilder().deleteHookOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicyRepo. */
@@ -535,6 +964,310 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
     public OperationCallSettings.Builder<DeleteBranchRuleRequest, Empty, OperationMetadata>
         deleteBranchRuleOperationSettings() {
       return getStubSettingsBuilder().deleteBranchRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPullRequest. */
+    public UnaryCallSettings.Builder<CreatePullRequestRequest, Operation>
+        createPullRequestSettings() {
+      return getStubSettingsBuilder().createPullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPullRequest. */
+    public OperationCallSettings.Builder<CreatePullRequestRequest, PullRequest, OperationMetadata>
+        createPullRequestOperationSettings() {
+      return getStubSettingsBuilder().createPullRequestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPullRequest. */
+    public UnaryCallSettings.Builder<GetPullRequestRequest, PullRequest> getPullRequestSettings() {
+      return getStubSettingsBuilder().getPullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPullRequests. */
+    public PagedCallSettings.Builder<
+            ListPullRequestsRequest, ListPullRequestsResponse, ListPullRequestsPagedResponse>
+        listPullRequestsSettings() {
+      return getStubSettingsBuilder().listPullRequestsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePullRequest. */
+    public UnaryCallSettings.Builder<UpdatePullRequestRequest, Operation>
+        updatePullRequestSettings() {
+      return getStubSettingsBuilder().updatePullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePullRequest. */
+    public OperationCallSettings.Builder<UpdatePullRequestRequest, PullRequest, OperationMetadata>
+        updatePullRequestOperationSettings() {
+      return getStubSettingsBuilder().updatePullRequestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mergePullRequest. */
+    public UnaryCallSettings.Builder<MergePullRequestRequest, Operation>
+        mergePullRequestSettings() {
+      return getStubSettingsBuilder().mergePullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mergePullRequest. */
+    public OperationCallSettings.Builder<MergePullRequestRequest, PullRequest, OperationMetadata>
+        mergePullRequestOperationSettings() {
+      return getStubSettingsBuilder().mergePullRequestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to openPullRequest. */
+    public UnaryCallSettings.Builder<OpenPullRequestRequest, Operation> openPullRequestSettings() {
+      return getStubSettingsBuilder().openPullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to openPullRequest. */
+    public OperationCallSettings.Builder<OpenPullRequestRequest, PullRequest, OperationMetadata>
+        openPullRequestOperationSettings() {
+      return getStubSettingsBuilder().openPullRequestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to closePullRequest. */
+    public UnaryCallSettings.Builder<ClosePullRequestRequest, Operation>
+        closePullRequestSettings() {
+      return getStubSettingsBuilder().closePullRequestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to closePullRequest. */
+    public OperationCallSettings.Builder<ClosePullRequestRequest, PullRequest, OperationMetadata>
+        closePullRequestOperationSettings() {
+      return getStubSettingsBuilder().closePullRequestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPullRequestFileDiffs. */
+    public PagedCallSettings.Builder<
+            ListPullRequestFileDiffsRequest,
+            ListPullRequestFileDiffsResponse,
+            ListPullRequestFileDiffsPagedResponse>
+        listPullRequestFileDiffsSettings() {
+      return getStubSettingsBuilder().listPullRequestFileDiffsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchTree. */
+    public PagedCallSettings.Builder<FetchTreeRequest, FetchTreeResponse, FetchTreePagedResponse>
+        fetchTreeSettings() {
+      return getStubSettingsBuilder().fetchTreeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchBlob. */
+    public UnaryCallSettings.Builder<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
+      return getStubSettingsBuilder().fetchBlobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIssue. */
+    public UnaryCallSettings.Builder<CreateIssueRequest, Operation> createIssueSettings() {
+      return getStubSettingsBuilder().createIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIssue. */
+    public OperationCallSettings.Builder<CreateIssueRequest, Issue, OperationMetadata>
+        createIssueOperationSettings() {
+      return getStubSettingsBuilder().createIssueOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIssue. */
+    public UnaryCallSettings.Builder<GetIssueRequest, Issue> getIssueSettings() {
+      return getStubSettingsBuilder().getIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIssues. */
+    public PagedCallSettings.Builder<ListIssuesRequest, ListIssuesResponse, ListIssuesPagedResponse>
+        listIssuesSettings() {
+      return getStubSettingsBuilder().listIssuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssue. */
+    public UnaryCallSettings.Builder<UpdateIssueRequest, Operation> updateIssueSettings() {
+      return getStubSettingsBuilder().updateIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssue. */
+    public OperationCallSettings.Builder<UpdateIssueRequest, Issue, OperationMetadata>
+        updateIssueOperationSettings() {
+      return getStubSettingsBuilder().updateIssueOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssue. */
+    public UnaryCallSettings.Builder<DeleteIssueRequest, Operation> deleteIssueSettings() {
+      return getStubSettingsBuilder().deleteIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssue. */
+    public OperationCallSettings.Builder<DeleteIssueRequest, Empty, OperationMetadata>
+        deleteIssueOperationSettings() {
+      return getStubSettingsBuilder().deleteIssueOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to openIssue. */
+    public UnaryCallSettings.Builder<OpenIssueRequest, Operation> openIssueSettings() {
+      return getStubSettingsBuilder().openIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to openIssue. */
+    public OperationCallSettings.Builder<OpenIssueRequest, Issue, OperationMetadata>
+        openIssueOperationSettings() {
+      return getStubSettingsBuilder().openIssueOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to closeIssue. */
+    public UnaryCallSettings.Builder<CloseIssueRequest, Operation> closeIssueSettings() {
+      return getStubSettingsBuilder().closeIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to closeIssue. */
+    public OperationCallSettings.Builder<CloseIssueRequest, Issue, OperationMetadata>
+        closeIssueOperationSettings() {
+      return getStubSettingsBuilder().closeIssueOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPullRequestComment. */
+    public UnaryCallSettings.Builder<GetPullRequestCommentRequest, PullRequestComment>
+        getPullRequestCommentSettings() {
+      return getStubSettingsBuilder().getPullRequestCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPullRequestComments. */
+    public PagedCallSettings.Builder<
+            ListPullRequestCommentsRequest,
+            ListPullRequestCommentsResponse,
+            ListPullRequestCommentsPagedResponse>
+        listPullRequestCommentsSettings() {
+      return getStubSettingsBuilder().listPullRequestCommentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPullRequestComment. */
+    public UnaryCallSettings.Builder<CreatePullRequestCommentRequest, Operation>
+        createPullRequestCommentSettings() {
+      return getStubSettingsBuilder().createPullRequestCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPullRequestComment. */
+    public OperationCallSettings.Builder<
+            CreatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+        createPullRequestCommentOperationSettings() {
+      return getStubSettingsBuilder().createPullRequestCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePullRequestComment. */
+    public UnaryCallSettings.Builder<UpdatePullRequestCommentRequest, Operation>
+        updatePullRequestCommentSettings() {
+      return getStubSettingsBuilder().updatePullRequestCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePullRequestComment. */
+    public OperationCallSettings.Builder<
+            UpdatePullRequestCommentRequest, PullRequestComment, OperationMetadata>
+        updatePullRequestCommentOperationSettings() {
+      return getStubSettingsBuilder().updatePullRequestCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePullRequestComment. */
+    public UnaryCallSettings.Builder<DeletePullRequestCommentRequest, Operation>
+        deletePullRequestCommentSettings() {
+      return getStubSettingsBuilder().deletePullRequestCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePullRequestComment. */
+    public OperationCallSettings.Builder<DeletePullRequestCommentRequest, Empty, OperationMetadata>
+        deletePullRequestCommentOperationSettings() {
+      return getStubSettingsBuilder().deletePullRequestCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreatePullRequestComments. */
+    public UnaryCallSettings.Builder<BatchCreatePullRequestCommentsRequest, Operation>
+        batchCreatePullRequestCommentsSettings() {
+      return getStubSettingsBuilder().batchCreatePullRequestCommentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreatePullRequestComments. */
+    public OperationCallSettings.Builder<
+            BatchCreatePullRequestCommentsRequest,
+            BatchCreatePullRequestCommentsResponse,
+            OperationMetadata>
+        batchCreatePullRequestCommentsOperationSettings() {
+      return getStubSettingsBuilder().batchCreatePullRequestCommentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resolvePullRequestComments. */
+    public UnaryCallSettings.Builder<ResolvePullRequestCommentsRequest, Operation>
+        resolvePullRequestCommentsSettings() {
+      return getStubSettingsBuilder().resolvePullRequestCommentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resolvePullRequestComments. */
+    public OperationCallSettings.Builder<
+            ResolvePullRequestCommentsRequest,
+            ResolvePullRequestCommentsResponse,
+            OperationMetadata>
+        resolvePullRequestCommentsOperationSettings() {
+      return getStubSettingsBuilder().resolvePullRequestCommentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unresolvePullRequestComments. */
+    public UnaryCallSettings.Builder<UnresolvePullRequestCommentsRequest, Operation>
+        unresolvePullRequestCommentsSettings() {
+      return getStubSettingsBuilder().unresolvePullRequestCommentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unresolvePullRequestComments. */
+    public OperationCallSettings.Builder<
+            UnresolvePullRequestCommentsRequest,
+            UnresolvePullRequestCommentsResponse,
+            OperationMetadata>
+        unresolvePullRequestCommentsOperationSettings() {
+      return getStubSettingsBuilder().unresolvePullRequestCommentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIssueComment. */
+    public UnaryCallSettings.Builder<CreateIssueCommentRequest, Operation>
+        createIssueCommentSettings() {
+      return getStubSettingsBuilder().createIssueCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIssueComment. */
+    public OperationCallSettings.Builder<CreateIssueCommentRequest, IssueComment, OperationMetadata>
+        createIssueCommentOperationSettings() {
+      return getStubSettingsBuilder().createIssueCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIssueComment. */
+    public UnaryCallSettings.Builder<GetIssueCommentRequest, IssueComment>
+        getIssueCommentSettings() {
+      return getStubSettingsBuilder().getIssueCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIssueComments. */
+    public PagedCallSettings.Builder<
+            ListIssueCommentsRequest, ListIssueCommentsResponse, ListIssueCommentsPagedResponse>
+        listIssueCommentsSettings() {
+      return getStubSettingsBuilder().listIssueCommentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssueComment. */
+    public UnaryCallSettings.Builder<UpdateIssueCommentRequest, Operation>
+        updateIssueCommentSettings() {
+      return getStubSettingsBuilder().updateIssueCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssueComment. */
+    public OperationCallSettings.Builder<UpdateIssueCommentRequest, IssueComment, OperationMetadata>
+        updateIssueCommentOperationSettings() {
+      return getStubSettingsBuilder().updateIssueCommentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssueComment. */
+    public UnaryCallSettings.Builder<DeleteIssueCommentRequest, Operation>
+        deleteIssueCommentSettings() {
+      return getStubSettingsBuilder().deleteIssueCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssueComment. */
+    public OperationCallSettings.Builder<DeleteIssueCommentRequest, Empty, OperationMetadata>
+        deleteIssueCommentOperationSettings() {
+      return getStubSettingsBuilder().deleteIssueCommentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

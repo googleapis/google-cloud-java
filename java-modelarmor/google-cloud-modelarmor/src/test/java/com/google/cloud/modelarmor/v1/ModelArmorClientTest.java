@@ -38,6 +38,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -486,6 +487,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -528,6 +532,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -570,6 +577,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 

@@ -41,6 +41,7 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
 
   private FloorSetting() {
     name_ = "";
+    integratedServices_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -62,6 +63,582 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.modelarmor.v1beta.FloorSetting.class,
             com.google.cloud.modelarmor.v1beta.FloorSetting.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Integrated service for which the floor setting is applicable.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService}
+   */
+  public enum IntegratedService implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified integrated service.
+     * </pre>
+     *
+     * <code>INTEGRATED_SERVICE_UNSPECIFIED = 0;</code>
+     */
+    INTEGRATED_SERVICE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * AI Platform.
+     * </pre>
+     *
+     * <code>AI_PLATFORM = 1;</code>
+     */
+    AI_PLATFORM(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified integrated service.
+     * </pre>
+     *
+     * <code>INTEGRATED_SERVICE_UNSPECIFIED = 0;</code>
+     */
+    public static final int INTEGRATED_SERVICE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * AI Platform.
+     * </pre>
+     *
+     * <code>AI_PLATFORM = 1;</code>
+     */
+    public static final int AI_PLATFORM_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IntegratedService valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IntegratedService forNumber(int value) {
+      switch (value) {
+        case 0:
+          return INTEGRATED_SERVICE_UNSPECIFIED;
+        case 1:
+          return AI_PLATFORM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IntegratedService>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IntegratedService>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<IntegratedService>() {
+              public IntegratedService findValueByNumber(int number) {
+                return IntegratedService.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.modelarmor.v1beta.FloorSetting.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final IntegratedService[] VALUES = values();
+
+    public static IntegratedService valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IntegratedService(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService)
+  }
+
+  public interface FloorSettingMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * message describing FloorSetting Metadata
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata}
+   */
+  public static final class FloorSettingMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
+      FloorSettingMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use FloorSettingMetadata.newBuilder() to construct.
+    private FloorSettingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FloorSettingMetadata() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FloorSettingMetadata();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.modelarmor.v1beta.V1mainProto
+          .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.modelarmor.v1beta.V1mainProto
+          .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.class,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata other =
+          (com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * message describing FloorSetting Metadata
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.modelarmor.v1beta.V1mainProto
+            .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.modelarmor.v1beta.V1mainProto
+            .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.class,
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.modelarmor.v1beta.V1mainProto
+            .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+          getDefaultInstanceForType() {
+        return com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata build() {
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata buildPartial() {
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata result =
+            new com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata) {
+          return mergeFrom(
+              (com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata other) {
+        if (other
+            == com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
+    private static final com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata();
+    }
+
+    public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FloorSettingMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<FloorSettingMetadata>() {
+          @java.lang.Override
+          public FloorSettingMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FloorSettingMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FloorSettingMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -320,6 +897,252 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
     return enableFloorSettingEnforcement_;
   }
 
+  public static final int INTEGRATED_SERVICES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> integratedServices_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>
+      integratedServices_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>() {
+            public com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService convert(
+                java.lang.Integer from) {
+              com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService result =
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService.forNumber(from);
+              return result == null
+                  ? com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the integratedServices.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>
+      getIntegratedServicesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>(
+        integratedServices_, integratedServices_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of integratedServices.
+   */
+  @java.lang.Override
+  public int getIntegratedServicesCount() {
+    return integratedServices_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The integratedServices at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService getIntegratedServices(
+      int index) {
+    return integratedServices_converter_.convert(integratedServices_.get(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for integratedServices.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getIntegratedServicesValueList() {
+    return integratedServices_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of integrated services for which the floor setting is
+   * applicable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of integratedServices at the given index.
+   */
+  @java.lang.Override
+  public int getIntegratedServicesValue(int index) {
+    return integratedServices_.get(index);
+  }
+
+  private int integratedServicesMemoizedSerializedSize;
+
+  public static final int AI_PLATFORM_FLOOR_SETTING_FIELD_NUMBER = 7;
+  private com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting aiPlatformFloorSetting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the aiPlatformFloorSetting field is set.
+   */
+  @java.lang.Override
+  public boolean hasAiPlatformFloorSetting() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The aiPlatformFloorSetting.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting getAiPlatformFloorSetting() {
+    return aiPlatformFloorSetting_ == null
+        ? com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.getDefaultInstance()
+        : aiPlatformFloorSetting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Platform floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.AiPlatformFloorSettingOrBuilder
+      getAiPlatformFloorSettingOrBuilder() {
+    return aiPlatformFloorSetting_ == null
+        ? com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.getDefaultInstance()
+        : aiPlatformFloorSetting_;
+  }
+
+  public static final int FLOOR_SETTING_METADATA_FIELD_NUMBER = 8;
+  private com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+      floorSettingMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the floorSettingMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloorSettingMetadata() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The floorSettingMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+      getFloorSettingMetadata() {
+    return floorSettingMetadata_ == null
+        ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.getDefaultInstance()
+        : floorSettingMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for FloorSetting
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder
+      getFloorSettingMetadataOrBuilder() {
+    return floorSettingMetadata_ == null
+        ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.getDefaultInstance()
+        : floorSettingMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -334,6 +1157,7 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -348,6 +1172,19 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(5, enableFloorSettingEnforcement_);
+    }
+    if (getIntegratedServicesList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(integratedServicesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < integratedServices_.size(); i++) {
+      output.writeEnumNoTag(integratedServices_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(7, getAiPlatformFloorSetting());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(8, getFloorSettingMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -373,6 +1210,27 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableFloorSettingEnforcement_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < integratedServices_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(integratedServices_.get(i));
+      }
+      size += dataSize;
+      if (!getIntegratedServicesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      integratedServicesMemoizedSerializedSize = dataSize;
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAiPlatformFloorSetting());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getFloorSettingMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -409,6 +1267,15 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       if (getEnableFloorSettingEnforcement() != other.getEnableFloorSettingEnforcement())
         return false;
     }
+    if (!integratedServices_.equals(other.integratedServices_)) return false;
+    if (hasAiPlatformFloorSetting() != other.hasAiPlatformFloorSetting()) return false;
+    if (hasAiPlatformFloorSetting()) {
+      if (!getAiPlatformFloorSetting().equals(other.getAiPlatformFloorSetting())) return false;
+    }
+    if (hasFloorSettingMetadata() != other.hasFloorSettingMetadata()) return false;
+    if (hasFloorSettingMetadata()) {
+      if (!getFloorSettingMetadata().equals(other.getFloorSettingMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -439,6 +1306,18 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getEnableFloorSettingEnforcement());
+    }
+    if (getIntegratedServicesCount() > 0) {
+      hash = (37 * hash) + INTEGRATED_SERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + integratedServices_.hashCode();
+    }
+    if (hasAiPlatformFloorSetting()) {
+      hash = (37 * hash) + AI_PLATFORM_FLOOR_SETTING_FIELD_NUMBER;
+      hash = (53 * hash) + getAiPlatformFloorSetting().hashCode();
+    }
+    if (hasFloorSettingMetadata()) {
+      hash = (37 * hash) + FLOOR_SETTING_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getFloorSettingMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -584,6 +1463,8 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getFilterConfigFieldBuilder();
+        getAiPlatformFloorSettingFieldBuilder();
+        getFloorSettingMetadataFieldBuilder();
       }
     }
 
@@ -608,6 +1489,18 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
         filterConfigBuilder_ = null;
       }
       enableFloorSettingEnforcement_ = false;
+      integratedServices_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      aiPlatformFloorSetting_ = null;
+      if (aiPlatformFloorSettingBuilder_ != null) {
+        aiPlatformFloorSettingBuilder_.dispose();
+        aiPlatformFloorSettingBuilder_ = null;
+      }
+      floorSettingMetadata_ = null;
+      if (floorSettingMetadataBuilder_ != null) {
+        floorSettingMetadataBuilder_.dispose();
+        floorSettingMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -635,11 +1528,21 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.modelarmor.v1beta.FloorSetting buildPartial() {
       com.google.cloud.modelarmor.v1beta.FloorSetting result =
           new com.google.cloud.modelarmor.v1beta.FloorSetting(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.modelarmor.v1beta.FloorSetting result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        integratedServices_ = java.util.Collections.unmodifiableList(integratedServices_);
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.integratedServices_ = integratedServices_;
     }
 
     private void buildPartial0(com.google.cloud.modelarmor.v1beta.FloorSetting result) {
@@ -664,6 +1567,20 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enableFloorSettingEnforcement_ = enableFloorSettingEnforcement_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.aiPlatformFloorSetting_ =
+            aiPlatformFloorSettingBuilder_ == null
+                ? aiPlatformFloorSetting_
+                : aiPlatformFloorSettingBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.floorSettingMetadata_ =
+            floorSettingMetadataBuilder_ == null
+                ? floorSettingMetadata_
+                : floorSettingMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -731,6 +1648,22 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnableFloorSettingEnforcement()) {
         setEnableFloorSettingEnforcement(other.getEnableFloorSettingEnforcement());
       }
+      if (!other.integratedServices_.isEmpty()) {
+        if (integratedServices_.isEmpty()) {
+          integratedServices_ = other.integratedServices_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureIntegratedServicesIsMutable();
+          integratedServices_.addAll(other.integratedServices_);
+        }
+        onChanged();
+      }
+      if (other.hasAiPlatformFloorSetting()) {
+        mergeAiPlatformFloorSetting(other.getAiPlatformFloorSetting());
+      }
+      if (other.hasFloorSettingMetadata()) {
+        mergeFloorSettingMetadata(other.getFloorSettingMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -787,6 +1720,39 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                int tmpRaw = input.readEnum();
+                ensureIntegratedServicesIsMutable();
+                integratedServices_.add(tmpRaw);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureIntegratedServicesIsMutable();
+                  integratedServices_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAiPlatformFloorSettingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getFloorSettingMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1633,6 +2599,724 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       enableFloorSettingEnforcement_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<java.lang.Integer> integratedServices_ =
+        java.util.Collections.emptyList();
+
+    private void ensureIntegratedServicesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        integratedServices_ = new java.util.ArrayList<java.lang.Integer>(integratedServices_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the integratedServices.
+     */
+    public java.util.List<com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>
+        getIntegratedServicesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>(
+          integratedServices_, integratedServices_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of integratedServices.
+     */
+    public int getIntegratedServicesCount() {
+      return integratedServices_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The integratedServices at the given index.
+     */
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService getIntegratedServices(
+        int index) {
+      return integratedServices_converter_.convert(integratedServices_.get(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The integratedServices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegratedServices(
+        int index, com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIntegratedServicesIsMutable();
+      integratedServices_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The integratedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIntegratedServices(
+        com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIntegratedServicesIsMutable();
+      integratedServices_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The integratedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIntegratedServices(
+        java.lang.Iterable<
+                ? extends com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService>
+            values) {
+      ensureIntegratedServicesIsMutable();
+      for (com.google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService value : values) {
+        integratedServices_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIntegratedServices() {
+      integratedServices_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for integratedServices.
+     */
+    public java.util.List<java.lang.Integer> getIntegratedServicesValueList() {
+      return java.util.Collections.unmodifiableList(integratedServices_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of integratedServices at the given index.
+     */
+    public int getIntegratedServicesValue(int index) {
+      return integratedServices_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for integratedServices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegratedServicesValue(int index, int value) {
+      ensureIntegratedServicesIsMutable();
+      integratedServices_.set(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for integratedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIntegratedServicesValue(int value) {
+      ensureIntegratedServicesIsMutable();
+      integratedServices_.add(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of integrated services for which the floor setting is
+     * applicable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1beta.FloorSetting.IntegratedService integrated_services = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for integratedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIntegratedServicesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureIntegratedServicesIsMutable();
+      for (int value : values) {
+        integratedServices_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting aiPlatformFloorSetting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting,
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.Builder,
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSettingOrBuilder>
+        aiPlatformFloorSettingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the aiPlatformFloorSetting field is set.
+     */
+    public boolean hasAiPlatformFloorSetting() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The aiPlatformFloorSetting.
+     */
+    public com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting getAiPlatformFloorSetting() {
+      if (aiPlatformFloorSettingBuilder_ == null) {
+        return aiPlatformFloorSetting_ == null
+            ? com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.getDefaultInstance()
+            : aiPlatformFloorSetting_;
+      } else {
+        return aiPlatformFloorSettingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAiPlatformFloorSetting(
+        com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting value) {
+      if (aiPlatformFloorSettingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aiPlatformFloorSetting_ = value;
+      } else {
+        aiPlatformFloorSettingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAiPlatformFloorSetting(
+        com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.Builder builderForValue) {
+      if (aiPlatformFloorSettingBuilder_ == null) {
+        aiPlatformFloorSetting_ = builderForValue.build();
+      } else {
+        aiPlatformFloorSettingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAiPlatformFloorSetting(
+        com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting value) {
+      if (aiPlatformFloorSettingBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && aiPlatformFloorSetting_ != null
+            && aiPlatformFloorSetting_
+                != com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.getDefaultInstance()) {
+          getAiPlatformFloorSettingBuilder().mergeFrom(value);
+        } else {
+          aiPlatformFloorSetting_ = value;
+        }
+      } else {
+        aiPlatformFloorSettingBuilder_.mergeFrom(value);
+      }
+      if (aiPlatformFloorSetting_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAiPlatformFloorSetting() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      aiPlatformFloorSetting_ = null;
+      if (aiPlatformFloorSettingBuilder_ != null) {
+        aiPlatformFloorSettingBuilder_.dispose();
+        aiPlatformFloorSettingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.Builder
+        getAiPlatformFloorSettingBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getAiPlatformFloorSettingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.AiPlatformFloorSettingOrBuilder
+        getAiPlatformFloorSettingOrBuilder() {
+      if (aiPlatformFloorSettingBuilder_ != null) {
+        return aiPlatformFloorSettingBuilder_.getMessageOrBuilder();
+      } else {
+        return aiPlatformFloorSetting_ == null
+            ? com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.getDefaultInstance()
+            : aiPlatformFloorSetting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AI Platform floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.AiPlatformFloorSetting ai_platform_floor_setting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting,
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.Builder,
+            com.google.cloud.modelarmor.v1beta.AiPlatformFloorSettingOrBuilder>
+        getAiPlatformFloorSettingFieldBuilder() {
+      if (aiPlatformFloorSettingBuilder_ == null) {
+        aiPlatformFloorSettingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting,
+                com.google.cloud.modelarmor.v1beta.AiPlatformFloorSetting.Builder,
+                com.google.cloud.modelarmor.v1beta.AiPlatformFloorSettingOrBuilder>(
+                getAiPlatformFloorSetting(), getParentForChildren(), isClean());
+        aiPlatformFloorSetting_ = null;
+      }
+      return aiPlatformFloorSettingBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        floorSettingMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata,
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder,
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder>
+        floorSettingMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the floorSettingMetadata field is set.
+     */
+    public boolean hasFloorSettingMetadata() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The floorSettingMetadata.
+     */
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+        getFloorSettingMetadata() {
+      if (floorSettingMetadataBuilder_ == null) {
+        return floorSettingMetadata_ == null
+            ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .getDefaultInstance()
+            : floorSettingMetadata_;
+      } else {
+        return floorSettingMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFloorSettingMetadata(
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata value) {
+      if (floorSettingMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        floorSettingMetadata_ = value;
+      } else {
+        floorSettingMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFloorSettingMetadata(
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder
+            builderForValue) {
+      if (floorSettingMetadataBuilder_ == null) {
+        floorSettingMetadata_ = builderForValue.build();
+      } else {
+        floorSettingMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFloorSettingMetadata(
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata value) {
+      if (floorSettingMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && floorSettingMetadata_ != null
+            && floorSettingMetadata_
+                != com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                    .getDefaultInstance()) {
+          getFloorSettingMetadataBuilder().mergeFrom(value);
+        } else {
+          floorSettingMetadata_ = value;
+        }
+      } else {
+        floorSettingMetadataBuilder_.mergeFrom(value);
+      }
+      if (floorSettingMetadata_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFloorSettingMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      floorSettingMetadata_ = null;
+      if (floorSettingMetadataBuilder_ != null) {
+        floorSettingMetadataBuilder_.dispose();
+        floorSettingMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder
+        getFloorSettingMetadataBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getFloorSettingMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder
+        getFloorSettingMetadataOrBuilder() {
+      if (floorSettingMetadataBuilder_ != null) {
+        return floorSettingMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return floorSettingMetadata_ == null
+            ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .getDefaultInstance()
+            : floorSettingMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for FloorSetting
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata floor_setting_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata,
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder,
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder>
+        getFloorSettingMetadataFieldBuilder() {
+      if (floorSettingMetadataBuilder_ == null) {
+        floorSettingMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata,
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder,
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadataOrBuilder>(
+                getFloorSettingMetadata(), getParentForChildren(), isClean());
+        floorSettingMetadata_ = null;
+      }
+      return floorSettingMetadataBuilder_;
     }
 
     @java.lang.Override
