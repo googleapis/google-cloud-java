@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-configdelivery</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-configdelivery:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-configdelivery:current} -->
   <packaging>jar</packaging>
   <name>Google Config Delivery API</name>
   <description>Config Delivery API ConfigDelivery service manages the deployment of kubernetes configuration to a fleet of kubernetes clusters.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-configdelivery-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-configdelivery:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-configdelivery:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-configdelivery</site.installationModule>
