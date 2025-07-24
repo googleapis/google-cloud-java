@@ -221,6 +221,37 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Enforcement type for Model Armor filters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enforcementType.
+     */
+    int getEnforcementTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enforcement type for Model Armor filters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enforcementType.
+     */
+    com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+        getEnforcementType();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Metadata for multi language detection.
      * </pre>
      *
@@ -286,6 +317,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     private TemplateMetadata() {
       customPromptSafetyErrorMessage_ = "";
       customLlmResponseSafetyErrorMessage_ = "";
+      enforcementType_ = 0;
     }
 
     @java.lang.Override
@@ -307,6 +339,175 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.class,
               com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enforcement type for Model Armor filters.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType}
+     */
+    public enum EnforcementType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Same as INSPECT_AND_BLOCK.
+       * </pre>
+       *
+       * <code>ENFORCEMENT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      ENFORCEMENT_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Model Armor filters will run in inspect only mode. No action will be
+       * taken on the request.
+       * </pre>
+       *
+       * <code>INSPECT_ONLY = 1;</code>
+       */
+      INSPECT_ONLY(1),
+      /**
+       *
+       *
+       * <pre>
+       * Model Armor filters will run in inspect and block mode. Requests
+       * that trip Model Armor filters will be blocked.
+       * </pre>
+       *
+       * <code>INSPECT_AND_BLOCK = 2;</code>
+       */
+      INSPECT_AND_BLOCK(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Same as INSPECT_AND_BLOCK.
+       * </pre>
+       *
+       * <code>ENFORCEMENT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENFORCEMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Model Armor filters will run in inspect only mode. No action will be
+       * taken on the request.
+       * </pre>
+       *
+       * <code>INSPECT_ONLY = 1;</code>
+       */
+      public static final int INSPECT_ONLY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Model Armor filters will run in inspect and block mode. Requests
+       * that trip Model Armor filters will be blocked.
+       * </pre>
+       *
+       * <code>INSPECT_AND_BLOCK = 2;</code>
+       */
+      public static final int INSPECT_AND_BLOCK_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EnforcementType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EnforcementType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENFORCEMENT_TYPE_UNSPECIFIED;
+          case 1:
+            return INSPECT_ONLY;
+          case 2:
+            return INSPECT_AND_BLOCK;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EnforcementType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EnforcementType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EnforcementType>() {
+                public EnforcementType findValueByNumber(int number) {
+                  return EnforcementType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final EnforcementType[] VALUES = values();
+
+      public static EnforcementType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EnforcementType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType)
     }
 
     public interface MultiLanguageDetectionOrBuilder
@@ -1143,6 +1344,52 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       return logSanitizeOperations_;
     }
 
+    public static final int ENFORCEMENT_TYPE_FIELD_NUMBER = 8;
+    private int enforcementType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enforcement type for Model Armor filters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for enforcementType.
+     */
+    @java.lang.Override
+    public int getEnforcementTypeValue() {
+      return enforcementType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enforcement type for Model Armor filters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enforcementType.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+        getEnforcementType() {
+      com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType result =
+          com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType.forNumber(
+              enforcementType_);
+      return result == null
+          ? com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+              .UNRECOGNIZED
+          : result;
+    }
+
     public static final int MULTI_LANGUAGE_DETECTION_FIELD_NUMBER = 9;
     private com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.MultiLanguageDetection
         multiLanguageDetection_;
@@ -1246,6 +1493,12 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       if (logSanitizeOperations_ != false) {
         output.writeBool(7, logSanitizeOperations_);
       }
+      if (enforcementType_
+          != com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+              .ENFORCEMENT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(8, enforcementType_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(9, getMultiLanguageDetection());
       }
@@ -1289,6 +1542,12 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       if (logSanitizeOperations_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, logSanitizeOperations_);
       }
+      if (enforcementType_
+          != com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+              .ENFORCEMENT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, enforcementType_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1321,6 +1580,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           .equals(other.getCustomLlmResponseSafetyErrorMessage())) return false;
       if (getLogTemplateOperations() != other.getLogTemplateOperations()) return false;
       if (getLogSanitizeOperations() != other.getLogSanitizeOperations()) return false;
+      if (enforcementType_ != other.enforcementType_) return false;
       if (hasMultiLanguageDetection() != other.hasMultiLanguageDetection()) return false;
       if (hasMultiLanguageDetection()) {
         if (!getMultiLanguageDetection().equals(other.getMultiLanguageDetection())) return false;
@@ -1352,6 +1612,8 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLogTemplateOperations());
       hash = (37 * hash) + LOG_SANITIZE_OPERATIONS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLogSanitizeOperations());
+      hash = (37 * hash) + ENFORCEMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + enforcementType_;
       if (hasMultiLanguageDetection()) {
         hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
         hash = (53 * hash) + getMultiLanguageDetection().hashCode();
@@ -1515,6 +1777,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         customLlmResponseSafetyErrorMessage_ = "";
         logTemplateOperations_ = false;
         logSanitizeOperations_ = false;
+        enforcementType_ = 0;
         multiLanguageDetection_ = null;
         if (multiLanguageDetectionBuilder_ != null) {
           multiLanguageDetectionBuilder_.dispose();
@@ -1579,8 +1842,11 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.logSanitizeOperations_ = logSanitizeOperations_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.enforcementType_ = enforcementType_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.multiLanguageDetection_ =
               multiLanguageDetectionBuilder_ == null
                   ? multiLanguageDetection_
@@ -1664,6 +1930,9 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         if (other.getLogSanitizeOperations() != false) {
           setLogSanitizeOperations(other.getLogSanitizeOperations());
         }
+        if (other.enforcementType_ != 0) {
+          setEnforcementTypeValue(other.getEnforcementTypeValue());
+        }
         if (other.hasMultiLanguageDetection()) {
           mergeMultiLanguageDetection(other.getMultiLanguageDetection());
         }
@@ -1735,11 +2004,17 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 56
+              case 64:
+                {
+                  enforcementType_ = input.readEnum();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
               case 74:
                 {
                   input.readMessage(
                       getMultiLanguageDetectionFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 74
               default:
@@ -2319,6 +2594,117 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int enforcementType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enforcement type for Model Armor filters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for enforcementType.
+       */
+      @java.lang.Override
+      public int getEnforcementTypeValue() {
+        return enforcementType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enforcement type for Model Armor filters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for enforcementType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnforcementTypeValue(int value) {
+        enforcementType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enforcement type for Model Armor filters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enforcementType.
+       */
+      @java.lang.Override
+      public com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+          getEnforcementType() {
+        com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType result =
+            com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType.forNumber(
+                enforcementType_);
+        return result == null
+            ? com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enforcement type for Model Armor filters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enforcementType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnforcementType(
+          com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        enforcementType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enforcement type for Model Armor filters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.Template.TemplateMetadata.EnforcementType enforcement_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnforcementType() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        enforcementType_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.MultiLanguageDetection
           multiLanguageDetection_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2343,7 +2729,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the multiLanguageDetection field is set.
        */
       public boolean hasMultiLanguageDetection() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
 
       /**
@@ -2393,7 +2779,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         } else {
           multiLanguageDetectionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2418,7 +2804,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         } else {
           multiLanguageDetectionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2438,7 +2824,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.MultiLanguageDetection
               value) {
         if (multiLanguageDetectionBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && multiLanguageDetection_ != null
               && multiLanguageDetection_
                   != com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata
@@ -2451,7 +2837,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           multiLanguageDetectionBuilder_.mergeFrom(value);
         }
         if (multiLanguageDetection_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -2469,7 +2855,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMultiLanguageDetection() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         multiLanguageDetection_ = null;
         if (multiLanguageDetectionBuilder_ != null) {
           multiLanguageDetectionBuilder_.dispose();
@@ -2493,7 +2879,7 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.modelarmor.v1beta.Template.TemplateMetadata.MultiLanguageDetection
               .Builder
           getMultiLanguageDetectionBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getMultiLanguageDetectionFieldBuilder().getBuilder();
       }

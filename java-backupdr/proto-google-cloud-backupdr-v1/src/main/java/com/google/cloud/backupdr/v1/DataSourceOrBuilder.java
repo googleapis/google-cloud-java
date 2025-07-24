@@ -504,5 +504,21 @@ public interface DataSourceOrBuilder
   com.google.cloud.backupdr.v1.DataSourceBackupApplianceApplicationOrBuilder
       getDataSourceBackupApplianceApplicationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is set to true if the backup is blocked by vault
+   * access restriction.
+   * </pre>
+   *
+   * <code>
+   * bool backup_blocked_by_vault_access_restriction = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupBlockedByVaultAccessRestriction.
+   */
+  boolean getBackupBlockedByVaultAccessRestriction();
+
   com.google.cloud.backupdr.v1.DataSource.SourceResourceCase getSourceResourceCase();
 }

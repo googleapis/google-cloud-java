@@ -92,7 +92,8 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * The initial node count for the pool. You must ensure that your
-   * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
+   * Compute Engine [resource
+   * quota](https://cloud.google.com/compute/quotas)
    * is sufficient for this number of instances. You must also have available
    * firewall and routes quota.
    * </pre>
@@ -108,8 +109,8 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -130,8 +131,8 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -152,8 +153,8 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -175,8 +176,8 @@ public interface NodePoolOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes should be located.
    *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
@@ -407,7 +408,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4260
+   *     google/container/v1/cluster_service.proto;l=4627
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -427,7 +428,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4260
+   *     google/container/v1/cluster_service.proto;l=4627
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

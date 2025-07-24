@@ -37,6 +37,12 @@
             "DeleteManagementServer": {
               "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
             },
+            "FetchBackupPlanAssociationsForResourceType": {
+              "methods": ["fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceTypePagedCallable", "fetchBackupPlanAssociationsForResourceTypeCallable"]
+            },
+            "FetchDataSourceReferencesForResourceType": {
+              "methods": ["fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceTypePagedCallable", "fetchDataSourceReferencesForResourceTypeCallable"]
+            },
             "FetchUsableBackupVaults": {
               "methods": ["fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaultsPagedCallable", "fetchUsableBackupVaultsCallable"]
             },
@@ -49,11 +55,17 @@
             "GetBackupPlanAssociation": {
               "methods": ["getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociationCallable"]
             },
+            "GetBackupPlanRevision": {
+              "methods": ["getBackupPlanRevision", "getBackupPlanRevision", "getBackupPlanRevision", "getBackupPlanRevisionCallable"]
+            },
             "GetBackupVault": {
               "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
             },
             "GetDataSource": {
               "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
+            },
+            "GetDataSourceReference": {
+              "methods": ["getDataSourceReference", "getDataSourceReference", "getDataSourceReference", "getDataSourceReferenceCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -69,6 +81,9 @@
             },
             "ListBackupPlanAssociations": {
               "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
+            },
+            "ListBackupPlanRevisions": {
+              "methods": ["listBackupPlanRevisions", "listBackupPlanRevisions", "listBackupPlanRevisions", "listBackupPlanRevisionsPagedCallable", "listBackupPlanRevisionsCallable"]
             },
             "ListBackupPlans": {
               "methods": ["listBackupPlans", "listBackupPlans", "listBackupPlans", "listBackupPlansPagedCallable", "listBackupPlansCallable"]
@@ -102,6 +117,12 @@
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupPlan": {
+              "methods": ["updateBackupPlanAsync", "updateBackupPlanAsync", "updateBackupPlanOperationCallable", "updateBackupPlanCallable"]
+            },
+            "UpdateBackupPlanAssociation": {
+              "methods": ["updateBackupPlanAssociationAsync", "updateBackupPlanAssociationAsync", "updateBackupPlanAssociationOperationCallable", "updateBackupPlanAssociationCallable"]
             },
             "UpdateBackupVault": {
               "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]

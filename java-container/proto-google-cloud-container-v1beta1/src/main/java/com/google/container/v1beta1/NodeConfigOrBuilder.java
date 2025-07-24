@@ -64,6 +64,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -437,8 +438,8 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The image type to use for this node. Note that for a given image type,
    * the latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>
@@ -453,8 +454,8 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The image type to use for this node. Note that for a given image type,
    * the latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>
@@ -650,8 +651,8 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * Whether the nodes are created as preemptible VM instances. See:
-   * https://cloud.google.com/compute/docs/instances/preemptible for more
-   * information about preemptible VM instances.
+   * https://cloud.google.com/compute/docs/instances/preemptible
+   * for more information about preemptible VM instances.
    * </pre>
    *
    * <code>bool preemptible = 10;</code>
@@ -665,8 +666,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
@@ -678,8 +680,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
@@ -691,8 +694,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
@@ -704,8 +708,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
@@ -718,8 +723,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
@@ -2111,4 +2117,41 @@ public interface NodeConfigOrBuilder
    * @return The flexStart.
    */
   boolean getFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BootDisk boot_disk = 57;</code>
+   *
+   * @return Whether the bootDisk field is set.
+   */
+  boolean hasBootDisk();
+
+  /**
+   *
+   *
+   * <pre>
+   * Boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BootDisk boot_disk = 57;</code>
+   *
+   * @return The bootDisk.
+   */
+  com.google.container.v1beta1.BootDisk getBootDisk();
+
+  /**
+   *
+   *
+   * <pre>
+   * Boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BootDisk boot_disk = 57;</code>
+   */
+  com.google.container.v1beta1.BootDiskOrBuilder getBootDiskOrBuilder();
 }

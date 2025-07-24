@@ -1418,6 +1418,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  private int bitField0_;
   public static final int NODE_AFFINITIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1496,6 +1497,45 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     return nodeAffinities_.get(index);
   }
 
+  public static final int MIN_NODE_CPUS_FIELD_NUMBER = 2;
+  private int minNodeCpus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of virtual CPUs this instance will consume
+   * when running on a sole-tenant node. This field can only be set if the node
+   * pool is created in a shared sole-tenant node group.
+   * </pre>
+   *
+   * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the minNodeCpus field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinNodeCpus() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of virtual CPUs this instance will consume
+   * when running on a sole-tenant node. This field can only be set if the node
+   * pool is created in a shared sole-tenant node group.
+   * </pre>
+   *
+   * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minNodeCpus.
+   */
+  @java.lang.Override
+  public int getMinNodeCpus() {
+    return minNodeCpus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1513,6 +1553,9 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < nodeAffinities_.size(); i++) {
       output.writeMessage(1, nodeAffinities_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(2, minNodeCpus_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1524,6 +1567,9 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     size = 0;
     for (int i = 0; i < nodeAffinities_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, nodeAffinities_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, minNodeCpus_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1541,6 +1587,10 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     com.google.container.v1.SoleTenantConfig other = (com.google.container.v1.SoleTenantConfig) obj;
 
     if (!getNodeAffinitiesList().equals(other.getNodeAffinitiesList())) return false;
+    if (hasMinNodeCpus() != other.hasMinNodeCpus()) return false;
+    if (hasMinNodeCpus()) {
+      if (getMinNodeCpus() != other.getMinNodeCpus()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1555,6 +1605,10 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
     if (getNodeAffinitiesCount() > 0) {
       hash = (37 * hash) + NODE_AFFINITIES_FIELD_NUMBER;
       hash = (53 * hash) + getNodeAffinitiesList().hashCode();
+    }
+    if (hasMinNodeCpus()) {
+      hash = (37 * hash) + MIN_NODE_CPUS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinNodeCpus();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1704,6 +1758,7 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         nodeAffinitiesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      minNodeCpus_ = 0;
       return this;
     }
 
@@ -1753,6 +1808,12 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.container.v1.SoleTenantConfig result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1827,6 +1888,9 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasMinNodeCpus()) {
+        setMinNodeCpus(other.getMinNodeCpus());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1867,6 +1931,12 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 10
+            case 16:
+              {
+                minNodeCpus_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2265,6 +2335,86 @@ public final class SoleTenantConfig extends com.google.protobuf.GeneratedMessage
         nodeAffinities_ = null;
       }
       return nodeAffinitiesBuilder_;
+    }
+
+    private int minNodeCpus_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of virtual CPUs this instance will consume
+     * when running on a sole-tenant node. This field can only be set if the node
+     * pool is created in a shared sole-tenant node group.
+     * </pre>
+     *
+     * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the minNodeCpus field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinNodeCpus() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of virtual CPUs this instance will consume
+     * when running on a sole-tenant node. This field can only be set if the node
+     * pool is created in a shared sole-tenant node group.
+     * </pre>
+     *
+     * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minNodeCpus.
+     */
+    @java.lang.Override
+    public int getMinNodeCpus() {
+      return minNodeCpus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of virtual CPUs this instance will consume
+     * when running on a sole-tenant node. This field can only be set if the node
+     * pool is created in a shared sole-tenant node group.
+     * </pre>
+     *
+     * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minNodeCpus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinNodeCpus(int value) {
+
+      minNodeCpus_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of virtual CPUs this instance will consume
+     * when running on a sole-tenant node. This field can only be set if the node
+     * pool is created in a shared sole-tenant node group.
+     * </pre>
+     *
+     * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinNodeCpus() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      minNodeCpus_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

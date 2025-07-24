@@ -200,4 +200,19 @@ public interface UpdateBackupVaultRequestOrBuilder
    * @return The force.
    */
   boolean getForce();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, we will force update access restriction even if
+   * some non compliant data sources are present. The default is 'false'.
+   * </pre>
+   *
+   * <code>bool force_update_access_restriction = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The forceUpdateAccessRestriction.
+   */
+  boolean getForceUpdateAccessRestriction();
 }

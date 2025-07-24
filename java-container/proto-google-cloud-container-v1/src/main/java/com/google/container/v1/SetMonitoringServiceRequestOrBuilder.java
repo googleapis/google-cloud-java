@@ -36,7 +36,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3541
+   *     google/container/v1/cluster_service.proto;l=3907
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3541
+   *     google/container/v1/cluster_service.proto;l=3907
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -65,15 +65,15 @@ public interface SetMonitoringServiceRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3547
+   *     google/container/v1/cluster_service.proto;l=3913
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -84,15 +84,15 @@ public interface SetMonitoringServiceRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3547
+   *     google/container/v1/cluster_service.proto;l=3913
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3551
+   *     google/container/v1/cluster_service.proto;l=3917
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3551
+   *     google/container/v1/cluster_service.proto;l=3917
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

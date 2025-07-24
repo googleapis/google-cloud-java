@@ -33,9 +33,10 @@ public interface VerdictOrBuilder
    * signals, refer to `validation_granularity` below.
    *
    * For example, if the input address includes a specific apartment number,
-   * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-   * the apartment number in the databases or the apartment number is invalid,
-   * the `validation_granularity` will likely be `PREMISE` or below.
+   * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+   * validation service cannot match the apartment number in the databases or
+   * the apartment number is invalid, the `validation_granularity` will likely
+   * be `PREMISE` or more coarse.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -53,9 +54,10 @@ public interface VerdictOrBuilder
    * signals, refer to `validation_granularity` below.
    *
    * For example, if the input address includes a specific apartment number,
-   * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
-   * the apartment number in the databases or the apartment number is invalid,
-   * the `validation_granularity` will likely be `PREMISE` or below.
+   * then the `input_granularity` here will be `SUB_PREMISE`. If the address
+   * validation service cannot match the apartment number in the databases or
+   * the apartment number is invalid, the `validation_granularity` will likely
+   * be `PREMISE` or more coarse.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.Verdict.Granularity input_granularity = 1;</code>
@@ -68,9 +70,10 @@ public interface VerdictOrBuilder
    *
    *
    * <pre>
-   * The granularity level that the API can fully **validate** the address to.
-   * For example, an `validation_granularity` of `PREMISE` indicates all address
-   * components at the level of `PREMISE` or more coarse can be validated.
+   * The level of granularity for the post-processed address that the API can
+   * fully validate. For example, a `validation_granularity` of `PREMISE`
+   * indicates all address components at the level of `PREMISE` or more coarse
+   * can be validated.
    *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
@@ -86,9 +89,10 @@ public interface VerdictOrBuilder
    *
    *
    * <pre>
-   * The granularity level that the API can fully **validate** the address to.
-   * For example, an `validation_granularity` of `PREMISE` indicates all address
-   * components at the level of `PREMISE` or more coarse can be validated.
+   * The level of granularity for the post-processed address that the API can
+   * fully validate. For example, a `validation_granularity` of `PREMISE`
+   * indicates all address components at the level of `PREMISE` or more coarse
+   * can be validated.
    *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
@@ -148,8 +152,9 @@ public interface VerdictOrBuilder
    *
    *
    * <pre>
-   * The address is considered complete if there are no unresolved tokens, no
-   * unexpected or missing address components. See
+   * The post-processed address is considered complete if there are no
+   * unresolved tokens, no unexpected or missing address components. If unset,
+   * indicates that the value is `false`. See
    * [`missing_component_types`][google.maps.addressvalidation.v1.Address.missing_component_types],
    * [`unresolved_tokens`][google.maps.addressvalidation.v1.Address.unresolved_tokens]
    * or
@@ -208,4 +213,19 @@ public interface VerdictOrBuilder
    * @return The hasReplacedComponents.
    */
   boolean getHasReplacedComponents();
+
+  /**
+   *
+   *
+   * <pre>
+   * At least one address component was spell-corrected, see
+   * [google.maps.addressvalidation.v1.Address.address_components] for
+   * details.
+   * </pre>
+   *
+   * <code>bool has_spell_corrected_components = 9;</code>
+   *
+   * @return The hasSpellCorrectedComponents.
+   */
+  boolean getHasSpellCorrectedComponents();
 }

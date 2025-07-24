@@ -309,6 +309,27 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     return force_;
   }
 
+  public static final int FORCE_UPDATE_ACCESS_RESTRICTION_FIELD_NUMBER = 6;
+  private boolean forceUpdateAccessRestriction_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, we will force update access restriction even if
+   * some non compliant data sources are present. The default is 'false'.
+   * </pre>
+   *
+   * <code>bool force_update_access_restriction = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The forceUpdateAccessRestriction.
+   */
+  @java.lang.Override
+  public boolean getForceUpdateAccessRestriction() {
+    return forceUpdateAccessRestriction_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -338,6 +359,9 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     if (force_ != false) {
       output.writeBool(5, force_);
     }
+    if (forceUpdateAccessRestriction_ != false) {
+      output.writeBool(6, forceUpdateAccessRestriction_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -361,6 +385,10 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     }
     if (force_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, force_);
+    }
+    if (forceUpdateAccessRestriction_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(6, forceUpdateAccessRestriction_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -389,6 +417,7 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (getForce() != other.getForce()) return false;
+    if (getForceUpdateAccessRestriction() != other.getForceUpdateAccessRestriction()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -414,6 +443,9 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (37 * hash) + FORCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
+    hash = (37 * hash) + FORCE_UPDATE_ACCESS_RESTRICTION_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceUpdateAccessRestriction());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -578,6 +610,7 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       requestId_ = "";
       validateOnly_ = false;
       force_ = false;
+      forceUpdateAccessRestriction_ = false;
       return this;
     }
 
@@ -632,6 +665,9 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.force_ = force_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.forceUpdateAccessRestriction_ = forceUpdateAccessRestriction_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -699,6 +735,9 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       if (other.getForce() != false) {
         setForce(other.getForce());
       }
+      if (other.getForceUpdateAccessRestriction() != false) {
+        setForceUpdateAccessRestriction(other.getForceUpdateAccessRestriction());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -755,6 +794,12 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                forceUpdateAccessRestriction_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1521,6 +1566,68 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     public Builder clearForce() {
       bitField0_ = (bitField0_ & ~0x00000010);
       force_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean forceUpdateAccessRestriction_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, we will force update access restriction even if
+     * some non compliant data sources are present. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool force_update_access_restriction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The forceUpdateAccessRestriction.
+     */
+    @java.lang.Override
+    public boolean getForceUpdateAccessRestriction() {
+      return forceUpdateAccessRestriction_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, we will force update access restriction even if
+     * some non compliant data sources are present. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool force_update_access_restriction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The forceUpdateAccessRestriction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceUpdateAccessRestriction(boolean value) {
+
+      forceUpdateAccessRestriction_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, we will force update access restriction even if
+     * some non compliant data sources are present. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool force_update_access_restriction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForceUpdateAccessRestriction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      forceUpdateAccessRestriction_ = false;
       onChanged();
       return this;
     }

@@ -23,16 +23,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Secure Source Manager API
  * Access Secure Source Manager instances, resources, and repositories.
- * This API is split across two servers: the Control Plane and the Data Plane.
- * Data Plane endpoints are hosted directly by your Secure Source Manager
- * instance, so you must connect to your instance's API hostname to access
- * them. The API hostname looks like the following:
- *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
- * For example,
- *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
- * Data Plane endpoints are denoted with **Host: Data Plane**.
- * All other endpoints are found in the normal Cloud API location, namely,
- * `securcesourcemanager.googleapis.com`.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -376,6 +366,53 @@ public final class SecureSourceManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest,
+          com.google.longrunning.Operation>
+      getUpdateRepositoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRepository",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest,
+          com.google.longrunning.Operation>
+      getUpdateRepositoryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest,
+            com.google.longrunning.Operation>
+        getUpdateRepositoryMethod;
+    if ((getUpdateRepositoryMethod = SecureSourceManagerGrpc.getUpdateRepositoryMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdateRepositoryMethod = SecureSourceManagerGrpc.getUpdateRepositoryMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUpdateRepositoryMethod =
+              getUpdateRepositoryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRepository"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdateRepository"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRepositoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest,
           com.google.longrunning.Operation>
       getDeleteRepositoryMethod;
@@ -420,6 +457,237 @@ public final class SecureSourceManagerGrpc {
       }
     }
     return getDeleteRepositoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListHooksRequest,
+          com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+      getListHooksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListHooks",
+      requestType = com.google.cloud.securesourcemanager.v1.ListHooksRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListHooksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListHooksRequest,
+          com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+      getListHooksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListHooksRequest,
+            com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+        getListHooksMethod;
+    if ((getListHooksMethod = SecureSourceManagerGrpc.getListHooksMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListHooksMethod = SecureSourceManagerGrpc.getListHooksMethod) == null) {
+          SecureSourceManagerGrpc.getListHooksMethod =
+              getListHooksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListHooksRequest,
+                          com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListHooks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListHooksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListHooksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ListHooks"))
+                      .build();
+        }
+      }
+    }
+    return getListHooksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetHookRequest,
+          com.google.cloud.securesourcemanager.v1.Hook>
+      getGetHookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetHook",
+      requestType = com.google.cloud.securesourcemanager.v1.GetHookRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.Hook.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetHookRequest,
+          com.google.cloud.securesourcemanager.v1.Hook>
+      getGetHookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetHookRequest,
+            com.google.cloud.securesourcemanager.v1.Hook>
+        getGetHookMethod;
+    if ((getGetHookMethod = SecureSourceManagerGrpc.getGetHookMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetHookMethod = SecureSourceManagerGrpc.getGetHookMethod) == null) {
+          SecureSourceManagerGrpc.getGetHookMethod =
+              getGetHookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetHookRequest,
+                          com.google.cloud.securesourcemanager.v1.Hook>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetHook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetHookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.Hook.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetHook"))
+                      .build();
+        }
+      }
+    }
+    return getGetHookMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateHookRequest,
+          com.google.longrunning.Operation>
+      getCreateHookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateHook",
+      requestType = com.google.cloud.securesourcemanager.v1.CreateHookRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateHookRequest,
+          com.google.longrunning.Operation>
+      getCreateHookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreateHookRequest,
+            com.google.longrunning.Operation>
+        getCreateHookMethod;
+    if ((getCreateHookMethod = SecureSourceManagerGrpc.getCreateHookMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreateHookMethod = SecureSourceManagerGrpc.getCreateHookMethod) == null) {
+          SecureSourceManagerGrpc.getCreateHookMethod =
+              getCreateHookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreateHookRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateHook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CreateHookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CreateHook"))
+                      .build();
+        }
+      }
+    }
+    return getCreateHookMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateHookRequest,
+          com.google.longrunning.Operation>
+      getUpdateHookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateHook",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdateHookRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateHookRequest,
+          com.google.longrunning.Operation>
+      getUpdateHookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdateHookRequest,
+            com.google.longrunning.Operation>
+        getUpdateHookMethod;
+    if ((getUpdateHookMethod = SecureSourceManagerGrpc.getUpdateHookMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdateHookMethod = SecureSourceManagerGrpc.getUpdateHookMethod) == null) {
+          SecureSourceManagerGrpc.getUpdateHookMethod =
+              getUpdateHookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdateHookRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateHook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdateHookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdateHook"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateHookMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteHookRequest,
+          com.google.longrunning.Operation>
+      getDeleteHookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteHook",
+      requestType = com.google.cloud.securesourcemanager.v1.DeleteHookRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteHookRequest,
+          com.google.longrunning.Operation>
+      getDeleteHookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.DeleteHookRequest,
+            com.google.longrunning.Operation>
+        getDeleteHookMethod;
+    if ((getDeleteHookMethod = SecureSourceManagerGrpc.getDeleteHookMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getDeleteHookMethod = SecureSourceManagerGrpc.getDeleteHookMethod) == null) {
+          SecureSourceManagerGrpc.getDeleteHookMethod =
+              getDeleteHookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.DeleteHookRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteHook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.DeleteHookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("DeleteHook"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteHookMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -784,6 +1052,1463 @@ public final class SecureSourceManagerGrpc {
     return getDeleteBranchRuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest,
+          com.google.longrunning.Operation>
+      getCreatePullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest,
+          com.google.longrunning.Operation>
+      getCreatePullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest,
+            com.google.longrunning.Operation>
+        getCreatePullRequestMethod;
+    if ((getCreatePullRequestMethod = SecureSourceManagerGrpc.getCreatePullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreatePullRequestMethod = SecureSourceManagerGrpc.getCreatePullRequestMethod)
+            == null) {
+          SecureSourceManagerGrpc.getCreatePullRequestMethod =
+              getCreatePullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CreatePullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetPullRequestRequest,
+          com.google.cloud.securesourcemanager.v1.PullRequest>
+      getGetPullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.GetPullRequestRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.PullRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetPullRequestRequest,
+          com.google.cloud.securesourcemanager.v1.PullRequest>
+      getGetPullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetPullRequestRequest,
+            com.google.cloud.securesourcemanager.v1.PullRequest>
+        getGetPullRequestMethod;
+    if ((getGetPullRequestMethod = SecureSourceManagerGrpc.getGetPullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetPullRequestMethod = SecureSourceManagerGrpc.getGetPullRequestMethod) == null) {
+          SecureSourceManagerGrpc.getGetPullRequestMethod =
+              getGetPullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetPullRequestRequest,
+                          com.google.cloud.securesourcemanager.v1.PullRequest>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetPullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.PullRequest
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetPullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getGetPullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+      getListPullRequestsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPullRequests",
+      requestType = com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+      getListPullRequestsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest,
+            com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+        getListPullRequestsMethod;
+    if ((getListPullRequestsMethod = SecureSourceManagerGrpc.getListPullRequestsMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListPullRequestsMethod = SecureSourceManagerGrpc.getListPullRequestsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getListPullRequestsMethod =
+              getListPullRequestsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest,
+                          com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPullRequests"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ListPullRequests"))
+                      .build();
+        }
+      }
+    }
+    return getListPullRequestsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest,
+          com.google.longrunning.Operation>
+      getUpdatePullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest,
+          com.google.longrunning.Operation>
+      getUpdatePullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest,
+            com.google.longrunning.Operation>
+        getUpdatePullRequestMethod;
+    if ((getUpdatePullRequestMethod = SecureSourceManagerGrpc.getUpdatePullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdatePullRequestMethod = SecureSourceManagerGrpc.getUpdatePullRequestMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUpdatePullRequestMethod =
+              getUpdatePullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdatePullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.MergePullRequestRequest,
+          com.google.longrunning.Operation>
+      getMergePullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MergePullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.MergePullRequestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.MergePullRequestRequest,
+          com.google.longrunning.Operation>
+      getMergePullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.MergePullRequestRequest,
+            com.google.longrunning.Operation>
+        getMergePullRequestMethod;
+    if ((getMergePullRequestMethod = SecureSourceManagerGrpc.getMergePullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getMergePullRequestMethod = SecureSourceManagerGrpc.getMergePullRequestMethod)
+            == null) {
+          SecureSourceManagerGrpc.getMergePullRequestMethod =
+              getMergePullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.MergePullRequestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MergePullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.MergePullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("MergePullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getMergePullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest,
+          com.google.longrunning.Operation>
+      getOpenPullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenPullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest,
+          com.google.longrunning.Operation>
+      getOpenPullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest,
+            com.google.longrunning.Operation>
+        getOpenPullRequestMethod;
+    if ((getOpenPullRequestMethod = SecureSourceManagerGrpc.getOpenPullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getOpenPullRequestMethod = SecureSourceManagerGrpc.getOpenPullRequestMethod) == null) {
+          SecureSourceManagerGrpc.getOpenPullRequestMethod =
+              getOpenPullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OpenPullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("OpenPullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getOpenPullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest,
+          com.google.longrunning.Operation>
+      getClosePullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClosePullRequest",
+      requestType = com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest,
+          com.google.longrunning.Operation>
+      getClosePullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest,
+            com.google.longrunning.Operation>
+        getClosePullRequestMethod;
+    if ((getClosePullRequestMethod = SecureSourceManagerGrpc.getClosePullRequestMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getClosePullRequestMethod = SecureSourceManagerGrpc.getClosePullRequestMethod)
+            == null) {
+          SecureSourceManagerGrpc.getClosePullRequestMethod =
+              getClosePullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ClosePullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ClosePullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getClosePullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+      getListPullRequestFileDiffsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPullRequestFileDiffs",
+      requestType = com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+      getListPullRequestFileDiffsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest,
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+        getListPullRequestFileDiffsMethod;
+    if ((getListPullRequestFileDiffsMethod =
+            SecureSourceManagerGrpc.getListPullRequestFileDiffsMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListPullRequestFileDiffsMethod =
+                SecureSourceManagerGrpc.getListPullRequestFileDiffsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getListPullRequestFileDiffsMethod =
+              getListPullRequestFileDiffsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest,
+                          com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListPullRequestFileDiffs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .ListPullRequestFileDiffsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .ListPullRequestFileDiffsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "ListPullRequestFileDiffs"))
+                      .build();
+        }
+      }
+    }
+    return getListPullRequestFileDiffsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchTreeRequest,
+          com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+      getFetchTreeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchTree",
+      requestType = com.google.cloud.securesourcemanager.v1.FetchTreeRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.FetchTreeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchTreeRequest,
+          com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+      getFetchTreeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.FetchTreeRequest,
+            com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+        getFetchTreeMethod;
+    if ((getFetchTreeMethod = SecureSourceManagerGrpc.getFetchTreeMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getFetchTreeMethod = SecureSourceManagerGrpc.getFetchTreeMethod) == null) {
+          SecureSourceManagerGrpc.getFetchTreeMethod =
+              getFetchTreeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.FetchTreeRequest,
+                          com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchTree"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchTreeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchTreeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("FetchTree"))
+                      .build();
+        }
+      }
+    }
+    return getFetchTreeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchBlobRequest,
+          com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+      getFetchBlobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchBlob",
+      requestType = com.google.cloud.securesourcemanager.v1.FetchBlobRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.FetchBlobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchBlobRequest,
+          com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+      getFetchBlobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.FetchBlobRequest,
+            com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+        getFetchBlobMethod;
+    if ((getFetchBlobMethod = SecureSourceManagerGrpc.getFetchBlobMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getFetchBlobMethod = SecureSourceManagerGrpc.getFetchBlobMethod) == null) {
+          SecureSourceManagerGrpc.getFetchBlobMethod =
+              getFetchBlobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.FetchBlobRequest,
+                          com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchBlob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchBlobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchBlobResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("FetchBlob"))
+                      .build();
+        }
+      }
+    }
+    return getFetchBlobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
+          com.google.longrunning.Operation>
+      getCreateIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.CreateIssueRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
+          com.google.longrunning.Operation>
+      getCreateIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
+            com.google.longrunning.Operation>
+        getCreateIssueMethod;
+    if ((getCreateIssueMethod = SecureSourceManagerGrpc.getCreateIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreateIssueMethod = SecureSourceManagerGrpc.getCreateIssueMethod) == null) {
+          SecureSourceManagerGrpc.getCreateIssueMethod =
+              getCreateIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CreateIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CreateIssue"))
+                      .build();
+        }
+      }
+    }
+    return getCreateIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetIssueRequest,
+          com.google.cloud.securesourcemanager.v1.Issue>
+      getGetIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.GetIssueRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.Issue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetIssueRequest,
+          com.google.cloud.securesourcemanager.v1.Issue>
+      getGetIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetIssueRequest,
+            com.google.cloud.securesourcemanager.v1.Issue>
+        getGetIssueMethod;
+    if ((getGetIssueMethod = SecureSourceManagerGrpc.getGetIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetIssueMethod = SecureSourceManagerGrpc.getGetIssueMethod) == null) {
+          SecureSourceManagerGrpc.getGetIssueMethod =
+              getGetIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetIssueRequest,
+                          com.google.cloud.securesourcemanager.v1.Issue>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.Issue.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetIssue"))
+                      .build();
+        }
+      }
+    }
+    return getGetIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListIssuesRequest,
+          com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+      getListIssuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIssues",
+      requestType = com.google.cloud.securesourcemanager.v1.ListIssuesRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListIssuesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListIssuesRequest,
+          com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+      getListIssuesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListIssuesRequest,
+            com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+        getListIssuesMethod;
+    if ((getListIssuesMethod = SecureSourceManagerGrpc.getListIssuesMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListIssuesMethod = SecureSourceManagerGrpc.getListIssuesMethod) == null) {
+          SecureSourceManagerGrpc.getListIssuesMethod =
+              getListIssuesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListIssuesRequest,
+                          com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListIssues"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListIssuesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListIssuesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ListIssues"))
+                      .build();
+        }
+      }
+    }
+    return getListIssuesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateIssueRequest,
+          com.google.longrunning.Operation>
+      getUpdateIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdateIssueRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateIssueRequest,
+          com.google.longrunning.Operation>
+      getUpdateIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdateIssueRequest,
+            com.google.longrunning.Operation>
+        getUpdateIssueMethod;
+    if ((getUpdateIssueMethod = SecureSourceManagerGrpc.getUpdateIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdateIssueMethod = SecureSourceManagerGrpc.getUpdateIssueMethod) == null) {
+          SecureSourceManagerGrpc.getUpdateIssueMethod =
+              getUpdateIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdateIssueRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdateIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdateIssue"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteIssueRequest,
+          com.google.longrunning.Operation>
+      getDeleteIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.DeleteIssueRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteIssueRequest,
+          com.google.longrunning.Operation>
+      getDeleteIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.DeleteIssueRequest,
+            com.google.longrunning.Operation>
+        getDeleteIssueMethod;
+    if ((getDeleteIssueMethod = SecureSourceManagerGrpc.getDeleteIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getDeleteIssueMethod = SecureSourceManagerGrpc.getDeleteIssueMethod) == null) {
+          SecureSourceManagerGrpc.getDeleteIssueMethod =
+              getDeleteIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.DeleteIssueRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.DeleteIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("DeleteIssue"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.OpenIssueRequest,
+          com.google.longrunning.Operation>
+      getOpenIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.OpenIssueRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.OpenIssueRequest,
+          com.google.longrunning.Operation>
+      getOpenIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.OpenIssueRequest,
+            com.google.longrunning.Operation>
+        getOpenIssueMethod;
+    if ((getOpenIssueMethod = SecureSourceManagerGrpc.getOpenIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getOpenIssueMethod = SecureSourceManagerGrpc.getOpenIssueMethod) == null) {
+          SecureSourceManagerGrpc.getOpenIssueMethod =
+              getOpenIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.OpenIssueRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OpenIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.OpenIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("OpenIssue"))
+                      .build();
+        }
+      }
+    }
+    return getOpenIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CloseIssueRequest,
+          com.google.longrunning.Operation>
+      getCloseIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CloseIssue",
+      requestType = com.google.cloud.securesourcemanager.v1.CloseIssueRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CloseIssueRequest,
+          com.google.longrunning.Operation>
+      getCloseIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CloseIssueRequest,
+            com.google.longrunning.Operation>
+        getCloseIssueMethod;
+    if ((getCloseIssueMethod = SecureSourceManagerGrpc.getCloseIssueMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCloseIssueMethod = SecureSourceManagerGrpc.getCloseIssueMethod) == null) {
+          SecureSourceManagerGrpc.getCloseIssueMethod =
+              getCloseIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CloseIssueRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CloseIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CloseIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CloseIssue"))
+                      .build();
+        }
+      }
+    }
+    return getCloseIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest,
+          com.google.cloud.securesourcemanager.v1.PullRequestComment>
+      getGetPullRequestCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPullRequestComment",
+      requestType = com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.PullRequestComment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest,
+          com.google.cloud.securesourcemanager.v1.PullRequestComment>
+      getGetPullRequestCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest,
+            com.google.cloud.securesourcemanager.v1.PullRequestComment>
+        getGetPullRequestCommentMethod;
+    if ((getGetPullRequestCommentMethod = SecureSourceManagerGrpc.getGetPullRequestCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetPullRequestCommentMethod =
+                SecureSourceManagerGrpc.getGetPullRequestCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getGetPullRequestCommentMethod =
+              getGetPullRequestCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest,
+                          com.google.cloud.securesourcemanager.v1.PullRequestComment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetPullRequestComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.PullRequestComment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetPullRequestComment"))
+                      .build();
+        }
+      }
+    }
+    return getGetPullRequestCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+      getListPullRequestCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPullRequestComments",
+      requestType = com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest,
+          com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+      getListPullRequestCommentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest,
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+        getListPullRequestCommentsMethod;
+    if ((getListPullRequestCommentsMethod =
+            SecureSourceManagerGrpc.getListPullRequestCommentsMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListPullRequestCommentsMethod =
+                SecureSourceManagerGrpc.getListPullRequestCommentsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getListPullRequestCommentsMethod =
+              getListPullRequestCommentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest,
+                          com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListPullRequestComments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .ListPullRequestCommentsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "ListPullRequestComments"))
+                      .build();
+        }
+      }
+    }
+    return getListPullRequestCommentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getCreatePullRequestCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePullRequestComment",
+      requestType = com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getCreatePullRequestCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest,
+            com.google.longrunning.Operation>
+        getCreatePullRequestCommentMethod;
+    if ((getCreatePullRequestCommentMethod =
+            SecureSourceManagerGrpc.getCreatePullRequestCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreatePullRequestCommentMethod =
+                SecureSourceManagerGrpc.getCreatePullRequestCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getCreatePullRequestCommentMethod =
+              getCreatePullRequestCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreatePullRequestComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .CreatePullRequestCommentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "CreatePullRequestComment"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePullRequestCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getUpdatePullRequestCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePullRequestComment",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getUpdatePullRequestCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest,
+            com.google.longrunning.Operation>
+        getUpdatePullRequestCommentMethod;
+    if ((getUpdatePullRequestCommentMethod =
+            SecureSourceManagerGrpc.getUpdatePullRequestCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdatePullRequestCommentMethod =
+                SecureSourceManagerGrpc.getUpdatePullRequestCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUpdatePullRequestCommentMethod =
+              getUpdatePullRequestCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdatePullRequestComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .UpdatePullRequestCommentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "UpdatePullRequestComment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePullRequestCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getDeletePullRequestCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePullRequestComment",
+      requestType = com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest,
+          com.google.longrunning.Operation>
+      getDeletePullRequestCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest,
+            com.google.longrunning.Operation>
+        getDeletePullRequestCommentMethod;
+    if ((getDeletePullRequestCommentMethod =
+            SecureSourceManagerGrpc.getDeletePullRequestCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getDeletePullRequestCommentMethod =
+                SecureSourceManagerGrpc.getDeletePullRequestCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getDeletePullRequestCommentMethod =
+              getDeletePullRequestCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeletePullRequestComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .DeletePullRequestCommentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "DeletePullRequestComment"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePullRequestCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getBatchCreatePullRequestCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreatePullRequestComments",
+      requestType =
+          com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getBatchCreatePullRequestCommentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest,
+            com.google.longrunning.Operation>
+        getBatchCreatePullRequestCommentsMethod;
+    if ((getBatchCreatePullRequestCommentsMethod =
+            SecureSourceManagerGrpc.getBatchCreatePullRequestCommentsMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getBatchCreatePullRequestCommentsMethod =
+                SecureSourceManagerGrpc.getBatchCreatePullRequestCommentsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getBatchCreatePullRequestCommentsMethod =
+              getBatchCreatePullRequestCommentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1
+                              .BatchCreatePullRequestCommentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreatePullRequestComments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .BatchCreatePullRequestCommentsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "BatchCreatePullRequestComments"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreatePullRequestCommentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getResolvePullRequestCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResolvePullRequestComments",
+      requestType = com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getResolvePullRequestCommentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest,
+            com.google.longrunning.Operation>
+        getResolvePullRequestCommentsMethod;
+    if ((getResolvePullRequestCommentsMethod =
+            SecureSourceManagerGrpc.getResolvePullRequestCommentsMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getResolvePullRequestCommentsMethod =
+                SecureSourceManagerGrpc.getResolvePullRequestCommentsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getResolvePullRequestCommentsMethod =
+              getResolvePullRequestCommentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResolvePullRequestComments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .ResolvePullRequestCommentsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "ResolvePullRequestComments"))
+                      .build();
+        }
+      }
+    }
+    return getResolvePullRequestCommentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getUnresolvePullRequestCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UnresolvePullRequestComments",
+      requestType =
+          com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest,
+          com.google.longrunning.Operation>
+      getUnresolvePullRequestCommentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest,
+            com.google.longrunning.Operation>
+        getUnresolvePullRequestCommentsMethod;
+    if ((getUnresolvePullRequestCommentsMethod =
+            SecureSourceManagerGrpc.getUnresolvePullRequestCommentsMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUnresolvePullRequestCommentsMethod =
+                SecureSourceManagerGrpc.getUnresolvePullRequestCommentsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUnresolvePullRequestCommentsMethod =
+              getUnresolvePullRequestCommentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UnresolvePullRequestComments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1
+                                  .UnresolvePullRequestCommentsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier(
+                              "UnresolvePullRequestComments"))
+                      .build();
+        }
+      }
+    }
+    return getUnresolvePullRequestCommentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getCreateIssueCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateIssueComment",
+      requestType = com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getCreateIssueCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest,
+            com.google.longrunning.Operation>
+        getCreateIssueCommentMethod;
+    if ((getCreateIssueCommentMethod = SecureSourceManagerGrpc.getCreateIssueCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getCreateIssueCommentMethod = SecureSourceManagerGrpc.getCreateIssueCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getCreateIssueCommentMethod =
+              getCreateIssueCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateIssueComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("CreateIssueComment"))
+                      .build();
+        }
+      }
+    }
+    return getCreateIssueCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest,
+          com.google.cloud.securesourcemanager.v1.IssueComment>
+      getGetIssueCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIssueComment",
+      requestType = com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.IssueComment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest,
+          com.google.cloud.securesourcemanager.v1.IssueComment>
+      getGetIssueCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest,
+            com.google.cloud.securesourcemanager.v1.IssueComment>
+        getGetIssueCommentMethod;
+    if ((getGetIssueCommentMethod = SecureSourceManagerGrpc.getGetIssueCommentMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getGetIssueCommentMethod = SecureSourceManagerGrpc.getGetIssueCommentMethod) == null) {
+          SecureSourceManagerGrpc.getGetIssueCommentMethod =
+              getGetIssueCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest,
+                          com.google.cloud.securesourcemanager.v1.IssueComment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIssueComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.IssueComment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("GetIssueComment"))
+                      .build();
+        }
+      }
+    }
+    return getGetIssueCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest,
+          com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+      getListIssueCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIssueComments",
+      requestType = com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest,
+          com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+      getListIssueCommentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest,
+            com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+        getListIssueCommentsMethod;
+    if ((getListIssueCommentsMethod = SecureSourceManagerGrpc.getListIssueCommentsMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getListIssueCommentsMethod = SecureSourceManagerGrpc.getListIssueCommentsMethod)
+            == null) {
+          SecureSourceManagerGrpc.getListIssueCommentsMethod =
+              getListIssueCommentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest,
+                          com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListIssueComments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("ListIssueComments"))
+                      .build();
+        }
+      }
+    }
+    return getListIssueCommentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getUpdateIssueCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIssueComment",
+      requestType = com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getUpdateIssueCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest,
+            com.google.longrunning.Operation>
+        getUpdateIssueCommentMethod;
+    if ((getUpdateIssueCommentMethod = SecureSourceManagerGrpc.getUpdateIssueCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getUpdateIssueCommentMethod = SecureSourceManagerGrpc.getUpdateIssueCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getUpdateIssueCommentMethod =
+              getUpdateIssueCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIssueComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("UpdateIssueComment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateIssueCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getDeleteIssueCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIssueComment",
+      requestType = com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest,
+          com.google.longrunning.Operation>
+      getDeleteIssueCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest,
+            com.google.longrunning.Operation>
+        getDeleteIssueCommentMethod;
+    if ((getDeleteIssueCommentMethod = SecureSourceManagerGrpc.getDeleteIssueCommentMethod)
+        == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getDeleteIssueCommentMethod = SecureSourceManagerGrpc.getDeleteIssueCommentMethod)
+            == null) {
+          SecureSourceManagerGrpc.getDeleteIssueCommentMethod =
+              getDeleteIssueCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIssueComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("DeleteIssueComment"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteIssueCommentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecureSourceManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecureSourceManagerStub> factory =
@@ -844,16 +2569,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public interface AsyncService {
@@ -921,7 +2636,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
-     * **Host: Data Plane**
+     * The instance field is required in the query parameter for requests using
+     * the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     default void listRepositories(
@@ -938,7 +2654,6 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Gets metadata of a repository.
-     * **Host: Data Plane**
      * </pre>
      */
     default void getRepository(
@@ -954,7 +2669,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Creates a new repository in a given project and location.
-     * **Host: Data Plane**
+     * The Repository.Instance field is required in the request body for requests
+     * using the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     default void createRepository(
@@ -968,8 +2684,21 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Updates the metadata of a repository.
+     * </pre>
+     */
+    default void updateRepository(
+        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRepositoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Repository.
-     * **Host: Data Plane**
      * </pre>
      */
     default void deleteRepository(
@@ -977,6 +2706,73 @@ public final class SecureSourceManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteRepositoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hooks in a given repository.
+     * </pre>
+     */
+    default void listHooks(
+        com.google.cloud.securesourcemanager.v1.ListHooksRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListHooksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a hook.
+     * </pre>
+     */
+    default void getHook(
+        com.google.cloud.securesourcemanager.v1.GetHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Hook>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetHookMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new hook in a given repository.
+     * </pre>
+     */
+    default void createHook(
+        com.google.cloud.securesourcemanager.v1.CreateHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateHookMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata of a hook.
+     * </pre>
+     */
+    default void updateHook(
+        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateHookMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Hook.
+     * </pre>
+     */
+    default void deleteHook(
+        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteHookMethod(), responseObserver);
     }
 
     /**
@@ -1094,6 +2890,435 @@ public final class SecureSourceManagerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBranchRuleMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request.
+     * </pre>
+     */
+    default void createPullRequest(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request.
+     * </pre>
+     */
+    default void getPullRequest(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull requests in a repository.
+     * </pre>
+     */
+    default void listPullRequests(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPullRequestsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request.
+     * </pre>
+     */
+    default void updatePullRequest(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a pull request.
+     * </pre>
+     */
+    default void mergePullRequest(
+        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMergePullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens a pull request.
+     * </pre>
+     */
+    default void openPullRequest(
+        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getOpenPullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes a pull request without merging.
+     * </pre>
+     */
+    default void closePullRequest(
+        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getClosePullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a pull request's file diffs.
+     * </pre>
+     */
+    default void listPullRequestFileDiffs(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPullRequestFileDiffsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a tree from a repository.
+     * </pre>
+     */
+    default void fetchTree(
+        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchTreeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a blob from a repository.
+     * </pre>
+     */
+    default void fetchBlob(
+        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchBlobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue.
+     * </pre>
+     */
+    default void createIssue(
+        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    default void getIssue(
+        com.google.cloud.securesourcemanager.v1.GetIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Issue>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues in a repository.
+     * </pre>
+     */
+    default void listIssues(
+        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListIssuesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a issue.
+     * </pre>
+     */
+    default void updateIssue(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    default void deleteIssue(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens an issue.
+     * </pre>
+     */
+    default void openIssue(
+        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getOpenIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes an issue.
+     * </pre>
+     */
+    default void closeIssue(
+        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCloseIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request comment.
+     * </pre>
+     */
+    default void getPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.PullRequestComment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPullRequestCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull request comments.
+     * </pre>
+     */
+    default void listPullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPullRequestCommentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request comment.
+     * </pre>
+     */
+    default void createPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePullRequestCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request comment.
+     * </pre>
+     */
+    default void updatePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePullRequestCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pull request comment.
+     * </pre>
+     */
+    default void deletePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePullRequestCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch creates pull request comments.
+     * </pre>
+     */
+    default void batchCreatePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreatePullRequestCommentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves pull request comments.
+     * </pre>
+     */
+    default void resolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResolvePullRequestCommentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unresolves pull request comment.
+     * </pre>
+     */
+    default void unresolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUnresolvePullRequestCommentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue comment.
+     * </pre>
+     */
+    default void createIssueComment(
+        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateIssueCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue comment.
+     * </pre>
+     */
+    default void getIssueComment(
+        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.IssueComment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIssueCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists comments in an issue.
+     * </pre>
+     */
+    default void listIssueComments(
+        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIssueCommentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue comment.
+     * </pre>
+     */
+    default void updateIssueComment(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateIssueCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue comment.
+     * </pre>
+     */
+    default void deleteIssueComment(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteIssueCommentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1102,16 +3327,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public abstract static class SecureSourceManagerImplBase
@@ -1129,16 +3344,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public static final class SecureSourceManagerStub
@@ -1224,7 +3429,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
-     * **Host: Data Plane**
+     * The instance field is required in the query parameter for requests using
+     * the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public void listRepositories(
@@ -1243,7 +3449,6 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Gets metadata of a repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public void getRepository(
@@ -1261,7 +3466,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Creates a new repository in a given project and location.
-     * **Host: Data Plane**
+     * The Repository.Instance field is required in the request body for requests
+     * using the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public void createRepository(
@@ -1277,8 +3483,23 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Updates the metadata of a repository.
+     * </pre>
+     */
+    public void updateRepository(
+        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRepositoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public void deleteRepository(
@@ -1288,6 +3509,78 @@ public final class SecureSourceManagerGrpc {
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hooks in a given repository.
+     * </pre>
+     */
+    public void listHooks(
+        com.google.cloud.securesourcemanager.v1.ListHooksRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListHooksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a hook.
+     * </pre>
+     */
+    public void getHook(
+        com.google.cloud.securesourcemanager.v1.GetHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Hook>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetHookMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new hook in a given repository.
+     * </pre>
+     */
+    public void createHook(
+        com.google.cloud.securesourcemanager.v1.CreateHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateHookMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata of a hook.
+     * </pre>
+     */
+    public void updateHook(
+        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateHookMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Hook.
+     * </pre>
+     */
+    public void deleteHook(
+        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteHookMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1421,6 +3714,489 @@ public final class SecureSourceManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request.
+     * </pre>
+     */
+    public void createPullRequest(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request.
+     * </pre>
+     */
+    public void getPullRequest(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull requests in a repository.
+     * </pre>
+     */
+    public void listPullRequests(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPullRequestsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request.
+     * </pre>
+     */
+    public void updatePullRequest(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a pull request.
+     * </pre>
+     */
+    public void mergePullRequest(
+        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMergePullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens a pull request.
+     * </pre>
+     */
+    public void openPullRequest(
+        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getOpenPullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes a pull request without merging.
+     * </pre>
+     */
+    public void closePullRequest(
+        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getClosePullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a pull request's file diffs.
+     * </pre>
+     */
+    public void listPullRequestFileDiffs(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPullRequestFileDiffsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a tree from a repository.
+     * </pre>
+     */
+    public void fetchTree(
+        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchTreeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a blob from a repository.
+     * </pre>
+     */
+    public void fetchBlob(
+        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchBlobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue.
+     * </pre>
+     */
+    public void createIssue(
+        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateIssueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    public void getIssue(
+        com.google.cloud.securesourcemanager.v1.GetIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Issue>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIssueMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues in a repository.
+     * </pre>
+     */
+    public void listIssues(
+        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIssuesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a issue.
+     * </pre>
+     */
+    public void updateIssue(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateIssueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public void deleteIssue(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteIssueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens an issue.
+     * </pre>
+     */
+    public void openIssue(
+        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getOpenIssueMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes an issue.
+     * </pre>
+     */
+    public void closeIssue(
+        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCloseIssueMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request comment.
+     * </pre>
+     */
+    public void getPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.PullRequestComment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPullRequestCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull request comments.
+     * </pre>
+     */
+    public void listPullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPullRequestCommentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request comment.
+     * </pre>
+     */
+    public void createPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePullRequestCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request comment.
+     * </pre>
+     */
+    public void updatePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePullRequestCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pull request comment.
+     * </pre>
+     */
+    public void deletePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePullRequestCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch creates pull request comments.
+     * </pre>
+     */
+    public void batchCreatePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreatePullRequestCommentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves pull request comments.
+     * </pre>
+     */
+    public void resolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResolvePullRequestCommentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unresolves pull request comment.
+     * </pre>
+     */
+    public void unresolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUnresolvePullRequestCommentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue comment.
+     * </pre>
+     */
+    public void createIssueComment(
+        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateIssueCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue comment.
+     * </pre>
+     */
+    public void getIssueComment(
+        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.IssueComment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIssueCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists comments in an issue.
+     * </pre>
+     */
+    public void listIssueComments(
+        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIssueCommentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue comment.
+     * </pre>
+     */
+    public void updateIssueComment(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateIssueCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue comment.
+     * </pre>
+     */
+    public void deleteIssueComment(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteIssueCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1429,16 +4205,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public static final class SecureSourceManagerBlockingV2Stub
@@ -1511,7 +4277,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
-     * **Host: Data Plane**
+     * The instance field is required in the query parameter for requests using
+     * the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse listRepositories(
@@ -1525,7 +4292,6 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Gets metadata of a repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Repository getRepository(
@@ -1539,7 +4305,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Creates a new repository in a given project and location.
-     * **Host: Data Plane**
+     * The Repository.Instance field is required in the request body for requests
+     * using the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(
@@ -1552,14 +4319,91 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Updates the metadata of a repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRepository(
+        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(
         com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hooks in a given repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListHooksResponse listHooks(
+        com.google.cloud.securesourcemanager.v1.ListHooksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHooksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a hook.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Hook getHook(
+        com.google.cloud.securesourcemanager.v1.GetHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new hook in a given repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHook(
+        com.google.cloud.securesourcemanager.v1.CreateHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata of a hook.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHook(
+        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Hook.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHook(
+        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteHookMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1666,6 +4510,398 @@ public final class SecureSourceManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBranchRuleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPullRequest(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.PullRequest getPullRequest(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull requests in a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse listPullRequests(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePullRequest(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation mergePullRequest(
+        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMergePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation openPullRequest(
+        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOpenPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes a pull request without merging.
+     * </pre>
+     */
+    public com.google.longrunning.Operation closePullRequest(
+        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClosePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a pull request's file diffs.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse
+        listPullRequestFileDiffs(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestFileDiffsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a tree from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchTreeResponse fetchTree(
+        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchTreeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a blob from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchBlobResponse fetchBlob(
+        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchBlobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssue(
+        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Issue getIssue(
+        com.google.cloud.securesourcemanager.v1.GetIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues in a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListIssuesResponse listIssues(
+        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIssue(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssue(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation openIssue(
+        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOpenIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation closeIssue(
+        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCloseIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request comment.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.PullRequestComment getPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull request comments.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse
+        listPullRequestComments(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch creates pull request comments.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreatePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreatePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves pull request comments.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolvePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unresolves pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation unresolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnresolvePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssueComment(
+        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue comment.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.IssueComment getIssueComment(
+        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists comments in an issue.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse listIssueComments(
+        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssueCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIssueComment(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssueComment(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueCommentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1674,16 +4910,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public static final class SecureSourceManagerBlockingStub
@@ -1756,7 +4982,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
-     * **Host: Data Plane**
+     * The instance field is required in the query parameter for requests using
+     * the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse listRepositories(
@@ -1770,7 +4997,6 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Gets metadata of a repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Repository getRepository(
@@ -1784,7 +5010,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Creates a new repository in a given project and location.
-     * **Host: Data Plane**
+     * The Repository.Instance field is required in the request body for requests
+     * using the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(
@@ -1797,14 +5024,91 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Updates the metadata of a repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRepository(
+        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(
         com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hooks in a given repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListHooksResponse listHooks(
+        com.google.cloud.securesourcemanager.v1.ListHooksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHooksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a hook.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Hook getHook(
+        com.google.cloud.securesourcemanager.v1.GetHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new hook in a given repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHook(
+        com.google.cloud.securesourcemanager.v1.CreateHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata of a hook.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHook(
+        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateHookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Hook.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHook(
+        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteHookMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1911,6 +5215,398 @@ public final class SecureSourceManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBranchRuleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPullRequest(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.PullRequest getPullRequest(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull requests in a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse listPullRequests(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePullRequest(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation mergePullRequest(
+        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMergePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens a pull request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation openPullRequest(
+        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOpenPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes a pull request without merging.
+     * </pre>
+     */
+    public com.google.longrunning.Operation closePullRequest(
+        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClosePullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a pull request's file diffs.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse
+        listPullRequestFileDiffs(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestFileDiffsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a tree from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchTreeResponse fetchTree(
+        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchTreeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a blob from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchBlobResponse fetchBlob(
+        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchBlobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssue(
+        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Issue getIssue(
+        com.google.cloud.securesourcemanager.v1.GetIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues in a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListIssuesResponse listIssues(
+        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIssue(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssue(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation openIssue(
+        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOpenIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes an issue.
+     * </pre>
+     */
+    public com.google.longrunning.Operation closeIssue(
+        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCloseIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request comment.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.PullRequestComment getPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull request comments.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse
+        listPullRequestComments(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPullRequestComment(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePullRequestComment(
+        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePullRequestCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch creates pull request comments.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreatePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreatePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves pull request comments.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolvePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unresolves pull request comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation unresolvePullRequestComments(
+        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnresolvePullRequestCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssueComment(
+        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue comment.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.IssueComment getIssueComment(
+        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists comments in an issue.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse listIssueComments(
+        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssueCommentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIssueComment(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue comment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssueComment(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueCommentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1919,16 +5615,6 @@ public final class SecureSourceManagerGrpc {
    * <pre>
    * Secure Source Manager API
    * Access Secure Source Manager instances, resources, and repositories.
-   * This API is split across two servers: the Control Plane and the Data Plane.
-   * Data Plane endpoints are hosted directly by your Secure Source Manager
-   * instance, so you must connect to your instance's API hostname to access
-   * them. The API hostname looks like the following:
-   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
-   * For example,
-   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
-   * Data Plane endpoints are denoted with **Host: Data Plane**.
-   * All other endpoints are found in the normal Cloud API location, namely,
-   * `securcesourcemanager.googleapis.com`.
    * </pre>
    */
   public static final class SecureSourceManagerFutureStub
@@ -2003,7 +5689,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
-     * **Host: Data Plane**
+     * The instance field is required in the query parameter for requests using
+     * the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2018,7 +5705,6 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Gets metadata of a repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2033,7 +5719,8 @@ public final class SecureSourceManagerGrpc {
      *
      * <pre>
      * Creates a new repository in a given project and location.
-     * **Host: Data Plane**
+     * The Repository.Instance field is required in the request body for requests
+     * using the securesourcemanager.googleapis.com endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2046,14 +5733,93 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Updates the metadata of a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRepository(com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRepositoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Repository.
-     * **Host: Data Plane**
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteRepository(com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hooks in a given repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListHooksResponse>
+        listHooks(com.google.cloud.securesourcemanager.v1.ListHooksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListHooksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a hook.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.Hook>
+        getHook(com.google.cloud.securesourcemanager.v1.GetHookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetHookMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new hook in a given repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createHook(com.google.cloud.securesourcemanager.v1.CreateHookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateHookMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata of a hook.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateHook(com.google.cloud.securesourcemanager.v1.UpdateHookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateHookMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Hook.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteHook(com.google.cloud.securesourcemanager.v1.DeleteHookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteHookMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2163,6 +5929,423 @@ public final class SecureSourceManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBranchRuleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createPullRequest(
+            com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.PullRequest>
+        getPullRequest(com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull requests in a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>
+        listPullRequests(com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPullRequestsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePullRequest(
+            com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a pull request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        mergePullRequest(com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMergePullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens a pull request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        openPullRequest(com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getOpenPullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes a pull request without merging.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        closePullRequest(com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getClosePullRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a pull request's file diffs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>
+        listPullRequestFileDiffs(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPullRequestFileDiffsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a tree from a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.FetchTreeResponse>
+        fetchTree(com.google.cloud.securesourcemanager.v1.FetchTreeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchTreeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a blob from a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.FetchBlobResponse>
+        fetchBlob(com.google.cloud.securesourcemanager.v1.FetchBlobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchBlobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createIssue(com.google.cloud.securesourcemanager.v1.CreateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.Issue>
+        getIssue(com.google.cloud.securesourcemanager.v1.GetIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues in a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListIssuesResponse>
+        listIssues(com.google.cloud.securesourcemanager.v1.ListIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIssuesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateIssue(com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteIssue(com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Opens an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        openIssue(com.google.cloud.securesourcemanager.v1.OpenIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getOpenIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Closes an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        closeIssue(com.google.cloud.securesourcemanager.v1.CloseIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCloseIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a pull request comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.PullRequestComment>
+        getPullRequestComment(
+            com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPullRequestCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists pull request comments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>
+        listPullRequestComments(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPullRequestCommentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pull request comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createPullRequestComment(
+            com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePullRequestCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pull request comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePullRequestComment(
+            com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePullRequestCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pull request comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deletePullRequestComment(
+            com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePullRequestCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch creates pull request comments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreatePullRequestComments(
+            com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreatePullRequestCommentsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves pull request comments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        resolvePullRequestComments(
+            com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResolvePullRequestCommentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unresolves pull request comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        unresolvePullRequestComments(
+            com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUnresolvePullRequestCommentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createIssueComment(
+            com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateIssueCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.IssueComment>
+        getIssueComment(com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIssueCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists comments in an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>
+        listIssueComments(
+            com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIssueCommentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateIssueComment(
+            com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateIssueCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteIssueComment(
+            com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteIssueCommentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -2172,15 +6355,51 @@ public final class SecureSourceManagerGrpc {
   private static final int METHODID_LIST_REPOSITORIES = 4;
   private static final int METHODID_GET_REPOSITORY = 5;
   private static final int METHODID_CREATE_REPOSITORY = 6;
-  private static final int METHODID_DELETE_REPOSITORY = 7;
-  private static final int METHODID_GET_IAM_POLICY_REPO = 8;
-  private static final int METHODID_SET_IAM_POLICY_REPO = 9;
-  private static final int METHODID_TEST_IAM_PERMISSIONS_REPO = 10;
-  private static final int METHODID_CREATE_BRANCH_RULE = 11;
-  private static final int METHODID_LIST_BRANCH_RULES = 12;
-  private static final int METHODID_GET_BRANCH_RULE = 13;
-  private static final int METHODID_UPDATE_BRANCH_RULE = 14;
-  private static final int METHODID_DELETE_BRANCH_RULE = 15;
+  private static final int METHODID_UPDATE_REPOSITORY = 7;
+  private static final int METHODID_DELETE_REPOSITORY = 8;
+  private static final int METHODID_LIST_HOOKS = 9;
+  private static final int METHODID_GET_HOOK = 10;
+  private static final int METHODID_CREATE_HOOK = 11;
+  private static final int METHODID_UPDATE_HOOK = 12;
+  private static final int METHODID_DELETE_HOOK = 13;
+  private static final int METHODID_GET_IAM_POLICY_REPO = 14;
+  private static final int METHODID_SET_IAM_POLICY_REPO = 15;
+  private static final int METHODID_TEST_IAM_PERMISSIONS_REPO = 16;
+  private static final int METHODID_CREATE_BRANCH_RULE = 17;
+  private static final int METHODID_LIST_BRANCH_RULES = 18;
+  private static final int METHODID_GET_BRANCH_RULE = 19;
+  private static final int METHODID_UPDATE_BRANCH_RULE = 20;
+  private static final int METHODID_DELETE_BRANCH_RULE = 21;
+  private static final int METHODID_CREATE_PULL_REQUEST = 22;
+  private static final int METHODID_GET_PULL_REQUEST = 23;
+  private static final int METHODID_LIST_PULL_REQUESTS = 24;
+  private static final int METHODID_UPDATE_PULL_REQUEST = 25;
+  private static final int METHODID_MERGE_PULL_REQUEST = 26;
+  private static final int METHODID_OPEN_PULL_REQUEST = 27;
+  private static final int METHODID_CLOSE_PULL_REQUEST = 28;
+  private static final int METHODID_LIST_PULL_REQUEST_FILE_DIFFS = 29;
+  private static final int METHODID_FETCH_TREE = 30;
+  private static final int METHODID_FETCH_BLOB = 31;
+  private static final int METHODID_CREATE_ISSUE = 32;
+  private static final int METHODID_GET_ISSUE = 33;
+  private static final int METHODID_LIST_ISSUES = 34;
+  private static final int METHODID_UPDATE_ISSUE = 35;
+  private static final int METHODID_DELETE_ISSUE = 36;
+  private static final int METHODID_OPEN_ISSUE = 37;
+  private static final int METHODID_CLOSE_ISSUE = 38;
+  private static final int METHODID_GET_PULL_REQUEST_COMMENT = 39;
+  private static final int METHODID_LIST_PULL_REQUEST_COMMENTS = 40;
+  private static final int METHODID_CREATE_PULL_REQUEST_COMMENT = 41;
+  private static final int METHODID_UPDATE_PULL_REQUEST_COMMENT = 42;
+  private static final int METHODID_DELETE_PULL_REQUEST_COMMENT = 43;
+  private static final int METHODID_BATCH_CREATE_PULL_REQUEST_COMMENTS = 44;
+  private static final int METHODID_RESOLVE_PULL_REQUEST_COMMENTS = 45;
+  private static final int METHODID_UNRESOLVE_PULL_REQUEST_COMMENTS = 46;
+  private static final int METHODID_CREATE_ISSUE_COMMENT = 47;
+  private static final int METHODID_GET_ISSUE_COMMENT = 48;
+  private static final int METHODID_LIST_ISSUE_COMMENTS = 49;
+  private static final int METHODID_UPDATE_ISSUE_COMMENT = 50;
+  private static final int METHODID_DELETE_ISSUE_COMMENT = 51;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2240,9 +6459,42 @@ public final class SecureSourceManagerGrpc {
               (com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_REPOSITORY:
+          serviceImpl.updateRepository(
+              (com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_REPOSITORY:
           serviceImpl.deleteRepository(
               (com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_HOOKS:
+          serviceImpl.listHooks(
+              (com.google.cloud.securesourcemanager.v1.ListHooksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListHooksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_HOOK:
+          serviceImpl.getHook(
+              (com.google.cloud.securesourcemanager.v1.GetHookRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Hook>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_HOOK:
+          serviceImpl.createHook(
+              (com.google.cloud.securesourcemanager.v1.CreateHookRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_HOOK:
+          serviceImpl.updateHook(
+              (com.google.cloud.securesourcemanager.v1.UpdateHookRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_HOOK:
+          serviceImpl.deleteHook(
+              (com.google.cloud.securesourcemanager.v1.DeleteHookRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY_REPO:
@@ -2287,6 +6539,176 @@ public final class SecureSourceManagerGrpc {
         case METHODID_DELETE_BRANCH_RULE:
           serviceImpl.deleteBranchRule(
               (com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_PULL_REQUEST:
+          serviceImpl.createPullRequest(
+              (com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PULL_REQUEST:
+          serviceImpl.getPullRequest(
+              (com.google.cloud.securesourcemanager.v1.GetPullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.PullRequest>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PULL_REQUESTS:
+          serviceImpl.listPullRequests(
+              (com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_PULL_REQUEST:
+          serviceImpl.updatePullRequest(
+              (com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_MERGE_PULL_REQUEST:
+          serviceImpl.mergePullRequest(
+              (com.google.cloud.securesourcemanager.v1.MergePullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_OPEN_PULL_REQUEST:
+          serviceImpl.openPullRequest(
+              (com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CLOSE_PULL_REQUEST:
+          serviceImpl.closePullRequest(
+              (com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_PULL_REQUEST_FILE_DIFFS:
+          serviceImpl.listPullRequestFileDiffs(
+              (com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_TREE:
+          serviceImpl.fetchTree(
+              (com.google.cloud.securesourcemanager.v1.FetchTreeRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.FetchTreeResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_BLOB:
+          serviceImpl.fetchBlob(
+              (com.google.cloud.securesourcemanager.v1.FetchBlobRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.FetchBlobResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ISSUE:
+          serviceImpl.createIssue(
+              (com.google.cloud.securesourcemanager.v1.CreateIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ISSUE:
+          serviceImpl.getIssue(
+              (com.google.cloud.securesourcemanager.v1.GetIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.Issue>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ISSUES:
+          serviceImpl.listIssues(
+              (com.google.cloud.securesourcemanager.v1.ListIssuesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListIssuesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ISSUE:
+          serviceImpl.updateIssue(
+              (com.google.cloud.securesourcemanager.v1.UpdateIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ISSUE:
+          serviceImpl.deleteIssue(
+              (com.google.cloud.securesourcemanager.v1.DeleteIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_OPEN_ISSUE:
+          serviceImpl.openIssue(
+              (com.google.cloud.securesourcemanager.v1.OpenIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CLOSE_ISSUE:
+          serviceImpl.closeIssue(
+              (com.google.cloud.securesourcemanager.v1.CloseIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PULL_REQUEST_COMMENT:
+          serviceImpl.getPullRequestComment(
+              (com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.PullRequestComment>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PULL_REQUEST_COMMENTS:
+          serviceImpl.listPullRequestComments(
+              (com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_PULL_REQUEST_COMMENT:
+          serviceImpl.createPullRequestComment(
+              (com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_PULL_REQUEST_COMMENT:
+          serviceImpl.updatePullRequestComment(
+              (com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_PULL_REQUEST_COMMENT:
+          serviceImpl.deletePullRequestComment(
+              (com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_PULL_REQUEST_COMMENTS:
+          serviceImpl.batchCreatePullRequestComments(
+              (com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESOLVE_PULL_REQUEST_COMMENTS:
+          serviceImpl.resolvePullRequestComments(
+              (com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UNRESOLVE_PULL_REQUEST_COMMENTS:
+          serviceImpl.unresolvePullRequestComments(
+              (com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_ISSUE_COMMENT:
+          serviceImpl.createIssueComment(
+              (com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ISSUE_COMMENT:
+          serviceImpl.getIssueComment(
+              (com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.IssueComment>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ISSUE_COMMENTS:
+          serviceImpl.listIssueComments(
+              (com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ISSUE_COMMENT:
+          serviceImpl.updateIssueComment(
+              (com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ISSUE_COMMENT:
+          serviceImpl.deleteIssueComment(
+              (com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -2354,11 +6776,48 @@ public final class SecureSourceManagerGrpc {
                     com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_REPOSITORY)))
         .addMethod(
+            getUpdateRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_REPOSITORY)))
+        .addMethod(
             getDeleteRepositoryMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_REPOSITORY)))
+        .addMethod(
+            getListHooksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListHooksRequest,
+                    com.google.cloud.securesourcemanager.v1.ListHooksResponse>(
+                    service, METHODID_LIST_HOOKS)))
+        .addMethod(
+            getGetHookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetHookRequest,
+                    com.google.cloud.securesourcemanager.v1.Hook>(service, METHODID_GET_HOOK)))
+        .addMethod(
+            getCreateHookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreateHookRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_HOOK)))
+        .addMethod(
+            getUpdateHookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdateHookRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_HOOK)))
+        .addMethod(
+            getDeleteHookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.DeleteHookRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_HOOK)))
         .addMethod(
             getGetIamPolicyRepoMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2408,6 +6867,202 @@ public final class SecureSourceManagerGrpc {
                 new MethodHandlers<
                     com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BRANCH_RULE)))
+        .addMethod(
+            getCreatePullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PULL_REQUEST)))
+        .addMethod(
+            getGetPullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetPullRequestRequest,
+                    com.google.cloud.securesourcemanager.v1.PullRequest>(
+                    service, METHODID_GET_PULL_REQUEST)))
+        .addMethod(
+            getListPullRequestsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest,
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse>(
+                    service, METHODID_LIST_PULL_REQUESTS)))
+        .addMethod(
+            getUpdatePullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PULL_REQUEST)))
+        .addMethod(
+            getMergePullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.MergePullRequestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MERGE_PULL_REQUEST)))
+        .addMethod(
+            getOpenPullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_OPEN_PULL_REQUEST)))
+        .addMethod(
+            getClosePullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CLOSE_PULL_REQUEST)))
+        .addMethod(
+            getListPullRequestFileDiffsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest,
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse>(
+                    service, METHODID_LIST_PULL_REQUEST_FILE_DIFFS)))
+        .addMethod(
+            getFetchTreeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.FetchTreeRequest,
+                    com.google.cloud.securesourcemanager.v1.FetchTreeResponse>(
+                    service, METHODID_FETCH_TREE)))
+        .addMethod(
+            getFetchBlobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.FetchBlobRequest,
+                    com.google.cloud.securesourcemanager.v1.FetchBlobResponse>(
+                    service, METHODID_FETCH_BLOB)))
+        .addMethod(
+            getCreateIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ISSUE)))
+        .addMethod(
+            getGetIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetIssueRequest,
+                    com.google.cloud.securesourcemanager.v1.Issue>(service, METHODID_GET_ISSUE)))
+        .addMethod(
+            getListIssuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListIssuesRequest,
+                    com.google.cloud.securesourcemanager.v1.ListIssuesResponse>(
+                    service, METHODID_LIST_ISSUES)))
+        .addMethod(
+            getUpdateIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdateIssueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ISSUE)))
+        .addMethod(
+            getDeleteIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.DeleteIssueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ISSUE)))
+        .addMethod(
+            getOpenIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.OpenIssueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_OPEN_ISSUE)))
+        .addMethod(
+            getCloseIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CloseIssueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CLOSE_ISSUE)))
+        .addMethod(
+            getGetPullRequestCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest,
+                    com.google.cloud.securesourcemanager.v1.PullRequestComment>(
+                    service, METHODID_GET_PULL_REQUEST_COMMENT)))
+        .addMethod(
+            getListPullRequestCommentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest,
+                    com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse>(
+                    service, METHODID_LIST_PULL_REQUEST_COMMENTS)))
+        .addMethod(
+            getCreatePullRequestCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_PULL_REQUEST_COMMENT)))
+        .addMethod(
+            getUpdatePullRequestCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_PULL_REQUEST_COMMENT)))
+        .addMethod(
+            getDeletePullRequestCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_PULL_REQUEST_COMMENT)))
+        .addMethod(
+            getBatchCreatePullRequestCommentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_BATCH_CREATE_PULL_REQUEST_COMMENTS)))
+        .addMethod(
+            getResolvePullRequestCommentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_RESOLVE_PULL_REQUEST_COMMENTS)))
+        .addMethod(
+            getUnresolvePullRequestCommentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UNRESOLVE_PULL_REQUEST_COMMENTS)))
+        .addMethod(
+            getCreateIssueCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ISSUE_COMMENT)))
+        .addMethod(
+            getGetIssueCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest,
+                    com.google.cloud.securesourcemanager.v1.IssueComment>(
+                    service, METHODID_GET_ISSUE_COMMENT)))
+        .addMethod(
+            getListIssueCommentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest,
+                    com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse>(
+                    service, METHODID_LIST_ISSUE_COMMENTS)))
+        .addMethod(
+            getUpdateIssueCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ISSUE_COMMENT)))
+        .addMethod(
+            getDeleteIssueCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ISSUE_COMMENT)))
         .build();
   }
 
@@ -2466,7 +7121,13 @@ public final class SecureSourceManagerGrpc {
                       .addMethod(getListRepositoriesMethod())
                       .addMethod(getGetRepositoryMethod())
                       .addMethod(getCreateRepositoryMethod())
+                      .addMethod(getUpdateRepositoryMethod())
                       .addMethod(getDeleteRepositoryMethod())
+                      .addMethod(getListHooksMethod())
+                      .addMethod(getGetHookMethod())
+                      .addMethod(getCreateHookMethod())
+                      .addMethod(getUpdateHookMethod())
+                      .addMethod(getDeleteHookMethod())
                       .addMethod(getGetIamPolicyRepoMethod())
                       .addMethod(getSetIamPolicyRepoMethod())
                       .addMethod(getTestIamPermissionsRepoMethod())
@@ -2475,6 +7136,36 @@ public final class SecureSourceManagerGrpc {
                       .addMethod(getGetBranchRuleMethod())
                       .addMethod(getUpdateBranchRuleMethod())
                       .addMethod(getDeleteBranchRuleMethod())
+                      .addMethod(getCreatePullRequestMethod())
+                      .addMethod(getGetPullRequestMethod())
+                      .addMethod(getListPullRequestsMethod())
+                      .addMethod(getUpdatePullRequestMethod())
+                      .addMethod(getMergePullRequestMethod())
+                      .addMethod(getOpenPullRequestMethod())
+                      .addMethod(getClosePullRequestMethod())
+                      .addMethod(getListPullRequestFileDiffsMethod())
+                      .addMethod(getFetchTreeMethod())
+                      .addMethod(getFetchBlobMethod())
+                      .addMethod(getCreateIssueMethod())
+                      .addMethod(getGetIssueMethod())
+                      .addMethod(getListIssuesMethod())
+                      .addMethod(getUpdateIssueMethod())
+                      .addMethod(getDeleteIssueMethod())
+                      .addMethod(getOpenIssueMethod())
+                      .addMethod(getCloseIssueMethod())
+                      .addMethod(getGetPullRequestCommentMethod())
+                      .addMethod(getListPullRequestCommentsMethod())
+                      .addMethod(getCreatePullRequestCommentMethod())
+                      .addMethod(getUpdatePullRequestCommentMethod())
+                      .addMethod(getDeletePullRequestCommentMethod())
+                      .addMethod(getBatchCreatePullRequestCommentsMethod())
+                      .addMethod(getResolvePullRequestCommentsMethod())
+                      .addMethod(getUnresolvePullRequestCommentsMethod())
+                      .addMethod(getCreateIssueCommentMethod())
+                      .addMethod(getGetIssueCommentMethod())
+                      .addMethod(getListIssueCommentsMethod())
+                      .addMethod(getUpdateIssueCommentMethod())
+                      .addMethod(getDeleteIssueCommentMethod())
                       .build();
         }
       }

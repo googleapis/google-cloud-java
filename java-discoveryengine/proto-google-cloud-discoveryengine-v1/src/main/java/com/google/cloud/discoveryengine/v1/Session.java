@@ -213,10 +213,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the query field is set.
      */
@@ -226,10 +229,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The query.
      */
@@ -239,10 +245,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.discoveryengine.v1.QueryOrBuilder getQueryOrBuilder();
 
@@ -250,13 +259,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the answer to the user query.
+     * Optional. The resource name of the answer to the user query.
      *
      * Only set if the answer generation (/answer API call) happened in this
      * turn.
      * </pre>
      *
-     * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The answer.
      */
@@ -266,13 +277,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the answer to the user query.
+     * Optional. The resource name of the answer to the user query.
      *
      * Only set if the answer generation (/answer API call) happened in this
      * turn.
      * </pre>
      *
-     * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for answer.
      */
@@ -335,6 +348,89 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.discoveryengine.v1.AnswerOrBuilder getDetailedAnswerOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getQueryConfigCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsQueryConfig(java.lang.String key);
+
+    /** Use {@link #getQueryConfigMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getQueryConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getQueryConfigMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getQueryConfigOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getQueryConfigOrThrow(java.lang.String key);
   }
 
   /**
@@ -373,6 +469,18 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_discoveryengine_v1_Session_Turn_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 16:
+          return internalGetQueryConfig();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -391,10 +499,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the query field is set.
      */
@@ -407,10 +518,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The query.
      */
@@ -425,10 +539,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user query.
+     * Optional. The user query. May not be set if this turn is merely
+     * regenerating an answer to a different turn
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1.QueryOrBuilder getQueryOrBuilder() {
@@ -446,13 +563,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the answer to the user query.
+     * Optional. The resource name of the answer to the user query.
      *
      * Only set if the answer generation (/answer API call) happened in this
      * turn.
      * </pre>
      *
-     * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The answer.
      */
@@ -473,13 +592,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the answer to the user query.
+     * Optional. The resource name of the answer to the user query.
      *
      * Only set if the answer generation (/answer API call) happened in this
      * turn.
      * </pre>
      *
-     * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for answer.
      */
@@ -570,6 +691,131 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           : detailedAnswer_;
     }
 
+    public static final int QUERY_CONFIG_FIELD_NUMBER = 16;
+
+    private static final class QueryConfigDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.discoveryengine.v1.SessionProto
+                  .internal_static_google_cloud_discoveryengine_v1_Session_Turn_QueryConfigEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> queryConfig_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetQueryConfig() {
+      if (queryConfig_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            QueryConfigDefaultEntryHolder.defaultEntry);
+      }
+      return queryConfig_;
+    }
+
+    public int getQueryConfigCount() {
+      return internalGetQueryConfig().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsQueryConfig(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetQueryConfig().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getQueryConfigMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getQueryConfig() {
+      return getQueryConfigMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getQueryConfigMap() {
+      return internalGetQueryConfig().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getQueryConfigOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryConfig().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents metadata related to the query config, for example
+     * LLM model and version used, model parameters (temperature, grounding
+     * parameters, etc.). The prefix "google." is reserved for Google-developed
+     * functionality.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getQueryConfigOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryConfig().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -593,6 +839,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(7, getDetailedAnswer());
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetQueryConfig(), QueryConfigDefaultEntryHolder.defaultEntry, 16);
       getUnknownFields().writeTo(output);
     }
 
@@ -610,6 +858,16 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDetailedAnswer());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetQueryConfig().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> queryConfig__ =
+            QueryConfigDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, queryConfig__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -636,6 +894,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       if (hasDetailedAnswer()) {
         if (!getDetailedAnswer().equals(other.getDetailedAnswer())) return false;
       }
+      if (!internalGetQueryConfig().equals(other.internalGetQueryConfig())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -656,6 +915,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       if (hasDetailedAnswer()) {
         hash = (37 * hash) + DETAILED_ANSWER_FIELD_NUMBER;
         hash = (53 * hash) + getDetailedAnswer().hashCode();
+      }
+      if (!internalGetQueryConfig().getMap().isEmpty()) {
+        hash = (37 * hash) + QUERY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetQueryConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -779,6 +1042,28 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             .internal_static_google_cloud_discoveryengine_v1_Session_Turn_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 16:
+            return internalGetQueryConfig();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 16:
+            return internalGetMutableQueryConfig();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -821,6 +1106,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           detailedAnswerBuilder_.dispose();
           detailedAnswerBuilder_ = null;
         }
+        internalGetMutableQueryConfig().clear();
         return this;
       }
 
@@ -869,6 +1155,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           result.detailedAnswer_ =
               detailedAnswerBuilder_ == null ? detailedAnswer_ : detailedAnswerBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.queryConfig_ = internalGetQueryConfig();
+          result.queryConfig_.makeImmutable();
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -932,6 +1222,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDetailedAnswer()) {
           mergeDetailedAnswer(other.getDetailedAnswer());
         }
+        internalGetMutableQueryConfig().mergeFrom(other.internalGetQueryConfig());
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -977,6 +1269,18 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 58
+              case 130:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> queryConfig__ =
+                      input.readMessage(
+                          QueryConfigDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableQueryConfig()
+                      .getMutableMap()
+                      .put(queryConfig__.getKey(), queryConfig__.getValue());
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 130
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1007,10 +1311,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the query field is set.
        */
@@ -1022,10 +1329,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The query.
        */
@@ -1043,10 +1353,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setQuery(com.google.cloud.discoveryengine.v1.Query value) {
         if (queryBuilder_ == null) {
@@ -1066,10 +1379,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setQuery(com.google.cloud.discoveryengine.v1.Query.Builder builderForValue) {
         if (queryBuilder_ == null) {
@@ -1086,10 +1402,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeQuery(com.google.cloud.discoveryengine.v1.Query value) {
         if (queryBuilder_ == null) {
@@ -1114,10 +1433,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearQuery() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1134,10 +1456,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.discoveryengine.v1.Query.Builder getQueryBuilder() {
         bitField0_ |= 0x00000001;
@@ -1149,10 +1474,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.discoveryengine.v1.QueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
@@ -1168,10 +1496,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The user query.
+       * Optional. The user query. May not be set if this turn is merely
+       * regenerating an answer to a different turn
        * </pre>
        *
-       * <code>.google.cloud.discoveryengine.v1.Query query = 1;</code>
+       * <code>
+       * .google.cloud.discoveryengine.v1.Query query = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.discoveryengine.v1.Query,
@@ -1196,13 +1527,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the answer to the user query.
+       * Optional. The resource name of the answer to the user query.
        *
        * Only set if the answer generation (/answer API call) happened in this
        * turn.
        * </pre>
        *
-       * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The answer.
        */
@@ -1222,13 +1555,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the answer to the user query.
+       * Optional. The resource name of the answer to the user query.
        *
        * Only set if the answer generation (/answer API call) happened in this
        * turn.
        * </pre>
        *
-       * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for answer.
        */
@@ -1248,13 +1583,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the answer to the user query.
+       * Optional. The resource name of the answer to the user query.
        *
        * Only set if the answer generation (/answer API call) happened in this
        * turn.
        * </pre>
        *
-       * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The answer to set.
        * @return This builder for chaining.
@@ -1273,13 +1610,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the answer to the user query.
+       * Optional. The resource name of the answer to the user query.
        *
        * Only set if the answer generation (/answer API call) happened in this
        * turn.
        * </pre>
        *
-       * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1294,13 +1633,15 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the answer to the user query.
+       * Optional. The resource name of the answer to the user query.
        *
        * Only set if the answer generation (/answer API call) happened in this
        * turn.
        * </pre>
        *
-       * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string answer = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for answer to set.
        * @return This builder for chaining.
@@ -1573,6 +1914,216 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           detailedAnswer_ = null;
         }
         return detailedAnswerBuilder_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> queryConfig_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetQueryConfig() {
+        if (queryConfig_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              QueryConfigDefaultEntryHolder.defaultEntry);
+        }
+        return queryConfig_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableQueryConfig() {
+        if (queryConfig_ == null) {
+          queryConfig_ =
+              com.google.protobuf.MapField.newMapField(QueryConfigDefaultEntryHolder.defaultEntry);
+        }
+        if (!queryConfig_.isMutable()) {
+          queryConfig_ = queryConfig_.copy();
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return queryConfig_;
+      }
+
+      public int getQueryConfigCount() {
+        return internalGetQueryConfig().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsQueryConfig(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetQueryConfig().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getQueryConfigMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getQueryConfig() {
+        return getQueryConfigMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getQueryConfigMap() {
+        return internalGetQueryConfig().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getQueryConfigOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryConfig().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getQueryConfigOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetQueryConfig().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearQueryConfig() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableQueryConfig().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeQueryConfig(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableQueryConfig().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableQueryConfig() {
+        bitField0_ |= 0x00000008;
+        return internalGetMutableQueryConfig().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putQueryConfig(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableQueryConfig().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents metadata related to the query config, for example
+       * LLM model and version used, model parameters (temperature, grounding
+       * parameters, etc.). The prefix "google." is reserved for Google-developed
+       * functionality.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; query_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllQueryConfig(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableQueryConfig().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
+        return this;
       }
 
       @java.lang.Override

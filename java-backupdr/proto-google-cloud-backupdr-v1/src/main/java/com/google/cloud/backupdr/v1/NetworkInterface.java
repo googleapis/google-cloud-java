@@ -709,7 +709,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
    * </code>
    *
    * @return Whether the ipAddress field is set.
@@ -729,7 +729,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
    * </code>
    *
    * @return The ipAddress.
@@ -757,7 +757,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
    * </code>
    *
    * @return The bytes for ipAddress.
@@ -2673,7 +2673,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @return Whether the ipAddress field is set.
@@ -2692,7 +2692,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @return The ipAddress.
@@ -2719,7 +2719,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @return The bytes for ipAddress.
@@ -2746,7 +2746,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @param value The ipAddress to set.
@@ -2772,7 +2772,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2794,7 +2794,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * optional string ip_address = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * optional string ip_address = 3 [json_name = "networkIP", (.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
      * </code>
      *
      * @param value The bytes for ipAddress to set.

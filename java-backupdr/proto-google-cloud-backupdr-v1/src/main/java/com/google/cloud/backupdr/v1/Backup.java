@@ -142,6 +142,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 4;</code>
      */
     ERROR(4),
+    /**
+     *
+     *
+     * <pre>
+     * The backup is being uploaded.
+     * </pre>
+     *
+     * <code>UPLOADING = 5;</code>
+     */
+    UPLOADING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -200,6 +210,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ERROR_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * The backup is being uploaded.
+     * </pre>
+     *
+     * <code>UPLOADING = 5;</code>
+     */
+    public static final int UPLOADING_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -234,6 +255,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return ERROR;
+        case 5:
+          return UPLOADING;
         default:
           return null;
       }
@@ -327,6 +350,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_DEMAND = 2;</code>
      */
     ON_DEMAND(2),
+    /**
+     *
+     *
+     * <pre>
+     * Operational backup.
+     * </pre>
+     *
+     * <code>ON_DEMAND_OPERATIONAL = 3;</code>
+     */
+    ON_DEMAND_OPERATIONAL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -363,6 +396,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ON_DEMAND_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Operational backup.
+     * </pre>
+     *
+     * <code>ON_DEMAND_OPERATIONAL = 3;</code>
+     */
+    public static final int ON_DEMAND_OPERATIONAL_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -393,6 +437,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           return SCHEDULED;
         case 2:
           return ON_DEMAND;
+        case 3:
+          return ON_DEMAND_OPERATIONAL;
         default:
           return null;
       }
@@ -510,6 +556,66 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for backupPlanRuleId.
      */
     com.google.protobuf.ByteString getBackupPlanRuleIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the backup plan revision which triggered this backup in
+     * case of scheduled backup or used for on demand backup.
+     * Format:
+     * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 3;</code>
+     *
+     * @return The backupPlanRevisionName.
+     */
+    java.lang.String getBackupPlanRevisionName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the backup plan revision which triggered this backup in
+     * case of scheduled backup or used for on demand backup.
+     * Format:
+     * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 3;</code>
+     *
+     * @return The bytes for backupPlanRevisionName.
+     */
+    com.google.protobuf.ByteString getBackupPlanRevisionNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision which triggered this
+     * backup in case of scheduled backup or used for on demand backup.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 4;</code>
+     *
+     * @return The backupPlanRevisionId.
+     */
+    java.lang.String getBackupPlanRevisionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision which triggered this
+     * backup in case of scheduled backup or used for on demand backup.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 4;</code>
+     *
+     * @return The bytes for backupPlanRevisionId.
+     */
+    com.google.protobuf.ByteString getBackupPlanRevisionIdBytes();
   }
 
   /**
@@ -536,6 +642,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     private GCPBackupPlanInfo() {
       backupPlan_ = "";
       backupPlanRuleId_ = "";
+      backupPlanRevisionName_ = "";
+      backupPlanRevisionId_ = "";
     }
 
     @java.lang.Override
@@ -673,6 +781,120 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object backupPlanRevisionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the backup plan revision which triggered this backup in
+     * case of scheduled backup or used for on demand backup.
+     * Format:
+     * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 3;</code>
+     *
+     * @return The backupPlanRevisionName.
+     */
+    @java.lang.Override
+    public java.lang.String getBackupPlanRevisionName() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the backup plan revision which triggered this backup in
+     * case of scheduled backup or used for on demand backup.
+     * Format:
+     * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 3;</code>
+     *
+     * @return The bytes for backupPlanRevisionName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BACKUP_PLAN_REVISION_ID_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object backupPlanRevisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision which triggered this
+     * backup in case of scheduled backup or used for on demand backup.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 4;</code>
+     *
+     * @return The backupPlanRevisionId.
+     */
+    @java.lang.Override
+    public java.lang.String getBackupPlanRevisionId() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The user friendly id of the backup plan revision which triggered this
+     * backup in case of scheduled backup or used for on demand backup.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 4;</code>
+     *
+     * @return The bytes for backupPlanRevisionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -693,6 +915,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRuleId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, backupPlanRuleId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, backupPlanRevisionName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, backupPlanRevisionId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -707,6 +935,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRuleId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, backupPlanRuleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(3, backupPlanRevisionName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, backupPlanRevisionId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -726,6 +961,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
       if (!getBackupPlan().equals(other.getBackupPlan())) return false;
       if (!getBackupPlanRuleId().equals(other.getBackupPlanRuleId())) return false;
+      if (!getBackupPlanRevisionName().equals(other.getBackupPlanRevisionName())) return false;
+      if (!getBackupPlanRevisionId().equals(other.getBackupPlanRevisionId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -741,6 +978,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getBackupPlan().hashCode();
       hash = (37 * hash) + BACKUP_PLAN_RULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBackupPlanRuleId().hashCode();
+      hash = (37 * hash) + BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupPlanRevisionName().hashCode();
+      hash = (37 * hash) + BACKUP_PLAN_REVISION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupPlanRevisionId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -887,6 +1128,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         backupPlan_ = "";
         backupPlanRuleId_ = "";
+        backupPlanRevisionName_ = "";
+        backupPlanRevisionId_ = "";
         return this;
       }
 
@@ -928,6 +1171,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.backupPlanRuleId_ = backupPlanRuleId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.backupPlanRevisionName_ = backupPlanRevisionName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.backupPlanRevisionId_ = backupPlanRevisionId_;
         }
       }
 
@@ -989,6 +1238,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getBackupPlanRevisionName().isEmpty()) {
+          backupPlanRevisionName_ = other.backupPlanRevisionName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getBackupPlanRevisionId().isEmpty()) {
+          backupPlanRevisionId_ = other.backupPlanRevisionId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1027,6 +1286,18 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  backupPlanRevisionName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  backupPlanRevisionId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1288,6 +1559,248 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object backupPlanRevisionName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the backup plan revision which triggered this backup in
+       * case of scheduled backup or used for on demand backup.
+       * Format:
+       * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+       * </pre>
+       *
+       * <code>string backup_plan_revision_name = 3;</code>
+       *
+       * @return The backupPlanRevisionName.
+       */
+      public java.lang.String getBackupPlanRevisionName() {
+        java.lang.Object ref = backupPlanRevisionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          backupPlanRevisionName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the backup plan revision which triggered this backup in
+       * case of scheduled backup or used for on demand backup.
+       * Format:
+       * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+       * </pre>
+       *
+       * <code>string backup_plan_revision_name = 3;</code>
+       *
+       * @return The bytes for backupPlanRevisionName.
+       */
+      public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+        java.lang.Object ref = backupPlanRevisionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          backupPlanRevisionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the backup plan revision which triggered this backup in
+       * case of scheduled backup or used for on demand backup.
+       * Format:
+       * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+       * </pre>
+       *
+       * <code>string backup_plan_revision_name = 3;</code>
+       *
+       * @param value The backupPlanRevisionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupPlanRevisionName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupPlanRevisionName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the backup plan revision which triggered this backup in
+       * case of scheduled backup or used for on demand backup.
+       * Format:
+       * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+       * </pre>
+       *
+       * <code>string backup_plan_revision_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBackupPlanRevisionName() {
+        backupPlanRevisionName_ = getDefaultInstance().getBackupPlanRevisionName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the backup plan revision which triggered this backup in
+       * case of scheduled backup or used for on demand backup.
+       * Format:
+       * projects/{project}/locations/{location}/backupPlans/{backupPlanId}/revisions/{revisionId}
+       * </pre>
+       *
+       * <code>string backup_plan_revision_name = 3;</code>
+       *
+       * @param value The bytes for backupPlanRevisionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupPlanRevisionNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        backupPlanRevisionName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object backupPlanRevisionId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The user friendly id of the backup plan revision which triggered this
+       * backup in case of scheduled backup or used for on demand backup.
+       * </pre>
+       *
+       * <code>string backup_plan_revision_id = 4;</code>
+       *
+       * @return The backupPlanRevisionId.
+       */
+      public java.lang.String getBackupPlanRevisionId() {
+        java.lang.Object ref = backupPlanRevisionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          backupPlanRevisionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The user friendly id of the backup plan revision which triggered this
+       * backup in case of scheduled backup or used for on demand backup.
+       * </pre>
+       *
+       * <code>string backup_plan_revision_id = 4;</code>
+       *
+       * @return The bytes for backupPlanRevisionId.
+       */
+      public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+        java.lang.Object ref = backupPlanRevisionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          backupPlanRevisionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The user friendly id of the backup plan revision which triggered this
+       * backup in case of scheduled backup or used for on demand backup.
+       * </pre>
+       *
+       * <code>string backup_plan_revision_id = 4;</code>
+       *
+       * @param value The backupPlanRevisionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupPlanRevisionId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupPlanRevisionId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The user friendly id of the backup plan revision which triggered this
+       * backup in case of scheduled backup or used for on demand backup.
+       * </pre>
+       *
+       * <code>string backup_plan_revision_id = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBackupPlanRevisionId() {
+        backupPlanRevisionId_ = getDefaultInstance().getBackupPlanRevisionId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The user friendly id of the backup plan revision which triggered this
+       * backup in case of scheduled backup or used for on demand backup.
+       * </pre>
+       *
+       * <code>string backup_plan_revision_id = 4;</code>
+       *
+       * @param value The bytes for backupPlanRevisionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupPlanRevisionIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        backupPlanRevisionId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1363,7 +1876,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPUTE_INSTANCE_BACKUP_PROPERTIES(19),
+    CLOUD_SQL_INSTANCE_BACKUP_PROPERTIES(26),
     BACKUP_APPLIANCE_BACKUP_PROPERTIES(21),
+    DISK_BACKUP_PROPERTIES(28),
     BACKUPPROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -1385,8 +1900,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 19:
           return COMPUTE_INSTANCE_BACKUP_PROPERTIES;
+        case 26:
+          return CLOUD_SQL_INSTANCE_BACKUP_PROPERTIES;
         case 21:
           return BACKUP_APPLIANCE_BACKUP_PROPERTIES;
+        case 28:
+          return DISK_BACKUP_PROPERTIES;
         case 0:
           return BACKUPPROPERTIES_NOT_SET;
         default:
@@ -2335,6 +2854,68 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.backupdr.v1.ComputeInstanceBackupProperties.getDefaultInstance();
   }
 
+  public static final int CLOUD_SQL_INSTANCE_BACKUP_PROPERTIES_FIELD_NUMBER = 26;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceBackupProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlInstanceBackupProperties() {
+    return backupPropertiesCase_ == 26;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceBackupProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties
+      getCloudSqlInstanceBackupProperties() {
+    if (backupPropertiesCase_ == 26) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder
+      getCloudSqlInstanceBackupPropertiesOrBuilder() {
+    if (backupPropertiesCase_ == 26) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+  }
+
   public static final int BACKUP_APPLIANCE_BACKUP_PROPERTIES_FIELD_NUMBER = 21;
 
   /**
@@ -2395,6 +2976,67 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.backupdr.v1.BackupApplianceBackupProperties) backupProperties_;
     }
     return com.google.cloud.backupdr.v1.BackupApplianceBackupProperties.getDefaultInstance();
+  }
+
+  public static final int DISK_BACKUP_PROPERTIES_FIELD_NUMBER = 28;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the diskBackupProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskBackupProperties() {
+    return backupPropertiesCase_ == 28;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The diskBackupProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskBackupProperties getDiskBackupProperties() {
+    if (backupPropertiesCase_ == 28) {
+      return (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder
+      getDiskBackupPropertiesOrBuilder() {
+    if (backupPropertiesCase_ == 28) {
+      return (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
   }
 
   public static final int BACKUP_TYPE_FIELD_NUMBER = 20;
@@ -2518,6 +3160,84 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return resourceSizeBytes_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 24;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 25;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2584,6 +3304,20 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (resourceSizeBytes_ != 0L) {
       output.writeInt64(23, resourceSizeBytes_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(24, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(25, satisfiesPzi_);
+    }
+    if (backupPropertiesCase_ == 26) {
+      output.writeMessage(
+          26, (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_);
+    }
+    if (backupPropertiesCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2663,6 +3397,23 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (resourceSizeBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(23, resourceSizeBytes_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, satisfiesPzi_);
+    }
+    if (backupPropertiesCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26,
+              (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_);
+    }
+    if (backupPropertiesCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2713,15 +3464,30 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!getBackupApplianceLocksList().equals(other.getBackupApplianceLocksList())) return false;
     if (backupType_ != other.backupType_) return false;
     if (getResourceSizeBytes() != other.getResourceSizeBytes()) return false;
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
     if (!getBackupPropertiesCase().equals(other.getBackupPropertiesCase())) return false;
     switch (backupPropertiesCase_) {
       case 19:
         if (!getComputeInstanceBackupProperties()
             .equals(other.getComputeInstanceBackupProperties())) return false;
         break;
+      case 26:
+        if (!getCloudSqlInstanceBackupProperties()
+            .equals(other.getCloudSqlInstanceBackupProperties())) return false;
+        break;
       case 21:
         if (!getBackupApplianceBackupProperties()
             .equals(other.getBackupApplianceBackupProperties())) return false;
+        break;
+      case 28:
+        if (!getDiskBackupProperties().equals(other.getDiskBackupProperties())) return false;
         break;
       case 0:
       default:
@@ -2793,14 +3559,30 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + backupType_;
     hash = (37 * hash) + RESOURCE_SIZE_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getResourceSizeBytes());
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
     switch (backupPropertiesCase_) {
       case 19:
         hash = (37 * hash) + COMPUTE_INSTANCE_BACKUP_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getComputeInstanceBackupProperties().hashCode();
         break;
+      case 26:
+        hash = (37 * hash) + CLOUD_SQL_INSTANCE_BACKUP_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlInstanceBackupProperties().hashCode();
+        break;
       case 21:
         hash = (37 * hash) + BACKUP_APPLIANCE_BACKUP_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getBackupApplianceBackupProperties().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + DISK_BACKUP_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskBackupProperties().hashCode();
         break;
       case 0:
       default:
@@ -3036,14 +3818,22 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (computeInstanceBackupPropertiesBuilder_ != null) {
         computeInstanceBackupPropertiesBuilder_.clear();
       }
+      if (cloudSqlInstanceBackupPropertiesBuilder_ != null) {
+        cloudSqlInstanceBackupPropertiesBuilder_.clear();
+      }
       if (backupApplianceBackupPropertiesBuilder_ != null) {
         backupApplianceBackupPropertiesBuilder_.clear();
+      }
+      if (diskBackupPropertiesBuilder_ != null) {
+        diskBackupPropertiesBuilder_.clear();
       }
       backupType_ = 0;
       if (gcpBackupPlanInfoBuilder_ != null) {
         gcpBackupPlanInfoBuilder_.clear();
       }
       resourceSizeBytes_ = 0L;
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       backupPropertiesCase_ = 0;
       backupProperties_ = null;
       planInfoCase_ = 0;
@@ -3149,11 +3939,19 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.backupType_ = backupType_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.resourceSizeBytes_ = resourceSizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3164,8 +3962,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (backupPropertiesCase_ == 19 && computeInstanceBackupPropertiesBuilder_ != null) {
         result.backupProperties_ = computeInstanceBackupPropertiesBuilder_.build();
       }
+      if (backupPropertiesCase_ == 26 && cloudSqlInstanceBackupPropertiesBuilder_ != null) {
+        result.backupProperties_ = cloudSqlInstanceBackupPropertiesBuilder_.build();
+      }
       if (backupPropertiesCase_ == 21 && backupApplianceBackupPropertiesBuilder_ != null) {
         result.backupProperties_ = backupApplianceBackupPropertiesBuilder_.build();
+      }
+      if (backupPropertiesCase_ == 28 && diskBackupPropertiesBuilder_ != null) {
+        result.backupProperties_ = diskBackupPropertiesBuilder_.build();
       }
       result.planInfoCase_ = planInfoCase_;
       result.planInfo_ = this.planInfo_;
@@ -3314,15 +4118,31 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (other.getResourceSizeBytes() != 0L) {
         setResourceSizeBytes(other.getResourceSizeBytes());
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       switch (other.getBackupPropertiesCase()) {
         case COMPUTE_INSTANCE_BACKUP_PROPERTIES:
           {
             mergeComputeInstanceBackupProperties(other.getComputeInstanceBackupProperties());
             break;
           }
+        case CLOUD_SQL_INSTANCE_BACKUP_PROPERTIES:
+          {
+            mergeCloudSqlInstanceBackupProperties(other.getCloudSqlInstanceBackupProperties());
+            break;
+          }
         case BACKUP_APPLIANCE_BACKUP_PROPERTIES:
           {
             mergeBackupApplianceBackupProperties(other.getBackupApplianceBackupProperties());
+            break;
+          }
+        case DISK_BACKUP_PROPERTIES:
+          {
+            mergeDiskBackupProperties(other.getDiskBackupProperties());
             break;
           }
         case BACKUPPROPERTIES_NOT_SET:
@@ -3471,7 +4291,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 backupType_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 160
             case 170:
@@ -3492,9 +4312,36 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 184:
               {
                 resourceSizeBytes_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 184
+            case 192:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 192
+            case 200:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 200
+            case 210:
+              {
+                input.readMessage(
+                    getCloudSqlInstanceBackupPropertiesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                backupPropertiesCase_ = 26;
+                break;
+              } // case 210
+            case 226:
+              {
+                input.readMessage(
+                    getDiskBackupPropertiesFieldBuilder().getBuilder(), extensionRegistry);
+                backupPropertiesCase_ = 28;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6376,6 +7223,251 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder>
+        cloudSqlInstanceBackupPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cloudSqlInstanceBackupProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlInstanceBackupProperties() {
+      return backupPropertiesCase_ == 26;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloudSqlInstanceBackupProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties
+        getCloudSqlInstanceBackupProperties() {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 26) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+      } else {
+        if (backupPropertiesCase_ == 26) {
+          return cloudSqlInstanceBackupPropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceBackupProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties value) {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupProperties_ = value;
+        onChanged();
+      } else {
+        cloudSqlInstanceBackupPropertiesBuilder_.setMessage(value);
+      }
+      backupPropertiesCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceBackupProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder builderForValue) {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        backupProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlInstanceBackupPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      backupPropertiesCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCloudSqlInstanceBackupProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties value) {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 26
+            && backupProperties_
+                != com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties
+                    .getDefaultInstance()) {
+          backupProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties)
+                          backupProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          backupProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (backupPropertiesCase_ == 26) {
+          cloudSqlInstanceBackupPropertiesBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceBackupPropertiesBuilder_.setMessage(value);
+        }
+      }
+      backupPropertiesCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCloudSqlInstanceBackupProperties() {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 26) {
+          backupPropertiesCase_ = 0;
+          backupProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (backupPropertiesCase_ == 26) {
+          backupPropertiesCase_ = 0;
+          backupProperties_ = null;
+        }
+        cloudSqlInstanceBackupPropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder
+        getCloudSqlInstanceBackupPropertiesBuilder() {
+      return getCloudSqlInstanceBackupPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder
+        getCloudSqlInstanceBackupPropertiesOrBuilder() {
+      if ((backupPropertiesCase_ == 26) && (cloudSqlInstanceBackupPropertiesBuilder_ != null)) {
+        return cloudSqlInstanceBackupPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (backupPropertiesCase_ == 26) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder>
+        getCloudSqlInstanceBackupPropertiesFieldBuilder() {
+      if (cloudSqlInstanceBackupPropertiesBuilder_ == null) {
+        if (!(backupPropertiesCase_ == 26)) {
+          backupProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.getDefaultInstance();
+        }
+        cloudSqlInstanceBackupPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties) backupProperties_,
+                getParentForChildren(),
+                isClean());
+        backupProperties_ = null;
+      }
+      backupPropertiesCase_ = 26;
+      onChanged();
+      return cloudSqlInstanceBackupPropertiesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.backupdr.v1.BackupApplianceBackupProperties,
             com.google.cloud.backupdr.v1.BackupApplianceBackupProperties.Builder,
             com.google.cloud.backupdr.v1.BackupApplianceBackupPropertiesOrBuilder>
@@ -6620,6 +7712,248 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return backupApplianceBackupPropertiesBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskBackupProperties,
+            com.google.cloud.backupdr.v1.DiskBackupProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder>
+        diskBackupPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the diskBackupProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskBackupProperties() {
+      return backupPropertiesCase_ == 28;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The diskBackupProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskBackupProperties getDiskBackupProperties() {
+      if (diskBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 28) {
+          return (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
+      } else {
+        if (backupPropertiesCase_ == 28) {
+          return diskBackupPropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDiskBackupProperties(
+        com.google.cloud.backupdr.v1.DiskBackupProperties value) {
+      if (diskBackupPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupProperties_ = value;
+        onChanged();
+      } else {
+        diskBackupPropertiesBuilder_.setMessage(value);
+      }
+      backupPropertiesCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDiskBackupProperties(
+        com.google.cloud.backupdr.v1.DiskBackupProperties.Builder builderForValue) {
+      if (diskBackupPropertiesBuilder_ == null) {
+        backupProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        diskBackupPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      backupPropertiesCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDiskBackupProperties(
+        com.google.cloud.backupdr.v1.DiskBackupProperties value) {
+      if (diskBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 28
+            && backupProperties_
+                != com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance()) {
+          backupProperties_ =
+              com.google.cloud.backupdr.v1.DiskBackupProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          backupProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (backupPropertiesCase_ == 28) {
+          diskBackupPropertiesBuilder_.mergeFrom(value);
+        } else {
+          diskBackupPropertiesBuilder_.setMessage(value);
+        }
+      }
+      backupPropertiesCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDiskBackupProperties() {
+      if (diskBackupPropertiesBuilder_ == null) {
+        if (backupPropertiesCase_ == 28) {
+          backupPropertiesCase_ = 0;
+          backupProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (backupPropertiesCase_ == 28) {
+          backupPropertiesCase_ = 0;
+          backupProperties_ = null;
+        }
+        diskBackupPropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.DiskBackupProperties.Builder
+        getDiskBackupPropertiesBuilder() {
+      return getDiskBackupPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder
+        getDiskBackupPropertiesOrBuilder() {
+      if ((backupPropertiesCase_ == 28) && (diskBackupPropertiesBuilder_ != null)) {
+        return diskBackupPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (backupPropertiesCase_ == 28) {
+          return (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Disk specific backup properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskBackupProperties,
+            com.google.cloud.backupdr.v1.DiskBackupProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder>
+        getDiskBackupPropertiesFieldBuilder() {
+      if (diskBackupPropertiesBuilder_ == null) {
+        if (!(backupPropertiesCase_ == 28)) {
+          backupProperties_ =
+              com.google.cloud.backupdr.v1.DiskBackupProperties.getDefaultInstance();
+        }
+        diskBackupPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.DiskBackupProperties,
+                com.google.cloud.backupdr.v1.DiskBackupProperties.Builder,
+                com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_,
+                getParentForChildren(),
+                isClean());
+        backupProperties_ = null;
+      }
+      backupPropertiesCase_ = 28;
+      onChanged();
+      return diskBackupPropertiesBuilder_;
+    }
+
     private int backupType_ = 0;
 
     /**
@@ -6656,7 +7990,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setBackupTypeValue(int value) {
       backupType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6699,7 +8033,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       backupType_ = value.getNumber();
       onChanged();
       return this;
@@ -6719,7 +8053,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackupType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       backupType_ = 0;
       onChanged();
       return this;
@@ -6999,7 +8333,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder setResourceSizeBytes(long value) {
 
       resourceSizeBytes_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7016,8 +8350,168 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceSizeBytes() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       resourceSizeBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }

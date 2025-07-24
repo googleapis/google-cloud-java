@@ -949,8 +949,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The image type to use for this node. Note that for a given image type,
    * the latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>
@@ -976,8 +976,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The image type to use for this node. Note that for a given image type,
    * the latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>
@@ -1244,8 +1244,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether the nodes are created as preemptible VM instances. See:
-   * https://cloud.google.com/compute/docs/instances/preemptible for more
-   * information about preemptible VM instances.
+   * https://cloud.google.com/compute/docs/instances/preemptible
+   * for more information about preemptible VM instances.
    * </pre>
    *
    * <code>bool preemptible = 10;</code>
@@ -1267,8 +1267,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -1283,8 +1284,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -1300,8 +1302,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -1316,8 +1319,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -1332,8 +1336,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -3222,6 +3227,55 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return flexStart_;
   }
 
+  public static final int BOOT_DISK_FIELD_NUMBER = 57;
+  private com.google.container.v1.BootDisk bootDisk_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+   *
+   * @return Whether the bootDisk field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootDisk() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+   *
+   * @return The bootDisk.
+   */
+  @java.lang.Override
+  public com.google.container.v1.BootDisk getBootDisk() {
+    return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The boot disk configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder() {
+    return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3366,6 +3420,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00200000) != 0)) {
       output.writeBool(56, flexStart_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeMessage(57, getBootDisk());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3559,6 +3616,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(56, flexStart_);
     }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, getBootDisk());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3687,6 +3747,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasFlexStart() != other.hasFlexStart()) return false;
     if (hasFlexStart()) {
       if (getFlexStart() != other.getFlexStart()) return false;
+    }
+    if (hasBootDisk() != other.hasBootDisk()) return false;
+    if (hasBootDisk()) {
+      if (!getBootDisk().equals(other.getBootDisk())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3848,6 +3912,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasFlexStart()) {
       hash = (37 * hash) + FLEX_START_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFlexStart());
+    }
+    if (hasBootDisk()) {
+      hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
+      hash = (53 * hash) + getBootDisk().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4047,6 +4115,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getSecondaryBootDisksFieldBuilder();
         getSecondaryBootDiskUpdateStrategyFieldBuilder();
         getMaxRunDurationFieldBuilder();
+        getBootDiskFieldBuilder();
       }
     }
 
@@ -4197,6 +4266,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       localSsdEncryptionMode_ = 0;
       effectiveCgroupMode_ = 0;
       flexStart_ = false;
+      bootDisk_ = null;
+      if (bootDiskBuilder_ != null) {
+        bootDiskBuilder_.dispose();
+        bootDiskBuilder_ = null;
+      }
       return this;
     }
 
@@ -4460,6 +4534,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00000800) != 0)) {
         result.flexStart_ = flexStart_;
         to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
+        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4744,6 +4822,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFlexStart()) {
         setFlexStart(other.getFlexStart());
+      }
+      if (other.hasBootDisk()) {
+        mergeBootDisk(other.getBootDisk());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5091,6 +5172,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000800;
                 break;
               } // case 448
+            case 458:
+              {
+                input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00001000;
+                break;
+              } // case 458
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6130,8 +6217,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The image type to use for this node. Note that for a given image type,
      * the latest version of it will be used. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 5;</code>
@@ -6156,8 +6243,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The image type to use for this node. Note that for a given image type,
      * the latest version of it will be used. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 5;</code>
@@ -6182,8 +6269,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The image type to use for this node. Note that for a given image type,
      * the latest version of it will be used. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 5;</code>
@@ -6207,8 +6294,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The image type to use for this node. Note that for a given image type,
      * the latest version of it will be used. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 5;</code>
@@ -6228,8 +6315,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The image type to use for this node. Note that for a given image type,
      * the latest version of it will be used. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 5;</code>
@@ -6757,8 +6844,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
-     * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * information about preemptible VM instances.
+     * https://cloud.google.com/compute/docs/instances/preemptible
+     * for more information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
@@ -6775,8 +6862,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
-     * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * information about preemptible VM instances.
+     * https://cloud.google.com/compute/docs/instances/preemptible
+     * for more information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
@@ -6797,8 +6884,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether the nodes are created as preemptible VM instances. See:
-     * https://cloud.google.com/compute/docs/instances/preemptible for more
-     * information about preemptible VM instances.
+     * https://cloud.google.com/compute/docs/instances/preemptible
+     * for more information about preemptible VM instances.
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
@@ -6834,8 +6921,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6853,8 +6941,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6872,8 +6961,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6891,8 +6981,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6916,8 +7007,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6939,8 +7031,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6964,8 +7057,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -6989,8 +7083,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7012,8 +7107,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7035,8 +7131,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7058,8 +7155,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7080,8 +7178,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7102,8 +7201,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7117,8 +7217,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7136,8 +7237,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7156,8 +7258,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7172,8 +7275,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -7188,8 +7292,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
@@ -13366,6 +13471,200 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       flexStart_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.BootDisk bootDisk_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BootDisk,
+            com.google.container.v1.BootDisk.Builder,
+            com.google.container.v1.BootDiskOrBuilder>
+        bootDiskBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    public boolean hasBootDisk() {
+      return ((bitField1_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     *
+     * @return The bootDisk.
+     */
+    public com.google.container.v1.BootDisk getBootDisk() {
+      if (bootDiskBuilder_ == null) {
+        return bootDisk_ == null
+            ? com.google.container.v1.BootDisk.getDefaultInstance()
+            : bootDisk_;
+      } else {
+        return bootDiskBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public Builder setBootDisk(com.google.container.v1.BootDisk value) {
+      if (bootDiskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootDisk_ = value;
+      } else {
+        bootDiskBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public Builder setBootDisk(com.google.container.v1.BootDisk.Builder builderForValue) {
+      if (bootDiskBuilder_ == null) {
+        bootDisk_ = builderForValue.build();
+      } else {
+        bootDiskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public Builder mergeBootDisk(com.google.container.v1.BootDisk value) {
+      if (bootDiskBuilder_ == null) {
+        if (((bitField1_ & 0x00001000) != 0)
+            && bootDisk_ != null
+            && bootDisk_ != com.google.container.v1.BootDisk.getDefaultInstance()) {
+          getBootDiskBuilder().mergeFrom(value);
+        } else {
+          bootDisk_ = value;
+        }
+      } else {
+        bootDiskBuilder_.mergeFrom(value);
+      }
+      if (bootDisk_ != null) {
+        bitField1_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public Builder clearBootDisk() {
+      bitField1_ = (bitField1_ & ~0x00001000);
+      bootDisk_ = null;
+      if (bootDiskBuilder_ != null) {
+        bootDiskBuilder_.dispose();
+        bootDiskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public com.google.container.v1.BootDisk.Builder getBootDiskBuilder() {
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return getBootDiskFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    public com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder() {
+      if (bootDiskBuilder_ != null) {
+        return bootDiskBuilder_.getMessageOrBuilder();
+      } else {
+        return bootDisk_ == null
+            ? com.google.container.v1.BootDisk.getDefaultInstance()
+            : bootDisk_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The boot disk configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BootDisk,
+            com.google.container.v1.BootDisk.Builder,
+            com.google.container.v1.BootDiskOrBuilder>
+        getBootDiskFieldBuilder() {
+      if (bootDiskBuilder_ == null) {
+        bootDiskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.BootDisk,
+                com.google.container.v1.BootDisk.Builder,
+                com.google.container.v1.BootDiskOrBuilder>(
+                getBootDisk(), getParentForChildren(), isClean());
+        bootDisk_ = null;
+      }
+      return bootDiskBuilder_;
     }
 
     @java.lang.Override

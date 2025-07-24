@@ -34,6 +34,7 @@ import com.google.container.v1beta1.Autopilot;
 import com.google.container.v1beta1.AutopilotCompatibilityIssue;
 import com.google.container.v1beta1.BestEffortProvisioning;
 import com.google.container.v1beta1.BinaryAuthorization;
+import com.google.container.v1beta1.BootDisk;
 import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
@@ -66,6 +67,7 @@ import com.google.container.v1beta1.GetJSONWebKeysResponse;
 import com.google.container.v1beta1.GetNodePoolRequest;
 import com.google.container.v1beta1.GetOperationRequest;
 import com.google.container.v1beta1.GetServerConfigRequest;
+import com.google.container.v1beta1.GkeAutoUpgradeConfig;
 import com.google.container.v1beta1.IPAllocationPolicy;
 import com.google.container.v1beta1.IdentityServiceConfig;
 import com.google.container.v1beta1.Jwk;
@@ -340,6 +342,7 @@ public class ClusterManagerClientTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
@@ -551,6 +554,7 @@ public class ClusterManagerClientTest {
             .addAllStoragePools(new ArrayList<String>())
             .setMaxRunDuration(Duration.newBuilder().build())
             .setFlexStart(true)
+            .setBootDisk(BootDisk.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -595,6 +599,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getStoragePoolsList(), actualRequest.getStoragePoolsList());
     Assert.assertEquals(request.getMaxRunDuration(), actualRequest.getMaxRunDuration());
     Assert.assertEquals(request.getFlexStart(), actualRequest.getFlexStart());
+    Assert.assertEquals(request.getBootDisk(), actualRequest.getBootDisk());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -643,6 +648,7 @@ public class ClusterManagerClientTest {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

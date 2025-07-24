@@ -40,6 +40,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   }
 
   private ReasoningEngineSpec() {
+    serviceAccount_ = "";
     classMethods_ = java.util.Collections.emptyList();
     agentFramework_ = "";
   }
@@ -3265,6 +3266,87 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceAccount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PACKAGE_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec packageSpec_;
 
@@ -3286,7 +3368,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasPackageSpec() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -3352,7 +3434,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasDeploymentSpec() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -3560,12 +3642,15 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getPackageSpec());
     }
     for (int i = 0; i < classMethods_.size(); i++) {
       output.writeMessage(3, classMethods_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getDeploymentSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
@@ -3581,12 +3666,15 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPackageSpec());
     }
     for (int i = 0; i < classMethods_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, classMethods_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDeploymentSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
@@ -3608,6 +3696,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec other =
         (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec) obj;
 
+    if (hasServiceAccount() != other.hasServiceAccount()) return false;
+    if (hasServiceAccount()) {
+      if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    }
     if (hasPackageSpec() != other.hasPackageSpec()) return false;
     if (hasPackageSpec()) {
       if (!getPackageSpec().equals(other.getPackageSpec())) return false;
@@ -3629,6 +3721,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasServiceAccount()) {
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
+    }
     if (hasPackageSpec()) {
       hash = (37 * hash) + PACKAGE_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPackageSpec().hashCode();
@@ -3795,6 +3891,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      serviceAccount_ = "";
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -3811,7 +3908,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         classMethods_ = null;
         classMethodsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       agentFramework_ = "";
       return this;
     }
@@ -3851,9 +3948,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec result) {
       if (classMethodsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           classMethods_ = java.util.Collections.unmodifiableList(classMethods_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.classMethods_ = classMethods_;
       } else {
@@ -3865,16 +3962,20 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.packageSpec_ =
-            packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
+        result.serviceAccount_ = serviceAccount_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.deploymentSpec_ =
-            deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
+        result.packageSpec_ =
+            packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deploymentSpec_ =
+            deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.agentFramework_ = agentFramework_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3926,6 +4027,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec other) {
       if (other == com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.getDefaultInstance())
         return this;
+      if (other.hasServiceAccount()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasPackageSpec()) {
         mergePackageSpec(other.getPackageSpec());
       }
@@ -3936,7 +4042,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (!other.classMethods_.isEmpty()) {
           if (classMethods_.isEmpty()) {
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureClassMethodsIsMutable();
             classMethods_.addAll(other.classMethods_);
@@ -3949,7 +4055,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.dispose();
             classMethodsBuilder_ = null;
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             classMethodsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getClassMethodsFieldBuilder()
@@ -3961,7 +4067,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       if (!other.getAgentFramework().isEmpty()) {
         agentFramework_ = other.agentFramework_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3990,10 +4096,16 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(getPackageSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -4011,13 +4123,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 input.readMessage(getDeploymentSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 agentFramework_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -4038,6 +4150,156 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
 
     private int bitField0_;
+
+    private java.lang.Object serviceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    public boolean hasServiceAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
 
     private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec packageSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4063,7 +4325,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the packageSpec field is set.
      */
     public boolean hasPackageSpec() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -4117,7 +4379,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4144,7 +4406,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4166,7 +4428,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergePackageSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec value) {
       if (packageSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && packageSpec_ != null
             && packageSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec
@@ -4179,7 +4441,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         packageSpecBuilder_.mergeFrom(value);
       }
       if (packageSpec_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -4200,7 +4462,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPackageSpec() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -4226,7 +4488,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec.Builder
         getPackageSpecBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPackageSpecFieldBuilder().getBuilder();
     }
@@ -4309,7 +4571,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the deploymentSpec field is set.
      */
     public boolean hasDeploymentSpec() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -4358,7 +4620,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4382,7 +4644,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4401,7 +4663,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeDeploymentSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec value) {
       if (deploymentSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && deploymentSpec_ != null
             && deploymentSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec
@@ -4414,7 +4676,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         deploymentSpecBuilder_.mergeFrom(value);
       }
       if (deploymentSpec_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -4432,7 +4694,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeploymentSpec() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       deploymentSpec_ = null;
       if (deploymentSpecBuilder_ != null) {
         deploymentSpecBuilder_.dispose();
@@ -4455,7 +4717,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.Builder
         getDeploymentSpecBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeploymentSpecFieldBuilder().getBuilder();
     }
@@ -4515,9 +4777,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureClassMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         classMethods_ = new java.util.ArrayList<com.google.protobuf.Struct>(classMethods_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -4773,7 +5035,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clearClassMethods() {
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         classMethodsBuilder_.clear();
@@ -4922,7 +5184,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.Struct,
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
-                classMethods_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                classMethods_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         classMethods_ = null;
       }
       return classMethodsBuilder_;
@@ -4999,7 +5261,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       agentFramework_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5019,7 +5281,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAgentFramework() {
       agentFramework_ = getDefaultInstance().getAgentFramework();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5044,7 +5306,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       agentFramework_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

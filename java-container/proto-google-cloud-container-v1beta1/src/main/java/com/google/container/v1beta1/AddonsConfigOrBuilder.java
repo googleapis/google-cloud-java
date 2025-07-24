@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1677
+   *     google/container/v1beta1/cluster_service.proto;l=1944
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -146,7 +146,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1677
+   *     google/container/v1beta1/cluster_service.proto;l=1944
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -224,7 +224,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1686
+   *     google/container/v1beta1/cluster_service.proto;l=1953
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Deprecated
@@ -241,7 +241,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1686
+   *     google/container/v1beta1/cluster_service.proto;l=1953
    * @return The istioConfig.
    */
   @java.lang.Deprecated
@@ -436,7 +436,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1705
+   *     google/container/v1beta1/cluster_service.proto;l=1972
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Deprecated
@@ -453,7 +453,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1705
+   *     google/container/v1beta1/cluster_service.proto;l=1972
    * @return The kalmConfig.
    */
   @java.lang.Deprecated
@@ -763,4 +763,41 @@ public interface AddonsConfigOrBuilder
    */
   com.google.container.v1beta1.HighScaleCheckpointingConfigOrBuilder
       getHighScaleCheckpointingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return Whether the lustreCsiDriverConfig field is set.
+   */
+  boolean hasLustreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return The lustreCsiDriverConfig.
+   */
+  com.google.container.v1beta1.LustreCsiDriverConfig getLustreCsiDriverConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   */
+  com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder getLustreCsiDriverConfigOrBuilder();
 }

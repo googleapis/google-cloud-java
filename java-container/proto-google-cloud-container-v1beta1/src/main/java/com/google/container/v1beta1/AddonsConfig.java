@@ -199,7 +199,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1677
+   *     google/container/v1beta1/cluster_service.proto;l=1944
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -224,7 +224,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1677
+   *     google/container/v1beta1/cluster_service.proto;l=1944
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -333,7 +333,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1686
+   *     google/container/v1beta1/cluster_service.proto;l=1953
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Override
@@ -353,7 +353,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1686
+   *     google/container/v1beta1/cluster_service.proto;l=1953
    * @return The istioConfig.
    */
   @java.lang.Override
@@ -627,7 +627,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1705
+   *     google/container/v1beta1/cluster_service.proto;l=1972
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Override
@@ -647,7 +647,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1705
+   *     google/container/v1beta1/cluster_service.proto;l=1972
    * @return The kalmConfig.
    */
   @java.lang.Override
@@ -1084,6 +1084,60 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : highScaleCheckpointingConfig_;
   }
 
+  public static final int LUSTRE_CSI_DRIVER_CONFIG_FIELD_NUMBER = 23;
+  private com.google.container.v1beta1.LustreCsiDriverConfig lustreCsiDriverConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return Whether the lustreCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLustreCsiDriverConfig() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   *
+   * @return The lustreCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LustreCsiDriverConfig getLustreCsiDriverConfig() {
+    return lustreCsiDriverConfig_ == null
+        ? com.google.container.v1beta1.LustreCsiDriverConfig.getDefaultInstance()
+        : lustreCsiDriverConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Lustre CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder
+      getLustreCsiDriverConfigOrBuilder() {
+    return lustreCsiDriverConfig_ == null
+        ? com.google.container.v1beta1.LustreCsiDriverConfig.getDefaultInstance()
+        : lustreCsiDriverConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1148,6 +1202,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(22, getHighScaleCheckpointingConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(23, getLustreCsiDriverConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1221,6 +1278,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               22, getHighScaleCheckpointingConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getLustreCsiDriverConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1311,6 +1372,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getHighScaleCheckpointingConfig().equals(other.getHighScaleCheckpointingConfig()))
         return false;
     }
+    if (hasLustreCsiDriverConfig() != other.hasLustreCsiDriverConfig()) return false;
+    if (hasLustreCsiDriverConfig()) {
+      if (!getLustreCsiDriverConfig().equals(other.getLustreCsiDriverConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1389,6 +1454,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasHighScaleCheckpointingConfig()) {
       hash = (37 * hash) + HIGH_SCALE_CHECKPOINTING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHighScaleCheckpointingConfig().hashCode();
+    }
+    if (hasLustreCsiDriverConfig()) {
+      hash = (37 * hash) + LUSTRE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLustreCsiDriverConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1549,6 +1618,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getParallelstoreCsiDriverConfigFieldBuilder();
         getRayOperatorConfigFieldBuilder();
         getHighScaleCheckpointingConfigFieldBuilder();
+        getLustreCsiDriverConfigFieldBuilder();
       }
     }
 
@@ -1640,6 +1710,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (highScaleCheckpointingConfigBuilder_ != null) {
         highScaleCheckpointingConfigBuilder_.dispose();
         highScaleCheckpointingConfigBuilder_ = null;
+      }
+      lustreCsiDriverConfig_ = null;
+      if (lustreCsiDriverConfigBuilder_ != null) {
+        lustreCsiDriverConfigBuilder_.dispose();
+        lustreCsiDriverConfigBuilder_ = null;
       }
       return this;
     }
@@ -1786,6 +1861,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 : highScaleCheckpointingConfigBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.lustreCsiDriverConfig_ =
+            lustreCsiDriverConfigBuilder_ == null
+                ? lustreCsiDriverConfig_
+                : lustreCsiDriverConfigBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1884,6 +1966,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasHighScaleCheckpointingConfig()) {
         mergeHighScaleCheckpointingConfig(other.getHighScaleCheckpointingConfig());
+      }
+      if (other.hasLustreCsiDriverConfig()) {
+        mergeLustreCsiDriverConfig(other.getLustreCsiDriverConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2027,6 +2112,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getLustreCsiDriverConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2501,7 +2593,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1677
+     *     google/container/v1beta1/cluster_service.proto;l=1944
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2525,7 +2617,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1677
+     *     google/container/v1beta1/cluster_service.proto;l=1944
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -2978,7 +3070,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1686
+     *     google/container/v1beta1/cluster_service.proto;l=1953
      * @return Whether the istioConfig field is set.
      */
     @java.lang.Deprecated
@@ -2997,7 +3089,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1686
+     *     google/container/v1beta1/cluster_service.proto;l=1953
      * @return The istioConfig.
      */
     @java.lang.Deprecated
@@ -4034,7 +4126,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1705
+     *     google/container/v1beta1/cluster_service.proto;l=1972
      * @return Whether the kalmConfig field is set.
      */
     @java.lang.Deprecated
@@ -4053,7 +4145,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1705
+     *     google/container/v1beta1/cluster_service.proto;l=1972
      * @return The kalmConfig.
      */
     @java.lang.Deprecated
@@ -5723,6 +5815,206 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         highScaleCheckpointingConfig_ = null;
       }
       return highScaleCheckpointingConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.LustreCsiDriverConfig lustreCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.LustreCsiDriverConfig,
+            com.google.container.v1beta1.LustreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder>
+        lustreCsiDriverConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     *
+     * @return Whether the lustreCsiDriverConfig field is set.
+     */
+    public boolean hasLustreCsiDriverConfig() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     *
+     * @return The lustreCsiDriverConfig.
+     */
+    public com.google.container.v1beta1.LustreCsiDriverConfig getLustreCsiDriverConfig() {
+      if (lustreCsiDriverConfigBuilder_ == null) {
+        return lustreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.LustreCsiDriverConfig.getDefaultInstance()
+            : lustreCsiDriverConfig_;
+      } else {
+        return lustreCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public Builder setLustreCsiDriverConfig(
+        com.google.container.v1beta1.LustreCsiDriverConfig value) {
+      if (lustreCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lustreCsiDriverConfig_ = value;
+      } else {
+        lustreCsiDriverConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public Builder setLustreCsiDriverConfig(
+        com.google.container.v1beta1.LustreCsiDriverConfig.Builder builderForValue) {
+      if (lustreCsiDriverConfigBuilder_ == null) {
+        lustreCsiDriverConfig_ = builderForValue.build();
+      } else {
+        lustreCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public Builder mergeLustreCsiDriverConfig(
+        com.google.container.v1beta1.LustreCsiDriverConfig value) {
+      if (lustreCsiDriverConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && lustreCsiDriverConfig_ != null
+            && lustreCsiDriverConfig_
+                != com.google.container.v1beta1.LustreCsiDriverConfig.getDefaultInstance()) {
+          getLustreCsiDriverConfigBuilder().mergeFrom(value);
+        } else {
+          lustreCsiDriverConfig_ = value;
+        }
+      } else {
+        lustreCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+      if (lustreCsiDriverConfig_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public Builder clearLustreCsiDriverConfig() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      lustreCsiDriverConfig_ = null;
+      if (lustreCsiDriverConfigBuilder_ != null) {
+        lustreCsiDriverConfigBuilder_.dispose();
+        lustreCsiDriverConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public com.google.container.v1beta1.LustreCsiDriverConfig.Builder
+        getLustreCsiDriverConfigBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getLustreCsiDriverConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    public com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder
+        getLustreCsiDriverConfigOrBuilder() {
+      if (lustreCsiDriverConfigBuilder_ != null) {
+        return lustreCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return lustreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.LustreCsiDriverConfig.getDefaultInstance()
+            : lustreCsiDriverConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Lustre CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.LustreCsiDriverConfig,
+            com.google.container.v1beta1.LustreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder>
+        getLustreCsiDriverConfigFieldBuilder() {
+      if (lustreCsiDriverConfigBuilder_ == null) {
+        lustreCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.LustreCsiDriverConfig,
+                com.google.container.v1beta1.LustreCsiDriverConfig.Builder,
+                com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder>(
+                getLustreCsiDriverConfig(), getParentForChildren(), isClean());
+        lustreCsiDriverConfig_ = null;
+      }
+      return lustreCsiDriverConfigBuilder_;
     }
 
     @java.lang.Override

@@ -33,7 +33,7 @@ public interface AllocationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the consumeAllocationType field is set.
@@ -49,7 +49,7 @@ public interface AllocationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for consumeAllocationType.
@@ -65,7 +65,7 @@ public interface AllocationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The consumeAllocationType.

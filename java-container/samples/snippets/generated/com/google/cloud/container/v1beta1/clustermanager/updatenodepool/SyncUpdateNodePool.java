@@ -19,6 +19,7 @@ package com.google.cloud.container.v1beta1.samples;
 // [START container_v1beta1_generated_ClusterManager_UpdateNodePool_sync]
 import com.google.cloud.container.v1beta1.ClusterManagerClient;
 import com.google.container.v1beta1.AcceleratorConfig;
+import com.google.container.v1beta1.BootDisk;
 import com.google.container.v1beta1.ConfidentialNodes;
 import com.google.container.v1beta1.ContainerdConfig;
 import com.google.container.v1beta1.FastSocket;
@@ -90,6 +91,7 @@ public class SyncUpdateNodePool {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

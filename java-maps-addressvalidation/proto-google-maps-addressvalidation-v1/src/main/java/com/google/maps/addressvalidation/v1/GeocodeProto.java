@@ -55,14 +55,14 @@ public final class GeocodeProto {
           + "geo.type.Viewport\022\033\n\023feature_size_meters"
           + "\030\005 \001(\002\022\020\n\010place_id\030\006 \001(\t\022\023\n\013place_types\030"
           + "\007 \003(\t\"6\n\010PlusCode\022\023\n\013global_code\030\001 \001(\t\022\025"
-          + "\n\rcompound_code\030\002 \001(\tB\211\002\n$com.google.map"
+          + "\n\rcompound_code\030\002 \001(\tB\206\002\n$com.google.map"
           + "s.addressvalidation.v1B\014GeocodeProtoP\001ZX"
           + "cloud.google.com/go/maps/addressvalidati"
           + "on/apiv1/addressvalidationpb;addressvali"
-          + "dationpb\370\001\001\242\002\007GMPAVV1\252\002 Google.Maps.Addr"
-          + "essValidation.V1\312\002 Google\\Maps\\AddressVa"
-          + "lidation\\V1\352\002#Google::Maps::AddressValid"
-          + "ation::V1b\006proto3"
+          + "dationpb\242\002\007GMPAVV1\252\002 Google.Maps.Address"
+          + "Validation.V1\312\002 Google\\Maps\\AddressValid"
+          + "ation\\V1\352\002#Google::Maps::AddressValidati"
+          + "on::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

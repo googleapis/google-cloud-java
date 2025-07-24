@@ -349,7 +349,8 @@ public interface BackupPlanOrBuilder
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
    * Examples include, "compute.googleapis.com/Instance",
-   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+   * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+   * "compute.googleapis.com/Disk".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -364,7 +365,8 @@ public interface BackupPlanOrBuilder
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
    * Examples include, "compute.googleapis.com/Instance",
-   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
+   * "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster",
+   * "compute.googleapis.com/Disk".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -468,4 +470,145 @@ public interface BackupPlanOrBuilder
    * @return The bytes for backupVaultServiceAccount.
    */
   com.google.protobuf.ByteString getBackupVaultServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Applicable only for CloudSQL resource_type.
+   *
+   * Configures how long logs will be stored. It is defined in “days”. This
+   * value should be greater than or equal to minimum enforced log retention
+   * duration of the backup vault.
+   * </pre>
+   *
+   * <code>int64 log_retention_days = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The logRetentionDays.
+   */
+  long getLogRetentionDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedResourceTypes.
+   */
+  java.util.List<java.lang.String> getSupportedResourceTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedResourceTypes.
+   */
+  int getSupportedResourceTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedResourceTypes at the given index.
+   */
+  java.lang.String getSupportedResourceTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All resource types to which backupPlan can be applied.
+   * </pre>
+   *
+   * <code>
+   * repeated string supported_resource_types = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedResourceTypes at the given index.
+   */
+  com.google.protobuf.ByteString getSupportedResourceTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The revisionId.
+   */
+  java.lang.String getRevisionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string revision_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for revisionId.
+   */
+  com.google.protobuf.ByteString getRevisionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The revisionName.
+   */
+  java.lang.String getRevisionName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string revision_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for revisionName.
+   */
+  com.google.protobuf.ByteString getRevisionNameBytes();
 }

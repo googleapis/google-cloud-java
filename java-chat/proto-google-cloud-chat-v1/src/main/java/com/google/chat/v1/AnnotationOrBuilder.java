@@ -83,7 +83,7 @@ public interface AnnotationOrBuilder
    *
    * <pre>
    * Length of the substring in the plain-text message body this annotation
-   * corresponds to.
+   * corresponds to. If not present, indicates a length of 0.
    * </pre>
    *
    * <code>int32 length = 3;</code>

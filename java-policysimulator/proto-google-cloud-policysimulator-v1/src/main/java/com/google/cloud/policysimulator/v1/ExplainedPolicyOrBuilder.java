@@ -35,7 +35,7 @@ public interface ExplainedPolicyOrBuilder
    * permission for the resource. There might be another policy that overrides
    * this policy. To determine whether the principal actually has the
    * permission, use the `access` field in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    * </pre>
    *
    * <code>.google.cloud.policysimulator.v1.AccessState access = 1;</code>
@@ -55,7 +55,7 @@ public interface ExplainedPolicyOrBuilder
    * permission for the resource. There might be another policy that overrides
    * this policy. To determine whether the principal actually has the
    * permission, use the `access` field in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    * </pre>
    *
    * <code>.google.cloud.policysimulator.v1.AccessState access = 1;</code>
@@ -248,7 +248,7 @@ public interface ExplainedPolicyOrBuilder
    *
    * <pre>
    * The relevance of this policy to the overall determination in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    *
    * If the user who created the
    * [Replay][google.cloud.policysimulator.v1.Replay] does not have
@@ -266,7 +266,7 @@ public interface ExplainedPolicyOrBuilder
    *
    * <pre>
    * The relevance of this policy to the overall determination in the
-   * [TroubleshootIamPolicyResponse][IamChecker.TroubleshootIamPolicyResponse].
+   * [TroubleshootIamPolicyResponse][google.cloud.policytroubleshooter.v3.TroubleshootIamPolicyResponse].
    *
    * If the user who created the
    * [Replay][google.cloud.policysimulator.v1.Replay] does not have

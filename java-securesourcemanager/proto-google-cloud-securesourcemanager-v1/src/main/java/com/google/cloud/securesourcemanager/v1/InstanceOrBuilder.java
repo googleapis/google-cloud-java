@@ -395,4 +395,52 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.securesourcemanager.v1.Instance.HostConfigOrBuilder getHostConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workforceIdentityFederationConfig field is set.
+   */
+  boolean hasWorkforceIdentityFederationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workforceIdentityFederationConfig.
+   */
+  com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+      getWorkforceIdentityFederationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfigOrBuilder
+      getWorkforceIdentityFederationConfigOrBuilder();
 }

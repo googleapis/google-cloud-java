@@ -37,6 +37,7 @@ import com.google.container.v1.Autopilot;
 import com.google.container.v1.AutopilotCompatibilityIssue;
 import com.google.container.v1.BestEffortProvisioning;
 import com.google.container.v1.BinaryAuthorization;
+import com.google.container.v1.BootDisk;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
@@ -56,6 +57,7 @@ import com.google.container.v1.Fleet;
 import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
+import com.google.container.v1.GkeAutoUpgradeConfig;
 import com.google.container.v1.IPAllocationPolicy;
 import com.google.container.v1.IdentityServiceConfig;
 import com.google.container.v1.Jwk;
@@ -340,6 +342,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -459,6 +462,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -798,6 +802,7 @@ public class ClusterManagerClientHttpJsonTest {
             .addAllStoragePools(new ArrayList<String>())
             .setMaxRunDuration(Duration.newBuilder().build())
             .setFlexStart(true)
+            .setBootDisk(BootDisk.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -863,6 +868,7 @@ public class ClusterManagerClientHttpJsonTest {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
