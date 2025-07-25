@@ -182,8 +182,9 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ATTRIBUTES_FIELD_NUMBER = 3;
-  private com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes_;
+  public static final int MERCHANT_REVIEW_ATTRIBUTES_FIELD_NUMBER = 3;
+  private com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
+      merchantReviewAttributes_;
 
   /**
    *
@@ -193,13 +194,13 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the attributes field is set.
+   * @return Whether the merchantReviewAttributes field is set.
    */
   @java.lang.Override
-  public boolean hasAttributes() {
+  public boolean hasMerchantReviewAttributes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
 
@@ -211,16 +212,17 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The attributes.
+   * @return The merchantReviewAttributes.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes getAttributes() {
-    return attributes_ == null
+  public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
+      getMerchantReviewAttributes() {
+    return merchantReviewAttributes_ == null
         ? com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.getDefaultInstance()
-        : attributes_;
+        : merchantReviewAttributes_;
   }
 
   /**
@@ -231,15 +233,15 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder
-      getAttributesOrBuilder() {
-    return attributes_ == null
+      getMerchantReviewAttributesOrBuilder() {
+    return merchantReviewAttributes_ == null
         ? com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.getDefaultInstance()
-        : attributes_;
+        : merchantReviewAttributes_;
   }
 
   public static final int CUSTOM_ATTRIBUTES_FIELD_NUMBER = 4;
@@ -516,7 +518,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, merchantReviewId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getAttributes());
+      output.writeMessage(3, getMerchantReviewAttributes());
     }
     for (int i = 0; i < customAttributes_.size(); i++) {
       output.writeMessage(4, customAttributes_.get(i));
@@ -543,7 +545,9 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, merchantReviewId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAttributes());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getMerchantReviewAttributes());
     }
     for (int i = 0; i < customAttributes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, customAttributes_.get(i));
@@ -573,9 +577,9 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getMerchantReviewId().equals(other.getMerchantReviewId())) return false;
-    if (hasAttributes() != other.hasAttributes()) return false;
-    if (hasAttributes()) {
-      if (!getAttributes().equals(other.getAttributes())) return false;
+    if (hasMerchantReviewAttributes() != other.hasMerchantReviewAttributes()) return false;
+    if (hasMerchantReviewAttributes()) {
+      if (!getMerchantReviewAttributes().equals(other.getMerchantReviewAttributes())) return false;
     }
     if (!getCustomAttributesList().equals(other.getCustomAttributesList())) return false;
     if (!getDataSource().equals(other.getDataSource())) return false;
@@ -598,9 +602,9 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MERCHANT_REVIEW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getMerchantReviewId().hashCode();
-    if (hasAttributes()) {
-      hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
-      hash = (53 * hash) + getAttributes().hashCode();
+    if (hasMerchantReviewAttributes()) {
+      hash = (37 * hash) + MERCHANT_REVIEW_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getMerchantReviewAttributes().hashCode();
     }
     if (getCustomAttributesCount() > 0) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
@@ -756,7 +760,7 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAttributesFieldBuilder();
+        getMerchantReviewAttributesFieldBuilder();
         getCustomAttributesFieldBuilder();
         getMerchantReviewStatusFieldBuilder();
       }
@@ -768,10 +772,10 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       merchantReviewId_ = "";
-      attributes_ = null;
-      if (attributesBuilder_ != null) {
-        attributesBuilder_.dispose();
-        attributesBuilder_ = null;
+      merchantReviewAttributes_ = null;
+      if (merchantReviewAttributesBuilder_ != null) {
+        merchantReviewAttributesBuilder_.dispose();
+        merchantReviewAttributesBuilder_ = null;
       }
       if (customAttributesBuilder_ == null) {
         customAttributes_ = java.util.Collections.emptyList();
@@ -844,7 +848,10 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.attributes_ = attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+        result.merchantReviewAttributes_ =
+            merchantReviewAttributesBuilder_ == null
+                ? merchantReviewAttributes_
+                : merchantReviewAttributesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -916,8 +923,8 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasAttributes()) {
-        mergeAttributes(other.getAttributes());
+      if (other.hasMerchantReviewAttributes()) {
+        mergeMerchantReviewAttributes(other.getMerchantReviewAttributes());
       }
       if (customAttributesBuilder_ == null) {
         if (!other.customAttributes_.isEmpty()) {
@@ -994,7 +1001,8 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
               } // case 18
             case 26:
               {
-                input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
+                input.readMessage(
+                    getMerchantReviewAttributesFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -1280,12 +1288,13 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes_;
+    private com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
+        merchantReviewAttributes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes,
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.Builder,
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder>
-        attributesBuilder_;
+        merchantReviewAttributesBuilder_;
 
     /**
      *
@@ -1295,12 +1304,12 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return Whether the attributes field is set.
+     * @return Whether the merchantReviewAttributes field is set.
      */
-    public boolean hasAttributes() {
+    public boolean hasMerchantReviewAttributes() {
       return ((bitField0_ & 0x00000004) != 0);
     }
 
@@ -1312,19 +1321,20 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return The attributes.
+     * @return The merchantReviewAttributes.
      */
-    public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes getAttributes() {
-      if (attributesBuilder_ == null) {
-        return attributes_ == null
+    public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
+        getMerchantReviewAttributes() {
+      if (merchantReviewAttributesBuilder_ == null) {
+        return merchantReviewAttributes_ == null
             ? com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
                 .getDefaultInstance()
-            : attributes_;
+            : merchantReviewAttributes_;
       } else {
-        return attributesBuilder_.getMessage();
+        return merchantReviewAttributesBuilder_.getMessage();
       }
     }
 
@@ -1336,18 +1346,18 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setAttributes(
+    public Builder setMerchantReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes value) {
-      if (attributesBuilder_ == null) {
+      if (merchantReviewAttributesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        attributes_ = value;
+        merchantReviewAttributes_ = value;
       } else {
-        attributesBuilder_.setMessage(value);
+        merchantReviewAttributesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1362,16 +1372,16 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setAttributes(
+    public Builder setMerchantReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.Builder
             builderForValue) {
-      if (attributesBuilder_ == null) {
-        attributes_ = builderForValue.build();
+      if (merchantReviewAttributesBuilder_ == null) {
+        merchantReviewAttributes_ = builderForValue.build();
       } else {
-        attributesBuilder_.setMessage(builderForValue.build());
+        merchantReviewAttributesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1386,25 +1396,25 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder mergeAttributes(
+    public Builder mergeMerchantReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes value) {
-      if (attributesBuilder_ == null) {
+      if (merchantReviewAttributesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)
-            && attributes_ != null
-            && attributes_
+            && merchantReviewAttributes_ != null
+            && merchantReviewAttributes_
                 != com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
                     .getDefaultInstance()) {
-          getAttributesBuilder().mergeFrom(value);
+          getMerchantReviewAttributesBuilder().mergeFrom(value);
         } else {
-          attributes_ = value;
+          merchantReviewAttributes_ = value;
         }
       } else {
-        attributesBuilder_.mergeFrom(value);
+        merchantReviewAttributesBuilder_.mergeFrom(value);
       }
-      if (attributes_ != null) {
+      if (merchantReviewAttributes_ != null) {
         bitField0_ |= 0x00000004;
         onChanged();
       }
@@ -1419,15 +1429,15 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder clearAttributes() {
+    public Builder clearMerchantReviewAttributes() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      attributes_ = null;
-      if (attributesBuilder_ != null) {
-        attributesBuilder_.dispose();
-        attributesBuilder_ = null;
+      merchantReviewAttributes_ = null;
+      if (merchantReviewAttributesBuilder_ != null) {
+        merchantReviewAttributesBuilder_.dispose();
+        merchantReviewAttributesBuilder_ = null;
       }
       onChanged();
       return this;
@@ -1441,14 +1451,14 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.Builder
-        getAttributesBuilder() {
+        getMerchantReviewAttributesBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
-      return getAttributesFieldBuilder().getBuilder();
+      return getMerchantReviewAttributesFieldBuilder().getBuilder();
     }
 
     /**
@@ -1459,18 +1469,18 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder
-        getAttributesOrBuilder() {
-      if (attributesBuilder_ != null) {
-        return attributesBuilder_.getMessageOrBuilder();
+        getMerchantReviewAttributesOrBuilder() {
+      if (merchantReviewAttributesBuilder_ != null) {
+        return merchantReviewAttributesBuilder_.getMessageOrBuilder();
       } else {
-        return attributes_ == null
+        return merchantReviewAttributes_ == null
             ? com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
                 .getDefaultInstance()
-            : attributes_;
+            : merchantReviewAttributes_;
       }
     }
 
@@ -1482,24 +1492,24 @@ public final class MerchantReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes,
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.Builder,
             com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder>
-        getAttributesFieldBuilder() {
-      if (attributesBuilder_ == null) {
-        attributesBuilder_ =
+        getMerchantReviewAttributesFieldBuilder() {
+      if (merchantReviewAttributesBuilder_ == null) {
+        merchantReviewAttributesBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes,
                 com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes.Builder,
                 com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder>(
-                getAttributes(), getParentForChildren(), isClean());
-        attributes_ = null;
+                getMerchantReviewAttributes(), getParentForChildren(), isClean());
+        merchantReviewAttributes_ = null;
       }
-      return attributesBuilder_;
+      return merchantReviewAttributesBuilder_;
     }
 
     private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_ =
