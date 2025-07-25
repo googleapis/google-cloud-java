@@ -46,7 +46,6 @@ public interface ContainerRegistryDestinationOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
-
   /**
    *
    *

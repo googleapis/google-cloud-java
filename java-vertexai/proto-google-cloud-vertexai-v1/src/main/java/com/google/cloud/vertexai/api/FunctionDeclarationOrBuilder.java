@@ -39,7 +39,6 @@ public interface FunctionDeclarationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface FunctionDeclarationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface FunctionDeclarationOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface FunctionDeclarationOrBuilder
    * @return The parameters.
    */
   com.google.cloud.vertexai.api.Schema getParameters();
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public interface FunctionDeclarationOrBuilder
    * @return Whether the response field is set.
    */
   boolean hasResponse();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface FunctionDeclarationOrBuilder
    * @return The response.
    */
   com.google.cloud.vertexai.api.Schema getResponse();
-
   /**
    *
    *
