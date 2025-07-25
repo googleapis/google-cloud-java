@@ -158,6 +158,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     if (options.containsKey(Option.DATASET_VIEW)) {
       bqGetRequest.setDatasetView(options.get(Option.DATASET_VIEW).toString());
     }
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span getDataset = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -204,6 +207,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setFilter(Option.LABEL_FILTER.getString(options))
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options));
+
+    datasetsListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listDatasets = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -256,6 +263,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     if (options.containsKey(Option.ACCESS_POLICY_VERSION)) {
       bqCreateRequest.setAccessPolicyVersion((Integer) options.get(Option.ACCESS_POLICY_VERSION));
     }
+    bqCreateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span createDataset = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -302,6 +312,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
 
+    bqCreateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span createTable = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -344,6 +358,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .insert(reference.getProjectId(), reference.getDatasetId(), routine)
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
+
+    bqCreateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span createRoutine = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -391,6 +409,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
 
+    bqCreateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span createJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -433,6 +455,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             : this.options.getProjectId();
     Bigquery.Jobs.Insert bqCreateRequest =
         bigquery.jobs().insert(projectId, job).setPrettyPrint(false);
+
+    bqCreateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span createJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -481,6 +507,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setDeleteContents(Option.DELETE_CONTENTS.getBoolean(options));
 
+    bqDeleteRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span deleteDataset = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -528,6 +558,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     if (options.containsKey(Option.DATASET_UPDATE_MODE)) {
       bqPatchRequest.setUpdateMode(options.get(Option.DATASET_UPDATE_MODE).toString());
     }
+    bqPatchRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span patchDataset = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -575,6 +608,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options))
             .setAutodetectSchema(BigQueryRpc.Option.AUTODETECT_SCHEMA.getBoolean(options));
+
+    bqPatchRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span patchTable = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -624,6 +661,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options))
             .setView(getTableMetadataOption(options));
+
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span getTable = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -675,6 +716,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options));
+
+    tableListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listTables = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -740,6 +785,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Tables.Delete bqDeleteRequest =
         bigquery.tables().delete(projectId, datasetId, tableId);
 
+    bqDeleteRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span deleteTable = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -782,6 +831,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                 reference.getProjectId(), reference.getDatasetId(), reference.getModelId(), model)
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
+
+    bqPatchRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span patchModel = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -832,6 +885,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
 
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getModel = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -876,6 +933,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options));
+
+    modelListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listModels = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -923,6 +984,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Models.Delete bqDeleteRequest =
         bigquery.models().delete(projectId, datasetId, modelId);
 
+    bqDeleteRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span deleteModels = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -967,6 +1032,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                 routine)
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
+
+    bqUpdateRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span updateRoutine = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1017,6 +1086,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setFields(Option.FIELDS.getString(options));
 
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getRoutine = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1061,6 +1134,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setPrettyPrint(false)
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options));
+
+    routineListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listRoutines = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1109,6 +1186,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Routines.Delete bqDeleteRequest =
         bigquery.routines().delete(projectId, datasetId, routineId);
 
+    bqDeleteRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span deleteRoutine = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1149,6 +1230,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .tabledata()
             .insertAll(projectId, datasetId, tableId, request)
             .setPrettyPrint(false);
+
+    insertAllRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span insertAll = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1196,6 +1281,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                 Option.START_INDEX.getLong(options) != null
                     ? BigInteger.valueOf(Option.START_INDEX.getLong(options))
                     : null);
+
+    bqListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listTableData = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1251,6 +1340,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setMaxResults(Long.valueOf(maxResultPerPage))
             .setPageToken(pageToken);
 
+    bqListRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span listTableData = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1297,6 +1390,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setLocation(location)
             .setFields(Option.FIELDS.getString(options));
 
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1340,6 +1437,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Jobs.Get bqGetRequest =
         bigquery.jobs().get(projectId, jobId).setPrettyPrint(false).setLocation(location);
 
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1375,7 +1476,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Tuple<String, Iterable<Job>> listJobsSkipExceptionTranslation(
       String projectId, Map<Option, ?> options) throws IOException {
     validateRPC();
-    Bigquery.Jobs.List request =
+    Bigquery.Jobs.List listJobsRequest =
         bigquery
             .jobs()
             .list(projectId)
@@ -1388,11 +1489,16 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setProjection(DEFAULT_PROJECTION)
             .setParentJobId(Option.PARENT_JOB_ID.getString(options));
     if (Option.MIN_CREATION_TIME.getLong(options) != null) {
-      request.setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
+      listJobsRequest.setMinCreationTime(
+          BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
     }
     if (Option.MAX_CREATION_TIME.getLong(options) != null) {
-      request.setMaxCreationTime(BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)));
+      listJobsRequest.setMaxCreationTime(
+          BigInteger.valueOf(Option.MAX_CREATION_TIME.getLong(options)));
     }
+    listJobsRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span listJobs = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1405,11 +1511,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setAttribute("bq.rpc.service", "JobService")
               .setAttribute("bq.rpc.method", "ListJobs")
               .setAttribute("bq.rpc.system", "http")
-              .setAttribute("bq.rpc.page_token", request.getPageToken())
+              .setAttribute("bq.rpc.page_token", listJobsRequest.getPageToken())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
-    JobList jobsList = request.execute();
+    JobList jobsList = listJobsRequest.execute();
     if (listJobs != null) {
       listJobs.setAttribute("bq.rpc.next_page_token", jobsList.getNextPageToken());
       listJobs.end();
@@ -1463,6 +1569,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Jobs.Cancel bqCancelRequest =
         bigquery.jobs().cancel(projectId, jobId).setLocation(location).setPrettyPrint(false);
 
+    bqCancelRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span cancelJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1498,6 +1608,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     validateRPC();
     Bigquery.Jobs.Delete bqDeleteRequest =
         bigquery.jobs().delete(projectId, jobName).setLocation(location).setPrettyPrint(false);
+
+    bqDeleteRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span deleteJob = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1547,6 +1661,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                     : null)
             .setTimeoutMs(Option.TIMEOUT.getLong(options));
 
+    queryRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getQueryResults = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1595,6 +1713,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setMaxResults(Long.valueOf(maxResultPerPage))
             .setTimeoutMs(timeoutMs);
 
+    queryRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getQueryResults = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1631,6 +1753,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       throws IOException {
     validateRPC();
     Bigquery.Jobs.Query queryRequest = bigquery.jobs().query(projectId, content);
+    queryRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span getQueryResults = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1765,6 +1890,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     Bigquery.Tables.GetIamPolicy bqGetRequest =
         bigquery.tables().getIamPolicy(resourceId, policyRequest).setPrettyPrint(false);
 
+    bqGetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
     Span getIamPolicy = null;
     if (this.options.isOpenTelemetryTracingEnabled()
         && this.options.getOpenTelemetryTracer() != null) {
@@ -1803,6 +1932,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     SetIamPolicyRequest policyRequest = new SetIamPolicyRequest().setPolicy(policy);
     Bigquery.Tables.SetIamPolicy bqSetRequest =
         bigquery.tables().setIamPolicy(resourceId, policyRequest).setPrettyPrint(false);
+
+    bqSetRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span setIamPolicy = null;
     if (this.options.isOpenTelemetryTracingEnabled()
@@ -1843,6 +1976,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         new TestIamPermissionsRequest().setPermissions(permissions);
     Bigquery.Tables.TestIamPermissions bqTestRequest =
         bigquery.tables().testIamPermissions(resourceId, permissionsRequest).setPrettyPrint(false);
+
+    bqTestRequest
+        .getRequestHeaders()
+        .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     Span testIamPermissions = null;
     if (this.options.isOpenTelemetryTracingEnabled()
