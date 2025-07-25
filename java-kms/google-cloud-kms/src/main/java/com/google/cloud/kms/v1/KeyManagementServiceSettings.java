@@ -132,7 +132,7 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   }
 
   /** Returns the object with the settings used for calls to getKeyRing. */
-  public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
+  public UnaryCallSettings<GetKeyRingRequestProto, KeyRing> getKeyRingSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).getKeyRingSettings();
   }
 
@@ -432,7 +432,7 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     }
 
     /** Returns the builder for the settings used for calls to getKeyRing. */
-    public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
+    public UnaryCallSettings.Builder<GetKeyRingRequestProto, KeyRing> getKeyRingSettings() {
       return getStubSettingsBuilder().getKeyRingSettings();
     }
 
