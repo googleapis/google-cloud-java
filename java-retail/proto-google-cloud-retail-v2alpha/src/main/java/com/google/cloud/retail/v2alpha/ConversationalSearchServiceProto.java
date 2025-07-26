@@ -49,6 +49,10 @@ public final class ConversationalSearchServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_ConversationalFilteringSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_fieldAccessorTable;
@@ -81,88 +85,109 @@ public final class ConversationalSearchServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n?google/cloud/retail/v2alpha/conversati"
-          + "onal_search_service.proto\022\033google.cloud."
+      "\n"
+          + "?google/cloud/retail/v2alpha/conversational_search_service.proto\022\033google.cloud."
           + "retail.v2alpha\032\034google/api/annotations.p"
           + "roto\032\027google/api/client.proto\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032(google/cloud/retail/v2alpha/c"
-          + "ommon.proto\0320google/cloud/retail/v2alpha"
-          + "/search_service.proto\"\246\n\n\033Conversational"
-          + "SearchRequest\022\026\n\tplacement\030\001 \001(\tB\003\340A\002\0224\n"
-          + "\006branch\030\002 \001(\tB$\340A\002\372A\036\n\034retail.googleapis"
-          + ".com/Branch\022\022\n\005query\030\003 \001(\tB\003\340A\001\022\034\n\017page_"
-          + "categories\030\004 \003(\tB\003\340A\001\022\034\n\017conversation_id"
-          + "\030\005 \001(\tB\003\340A\001\022a\n\rsearch_params\030\006 \001(\0132E.goo"
-          + "gle.cloud.retail.v2alpha.ConversationalS"
-          + "earchRequest.SearchParamsB\003\340A\001\022\027\n\nvisito"
-          + "r_id\030\t \001(\tB\003\340A\002\022=\n\tuser_info\030\007 \001(\0132%.goo"
-          + "gle.cloud.retail.v2alpha.UserInfoB\003\340A\001\022\200"
-          + "\001\n\035conversational_filtering_spec\030\010 \001(\0132T"
-          + ".google.cloud.retail.v2alpha.Conversatio"
-          + "nalSearchRequest.ConversationalFiltering"
-          + "SpecB\003\340A\001\032\247\001\n\014SearchParams\022\023\n\006filter\030\001 \001"
-          + "(\tB\003\340A\001\022\035\n\020canonical_filter\030\002 \001(\tB\003\340A\001\022\024"
-          + "\n\007sort_by\030\003 \001(\tB\003\340A\001\022M\n\nboost_spec\030\004 \001(\013"
-          + "24.google.cloud.retail.v2alpha.SearchReq"
-          + "uest.BoostSpecB\003\340A\001\032\213\002\n\nUserAnswer\022\025\n\013te"
-          + "xt_answer\030\001 \001(\tH\000\022r\n\017selected_answer\030\002 \001"
-          + "(\0132R.google.cloud.retail.v2alpha.Convers"
-          + "ationalSearchRequest.UserAnswer.Selected"
-          + "AnswerB\003\340A\001H\000\032j\n\016SelectedAnswer\022X\n\027produ"
-          + "ct_attribute_value\030\001 \001(\01322.google.cloud."
-          + "retail.v2alpha.ProductAttributeValueB\003\340A"
-          + "\001B\006\n\004type\032\362\002\n\033ConversationalFilteringSpe"
-          + "c\022.\n\037enable_conversational_filtering\030\001 \001"
-          + "(\010B\005\030\001\340A\001\022]\n\013user_answer\030\002 \001(\0132C.google."
-          + "cloud.retail.v2alpha.ConversationalSearc"
-          + "hRequest.UserAnswerB\003\340A\001\022\205\001\n\035conversatio"
-          + "nal_filtering_mode\030\004 \001(\0162Y.google.cloud."
-          + "retail.v2alpha.ConversationalSearchReque"
-          + "st.ConversationalFilteringSpec.ModeB\003\340A\001"
-          + "\"<\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\036\n\032CONVER"
-          + "SATIONAL_FILTER_ONLY\020\003\"\302\007\n\034Conversationa"
-          + "lSearchResponse\022\027\n\017conversation_id\030\004 \001(\t"
-          + "\022_\n\016refined_search\030\006 \003(\0132G.google.cloud."
-          + "retail.v2alpha.ConversationalSearchRespo"
-          + "nse.RefinedSearch\022\200\001\n\037conversational_fil"
-          + "tering_result\030\007 \001(\0132W.google.cloud.retai"
-          + "l.v2alpha.ConversationalSearchResponse.C"
-          + "onversationalFilteringResult\032\214\002\n\020Followu"
-          + "pQuestion\022\031\n\021followup_question\030\001 \001(\t\022u\n\021"
-          + "suggested_answers\030\002 \003(\0132Z.google.cloud.r"
-          + "etail.v2alpha.ConversationalSearchRespon"
-          + "se.FollowupQuestion.SuggestedAnswer\032f\n\017S"
-          + "uggestedAnswer\022S\n\027product_attribute_valu"
-          + "e\030\001 \001(\01322.google.cloud.retail.v2alpha.Pr"
-          + "oductAttributeValue\032\036\n\rRefinedSearch\022\r\n\005"
-          + "query\030\001 \001(\t\032\365\002\n\035ConversationalFilteringR"
-          + "esult\022e\n\021followup_question\030\001 \001(\0132J.googl"
-          + "e.cloud.retail.v2alpha.ConversationalSea"
-          + "rchResponse.FollowupQuestion\022\203\001\n\021additio"
-          + "nal_filter\030\002 \001(\0132h.google.cloud.retail.v"
-          + "2alpha.ConversationalSearchResponse.Conv"
-          + "ersationalFilteringResult.AdditionalFilt"
-          + "er\032g\n\020AdditionalFilter\022S\n\027product_attrib"
-          + "ute_value\030\001 \001(\01322.google.cloud.retail.v2"
-          + "alpha.ProductAttributeValue2\302\003\n\033Conversa"
-          + "tionalSearchService\022\327\002\n\024ConversationalSe"
-          + "arch\0228.google.cloud.retail.v2alpha.Conve"
-          + "rsationalSearchRequest\0329.google.cloud.re"
-          + "tail.v2alpha.ConversationalSearchRespons"
-          + "e\"\307\001\202\323\344\223\002\300\001\"X/v2alpha/{placement=project"
-          + "s/*/locations/*/catalogs/*/placements/*}"
-          + ":conversationalSearch:\001*Za\"\\/v2alpha/{pl"
-          + "acement=projects/*/locations/*/catalogs/"
-          + "*/servingConfigs/*}:conversationalSearch"
-          + ":\001*0\001\032I\312A\025retail.googleapis.com\322A.https:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + "B\344\001\n\037com.google.cloud.retail.v2alphaB Co"
-          + "nversationalSearchServiceProtoP\001Z7cloud."
-          + "google.com/go/retail/apiv2alpha/retailpb"
-          + ";retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail"
-          + ".V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002"
-          + "\036Google::Cloud::Retail::V2alphab\006proto3"
+          + "rce.proto\032(google/cloud/retail/v2alpha/common.proto\032(google/cloud/retail/v2alpha"
+          + "/safety.proto\0320google/cloud/retail/v2alpha/search_service.proto\"\242\014\n"
+          + "\033ConversationalSearchRequest\022\026\n"
+          + "\tplacement\030\001 \001(\tB\003\340A\002\0224\n"
+          + "\006branch\030\002 \001(\tB$\340A\002\372A\036\n"
+          + "\034retail.googleapis.com/Branch\022\022\n"
+          + "\005query\030\003 \001(\tB\003\340A\001\022\034\n"
+          + "\017page_categories\030\004 \003(\tB\003\340A\001\022\034\n"
+          + "\017conversation_id\030\005 \001(\tB\003\340A\001\022a\n\r"
+          + "search_params\030\006 \001(\0132E.g"
+          + "oogle.cloud.retail.v2alpha.ConversationalSearchRequest.SearchParamsB\003\340A\001\022\027\n\n"
+          + "visitor_id\030\t \001(\tB\003\340A\002\022=\n"
+          + "\tuser_info\030\007 \001(\0132%.g"
+          + "oogle.cloud.retail.v2alpha.UserInfoB\003\340A\001\022\200\001\n"
+          + "\035conversational_filtering_spec\030\010 \001(\013"
+          + "2T.google.cloud.retail.v2alpha.Conversat"
+          + "ionalSearchRequest.ConversationalFilteringSpecB\003\340A\001\022b\n"
+          + "\013user_labels\030\014 \003(\0132H.googl"
+          + "e.cloud.retail.v2alpha.ConversationalSearchRequest.UserLabelsEntryB\003\340A\001\022H\n"
+          + "\017safety_settings\030\016"
+          + " \003(\0132*.google.cloud.retail.v2alpha.SafetySettingB\003\340A\001\032\247\001\n"
+          + "\014SearchParams\022\023\n"
+          + "\006filter\030\001 \001(\tB\003\340A\001\022\035\n"
+          + "\020canonical_filter\030\002 \001(\tB\003\340A\001\022\024\n"
+          + "\007sort_by\030\003 \001(\tB\003\340A\001\022M\n\n"
+          + "boost_spec\030\004"
+          + " \001(\01324.google.cloud.retail.v2alpha.SearchRequest.BoostSpecB\003\340A\001\032\213\002\n\n"
+          + "UserAnswer\022\025\n"
+          + "\013text_answer\030\001 \001(\tH\000\022r\n"
+          + "\017selected_answer\030\002 \001(\0132R.google.cloud.retail"
+          + ".v2alpha.ConversationalSearchRequest.UserAnswer.SelectedAnswerB\003\340A\001H\000\032j\n"
+          + "\016SelectedAnswer\022X\n"
+          + "\027product_attribute_value\030\001 \001(\013"
+          + "22.google.cloud.retail.v2alpha.ProductAttributeValueB\003\340A\001B\006\n"
+          + "\004type\032\215\003\n"
+          + "\033ConversationalFilteringSpec\022.\n"
+          + "\037enable_conversational_filtering\030\001 \001(\010B\005\030\001\340A\001\022]\n"
+          + "\013user_answer\030\002 \001(\0132C.google.cloud.retail.v2alpha.Con"
+          + "versationalSearchRequest.UserAnswerB\003\340A\001\022\205\001\n"
+          + "\035conversational_filtering_mode\030\004 \001(\016"
+          + "2Y.google.cloud.retail.v2alpha.Conversat"
+          + "ionalSearchRequest.ConversationalFilteringSpec.ModeB\003\340A\001\"W\n"
+          + "\004Mode\022\024\n"
+          + "\020MODE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DISABLED\020\001\022\013\n"
+          + "\007ENABLED\020\002\022\036\n"
+          + "\032CONVERSATIONAL_FILTER_ONLY\020\003\0321\n"
+          + "\017UserLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\374\t\n"
+          + "\034ConversationalSearchResponse\022\030\n"
+          + "\020user_query_types\030\n"
+          + " \003(\t\022$\n"
+          + "\034conversational_text_response\030\002 \001(\t\022e\n"
+          + "\021followup_question\030\003 \001(\013"
+          + "2J.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion\022\027\n"
+          + "\017conversation_id\030\004 \001(\t\022_\n"
+          + "\016refined_search\030\006 \003(\0132G.google.cloud.retail.v2alpha.Conv"
+          + "ersationalSearchResponse.RefinedSearch\022\200\001\n"
+          + "\037conversational_filtering_result\030\007 \001(\013"
+          + "2W.google.cloud.retail.v2alpha.Conversat"
+          + "ionalSearchResponse.ConversationalFilteringResult\022S\n"
+          + "\005state\030\t \001(\0162?.google.cloud."
+          + "retail.v2alpha.ConversationalSearchResponse.StateB\003\340A\003\032\214\002\n"
+          + "\020FollowupQuestion\022\031\n"
+          + "\021followup_question\030\001 \001(\t\022u\n"
+          + "\021suggested_answers\030\002 \003(\0132Z.google.cloud.retail.v2alpha."
+          + "ConversationalSearchResponse.FollowupQuestion.SuggestedAnswer\032f\n"
+          + "\017SuggestedAnswer\022S\n"
+          + "\027product_attribute_value\030\001 \001(\01322.goog"
+          + "le.cloud.retail.v2alpha.ProductAttributeValue\032\036\n\r"
+          + "RefinedSearch\022\r\n"
+          + "\005query\030\001 \001(\t\032\365\002\n"
+          + "\035ConversationalFilteringResult\022e\n"
+          + "\021followup_question\030\001 \001(\0132J.google.cloud.retail"
+          + ".v2alpha.ConversationalSearchResponse.FollowupQuestion\022\203\001\n"
+          + "\021additional_filter\030\002 \001(\0132h.google.cloud.retail.v2alpha.Convers"
+          + "ationalSearchResponse.ConversationalFilteringResult.AdditionalFilter\032g\n"
+          + "\020AdditionalFilter\022S\n"
+          + "\027product_attribute_value\030\001 \001("
+          + "\01322.google.cloud.retail.v2alpha.ProductAttributeValue\"<\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\r\n"
+          + "\tSTREAMING\020\001\022\r\n"
+          + "\tSUCCEEDED\020\0022\302\003\n"
+          + "\033ConversationalSearchService\022\327\002\n"
+          + "\024ConversationalSearch\0228.google.cloud.retail.v2alp"
+          + "ha.ConversationalSearchRequest\0329.google.cloud.retail.v2alpha.ConversationalSearc"
+          + "hResponse\"\307\001\202\323\344\223\002\300\001\"X/v2alpha/{placement"
+          + "=projects/*/locations/*/catalogs/*/placements/*}:conversationalSearch:\001*Za\"\\/v2a"
+          + "lpha/{placement=projects/*/locations/*/catalogs/*/servingConfigs/*}:conversation"
+          + "alSearch:\001*0\001\032I\312A\025retail.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-platformB\344\001\n"
+          + "\037com.google.cloud.retail.v2alphaB ConversationalSearchServiceProtoP\001"
+          + "Z7cloud.google.com/go/retail/apiv2alpha/"
+          + "retailpb;retailpb\242\002\006RETAIL\252\002\033Google.Clou"
+          + "d.Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V"
+          + "2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -173,6 +198,7 @@ public final class ConversationalSearchServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.retail.v2alpha.CommonProto.getDescriptor(),
+              com.google.cloud.retail.v2alpha.SafetyProto.getDescriptor(),
               com.google.cloud.retail.v2alpha.SearchServiceProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_descriptor =
@@ -190,6 +216,8 @@ public final class ConversationalSearchServiceProto {
               "VisitorId",
               "UserInfo",
               "ConversationalFilteringSpec",
+              "UserLabels",
+              "SafetySettings",
             });
     internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_SearchParams_descriptor =
         internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_descriptor
@@ -231,13 +259,29 @@ public final class ConversationalSearchServiceProto {
             new java.lang.String[] {
               "EnableConversationalFiltering", "UserAnswer", "ConversationalFilteringMode",
             });
+    internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_descriptor,
             new java.lang.String[] {
-              "ConversationId", "RefinedSearch", "ConversationalFilteringResult",
+              "UserQueryTypes",
+              "ConversationalTextResponse",
+              "FollowupQuestion",
+              "ConversationId",
+              "RefinedSearch",
+              "ConversationalFilteringResult",
+              "State",
             });
     internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_FollowupQuestion_descriptor =
         internal_static_google_cloud_retail_v2alpha_ConversationalSearchResponse_descriptor
@@ -303,6 +347,7 @@ public final class ConversationalSearchServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2alpha.CommonProto.getDescriptor();
+    com.google.cloud.retail.v2alpha.SafetyProto.getDescriptor();
     com.google.cloud.retail.v2alpha.SearchServiceProto.getDescriptor();
   }
 

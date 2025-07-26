@@ -2346,8 +2346,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * want full control of traffic in the private pool. Configure Cloud NAT for
      * the subnet of network attachment if you need to access public Internet.
      *
-     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-     * 192.168.0.0/16 through PSC interface.
+     * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
      * </pre>
      *
      * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2509,8 +2509,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * want full control of traffic in the private pool. Configure Cloud NAT for
      * the subnet of network attachment if you need to access public Internet.
      *
-     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-     * 192.168.0.0/16 through PSC interface.
+     * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
      * </pre>
      *
      * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3164,8 +3164,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3185,8 +3185,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3210,8 +3210,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>

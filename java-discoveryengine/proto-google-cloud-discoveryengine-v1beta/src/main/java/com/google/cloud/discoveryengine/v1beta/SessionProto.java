@@ -37,6 +37,10 @@ public final class SessionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_QueryConfigEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_QueryConfigEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_Query_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Query_fieldAccessorTable;
@@ -52,38 +56,49 @@ public final class SessionProto {
       "\n"
           + "1google/cloud/discoveryengine/v1beta/session.proto\022#google.cloud.discoveryengin"
           + "e.v1beta\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\247\006\n"
+          + "o\032\031google/api/resource.proto\0320google/clo"
+          + "ud/discoveryengine/v1beta/answer.proto\032\037google/protobuf/timestamp.proto\"\324\010\n"
           + "\007Session\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\005\022A\n"
-          + "\005state\030\002 \001(\01622.google.clo"
-          + "ud.discoveryengine.v1beta.Session.State\022\026\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
+          + "\014display_name\030\007 \001(\tB\003\340A\001\022A\n"
+          + "\005state\030\002"
+          + " \001(\01622.google.cloud.discoveryengine.v1beta.Session.State\022\026\n"
           + "\016user_pseudo_id\030\003 \001(\t\022@\n"
-          + "\005turns\030\004 \003(\01321"
-          + ".google.cloud.discoveryengine.v1beta.Session.Turn\0223\n\n"
+          + "\005turns\030\004 \003(\01321.go"
+          + "ogle.cloud.discoveryengine.v1beta.Session.Turn\0223\n\n"
           + "start_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032}\n"
-          + "\004Turn\0229\n"
-          + "\005query\030\001 \001(\0132*.google.cloud.discoveryengine.v1beta.Query\022:\n"
-          + "\006answer\030\002 \001(\tB*\372A\'\n"
-          + "%discoveryengine.googleapis.com/Answer\"/\n"
+          + "\010end_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\026\n"
+          + "\tis_pinned\030\010 \001(\010B\003\340A\001\032\343\002\n"
+          + "\004Turn\022>\n"
+          + "\005query\030\001 \001(\0132*"
+          + ".google.cloud.discoveryengine.v1beta.QueryB\003\340A\001\022=\n"
+          + "\006answer\030\002 \001(\tB-\340A\001\372A\'\n"
+          + "%discoveryengine.googleapis.com/Answer\022I\n"
+          + "\017detailed_answer\030\007"
+          + " \001(\0132+.google.cloud.discoveryengine.v1beta.AnswerB\003\340A\003\022]\n"
+          + "\014query_config\030\020 \003(\0132B.google.cloud.discoveryengine.v"
+          + "1beta.Session.Turn.QueryConfigEntryB\003\340A\001\0322\n"
+          + "\020QueryConfigEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"/\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\017\n"
-          + "\013IN_PROGRESS\020\001:\323\002\352A\317\002\n"
-          + "&discoveryengine.googleapis.com/Session\022Rprojects/{project}/loc"
-          + "ations/{location}/dataStores/{data_store}/sessions/{session}\022kprojects/{project}"
-          + "/locations/{location}/collections/{collection}/dataStores/{data_store}/sessions/"
-          + "{session}\022dprojects/{project}/locations/"
-          + "{location}/collections/{collection}/engines/{engine}/sessions/{session}\"4\n"
+          + "\013IN_PROGRESS\020\001:\346\002\352A\342\002\n"
+          + "&discoveryengine.googleapis.com/Session\022Rprojects/{"
+          + "project}/locations/{location}/dataStores/{data_store}/sessions/{session}\022kprojec"
+          + "ts/{project}/locations/{location}/collections/{collection}/dataStores/{data_stor"
+          + "e}/sessions/{session}\022dprojects/{project}/locations/{location}/collections/{coll"
+          + "ection}/engines/{engine}/sessions/{session}*\010sessions2\007session\"9\n"
           + "\005Query\022\016\n"
-          + "\004text\030\002 \001(\tH\000\022\020\n"
-          + "\010query_id\030\001 \001(\tB\t\n"
+          + "\004text\030\002 \001(\tH\000\022\025\n"
+          + "\010query_id\030\001 \001(\tB\003\340A\003B\t\n"
           + "\007contentB\223\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\014SessionProtoP\001ZQcloud.google."
-          + "com/go/discoveryengine/apiv1beta/discove"
-          + "ryenginepb;discoveryenginepb\242\002\017DISCOVERY"
-          + "ENGINE\252\002#Google.Cloud.DiscoveryEngine.V1"
-          + "Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1be"
-          + "ta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\'com.google.cloud.discoveryengine.v1betaB\014SessionProtoP\001ZQcloud.google.com/"
+          + "go/discoveryengine/apiv1beta/discoveryen"
+          + "ginepb;discoveryenginepb\242\002\017DISCOVERYENGI"
+          + "NE\252\002#Google.Cloud.DiscoveryEngine.V1Beta"
+          + "\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002"
+          + "&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,6 +106,7 @@ public final class SessionProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.AnswerProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1beta_Session_descriptor =
@@ -99,7 +115,14 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Session_descriptor,
             new java.lang.String[] {
-              "Name", "State", "UserPseudoId", "Turns", "StartTime", "EndTime",
+              "Name",
+              "DisplayName",
+              "State",
+              "UserPseudoId",
+              "Turns",
+              "StartTime",
+              "EndTime",
+              "IsPinned",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Session_descriptor
@@ -109,7 +132,17 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_descriptor,
             new java.lang.String[] {
-              "Query", "Answer",
+              "Query", "Answer", "DetailedAnswer", "QueryConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_QueryConfigEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_QueryConfigEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Session_Turn_QueryConfigEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Query_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -128,6 +161,7 @@ public final class SessionProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.AnswerProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
