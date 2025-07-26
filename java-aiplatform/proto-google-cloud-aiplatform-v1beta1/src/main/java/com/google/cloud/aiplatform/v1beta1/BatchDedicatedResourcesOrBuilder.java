@@ -95,4 +95,67 @@ public interface BatchDedicatedResourcesOrBuilder
    * @return The maxReplicaCount.
    */
   int getMaxReplicaCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flexStart field is set.
+   */
+  boolean hasFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flexStart.
+   */
+  com.google.cloud.aiplatform.v1beta1.FlexStart getFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder getFlexStartOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, schedule the deployment workload on [spot
+   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+   * </pre>
+   *
+   * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  boolean getSpot();
 }

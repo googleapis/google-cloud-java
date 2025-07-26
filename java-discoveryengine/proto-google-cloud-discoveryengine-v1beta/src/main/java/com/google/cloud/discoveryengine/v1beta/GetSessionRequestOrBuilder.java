@@ -55,4 +55,18 @@ public interface GetSessionRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the full session including all answer details
+   * will be returned.
+   * </pre>
+   *
+   * <code>bool include_answer_details = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeAnswerDetails.
+   */
+  boolean getIncludeAnswerDetails();
 }

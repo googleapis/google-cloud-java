@@ -28,6 +28,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -84,6 +85,9 @@ public class ConversationalSearchServiceClientTest {
   public void conversationalSearchTest() throws Exception {
     ConversationalSearchResponse expectedResponse =
         ConversationalSearchResponse.newBuilder()
+            .addAllUserQueryTypes(new ArrayList<String>())
+            .setConversationalTextResponse("conversationalTextResponse-641076324")
+            .setFollowupQuestion(ConversationalSearchResponse.FollowupQuestion.newBuilder().build())
             .setConversationId("conversationId-1676095234")
             .addAllRefinedSearch(new ArrayList<ConversationalSearchResponse.RefinedSearch>())
             .setConversationalFilteringResult(
@@ -102,6 +106,8 @@ public class ConversationalSearchServiceClientTest {
             .setUserInfo(UserInfo.newBuilder().build())
             .setConversationalFilteringSpec(
                 ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
+            .addAllSafetySettings(new ArrayList<SafetySetting>())
             .build();
 
     MockStreamObserver<ConversationalSearchResponse> responseObserver = new MockStreamObserver<>();
@@ -131,6 +137,8 @@ public class ConversationalSearchServiceClientTest {
             .setUserInfo(UserInfo.newBuilder().build())
             .setConversationalFilteringSpec(
                 ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
+            .addAllSafetySettings(new ArrayList<SafetySetting>())
             .build();
 
     MockStreamObserver<ConversationalSearchResponse> responseObserver = new MockStreamObserver<>();

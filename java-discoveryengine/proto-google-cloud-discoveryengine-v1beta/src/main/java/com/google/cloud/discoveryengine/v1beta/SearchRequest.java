@@ -32798,22 +32798,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * between /search API calls and /answer API calls.
    *
    * Example #1 (multi-turn /search API calls):
-   *   1. Call /search API with the auto-session mode (see below).
-   *   2. Call /search API with the session ID generated in the first call.
-   *      Here, the previous search query gets considered in query
-   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-   *      and the current query is "How about 2023?", the current query will
-   *      be interpreted as "How did Alphabet do in 2023?".
+   *   Call /search API with the session ID generated in the first call.
+   *   Here, the previous search query gets considered in query
+   *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *   and the current query is "How about 2023?", the current query will
+   *   be interpreted as "How did Alphabet do in 2023?".
    *
    * Example #2 (coordination between /search API calls and /answer API calls):
-   *   1. Call /search API with the auto-session mode (see below).
-   *   2. Call /answer API with the session ID generated in the first call.
-   *      Here, the answer generation happens in the context of the search
-   *      results from the first search call.
-   *
-   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-   * gets automatically created. Otherwise, users can use the create-session API
-   * to create a session manually.
+   *   Call /answer API with the session ID generated in the first call.
+   *   Here, the answer generation happens in the context of the search
+   *   results from the first search call.
    *
    * Multi-turn Search feature is currently at private GA stage. Please use
    * v1alpha or v1beta version instead before we launch this feature to public
@@ -32847,22 +32841,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * between /search API calls and /answer API calls.
    *
    * Example #1 (multi-turn /search API calls):
-   *   1. Call /search API with the auto-session mode (see below).
-   *   2. Call /search API with the session ID generated in the first call.
-   *      Here, the previous search query gets considered in query
-   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-   *      and the current query is "How about 2023?", the current query will
-   *      be interpreted as "How did Alphabet do in 2023?".
+   *   Call /search API with the session ID generated in the first call.
+   *   Here, the previous search query gets considered in query
+   *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *   and the current query is "How about 2023?", the current query will
+   *   be interpreted as "How did Alphabet do in 2023?".
    *
    * Example #2 (coordination between /search API calls and /answer API calls):
-   *   1. Call /search API with the auto-session mode (see below).
-   *   2. Call /answer API with the session ID generated in the first call.
-   *      Here, the answer generation happens in the context of the search
-   *      results from the first search call.
-   *
-   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-   * gets automatically created. Otherwise, users can use the create-session API
-   * to create a session manually.
+   *   Call /answer API with the session ID generated in the first call.
+   *   Here, the answer generation happens in the context of the search
+   *   results from the first search call.
    *
    * Multi-turn Search feature is currently at private GA stage. Please use
    * v1alpha or v1beta version instead before we launch this feature to public
@@ -40166,22 +40154,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * between /search API calls and /answer API calls.
      *
      * Example #1 (multi-turn /search API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /search API with the session ID generated in the first call.
-     *      Here, the previous search query gets considered in query
-     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-     *      and the current query is "How about 2023?", the current query will
-     *      be interpreted as "How did Alphabet do in 2023?".
+     *   Call /search API with the session ID generated in the first call.
+     *   Here, the previous search query gets considered in query
+     *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *   and the current query is "How about 2023?", the current query will
+     *   be interpreted as "How did Alphabet do in 2023?".
      *
      * Example #2 (coordination between /search API calls and /answer API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /answer API with the session ID generated in the first call.
-     *      Here, the answer generation happens in the context of the search
-     *      results from the first search call.
-     *
-     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-     * gets automatically created. Otherwise, users can use the create-session API
-     * to create a session manually.
+     *   Call /answer API with the session ID generated in the first call.
+     *   Here, the answer generation happens in the context of the search
+     *   results from the first search call.
      *
      * Multi-turn Search feature is currently at private GA stage. Please use
      * v1alpha or v1beta version instead before we launch this feature to public
@@ -40214,22 +40196,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * between /search API calls and /answer API calls.
      *
      * Example #1 (multi-turn /search API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /search API with the session ID generated in the first call.
-     *      Here, the previous search query gets considered in query
-     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-     *      and the current query is "How about 2023?", the current query will
-     *      be interpreted as "How did Alphabet do in 2023?".
+     *   Call /search API with the session ID generated in the first call.
+     *   Here, the previous search query gets considered in query
+     *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *   and the current query is "How about 2023?", the current query will
+     *   be interpreted as "How did Alphabet do in 2023?".
      *
      * Example #2 (coordination between /search API calls and /answer API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /answer API with the session ID generated in the first call.
-     *      Here, the answer generation happens in the context of the search
-     *      results from the first search call.
-     *
-     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-     * gets automatically created. Otherwise, users can use the create-session API
-     * to create a session manually.
+     *   Call /answer API with the session ID generated in the first call.
+     *   Here, the answer generation happens in the context of the search
+     *   results from the first search call.
      *
      * Multi-turn Search feature is currently at private GA stage. Please use
      * v1alpha or v1beta version instead before we launch this feature to public
@@ -40262,22 +40238,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * between /search API calls and /answer API calls.
      *
      * Example #1 (multi-turn /search API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /search API with the session ID generated in the first call.
-     *      Here, the previous search query gets considered in query
-     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-     *      and the current query is "How about 2023?", the current query will
-     *      be interpreted as "How did Alphabet do in 2023?".
+     *   Call /search API with the session ID generated in the first call.
+     *   Here, the previous search query gets considered in query
+     *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *   and the current query is "How about 2023?", the current query will
+     *   be interpreted as "How did Alphabet do in 2023?".
      *
      * Example #2 (coordination between /search API calls and /answer API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /answer API with the session ID generated in the first call.
-     *      Here, the answer generation happens in the context of the search
-     *      results from the first search call.
-     *
-     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-     * gets automatically created. Otherwise, users can use the create-session API
-     * to create a session manually.
+     *   Call /answer API with the session ID generated in the first call.
+     *   Here, the answer generation happens in the context of the search
+     *   results from the first search call.
      *
      * Multi-turn Search feature is currently at private GA stage. Please use
      * v1alpha or v1beta version instead before we launch this feature to public
@@ -40309,22 +40279,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * between /search API calls and /answer API calls.
      *
      * Example #1 (multi-turn /search API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /search API with the session ID generated in the first call.
-     *      Here, the previous search query gets considered in query
-     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-     *      and the current query is "How about 2023?", the current query will
-     *      be interpreted as "How did Alphabet do in 2023?".
+     *   Call /search API with the session ID generated in the first call.
+     *   Here, the previous search query gets considered in query
+     *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *   and the current query is "How about 2023?", the current query will
+     *   be interpreted as "How did Alphabet do in 2023?".
      *
      * Example #2 (coordination between /search API calls and /answer API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /answer API with the session ID generated in the first call.
-     *      Here, the answer generation happens in the context of the search
-     *      results from the first search call.
-     *
-     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-     * gets automatically created. Otherwise, users can use the create-session API
-     * to create a session manually.
+     *   Call /answer API with the session ID generated in the first call.
+     *   Here, the answer generation happens in the context of the search
+     *   results from the first search call.
      *
      * Multi-turn Search feature is currently at private GA stage. Please use
      * v1alpha or v1beta version instead before we launch this feature to public
@@ -40352,22 +40316,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * between /search API calls and /answer API calls.
      *
      * Example #1 (multi-turn /search API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /search API with the session ID generated in the first call.
-     *      Here, the previous search query gets considered in query
-     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
-     *      and the current query is "How about 2023?", the current query will
-     *      be interpreted as "How did Alphabet do in 2023?".
+     *   Call /search API with the session ID generated in the first call.
+     *   Here, the previous search query gets considered in query
+     *   standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *   and the current query is "How about 2023?", the current query will
+     *   be interpreted as "How did Alphabet do in 2023?".
      *
      * Example #2 (coordination between /search API calls and /answer API calls):
-     *   1. Call /search API with the auto-session mode (see below).
-     *   2. Call /answer API with the session ID generated in the first call.
-     *      Here, the answer generation happens in the context of the search
-     *      results from the first search call.
-     *
-     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
-     * gets automatically created. Otherwise, users can use the create-session API
-     * to create a session manually.
+     *   Call /answer API with the session ID generated in the first call.
+     *   Here, the answer generation happens in the context of the search
+     *   results from the first search call.
      *
      * Multi-turn Search feature is currently at private GA stage. Please use
      * v1alpha or v1beta version instead before we launch this feature to public

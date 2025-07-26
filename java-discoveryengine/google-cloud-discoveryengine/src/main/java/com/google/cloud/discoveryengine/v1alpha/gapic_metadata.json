@@ -437,6 +437,33 @@
         }
       }
     },
+    "SessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionServiceClient",
+          "rpcs": {
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
+            "ListFiles": {
+              "methods": ["listFiles", "listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
+            }
+          }
+        }
+      }
+    },
     "SiteSearchEngineService": {
       "clients": {
         "grpc": {

@@ -786,10 +786,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -836,10 +838,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -956,10 +960,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1004,10 +1010,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1053,10 +1061,12 @@ public class ConversationalSearchServiceClientTest {
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 

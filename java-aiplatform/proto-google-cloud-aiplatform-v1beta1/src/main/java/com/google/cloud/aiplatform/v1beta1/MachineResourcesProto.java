@@ -108,12 +108,15 @@ public final class MachineResourcesProto {
           + " \001(\0132*.google.cloud.aiplatform.v1beta1.FlexStartB\006\340A\005\340A\001\"T\n"
           + "\022AutomaticResources\022\036\n"
           + "\021min_replica_count\030\001 \001(\005B\003\340A\005\022\036\n"
-          + "\021max_replica_count\030\002 \001(\005B\003\340A\005\"\252\001\n"
+          + "\021max_replica_count\030\002 \001(\005B\003\340A\005\"\205\002\n"
           + "\027BatchDedicatedResources\022J\n"
           + "\014machine_spec\030\001 \001(\0132,.google.cl"
           + "oud.aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022#\n"
           + "\026starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n"
-          + "\021max_replica_count\030\003 \001(\005B\003\340A\005\"/\n"
+          + "\021max_replica_count\030\003 \001(\005B\003\340A\005\022F\n\n"
+          + "flex_start\030\004"
+          + " \001(\0132*.google.cloud.aiplatform.v1beta1.FlexStartB\006\340A\005\340A\001\022\021\n"
+          + "\004spot\030\005 \001(\010B\003\340A\001\"/\n"
           + "\021ResourcesConsumed\022\032\n\r"
           + "replica_hours\030\001 \001(\001B\003\340A\003\"=\n"
           + "\010DiskSpec\022\026\n"
@@ -133,11 +136,11 @@ public final class MachineResourcesProto {
           + "\022enable_secure_boot\030\001 \001(\010\"D\n"
           + "\tFlexStart\0227\n"
           + "\024max_runtime_duration\030\001 \001(\0132\031.google.protobuf.DurationB\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025MachineRe"
-          + "sourcesProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
-          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
-          + "::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\025MachineResourcesProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -189,7 +192,7 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchDedicatedResources_descriptor,
             new java.lang.String[] {
-              "MachineSpec", "StartingReplicaCount", "MaxReplicaCount",
+              "MachineSpec", "StartingReplicaCount", "MaxReplicaCount", "FlexStart", "Spot",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor =
         getDescriptor().getMessageTypes().get(4);

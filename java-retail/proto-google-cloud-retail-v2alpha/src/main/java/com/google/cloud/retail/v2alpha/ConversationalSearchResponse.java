@@ -42,8 +42,11 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
   }
 
   private ConversationalSearchResponse() {
+    userQueryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    conversationalTextResponse_ = "";
     conversationId_ = "";
     refinedSearch_ = java.util.Collections.emptyList();
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +68,167 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         .ensureFieldAccessorsInitialized(
             com.google.cloud.retail.v2alpha.ConversationalSearchResponse.class,
             com.google.cloud.retail.v2alpha.ConversationalSearchResponse.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the response generation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2alpha.ConversationalSearchResponse.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Response generation is being streamed.
+     * </pre>
+     *
+     * <code>STREAMING = 1;</code>
+     */
+    STREAMING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Response generation has succeeded.
+     * </pre>
+     *
+     * <code>SUCCEEDED = 2;</code>
+     */
+    SUCCEEDED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Response generation is being streamed.
+     * </pre>
+     *
+     * <code>STREAMING = 1;</code>
+     */
+    public static final int STREAMING_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Response generation has succeeded.
+     * </pre>
+     *
+     * <code>SUCCEEDED = 2;</code>
+     */
+    public static final int SUCCEEDED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return STREAMING;
+        case 2:
+          return SUCCEEDED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.ConversationalSearchResponse.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2alpha.ConversationalSearchResponse.State)
   }
 
   public interface FollowupQuestionOrBuilder
@@ -5250,6 +5414,267 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
   }
 
   private int bitField0_;
+  public static final int USER_QUERY_TYPES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList userQueryTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The types Retail classifies the search query as.
+   *
+   * Supported values are:
+   *
+   * - "ADVERSARIAL"
+   * - "CHITCHAT"
+   * - "JAILBREAK"
+   * - "ORDER_SUPPORT"
+   * - "SIMPLE_PRODUCT_SEARCH"
+   * - "INTENT_REFINEMENT"
+   * - "PRODUCT_DETAILS"
+   * - "PRODUCT_COMPARISON"
+   * - "DEALS_AND_COUPONS"
+   * - "STORE_RELEVANT"
+   * - "BLOCKLISTED"
+   * - "BEST_PRODUCT"
+   * - "RETAIL_SUPPORT"
+   * - "DISABLED"
+   * clang-format off
+   * clang-format on
+   * </pre>
+   *
+   * <code>repeated string user_query_types = 10;</code>
+   *
+   * @return A list containing the userQueryTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getUserQueryTypesList() {
+    return userQueryTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The types Retail classifies the search query as.
+   *
+   * Supported values are:
+   *
+   * - "ADVERSARIAL"
+   * - "CHITCHAT"
+   * - "JAILBREAK"
+   * - "ORDER_SUPPORT"
+   * - "SIMPLE_PRODUCT_SEARCH"
+   * - "INTENT_REFINEMENT"
+   * - "PRODUCT_DETAILS"
+   * - "PRODUCT_COMPARISON"
+   * - "DEALS_AND_COUPONS"
+   * - "STORE_RELEVANT"
+   * - "BLOCKLISTED"
+   * - "BEST_PRODUCT"
+   * - "RETAIL_SUPPORT"
+   * - "DISABLED"
+   * clang-format off
+   * clang-format on
+   * </pre>
+   *
+   * <code>repeated string user_query_types = 10;</code>
+   *
+   * @return The count of userQueryTypes.
+   */
+  public int getUserQueryTypesCount() {
+    return userQueryTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The types Retail classifies the search query as.
+   *
+   * Supported values are:
+   *
+   * - "ADVERSARIAL"
+   * - "CHITCHAT"
+   * - "JAILBREAK"
+   * - "ORDER_SUPPORT"
+   * - "SIMPLE_PRODUCT_SEARCH"
+   * - "INTENT_REFINEMENT"
+   * - "PRODUCT_DETAILS"
+   * - "PRODUCT_COMPARISON"
+   * - "DEALS_AND_COUPONS"
+   * - "STORE_RELEVANT"
+   * - "BLOCKLISTED"
+   * - "BEST_PRODUCT"
+   * - "RETAIL_SUPPORT"
+   * - "DISABLED"
+   * clang-format off
+   * clang-format on
+   * </pre>
+   *
+   * <code>repeated string user_query_types = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The userQueryTypes at the given index.
+   */
+  public java.lang.String getUserQueryTypes(int index) {
+    return userQueryTypes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The types Retail classifies the search query as.
+   *
+   * Supported values are:
+   *
+   * - "ADVERSARIAL"
+   * - "CHITCHAT"
+   * - "JAILBREAK"
+   * - "ORDER_SUPPORT"
+   * - "SIMPLE_PRODUCT_SEARCH"
+   * - "INTENT_REFINEMENT"
+   * - "PRODUCT_DETAILS"
+   * - "PRODUCT_COMPARISON"
+   * - "DEALS_AND_COUPONS"
+   * - "STORE_RELEVANT"
+   * - "BLOCKLISTED"
+   * - "BEST_PRODUCT"
+   * - "RETAIL_SUPPORT"
+   * - "DISABLED"
+   * clang-format off
+   * clang-format on
+   * </pre>
+   *
+   * <code>repeated string user_query_types = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the userQueryTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getUserQueryTypesBytes(int index) {
+    return userQueryTypes_.getByteString(index);
+  }
+
+  public static final int CONVERSATIONAL_TEXT_RESPONSE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversationalTextResponse_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversational answer-based text response generated by the Server.
+   * </pre>
+   *
+   * <code>string conversational_text_response = 2;</code>
+   *
+   * @return The conversationalTextResponse.
+   */
+  @java.lang.Override
+  public java.lang.String getConversationalTextResponse() {
+    java.lang.Object ref = conversationalTextResponse_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      conversationalTextResponse_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversational answer-based text response generated by the Server.
+   * </pre>
+   *
+   * <code>string conversational_text_response = 2;</code>
+   *
+   * @return The bytes for conversationalTextResponse.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConversationalTextResponseBytes() {
+    java.lang.Object ref = conversationalTextResponse_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      conversationalTextResponse_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FOLLOWUP_QUESTION_FIELD_NUMBER = 3;
+  private com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+      followupQuestion_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversational followup question generated for Intent refinement.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+   * </code>
+   *
+   * @return Whether the followupQuestion field is set.
+   */
+  @java.lang.Override
+  public boolean hasFollowupQuestion() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversational followup question generated for Intent refinement.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+   * </code>
+   *
+   * @return The followupQuestion.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+      getFollowupQuestion() {
+    return followupQuestion_ == null
+        ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+            .getDefaultInstance()
+        : followupQuestion_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversational followup question generated for Intent refinement.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestionOrBuilder
+      getFollowupQuestionOrBuilder() {
+    return followupQuestion_ == null
+        ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+            .getDefaultInstance()
+        : followupQuestion_;
+  }
+
   public static final int CONVERSATION_ID_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -5433,7 +5858,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasConversationalFilteringResult() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -5481,6 +5906,49 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         : conversationalFilteringResult_;
   }
 
+  public static final int STATE_FIELD_NUMBER = 9;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the response generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the response generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State getState() {
+    com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State result =
+        com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.forNumber(state_);
+    return result == null
+        ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5495,14 +5963,28 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationalTextResponse_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, conversationalTextResponse_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getFollowupQuestion());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, conversationId_);
     }
     for (int i = 0; i < refinedSearch_.size(); i++) {
       output.writeMessage(6, refinedSearch_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getConversationalFilteringResult());
+    }
+    if (state_
+        != com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, state_);
+    }
+    for (int i = 0; i < userQueryTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userQueryTypes_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5513,16 +5995,36 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationalTextResponse_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(2, conversationalTextResponse_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFollowupQuestion());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, conversationId_);
     }
     for (int i = 0; i < refinedSearch_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, refinedSearch_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, getConversationalFilteringResult());
+    }
+    if (state_
+        != com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, state_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < userQueryTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(userQueryTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUserQueryTypesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5540,6 +6042,13 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     com.google.cloud.retail.v2alpha.ConversationalSearchResponse other =
         (com.google.cloud.retail.v2alpha.ConversationalSearchResponse) obj;
 
+    if (!getUserQueryTypesList().equals(other.getUserQueryTypesList())) return false;
+    if (!getConversationalTextResponse().equals(other.getConversationalTextResponse()))
+      return false;
+    if (hasFollowupQuestion() != other.hasFollowupQuestion()) return false;
+    if (hasFollowupQuestion()) {
+      if (!getFollowupQuestion().equals(other.getFollowupQuestion())) return false;
+    }
     if (!getConversationId().equals(other.getConversationId())) return false;
     if (!getRefinedSearchList().equals(other.getRefinedSearchList())) return false;
     if (hasConversationalFilteringResult() != other.hasConversationalFilteringResult())
@@ -5548,6 +6057,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       if (!getConversationalFilteringResult().equals(other.getConversationalFilteringResult()))
         return false;
     }
+    if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5559,6 +6069,16 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getUserQueryTypesCount() > 0) {
+      hash = (37 * hash) + USER_QUERY_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getUserQueryTypesList().hashCode();
+    }
+    hash = (37 * hash) + CONVERSATIONAL_TEXT_RESPONSE_FIELD_NUMBER;
+    hash = (53 * hash) + getConversationalTextResponse().hashCode();
+    if (hasFollowupQuestion()) {
+      hash = (37 * hash) + FOLLOWUP_QUESTION_FIELD_NUMBER;
+      hash = (53 * hash) + getFollowupQuestion().hashCode();
+    }
     hash = (37 * hash) + CONVERSATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getConversationId().hashCode();
     if (getRefinedSearchCount() > 0) {
@@ -5569,6 +6089,8 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + CONVERSATIONAL_FILTERING_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getConversationalFilteringResult().hashCode();
     }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5713,6 +6235,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFollowupQuestionFieldBuilder();
         getRefinedSearchFieldBuilder();
         getConversationalFilteringResultFieldBuilder();
       }
@@ -5722,6 +6245,13 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      userQueryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      conversationalTextResponse_ = "";
+      followupQuestion_ = null;
+      if (followupQuestionBuilder_ != null) {
+        followupQuestionBuilder_.dispose();
+        followupQuestionBuilder_ = null;
+      }
       conversationId_ = "";
       if (refinedSearchBuilder_ == null) {
         refinedSearch_ = java.util.Collections.emptyList();
@@ -5729,12 +6259,13 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         refinedSearch_ = null;
         refinedSearchBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       conversationalFilteringResult_ = null;
       if (conversationalFilteringResultBuilder_ != null) {
         conversationalFilteringResultBuilder_.dispose();
         conversationalFilteringResultBuilder_ = null;
       }
+      state_ = 0;
       return this;
     }
 
@@ -5774,9 +6305,9 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     private void buildPartialRepeatedFields(
         com.google.cloud.retail.v2alpha.ConversationalSearchResponse result) {
       if (refinedSearchBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           refinedSearch_ = java.util.Collections.unmodifiableList(refinedSearch_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.refinedSearch_ = refinedSearch_;
       } else {
@@ -5788,15 +6319,30 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         com.google.cloud.retail.v2alpha.ConversationalSearchResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.conversationId_ = conversationId_;
+        userQueryTypes_.makeImmutable();
+        result.userQueryTypes_ = userQueryTypes_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.conversationalTextResponse_ = conversationalTextResponse_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.followupQuestion_ =
+            followupQuestionBuilder_ == null ? followupQuestion_ : followupQuestionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.conversationId_ = conversationId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.conversationalFilteringResult_ =
             conversationalFilteringResultBuilder_ == null
                 ? conversationalFilteringResult_
                 : conversationalFilteringResultBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5848,16 +6394,34 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       if (other
           == com.google.cloud.retail.v2alpha.ConversationalSearchResponse.getDefaultInstance())
         return this;
+      if (!other.userQueryTypes_.isEmpty()) {
+        if (userQueryTypes_.isEmpty()) {
+          userQueryTypes_ = other.userQueryTypes_;
+          bitField0_ |= 0x00000001;
+        } else {
+          ensureUserQueryTypesIsMutable();
+          userQueryTypes_.addAll(other.userQueryTypes_);
+        }
+        onChanged();
+      }
+      if (!other.getConversationalTextResponse().isEmpty()) {
+        conversationalTextResponse_ = other.conversationalTextResponse_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasFollowupQuestion()) {
+        mergeFollowupQuestion(other.getFollowupQuestion());
+      }
       if (!other.getConversationId().isEmpty()) {
         conversationId_ = other.conversationId_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (refinedSearchBuilder_ == null) {
         if (!other.refinedSearch_.isEmpty()) {
           if (refinedSearch_.isEmpty()) {
             refinedSearch_ = other.refinedSearch_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRefinedSearchIsMutable();
             refinedSearch_.addAll(other.refinedSearch_);
@@ -5870,7 +6434,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
             refinedSearchBuilder_.dispose();
             refinedSearchBuilder_ = null;
             refinedSearch_ = other.refinedSearch_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             refinedSearchBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRefinedSearchFieldBuilder()
@@ -5882,6 +6446,9 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       }
       if (other.hasConversationalFilteringResult()) {
         mergeConversationalFilteringResult(other.getConversationalFilteringResult());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5909,10 +6476,23 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
             case 0:
               done = true;
               break;
+            case 18:
+              {
+                conversationalTextResponse_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getFollowupQuestionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             case 34:
               {
                 conversationId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
@@ -5934,9 +6514,22 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getConversationalFilteringResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 72:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUserQueryTypesIsMutable();
+                userQueryTypes_.add(s);
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5955,6 +6548,697 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.LazyStringArrayList userQueryTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureUserQueryTypesIsMutable() {
+      if (!userQueryTypes_.isModifiable()) {
+        userQueryTypes_ = new com.google.protobuf.LazyStringArrayList(userQueryTypes_);
+      }
+      bitField0_ |= 0x00000001;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @return A list containing the userQueryTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getUserQueryTypesList() {
+      userQueryTypes_.makeImmutable();
+      return userQueryTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @return The count of userQueryTypes.
+     */
+    public int getUserQueryTypesCount() {
+      return userQueryTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The userQueryTypes at the given index.
+     */
+    public java.lang.String getUserQueryTypes(int index) {
+      return userQueryTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the userQueryTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getUserQueryTypesBytes(int index) {
+      return userQueryTypes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The userQueryTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserQueryTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUserQueryTypesIsMutable();
+      userQueryTypes_.set(index, value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param value The userQueryTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUserQueryTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUserQueryTypesIsMutable();
+      userQueryTypes_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param values The userQueryTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUserQueryTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureUserQueryTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userQueryTypes_);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUserQueryTypes() {
+      userQueryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The types Retail classifies the search query as.
+     *
+     * Supported values are:
+     *
+     * - "ADVERSARIAL"
+     * - "CHITCHAT"
+     * - "JAILBREAK"
+     * - "ORDER_SUPPORT"
+     * - "SIMPLE_PRODUCT_SEARCH"
+     * - "INTENT_REFINEMENT"
+     * - "PRODUCT_DETAILS"
+     * - "PRODUCT_COMPARISON"
+     * - "DEALS_AND_COUPONS"
+     * - "STORE_RELEVANT"
+     * - "BLOCKLISTED"
+     * - "BEST_PRODUCT"
+     * - "RETAIL_SUPPORT"
+     * - "DISABLED"
+     * clang-format off
+     * clang-format on
+     * </pre>
+     *
+     * <code>repeated string user_query_types = 10;</code>
+     *
+     * @param value The bytes of the userQueryTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUserQueryTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUserQueryTypesIsMutable();
+      userQueryTypes_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object conversationalTextResponse_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational answer-based text response generated by the Server.
+     * </pre>
+     *
+     * <code>string conversational_text_response = 2;</code>
+     *
+     * @return The conversationalTextResponse.
+     */
+    public java.lang.String getConversationalTextResponse() {
+      java.lang.Object ref = conversationalTextResponse_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conversationalTextResponse_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational answer-based text response generated by the Server.
+     * </pre>
+     *
+     * <code>string conversational_text_response = 2;</code>
+     *
+     * @return The bytes for conversationalTextResponse.
+     */
+    public com.google.protobuf.ByteString getConversationalTextResponseBytes() {
+      java.lang.Object ref = conversationalTextResponse_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        conversationalTextResponse_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational answer-based text response generated by the Server.
+     * </pre>
+     *
+     * <code>string conversational_text_response = 2;</code>
+     *
+     * @param value The conversationalTextResponse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversationalTextResponse(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      conversationalTextResponse_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational answer-based text response generated by the Server.
+     * </pre>
+     *
+     * <code>string conversational_text_response = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversationalTextResponse() {
+      conversationalTextResponse_ = getDefaultInstance().getConversationalTextResponse();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational answer-based text response generated by the Server.
+     * </pre>
+     *
+     * <code>string conversational_text_response = 2;</code>
+     *
+     * @param value The bytes for conversationalTextResponse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversationalTextResponseBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      conversationalTextResponse_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+        followupQuestion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion,
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion.Builder,
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestionOrBuilder>
+        followupQuestionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     *
+     * @return Whether the followupQuestion field is set.
+     */
+    public boolean hasFollowupQuestion() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     *
+     * @return The followupQuestion.
+     */
+    public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+        getFollowupQuestion() {
+      if (followupQuestionBuilder_ == null) {
+        return followupQuestion_ == null
+            ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+                .getDefaultInstance()
+            : followupQuestion_;
+      } else {
+        return followupQuestionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public Builder setFollowupQuestion(
+        com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion value) {
+      if (followupQuestionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        followupQuestion_ = value;
+      } else {
+        followupQuestionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public Builder setFollowupQuestion(
+        com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion.Builder
+            builderForValue) {
+      if (followupQuestionBuilder_ == null) {
+        followupQuestion_ = builderForValue.build();
+      } else {
+        followupQuestionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public Builder mergeFollowupQuestion(
+        com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion value) {
+      if (followupQuestionBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && followupQuestion_ != null
+            && followupQuestion_
+                != com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+                    .getDefaultInstance()) {
+          getFollowupQuestionBuilder().mergeFrom(value);
+        } else {
+          followupQuestion_ = value;
+        }
+      } else {
+        followupQuestionBuilder_.mergeFrom(value);
+      }
+      if (followupQuestion_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public Builder clearFollowupQuestion() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      followupQuestion_ = null;
+      if (followupQuestionBuilder_ != null) {
+        followupQuestionBuilder_.dispose();
+        followupQuestionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion.Builder
+        getFollowupQuestionBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getFollowupQuestionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestionOrBuilder
+        getFollowupQuestionOrBuilder() {
+      if (followupQuestionBuilder_ != null) {
+        return followupQuestionBuilder_.getMessageOrBuilder();
+      } else {
+        return followupQuestion_ == null
+            ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+                .getDefaultInstance()
+            : followupQuestion_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational followup question generated for Intent refinement.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion followup_question = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion,
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion.Builder,
+            com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestionOrBuilder>
+        getFollowupQuestionFieldBuilder() {
+      if (followupQuestionBuilder_ == null) {
+        followupQuestionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion,
+                com.google.cloud.retail.v2alpha.ConversationalSearchResponse.FollowupQuestion
+                    .Builder,
+                com.google.cloud.retail.v2alpha.ConversationalSearchResponse
+                    .FollowupQuestionOrBuilder>(
+                getFollowupQuestion(), getParentForChildren(), isClean());
+        followupQuestion_ = null;
+      }
+      return followupQuestionBuilder_;
+    }
 
     private java.lang.Object conversationId_ = "";
 
@@ -6033,7 +7317,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       conversationId_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6055,7 +7339,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      */
     public Builder clearConversationId() {
       conversationId_ = getDefaultInstance().getConversationId();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6082,7 +7366,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       conversationId_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6092,12 +7376,12 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         refinedSearch_ = java.util.Collections.emptyList();
 
     private void ensureRefinedSearchIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         refinedSearch_ =
             new java.util.ArrayList<
                 com.google.cloud.retail.v2alpha.ConversationalSearchResponse.RefinedSearch>(
                 refinedSearch_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -6383,7 +7667,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     public Builder clearRefinedSearch() {
       if (refinedSearchBuilder_ == null) {
         refinedSearch_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         refinedSearchBuilder_.clear();
@@ -6554,7 +7838,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
                 com.google.cloud.retail.v2alpha.ConversationalSearchResponse
                     .RefinedSearchOrBuilder>(
                 refinedSearch_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         refinedSearch_ = null;
@@ -6589,7 +7873,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      * @return Whether the conversationalFilteringResult field is set.
      */
     public boolean hasConversationalFilteringResult() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -6642,7 +7926,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       } else {
         conversationalFilteringResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6668,7 +7952,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
       } else {
         conversationalFilteringResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6689,7 +7973,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         com.google.cloud.retail.v2alpha.ConversationalSearchResponse.ConversationalFilteringResult
             value) {
       if (conversationalFilteringResultBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && conversationalFilteringResult_ != null
             && conversationalFilteringResult_
                 != com.google.cloud.retail.v2alpha.ConversationalSearchResponse
@@ -6702,7 +7986,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         conversationalFilteringResultBuilder_.mergeFrom(value);
       }
       if (conversationalFilteringResult_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -6721,7 +8005,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearConversationalFilteringResult() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       conversationalFilteringResult_ = null;
       if (conversationalFilteringResultBuilder_ != null) {
         conversationalFilteringResultBuilder_.dispose();
@@ -6746,7 +8030,7 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
     public com.google.cloud.retail.v2alpha.ConversationalSearchResponse
             .ConversationalFilteringResult.Builder
         getConversationalFilteringResultBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConversationalFilteringResultFieldBuilder().getBuilder();
     }
@@ -6809,6 +8093,114 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
         conversationalFilteringResult_ = null;
       }
       return conversationalFilteringResultBuilder_;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the response generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the response generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the response generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State getState() {
+      com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State result =
+          com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the response generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(
+        com.google.cloud.retail.v2alpha.ConversationalSearchResponse.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the response generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.ConversationalSearchResponse.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      state_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

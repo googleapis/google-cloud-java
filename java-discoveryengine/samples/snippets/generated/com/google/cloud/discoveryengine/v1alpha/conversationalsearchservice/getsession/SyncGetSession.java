@@ -42,6 +42,7 @@ public class SyncGetSession {
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
+              .setIncludeAnswerDetails(true)
               .build();
       Session response = conversationalSearchServiceClient.getSession(request);
     }

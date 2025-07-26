@@ -48,6 +48,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
     pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     conversationId_ = "";
     visitorId_ = "";
+    safetySettings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -59,6 +60,18 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.ConversationalSearchServiceProto
         .internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 12:
+        return internalGetUserLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -3861,7 +3874,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
-     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=135
+     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
      * @return The enableConversationalFiltering.
      */
     @java.lang.Deprecated
@@ -4030,6 +4043,26 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
+       * Disable Conversational Filtering.
+       * </pre>
+       *
+       * <code>DISABLED = 1;</code>
+       */
+      DISABLED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Enabled Conversational Filtering with default Conversational Search.
+       * </pre>
+       *
+       * <code>ENABLED = 2;</code>
+       */
+      ENABLED(2),
+      /**
+       *
+       *
+       * <pre>
        * Enabled Conversational Filtering without default Conversational Search.
        * </pre>
        *
@@ -4049,6 +4082,28 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Disable Conversational Filtering.
+       * </pre>
+       *
+       * <code>DISABLED = 1;</code>
+       */
+      public static final int DISABLED_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Enabled Conversational Filtering with default Conversational Search.
+       * </pre>
+       *
+       * <code>ENABLED = 2;</code>
+       */
+      public static final int ENABLED_VALUE = 2;
 
       /**
        *
@@ -4087,6 +4142,10 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
         switch (value) {
           case 0:
             return MODE_UNSPECIFIED;
+          case 1:
+            return DISABLED;
+          case 2:
+            return ENABLED;
           case 3:
             return CONVERSATIONAL_FILTER_ONLY;
           default:
@@ -4164,7 +4223,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
-     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=135
+     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
      * @return The enableConversationalFiltering.
      */
     @java.lang.Override
@@ -4786,7 +4845,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=135
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
        * @return The enableConversationalFiltering.
        */
       @java.lang.Override
@@ -4811,7 +4870,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=135
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
        * @param value The enableConversationalFiltering to set.
        * @return This builder for chaining.
        */
@@ -4840,7 +4899,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=135
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -5915,6 +5974,272 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
         : conversationalFilteringSpec_;
   }
 
+  public static final int USER_LABELS_FIELD_NUMBER = 12;
+
+  private static final class UserLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.retail.v2alpha.ConversationalSearchServiceProto
+                .internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return userLabels_;
+  }
+
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user labels applied to a resource must meet the following
+   * requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user labels applied to a resource must meet the following
+   * requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user labels applied to a resource must meet the following
+   * requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user labels applied to a resource must meet the following
+   * requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int SAFETY_SETTINGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.retail.v2alpha.SafetySetting> safetySettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The safety settings to be applied to the generated content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2alpha.SafetySetting> getSafetySettingsList() {
+    return safetySettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The safety settings to be applied to the generated content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2alpha.SafetySettingOrBuilder>
+      getSafetySettingsOrBuilderList() {
+    return safetySettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The safety settings to be applied to the generated content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSafetySettingsCount() {
+    return safetySettings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The safety settings to be applied to the generated content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SafetySetting getSafetySettings(int index) {
+    return safetySettings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The safety settings to be applied to the generated content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SafetySettingOrBuilder getSafetySettingsOrBuilder(
+      int index) {
+    return safetySettings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5955,6 +6280,11 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, visitorId_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 12);
+    for (int i = 0; i < safetySettings_.size(); i++) {
+      output.writeMessage(14, safetySettings_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5999,6 +6329,19 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, visitorId_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, userLabels__);
+    }
+    for (int i = 0; i < safetySettings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, safetySettings_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6034,6 +6377,8 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
       if (!getConversationalFilteringSpec().equals(other.getConversationalFilteringSpec()))
         return false;
     }
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
+    if (!getSafetySettingsList().equals(other.getSafetySettingsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6070,6 +6415,14 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
     if (hasConversationalFilteringSpec()) {
       hash = (37 * hash) + CONVERSATIONAL_FILTERING_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getConversationalFilteringSpec().hashCode();
+    }
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
+    }
+    if (getSafetySettingsCount() > 0) {
+      hash = (37 * hash) + SAFETY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSafetySettingsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6193,6 +6546,28 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
           .internal_static_google_cloud_retail_v2alpha_ConversationalSearchRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 12:
+          return internalGetUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutableUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -6218,6 +6593,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
         getSearchParamsFieldBuilder();
         getUserInfoFieldBuilder();
         getConversationalFilteringSpecFieldBuilder();
+        getSafetySettingsFieldBuilder();
       }
     }
 
@@ -6246,6 +6622,14 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
         conversationalFilteringSpecBuilder_.dispose();
         conversationalFilteringSpecBuilder_ = null;
       }
+      internalGetMutableUserLabels().clear();
+      if (safetySettingsBuilder_ == null) {
+        safetySettings_ = java.util.Collections.emptyList();
+      } else {
+        safetySettings_ = null;
+        safetySettingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -6273,11 +6657,25 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
     public com.google.cloud.retail.v2alpha.ConversationalSearchRequest buildPartial() {
       com.google.cloud.retail.v2alpha.ConversationalSearchRequest result =
           new com.google.cloud.retail.v2alpha.ConversationalSearchRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.retail.v2alpha.ConversationalSearchRequest result) {
+      if (safetySettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          safetySettings_ = java.util.Collections.unmodifiableList(safetySettings_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.safetySettings_ = safetySettings_;
+      } else {
+        result.safetySettings_ = safetySettingsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.retail.v2alpha.ConversationalSearchRequest result) {
@@ -6317,6 +6715,10 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
                 ? conversationalFilteringSpec_
                 : conversationalFilteringSpecBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6411,6 +6813,35 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
       if (other.hasConversationalFilteringSpec()) {
         mergeConversationalFilteringSpec(other.getConversationalFilteringSpec());
       }
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000200;
+      if (safetySettingsBuilder_ == null) {
+        if (!other.safetySettings_.isEmpty()) {
+          if (safetySettings_.isEmpty()) {
+            safetySettings_ = other.safetySettings_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureSafetySettingsIsMutable();
+            safetySettings_.addAll(other.safetySettings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.safetySettings_.isEmpty()) {
+          if (safetySettingsBuilder_.isEmpty()) {
+            safetySettingsBuilder_.dispose();
+            safetySettingsBuilder_ = null;
+            safetySettings_ = other.safetySettings_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            safetySettingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSafetySettingsFieldBuilder()
+                    : null;
+          } else {
+            safetySettingsBuilder_.addAllMessages(other.safetySettings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6493,6 +6924,31 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000040;
                 break;
               } // case 74
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                    input.readMessage(
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabels()
+                    .getMutableMap()
+                    .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
+            case 114:
+              {
+                com.google.cloud.retail.v2alpha.SafetySetting m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2alpha.SafetySetting.parser(), extensionRegistry);
+                if (safetySettingsBuilder_ == null) {
+                  ensureSafetySettingsIsMutable();
+                  safetySettings_.add(m);
+                } else {
+                  safetySettingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8162,6 +8618,719 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
         conversationalFilteringSpec_ = null;
       }
       return conversationalFilteringSpecBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return userLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabels() {
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return userLabels_;
+    }
+
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableUserLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableUserLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user labels applied to a resource must meet the following
+     * requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2alpha.SafetySetting> safetySettings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSafetySettingsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        safetySettings_ =
+            new java.util.ArrayList<com.google.cloud.retail.v2alpha.SafetySetting>(safetySettings_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SafetySetting,
+            com.google.cloud.retail.v2alpha.SafetySetting.Builder,
+            com.google.cloud.retail.v2alpha.SafetySettingOrBuilder>
+        safetySettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.SafetySetting> getSafetySettingsList() {
+      if (safetySettingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(safetySettings_);
+      } else {
+        return safetySettingsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSafetySettingsCount() {
+      if (safetySettingsBuilder_ == null) {
+        return safetySettings_.size();
+      } else {
+        return safetySettingsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SafetySetting getSafetySettings(int index) {
+      if (safetySettingsBuilder_ == null) {
+        return safetySettings_.get(index);
+      } else {
+        return safetySettingsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetySettings(
+        int index, com.google.cloud.retail.v2alpha.SafetySetting value) {
+      if (safetySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetySettingsIsMutable();
+        safetySettings_.set(index, value);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetySettings(
+        int index, com.google.cloud.retail.v2alpha.SafetySetting.Builder builderForValue) {
+      if (safetySettingsBuilder_ == null) {
+        ensureSafetySettingsIsMutable();
+        safetySettings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        safetySettingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetySettings(com.google.cloud.retail.v2alpha.SafetySetting value) {
+      if (safetySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetySettingsIsMutable();
+        safetySettings_.add(value);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetySettings(
+        int index, com.google.cloud.retail.v2alpha.SafetySetting value) {
+      if (safetySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetySettingsIsMutable();
+        safetySettings_.add(index, value);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetySettings(
+        com.google.cloud.retail.v2alpha.SafetySetting.Builder builderForValue) {
+      if (safetySettingsBuilder_ == null) {
+        ensureSafetySettingsIsMutable();
+        safetySettings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        safetySettingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetySettings(
+        int index, com.google.cloud.retail.v2alpha.SafetySetting.Builder builderForValue) {
+      if (safetySettingsBuilder_ == null) {
+        ensureSafetySettingsIsMutable();
+        safetySettings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        safetySettingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSafetySettings(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2alpha.SafetySetting> values) {
+      if (safetySettingsBuilder_ == null) {
+        ensureSafetySettingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, safetySettings_);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSafetySettings() {
+      if (safetySettingsBuilder_ == null) {
+        safetySettings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSafetySettings(int index) {
+      if (safetySettingsBuilder_ == null) {
+        ensureSafetySettingsIsMutable();
+        safetySettings_.remove(index);
+        onChanged();
+      } else {
+        safetySettingsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SafetySetting.Builder getSafetySettingsBuilder(
+        int index) {
+      return getSafetySettingsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SafetySettingOrBuilder getSafetySettingsOrBuilder(
+        int index) {
+      if (safetySettingsBuilder_ == null) {
+        return safetySettings_.get(index);
+      } else {
+        return safetySettingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2alpha.SafetySettingOrBuilder>
+        getSafetySettingsOrBuilderList() {
+      if (safetySettingsBuilder_ != null) {
+        return safetySettingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(safetySettings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SafetySetting.Builder addSafetySettingsBuilder() {
+      return getSafetySettingsFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2alpha.SafetySetting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SafetySetting.Builder addSafetySettingsBuilder(
+        int index) {
+      return getSafetySettingsFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2alpha.SafetySetting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The safety settings to be applied to the generated content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.SafetySetting safety_settings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.SafetySetting.Builder>
+        getSafetySettingsBuilderList() {
+      return getSafetySettingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SafetySetting,
+            com.google.cloud.retail.v2alpha.SafetySetting.Builder,
+            com.google.cloud.retail.v2alpha.SafetySettingOrBuilder>
+        getSafetySettingsFieldBuilder() {
+      if (safetySettingsBuilder_ == null) {
+        safetySettingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SafetySetting,
+                com.google.cloud.retail.v2alpha.SafetySetting.Builder,
+                com.google.cloud.retail.v2alpha.SafetySettingOrBuilder>(
+                safetySettings_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        safetySettings_ = null;
+      }
+      return safetySettingsBuilder_;
     }
 
     @java.lang.Override

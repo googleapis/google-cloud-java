@@ -37,9 +37,45 @@ public final class SessionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_QueryConfigEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_QueryConfigEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_Query_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_Query_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_ImageCharacteristics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_ImageCharacteristics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_VideoCharacteristics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_VideoCharacteristics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_CharacteristicsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_CharacteristicsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileView_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileView_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_MetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_ViewsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_ViewsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,40 +85,128 @@ public final class SessionProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n2google/cloud/discoveryengine/v1alpha/s"
-          + "ession.proto\022$google.cloud.discoveryengi"
+      "\n"
+          + "2google/cloud/discoveryengine/v1alpha/session.proto\022$google.cloud.discoveryengi"
           + "ne.v1alpha\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\252\006\n\007Session\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\005\022B\n\005state\030\002 \001(\01623.google.c"
-          + "loud.discoveryengine.v1alpha.Session.Sta"
-          + "te\022\026\n\016user_pseudo_id\030\003 \001(\t\022A\n\005turns\030\004 \003("
-          + "\01322.google.cloud.discoveryengine.v1alpha"
-          + ".Session.Turn\0223\n\nstart_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032~\n"
-          + "\004Turn\022:\n\005query\030\001 \001(\0132+.google.cloud.disc"
-          + "overyengine.v1alpha.Query\022:\n\006answer\030\002 \001("
-          + "\tB*\372A\'\n%discoveryengine.googleapis.com/A"
-          + "nswer\"/\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n"
-          + "\013IN_PROGRESS\020\001:\323\002\352A\317\002\n&discoveryengine.g"
-          + "oogleapis.com/Session\022Rprojects/{project"
-          + "}/locations/{location}/dataStores/{data_"
-          + "store}/sessions/{session}\022kprojects/{pro"
-          + "ject}/locations/{location}/collections/{"
-          + "collection}/dataStores/{data_store}/sess"
-          + "ions/{session}\022dprojects/{project}/locat"
-          + "ions/{location}/collections/{collection}"
-          + "/engines/{engine}/sessions/{session}\"4\n\005"
-          + "Query\022\016\n\004text\030\002 \001(\tH\000\022\020\n\010query_id\030\001 \001(\tB"
-          + "\t\n\007contentB\230\002\n(com.google.cloud.discover"
-          + "yengine.v1alphaB\014SessionProtoP\001ZRcloud.g"
-          + "oogle.com/go/discoveryengine/apiv1alpha/"
-          + "discoveryenginepb;discoveryenginepb\242\002\017DI"
-          + "SCOVERYENGINE\252\002$Google.Cloud.DiscoveryEn"
-          + "gine.V1Alpha\312\002$Google\\Cloud\\DiscoveryEng"
-          + "ine\\V1alpha\352\002\'Google::Cloud::DiscoveryEn"
-          + "gine::V1alphab\006proto3"
+          + "oto\032\031google/api/resource.proto\0321google/c"
+          + "loud/discoveryengine/v1alpha/answer.proto\0321google/cloud/discoveryengine/v1alpha/"
+          + "common.proto\032\036google/protobuf/duration.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\331\010\n"
+          + "\007Session\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
+          + "\014display_name\030\007 \001(\tB\003\340A\001\022B\n"
+          + "\005state\030\002 \001(\01623.google."
+          + "cloud.discoveryengine.v1alpha.Session.State\022\026\n"
+          + "\016user_pseudo_id\030\003 \001(\t\022A\n"
+          + "\005turns\030\004 \003"
+          + "(\01322.google.cloud.discoveryengine.v1alpha.Session.Turn\0223\n\n"
+          + "start_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\026\n"
+          + "\tis_pinned\030\010 \001(\010B\003\340A\001\032\346\002\n"
+          + "\004Turn\022?\n"
+          + "\005query\030\001"
+          + " \001(\0132+.google.cloud.discoveryengine.v1alpha.QueryB\003\340A\001\022=\n"
+          + "\006answer\030\002 \001(\tB-\340A\001\372A\'\n"
+          + "%discoveryengine.googleapis.com/Answer\022J\n"
+          + "\017detailed_answer\030\007"
+          + " \001(\0132,.google.cloud.discoveryengine.v1alpha.AnswerB\003\340A\003\022^\n"
+          + "\014query_config\030\020 \003(\0132C.google.cloud.discove"
+          + "ryengine.v1alpha.Session.Turn.QueryConfigEntryB\003\340A\001\0322\n"
+          + "\020QueryConfigEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"/\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\017\n"
+          + "\013IN_PROGRESS\020\001:\346\002\352A\342\002\n"
+          + "&discoveryengine.googleapis.com/Session\022Rprojects/{project}/locations/{location}"
+          + "/dataStores/{data_store}/sessions/{session}\022kprojects/{project}/locations/{locat"
+          + "ion}/collections/{collection}/dataStores/{data_store}/sessions/{session}\022dprojec"
+          + "ts/{project}/locations/{location}/collec"
+          + "tions/{collection}/engines/{engine}/sessions/{session}*\010sessions2\007session\"9\n"
+          + "\005Query\022\016\n"
+          + "\004text\030\002 \001(\tH\000\022\025\n"
+          + "\010query_id\030\001 \001(\tB\003\340A\003B\t\n"
+          + "\007content\"\245\002\n"
+          + "\024ImageCharacteristics\022\022\n"
+          + "\005width\030\001 \001(\005B\003\340A\003\022\023\n"
+          + "\006height\030\002 \001(\005B\003\340A\003\022_\n"
+          + "\013color_space\030\003 \001(\0162E.google.cloud.disco"
+          + "veryengine.v1alpha.ImageCharacteristics.ColorSpaceB\003\340A\003\022\026\n"
+          + "\tbit_depth\030\004 \001(\005B\003\340A\003\"k\n\n"
+          + "ColorSpace\022\033\n"
+          + "\027COLOR_SPACE_UNSPECIFIED\020\000\022\007\n"
+          + "\003RGB\020\001\022\010\n"
+          + "\004CMYK\020\002\022\r\n"
+          + "\tGRAYSCALE\020\003\022\007\n"
+          + "\003YUV\020\004\022\025\n"
+          + "\021OTHER_COLOR_SPACE\020\005\"\202\002\n"
+          + "\024VideoCharacteristics\022\022\n"
+          + "\005width\030\001 \001(\005B\003\340A\003\022\023\n"
+          + "\006height\030\002 \001(\005B\003\340A\003\0220\n"
+          + "\010duration\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A\003\022\027\n\n"
+          + "frame_rate\030\004 \001(\001B\003\340A\003\022\031\n"
+          + "\014audio_codecs\030\005 \003(\tB\003\340A\003\022\031\n"
+          + "\014video_codecs\030\006 \003(\tB\003\340A\003\022\037\n"
+          + "\022video_bitrate_kbps\030\007 \001(\005B\003\340A\003\022\037\n"
+          + "\022audio_bitrate_kbps\030\010 \001(\005B\003\340A\003\"\273\001\n"
+          + "\023FileCharacteristics\022l\n"
+          + "\017characteristics\030\006 \003(\0132N.google.cloud.discov"
+          + "eryengine.v1alpha.FileCharacteristics.CharacteristicsEntryB\003\340A\003\0326\n"
+          + "\024CharacteristicsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\317\003\n"
+          + "\010FileView\022`\n"
+          + "\025image_characteristics\030\006 "
+          + "\001(\0132:.google.cloud.discoveryengine.v1alpha.ImageCharacteristicsB\003\340A\003H\000\022`\n"
+          + "\025video_characteristics\030\007 \001(\0132:.google.cloud.dis"
+          + "coveryengine.v1alpha.VideoCharacteristicsB\003\340A\003H\000\022^\n"
+          + "\024file_characteristics\030\010 \001(\01329"
+          + ".google.cloud.discoveryengine.v1alpha.FileCharacteristicsB\003\340A\003H\000\022\024\n"
+          + "\007view_id\030\001 \001(\tB\003\340A\003\022\020\n"
+          + "\003uri\030\002 \001(\tB\003\340A\003\022\026\n"
+          + "\tmime_type\030\003 \001(\tB\003\340A\003\022\026\n"
+          + "\tbyte_size\030\004 \001(\003B\003\340A\003\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\021\n"
+          + "\017characteristics\"\353\005\n"
+          + "\014FileMetadata\022\024\n"
+          + "\007file_id\030\001 \001(\tB\003\340A\003\022\021\n"
+          + "\004name\030\002 \001(\tB\003\340A\003\022\021\n"
+          + "\tmime_type\030\003 \001(\t\022\026\n"
+          + "\tbyte_size\030\004 \001(\003B\003\340A\003\022\031\n"
+          + "\014original_uri\030\t \001(\tB\003\340A\001\022S\n"
+          + "\024original_source_type\030\n"
+          + " \001(\01620.google.cloud.discoveryengine.v1alpha.FileSourceB\003\340A\001\0224\n"
+          + "\013upload_time\030\014"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
+          + "last_add_time\030\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022W\n"
+          + "\010metadata\030\022"
+          + " \003(\0132@.google.cloud.discoveryengine.v1alpha.FileMetadata.MetadataEntryB\003\340A\001\022\031\n"
+          + "\014download_uri\030\024 \001(\tB\003\340A\003\022S\n"
+          + "\020file_origin_type\030\025"
+          + " \001(\01624.google.cloud.discoveryengine.v1alpha.FileOriginTypeB\003\340A\001\022Q\n"
+          + "\005views\030\026"
+          + " \003(\0132=.google.cloud.discoveryengine.v1alpha.FileMetadata.ViewsEntryB\003\340A\003\032/\n\r"
+          + "MetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032\\\n\n"
+          + "ViewsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022=\n"
+          + "\005value\030\002 "
+          + "\001(\0132..google.cloud.discoveryengine.v1alpha.FileView:\0028\001*\251\001\n\n"
+          + "FileSource\022\033\n"
+          + "\027FILE_SOURCE_UNSPECIFIED\020\000\022\026\n"
+          + "\022FILE_SOURCE_INLINE\020\001\022\025\n"
+          + "\021FILE_SOURCE_LOCAL\020\002\022\035\n"
+          + "\031FILE_SOURCE_CLOUD_STORAGE\020\003\022\033\n"
+          + "\027FILE_SOURCE_CLOUD_DRIVE\020\004\022\023\n"
+          + "\017FILE_SOURCE_URL\020\005B\230\002\n"
+          + "(com.google.cloud.discoveryengine.v1alphaB\014Sessio"
+          + "nProtoP\001ZRcloud.google.com/go/discoveryengine/apiv1alpha/discoveryenginepb;disco"
+          + "veryenginepb\242\002\017DISCOVERYENGINE\252\002$Google."
+          + "Cloud.DiscoveryEngine.V1Alpha\312\002$Google\\C"
+          + "loud\\DiscoveryEngine\\V1alpha\352\002\'Google::C"
+          + "loud::DiscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -90,6 +214,9 @@ public final class SessionProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.AnswerProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Session_descriptor =
@@ -98,7 +225,14 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_Session_descriptor,
             new java.lang.String[] {
-              "Name", "State", "UserPseudoId", "Turns", "StartTime", "EndTime",
+              "Name",
+              "DisplayName",
+              "State",
+              "UserPseudoId",
+              "Turns",
+              "StartTime",
+              "EndTime",
+              "IsPinned",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_descriptor =
         internal_static_google_cloud_discoveryengine_v1alpha_Session_descriptor
@@ -108,7 +242,17 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_descriptor,
             new java.lang.String[] {
-              "Query", "Answer",
+              "Query", "Answer", "DetailedAnswer", "QueryConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_QueryConfigEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_QueryConfigEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_Session_Turn_QueryConfigEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Query_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -117,6 +261,102 @@ public final class SessionProto {
             internal_static_google_cloud_discoveryengine_v1alpha_Query_descriptor,
             new java.lang.String[] {
               "Text", "QueryId", "Content",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_ImageCharacteristics_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_discoveryengine_v1alpha_ImageCharacteristics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_ImageCharacteristics_descriptor,
+            new java.lang.String[] {
+              "Width", "Height", "ColorSpace", "BitDepth",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_VideoCharacteristics_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1alpha_VideoCharacteristics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_VideoCharacteristics_descriptor,
+            new java.lang.String[] {
+              "Width",
+              "Height",
+              "Duration",
+              "FrameRate",
+              "AudioCodecs",
+              "VideoCodecs",
+              "VideoBitrateKbps",
+              "AudioBitrateKbps",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_descriptor,
+            new java.lang.String[] {
+              "Characteristics",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_CharacteristicsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_CharacteristicsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileCharacteristics_CharacteristicsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileView_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileView_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileView_descriptor,
+            new java.lang.String[] {
+              "ImageCharacteristics",
+              "VideoCharacteristics",
+              "FileCharacteristics",
+              "ViewId",
+              "Uri",
+              "MimeType",
+              "ByteSize",
+              "CreateTime",
+              "Characteristics",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_descriptor,
+            new java.lang.String[] {
+              "FileId",
+              "Name",
+              "MimeType",
+              "ByteSize",
+              "OriginalUri",
+              "OriginalSourceType",
+              "UploadTime",
+              "LastAddTime",
+              "Metadata",
+              "DownloadUri",
+              "FileOriginType",
+              "Views",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_MetadataEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_MetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_MetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_ViewsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_ViewsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_FileMetadata_ViewsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -127,6 +367,9 @@ public final class SessionProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.AnswerProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
