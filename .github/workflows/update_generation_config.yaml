@@ -18,6 +18,7 @@ on:
   schedule:
   - cron: '0 2 * * *'
   workflow_dispatch:
+
 jobs:
   update-generation-config:
     runs-on: ubuntu-24.04
@@ -43,3 +44,4 @@ jobs:
           --repo ${{ github.repository }}
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+
