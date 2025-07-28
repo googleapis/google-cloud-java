@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.16.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.16.0...v3.16.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.60.2 ([d00dc03](https://github.com/googleapis/java-bigquerystorage/commit/d00dc03867b587be50ed6be12bc7eb7e7fd7cc7f))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.53.0 ([#3047](https://github.com/googleapis/java-bigquerystorage/issues/3047)) ([9ce3925](https://github.com/googleapis/java-bigquerystorage/commit/9ce39254cc26d0dd6bcf019d259a124461cacfc2))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#3051](https://github.com/googleapis/java-bigquerystorage/issues/3051)) ([6ecd933](https://github.com/googleapis/java-bigquerystorage/commit/6ecd9338bac7382ad58cfafe25d7268a6d9654eb))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.52.0 ([#3044](https://github.com/googleapis/java-bigquerystorage/issues/3044)) ([f922f1f](https://github.com/googleapis/java-bigquerystorage/commit/f922f1fdd78442ee4111a79da20ebb0ba891ccc3))
+* Update dependency io.opentelemetry:opentelemetry-exporter-logging to v1.52.0 ([#3045](https://github.com/googleapis/java-bigquerystorage/issues/3045)) ([c59ec44](https://github.com/googleapis/java-bigquerystorage/commit/c59ec448729ddee124755015d652143860fd1179))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.11.0 ([#3049](https://github.com/googleapis/java-bigquerystorage/issues/3049)) ([84ae4f8](https://github.com/googleapis/java-bigquerystorage/commit/84ae4f8cc6b506cc2a804227dbe424c9f85fbc75))
+
 ## [3.16.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.15.3...v3.16.0) (2025-07-11)
 
 
