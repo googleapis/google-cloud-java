@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 # This script should be run at the root of the repository.
 # This script is used to update googleapis_commitish, gapic_generator_version,
 # and libraries_bom_version in generation configuration at the time of running
