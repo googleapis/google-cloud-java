@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.32.0](https://github.com/googleapis/java-firestore/compare/v3.31.9...v3.32.0) (2025-07-28)
+
+
+### Features
+
+* Expose tags field in Database and RestoreDatabaseRequest public protos ([0f6774a](https://github.com/googleapis/java-firestore/commit/0f6774ad937d2cc84a3ee6747d07ad96a6713126))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.60.1 ([e90f7d1](https://github.com/googleapis/java-firestore/commit/e90f7d1d992c172afb96a43003d45ca1fb3143b0))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.60.2 ([0f6774a](https://github.com/googleapis/java-firestore/commit/0f6774ad937d2cc84a3ee6747d07ad96a6713126))
+* Implement BulkWriter shutdown logic ([#2202](https://github.com/googleapis/java-firestore/issues/2202)) ([7301774](https://github.com/googleapis/java-firestore/commit/73017741fce52fd37e08af4f3f32fb901b7214a3))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.68.0 ([#2193](https://github.com/googleapis/java-firestore/issues/2193)) ([30c5a19](https://github.com/googleapis/java-firestore/commit/30c5a19f6d1294a4b281de9664ce42917b451a0b))
+* Update dependency com.google.cloud:google-cloud-trace to v2.68.0 ([#2194](https://github.com/googleapis/java-firestore/issues/2194)) ([5fba79d](https://github.com/googleapis/java-firestore/commit/5fba79d7f24a81886e6a5089a9166e16a9491ea0))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#2200](https://github.com/googleapis/java-firestore/issues/2200)) ([e4e75cf](https://github.com/googleapis/java-firestore/commit/e4e75cff5656e047aa932dee226c4b2117eba17c))
+* Update opentelemetry.version to v1.52.0 ([#2191](https://github.com/googleapis/java-firestore/issues/2191)) ([cfb4453](https://github.com/googleapis/java-firestore/commit/cfb4453fca5ae483af7710c627996a6c0c7381a7))
+
 ## [3.31.9](https://github.com/googleapis/java-firestore/compare/v3.31.8...v3.31.9) (2025-07-11)
 
 
