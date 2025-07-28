@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.141.1](https://github.com/googleapis/java-pubsub/compare/v1.141.0...v1.141.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.60.2 ([7afae21](https://github.com/googleapis/java-pubsub/commit/7afae21e5e3df16742646363ca199ec14c42bc21))
+* Remove element_count_limit and request_byte_limit from pubsub_gapic.yaml ([7afae21](https://github.com/googleapis/java-pubsub/commit/7afae21e5e3df16742646363ca199ec14c42bc21))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.53.0 ([#2489](https://github.com/googleapis/java-pubsub/issues/2489)) ([5a454b9](https://github.com/googleapis/java-pubsub/commit/5a454b9c36419dcfaf79edb1ec1d066b20836f87))
+* Update dependency com.google.cloud:google-cloud-core to v2.58.2 ([#2493](https://github.com/googleapis/java-pubsub/issues/2493)) ([9a1c17e](https://github.com/googleapis/java-pubsub/commit/9a1c17e50e5fc9a807532d289a7f6e8b5d412f59))
+* Update dependency com.google.cloud:google-cloud-storage to v2.53.3 ([#2486](https://github.com/googleapis/java-pubsub/issues/2486)) ([9416cc9](https://github.com/googleapis/java-pubsub/commit/9416cc99f826b80412b0e5eba0068a35b82390c6))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#2494](https://github.com/googleapis/java-pubsub/issues/2494)) ([9f73ef0](https://github.com/googleapis/java-pubsub/commit/9f73ef0dcaabb4a536741336eb6cfc6601b75f65))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.8 ([#2492](https://github.com/googleapis/java-pubsub/issues/2492)) ([a55e214](https://github.com/googleapis/java-pubsub/commit/a55e214ffad8371eb82a1d49b8b1eadcacf15392))
+
 ## [1.141.0](https://github.com/googleapis/java-pubsub/compare/v1.140.2...v1.141.0) (2025-07-11)
 
 
