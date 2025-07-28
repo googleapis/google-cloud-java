@@ -37,7 +37,7 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - uses: googleapis/sdk-platform-java/.github/scripts@v2.60.1
+    - uses: googleapis/sdk-platform-java/.github/scripts@v2.60.2
       if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
