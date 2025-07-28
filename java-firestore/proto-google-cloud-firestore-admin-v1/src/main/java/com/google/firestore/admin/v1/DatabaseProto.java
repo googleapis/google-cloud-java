@@ -60,6 +60,10 @@ public final class DatabaseProto {
       internal_static_google_firestore_admin_v1_Database_EncryptionConfig_CustomerManagedEncryptionOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_firestore_admin_v1_Database_EncryptionConfig_CustomerManagedEncryptionOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Database_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Database_TagsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,7 +77,7 @@ public final class DatabaseProto {
           + "(google/firestore/admin/v1/database.pro"
           + "to\022\031google.firestore.admin.v1\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\256\025\n"
+          + "rce.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\243\026\n"
           + "\010Database\022\014\n"
           + "\004name\030\001 \001(\t\022\020\n"
           + "\003uid\030\003 \001(\tB\003\340A\003\0224\n"
@@ -101,18 +105,19 @@ public final class DatabaseProto {
           + "(\0132..google.firestore.admin.v1.Database.CmekConfigB\003\340A\001\022\030\n"
           + "\013previous_id\030\031 \001(\tB\003\340A\003\022H\n"
           + "\013source_info\030\032"
-          + " \001(\0132..google.firestore.admin.v1.Database.SourceInfoB\003\340A\003\022\033\n"
+          + " \001(\0132..google.firestore.admin.v1.Database.SourceInfoB\003\340A\003\022F\n"
+          + "\004tags\030\035 \003(\0132-.google.firestore.admin.v1.Database.TagsEntryB"
+          + "\t\340A\004\340A\005\340A\001\022\033\n"
           + "\tfree_tier\030\036 \001(\010B\003\340A\003H\000\210\001\001\022\014\n"
           + "\004etag\030c \001(\t\022R\n"
-          + "\020database_edition\030\034 \001(\01623.google.firest"
-          + "ore.admin.v1.Database.DatabaseEditionB\003\340A\005\032H\n\n"
+          + "\020database_edition\030\034"
+          + " \001(\01623.google.firestore.admin.v1.Database.DatabaseEditionB\003\340A\005\032H\n\n"
           + "CmekConfig\022\031\n"
           + "\014kms_key_name\030\001 \001(\tB\003\340A\002\022\037\n"
-          + "\022active_key_version\030\002 \003(\tB\003\340A\003\032\347\001\n"
-          + "\n"
+          + "\022active_key_version\030\002 \003(\tB\003\340A\003\032\347\001\n\n"
           + "SourceInfo\022M\n"
-          + "\006backup\030\001 \001(\0132;.google.fir"
-          + "estore.admin.v1.Database.SourceInfo.BackupSourceH\000\022:\n"
+          + "\006backup\030\001 \001(\0132;.google.firestore.a"
+          + "dmin.v1.Database.SourceInfo.BackupSourceH\000\022:\n"
           + "\toperation\030\003 \001(\tB\'\372A$\n"
           + "\"firestore.googleapis.com/Operation\032D\n"
           + "\014BackupSource\0224\n"
@@ -120,18 +125,22 @@ public final class DatabaseProto {
           + "\037firestore.googleapis.com/BackupB\010\n"
           + "\006source\032\210\004\n"
           + "\020EncryptionConfig\022x\n"
-          + "\031google_default_encryption\030\001 \001(\0132S.google.firestore.admin.v1.Datab"
-          + "ase.EncryptionConfig.GoogleDefaultEncryptionOptionsH\000\022m\n"
-          + "\025use_source_encryption\030\002 \001(\0132L.google.firestore.admin.v1.Databas"
-          + "e.EncryptionConfig.SourceEncryptionOptionsH\000\022|\n"
-          + "\033customer_managed_encryption\030\003 \001("
-          + "\0132U.google.firestore.admin.v1.Database.E"
-          + "ncryptionConfig.CustomerManagedEncryptionOptionsH\000\032 \n"
+          + "\031google_default_encryption\030\001 \001(\0132S"
+          + ".google.firestore.admin.v1.Database.Encr"
+          + "yptionConfig.GoogleDefaultEncryptionOptionsH\000\022m\n"
+          + "\025use_source_encryption\030\002 \001(\0132L.g"
+          + "oogle.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptionsH\000\022|\n"
+          + "\033customer_managed_encryption\030\003 \001(\0132U.goog"
+          + "le.firestore.admin.v1.Database.Encryptio"
+          + "nConfig.CustomerManagedEncryptionOptionsH\000\032 \n"
           + "\036GoogleDefaultEncryptionOptions\032\031\n"
           + "\027SourceEncryptionOptions\032=\n"
           + " CustomerManagedEncryptionOptions\022\031\n"
           + "\014kms_key_name\030\001 \001(\tB\003\340A\002B\021\n"
-          + "\017encryption_type\"W\n"
+          + "\017encryption_type\032+\n"
+          + "\tTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"W\n"
           + "\014DatabaseType\022\035\n"
           + "\031DATABASE_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020FIRESTORE_NATIVE\020\001\022\022\n"
@@ -157,15 +166,14 @@ public final class DatabaseProto {
           + "\034DATABASE_EDITION_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\016\n\n"
           + "ENTERPRISE\020\002:R\352AO\n"
-          + "!firestore.googleapis.com/Database\022\'projects/{project}/databases/{database}R\001\001B\014\n"
-          + "\n"
+          + "!firestore.googleapis.com/Database\022\'projects/{project}/databases/{database}R\001\001B\014\n\n"
           + "_free_tierB\303\002\n"
           + "\035com.google.firestore.admin.v1B\r"
-          + "DatabaseProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin/adminpb;adminp"
-          + "b\242\002\004GCFS\252\002\037Google.Cloud.Firestore.Admin."
-          + "V1\312\002\037Google\\Cloud\\Firestore\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1\352Ad\n"
-          + "\"firestore.googleapis.com/Operation\022>projects/{project}/databases/{database}/opera"
-          + "tions/{operation}b\006proto3"
+          + "DatabaseProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin/adminpb;adminpb\242\002"
+          + "\004GCFS\252\002\037Google.Cloud.Firestore.Admin.V1\312"
+          + "\002\037Google\\Cloud\\Firestore\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1\352Ad\n"
+          + "\"firestore.googleapis.com/Operation\022>projects"
+          + "/{project}/databases/{database}/operations/{operation}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -199,6 +207,7 @@ public final class DatabaseProto {
               "CmekConfig",
               "PreviousId",
               "SourceInfo",
+              "Tags",
               "FreeTier",
               "Etag",
               "DatabaseEdition",
@@ -265,6 +274,14 @@ public final class DatabaseProto {
             internal_static_google_firestore_admin_v1_Database_EncryptionConfig_CustomerManagedEncryptionOptions_descriptor,
             new java.lang.String[] {
               "KmsKeyName",
+            });
+    internal_static_google_firestore_admin_v1_Database_TagsEntry_descriptor =
+        internal_static_google_firestore_admin_v1_Database_descriptor.getNestedTypes().get(3);
+    internal_static_google_firestore_admin_v1_Database_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Database_TagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

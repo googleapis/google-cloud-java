@@ -93,6 +93,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -980,6 +981,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1045,6 +1047,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1110,6 +1113,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1161,6 +1165,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1290,6 +1295,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1352,6 +1358,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -1411,6 +1418,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -2264,6 +2272,7 @@ public class FirestoreAdminClientTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
@@ -2281,6 +2290,7 @@ public class FirestoreAdminClientTest {
             .setDatabaseId("databaseId1688905718")
             .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
             .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
 
     Database actualResponse = client.restoreDatabaseAsync(request).get();
@@ -2294,6 +2304,7 @@ public class FirestoreAdminClientTest {
     Assert.assertEquals(request.getDatabaseId(), actualRequest.getDatabaseId());
     Assert.assertEquals(request.getBackup(), actualRequest.getBackup());
     Assert.assertEquals(request.getEncryptionConfig(), actualRequest.getEncryptionConfig());
+    Assert.assertEquals(request.getTagsMap(), actualRequest.getTagsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2312,6 +2323,7 @@ public class FirestoreAdminClientTest {
               .setDatabaseId("databaseId1688905718")
               .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
               .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
               .build();
       client.restoreDatabaseAsync(request).get();
       Assert.fail("No exception raised");

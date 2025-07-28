@@ -4312,6 +4312,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
    *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   Database response = firestoreAdminClient.restoreDatabaseAsync(request).get();
    * }
@@ -4357,6 +4358,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
    *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<Database, RestoreDatabaseMetadata> future =
    *       firestoreAdminClient.restoreDatabaseOperationCallable().futureCall(request);
@@ -4402,6 +4404,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *           .setDatabaseId("databaseId1688905718")
    *           .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString())
    *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       firestoreAdminClient.restoreDatabaseCallable().futureCall(request);

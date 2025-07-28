@@ -65,6 +65,18 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_firestore_admin_v1_Database_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 29:
+        return internalGetTags();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -8633,6 +8645,133 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         : sourceInfo_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 29;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.firestore.admin.v1.DatabaseProto
+                .internal_static_google_firestore_admin_v1_Database_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int FREE_TIER_FIELD_NUMBER = 30;
   private boolean freeTier_ = false;
 
@@ -8871,6 +9010,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(28, databaseEdition_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 29);
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(30, freeTier_);
     }
@@ -8958,6 +9099,16 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, databaseEdition_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, tags__);
+    }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, freeTier_);
     }
@@ -9017,6 +9168,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceInfo()) {
       if (!getSourceInfo().equals(other.getSourceInfo())) return false;
     }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (hasFreeTier() != other.hasFreeTier()) return false;
     if (hasFreeTier()) {
       if (getFreeTier() != other.getFreeTier()) return false;
@@ -9081,6 +9233,10 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceInfo()) {
       hash = (37 * hash) + SOURCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getSourceInfo().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     if (hasFreeTier()) {
       hash = (37 * hash) + FREE_TIER_FIELD_NUMBER;
@@ -9209,6 +9365,28 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_firestore_admin_v1_Database_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 29:
+          return internalGetTags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 29:
+          return internalGetMutableTags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -9290,6 +9468,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         sourceInfoBuilder_.dispose();
         sourceInfoBuilder_ = null;
       }
+      internalGetMutableTags().clear();
       freeTier_ = false;
       etag_ = "";
       databaseEdition_ = 0;
@@ -9395,13 +9574,17 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.freeTier_ = freeTier_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.databaseEdition_ = databaseEdition_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -9513,12 +9696,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSourceInfo()) {
         mergeSourceInfo(other.getSourceInfo());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00020000;
       if (other.hasFreeTier()) {
         setFreeTier(other.getFreeTier());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.databaseEdition_ != 0) {
@@ -9657,19 +9842,28 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             case 224:
               {
                 databaseEdition_ = input.readEnum();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 224
+            case 234:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 234
             case 240:
               {
                 freeTier_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 240
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 794
             default:
@@ -12488,6 +12682,213 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return sourceInfoBuilder_;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00020000;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 29 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+
     private boolean freeTier_;
 
     /**
@@ -12513,7 +12914,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasFreeTier() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -12567,7 +12968,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public Builder setFreeTier(boolean value) {
 
       freeTier_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -12594,7 +12995,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFreeTier() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       freeTier_ = false;
       onChanged();
       return this;
@@ -12671,7 +13072,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -12691,7 +13092,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -12716,7 +13117,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -12757,7 +13158,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDatabaseEditionValue(int value) {
       databaseEdition_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -12803,7 +13204,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       databaseEdition_ = value.getNumber();
       onChanged();
       return this;
@@ -12823,7 +13224,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseEdition() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       databaseEdition_ = 0;
       onChanged();
       return this;

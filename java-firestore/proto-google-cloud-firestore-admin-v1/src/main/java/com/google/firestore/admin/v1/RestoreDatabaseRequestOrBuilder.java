@@ -194,4 +194,92 @@ public interface RestoreDatabaseRequestOrBuilder
    * </code>
    */
   com.google.firestore.admin.v1.Database.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Tags to be bound to the restored database.
+   *
+   * The tags should be provided in the format of
+   * `tagKeys/{tag_key_id} -&gt; tagValues/{tag_value_id}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Tags to be bound to the restored database.
+   *
+   * The tags should be provided in the format of
+   * `tagKeys/{tag_key_id} -&gt; tagValues/{tag_value_id}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Tags to be bound to the restored database.
+   *
+   * The tags should be provided in the format of
+   * `tagKeys/{tag_key_id} -&gt; tagValues/{tag_value_id}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Tags to be bound to the restored database.
+   *
+   * The tags should be provided in the format of
+   * `tagKeys/{tag_key_id} -&gt; tagValues/{tag_value_id}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Tags to be bound to the restored database.
+   *
+   * The tags should be provided in the format of
+   * `tagKeys/{tag_key_id} -&gt; tagValues/{tag_value_id}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }
