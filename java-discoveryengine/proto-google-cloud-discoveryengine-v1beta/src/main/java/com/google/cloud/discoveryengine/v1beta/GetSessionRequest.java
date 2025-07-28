@@ -123,6 +123,26 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int INCLUDE_ANSWER_DETAILS_FIELD_NUMBER = 2;
+  private boolean includeAnswerDetails_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the full session including all answer details
+   * will be returned.
+   * </pre>
+   *
+   * <code>bool include_answer_details = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeAnswerDetails.
+   */
+  @java.lang.Override
+  public boolean getIncludeAnswerDetails() {
+    return includeAnswerDetails_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +160,9 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (includeAnswerDetails_ != false) {
+      output.writeBool(2, includeAnswerDetails_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +174,9 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (includeAnswerDetails_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeAnswerDetails_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +195,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.discoveryengine.v1beta.GetSessionRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getIncludeAnswerDetails() != other.getIncludeAnswerDetails()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +209,8 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + INCLUDE_ANSWER_DETAILS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAnswerDetails());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,6 +353,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      includeAnswerDetails_ = false;
       return this;
     }
 
@@ -362,6 +392,9 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.includeAnswerDetails_ = includeAnswerDetails_;
       }
     }
 
@@ -416,6 +449,9 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getIncludeAnswerDetails() != false) {
+        setIncludeAnswerDetails(other.getIncludeAnswerDetails());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -448,6 +484,12 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                includeAnswerDetails_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -589,6 +631,65 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeAnswerDetails_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the full session including all answer details
+     * will be returned.
+     * </pre>
+     *
+     * <code>bool include_answer_details = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeAnswerDetails.
+     */
+    @java.lang.Override
+    public boolean getIncludeAnswerDetails() {
+      return includeAnswerDetails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the full session including all answer details
+     * will be returned.
+     * </pre>
+     *
+     * <code>bool include_answer_details = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The includeAnswerDetails to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeAnswerDetails(boolean value) {
+
+      includeAnswerDetails_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the full session including all answer details
+     * will be returned.
+     * </pre>
+     *
+     * <code>bool include_answer_details = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeAnswerDetails() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      includeAnswerDetails_ = false;
       onChanged();
       return this;
     }

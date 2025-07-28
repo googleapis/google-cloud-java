@@ -182,8 +182,9 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ATTRIBUTES_FIELD_NUMBER = 3;
-  private com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes_;
+  public static final int PRODUCT_REVIEW_ATTRIBUTES_FIELD_NUMBER = 3;
+  private com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
+      productReviewAttributes_;
 
   /**
    *
@@ -193,13 +194,13 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the attributes field is set.
+   * @return Whether the productReviewAttributes field is set.
    */
   @java.lang.Override
-  public boolean hasAttributes() {
+  public boolean hasProductReviewAttributes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
 
@@ -211,16 +212,17 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The attributes.
+   * @return The productReviewAttributes.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes getAttributes() {
-    return attributes_ == null
+  public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
+      getProductReviewAttributes() {
+    return productReviewAttributes_ == null
         ? com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.getDefaultInstance()
-        : attributes_;
+        : productReviewAttributes_;
   }
 
   /**
@@ -231,15 +233,15 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder
-      getAttributesOrBuilder() {
-    return attributes_ == null
+      getProductReviewAttributesOrBuilder() {
+    return productReviewAttributes_ == null
         ? com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.getDefaultInstance()
-        : attributes_;
+        : productReviewAttributes_;
   }
 
   public static final int CUSTOM_ATTRIBUTES_FIELD_NUMBER = 4;
@@ -465,7 +467,7 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, productReviewId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getAttributes());
+      output.writeMessage(3, getProductReviewAttributes());
     }
     for (int i = 0; i < customAttributes_.size(); i++) {
       output.writeMessage(4, customAttributes_.get(i));
@@ -492,7 +494,8 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, productReviewId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAttributes());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getProductReviewAttributes());
     }
     for (int i = 0; i < customAttributes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, customAttributes_.get(i));
@@ -521,9 +524,9 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getProductReviewId().equals(other.getProductReviewId())) return false;
-    if (hasAttributes() != other.hasAttributes()) return false;
-    if (hasAttributes()) {
-      if (!getAttributes().equals(other.getAttributes())) return false;
+    if (hasProductReviewAttributes() != other.hasProductReviewAttributes()) return false;
+    if (hasProductReviewAttributes()) {
+      if (!getProductReviewAttributes().equals(other.getProductReviewAttributes())) return false;
     }
     if (!getCustomAttributesList().equals(other.getCustomAttributesList())) return false;
     if (!getDataSource().equals(other.getDataSource())) return false;
@@ -546,9 +549,9 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PRODUCT_REVIEW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProductReviewId().hashCode();
-    if (hasAttributes()) {
-      hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
-      hash = (53 * hash) + getAttributes().hashCode();
+    if (hasProductReviewAttributes()) {
+      hash = (37 * hash) + PRODUCT_REVIEW_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getProductReviewAttributes().hashCode();
     }
     if (getCustomAttributesCount() > 0) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
@@ -704,7 +707,7 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAttributesFieldBuilder();
+        getProductReviewAttributesFieldBuilder();
         getCustomAttributesFieldBuilder();
         getProductReviewStatusFieldBuilder();
       }
@@ -716,10 +719,10 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       productReviewId_ = "";
-      attributes_ = null;
-      if (attributesBuilder_ != null) {
-        attributesBuilder_.dispose();
-        attributesBuilder_ = null;
+      productReviewAttributes_ = null;
+      if (productReviewAttributesBuilder_ != null) {
+        productReviewAttributesBuilder_.dispose();
+        productReviewAttributesBuilder_ = null;
       }
       if (customAttributesBuilder_ == null) {
         customAttributes_ = java.util.Collections.emptyList();
@@ -792,7 +795,10 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.attributes_ = attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+        result.productReviewAttributes_ =
+            productReviewAttributesBuilder_ == null
+                ? productReviewAttributes_
+                : productReviewAttributesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -864,8 +870,8 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasAttributes()) {
-        mergeAttributes(other.getAttributes());
+      if (other.hasProductReviewAttributes()) {
+        mergeProductReviewAttributes(other.getProductReviewAttributes());
       }
       if (customAttributesBuilder_ == null) {
         if (!other.customAttributes_.isEmpty()) {
@@ -942,7 +948,8 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
               } // case 18
             case 26:
               {
-                input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
+                input.readMessage(
+                    getProductReviewAttributesFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -1228,12 +1235,13 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes_;
+    private com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
+        productReviewAttributes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.Builder,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder>
-        attributesBuilder_;
+        productReviewAttributesBuilder_;
 
     /**
      *
@@ -1243,12 +1251,12 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return Whether the attributes field is set.
+     * @return Whether the productReviewAttributes field is set.
      */
-    public boolean hasAttributes() {
+    public boolean hasProductReviewAttributes() {
       return ((bitField0_ & 0x00000004) != 0);
     }
 
@@ -1260,19 +1268,20 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return The attributes.
+     * @return The productReviewAttributes.
      */
-    public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes getAttributes() {
-      if (attributesBuilder_ == null) {
-        return attributes_ == null
+    public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
+        getProductReviewAttributes() {
+      if (productReviewAttributesBuilder_ == null) {
+        return productReviewAttributes_ == null
             ? com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
                 .getDefaultInstance()
-            : attributes_;
+            : productReviewAttributes_;
       } else {
-        return attributesBuilder_.getMessage();
+        return productReviewAttributesBuilder_.getMessage();
       }
     }
 
@@ -1284,18 +1293,18 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setAttributes(
+    public Builder setProductReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes value) {
-      if (attributesBuilder_ == null) {
+      if (productReviewAttributesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        attributes_ = value;
+        productReviewAttributes_ = value;
       } else {
-        attributesBuilder_.setMessage(value);
+        productReviewAttributesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1310,16 +1319,16 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setAttributes(
+    public Builder setProductReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.Builder
             builderForValue) {
-      if (attributesBuilder_ == null) {
-        attributes_ = builderForValue.build();
+      if (productReviewAttributesBuilder_ == null) {
+        productReviewAttributes_ = builderForValue.build();
       } else {
-        attributesBuilder_.setMessage(builderForValue.build());
+        productReviewAttributesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1334,25 +1343,25 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder mergeAttributes(
+    public Builder mergeProductReviewAttributes(
         com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes value) {
-      if (attributesBuilder_ == null) {
+      if (productReviewAttributesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)
-            && attributes_ != null
-            && attributes_
+            && productReviewAttributes_ != null
+            && productReviewAttributes_
                 != com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
                     .getDefaultInstance()) {
-          getAttributesBuilder().mergeFrom(value);
+          getProductReviewAttributesBuilder().mergeFrom(value);
         } else {
-          attributes_ = value;
+          productReviewAttributes_ = value;
         }
       } else {
-        attributesBuilder_.mergeFrom(value);
+        productReviewAttributesBuilder_.mergeFrom(value);
       }
-      if (attributes_ != null) {
+      if (productReviewAttributes_ != null) {
         bitField0_ |= 0x00000004;
         onChanged();
       }
@@ -1367,15 +1376,15 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder clearAttributes() {
+    public Builder clearProductReviewAttributes() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      attributes_ = null;
-      if (attributesBuilder_ != null) {
-        attributesBuilder_.dispose();
-        attributesBuilder_ = null;
+      productReviewAttributes_ = null;
+      if (productReviewAttributesBuilder_ != null) {
+        productReviewAttributesBuilder_.dispose();
+        productReviewAttributesBuilder_ = null;
       }
       onChanged();
       return this;
@@ -1389,14 +1398,14 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.Builder
-        getAttributesBuilder() {
+        getProductReviewAttributesBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
-      return getAttributesFieldBuilder().getBuilder();
+      return getProductReviewAttributesFieldBuilder().getBuilder();
     }
 
     /**
@@ -1407,18 +1416,18 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder
-        getAttributesOrBuilder() {
-      if (attributesBuilder_ != null) {
-        return attributesBuilder_.getMessageOrBuilder();
+        getProductReviewAttributesOrBuilder() {
+      if (productReviewAttributesBuilder_ != null) {
+        return productReviewAttributesBuilder_.getMessageOrBuilder();
       } else {
-        return attributes_ == null
+        return productReviewAttributes_ == null
             ? com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes
                 .getDefaultInstance()
-            : attributes_;
+            : productReviewAttributes_;
       }
     }
 
@@ -1430,24 +1439,24 @@ public final class ProductReview extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.Builder,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder>
-        getAttributesFieldBuilder() {
-      if (attributesBuilder_ == null) {
-        attributesBuilder_ =
+        getProductReviewAttributesFieldBuilder() {
+      if (productReviewAttributesBuilder_ == null) {
+        productReviewAttributesBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes,
                 com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.Builder,
                 com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder>(
-                getAttributes(), getParentForChildren(), isClean());
-        attributes_ = null;
+                getProductReviewAttributes(), getParentForChildren(), isClean());
+        productReviewAttributes_ = null;
       }
-      return attributesBuilder_;
+      return productReviewAttributesBuilder_;
     }
 
     private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_ =

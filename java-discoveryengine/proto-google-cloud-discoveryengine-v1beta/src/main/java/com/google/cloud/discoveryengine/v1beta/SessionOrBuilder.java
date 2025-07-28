@@ -56,6 +56,38 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The state of the session.
    * </pre>
    *
@@ -239,4 +271,18 @@ public interface SessionOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the session is pinned, pinned session will be displayed
+   * on the top of the session list.
+   * </pre>
+   *
+   * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isPinned.
+   */
+  boolean getIsPinned();
 }
