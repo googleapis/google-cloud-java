@@ -397,7 +397,7 @@ libraries:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
   - proto_path: google/cloud/bigquery/datapolicies/v2beta1
-  - proto_path: google/cloud/bigquery/datapolicies/v2
+  - proto_path: google/cloud/bigquery/datapolicies/v2 
 
 - api_shortname: bigquerydatatransfer
   name_pretty: BigQuery Data Transfer Service
