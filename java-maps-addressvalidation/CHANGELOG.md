@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.63.0 (2025-07-28)
+
+### Features
+
+* add has_spell_corrected_components field to the Address Validation verdict in the API response ([abbb5a3](https://github.com/googleapis/google-cloud-java/commit/abbb5a3df4c3f149fe7b4dac4c13f6502de8e0a7))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
 ## 0.62.0 (2025-07-11)
 
 ### Dependencies
