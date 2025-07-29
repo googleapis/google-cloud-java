@@ -876,3 +876,5 @@ proto-google-shopping-merchant-reports-v1alpha:0.45.0:0.46.0-SNAPSHOT
 grpc-google-shopping-merchant-reports-v1alpha:0.45.0:0.46.0-SNAPSHOT
 proto-google-cloud-bigquerydatapolicy-v2:0.66.0:0.67.0-SNAPSHOT
 grpc-google-cloud-bigquerydatapolicy-v2:0.66.0:0.67.0-SNAPSHOT
+proto-google-cloud-configdelivery-v1:0.3.0:0.4.0-SNAPSHOT
+grpc-google-cloud-configdelivery-v1:0.3.0:0.4.0-SNAPSHOT
