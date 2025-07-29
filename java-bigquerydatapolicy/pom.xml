@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigquerydatapolicy-v2</artifactId>
+        <version>0.66.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigquerydatapolicy-v2</artifactId>
+        <version>0.66.0</version><!-- {x-version-update:grpc-google-cloud-bigquerydatapolicy-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatapolicy-v2beta1</artifactId>
         <version>0.66.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v2beta1:current} -->
       </dependency>
@@ -69,9 +79,11 @@
     <module>grpc-google-cloud-bigquerydatapolicy-v1beta1</module>
     <module>grpc-google-cloud-bigquerydatapolicy-v1</module>
     <module>grpc-google-cloud-bigquerydatapolicy-v2beta1</module>
+    <module>grpc-google-cloud-bigquerydatapolicy-v2</module>
     <module>proto-google-cloud-bigquerydatapolicy-v1beta1</module>
     <module>proto-google-cloud-bigquerydatapolicy-v1</module>
     <module>proto-google-cloud-bigquerydatapolicy-v2beta1</module>
+    <module>proto-google-cloud-bigquerydatapolicy-v2</module>
     <module>google-cloud-bigquerydatapolicy-bom</module>
   </modules>
 
