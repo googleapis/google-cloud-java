@@ -35,8 +35,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-configdelivery-v1</artifactId>
+        <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-configdelivery-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-configdelivery-v1beta</artifactId>
         <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-configdelivery-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-configdelivery-v1</artifactId>
+        <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-configdelivery-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

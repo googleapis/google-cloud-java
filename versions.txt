@@ -874,3 +874,5 @@ proto-google-cloud-licensemanager-v1:0.2.0:0.2.0
 grpc-google-cloud-licensemanager-v1:0.2.0:0.2.0
 proto-google-shopping-merchant-reports-v1alpha:0.45.0:0.45.0
 grpc-google-shopping-merchant-reports-v1alpha:0.45.0:0.45.0
+proto-google-cloud-configdelivery-v1:0.3.0:0.3.0
+grpc-google-cloud-configdelivery-v1:0.3.0:0.3.0
