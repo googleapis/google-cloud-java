@@ -16,8 +16,10 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.SettableApiFuture;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
@@ -39,6 +41,8 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -164,6 +168,35 @@ public class BigtableChannelPrimerTest {
               metadata.get(Metadata.Key.of("bigtable-feature", Metadata.ASCII_STRING_MARSHALLER)))
           .isEqualTo("fake-feature");
     }
+  }
+
+  // New test for the async success path
+  @Test
+  public void testAsyncSuccess() throws Exception {
+    SettableApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
+
+    PingAndWarmResponse response = future.get(1, TimeUnit.SECONDS);
+    assertThat(response).isNotNull();
+    assertThat(future.isDone()).isTrue();
+  }
+
+  // New test for the async failure path
+  @Test
+  public void testAsyncFailure() {
+    // Configure the server to return a gRPC error
+    fakeService.pingAndWarmCallback =
+        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
+          @Override
+          public PingAndWarmResponse apply(PingAndWarmRequest pingAndWarmRequest) {
+            throw new StatusRuntimeException(Status.UNAVAILABLE);
+          }
+        };
+
+    SettableApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
+
+    ExecutionException e =
+        assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    assertThat(e).hasCauseThat().hasMessageThat().contains("UNAVAILABLE");
   }
 
   private static class MetadataInterceptor implements ServerInterceptor {

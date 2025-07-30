@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.auth.Credentials;
@@ -121,20 +122,22 @@ public class BigtableClientContext {
         setupCookieHolder(transportProvider);
       }
 
+      ChannelPrimer channelPrimer = NoOpChannelPrimer.create();
+
       // Inject channel priming if enabled
       if (builder.isRefreshingChannel()) {
-        transportProvider.setChannelPrimer(
+        channelPrimer =
             BigtableChannelPrimer.create(
                 builder.getProjectId(),
                 builder.getInstanceId(),
                 builder.getAppProfileId(),
                 credentials,
-                builder.getHeaderProvider().getHeaders()));
+                builder.getHeaderProvider().getHeaders());
       }
 
       BigtableTransportChannelProvider btTransportProvider =
           BigtableTransportChannelProvider.create(
-              (InstantiatingGrpcChannelProvider) transportProvider.build());
+              (InstantiatingGrpcChannelProvider) transportProvider.build(), channelPrimer);
 
       builder.setTransportChannelProvider(btTransportProvider);
     }

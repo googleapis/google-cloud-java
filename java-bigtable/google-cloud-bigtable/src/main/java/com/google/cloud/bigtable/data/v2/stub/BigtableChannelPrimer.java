@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.auth.Credentials;
@@ -41,13 +41,13 @@ import java.util.logging.Logger;
 
 /**
  * A channel warmer that ensures that a Bigtable channel is ready to be used before being added to
- * the active {@link com.google.api.gax.grpc.ChannelPool}.
+ * the active {@link com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPool}.
  *
  * <p>This implementation is subject to change in the future, but currently it will prime the
  * channel by sending a ReadRow request for a hardcoded, non-existent row key.
  */
-@BetaApi("Channel priming is not currently stable and might change in the future")
-class BigtableChannelPrimer implements ChannelPrimer {
+@InternalApi
+public class BigtableChannelPrimer implements ChannelPrimer {
   private static Logger LOG = Logger.getLogger(BigtableChannelPrimer.class.toString());
 
   static final Metadata.Key<String> REQUEST_PARAMS =
@@ -96,49 +96,65 @@ class BigtableChannelPrimer implements ChannelPrimer {
   }
 
   private void primeChannelUnsafe(ManagedChannel managedChannel) throws IOException {
-    sendPrimeRequests(managedChannel);
+    sendPrimeRequestsBlocking(managedChannel);
   }
 
-  private void sendPrimeRequests(ManagedChannel managedChannel) {
+  private void sendPrimeRequestsBlocking(ManagedChannel managedChannel) {
     try {
-      ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
-          managedChannel.newCall(
-              BigtableGrpc.getPingAndWarmMethod(),
-              CallOptions.DEFAULT
-                  .withCallCredentials(callCredentials)
-                  .withDeadline(Deadline.after(1, TimeUnit.MINUTES)));
-
-      SettableApiFuture<PingAndWarmResponse> future = SettableApiFuture.create();
-      clientCall.start(
-          new ClientCall.Listener<PingAndWarmResponse>() {
-            PingAndWarmResponse response;
-
-            @Override
-            public void onMessage(PingAndWarmResponse message) {
-              response = message;
-            }
-
-            @Override
-            public void onClose(Status status, Metadata trailers) {
-              if (status.isOk()) {
-                future.set(response);
-              } else {
-                future.setException(status.asException());
-              }
-            }
-          },
-          createMetadata(headers, request));
-      clientCall.sendMessage(request);
-      clientCall.halfClose();
-      clientCall.request(Integer.MAX_VALUE);
-
-      future.get(1, TimeUnit.MINUTES);
+      sendPrimeRequestsAsync(managedChannel).get(1, TimeUnit.MINUTES);
     } catch (Throwable e) {
       // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
       // channels if the new
       // channel is bad.
       LOG.log(Level.WARNING, "Failed to prime channel", e);
     }
+  }
+
+  public SettableApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(
+      ManagedChannel managedChannel) {
+    ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
+        managedChannel.newCall(
+            BigtableGrpc.getPingAndWarmMethod(),
+            CallOptions.DEFAULT
+                .withCallCredentials(callCredentials)
+                .withDeadline(Deadline.after(1, TimeUnit.MINUTES)));
+
+    SettableApiFuture<PingAndWarmResponse> future = SettableApiFuture.create();
+    clientCall.start(
+        new ClientCall.Listener<PingAndWarmResponse>() {
+          private PingAndWarmResponse response;
+
+          @Override
+          public void onMessage(PingAndWarmResponse message) {
+            response = message;
+          }
+
+          @Override
+          public void onClose(Status status, Metadata trailers) {
+            if (status.isOk()) {
+              future.set(response);
+            } else {
+              // Propagate the gRPC error to the future.
+              future.setException(status.asException(trailers));
+            }
+          }
+        },
+        createMetadata(headers, request));
+
+    try {
+      // Send the request message.
+      clientCall.sendMessage(request);
+      // Signal that no more messages will be sent.
+      clientCall.halfClose();
+      // Request the response from the server.
+      clientCall.request(Integer.MAX_VALUE);
+    } catch (Throwable t) {
+      // If sending fails, cancel the call and notify the future.
+      clientCall.cancel("Failed to send priming request", t);
+      future.setException(t);
+    }
+
+    return future;
   }
 
   private static Metadata createMetadata(Map<String, String> headers, PingAndWarmRequest request) {

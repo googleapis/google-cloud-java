@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ChannelFactory;
+import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -60,6 +61,8 @@ public class BigtableChannelPool extends ManagedChannel {
 
   private final BigtableChannelPoolSettings settings;
   private final ChannelFactory channelFactory;
+
+  private final ChannelPrimer channelPrimer;
   private final ScheduledExecutorService executor;
 
   private final Object entryWriteLock = new Object();
@@ -68,9 +71,12 @@ public class BigtableChannelPool extends ManagedChannel {
   private final String authority;
 
   public static BigtableChannelPool create(
-      BigtableChannelPoolSettings settings, ChannelFactory channelFactory) throws IOException {
+      BigtableChannelPoolSettings settings,
+      ChannelFactory channelFactory,
+      ChannelPrimer channelPrimer)
+      throws IOException {
     return new BigtableChannelPool(
-        settings, channelFactory, Executors.newSingleThreadScheduledExecutor());
+        settings, channelFactory, channelPrimer, Executors.newSingleThreadScheduledExecutor());
   }
 
   /**
@@ -84,15 +90,19 @@ public class BigtableChannelPool extends ManagedChannel {
   BigtableChannelPool(
       BigtableChannelPoolSettings settings,
       ChannelFactory channelFactory,
+      ChannelPrimer channelPrimer,
       ScheduledExecutorService executor)
       throws IOException {
     this.settings = settings;
     this.channelFactory = channelFactory;
+    this.channelPrimer = channelPrimer;
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
     for (int i = 0; i < settings.getInitialChannelCount(); i++) {
-      initialListBuilder.add(new Entry(channelFactory.createSingleChannel()));
+      ManagedChannel newChannel = channelFactory.createSingleChannel();
+      channelPrimer.primeChannel(newChannel);
+      initialListBuilder.add(new Entry(newChannel));
     }
 
     entries.set(initialListBuilder.build());
@@ -316,7 +326,9 @@ public class BigtableChannelPool extends ManagedChannel {
 
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
       try {
-        newEntries.add(new Entry(channelFactory.createSingleChannel()));
+        ManagedChannel newChannel = channelFactory.createSingleChannel();
+        this.channelPrimer.primeChannel(newChannel);
+        newEntries.add(new Entry(newChannel));
       } catch (IOException e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
       }
@@ -354,7 +366,9 @@ public class BigtableChannelPool extends ManagedChannel {
 
       for (int i = 0; i < newEntries.size(); i++) {
         try {
-          newEntries.set(i, new Entry(channelFactory.createSingleChannel()));
+          ManagedChannel newChannel = channelFactory.createSingleChannel();
+          this.channelPrimer.primeChannel(newChannel);
+          newEntries.set(i, new Entry(newChannel));
         } catch (IOException e) {
           LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
         }
