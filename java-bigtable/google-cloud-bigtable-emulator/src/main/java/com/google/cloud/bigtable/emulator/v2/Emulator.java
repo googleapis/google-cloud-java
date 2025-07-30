@@ -62,6 +62,11 @@ public class Emulator {
     controller.start();
   }
 
+  public synchronized void start(int port)
+      throws IOException, TimeoutException, InterruptedException {
+    controller.start(port);
+  }
+
   /** Stops the emulator process. */
   public synchronized void stop() {
     controller.stop();

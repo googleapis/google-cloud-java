@@ -93,11 +93,13 @@ public class EmulatorController {
   }
 
   /** Starts the emulator process and waits for it to be ready. */
-  public synchronized void start() throws IOException, TimeoutException, InterruptedException {
+  public synchronized void start(int port)
+      throws IOException, TimeoutException, InterruptedException {
     if (!isStopped) {
       throw new IllegalStateException("Emulator is already started");
     }
-    this.port = getAvailablePort();
+
+    this.port = port;
 
     // Try to align the localhost address across java & golang emulator
     // This should fix issues on systems that default to ipv4 but the jvm is started with
@@ -141,6 +143,11 @@ public class EmulatorController {
     Runtime.getRuntime().addShutdownHook(shutdownHook);
 
     waitForPort(port);
+  }
+
+  /** Starts the emulator process and waits for it to be ready. */
+  public synchronized void start() throws IOException, TimeoutException, InterruptedException {
+    start(getAvailablePort());
   }
 
   /** Stops the emulator process. */
