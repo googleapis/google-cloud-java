@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.71.0 (2025-07-28)
+
+### Bug Fixes
+
+* Updated Private Service Connect IP ranges when route_all_traffic is false ([df87c7e](https://github.com/googleapis/google-cloud-java/commit/df87c7e0327ef0d0f2c2bcee9721bda202f912f4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
 ## 3.70.0 (2025-07-11)
 
 ### Dependencies
