@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.64.0](https://github.com/googleapis/google-cloud-java/compare/v1.63.0...v1.64.0) (2025-07-30)
+
+
+### Features
+
+* add v1 for configdelivery ([#11691](https://github.com/googleapis/google-cloud-java/issues/11691)) ([9f91ae2](https://github.com/googleapis/google-cloud-java/commit/9f91ae2d5a0613f7ba4c81d2208636385d904b40))
+* add v2 for bigquerydatapolicy ([#11690](https://github.com/googleapis/google-cloud-java/issues/11690)) ([069be0f](https://github.com/googleapis/google-cloud-java/commit/069be0f5be641b786e947f372b1f9ef463f2038e))
+
 ## [1.63.0](https://github.com/googleapis/google-cloud-java/compare/v1.62.0...v1.63.0) (2025-07-28)
 
 
