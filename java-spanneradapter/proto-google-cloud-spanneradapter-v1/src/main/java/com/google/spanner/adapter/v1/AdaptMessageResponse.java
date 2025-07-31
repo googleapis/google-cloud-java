@@ -208,6 +208,28 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
+  public static final int LAST_FIELD_NUMBER = 3;
+  private boolean last_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether this is the last
+   * [AdaptMessageResponse][google.spanner.adapter.v1.AdaptMessageResponse] in
+   * the stream. This field may be optionally set by the server. Clients should
+   * not rely on this field being set in all cases.
+   * </pre>
+   *
+   * <code>bool last = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The last.
+   */
+  @java.lang.Override
+  public boolean getLast() {
+    return last_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +249,9 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetStateUpdates(), StateUpdatesDefaultEntryHolder.defaultEntry, 2);
+    if (last_ != false) {
+      output.writeBool(3, last_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -249,6 +274,9 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, stateUpdates__);
     }
+    if (last_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, last_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -267,6 +295,7 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
 
     if (!getPayload().equals(other.getPayload())) return false;
     if (!internalGetStateUpdates().equals(other.internalGetStateUpdates())) return false;
+    if (getLast() != other.getLast()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -284,6 +313,8 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + STATE_UPDATES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetStateUpdates().hashCode();
     }
+    hash = (37 * hash) + LAST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLast());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -448,6 +479,7 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       payload_ = com.google.protobuf.ByteString.EMPTY;
       internalGetMutableStateUpdates().clear();
+      last_ = false;
       return this;
     }
 
@@ -490,6 +522,9 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.stateUpdates_ = internalGetStateUpdates();
         result.stateUpdates_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.last_ = last_;
       }
     }
 
@@ -544,6 +579,9 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
       }
       internalGetMutableStateUpdates().mergeFrom(other.internalGetStateUpdates());
       bitField0_ |= 0x00000002;
+      if (other.getLast() != false) {
+        setLast(other.getLast());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -588,6 +626,12 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                last_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -844,6 +888,71 @@ public final class AdaptMessageResponse extends com.google.protobuf.GeneratedMes
     public Builder putAllStateUpdates(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableStateUpdates().getMutableMap().putAll(values);
       bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private boolean last_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether this is the last
+     * [AdaptMessageResponse][google.spanner.adapter.v1.AdaptMessageResponse] in
+     * the stream. This field may be optionally set by the server. Clients should
+     * not rely on this field being set in all cases.
+     * </pre>
+     *
+     * <code>bool last = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The last.
+     */
+    @java.lang.Override
+    public boolean getLast() {
+      return last_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether this is the last
+     * [AdaptMessageResponse][google.spanner.adapter.v1.AdaptMessageResponse] in
+     * the stream. This field may be optionally set by the server. Clients should
+     * not rely on this field being set in all cases.
+     * </pre>
+     *
+     * <code>bool last = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The last to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLast(boolean value) {
+
+      last_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether this is the last
+     * [AdaptMessageResponse][google.spanner.adapter.v1.AdaptMessageResponse] in
+     * the stream. This field may be optionally set by the server. Clients should
+     * not rely on this field being set in all cases.
+     * </pre>
+     *
+     * <code>bool last = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLast() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      last_ = false;
+      onChanged();
       return this;
     }
 

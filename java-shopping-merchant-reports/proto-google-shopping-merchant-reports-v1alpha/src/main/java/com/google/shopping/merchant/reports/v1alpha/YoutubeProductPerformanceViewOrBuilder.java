@@ -385,4 +385,56 @@ public interface YoutubeProductPerformanceViewOrBuilder
    * <code>optional .google.shopping.type.Price net_sales = 11;</code>
    */
   com.google.shopping.type.PriceOrBuilder getNetSalesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct creators that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_creator_count = 12;</code>
+   *
+   * @return Whether the taggedCreatorCount field is set.
+   */
+  boolean hasTaggedCreatorCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct creators that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_creator_count = 12;</code>
+   *
+   * @return The taggedCreatorCount.
+   */
+  long getTaggedCreatorCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct videos that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_video_count = 13;</code>
+   *
+   * @return Whether the taggedVideoCount field is set.
+   */
+  boolean hasTaggedVideoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct videos that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_video_count = 13;</code>
+   *
+   * @return The taggedVideoCount.
+   */
+  long getTaggedVideoCount();
 }
