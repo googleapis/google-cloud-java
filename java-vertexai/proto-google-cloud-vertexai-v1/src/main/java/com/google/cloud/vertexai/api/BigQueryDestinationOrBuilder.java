@@ -46,7 +46,6 @@ public interface BigQueryDestinationOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
-
   /**
    *
    *
