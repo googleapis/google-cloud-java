@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-area-insights</artifactId>
-  <version>0.21.0</version><!-- {x-version-update:google-maps-area-insights:current} -->
+  <version>0.22.0-SNAPSHOT</version><!-- {x-version-update:google-maps-area-insights:current} -->
   <packaging>jar</packaging>
   <name>Google Places Insights API</name>
   <description>Places Insights API Places Insights API.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-area-insights-parent</artifactId>
-    <version>0.21.0</version><!-- {x-version-update:google-maps-area-insights:current} -->
+    <version>0.22.0-SNAPSHOT</version><!-- {x-version-update:google-maps-area-insights:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-area-insights</site.installationModule>
