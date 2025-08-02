@@ -41,6 +41,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   private UpcomingMaintenance() {
     latestWindowStartTime_ = "";
+    maintenanceReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
     maintenanceStatus_ = "";
     type_ = "";
     windowEndTime_ = "";
@@ -66,6 +67,374 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.UpcomingMaintenance.class,
             com.google.cloud.compute.v1.UpcomingMaintenance.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.UpcomingMaintenance.MaintenanceReasons}
+   */
+  public enum MaintenanceReasons implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MAINTENANCE_REASONS = 0;</code>
+     */
+    UNDEFINED_MAINTENANCE_REASONS(0),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to disk errors.
+     * </pre>
+     *
+     * <code>FAILURE_DISK = 8573778;</code>
+     */
+    FAILURE_DISK(8573778),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to GPU errors.
+     * </pre>
+     *
+     * <code>FAILURE_GPU = 467876919;</code>
+     */
+    FAILURE_GPU(467876919),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to high GPU temperature.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_TEMPERATURE = 24926540;</code>
+     */
+    FAILURE_GPU_TEMPERATURE(24926540),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to GPU xid failure.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_XID = 51956587;</code>
+     */
+    FAILURE_GPU_XID(51956587),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to infrastructure errors.
+     * </pre>
+     *
+     * <code>FAILURE_INFRA = 270541467;</code>
+     */
+    FAILURE_INFRA(270541467),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to interface errors.
+     * </pre>
+     *
+     * <code>FAILURE_INTERFACE = 390068356;</code>
+     */
+    FAILURE_INTERFACE(390068356),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to memory errors.
+     * </pre>
+     *
+     * <code>FAILURE_MEMORY = 440132982;</code>
+     */
+    FAILURE_MEMORY(440132982),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to network errors.
+     * </pre>
+     *
+     * <code>FAILURE_NETWORK = 42811449;</code>
+     */
+    FAILURE_NETWORK(42811449),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to NVLink failure.
+     * </pre>
+     *
+     * <code>FAILURE_NVLINK = 484426295;</code>
+     */
+    FAILURE_NVLINK(484426295),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to infrastructure relocation.
+     * </pre>
+     *
+     * <code>INFRASTRUCTURE_RELOCATION = 359845636;</code>
+     */
+    INFRASTRUCTURE_RELOCATION(359845636),
+    /**
+     *
+     *
+     * <pre>
+     * Unknown maintenance reason. Do not use this value.
+     * </pre>
+     *
+     * <code>MAINTENANCE_REASON_UNKNOWN = 50570235;</code>
+     */
+    MAINTENANCE_REASON_UNKNOWN(50570235),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MAINTENANCE_REASONS = 0;</code>
+     */
+    public static final int UNDEFINED_MAINTENANCE_REASONS_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to disk errors.
+     * </pre>
+     *
+     * <code>FAILURE_DISK = 8573778;</code>
+     */
+    public static final int FAILURE_DISK_VALUE = 8573778;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to GPU errors.
+     * </pre>
+     *
+     * <code>FAILURE_GPU = 467876919;</code>
+     */
+    public static final int FAILURE_GPU_VALUE = 467876919;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to high GPU temperature.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_TEMPERATURE = 24926540;</code>
+     */
+    public static final int FAILURE_GPU_TEMPERATURE_VALUE = 24926540;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to GPU xid failure.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_XID = 51956587;</code>
+     */
+    public static final int FAILURE_GPU_XID_VALUE = 51956587;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to infrastructure errors.
+     * </pre>
+     *
+     * <code>FAILURE_INFRA = 270541467;</code>
+     */
+    public static final int FAILURE_INFRA_VALUE = 270541467;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to interface errors.
+     * </pre>
+     *
+     * <code>FAILURE_INTERFACE = 390068356;</code>
+     */
+    public static final int FAILURE_INTERFACE_VALUE = 390068356;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to memory errors.
+     * </pre>
+     *
+     * <code>FAILURE_MEMORY = 440132982;</code>
+     */
+    public static final int FAILURE_MEMORY_VALUE = 440132982;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to network errors.
+     * </pre>
+     *
+     * <code>FAILURE_NETWORK = 42811449;</code>
+     */
+    public static final int FAILURE_NETWORK_VALUE = 42811449;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to NVLink failure.
+     * </pre>
+     *
+     * <code>FAILURE_NVLINK = 484426295;</code>
+     */
+    public static final int FAILURE_NVLINK_VALUE = 484426295;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to infrastructure relocation.
+     * </pre>
+     *
+     * <code>INFRASTRUCTURE_RELOCATION = 359845636;</code>
+     */
+    public static final int INFRASTRUCTURE_RELOCATION_VALUE = 359845636;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown maintenance reason. Do not use this value.
+     * </pre>
+     *
+     * <code>MAINTENANCE_REASON_UNKNOWN = 50570235;</code>
+     */
+    public static final int MAINTENANCE_REASON_UNKNOWN_VALUE = 50570235;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MaintenanceReasons valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MaintenanceReasons forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MAINTENANCE_REASONS;
+        case 8573778:
+          return FAILURE_DISK;
+        case 467876919:
+          return FAILURE_GPU;
+        case 24926540:
+          return FAILURE_GPU_TEMPERATURE;
+        case 51956587:
+          return FAILURE_GPU_XID;
+        case 270541467:
+          return FAILURE_INFRA;
+        case 390068356:
+          return FAILURE_INTERFACE;
+        case 440132982:
+          return FAILURE_MEMORY;
+        case 42811449:
+          return FAILURE_NETWORK;
+        case 484426295:
+          return FAILURE_NVLINK;
+        case 359845636:
+          return INFRASTRUCTURE_RELOCATION;
+        case 50570235:
+          return MAINTENANCE_REASON_UNKNOWN;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MaintenanceReasons>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MaintenanceReasons>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MaintenanceReasons>() {
+              public MaintenanceReasons findValueByNumber(int number) {
+                return MaintenanceReasons.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.UpcomingMaintenance.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final MaintenanceReasons[] VALUES = values();
+
+    public static MaintenanceReasons valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MaintenanceReasons(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.UpcomingMaintenance.MaintenanceReasons)
   }
 
   /**
@@ -227,7 +596,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.UpcomingMaintenance.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.UpcomingMaintenance.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final MaintenanceStatus[] VALUES = values();
@@ -410,7 +779,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.UpcomingMaintenance.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.UpcomingMaintenance.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Type[] VALUES = values();
@@ -539,6 +908,113 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MAINTENANCE_ON_SHUTDOWN_FIELD_NUMBER = 231055754;
+  private boolean maintenanceOnShutdown_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+   * </pre>
+   *
+   * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+   *
+   * @return Whether the maintenanceOnShutdown field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceOnShutdown() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+   * </pre>
+   *
+   * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+   *
+   * @return The maintenanceOnShutdown.
+   */
+  @java.lang.Override
+  public boolean getMaintenanceOnShutdown() {
+    return maintenanceOnShutdown_;
+  }
+
+  public static final int MAINTENANCE_REASONS_FIELD_NUMBER = 140283267;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList maintenanceReasons_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @return A list containing the maintenanceReasons.
+   */
+  public com.google.protobuf.ProtocolStringList getMaintenanceReasonsList() {
+    return maintenanceReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @return The count of maintenanceReasons.
+   */
+  public int getMaintenanceReasonsCount() {
+    return maintenanceReasons_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The maintenanceReasons at the given index.
+   */
+  public java.lang.String getMaintenanceReasons(int index) {
+    return maintenanceReasons_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the maintenanceReasons at the given index.
+   */
+  public com.google.protobuf.ByteString getMaintenanceReasonsBytes(int index) {
+    return maintenanceReasons_.getByteString(index);
+  }
+
   public static final int MAINTENANCE_STATUS_FIELD_NUMBER = 81645214;
 
   @SuppressWarnings("serial")
@@ -558,7 +1034,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasMaintenanceStatus() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -630,7 +1106,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -701,7 +1177,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasWindowEndTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -770,7 +1246,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasWindowStartTime() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -835,10 +1311,10 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81645214, maintenanceStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -847,10 +1323,17 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 128032129, latestWindowStartTime_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 271816480, windowEndTime_);
+    for (int i = 0; i < maintenanceReasons_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 140283267, maintenanceReasons_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(231055754, maintenanceOnShutdown_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 271816480, windowEndTime_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 473061433, windowStartTime_);
     }
     getUnknownFields().writeTo(output);
@@ -862,10 +1345,10 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(81645214, maintenanceStatus_);
     }
@@ -877,10 +1360,22 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               128032129, latestWindowStartTime_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(271816480, windowEndTime_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < maintenanceReasons_.size(); i++) {
+        dataSize += computeStringSizeNoTag(maintenanceReasons_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getMaintenanceReasonsList().size();
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(231055754, maintenanceOnShutdown_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(271816480, windowEndTime_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(473061433, windowStartTime_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -907,6 +1402,11 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     if (hasLatestWindowStartTime()) {
       if (!getLatestWindowStartTime().equals(other.getLatestWindowStartTime())) return false;
     }
+    if (hasMaintenanceOnShutdown() != other.hasMaintenanceOnShutdown()) return false;
+    if (hasMaintenanceOnShutdown()) {
+      if (getMaintenanceOnShutdown() != other.getMaintenanceOnShutdown()) return false;
+    }
+    if (!getMaintenanceReasonsList().equals(other.getMaintenanceReasonsList())) return false;
     if (hasMaintenanceStatus() != other.hasMaintenanceStatus()) return false;
     if (hasMaintenanceStatus()) {
       if (!getMaintenanceStatus().equals(other.getMaintenanceStatus())) return false;
@@ -941,6 +1441,14 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     if (hasLatestWindowStartTime()) {
       hash = (37 * hash) + LATEST_WINDOW_START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLatestWindowStartTime().hashCode();
+    }
+    if (hasMaintenanceOnShutdown()) {
+      hash = (37 * hash) + MAINTENANCE_ON_SHUTDOWN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMaintenanceOnShutdown());
+    }
+    if (getMaintenanceReasonsCount() > 0) {
+      hash = (37 * hash) + MAINTENANCE_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceReasonsList().hashCode();
     }
     if (hasMaintenanceStatus()) {
       hash = (37 * hash) + MAINTENANCE_STATUS_FIELD_NUMBER;
@@ -1100,6 +1608,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       canReschedule_ = false;
       latestWindowStartTime_ = "";
+      maintenanceOnShutdown_ = false;
+      maintenanceReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
       maintenanceStatus_ = "";
       type_ = "";
       windowEndTime_ = "";
@@ -1150,20 +1660,28 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.maintenanceStatus_ = maintenanceStatus_;
+        result.maintenanceOnShutdown_ = maintenanceOnShutdown_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.type_ = type_;
-        to_bitField0_ |= 0x00000008;
+        maintenanceReasons_.makeImmutable();
+        result.maintenanceReasons_ = maintenanceReasons_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.windowEndTime_ = windowEndTime_;
-        to_bitField0_ |= 0x00000010;
+        result.maintenanceStatus_ = maintenanceStatus_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.windowStartTime_ = windowStartTime_;
+        result.type_ = type_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.windowEndTime_ = windowEndTime_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.windowStartTime_ = windowStartTime_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1222,24 +1740,37 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasMaintenanceOnShutdown()) {
+        setMaintenanceOnShutdown(other.getMaintenanceOnShutdown());
+      }
+      if (!other.maintenanceReasons_.isEmpty()) {
+        if (maintenanceReasons_.isEmpty()) {
+          maintenanceReasons_ = other.maintenanceReasons_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureMaintenanceReasonsIsMutable();
+          maintenanceReasons_.addAll(other.maintenanceReasons_);
+        }
+        onChanged();
+      }
       if (other.hasMaintenanceStatus()) {
         maintenanceStatus_ = other.maintenanceStatus_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasWindowEndTime()) {
         windowEndTime_ = other.windowEndTime_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasWindowStartTime()) {
         windowStartTime_ = other.windowStartTime_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1271,13 +1802,13 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 28604882
             case 653161714:
               {
                 maintenanceStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 653161714
             case 767855816:
@@ -1292,16 +1823,29 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 1024257034
+            case 1122266138:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMaintenanceReasonsIsMutable();
+                maintenanceReasons_.add(s);
+                break;
+              } // case 1122266138
+            case 1848446032:
+              {
+                maintenanceOnShutdown_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1848446032
             case -2120435454:
               {
                 windowEndTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -2120435454
             case -510475830:
               {
                 windowStartTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -510475830
             default:
@@ -1521,6 +2065,270 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private boolean maintenanceOnShutdown_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+     * </pre>
+     *
+     * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+     *
+     * @return Whether the maintenanceOnShutdown field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaintenanceOnShutdown() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+     * </pre>
+     *
+     * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+     *
+     * @return The maintenanceOnShutdown.
+     */
+    @java.lang.Override
+    public boolean getMaintenanceOnShutdown() {
+      return maintenanceOnShutdown_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+     * </pre>
+     *
+     * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+     *
+     * @param value The maintenanceOnShutdown to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceOnShutdown(boolean value) {
+
+      maintenanceOnShutdown_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+     * </pre>
+     *
+     * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintenanceOnShutdown() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maintenanceOnShutdown_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList maintenanceReasons_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureMaintenanceReasonsIsMutable() {
+      if (!maintenanceReasons_.isModifiable()) {
+        maintenanceReasons_ = new com.google.protobuf.LazyStringArrayList(maintenanceReasons_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @return A list containing the maintenanceReasons.
+     */
+    public com.google.protobuf.ProtocolStringList getMaintenanceReasonsList() {
+      maintenanceReasons_.makeImmutable();
+      return maintenanceReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @return The count of maintenanceReasons.
+     */
+    public int getMaintenanceReasonsCount() {
+      return maintenanceReasons_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The maintenanceReasons at the given index.
+     */
+    public java.lang.String getMaintenanceReasons(int index) {
+      return maintenanceReasons_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the maintenanceReasons at the given index.
+     */
+    public com.google.protobuf.ByteString getMaintenanceReasonsBytes(int index) {
+      return maintenanceReasons_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The maintenanceReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceReasons(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMaintenanceReasonsIsMutable();
+      maintenanceReasons_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param value The maintenanceReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMaintenanceReasons(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMaintenanceReasonsIsMutable();
+      maintenanceReasons_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param values The maintenanceReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMaintenanceReasons(java.lang.Iterable<java.lang.String> values) {
+      ensureMaintenanceReasonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, maintenanceReasons_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintenanceReasons() {
+      maintenanceReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The reasons for the maintenance. Only valid for vms.
+     * Check the MaintenanceReasons enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string maintenance_reasons = 140283267;</code>
+     *
+     * @param value The bytes of the maintenanceReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMaintenanceReasonsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureMaintenanceReasonsIsMutable();
+      maintenanceReasons_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object maintenanceStatus_ = "";
 
     /**
@@ -1536,7 +2344,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * @return Whether the maintenanceStatus field is set.
      */
     public boolean hasMaintenanceStatus() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1605,7 +2413,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       maintenanceStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1624,7 +2432,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      */
     public Builder clearMaintenanceStatus() {
       maintenanceStatus_ = getDefaultInstance().getMaintenanceStatus();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1648,7 +2456,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       maintenanceStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1668,7 +2476,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1737,7 +2545,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1756,7 +2564,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1780,7 +2588,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1799,7 +2607,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * @return Whether the windowEndTime field is set.
      */
     public boolean hasWindowEndTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1865,7 +2673,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       windowEndTime_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1883,7 +2691,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      */
     public Builder clearWindowEndTime() {
       windowEndTime_ = getDefaultInstance().getWindowEndTime();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1906,7 +2714,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       windowEndTime_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1925,7 +2733,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * @return Whether the windowStartTime field is set.
      */
     public boolean hasWindowStartTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1991,7 +2799,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       windowStartTime_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2009,7 +2817,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      */
     public Builder clearWindowStartTime() {
       windowStartTime_ = getDefaultInstance().getWindowStartTime();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2032,7 +2840,7 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       windowStartTime_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
