@@ -228,19 +228,19 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
+          com.google.cloud.kms.v1.GetKeyRingRequestProto, com.google.cloud.kms.v1.KeyRing>
       getGetKeyRingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetKeyRing",
-      requestType = com.google.cloud.kms.v1.GetKeyRingRequest.class,
+      requestType = com.google.cloud.kms.v1.GetKeyRingRequestProto.class,
       responseType = com.google.cloud.kms.v1.KeyRing.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
+          com.google.cloud.kms.v1.GetKeyRingRequestProto, com.google.cloud.kms.v1.KeyRing>
       getGetKeyRingMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
+            com.google.cloud.kms.v1.GetKeyRingRequestProto, com.google.cloud.kms.v1.KeyRing>
         getGetKeyRingMethod;
     if ((getGetKeyRingMethod = KeyManagementServiceGrpc.getGetKeyRingMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
@@ -248,14 +248,14 @@ public final class KeyManagementServiceGrpc {
           KeyManagementServiceGrpc.getGetKeyRingMethod =
               getGetKeyRingMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>
+                      .<com.google.cloud.kms.v1.GetKeyRingRequestProto, com.google.cloud.kms.v1.KeyRing>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKeyRing"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.GetKeyRingRequest.getDefaultInstance()))
+                              com.google.cloud.kms.v1.GetKeyRingRequestProto.getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
                               com.google.cloud.kms.v1.KeyRing.getDefaultInstance()))
@@ -1458,7 +1458,7 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     default void getKeyRing(
-        com.google.cloud.kms.v1.GetKeyRingRequest request,
+        com.google.cloud.kms.v1.GetKeyRingRequestProto request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeyRingMethod(), responseObserver);
     }
@@ -2003,7 +2003,7 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public void getKeyRing(
-        com.google.cloud.kms.v1.GetKeyRingRequest request,
+        com.google.cloud.kms.v1.GetKeyRingRequestProto request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetKeyRingMethod(), getCallOptions()), request, responseObserver);
@@ -2550,7 +2550,7 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyRing getKeyRing(
-        com.google.cloud.kms.v1.GetKeyRingRequest request) {
+        com.google.cloud.kms.v1.GetKeyRingRequestProto request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKeyRingMethod(), getCallOptions(), request);
     }
@@ -3036,7 +3036,7 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyRing getKeyRing(
-        com.google.cloud.kms.v1.GetKeyRingRequest request) {
+        com.google.cloud.kms.v1.GetKeyRingRequestProto request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKeyRingMethod(), getCallOptions(), request);
     }
@@ -3526,7 +3526,7 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.KeyRing>
-        getKeyRing(com.google.cloud.kms.v1.GetKeyRingRequest request) {
+        getKeyRing(com.google.cloud.kms.v1.GetKeyRingRequestProto request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetKeyRingMethod(), getCallOptions()), request);
     }
@@ -4013,7 +4013,7 @@ public final class KeyManagementServiceGrpc {
           break;
         case METHODID_GET_KEY_RING:
           serviceImpl.getKeyRing(
-              (com.google.cloud.kms.v1.GetKeyRingRequest) request,
+              (com.google.cloud.kms.v1.GetKeyRingRequestProto) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing>) responseObserver);
           break;
         case METHODID_GET_CRYPTO_KEY:
@@ -4196,7 +4196,7 @@ public final class KeyManagementServiceGrpc {
             getGetKeyRingMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
-                    com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>(
+                    com.google.cloud.kms.v1.GetKeyRingRequestProto, com.google.cloud.kms.v1.KeyRing>(
                     service, METHODID_GET_KEY_RING)))
         .addMethod(
             getGetCryptoKeyMethod(),
