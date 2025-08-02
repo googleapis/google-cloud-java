@@ -60,4 +60,36 @@ public interface CreateEndpointOperationMetadataOrBuilder
    * <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder getGenericMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment stage of the model. Only populated if this
+   * CreateEndpoint request deploys a model at the same time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentStage.
+   */
+  int getDeploymentStageValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment stage of the model. Only populated if this
+   * CreateEndpoint request deploys a model at the same time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deploymentStage.
+   */
+  com.google.cloud.aiplatform.v1.DeploymentStage getDeploymentStage();
 }

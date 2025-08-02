@@ -542,6 +542,52 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelArmorConfig field is set.
+   */
+  boolean hasModelArmorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelArmorConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelArmorConfig getModelArmorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder getModelArmorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Generation config.
    * </pre>
    *

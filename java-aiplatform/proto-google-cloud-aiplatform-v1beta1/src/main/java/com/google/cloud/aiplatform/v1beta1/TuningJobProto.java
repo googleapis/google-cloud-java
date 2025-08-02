@@ -101,6 +101,14 @@ public final class TuningJobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_TunedModelRef_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_VeoHyperParameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_VeoHyperParameters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_VeoTuningSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_VeoTuningSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_fieldAccessorTable;
@@ -119,7 +127,7 @@ public final class TuningJobProto {
           + "ogle/api/resource.proto\032-google/cloud/aiplatform/v1beta1/content.proto\0325google/c"
           + "loud/aiplatform/v1beta1/encryption_spec.proto\032/google/cloud/aiplatform/v1beta1/j"
           + "ob_state.proto\032\034google/protobuf/struct.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\221\013\n"
+          + "roto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\334\013\n"
           + "\tTuningJob\022\024\n\n"
           + "base_model\030\004 \001(\tH\000\022W\n"
           + "\026supervised_tuning_spec\030\005"
@@ -127,15 +135,17 @@ public final class TuningJobProto {
           + "\021distillation_spec\030\021"
           + " \001(\01321.google.cloud.aiplatform.v1beta1.DistillationSpecH\001\022\\\n"
           + "\031partner_model_tuning_spec\030\025 \001(\01327.google.cloud.ai"
-          + "platform.v1beta1.PartnerModelTuningSpecH\001\022\024\n"
+          + "platform.v1beta1.PartnerModelTuningSpecH\001\022I\n"
+          + "\017veo_tuning_spec\030!"
+          + " \001(\0132..google.cloud.aiplatform.v1beta1.VeoTuningSpecH\001\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022%\n"
           + "\030tuned_model_display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022\036\n"
           + "\021custom_base_model\030\032 \001(\tB\003\340A\001\022=\n"
           + "\005state\030\006"
           + " \001(\0162).google.cloud.aiplatform.v1beta1.JobStateB\003\340A\003\0224\n"
-          + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n"
-          + "\n"
+          + "\013create_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
           + "start_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\n"
@@ -146,10 +156,10 @@ public final class TuningJobProto {
           + "experiment\030\r"
           + " \001(\tB)\340A\003\372A#\n"
           + "!aiplatform.googleapis.com/Context\022E\n"
-          + "\013tuned_model\030\016 \001(\0132+.g"
-          + "oogle.cloud.aiplatform.v1beta1.TunedModelB\003\340A\003\022P\n"
-          + "\021tuning_data_stats\030\017 \001(\01320.goog"
-          + "le.cloud.aiplatform.v1beta1.TuningDataStatsB\003\340A\003\022C\n"
+          + "\013tuned_model\030\016 \001(\0132+.google"
+          + ".cloud.aiplatform.v1beta1.TunedModelB\003\340A\003\022P\n"
+          + "\021tuning_data_stats\030\017 \001(\01320.google.cl"
+          + "oud.aiplatform.v1beta1.TuningDataStatsB\003\340A\003\022C\n"
           + "\014pipeline_job\030\022 \001(\tB-\340A\003\372A\'\n"
           + "%aiplatform.googleapis.com/PipelineJob\022H\n"
           + "\017encryption_spec\030\020"
@@ -159,8 +169,8 @@ public final class TuningJobProto {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\200\001\352A}\n"
-          + "#aiplatform.googleapis.co"
-          + "m/TuningJob\022?projects/{project}/locations/{location}/tuningJobs/{tuning_job}*\n"
+          + "#aiplatform.googleapis.com/Tun"
+          + "ingJob\022?projects/{project}/locations/{location}/tuningJobs/{tuning_job}*\n"
           + "tuningJobs2\ttuningJobB\016\n"
           + "\014source_modelB\r\n"
           + "\013tuning_spec\"\323\001\n\n"
@@ -169,8 +179,8 @@ public final class TuningJobProto {
           + "\037aiplatform.googleapis.com/Model\022<\n"
           + "\010endpoint\030\002 \001(\tB*\340A\003\372A$\n"
           + "\"aiplatform.googleapis.com/Endpoint\022O\n"
-          + "\013checkpoints\030\003"
-          + " \003(\01325.google.cloud.aiplatform.v1beta1.TunedModelCheckpointB\003\340A\003\"\367\002\n"
+          + "\013checkpoints\030\003 \003(\0132"
+          + "5.google.cloud.aiplatform.v1beta1.TunedModelCheckpointB\003\340A\003\"\367\002\n"
           + "#SupervisedTuningDatasetDistribution\022\020\n"
           + "\003sum\030\001 \001(\003B\003\340A\003\022\031\n"
           + "\014billable_sum\030\t \001(\003B\003\340A\003\022\020\n"
@@ -180,8 +190,8 @@ public final class TuningJobProto {
           + "\006median\030\005 \001(\001B\003\340A\003\022\017\n"
           + "\002p5\030\006 \001(\001B\003\340A\003\022\020\n"
           + "\003p95\030\007 \001(\001B\003\340A\003\022h\n"
-          + "\007buckets\030\010 \003(\0132R.google.cloud.aiplatform.v1beta1.Supervis"
-          + "edTuningDatasetDistribution.DatasetBucketB\003\340A\003\032J\n\r"
+          + "\007buckets\030\010 \003(\0132R.google.cloud.aiplatform.v1beta1.SupervisedTun"
+          + "ingDatasetDistribution.DatasetBucketB\003\340A\003\032J\n\r"
           + "DatasetBucket\022\022\n"
           + "\005count\030\001 \001(\001B\003\340A\003\022\021\n"
           + "\004left\030\002 \001(\001B\003\340A\003\022\022\n"
@@ -192,12 +202,12 @@ public final class TuningJobProto {
           + "\036total_billable_character_count\030\003 \001(\003B\005\030\001\340A\003\022\'\n"
           + "\032total_billable_token_count\030\t \001(\003B\003\340A\003\022\036\n"
           + "\021tuning_step_count\030\004 \001(\003B\003\340A\003\022p\n"
-          + "\035user_input_token_distribution\030\005 \001(\0132D."
-          + "google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022q\n"
-          + "\036user_output_token_distribution\030\006 \001(\0132D.googl"
-          + "e.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022x\n"
-          + "%user_message_per_example_distribution\030\007 \001(\0132D.goo"
-          + "gle.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022L\n"
+          + "\035user_input_token_distribution\030\005 \001(\0132D.googl"
+          + "e.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022q\n"
+          + "\036user_output_token_distribution\030\006 \001(\0132D.google.clo"
+          + "ud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022x\n"
+          + "%user_message_per_example_distribution\030\007 \001(\0132D.google.c"
+          + "loud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionB\003\340A\003\022L\n"
           + "\025user_dataset_examples\030\010"
           + " \003(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\003\022*\n"
           + "\035total_truncated_example_count\030\n"
@@ -212,8 +222,8 @@ public final class TuningJobProto {
           + "\006median\030\005 \001(\001B\003\340A\003\022\017\n"
           + "\002p5\030\006 \001(\001B\003\340A\003\022\020\n"
           + "\003p95\030\007 \001(\001B\003\340A\003\022]\n"
-          + "\007buckets\030\010 \003(\0132"
-          + "G.google.cloud.aiplatform.v1beta1.DatasetDistribution.DistributionBucketB\003\340A\003\032O\n"
+          + "\007buckets\030\010 \003(\0132G.goo"
+          + "gle.cloud.aiplatform.v1beta1.DatasetDistribution.DistributionBucketB\003\340A\003\032O\n"
           + "\022DistributionBucket\022\022\n"
           + "\005count\030\001 \001(\003B\003\340A\003\022\021\n"
           + "\004left\030\002 \001(\001B\003\340A\003\022\022\n"
@@ -225,28 +235,28 @@ public final class TuningJobProto {
           + "\021tuning_step_count\030\004 \001(\003B\003\340A\003\022`\n"
           + "\035user_input_token_distribution\030\005"
           + " \001(\01324.google.cloud.aiplatform.v1beta1.DatasetDistributionB\003\340A\003\022f\n"
-          + "\036user_output_token_distribution\030\006 \001(\01324.g"
-          + "oogle.cloud.aiplatform.v1beta1.DatasetDistributionB\003\340A\003H\000\210\001\001\022h\n"
-          + "%user_message_per_example_distribution\030\007 \001(\01324.google.clo"
-          + "ud.aiplatform.v1beta1.DatasetDistributionB\003\340A\003\022L\n"
-          + "\025user_dataset_examples\030\010 \003(\0132(."
-          + "google.cloud.aiplatform.v1beta1.ContentB\003\340A\003B!\n"
+          + "\036user_output_token_distribution\030\006 \001(\01324.google"
+          + ".cloud.aiplatform.v1beta1.DatasetDistributionB\003\340A\003H\000\210\001\001\022h\n"
+          + "%user_message_per_example_distribution\030\007 \001(\01324.google.cloud.ai"
+          + "platform.v1beta1.DatasetDistributionB\003\340A\003\022L\n"
+          + "\025user_dataset_examples\030\010 \003(\0132(.googl"
+          + "e.cloud.aiplatform.v1beta1.ContentB\003\340A\003B!\n"
           + "\037_user_output_token_distribution\"k\n"
           + "\025DistillationDataStats\022R\n"
           + "\026training_dataset_stats\030\001"
           + " \001(\0132-.google.cloud.aiplatform.v1beta1.DatasetStatsB\003\340A\003\"\352\001\n"
           + "\017TuningDataStats\022b\n"
-          + "\034supervised_tuning_data_stats\030\001"
-          + " \001(\0132:.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStatsH\000\022^\n"
-          + "\027distillation_data_stats\030\003 \001(\01326.google.cloud.aip"
-          + "latform.v1beta1.DistillationDataStatsB\003\340A\003H\000B\023\n"
+          + "\034supervised_tuning_data_stats\030\001 \001("
+          + "\0132:.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStatsH\000\022^\n"
+          + "\027distillation_data_stats\030\003 \001(\01326.google.cloud.aiplatfo"
+          + "rm.v1beta1.DistillationDataStatsB\003\340A\003H\000B\023\n"
           + "\021tuning_data_stats\"\264\003\n"
           + "\031SupervisedHyperParameters\022\030\n"
           + "\013epoch_count\030\001 \001(\003B\003\340A\001\022%\n"
           + "\030learning_rate_multiplier\030\002 \001(\001B\003\340A\001\022\032\n\r"
           + "learning_rate\030\006 \001(\001B\003\340A\001\022a\n"
-          + "\014adapter_size\030\003 \001(\0162F.google.cloud.aiplatform.v1b"
-          + "eta1.SupervisedHyperParameters.AdapterSizeB\003\340A\001\022\027\n\n"
+          + "\014adapter_size\030\003 \001(\0162F.google.cloud.aiplatform.v1beta1."
+          + "SupervisedHyperParameters.AdapterSizeB\003\340A\001\022\027\n\n"
           + "batch_size\030\005 \001(\003B\003\340A\001\"\275\001\n"
           + "\013AdapterSize\022\034\n"
           + "\030ADAPTER_SIZE_UNSPECIFIED\020\000\022\024\n"
@@ -259,11 +269,11 @@ public final class TuningJobProto {
           + "\024SupervisedTuningSpec\022!\n"
           + "\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n"
           + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022Y\n"
-          + "\020hyper_parameters\030\003 \001(\0132:.google.clo"
-          + "ud.aiplatform.v1beta1.SupervisedHyperParametersB\003\340A\001\022(\n"
+          + "\020hyper_parameters\030\003 \001(\0132:.google.cloud.ai"
+          + "platform.v1beta1.SupervisedHyperParametersB\003\340A\001\022(\n"
           + "\033export_last_checkpoint_only\030\006 \001(\010B\003\340A\001\022U\n"
-          + "\013tuning_mode\030\007 \001(\0162@.go"
-          + "ogle.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode\"]\n\n"
+          + "\013tuning_mode\030\007 \001(\0162@.google."
+          + "cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode\"]\n\n"
           + "TuningMode\022\033\n"
           + "\027TUNING_MODE_UNSPECIFIED\020\000\022\024\n"
           + "\020TUNING_MODE_FULL\020\001\022\034\n"
@@ -274,8 +284,8 @@ public final class TuningJobProto {
           + "\037aiplatform.googleapis.com/ModelH\000\022!\n"
           + "\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022(\n"
           + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001H\001\210\001\001\022[\n"
-          + "\020hyper_parameters\030\003 \001(\0132<.google.clou"
-          + "d.aiplatform.v1beta1.DistillationHyperParametersB\003\340A\001\022\025\n\r"
+          + "\020hyper_parameters\030\003 \001(\0132<.google.cloud.aip"
+          + "latform.v1beta1.DistillationHyperParametersB\003\340A\001\022\025\n\r"
           + "student_model\030\004 \001(\t\022$\n"
           + "\027pipeline_root_directory\030\007 \001(\tB\003\340A\002B\017\n\r"
           + "teacher_modelB\031\n"
@@ -283,15 +293,15 @@ public final class TuningJobProto {
           + "\033DistillationHyperParameters\022\035\n"
           + "\013epoch_count\030\001 \001(\003B\003\340A\001H\000\210\001\001\022*\n"
           + "\030learning_rate_multiplier\030\002 \001(\001B\003\340A\001H\001\210\001\001\022a\n"
-          + "\014adapter_size\030\003 \001(\0162F.google.cloud.aiplatform.v1beta"
-          + "1.SupervisedHyperParameters.AdapterSizeB\003\340A\001B\016\n"
+          + "\014adapter_size\030\003 \001(\0162F.google.cloud.aiplatform.v1beta1.Sup"
+          + "ervisedHyperParameters.AdapterSizeB\003\340A\001B\016\n"
           + "\014_epoch_countB\033\n"
           + "\031_learning_rate_multiplier\"\230\002\n"
           + "\026PartnerModelTuningSpec\022!\n"
           + "\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n"
           + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022f\n"
-          + "\020hyper_parameters\030\003 \003(\0132L.google.cloud.aiplatform"
-          + ".v1beta1.PartnerModelTuningSpec.HyperParametersEntry\032N\n"
+          + "\020hyper_parameters\030\003 \003(\0132L.google.cloud.aiplatform.v1be"
+          + "ta1.PartnerModelTuningSpec.HyperParametersEntry\032N\n"
           + "\024HyperParametersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022%\n"
           + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\"\343\001\n\r"
@@ -302,17 +312,31 @@ public final class TuningJobProto {
           + "#aiplatform.googleapis.com/TuningJobH\000\022B\n"
           + "\014pipeline_job\030\003 \001(\tB*\372A\'\n"
           + "%aiplatform.googleapis.com/PipelineJobH\000B\021\n"
-          + "\017tuned_model_ref\"\\\n"
+          + "\017tuned_model_ref\"\204\002\n"
+          + "\022VeoHyperParameters\022\030\n"
+          + "\013epoch_count\030\001 \001(\003B\003\340A\001\022%\n"
+          + "\030learning_rate_multiplier\030\002 \001(\001B\003\340A\001\022X\n"
+          + "\013tuning_task\030\003 \001(\0162>.google.clou"
+          + "d.aiplatform.v1beta1.VeoHyperParameters.TuningTaskB\003\340A\001\"S\n\n"
+          + "TuningTask\022\033\n"
+          + "\027TUNING_TASK_UNSPECIFIED\020\000\022\023\n"
+          + "\017TUNING_TASK_I2V\020\001\022\023\n"
+          + "\017TUNING_TASK_T2V\020\002\"\253\001\n\r"
+          + "VeoTuningSpec\022!\n"
+          + "\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n"
+          + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022R\n"
+          + "\020hyper_parameters\030\003"
+          + " \001(\01323.google.cloud.aiplatform.v1beta1.VeoHyperParametersB\003\340A\001\"\\\n"
           + "\024TunedModelCheckpoint\022\025\n\r"
           + "checkpoint_id\030\001 \001(\t\022\r\n"
           + "\005epoch\030\002 \001(\003\022\014\n"
           + "\004step\030\003 \001(\003\022\020\n"
           + "\010endpoint\030\004 \001(\tB\345\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobProtoP\001ZCclou"
-          + "d.google.com/go/aiplatform/apiv1beta1/ai"
-          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobProtoP\001ZCcloud.google"
+          + ".com/go/aiplatform/apiv1beta1/aiplatform"
+          + "pb;aiplatformpb\252\002\037Google.Cloud.AIPlatfor"
+          + "m.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1be"
+          + "ta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -337,6 +361,7 @@ public final class TuningJobProto {
               "SupervisedTuningSpec",
               "DistillationSpec",
               "PartnerModelTuningSpec",
+              "VeoTuningSpec",
               "Name",
               "TunedModelDisplayName",
               "Description",
@@ -531,8 +556,24 @@ public final class TuningJobProto {
             new java.lang.String[] {
               "TunedModel", "TuningJob", "PipelineJob", "TunedModelRef",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_VeoHyperParameters_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1beta1_VeoHyperParameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_VeoHyperParameters_descriptor,
+            new java.lang.String[] {
+              "EpochCount", "LearningRateMultiplier", "TuningTask",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_VeoTuningSpec_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_aiplatform_v1beta1_VeoTuningSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_VeoTuningSpec_descriptor,
+            new java.lang.String[] {
+              "TrainingDatasetUri", "ValidationDatasetUri", "HyperParameters",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor =
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor,

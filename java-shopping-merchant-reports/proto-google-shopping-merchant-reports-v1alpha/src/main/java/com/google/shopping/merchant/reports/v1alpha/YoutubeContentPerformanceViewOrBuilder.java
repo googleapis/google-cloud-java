@@ -411,4 +411,66 @@ public interface YoutubeContentPerformanceViewOrBuilder
    * <code>optional .google.shopping.type.Price net_sales = 11;</code>
    */
   com.google.shopping.type.PriceOrBuilder getNetSalesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @return A list containing the taggedProductIds.
+   */
+  java.util.List<java.lang.String> getTaggedProductIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @return The count of taggedProductIds.
+   */
+  int getTaggedProductIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The taggedProductIds at the given index.
+   */
+  java.lang.String getTaggedProductIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taggedProductIds at the given index.
+   */
+  com.google.protobuf.ByteString getTaggedProductIdsBytes(int index);
 }

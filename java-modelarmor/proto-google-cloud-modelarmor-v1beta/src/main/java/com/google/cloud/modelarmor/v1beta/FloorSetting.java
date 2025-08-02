@@ -207,7 +207,54 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
   public interface FloorSettingMetadataOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiLanguageDetection field is set.
+     */
+    boolean hasMultiLanguageDetection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiLanguageDetection.
+     */
+    com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection
+        getMultiLanguageDetection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+            .MultiLanguageDetectionOrBuilder
+        getMultiLanguageDetectionOrBuilder();
+  }
 
   /**
    *
@@ -252,6 +299,700 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.Builder.class);
     }
 
+    public interface MultiLanguageDetectionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. If true, multi language detection will be enabled.
+       * </pre>
+       *
+       * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enableMultiLanguageDetection.
+       */
+      boolean getEnableMultiLanguageDetection();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata to enable multi language detection via floor setting.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection}
+     */
+    public static final class MultiLanguageDetection extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection)
+        MultiLanguageDetectionOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use MultiLanguageDetection.newBuilder() to construct.
+      private MultiLanguageDetection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MultiLanguageDetection() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MultiLanguageDetection();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.modelarmor.v1beta.V1mainProto
+            .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_MultiLanguageDetection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.modelarmor.v1beta.V1mainProto
+            .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_MultiLanguageDetection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                    .MultiLanguageDetection.class,
+                com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                    .MultiLanguageDetection.Builder.class);
+      }
+
+      public static final int ENABLE_MULTI_LANGUAGE_DETECTION_FIELD_NUMBER = 1;
+      private boolean enableMultiLanguageDetection_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. If true, multi language detection will be enabled.
+       * </pre>
+       *
+       * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enableMultiLanguageDetection.
+       */
+      @java.lang.Override
+      public boolean getEnableMultiLanguageDetection() {
+        return enableMultiLanguageDetection_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (enableMultiLanguageDetection_ != false) {
+          output.writeBool(1, enableMultiLanguageDetection_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (enableMultiLanguageDetection_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  1, enableMultiLanguageDetection_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .MultiLanguageDetection)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection
+            other =
+                (com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                        .MultiLanguageDetection)
+                    obj;
+
+        if (getEnableMultiLanguageDetection() != other.getEnableMultiLanguageDetection())
+          return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ENABLE_MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getEnableMultiLanguageDetection());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Metadata to enable multi language detection via floor setting.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection)
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetectionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.modelarmor.v1beta.V1mainProto
+              .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_MultiLanguageDetection_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.modelarmor.v1beta.V1mainProto
+              .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_MultiLanguageDetection_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection.class,
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          enableMultiLanguageDetection_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.modelarmor.v1beta.V1mainProto
+              .internal_static_google_cloud_modelarmor_v1beta_FloorSetting_FloorSettingMetadata_MultiLanguageDetection_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .MultiLanguageDetection
+            getDefaultInstanceForType() {
+          return com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .MultiLanguageDetection
+            build() {
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .MultiLanguageDetection
+            buildPartial() {
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection
+              result =
+                  new com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                    .MultiLanguageDetection
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.enableMultiLanguageDetection_ = enableMultiLanguageDetection_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection) {
+            return mergeFrom(
+                (com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                        .MultiLanguageDetection)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                    .MultiLanguageDetection
+                other) {
+          if (other
+              == com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.getDefaultInstance()) return this;
+          if (other.getEnableMultiLanguageDetection() != false) {
+            setEnableMultiLanguageDetection(other.getEnableMultiLanguageDetection());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    enableMultiLanguageDetection_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean enableMultiLanguageDetection_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. If true, multi language detection will be enabled.
+         * </pre>
+         *
+         * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enableMultiLanguageDetection.
+         */
+        @java.lang.Override
+        public boolean getEnableMultiLanguageDetection() {
+          return enableMultiLanguageDetection_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. If true, multi language detection will be enabled.
+         * </pre>
+         *
+         * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The enableMultiLanguageDetection to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableMultiLanguageDetection(boolean value) {
+
+          enableMultiLanguageDetection_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. If true, multi language detection will be enabled.
+         * </pre>
+         *
+         * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableMultiLanguageDetection() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          enableMultiLanguageDetection_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection)
+      private static final com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                .MultiLanguageDetection();
+      }
+
+      public static com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MultiLanguageDetection> PARSER =
+          new com.google.protobuf.AbstractParser<MultiLanguageDetection>() {
+            @java.lang.Override
+            public MultiLanguageDetection parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MultiLanguageDetection> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MultiLanguageDetection> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int MULTI_LANGUAGE_DETECTION_FIELD_NUMBER = 1;
+    private com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+            .MultiLanguageDetection
+        multiLanguageDetection_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiLanguageDetection field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiLanguageDetection() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiLanguageDetection.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+            .MultiLanguageDetection
+        getMultiLanguageDetection() {
+      return multiLanguageDetection_ == null
+          ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection.getDefaultInstance()
+          : multiLanguageDetection_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for multi language detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+            .MultiLanguageDetectionOrBuilder
+        getMultiLanguageDetectionOrBuilder() {
+      return multiLanguageDetection_ == null
+          ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection.getDefaultInstance()
+          : multiLanguageDetection_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -266,6 +1007,9 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getMultiLanguageDetection());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -275,6 +1019,11 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getMultiLanguageDetection());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -291,6 +1040,10 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata other =
           (com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata) obj;
 
+      if (hasMultiLanguageDetection() != other.hasMultiLanguageDetection()) return false;
+      if (hasMultiLanguageDetection()) {
+        if (!getMultiLanguageDetection().equals(other.getMultiLanguageDetection())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -302,6 +1055,10 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMultiLanguageDetection()) {
+        hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiLanguageDetection().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -437,15 +1194,30 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getMultiLanguageDetectionFieldBuilder();
+        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        multiLanguageDetection_ = null;
+        if (multiLanguageDetectionBuilder_ != null) {
+          multiLanguageDetectionBuilder_.dispose();
+          multiLanguageDetectionBuilder_ = null;
+        }
         return this;
       }
 
@@ -476,8 +1248,25 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata buildPartial() {
         com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata result =
             new com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.multiLanguageDetection_ =
+              multiLanguageDetectionBuilder_ == null
+                  ? multiLanguageDetection_
+                  : multiLanguageDetectionBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -531,6 +1320,9 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
                 .getDefaultInstance()) return this;
+        if (other.hasMultiLanguageDetection()) {
+          mergeMultiLanguageDetection(other.getMultiLanguageDetection());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -557,6 +1349,13 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  input.readMessage(
+                      getMultiLanguageDetectionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -572,6 +1371,250 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessageV3
           onChanged();
         } // finally
         return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          multiLanguageDetection_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.Builder,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetectionOrBuilder>
+          multiLanguageDetectionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the multiLanguageDetection field is set.
+       */
+      public boolean hasMultiLanguageDetection() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The multiLanguageDetection.
+       */
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection
+          getMultiLanguageDetection() {
+        if (multiLanguageDetectionBuilder_ == null) {
+          return multiLanguageDetection_ == null
+              ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.getDefaultInstance()
+              : multiLanguageDetection_;
+        } else {
+          return multiLanguageDetectionBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMultiLanguageDetection(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection
+              value) {
+        if (multiLanguageDetectionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          multiLanguageDetection_ = value;
+        } else {
+          multiLanguageDetectionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMultiLanguageDetection(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.Builder
+              builderForValue) {
+        if (multiLanguageDetectionBuilder_ == null) {
+          multiLanguageDetection_ = builderForValue.build();
+        } else {
+          multiLanguageDetectionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMultiLanguageDetection(
+          com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection
+              value) {
+        if (multiLanguageDetectionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && multiLanguageDetection_ != null
+              && multiLanguageDetection_
+                  != com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection.getDefaultInstance()) {
+            getMultiLanguageDetectionBuilder().mergeFrom(value);
+          } else {
+            multiLanguageDetection_ = value;
+          }
+        } else {
+          multiLanguageDetectionBuilder_.mergeFrom(value);
+        }
+        if (multiLanguageDetection_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMultiLanguageDetection() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        multiLanguageDetection_ = null;
+        if (multiLanguageDetectionBuilder_ != null) {
+          multiLanguageDetectionBuilder_.dispose();
+          multiLanguageDetectionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetection.Builder
+          getMultiLanguageDetectionBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getMultiLanguageDetectionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+              .MultiLanguageDetectionOrBuilder
+          getMultiLanguageDetectionOrBuilder() {
+        if (multiLanguageDetectionBuilder_ != null) {
+          return multiLanguageDetectionBuilder_.getMessageOrBuilder();
+        } else {
+          return multiLanguageDetection_ == null
+              ? com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.getDefaultInstance()
+              : multiLanguageDetection_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Metadata for multi language detection.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata.MultiLanguageDetection multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetection.Builder,
+              com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                  .MultiLanguageDetectionOrBuilder>
+          getMultiLanguageDetectionFieldBuilder() {
+        if (multiLanguageDetectionBuilder_ == null) {
+          multiLanguageDetectionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection,
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetection.Builder,
+                  com.google.cloud.modelarmor.v1beta.FloorSetting.FloorSettingMetadata
+                      .MultiLanguageDetectionOrBuilder>(
+                  getMultiLanguageDetection(), getParentForChildren(), isClean());
+          multiLanguageDetection_ = null;
+        }
+        return multiLanguageDetectionBuilder_;
       }
 
       @java.lang.Override

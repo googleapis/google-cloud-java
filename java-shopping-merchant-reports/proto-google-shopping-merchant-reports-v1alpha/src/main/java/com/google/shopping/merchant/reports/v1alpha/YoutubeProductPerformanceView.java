@@ -595,6 +595,76 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
     return netSales_ == null ? com.google.shopping.type.Price.getDefaultInstance() : netSales_;
   }
 
+  public static final int TAGGED_CREATOR_COUNT_FIELD_NUMBER = 12;
+  private long taggedCreatorCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct creators that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_creator_count = 12;</code>
+   *
+   * @return Whether the taggedCreatorCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaggedCreatorCount() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct creators that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_creator_count = 12;</code>
+   *
+   * @return The taggedCreatorCount.
+   */
+  @java.lang.Override
+  public long getTaggedCreatorCount() {
+    return taggedCreatorCount_;
+  }
+
+  public static final int TAGGED_VIDEO_COUNT_FIELD_NUMBER = 13;
+  private long taggedVideoCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct videos that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_video_count = 13;</code>
+   *
+   * @return Whether the taggedVideoCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaggedVideoCount() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of distinct videos that tagged the product.
+   * </pre>
+   *
+   * <code>optional int64 tagged_video_count = 13;</code>
+   *
+   * @return The taggedVideoCount.
+   */
+  @java.lang.Override
+  public long getTaggedVideoCount() {
+    return taggedVideoCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -642,6 +712,12 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(11, getNetSales());
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeInt64(12, taggedCreatorCount_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeInt64(13, taggedVideoCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -683,6 +759,12 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getNetSales());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, taggedCreatorCount_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, taggedVideoCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -745,6 +827,14 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
     if (hasNetSales()) {
       if (!getNetSales().equals(other.getNetSales())) return false;
     }
+    if (hasTaggedCreatorCount() != other.hasTaggedCreatorCount()) return false;
+    if (hasTaggedCreatorCount()) {
+      if (getTaggedCreatorCount() != other.getTaggedCreatorCount()) return false;
+    }
+    if (hasTaggedVideoCount() != other.hasTaggedVideoCount()) return false;
+    if (hasTaggedVideoCount()) {
+      if (getTaggedVideoCount() != other.getTaggedVideoCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -799,6 +889,14 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
     if (hasNetSales()) {
       hash = (37 * hash) + NET_SALES_FIELD_NUMBER;
       hash = (53 * hash) + getNetSales().hashCode();
+    }
+    if (hasTaggedCreatorCount()) {
+      hash = (37 * hash) + TAGGED_CREATOR_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaggedCreatorCount());
+    }
+    if (hasTaggedVideoCount()) {
+      hash = (37 * hash) + TAGGED_VIDEO_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaggedVideoCount());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -997,6 +1095,8 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
         netSalesBuilder_.dispose();
         netSalesBuilder_ = null;
       }
+      taggedCreatorCount_ = 0L;
+      taggedVideoCount_ = 0L;
       return this;
     }
 
@@ -1083,6 +1183,14 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.netSales_ = netSalesBuilder_ == null ? netSales_ : netSalesBuilder_.build();
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.taggedCreatorCount_ = taggedCreatorCount_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.taggedVideoCount_ = taggedVideoCount_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1173,6 +1281,12 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
       }
       if (other.hasNetSales()) {
         mergeNetSales(other.getNetSales());
+      }
+      if (other.hasTaggedCreatorCount()) {
+        setTaggedCreatorCount(other.getTaggedCreatorCount());
+      }
+      if (other.hasTaggedVideoCount()) {
+        setTaggedVideoCount(other.getTaggedVideoCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1266,6 +1380,18 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 96:
+              {
+                taggedCreatorCount_ = input.readInt64();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 104:
+              {
+                taggedVideoCount_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2675,6 +2801,150 @@ public final class YoutubeProductPerformanceView extends com.google.protobuf.Gen
         netSales_ = null;
       }
       return netSalesBuilder_;
+    }
+
+    private long taggedCreatorCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct creators that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_creator_count = 12;</code>
+     *
+     * @return Whether the taggedCreatorCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaggedCreatorCount() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct creators that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_creator_count = 12;</code>
+     *
+     * @return The taggedCreatorCount.
+     */
+    @java.lang.Override
+    public long getTaggedCreatorCount() {
+      return taggedCreatorCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct creators that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_creator_count = 12;</code>
+     *
+     * @param value The taggedCreatorCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaggedCreatorCount(long value) {
+
+      taggedCreatorCount_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct creators that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_creator_count = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTaggedCreatorCount() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      taggedCreatorCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long taggedVideoCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct videos that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_video_count = 13;</code>
+     *
+     * @return Whether the taggedVideoCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaggedVideoCount() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct videos that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_video_count = 13;</code>
+     *
+     * @return The taggedVideoCount.
+     */
+    @java.lang.Override
+    public long getTaggedVideoCount() {
+      return taggedVideoCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct videos that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_video_count = 13;</code>
+     *
+     * @param value The taggedVideoCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaggedVideoCount(long value) {
+
+      taggedVideoCount_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of distinct videos that tagged the product.
+     * </pre>
+     *
+     * <code>optional int64 tagged_video_count = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTaggedVideoCount() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      taggedVideoCount_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

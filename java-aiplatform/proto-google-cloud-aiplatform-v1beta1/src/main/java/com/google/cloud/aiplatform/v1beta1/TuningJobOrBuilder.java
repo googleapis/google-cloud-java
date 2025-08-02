@@ -186,6 +186,43 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   *
+   * @return Whether the veoTuningSpec field is set.
+   */
+  boolean hasVeoTuningSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   *
+   * @return The veoTuningSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoTuningSpec getVeoTuningSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoTuningSpecOrBuilder getVeoTuningSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Identifier. Resource name of a TuningJob. Format:
    * `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
    * </pre>

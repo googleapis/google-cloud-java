@@ -3167,7 +3167,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Creates a pull request comment.
+     * Creates a pull request comment. This function is used to create a single
+     * PullRequestComment of type Comment, or a single PullRequestComment of type
+     * Code that's replying to another PullRequestComment of type Code. Use
+     * BatchCreatePullRequestComments to create multiple PullRequestComments for
+     * code reviews.
      * </pre>
      */
     default void createPullRequestComment(
@@ -3209,7 +3213,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Batch creates pull request comments.
+     * Batch creates pull request comments. This function is used to create
+     * multiple PullRequestComments for code review. There needs to be exactly one
+     * PullRequestComment of type Review, and at most 100 PullRequestComments of
+     * type Code per request. The Postition of the code comments must be unique
+     * within the request.
      * </pre>
      */
     default void batchCreatePullRequestComments(
@@ -3223,7 +3231,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Resolves pull request comments.
+     * Resolves pull request comments. A list of PullRequestComment names must be
+     * provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be resolved.
      * </pre>
      */
     default void resolvePullRequestComments(
@@ -3237,7 +3248,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Unresolves pull request comment.
+     * Unresolves pull request comments. A list of PullRequestComment names must
+     * be provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be unresolved.
      * </pre>
      */
     default void unresolvePullRequestComments(
@@ -4023,7 +4037,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Creates a pull request comment.
+     * Creates a pull request comment. This function is used to create a single
+     * PullRequestComment of type Comment, or a single PullRequestComment of type
+     * Code that's replying to another PullRequestComment of type Code. Use
+     * BatchCreatePullRequestComments to create multiple PullRequestComments for
+     * code reviews.
      * </pre>
      */
     public void createPullRequestComment(
@@ -4071,7 +4089,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Batch creates pull request comments.
+     * Batch creates pull request comments. This function is used to create
+     * multiple PullRequestComments for code review. There needs to be exactly one
+     * PullRequestComment of type Review, and at most 100 PullRequestComments of
+     * type Code per request. The Postition of the code comments must be unique
+     * within the request.
      * </pre>
      */
     public void batchCreatePullRequestComments(
@@ -4087,7 +4109,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Resolves pull request comments.
+     * Resolves pull request comments. A list of PullRequestComment names must be
+     * provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be resolved.
      * </pre>
      */
     public void resolvePullRequestComments(
@@ -4103,7 +4128,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Unresolves pull request comment.
+     * Unresolves pull request comments. A list of PullRequestComment names must
+     * be provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be unresolved.
      * </pre>
      */
     public void unresolvePullRequestComments(
@@ -4764,7 +4792,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Creates a pull request comment.
+     * Creates a pull request comment. This function is used to create a single
+     * PullRequestComment of type Comment, or a single PullRequestComment of type
+     * Code that's replying to another PullRequestComment of type Code. Use
+     * BatchCreatePullRequestComments to create multiple PullRequestComments for
+     * code reviews.
      * </pre>
      */
     public com.google.longrunning.Operation createPullRequestComment(
@@ -4803,7 +4835,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Batch creates pull request comments.
+     * Batch creates pull request comments. This function is used to create
+     * multiple PullRequestComments for code review. There needs to be exactly one
+     * PullRequestComment of type Review, and at most 100 PullRequestComments of
+     * type Code per request. The Postition of the code comments must be unique
+     * within the request.
      * </pre>
      */
     public com.google.longrunning.Operation batchCreatePullRequestComments(
@@ -4816,7 +4852,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Resolves pull request comments.
+     * Resolves pull request comments. A list of PullRequestComment names must be
+     * provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be resolved.
      * </pre>
      */
     public com.google.longrunning.Operation resolvePullRequestComments(
@@ -4829,7 +4868,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Unresolves pull request comment.
+     * Unresolves pull request comments. A list of PullRequestComment names must
+     * be provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be unresolved.
      * </pre>
      */
     public com.google.longrunning.Operation unresolvePullRequestComments(
@@ -5469,7 +5511,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Creates a pull request comment.
+     * Creates a pull request comment. This function is used to create a single
+     * PullRequestComment of type Comment, or a single PullRequestComment of type
+     * Code that's replying to another PullRequestComment of type Code. Use
+     * BatchCreatePullRequestComments to create multiple PullRequestComments for
+     * code reviews.
      * </pre>
      */
     public com.google.longrunning.Operation createPullRequestComment(
@@ -5508,7 +5554,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Batch creates pull request comments.
+     * Batch creates pull request comments. This function is used to create
+     * multiple PullRequestComments for code review. There needs to be exactly one
+     * PullRequestComment of type Review, and at most 100 PullRequestComments of
+     * type Code per request. The Postition of the code comments must be unique
+     * within the request.
      * </pre>
      */
     public com.google.longrunning.Operation batchCreatePullRequestComments(
@@ -5521,7 +5571,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Resolves pull request comments.
+     * Resolves pull request comments. A list of PullRequestComment names must be
+     * provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be resolved.
      * </pre>
      */
     public com.google.longrunning.Operation resolvePullRequestComments(
@@ -5534,7 +5587,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Unresolves pull request comment.
+     * Unresolves pull request comments. A list of PullRequestComment names must
+     * be provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be unresolved.
      * </pre>
      */
     public com.google.longrunning.Operation unresolvePullRequestComments(
@@ -6195,7 +6251,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Creates a pull request comment.
+     * Creates a pull request comment. This function is used to create a single
+     * PullRequestComment of type Comment, or a single PullRequestComment of type
+     * Code that's replying to another PullRequestComment of type Code. Use
+     * BatchCreatePullRequestComments to create multiple PullRequestComments for
+     * code reviews.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -6237,7 +6297,11 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Batch creates pull request comments.
+     * Batch creates pull request comments. This function is used to create
+     * multiple PullRequestComments for code review. There needs to be exactly one
+     * PullRequestComment of type Review, and at most 100 PullRequestComments of
+     * type Code per request. The Postition of the code comments must be unique
+     * within the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -6252,7 +6316,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Resolves pull request comments.
+     * Resolves pull request comments. A list of PullRequestComment names must be
+     * provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be resolved.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -6266,7 +6333,10 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
-     * Unresolves pull request comment.
+     * Unresolves pull request comments. A list of PullRequestComment names must
+     * be provided. The PullRequestComment names must be in the same conversation
+     * thread. If auto_fill is set, all comments in the conversation thread will
+     * be unresolved.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

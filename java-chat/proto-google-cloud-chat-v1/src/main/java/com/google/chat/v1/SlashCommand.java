@@ -23,7 +23,7 @@ package com.google.chat.v1;
  *
  *
  * <pre>
- * A [slash
+ * Metadata about a [slash
  * command](https://developers.google.com/workspace/chat/commands) in
  * Google Chat.
  * </pre>
@@ -70,7 +70,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the slash command invoked.
+   * The ID of the slash command.
    * </pre>
    *
    * <code>int64 command_id = 1;</code>
@@ -244,7 +244,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [slash
+   * Metadata about a [slash
    * command](https://developers.google.com/workspace/chat/commands) in
    * Google Chat.
    * </pre>
@@ -426,7 +426,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the slash command invoked.
+     * The ID of the slash command.
      * </pre>
      *
      * <code>int64 command_id = 1;</code>
@@ -442,7 +442,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the slash command invoked.
+     * The ID of the slash command.
      * </pre>
      *
      * <code>int64 command_id = 1;</code>
@@ -462,7 +462,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the slash command invoked.
+     * The ID of the slash command.
      * </pre>
      *
      * <code>int64 command_id = 1;</code>

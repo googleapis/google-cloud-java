@@ -70,7 +70,9 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Who deleted the message and how it was deleted. More values may be added in
-   * the future.
+   * the future. See [Edit or delete a message in Google
+   * Chat](https://support.google.com/chat/answer/7653281) for details on when
+   * messages can be deleted.
    * </pre>
    *
    * Protobuf enum {@code google.chat.v1.DeletionMetadata.DeletionType}
@@ -100,7 +102,7 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The space owner deleted the message.
+     * A space manager deleted the message.
      * </pre>
      *
      * <code>SPACE_OWNER = 2;</code>
@@ -110,7 +112,9 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Google Workspace admin deleted the message.
+     * A Google Workspace administrator deleted the message. Administrators can
+     * delete any message in the space, including messages sent by any space
+     * member or Chat app.
      * </pre>
      *
      * <code>ADMIN = 3;</code>
@@ -130,7 +134,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Chat app deleted the message on behalf of the user.
+     * A Chat app deleted the message on behalf of the creator (using user
+     * authentication).
      * </pre>
      *
      * <code>CREATOR_VIA_APP = 5;</code>
@@ -140,7 +145,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Chat app deleted the message on behalf of the space owner.
+     * A Chat app deleted the message on behalf of a space manager (using user
+     * authentication).
      * </pre>
      *
      * <code>SPACE_OWNER_VIA_APP = 6;</code>
@@ -150,8 +156,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A member of the space deleted the message. Human users can delete
-     * messages sent by apps.
+     * A member of the space deleted the message. Users can delete messages sent
+     * by apps.
      * </pre>
      *
      * <code>SPACE_MEMBER = 7;</code>
@@ -186,7 +192,7 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The space owner deleted the message.
+     * A space manager deleted the message.
      * </pre>
      *
      * <code>SPACE_OWNER = 2;</code>
@@ -197,7 +203,9 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Google Workspace admin deleted the message.
+     * A Google Workspace administrator deleted the message. Administrators can
+     * delete any message in the space, including messages sent by any space
+     * member or Chat app.
      * </pre>
      *
      * <code>ADMIN = 3;</code>
@@ -219,7 +227,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Chat app deleted the message on behalf of the user.
+     * A Chat app deleted the message on behalf of the creator (using user
+     * authentication).
      * </pre>
      *
      * <code>CREATOR_VIA_APP = 5;</code>
@@ -230,7 +239,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A Chat app deleted the message on behalf of the space owner.
+     * A Chat app deleted the message on behalf of a space manager (using user
+     * authentication).
      * </pre>
      *
      * <code>SPACE_OWNER_VIA_APP = 6;</code>
@@ -241,8 +251,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A member of the space deleted the message. Human users can delete
-     * messages sent by apps.
+     * A member of the space deleted the message. Users can delete messages sent
+     * by apps.
      * </pre>
      *
      * <code>SPACE_MEMBER = 7;</code>

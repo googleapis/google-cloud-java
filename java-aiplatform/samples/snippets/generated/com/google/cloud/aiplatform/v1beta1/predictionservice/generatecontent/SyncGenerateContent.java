@@ -22,6 +22,7 @@ import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerationConfig;
+import com.google.cloud.aiplatform.v1beta1.ModelArmorConfig;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.SafetySetting;
 import com.google.cloud.aiplatform.v1beta1.Tool;
@@ -53,6 +54,7 @@ public class SyncGenerateContent {
               .setToolConfig(ToolConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
+              .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
               .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       GenerateContentResponse response = predictionServiceClient.generateContent(request);

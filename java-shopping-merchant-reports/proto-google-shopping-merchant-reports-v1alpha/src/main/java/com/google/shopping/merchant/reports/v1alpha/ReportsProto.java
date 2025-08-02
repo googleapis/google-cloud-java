@@ -177,12 +177,12 @@ public final class ReportsProto {
           + "%competitive_visibility_benchmark_view\030\n"
           + " \001(\0132L.google.shopping.merc"
           + "hant.reports.v1alpha.CompetitiveVisibilityBenchmarkView\022q\n"
-          + " youtube_creator_performance_view\030\013 \001(\0132G.google.shopping.merc"
+          + " youtube_creator_performance_view\030\r"
+          + " \001(\0132G.google.shopping.merc"
           + "hant.reports.v1alpha.YoutubeCreatorPerformanceView\022q\n"
-          + " youtube_content_performance_view\030\014 \001(\0132G.google.shopping.merchant."
+          + " youtube_content_performance_view\030\016 \001(\0132G.google.shopping.merchant."
           + "reports.v1alpha.YoutubeContentPerformanceView\022q\n"
-          + " youtube_product_performance_view\030\r"
-          + " \001(\0132G.google.shopping.merchant.repor"
+          + " youtube_product_performance_view\030\017 \001(\0132G.google.shopping.merchant.repor"
           + "ts.v1alpha.YoutubeProductPerformanceView\"\302\n\n"
           + "\026ProductPerformanceView\022l\n"
           + "\020marketing_method\030\001 \001(\0162M.google.shopping.merchant"
@@ -634,7 +634,7 @@ public final class ReportsProto {
           + "\007_ordersB\010\n"
           + "\006_viewsB\t\n"
           + "\007_clicksB\014\n\n"
-          + "_net_sales\"\207\004\n"
+          + "_net_sales\"\243\004\n"
           + "\035YoutubeContentPerformanceView\022\037\n"
           + "\004date\030\001 \001(\0132\021.google.type.Date\022\022\n"
           + "\005title\030\002 \001(\tH\000\210\001\001\022\025\n"
@@ -649,7 +649,8 @@ public final class ReportsProto {
           + "\005views\030\t \001(\003H\007\210\001\001\022\023\n"
           + "\006clicks\030\n"
           + " \001(\003H\010\210\001\001\0223\n"
-          + "\tnet_sales\030\013 \001(\0132\033.google.shopping.type.PriceH\t\210\001\001B\010\n"
+          + "\tnet_sales\030\013 \001(\0132\033.google.shopping.type.PriceH\t\210\001\001\022\032\n"
+          + "\022tagged_product_ids\030\014 \003(\tB\010\n"
           + "\006_titleB\013\n"
           + "\t_video_idB\020\n"
           + "\016_channel_titleB\r\n"
@@ -659,7 +660,7 @@ public final class ReportsProto {
           + "\007_ordersB\010\n"
           + "\006_viewsB\t\n"
           + "\007_clicksB\014\n\n"
-          + "_net_sales\"\255\004\n"
+          + "_net_sales\"\241\005\n"
           + "\035YoutubeProductPerformanceView\022\037\n"
           + "\004date\030\001 \001(\0132\021.google.type.Date\022\022\n"
           + "\005title\030\002 \001(\tH\000\210\001\001\022\025\n"
@@ -674,7 +675,11 @@ public final class ReportsProto {
           + "\005views\030\t \001(\003H\007\210\001\001\022\023\n"
           + "\006clicks\030\n"
           + " \001(\003H\010\210\001\001\0223\n"
-          + "\tnet_sales\030\013 \001(\0132\033.google.shopping.type.PriceH\t\210\001\001B\010\n"
+          + "\tnet_sales\030\013 \001(\0132\033.google.shopping.type.PriceH\t\210\001\001\022!\n"
+          + "\024tagged_creator_count\030\014 \001(\003H\n"
+          + "\210\001\001\022\037\n"
+          + "\022tagged_video_count\030\r"
+          + " \001(\003H\013\210\001\001B\010\n"
           + "\006_titleB\013\n"
           + "\t_offer_idB\027\n"
           + "\025_distinct_video_countB\031\n"
@@ -684,16 +689,21 @@ public final class ReportsProto {
           + "\007_ordersB\010\n"
           + "\006_viewsB\t\n"
           + "\007_clicksB\014\n\n"
-          + "_net_sales2\237\002\n\r"
+          + "_net_salesB\027\n"
+          + "\025_tagged_creator_countB\025\n"
+          + "\023_tagged_video_count2\237\002\n\r"
           + "ReportService\022\304\001\n"
-          + "\006Search\0227.google.shopping.merchant.reports.v1alpha.SearchRequest\0328.goo"
-          + "gle.shopping.merchant.reports.v1alpha.Se"
-          + "archResponse\"G\332A\006parent\202\323\344\223\0028\"3/reports/"
-          + "v1alpha/{parent=accounts/*}/reports:sear"
-          + "ch:\001*\032G\312A\032merchantapi.googleapis.com\322A\'h"
-          + "ttps://www.googleapis.com/auth/contentB\214\001\n"
-          + ",com.google.shopping.merchant.reports.v1alphaB\014ReportsProtoP\001ZLcloud.google.co"
-          + "m/go/shopping/merchant/reports/apiv1alpha/reportspb;reportspbb\006proto3"
+          + "\006Search\0227.google.shopping.merchant.reports.v1a"
+          + "lpha.SearchRequest\0328.google.shopping.mer"
+          + "chant.reports.v1alpha.SearchResponse\"G\332A"
+          + "\006parent\202\323\344\223\0028\"3/reports/v1alpha/{parent="
+          + "accounts/*}/reports:search:\001*\032G\312A\032mercha"
+          + "ntapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\221\002\n"
+          + ",com.google.shopping.merchant.reports.v1alphaB\014Reports"
+          + "ProtoP\001ZLcloud.google.com/go/shopping/merchant/reports/apiv1alpha/reportspb;repo"
+          + "rtspb\252\002(Google.Shopping.Merchant.Reports"
+          + ".V1Alpha\312\002(Google\\Shopping\\Merchant\\Repo"
+          + "rts\\V1alpha\352\002,Google::Shopping::Merchant::Reports::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1067,6 +1077,7 @@ public final class ReportsProto {
               "Views",
               "Clicks",
               "NetSales",
+              "TaggedProductIds",
             });
     internal_static_google_shopping_merchant_reports_v1alpha_YoutubeProductPerformanceView_descriptor =
         getDescriptor().getMessageTypes().get(20);
@@ -1085,6 +1096,8 @@ public final class ReportsProto {
               "Views",
               "Clicks",
               "NetSales",
+              "TaggedCreatorCount",
+              "TaggedVideoCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

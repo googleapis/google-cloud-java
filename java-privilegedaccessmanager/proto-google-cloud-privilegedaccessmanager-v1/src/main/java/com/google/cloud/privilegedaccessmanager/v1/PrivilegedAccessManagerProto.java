@@ -153,6 +153,10 @@ public final class PrivilegedAccessManagerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Revoked_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_fieldAccessorTable;
@@ -373,7 +377,7 @@ public final class PrivilegedAccessManagerProto {
           + "\013entitlement\030\001 \001(\01324.go"
           + "ogle.cloud.privilegedaccessmanager.v1.EntitlementB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\313\026\n"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\326\027\n"
           + "\005Grant\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -394,10 +398,10 @@ public final class PrivilegedAccessManagerProto {
           + " \001(\0132"
           + "9.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrailB\003\340A\003\022(\n"
           + "\033additional_email_recipients\030\013 \003(\tB\003\340A\001\022 \n"
-          + "\023externally_modified\030\014 \001(\010B\003\340A\003\032\377\013\n"
+          + "\023externally_modified\030\014 \001(\010B\003\340A\003\032\352\014\n"
           + "\010Timeline\022R\n"
           + "\006events\030\001"
-          + " \003(\0132=.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.EventB\003\340A\003\032\236\013\n"
+          + " \003(\0132=.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.EventB\003\340A\003\032\211\014\n"
           + "\005Event\022\\\n"
           + "\trequested\030\002 \001(\0132G.google.cloud"
           + ".privilegedaccessmanager.v1.Grant.Timeline.Event.RequestedH\000\022Z\n"
@@ -418,7 +422,10 @@ public final class PrivilegedAccessManagerProto {
           + "\005ended\030\013 \001(\0132C.google.cloud.privilegedac"
           + "cessmanager.v1.Grant.Timeline.Event.EndedH\000\022o\n"
           + "\023externally_modified\030\014 \001(\0132P.googl"
-          + "e.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModifiedH\000\0223\n\n"
+          + "e.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModifiedH\000\022\\\n"
+          + "\twithdrawn\030\r"
+          + " \001(\0132G.google.cloud.privilege"
+          + "daccessmanager.v1.Grant.Timeline.Event.WithdrawnH\000\0223\n\n"
           + "event_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032A\n"
           + "\tRequested\0224\n"
           + "\013expire_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0323\n"
@@ -430,7 +437,8 @@ public final class PrivilegedAccessManagerProto {
           + "\005actor\030\002 \001(\tB\003\340A\003\0322\n"
           + "\007Revoked\022\023\n"
           + "\006reason\030\001 \001(\tB\003\340A\003\022\022\n"
-          + "\005actor\030\002 \001(\tB\003\340A\003\032O\n"
+          + "\005actor\030\002 \001(\tB\003\340A\003\032\013\n"
+          + "\tWithdrawn\032O\n"
           + "\tScheduled\022B\n"
           + "\031scheduled_activation_time\030\001"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032\013\n"
@@ -445,7 +453,7 @@ public final class PrivilegedAccessManagerProto {
           + "\021access_grant_time\030\001"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022;\n"
           + "\022access_remove_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\265\001\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\325\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\024\n"
           + "\020APPROVAL_AWAITED\020\001\022\n\n"
@@ -458,18 +466,21 @@ public final class PrivilegedAccessManagerProto {
           + "\010REVOKING\020\t\022\013\n"
           + "\007REVOKED\020\n"
           + "\022\t\n"
-          + "\005ENDED\020\013:\302\002\352A\276\002\n"
-          + ",privilegedaccessmanager.googleapis.com/Grant\022Qprojects/{project}/locations"
-          + "/{location}/entitlements/{entitlement}/grants/{grant}\022Ofolders/{folder}/location"
-          + "s/{location}/entitlements/{entitlement}/grants/{grant}\022[organizations/{organizat"
-          + "ion}/locations/{location}/entitlements/{"
-          + "entitlement}/grants/{grant}*\006grants2\005grant\"F\n\r"
+          + "\005ENDED\020\013\022\017\n"
+          + "\013WITHDRAWING\020\014\022\r\n"
+          + "\tWITHDRAWN\020\r"
+          + ":\302\002\352A\276\002\n"
+          + ",privilegedaccessmanager.googleapis.com/Grant\022Qprojects/"
+          + "{project}/locations/{location}/entitlements/{entitlement}/grants/{grant}\022Ofolder"
+          + "s/{folder}/locations/{location}/entitlements/{entitlement}/grants/{grant}\022[organ"
+          + "izations/{organization}/locations/{locat"
+          + "ion}/entitlements/{entitlement}/grants/{grant}*\006grants2\005grant\"F\n\r"
           + "Justification\022$\n"
           + "\032unstructured_justification\030\001 \001(\tH\000B\017\n\r"
           + "justification\"\266\001\n"
           + "\021ListGrantsRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340A\002\372A."
-          + "\022,privilegedaccessmanager.googleapis.com/Grant\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,privilegedaccessmanager.googleapis.com/Grant\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -479,10 +490,10 @@ public final class PrivilegedAccessManagerProto {
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\220\003\n"
           + "\023SearchGrantsRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340A\002\372A."
-          + "\022,privilegedaccessmanager.googleapis.com/Grant\022u\n"
-          + "\023caller_relationship\030\002 \001(\0162S.google.cloud.privilegedaccessmanager.v1.Se"
-          + "archGrantsRequest.CallerRelationshipTypeB\003\340A\002\022\023\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,privilegedaccessmanager.googleapis.com/Grant\022u\n"
+          + "\023caller_relationship\030\002 \001(\0162S.google.cloud.privileged"
+          + "accessmanager.v1.SearchGrantsRequest.CallerRelationshipTypeB\003\340A\002\022\023\n"
           + "\006filter\030\003 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\005 \001(\tB\003\340A\001\"v\n"
@@ -510,10 +521,10 @@ public final class PrivilegedAccessManagerProto {
           + ",privilegedaccessmanager.googleapis.com/Grant\022\023\n"
           + "\006reason\030\002 \001(\tB\003\340A\001\"\267\001\n"
           + "\022CreateGrantRequest\022D\n"
-          + "\006parent\030\001 \001("
-          + "\tB4\340A\002\372A.\022,privilegedaccessmanager.googleapis.com/Grant\022B\n"
-          + "\005grant\030\002 \001(\0132..go"
-          + "ogle.cloud.privilegedaccessmanager.v1.GrantB\003\340A\002\022\027\n\n"
+          + "\006parent\030\001 \001(\tB4\340A\002\372A.\022,privi"
+          + "legedaccessmanager.googleapis.com/Grant\022B\n"
+          + "\005grant\030\002"
+          + " \001(\0132..google.cloud.privilegedaccessmanager.v1.GrantB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"\200\002\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -524,104 +535,104 @@ public final class PrivilegedAccessManagerProto {
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\0032\301\'\n"
           + "\027PrivilegedAccessManager\022\351\002\n"
-          + "\025CheckOnboardingStatus\022E.google.cloud.privilegedaccessmanager.v1.CheckOnboar"
-          + "dingStatusRequest\032F.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatu"
-          + "sResponse\"\300\001\202\323\344\223\002\271\001\0229/v1/{parent=project"
-          + "s/*/locations/*}:checkOnboardingStatusZ@\022>/v1/{parent=organizations/*/locations/"
-          + "*}:checkOnboardingStatusZ:\0228/v1/{parent="
-          + "folders/*/locations/*}:checkOnboardingStatus\022\310\002\n"
-          + "\020ListEntitlements\022@.google.cloud.privilegedaccessmanager.v1.ListEntitlem"
-          + "entsRequest\032A.google.cloud.privilegedacc"
-          + "essmanager.v1.ListEntitlementsResponse\"\256"
-          + "\001\332A\006parent\202\323\344\223\002\236\001\0220/v1/{parent=projects/"
-          + "*/locations/*}/entitlementsZ7\0225/v1/{parent=organizations/*/locations/*}/entitlem"
-          + "entsZ1\022//v1/{parent=folders/*/locations/*}/entitlements\022\332\002\n"
-          + "\022SearchEntitlements\022B.google.cloud.privilegedaccessmanager.v1"
-          + ".SearchEntitlementsRequest\032C.google.cloud.privilegedaccessmanager.v1.SearchEntit"
-          + "lementsResponse\"\272\001\202\323\344\223\002\263\001\0227/v1/{parent=p"
-          + "rojects/*/locations/*}/entitlements:searchZ>\022</v1/{parent=organizations/*/locati"
-          + "ons/*}/entitlements:searchZ8\0226/v1/{paren"
-          + "t=folders/*/locations/*}/entitlements:search\022\265\002\n"
-          + "\016GetEntitlement\022>.google.cloud.privilegedaccessmanager.v1.GetEntitlement"
-          + "Request\0324.google.cloud.privilegedaccessm"
-          + "anager.v1.Entitlement\"\254\001\332A\004name\202\323\344\223\002\236\001\0220"
-          + "/v1/{name=projects/*/locations/*/entitlements/*}Z7\0225/v1/{name=organizations/*/lo"
-          + "cations/*/entitlements/*}Z1\022//v1/{name=folders/*/locations/*/entitlements/*}\022\213\003\n"
-          + "\021CreateEntitlement\022A.google.cloud.privilegedaccessmanager.v1.CreateEntitlementRe"
-          + "quest\032\035.google.longrunning.Operation\"\223\002\312A \n"
-          + "\013Entitlement\022\021OperationMetadata\332A!par"
-          + "ent,entitlement,entitlement_id\202\323\344\223\002\305\001\"0/"
-          + "v1/{parent=projects/*/locations/*}/entitlements:\013entitlementZD\"5/v1/{parent=orga"
-          + "nizations/*/locations/*}/entitlements:\013e"
-          + "ntitlementZ>\"//v1/{parent=folders/*/locations/*}/entitlements:\013entitlement\022\307\002\n"
-          + "\021DeleteEntitlement\022A.google.cloud.privileg"
-          + "edaccessmanager.v1.DeleteEntitlementRequest\032\035.google.longrunning.Operation\"\317\001\312A"
+          + "\025CheckOnboardingStatus\022E.google.cloud.privilegedaccessman"
+          + "ager.v1.CheckOnboardingStatusRequest\032F.google.cloud.privilegedaccessmanager.v1.C"
+          + "heckOnboardingStatusResponse\"\300\001\202\323\344\223\002\271\001\0229"
+          + "/v1/{parent=projects/*/locations/*}:checkOnboardingStatusZ@\022>/v1/{parent=organiz"
+          + "ations/*/locations/*}:checkOnboardingSta"
+          + "tusZ:\0228/v1/{parent=folders/*/locations/*}:checkOnboardingStatus\022\310\002\n"
+          + "\020ListEntitlements\022@.google.cloud.privilegedaccessmana"
+          + "ger.v1.ListEntitlementsRequest\032A.google.cloud.privilegedaccessmanager.v1.ListEnt"
+          + "itlementsResponse\"\256\001\332A\006parent\202\323\344\223\002\236\001\0220/v"
+          + "1/{parent=projects/*/locations/*}/entitlementsZ7\0225/v1/{parent=organizations/*/lo"
+          + "cations/*}/entitlementsZ1\022//v1/{parent=folders/*/locations/*}/entitlements\022\332\002\n"
+          + "\022SearchEntitlements\022B.google.cloud.privile"
+          + "gedaccessmanager.v1.SearchEntitlementsRequest\032C.google.cloud.privilegedaccessman"
+          + "ager.v1.SearchEntitlementsResponse\"\272\001\202\323\344"
+          + "\223\002\263\001\0227/v1/{parent=projects/*/locations/*"
+          + "}/entitlements:searchZ>\022</v1/{parent=organizations/*/locations/*}/entitlements:s"
+          + "earchZ8\0226/v1/{parent=folders/*/locations/*}/entitlements:search\022\265\002\n"
+          + "\016GetEntitlement\022>.google.cloud.privilegedaccessmanage"
+          + "r.v1.GetEntitlementRequest\0324.google.cloud.privilegedaccessmanager.v1.Entitlement"
+          + "\"\254\001\332A\004name\202\323\344\223\002\236\001\0220/v1/{name=projects/*/"
+          + "locations/*/entitlements/*}Z7\0225/v1/{name=organizations/*/locations/*/entitlement"
+          + "s/*}Z1\022//v1/{name=folders/*/locations/*/entitlements/*}\022\213\003\n"
+          + "\021CreateEntitlement\022A.google.cloud.privilegedaccessmanager.v1."
+          + "CreateEntitlementRequest\032\035.google.longrunning.Operation\"\223\002\312A \n"
+          + "\013Entitlement\022\021OperationMetadata\332A!parent,entitlement,entit"
+          + "lement_id\202\323\344\223\002\305\001\"0/v1/{parent=projects/*"
+          + "/locations/*}/entitlements:\013entitlementZD\"5/v1/{parent=organizations/*/locations"
+          + "/*}/entitlements:\013entitlementZ>\"//v1/{pa"
+          + "rent=folders/*/locations/*}/entitlements:\013entitlement\022\307\002\n"
+          + "\021DeleteEntitlement\022A.google.cloud.privilegedaccessmanager.v1.De"
+          + "leteEntitlementRequest\032\035.google.longrunning.Operation\"\317\001\312A \n"
+          + "\013Entitlement\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002\236\001*0/v1/{name=pro"
+          + "jects/*/locations/*/entitlements/*}Z7*5/v1/{name=organizations/*/locations/*/ent"
+          + "itlements/*}Z1*//v1/{name=folders/*/locations/*/entitlements/*}\022\245\003\n"
+          + "\021UpdateEntitlement\022A.google.cloud.privilegedaccessman"
+          + "ager.v1.UpdateEntitlementRequest\032\035.google.longrunning.Operation\"\255\002\312A"
           + " \n"
-          + "\013Entitlement\022\021OperationMetadata\332A\004name\202"
-          + "\323\344\223\002\236\001*0/v1/{name=projects/*/locations/*"
-          + "/entitlements/*}Z7*5/v1/{name=organizations/*/locations/*/entitlements/*}Z1*//v1"
-          + "/{name=folders/*/locations/*/entitlements/*}\022\245\003\n"
-          + "\021UpdateEntitlement\022A.google.cloud.privilegedaccessmanager.v1.UpdateEntit"
-          + "lementRequest\032\035.google.longrunning.Operation\"\255\002\312A \n"
-          + "\013Entitlement\022\021OperationMetada"
-          + "ta\332A\027entitlement,update_mask\202\323\344\223\002\351\0012</v1"
-          + "/{entitlement.name=projects/*/locations/*/entitlements/*}:\013entitlementZP2A/v1/{e"
-          + "ntitlement.name=organizations/*/locations/*/entitlements/*}:\013entitlementZJ2;/v1/"
-          + "{entitlement.name=folders/*/locations/*/entitlements/*}:\013entitlement\022\321\002\n\n"
-          + "ListGrants\022:.google.cloud.privilegedaccessmanag"
-          + "er.v1.ListGrantsRequest\032;.google.cloud.privilegedaccessmanager.v1.ListGrantsResp"
-          + "onse\"\311\001\332A\006parent\202\323\344\223\002\271\001\0229/v1/{parent=pro"
-          + "jects/*/locations/*/entitlements/*}/grantsZ@\022>/v1/{parent=organizations/*/locati"
-          + "ons/*/entitlements/*}/grantsZ:\0228/v1/{par"
-          + "ent=folders/*/locations/*/entitlements/*}/grants\022\343\002\n"
-          + "\014SearchGrants\022<.google.cloud.privilegedaccessmanager.v1.SearchGrants"
-          + "Request\032=.google.cloud.privilegedaccessm"
-          + "anager.v1.SearchGrantsResponse\"\325\001\202\323\344\223\002\316\001"
-          + "\022@/v1/{parent=projects/*/locations/*/entitlements/*}/grants:searchZG\022E/v1/{paren"
-          + "t=organizations/*/locations/*/entitlements/*}/grants:searchZA\022?/v1/{parent=folde"
-          + "rs/*/locations/*/entitlements/*}/grants:search\022\276\002\n"
-          + "\010GetGrant\0228.google.cloud.privilegedaccessmanager.v1.GetGrantRequest\032.."
-          + "google.cloud.privilegedaccessmanager.v1."
-          + "Grant\"\307\001\332A\004name\202\323\344\223\002\271\001\0229/v1/{name=projec"
-          + "ts/*/locations/*/entitlements/*/grants/*}Z@\022>/v1/{name=organizations/*/locations"
-          + "/*/entitlements/*/grants/*}Z:\0228/v1/{name"
-          + "=folders/*/locations/*/entitlements/*/grants/*}\022\341\002\n"
-          + "\013CreateGrant\022;.google.cloud.privilegedaccessmanager.v1.CreateGrantReq"
-          + "uest\032..google.cloud.privilegedaccessmana"
-          + "ger.v1.Grant\"\344\001\332A\014parent,grant\202\323\344\223\002\316\001\"9/"
-          + "v1/{parent=projects/*/locations/*/entitlements/*}/grants:\005grantZG\">/v1/{parent=o"
-          + "rganizations/*/locations/*/entitlements/*}/grants:\005grantZA\"8/v1/{parent=folders/"
-          + "*/locations/*/entitlements/*}/grants:\005grant\022\340\002\n"
-          + "\014ApproveGrant\022<.google.cloud.privilegedaccessmanager.v1.ApproveGrantReque"
-          + "st\032..google.cloud.privilegedaccessmanage"
-          + "r.v1.Grant\"\341\001\202\323\344\223\002\332\001\"A/v1/{name=projects"
-          + "/*/locations/*/entitlements/*/grants/*}:approve:\001*ZK\"F/v1/{name=organizations/*/"
-          + "locations/*/entitlements/*/grants/*}:approve:\001*ZE\"@/v1/{name=folders/*/locations"
-          + "/*/entitlements/*/grants/*}:approve:\001*\022\321\002\n"
-          + "\tDenyGrant\0229.google.cloud.privilegedaccessmanager.v1.DenyGrantRequest\032..google"
-          + ".cloud.privilegedaccessmanager.v1.Grant\""
-          + "\330\001\202\323\344\223\002\321\001\">/v1/{name=projects/*/location"
-          + "s/*/entitlements/*/grants/*}:deny:\001*ZH\"C/v1/{name=organizations/*/locations/*/en"
-          + "titlements/*/grants/*}:deny:\001*ZB\"=/v1/{n"
-          + "ame=folders/*/locations/*/entitlements/*/grants/*}:deny:\001*\022\347\002\n"
-          + "\013RevokeGrant\022;.google.cloud.privilegedaccessmanager.v1.Rev"
-          + "okeGrantRequest\032\035.google.longrunning.Operation\"\373\001\312A\032\n"
-          + "\005Grant\022\021OperationMetadata\202\323"
-          + "\344\223\002\327\001\"@/v1/{name=projects/*/locations/*/"
-          + "entitlements/*/grants/*}:revoke:\001*ZJ\"E/v1/{name=organizations/*/locations/*/enti"
-          + "tlements/*/grants/*}:revoke:\001*ZD\"?/v1/{name=folders/*/locations/*/entitlements/*"
-          + "/grants/*}:revoke:\001*\032Z\312A&privilegedacces"
-          + "smanager.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\211\004\n"
-          + "+com.google.cloud.privilegedaccessmanager.v1"
-          + "B\034PrivilegedAccessManagerProtoP\001Zecloud.google.com/go/privilegedaccessmanager/ap"
-          + "iv1/privilegedaccessmanagerpb;privileged"
-          + "accessmanagerpb\252\002\'Google.Cloud.Privilege"
-          + "dAccessManager.V1\312\002\'Google\\Cloud\\Privile"
-          + "gedAccessManager\\V1\352\002*Google::Cloud::PrivilegedAccessManager::V1\352Ap\n"
-          + ";privilegedaccessmanager.googleapis.com/Organization"
-          + "Location\0221organizations/{organization}/locations/{location}\352A^\n"
-          + "5privilegedaccessmanager.googleapis.com/FolderLocation\022%f"
-          + "olders/{folder}/locations/{location}b\006proto3"
+          + "\013Entitlement\022\021OperationMetadata\332A\027entitlement,upda"
+          + "te_mask\202\323\344\223\002\351\0012</v1/{entitlement.name=pr"
+          + "ojects/*/locations/*/entitlements/*}:\013entitlementZP2A/v1/{entitlement.name=organ"
+          + "izations/*/locations/*/entitlements/*}:\013entitlementZJ2;/v1/{entitlement.name=fol"
+          + "ders/*/locations/*/entitlements/*}:\013entitlement\022\321\002\n\n"
+          + "ListGrants\022:.google.cloud.privilegedaccessmanager.v1.ListGrantsReque"
+          + "st\032;.google.cloud.privilegedaccessmanage"
+          + "r.v1.ListGrantsResponse\"\311\001\332A\006parent\202\323\344\223\002"
+          + "\271\001\0229/v1/{parent=projects/*/locations/*/e"
+          + "ntitlements/*}/grantsZ@\022>/v1/{parent=organizations/*/locations/*/entitlements/*}"
+          + "/grantsZ:\0228/v1/{parent=folders/*/locations/*/entitlements/*}/grants\022\343\002\n"
+          + "\014SearchGrants\022<.google.cloud.privilegedaccessmana"
+          + "ger.v1.SearchGrantsRequest\032=.google.cloud.privilegedaccessmanager.v1.SearchGrant"
+          + "sResponse\"\325\001\202\323\344\223\002\316\001\022@/v1/{parent=project"
+          + "s/*/locations/*/entitlements/*}/grants:searchZG\022E/v1/{parent=organizations/*/loc"
+          + "ations/*/entitlements/*}/grants:searchZA"
+          + "\022?/v1/{parent=folders/*/locations/*/entitlements/*}/grants:search\022\276\002\n"
+          + "\010GetGrant\0228.google.cloud.privilegedaccessmanager.v1"
+          + ".GetGrantRequest\032..google.cloud.privileg"
+          + "edaccessmanager.v1.Grant\"\307\001\332A\004name\202\323\344\223\002\271"
+          + "\001\0229/v1/{name=projects/*/locations/*/enti"
+          + "tlements/*/grants/*}Z@\022>/v1/{name=organizations/*/locations/*/entitlements/*/gra"
+          + "nts/*}Z:\0228/v1/{name=folders/*/locations/*/entitlements/*/grants/*}\022\341\002\n"
+          + "\013CreateGrant\022;.google.cloud.privilegedaccessmanage"
+          + "r.v1.CreateGrantRequest\032..google.cloud.p"
+          + "rivilegedaccessmanager.v1.Grant\"\344\001\332A\014par"
+          + "ent,grant\202\323\344\223\002\316\001\"9/v1/{parent=projects/*"
+          + "/locations/*/entitlements/*}/grants:\005grantZG\">/v1/{parent=organizations/*/locati"
+          + "ons/*/entitlements/*}/grants:\005grantZA\"8/"
+          + "v1/{parent=folders/*/locations/*/entitlements/*}/grants:\005grant\022\340\002\n"
+          + "\014ApproveGrant\022<.google.cloud.privilegedaccessmanager.v"
+          + "1.ApproveGrantRequest\032..google.cloud.pri"
+          + "vilegedaccessmanager.v1.Grant\"\341\001\202\323\344\223\002\332\001\""
+          + "A/v1/{name=projects/*/locations/*/entitlements/*/grants/*}:approve:\001*ZK\"F/v1/{na"
+          + "me=organizations/*/locations/*/entitlements/*/grants/*}:approve:\001*ZE\"@/v1/{name="
+          + "folders/*/locations/*/entitlements/*/grants/*}:approve:\001*\022\321\002\n"
+          + "\tDenyGrant\0229.google.cloud.privilegedaccessmanager.v1.DenyGr"
+          + "antRequest\032..google.cloud.privilegedacce"
+          + "ssmanager.v1.Grant\"\330\001\202\323\344\223\002\321\001\">/v1/{name="
+          + "projects/*/locations/*/entitlements/*/grants/*}:deny:\001*ZH\"C/v1/{name=organizatio"
+          + "ns/*/locations/*/entitlements/*/grants/*}:deny:\001*ZB\"=/v1/{name=folders/*/locatio"
+          + "ns/*/entitlements/*/grants/*}:deny:\001*\022\347\002\n"
+          + "\013RevokeGrant\022;.google.cloud.privilegeda"
+          + "ccessmanager.v1.RevokeGrantRequest\032\035.google.longrunning.Operation\"\373\001\312A\032\n"
+          + "\005Grant\022\021OperationMetadata\202\323\344\223\002\327\001\"@/v1/{name=proj"
+          + "ects/*/locations/*/entitlements/*/grants/*}:revoke:\001*ZJ\"E/v1/{name=organizations"
+          + "/*/locations/*/entitlements/*/grants/*}:revoke:\001*ZD\"?/v1/{name=folders/*/locatio"
+          + "ns/*/entitlements/*/grants/*}:revoke:\001*\032"
+          + "Z\312A&privilegedaccessmanager.googleapis.c"
+          + "om\322A.https://www.googleapis.com/auth/cloud-platformB\211\004\n"
+          + "+com.google.cloud.privilegedaccessmanager.v1B\034PrivilegedAccessMan"
+          + "agerProtoP\001Zecloud.google.com/go/privilegedaccessmanager/apiv1/privilegedaccessm"
+          + "anagerpb;privilegedaccessmanagerpb\252\002\'Goo"
+          + "gle.Cloud.PrivilegedAccessManager.V1\312\002\'G"
+          + "oogle\\Cloud\\PrivilegedAccessManager\\V1\352\002"
+          + "*Google::Cloud::PrivilegedAccessManager::V1\352Ap\n"
+          + ";privilegedaccessmanager.googleapis.com/OrganizationLocation\0221organizatio"
+          + "ns/{organization}/locations/{location}\352A^\n"
+          + "5privilegedaccessmanager.googleapis.com/FolderLocation\022%folders/{folder}/locat"
+          + "ions/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -900,6 +911,7 @@ public final class PrivilegedAccessManagerProto {
               "Expired",
               "Ended",
               "ExternallyModified",
+              "Withdrawn",
               "EventTime",
               "Event",
             });
@@ -943,10 +955,18 @@ public final class PrivilegedAccessManagerProto {
             new java.lang.String[] {
               "Reason", "Actor",
             });
-    internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_descriptor =
+    internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
             .get(4);
+    internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_descriptor =
+        internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
+            .getNestedTypes()
+            .get(5);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Scheduled_descriptor,
@@ -956,7 +976,7 @@ public final class PrivilegedAccessManagerProto {
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Activated_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
-            .get(5);
+            .get(6);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Activated_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Activated_descriptor,
@@ -964,7 +984,7 @@ public final class PrivilegedAccessManagerProto {
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ActivationFailed_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
-            .get(6);
+            .get(7);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ActivationFailed_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ActivationFailed_descriptor,
@@ -974,7 +994,7 @@ public final class PrivilegedAccessManagerProto {
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Expired_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
-            .get(7);
+            .get(8);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Expired_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Expired_descriptor,
@@ -982,7 +1002,7 @@ public final class PrivilegedAccessManagerProto {
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Ended_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
-            .get(8);
+            .get(9);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Ended_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Ended_descriptor,
@@ -990,7 +1010,7 @@ public final class PrivilegedAccessManagerProto {
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ExternallyModified_descriptor =
         internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_descriptor
             .getNestedTypes()
-            .get(9);
+            .get(10);
     internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ExternallyModified_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_ExternallyModified_descriptor,

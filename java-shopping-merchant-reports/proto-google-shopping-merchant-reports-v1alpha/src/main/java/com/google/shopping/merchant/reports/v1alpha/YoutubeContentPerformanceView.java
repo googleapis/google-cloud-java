@@ -53,6 +53,7 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     videoId_ = "";
     channelTitle_ = "";
     channelId_ = "";
+    taggedProductIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -665,6 +666,82 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     return netSales_ == null ? com.google.shopping.type.Price.getDefaultInstance() : netSales_;
   }
 
+  public static final int TAGGED_PRODUCT_IDS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList taggedProductIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @return A list containing the taggedProductIds.
+   */
+  public com.google.protobuf.ProtocolStringList getTaggedProductIdsList() {
+    return taggedProductIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @return The count of taggedProductIds.
+   */
+  public int getTaggedProductIdsCount() {
+    return taggedProductIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The taggedProductIds at the given index.
+   */
+  public java.lang.String getTaggedProductIds(int index) {
+    return taggedProductIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of unique [product
+   * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+   * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+   * </pre>
+   *
+   * <code>repeated string tagged_product_ids = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taggedProductIds at the given index.
+   */
+  public com.google.protobuf.ByteString getTaggedProductIdsBytes(int index) {
+    return taggedProductIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -712,6 +789,9 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(11, getNetSales());
     }
+    for (int i = 0; i < taggedProductIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, taggedProductIds_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -753,6 +833,14 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getNetSales());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < taggedProductIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(taggedProductIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTaggedProductIdsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -815,6 +903,7 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     if (hasNetSales()) {
       if (!getNetSales().equals(other.getNetSales())) return false;
     }
+    if (!getTaggedProductIdsList().equals(other.getTaggedProductIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -869,6 +958,10 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
     if (hasNetSales()) {
       hash = (37 * hash) + NET_SALES_FIELD_NUMBER;
       hash = (53 * hash) + getNetSales().hashCode();
+    }
+    if (getTaggedProductIdsCount() > 0) {
+      hash = (37 * hash) + TAGGED_PRODUCT_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaggedProductIdsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1067,6 +1160,7 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
         netSalesBuilder_.dispose();
         netSalesBuilder_ = null;
       }
+      taggedProductIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1153,6 +1247,10 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.netSales_ = netSalesBuilder_ == null ? netSales_ : netSalesBuilder_.build();
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        taggedProductIds_.makeImmutable();
+        result.taggedProductIds_ = taggedProductIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1248,6 +1346,16 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
       if (other.hasNetSales()) {
         mergeNetSales(other.getNetSales());
       }
+      if (!other.taggedProductIds_.isEmpty()) {
+        if (taggedProductIds_.isEmpty()) {
+          taggedProductIds_ = other.taggedProductIds_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureTaggedProductIdsIsMutable();
+          taggedProductIds_.addAll(other.taggedProductIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1340,6 +1448,13 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTaggedProductIdsIsMutable();
+                taggedProductIds_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2857,6 +2972,207 @@ public final class YoutubeContentPerformanceView extends com.google.protobuf.Gen
         netSales_ = null;
       }
       return netSalesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList taggedProductIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTaggedProductIdsIsMutable() {
+      if (!taggedProductIds_.isModifiable()) {
+        taggedProductIds_ = new com.google.protobuf.LazyStringArrayList(taggedProductIds_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @return A list containing the taggedProductIds.
+     */
+    public com.google.protobuf.ProtocolStringList getTaggedProductIdsList() {
+      taggedProductIds_.makeImmutable();
+      return taggedProductIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @return The count of taggedProductIds.
+     */
+    public int getTaggedProductIdsCount() {
+      return taggedProductIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The taggedProductIds at the given index.
+     */
+    public java.lang.String getTaggedProductIds(int index) {
+      return taggedProductIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the taggedProductIds at the given index.
+     */
+    public com.google.protobuf.ByteString getTaggedProductIdsBytes(int index) {
+      return taggedProductIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The taggedProductIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaggedProductIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTaggedProductIdsIsMutable();
+      taggedProductIds_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param value The taggedProductIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaggedProductIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTaggedProductIdsIsMutable();
+      taggedProductIds_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param values The taggedProductIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTaggedProductIds(java.lang.Iterable<java.lang.String> values) {
+      ensureTaggedProductIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, taggedProductIds_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTaggedProductIds() {
+      taggedProductIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of unique [product
+     * IDs](https://support.google.com/merchants/answer/188494#id) tagged on the
+     * YouTube video. These IDs correspond to the 'offerId' in the Products API.
+     * </pre>
+     *
+     * <code>repeated string tagged_product_ids = 12;</code>
+     *
+     * @param value The bytes of the taggedProductIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaggedProductIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTaggedProductIdsIsMutable();
+      taggedProductIds_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

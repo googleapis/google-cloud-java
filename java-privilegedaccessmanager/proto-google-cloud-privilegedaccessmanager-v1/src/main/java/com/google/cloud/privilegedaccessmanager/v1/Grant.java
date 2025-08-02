@@ -194,6 +194,26 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      * <code>ENDED = 11;</code>
      */
     ENDED(11),
+    /**
+     *
+     *
+     * <pre>
+     * Access is being withdrawn.
+     * </pre>
+     *
+     * <code>WITHDRAWING = 12;</code>
+     */
+    WITHDRAWING(12),
+    /**
+     *
+     *
+     * <pre>
+     * Grant was withdrawn by the grant owner. This is a terminal state.
+     * </pre>
+     *
+     * <code>WITHDRAWN = 13;</code>
+     */
+    WITHDRAWN(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,6 +344,28 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ENDED_VALUE = 11;
 
+    /**
+     *
+     *
+     * <pre>
+     * Access is being withdrawn.
+     * </pre>
+     *
+     * <code>WITHDRAWING = 12;</code>
+     */
+    public static final int WITHDRAWING_VALUE = 12;
+
+    /**
+     *
+     *
+     * <pre>
+     * Grant was withdrawn by the grant owner. This is a terminal state.
+     * </pre>
+     *
+     * <code>WITHDRAWN = 13;</code>
+     */
+    public static final int WITHDRAWN_VALUE = 13;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -370,6 +412,10 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return REVOKED;
         case 11:
           return ENDED;
+        case 12:
+          return WITHDRAWING;
+        case 13:
+          return WITHDRAWN;
         default:
           return null;
       }
@@ -997,6 +1043,50 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModifiedOrBuilder
           getExternallyModifiedOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       *
+       * @return Whether the withdrawn field is set.
+       */
+      boolean hasWithdrawn();
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       *
+       * @return The withdrawn.
+       */
+      com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn getWithdrawn();
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       */
+      com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder
+          getWithdrawnOrBuilder();
 
       /**
        *
@@ -4652,6 +4742,468 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface WithdrawnOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+          com.google.protobuf.MessageOrBuilder {}
+
+      /**
+       *
+       *
+       * <pre>
+       * An event representing that the grant was withdrawn.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn}
+       */
+      public static final class Withdrawn extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+          WithdrawnOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use Withdrawn.newBuilder() to construct.
+        private Withdrawn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Withdrawn() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Withdrawn();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManagerProto
+              .internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManagerProto
+              .internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.class,
+                  com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.Builder
+                      .class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn other =
+              (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * An event representing that the grant was withdrawn.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManagerProto
+                .internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManagerProto
+                .internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                        .class,
+                    com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManagerProto
+                .internal_static_google_cloud_privilegedaccessmanager_v1_Grant_Timeline_Event_Withdrawn_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+              getDefaultInstanceForType() {
+            return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+              build() {
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+              buildPartial() {
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn result =
+                new com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn(
+                    this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn) {
+              return mergeFrom(
+                  (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn other) {
+            if (other
+                == com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                    .getDefaultInstance()) return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+        private static final com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
+                .Withdrawn
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn();
+        }
+
+        public static com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Withdrawn> PARSER =
+            new com.google.protobuf.AbstractParser<Withdrawn>() {
+              @java.lang.Override
+              public Withdrawn parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Withdrawn> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Withdrawn> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       public interface ScheduledOrBuilder
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Scheduled)
@@ -8194,6 +8746,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
         EXPIRED(10),
         ENDED(11),
         EXTERNALLY_MODIFIED(12),
+        WITHDRAWN(13),
         EVENT_NOT_SET(0);
         private final int value;
 
@@ -8233,6 +8786,8 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               return ENDED;
             case 12:
               return EXTERNALLY_MODIFIED;
+            case 13:
+              return WITHDRAWN;
             case 0:
               return EVENT_NOT_SET;
             default:
@@ -8890,6 +9445,72 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
 
+      public static final int WITHDRAWN_FIELD_NUMBER = 13;
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       *
+       * @return Whether the withdrawn field is set.
+       */
+      @java.lang.Override
+      public boolean hasWithdrawn() {
+        return eventCase_ == 13;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       *
+       * @return The withdrawn.
+       */
+      @java.lang.Override
+      public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+          getWithdrawn() {
+        if (eventCase_ == 13) {
+          return (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+              event_;
+        }
+        return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            .getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The grant was withdrawn.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder
+          getWithdrawnOrBuilder() {
+        if (eventCase_ == 13) {
+          return (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+              event_;
+        }
+        return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            .getDefaultInstance();
+      }
+
       public static final int EVENT_TIME_FIELD_NUMBER = 1;
       private com.google.protobuf.Timestamp eventTime_;
 
@@ -9011,6 +9632,11 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.ExternallyModified)
                   event_);
         }
+        if (eventCase_ == 13) {
+          output.writeMessage(
+              13,
+              (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn) event_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -9093,6 +9719,13 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                           .ExternallyModified)
                       event_);
         }
+        if (eventCase_ == 13) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  13,
+                  (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+                      event_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -9144,6 +9777,9 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             break;
           case 12:
             if (!getExternallyModified().equals(other.getExternallyModified())) return false;
+            break;
+          case 13:
+            if (!getWithdrawn().equals(other.getWithdrawn())) return false;
             break;
           case 0:
           default:
@@ -9203,6 +9839,10 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           case 12:
             hash = (37 * hash) + EXTERNALLY_MODIFIED_FIELD_NUMBER;
             hash = (53 * hash) + getExternallyModified().hashCode();
+            break;
+          case 13:
+            hash = (37 * hash) + WITHDRAWN_FIELD_NUMBER;
+            hash = (53 * hash) + getWithdrawn().hashCode();
             break;
           case 0:
           default:
@@ -9392,6 +10032,9 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           if (externallyModifiedBuilder_ != null) {
             externallyModifiedBuilder_.clear();
           }
+          if (withdrawnBuilder_ != null) {
+            withdrawnBuilder_.clear();
+          }
           eventTime_ = null;
           if (eventTimeBuilder_ != null) {
             eventTimeBuilder_.dispose();
@@ -9440,7 +10083,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000400) != 0)) {
+          if (((from_bitField0_ & 0x00000800) != 0)) {
             result.eventTime_ = eventTimeBuilder_ == null ? eventTime_ : eventTimeBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
@@ -9480,6 +10123,9 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           }
           if (eventCase_ == 12 && externallyModifiedBuilder_ != null) {
             result.event_ = externallyModifiedBuilder_.build();
+          }
+          if (eventCase_ == 13 && withdrawnBuilder_ != null) {
+            result.event_ = withdrawnBuilder_.build();
           }
         }
 
@@ -9588,6 +10234,11 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 mergeExternallyModified(other.getExternallyModified());
                 break;
               }
+            case WITHDRAWN:
+              {
+                mergeWithdrawn(other.getWithdrawn());
+                break;
+              }
             case EVENT_NOT_SET:
               {
                 break;
@@ -9622,7 +10273,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     input.readMessage(getEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000400;
+                    bitField0_ |= 0x00000800;
                     break;
                   } // case 10
                 case 18:
@@ -9687,6 +10338,12 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
                     eventCase_ = 12;
                     break;
                   } // case 98
+                case 106:
+                  {
+                    input.readMessage(getWithdrawnFieldBuilder().getBuilder(), extensionRegistry);
+                    eventCase_ = 13;
+                    break;
+                  } // case 106
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12288,6 +12945,263 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           return externallyModifiedBuilder_;
         }
 
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn,
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.Builder,
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder>
+            withdrawnBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         *
+         * @return Whether the withdrawn field is set.
+         */
+        @java.lang.Override
+        public boolean hasWithdrawn() {
+          return eventCase_ == 13;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         *
+         * @return The withdrawn.
+         */
+        @java.lang.Override
+        public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+            getWithdrawn() {
+          if (withdrawnBuilder_ == null) {
+            if (eventCase_ == 13) {
+              return (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+                  event_;
+            }
+            return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                .getDefaultInstance();
+          } else {
+            if (eventCase_ == 13) {
+              return withdrawnBuilder_.getMessage();
+            }
+            return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                .getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        public Builder setWithdrawn(
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn value) {
+          if (withdrawnBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            event_ = value;
+            onChanged();
+          } else {
+            withdrawnBuilder_.setMessage(value);
+          }
+          eventCase_ = 13;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        public Builder setWithdrawn(
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.Builder
+                builderForValue) {
+          if (withdrawnBuilder_ == null) {
+            event_ = builderForValue.build();
+            onChanged();
+          } else {
+            withdrawnBuilder_.setMessage(builderForValue.build());
+          }
+          eventCase_ = 13;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        public Builder mergeWithdrawn(
+            com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn value) {
+          if (withdrawnBuilder_ == null) {
+            if (eventCase_ == 13
+                && event_
+                    != com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                        .getDefaultInstance()) {
+              event_ =
+                  com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                      .newBuilder(
+                          (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
+                                  .Withdrawn)
+                              event_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              event_ = value;
+            }
+            onChanged();
+          } else {
+            if (eventCase_ == 13) {
+              withdrawnBuilder_.mergeFrom(value);
+            } else {
+              withdrawnBuilder_.setMessage(value);
+            }
+          }
+          eventCase_ = 13;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        public Builder clearWithdrawn() {
+          if (withdrawnBuilder_ == null) {
+            if (eventCase_ == 13) {
+              eventCase_ = 0;
+              event_ = null;
+              onChanged();
+            }
+          } else {
+            if (eventCase_ == 13) {
+              eventCase_ = 0;
+              event_ = null;
+            }
+            withdrawnBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.Builder
+            getWithdrawnBuilder() {
+          return getWithdrawnFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder
+            getWithdrawnOrBuilder() {
+          if ((eventCase_ == 13) && (withdrawnBuilder_ != null)) {
+            return withdrawnBuilder_.getMessageOrBuilder();
+          } else {
+            if (eventCase_ == 13) {
+              return (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+                  event_;
+            }
+            return com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                .getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The grant was withdrawn.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn withdrawn = 13;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn,
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn.Builder,
+                com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.WithdrawnOrBuilder>
+            getWithdrawnFieldBuilder() {
+          if (withdrawnBuilder_ == null) {
+            if (!(eventCase_ == 13)) {
+              event_ =
+                  com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                      .getDefaultInstance();
+            }
+            withdrawnBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn,
+                    com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn
+                        .Builder,
+                    com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event
+                        .WithdrawnOrBuilder>(
+                    (com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline.Event.Withdrawn)
+                        event_,
+                    getParentForChildren(),
+                    isClean());
+            event_ = null;
+          }
+          eventCase_ = 13;
+          onChanged();
+          return withdrawnBuilder_;
+        }
+
         private com.google.protobuf.Timestamp eventTime_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Timestamp,
@@ -12309,7 +13223,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the eventTime field is set.
          */
         public boolean hasEventTime() {
-          return ((bitField0_ & 0x00000400) != 0);
+          return ((bitField0_ & 0x00000800) != 0);
         }
 
         /**
@@ -12355,7 +13269,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           } else {
             eventTimeBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           onChanged();
           return this;
         }
@@ -12377,7 +13291,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
           } else {
             eventTimeBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           onChanged();
           return this;
         }
@@ -12395,7 +13309,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeEventTime(com.google.protobuf.Timestamp value) {
           if (eventTimeBuilder_ == null) {
-            if (((bitField0_ & 0x00000400) != 0)
+            if (((bitField0_ & 0x00000800) != 0)
                 && eventTime_ != null
                 && eventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
               getEventTimeBuilder().mergeFrom(value);
@@ -12406,7 +13320,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
             eventTimeBuilder_.mergeFrom(value);
           }
           if (eventTime_ != null) {
-            bitField0_ |= 0x00000400;
+            bitField0_ |= 0x00000800;
             onChanged();
           }
           return this;
@@ -12424,7 +13338,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearEventTime() {
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
           eventTime_ = null;
           if (eventTimeBuilder_ != null) {
             eventTimeBuilder_.dispose();
@@ -12446,7 +13360,7 @@ public final class Grant extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public com.google.protobuf.Timestamp.Builder getEventTimeBuilder() {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           onChanged();
           return getEventTimeFieldBuilder().getBuilder();
         }

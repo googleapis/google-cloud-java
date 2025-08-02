@@ -664,6 +664,48 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return Whether the schedulingType field is set.
+   */
+  boolean hasSchedulingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return The schedulingType.
+   */
+  java.lang.String getSchedulingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return The bytes for schedulingType.
+   */
+  com.google.protobuf.ByteString getSchedulingTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
