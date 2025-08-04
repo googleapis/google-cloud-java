@@ -91,12 +91,12 @@ public interface VariantOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. resources contain the kubernetes manifests
-   * (YAMLs) for this variant.
+   * Required. Input only. Unordered list. resources contain the kubernetes
+   * manifests (YAMLs) for this variant.
    * </pre>
    *
    * <code>
-   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return A list containing the resources.
@@ -107,12 +107,12 @@ public interface VariantOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. resources contain the kubernetes manifests
-   * (YAMLs) for this variant.
+   * Required. Input only. Unordered list. resources contain the kubernetes
+   * manifests (YAMLs) for this variant.
    * </pre>
    *
    * <code>
-   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The count of resources.
@@ -123,12 +123,12 @@ public interface VariantOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. resources contain the kubernetes manifests
-   * (YAMLs) for this variant.
+   * Required. Input only. Unordered list. resources contain the kubernetes
+   * manifests (YAMLs) for this variant.
    * </pre>
    *
    * <code>
-   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -140,12 +140,12 @@ public interface VariantOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. resources contain the kubernetes manifests
-   * (YAMLs) for this variant.
+   * Required. Input only. Unordered list. resources contain the kubernetes
+   * manifests (YAMLs) for this variant.
    * </pre>
    *
    * <code>
-   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * repeated string resources = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.

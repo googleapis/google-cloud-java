@@ -41,7 +41,9 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     super(builder);
   }
 
-  private CreateEndpointOperationMetadata() {}
+  private CreateEndpointOperationMetadata() {
+    deploymentStage_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -119,6 +121,49 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         : genericMetadata_;
   }
 
+  public static final int DEPLOYMENT_STAGE_FIELD_NUMBER = 2;
+  private int deploymentStage_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment stage of the model. Only populated if this
+   * CreateEndpoint request deploys a model at the same time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentStage.
+   */
+  @java.lang.Override
+  public int getDeploymentStageValue() {
+    return deploymentStage_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment stage of the model. Only populated if this
+   * CreateEndpoint request deploys a model at the same time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deploymentStage.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.DeploymentStage getDeploymentStage() {
+    com.google.cloud.aiplatform.v1.DeploymentStage result =
+        com.google.cloud.aiplatform.v1.DeploymentStage.forNumber(deploymentStage_);
+    return result == null ? com.google.cloud.aiplatform.v1.DeploymentStage.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -136,6 +181,11 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getGenericMetadata());
     }
+    if (deploymentStage_
+        != com.google.cloud.aiplatform.v1.DeploymentStage.DEPLOYMENT_STAGE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, deploymentStage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -147,6 +197,11 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
+    }
+    if (deploymentStage_
+        != com.google.cloud.aiplatform.v1.DeploymentStage.DEPLOYMENT_STAGE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, deploymentStage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +223,7 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     if (hasGenericMetadata()) {
       if (!getGenericMetadata().equals(other.getGenericMetadata())) return false;
     }
+    if (deploymentStage_ != other.deploymentStage_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +239,8 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       hash = (37 * hash) + GENERIC_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getGenericMetadata().hashCode();
     }
+    hash = (37 * hash) + DEPLOYMENT_STAGE_FIELD_NUMBER;
+    hash = (53 * hash) + deploymentStage_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -339,6 +397,7 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
+      deploymentStage_ = 0;
       return this;
     }
 
@@ -382,6 +441,9 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         result.genericMetadata_ =
             genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentStage_ = deploymentStage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -436,6 +498,9 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       if (other.hasGenericMetadata()) {
         mergeGenericMetadata(other.getGenericMetadata());
       }
+      if (other.deploymentStage_ != 0) {
+        setDeploymentStageValue(other.getDeploymentStageValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -468,6 +533,12 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                deploymentStage_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -685,6 +756,116 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         genericMetadata_ = null;
       }
       return genericMetadataBuilder_;
+    }
+
+    private int deploymentStage_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment stage of the model. Only populated if this
+     * CreateEndpoint request deploys a model at the same time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deploymentStage.
+     */
+    @java.lang.Override
+    public int getDeploymentStageValue() {
+      return deploymentStage_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment stage of the model. Only populated if this
+     * CreateEndpoint request deploys a model at the same time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deploymentStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentStageValue(int value) {
+      deploymentStage_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment stage of the model. Only populated if this
+     * CreateEndpoint request deploys a model at the same time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deploymentStage.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.DeploymentStage getDeploymentStage() {
+      com.google.cloud.aiplatform.v1.DeploymentStage result =
+          com.google.cloud.aiplatform.v1.DeploymentStage.forNumber(deploymentStage_);
+      return result == null ? com.google.cloud.aiplatform.v1.DeploymentStage.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment stage of the model. Only populated if this
+     * CreateEndpoint request deploys a model at the same time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The deploymentStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentStage(com.google.cloud.aiplatform.v1.DeploymentStage value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      deploymentStage_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment stage of the model. Only populated if this
+     * CreateEndpoint request deploys a model at the same time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeploymentStage deployment_stage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentStage() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deploymentStage_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

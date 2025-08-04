@@ -28,7 +28,7 @@ public interface SlashCommandOrBuilder
    *
    *
    * <pre>
-   * The ID of the slash command invoked.
+   * The ID of the slash command.
    * </pre>
    *
    * <code>int64 command_id = 1;</code>

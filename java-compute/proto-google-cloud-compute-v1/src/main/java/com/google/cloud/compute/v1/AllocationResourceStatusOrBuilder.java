@@ -28,6 +28,49 @@ public interface AllocationResourceStatusOrBuilder
    *
    *
    * <pre>
+   * [Output only] Health information for the reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationResourceStatusHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return Whether the healthInfo field is set.
+   */
+  boolean hasHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Health information for the reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationResourceStatusHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return The healthInfo.
+   */
+  com.google.cloud.compute.v1.AllocationResourceStatusHealthInfo getHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Health information for the reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationResourceStatusHealthInfo health_info = 235287729;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AllocationResourceStatusHealthInfoOrBuilder getHealthInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of reservation blocks associated with this reservation.
    * </pre>
    *

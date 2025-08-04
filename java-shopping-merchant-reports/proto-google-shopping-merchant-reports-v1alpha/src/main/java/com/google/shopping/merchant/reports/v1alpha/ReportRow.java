@@ -699,7 +699,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         : competitiveVisibilityBenchmarkView_;
   }
 
-  public static final int YOUTUBE_CREATOR_PERFORMANCE_VIEW_FIELD_NUMBER = 11;
+  public static final int YOUTUBE_CREATOR_PERFORMANCE_VIEW_FIELD_NUMBER = 13;
   private com.google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView
       youtubeCreatorPerformanceView_;
 
@@ -711,7 +711,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    *
    * @return Whether the youtubeCreatorPerformanceView field is set.
@@ -729,7 +729,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    *
    * @return The youtubeCreatorPerformanceView.
@@ -751,7 +751,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    */
   @java.lang.Override
@@ -763,7 +763,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         : youtubeCreatorPerformanceView_;
   }
 
-  public static final int YOUTUBE_CONTENT_PERFORMANCE_VIEW_FIELD_NUMBER = 12;
+  public static final int YOUTUBE_CONTENT_PERFORMANCE_VIEW_FIELD_NUMBER = 14;
   private com.google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView
       youtubeContentPerformanceView_;
 
@@ -775,7 +775,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    *
    * @return Whether the youtubeContentPerformanceView field is set.
@@ -793,7 +793,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    *
    * @return The youtubeContentPerformanceView.
@@ -815,7 +815,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    */
   @java.lang.Override
@@ -827,7 +827,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         : youtubeContentPerformanceView_;
   }
 
-  public static final int YOUTUBE_PRODUCT_PERFORMANCE_VIEW_FIELD_NUMBER = 13;
+  public static final int YOUTUBE_PRODUCT_PERFORMANCE_VIEW_FIELD_NUMBER = 15;
   private com.google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView
       youtubeProductPerformanceView_;
 
@@ -839,7 +839,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    *
    * @return Whether the youtubeProductPerformanceView field is set.
@@ -857,7 +857,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    *
    * @return The youtubeProductPerformanceView.
@@ -879,7 +879,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    */
   @java.lang.Override
@@ -936,13 +936,13 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(10, getCompetitiveVisibilityBenchmarkView());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeMessage(11, getYoutubeCreatorPerformanceView());
+      output.writeMessage(13, getYoutubeCreatorPerformanceView());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeMessage(12, getYoutubeContentPerformanceView());
+      output.writeMessage(14, getYoutubeContentPerformanceView());
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeMessage(13, getYoutubeProductPerformanceView());
+      output.writeMessage(15, getYoutubeProductPerformanceView());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1002,17 +1002,17 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              11, getYoutubeCreatorPerformanceView());
+              13, getYoutubeCreatorPerformanceView());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              12, getYoutubeContentPerformanceView());
+              14, getYoutubeContentPerformanceView());
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              13, getYoutubeProductPerformanceView());
+              15, getYoutubeProductPerformanceView());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1706,27 +1706,27 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
-            case 90:
+            case 106:
               {
                 input.readMessage(
                     getYoutubeCreatorPerformanceViewFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000400;
                 break;
-              } // case 90
-            case 98:
+              } // case 106
+            case 114:
               {
                 input.readMessage(
                     getYoutubeContentPerformanceViewFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000800;
                 break;
-              } // case 98
-            case 106:
+              } // case 114
+            case 122:
               {
                 input.readMessage(
                     getYoutubeProductPerformanceViewFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 106
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4020,7 +4020,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      *
      * @return Whether the youtubeCreatorPerformanceView field is set.
@@ -4037,7 +4037,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      *
      * @return The youtubeCreatorPerformanceView.
@@ -4062,7 +4062,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public Builder setYoutubeCreatorPerformanceView(
@@ -4088,7 +4088,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public Builder setYoutubeCreatorPerformanceView(
@@ -4112,7 +4112,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public Builder mergeYoutubeCreatorPerformanceView(
@@ -4145,7 +4145,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public Builder clearYoutubeCreatorPerformanceView() {
@@ -4167,7 +4167,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView.Builder
@@ -4185,7 +4185,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceViewOrBuilder
@@ -4208,7 +4208,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4245,7 +4245,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      *
      * @return Whether the youtubeContentPerformanceView field is set.
@@ -4262,7 +4262,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      *
      * @return The youtubeContentPerformanceView.
@@ -4287,7 +4287,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public Builder setYoutubeContentPerformanceView(
@@ -4313,7 +4313,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public Builder setYoutubeContentPerformanceView(
@@ -4337,7 +4337,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public Builder mergeYoutubeContentPerformanceView(
@@ -4370,7 +4370,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public Builder clearYoutubeContentPerformanceView() {
@@ -4392,7 +4392,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView.Builder
@@ -4410,7 +4410,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceViewOrBuilder
@@ -4433,7 +4433,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4470,7 +4470,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      *
      * @return Whether the youtubeProductPerformanceView field is set.
@@ -4487,7 +4487,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      *
      * @return The youtubeProductPerformanceView.
@@ -4512,7 +4512,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public Builder setYoutubeProductPerformanceView(
@@ -4538,7 +4538,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public Builder setYoutubeProductPerformanceView(
@@ -4562,7 +4562,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public Builder mergeYoutubeProductPerformanceView(
@@ -4595,7 +4595,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public Builder clearYoutubeProductPerformanceView() {
@@ -4617,7 +4617,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView.Builder
@@ -4635,7 +4635,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     public com.google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceViewOrBuilder
@@ -4658,7 +4658,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+     * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

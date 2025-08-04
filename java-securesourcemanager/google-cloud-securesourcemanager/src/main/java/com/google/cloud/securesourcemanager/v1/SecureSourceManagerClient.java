@@ -879,7 +879,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePullRequestComment</td>
- *      <td><p> Creates a pull request comment.</td>
+ *      <td><p> Creates a pull request comment. This function is used to create a single PullRequestComment of type Comment, or a single PullRequestComment of type Code that's replying to another PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple PullRequestComments for code reviews.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -938,7 +938,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreatePullRequestComments</td>
- *      <td><p> Batch creates pull request comments.</td>
+ *      <td><p> Batch creates pull request comments. This function is used to create multiple PullRequestComments for code review. There needs to be exactly one PullRequestComment of type Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code comments must be unique within the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -955,7 +955,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ResolvePullRequestComments</td>
- *      <td><p> Resolves pull request comments.</td>
+ *      <td><p> Resolves pull request comments. A list of PullRequestComment names must be provided. The PullRequestComment names must be in the same conversation thread. If auto_fill is set, all comments in the conversation thread will be resolved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -975,7 +975,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UnresolvePullRequestComments</td>
- *      <td><p> Unresolves pull request comment.</td>
+ *      <td><p> Unresolves pull request comments. A list of PullRequestComment names must be provided. The PullRequestComment names must be in the same conversation thread. If auto_fill is set, all comments in the conversation thread will be unresolved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -7095,7 +7095,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a pull request comment.
+   * Creates a pull request comment. This function is used to create a single PullRequestComment of
+   * type Comment, or a single PullRequestComment of type Code that's replying to another
+   * PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple
+   * PullRequestComments for code reviews.
    *
    * <p>Sample code:
    *
@@ -7131,7 +7134,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a pull request comment.
+   * Creates a pull request comment. This function is used to create a single PullRequestComment of
+   * type Comment, or a single PullRequestComment of type Code that's replying to another
+   * PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple
+   * PullRequestComments for code reviews.
    *
    * <p>Sample code:
    *
@@ -7168,7 +7174,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a pull request comment.
+   * Creates a pull request comment. This function is used to create a single PullRequestComment of
+   * type Comment, or a single PullRequestComment of type Code that's replying to another
+   * PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple
+   * PullRequestComments for code reviews.
    *
    * <p>Sample code:
    *
@@ -7201,7 +7210,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a pull request comment.
+   * Creates a pull request comment. This function is used to create a single PullRequestComment of
+   * type Comment, or a single PullRequestComment of type Code that's replying to another
+   * PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple
+   * PullRequestComments for code reviews.
    *
    * <p>Sample code:
    *
@@ -7234,7 +7246,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a pull request comment.
+   * Creates a pull request comment. This function is used to create a single PullRequestComment of
+   * type Comment, or a single PullRequestComment of type Code that's replying to another
+   * PullRequestComment of type Code. Use BatchCreatePullRequestComments to create multiple
+   * PullRequestComments for code reviews.
    *
    * <p>Sample code:
    *
@@ -7556,7 +7571,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch creates pull request comments.
+   * Batch creates pull request comments. This function is used to create multiple
+   * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
+   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * comments must be unique within the request.
    *
    * <p>Sample code:
    *
@@ -7596,7 +7614,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch creates pull request comments.
+   * Batch creates pull request comments. This function is used to create multiple
+   * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
+   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * comments must be unique within the request.
    *
    * <p>Sample code:
    *
@@ -7637,7 +7658,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch creates pull request comments.
+   * Batch creates pull request comments. This function is used to create multiple
+   * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
+   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * comments must be unique within the request.
    *
    * <p>Sample code:
    *
@@ -7670,7 +7694,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch creates pull request comments.
+   * Batch creates pull request comments. This function is used to create multiple
+   * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
+   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * comments must be unique within the request.
    *
    * <p>Sample code:
    *
@@ -7707,7 +7734,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch creates pull request comments.
+   * Batch creates pull request comments. This function is used to create multiple
+   * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
+   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * comments must be unique within the request.
    *
    * <p>Sample code:
    *
@@ -7739,7 +7769,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resolves pull request comments.
+   * Resolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be resolved.
    *
    * <p>Sample code:
    *
@@ -7777,7 +7809,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resolves pull request comments.
+   * Resolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be resolved.
    *
    * <p>Sample code:
    *
@@ -7813,7 +7847,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resolves pull request comments.
+   * Resolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be resolved.
    *
    * <p>Sample code:
    *
@@ -7847,7 +7883,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resolves pull request comments.
+   * Resolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be resolved.
    *
    * <p>Sample code:
    *
@@ -7883,7 +7921,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resolves pull request comments.
+   * Resolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be resolved.
    *
    * <p>Sample code:
    *
@@ -7916,7 +7956,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unresolves pull request comment.
+   * Unresolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be unresolved.
    *
    * <p>Sample code:
    *
@@ -7954,7 +7996,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unresolves pull request comment.
+   * Unresolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be unresolved.
    *
    * <p>Sample code:
    *
@@ -7993,7 +8037,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unresolves pull request comment.
+   * Unresolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be unresolved.
    *
    * <p>Sample code:
    *
@@ -8027,7 +8073,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unresolves pull request comment.
+   * Unresolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be unresolved.
    *
    * <p>Sample code:
    *
@@ -8065,7 +8113,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unresolves pull request comment.
+   * Unresolves pull request comments. A list of PullRequestComment names must be provided. The
+   * PullRequestComment names must be in the same conversation thread. If auto_fill is set, all
+   * comments in the conversation thread will be unresolved.
    *
    * <p>Sample code:
    *

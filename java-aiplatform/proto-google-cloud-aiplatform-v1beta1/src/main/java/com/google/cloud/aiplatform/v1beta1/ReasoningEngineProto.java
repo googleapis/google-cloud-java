@@ -72,15 +72,15 @@ public final class ReasoningEngineProto {
       "\n"
           + "6google/cloud/aiplatform/v1beta1/reasoning_engine.proto\022\037google.cloud.aiplatfor"
           + "m.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032-google/cl"
-          + "oud/aiplatform/v1beta1/env_var.proto\032\034go"
-          + "ogle/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\220\005\n"
+          + "to\032\031google/api/resource.proto\0325google/cl"
+          + "oud/aiplatform/v1beta1/encryption_spec.proto\032-google/cloud/aiplatform/v1beta1/en"
+          + "v_var.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\220\005\n"
           + "\023ReasoningEngineSpec\022!\n"
           + "\017service_account\030\001 \001(\tB\003\340A\001H\000\210\001\001\022[\n"
-          + "\014package_spec\030\002 \001(\0132@.google.cloud.aipl"
-          + "atform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
-          + "\017deployment_spec\030\004 \001(\0132C.g"
-          + "oogle.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
+          + "\014package_spec\030\002 \001(\0132@.go"
+          + "ogle.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
+          + "\017deployment_spec\030\004 \001(\0132C.google.cloud.aiplatform.v1"
+          + "beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
           + "class_methods\030\003 \003(\0132\027.google.protobuf.StructB\003\340A\001\022\034\n"
           + "\017agent_framework\030\005 \001(\tB\003\340A\001\032\230\001\n"
           + "\013PackageSpec\022\"\n"
@@ -89,46 +89,49 @@ public final class ReasoningEngineProto {
           + "\024requirements_gcs_uri\030\003 \001(\tB\003\340A\001\022\033\n"
           + "\016python_version\030\004 \001(\tB\003\340A\001\032\223\001\n"
           + "\016DeploymentSpec\0229\n"
-          + "\003env\030\001"
-          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
+          + "\003env\030\001 \003(\0132\'.go"
+          + "ogle.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
           + "secret_env\030\002"
           + " \003(\0132-.google.cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001B\022\n"
-          + "\020_service_account\"\233\004\n"
+          + "\020_service_account\"\345\004\n"
           + "\017ReasoningEngine\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\007 \001(\tB\003\340A\001\022G\n"
-          + "\004spec\030\003 \001(\01324.google.cloud."
-          + "aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
+          + "\004spec\030\003 \001(\0132"
+          + "4.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\006 \001(\tB\003\340A\001\022V\n"
-          + "\014context_spec\030\t \001(\0132;.googl"
-          + "e.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\003\340A\001:\237\001\352A\233\001\n"
-          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{"
-          + "project}/locations/{location}/reasoningE"
-          + "ngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\332\004\n"
+          + "\014context_spec\030\t"
+          + " \001(\0132;.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\003\340A\001\022H\n"
+          + "\017encryption_spec\030\013"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec:\237\001\352A\233\001\n"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022Kp"
+          + "rojects/{project}/locations/{location}/r"
+          + "easoningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\332\004\n"
           + "\032ReasoningEngineContextSpec\022m\n"
-          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1beta1.Reason"
-          + "ingEngineContextSpec.MemoryBankConfigB\003\340A\001\032\314\003\n"
+          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1bet"
+          + "a1.ReasoningEngineContextSpec.MemoryBankConfigB\003\340A\001\032\314\003\n"
           + "\020MemoryBankConfig\022}\n"
-          + "\021generation_config\030\001 \001(\0132].google.cloud.aiplatform.v1b"
-          + "eta1.ReasoningEngineContextSpec.MemoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
-          + "\030similarity_search_config\030\002 \001(\0132c.google.cloud"
-          + ".aiplatform.v1beta1.ReasoningEngineConte"
-          + "xtSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\032M\n"
+          + "\021generation_config\030\001 \001(\0132].google.cloud.aipla"
+          + "tform.v1beta1.ReasoningEngineContextSpec"
+          + ".MemoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
+          + "\030similarity_search_config\030\002 \001(\0132c.goo"
+          + "gle.cloud.aiplatform.v1beta1.ReasoningEn"
+          + "gineContextSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\032M\n"
           + "\020GenerationConfig\0229\n"
           + "\005model\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"aiplatform.googleapis.com/Endpoint\032]\n"
           + "\026SimilaritySearchConfig\022C\n"
           + "\017embedding_model\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"aiplatform.googleapis.com/EndpointB\353\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngi"
-          + "neProtoP\001ZCcloud.google.com/go/aiplatfor"
-          + "m/apiv1beta1/aiplatformpb;aiplatformpb\252\002"
-          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
-          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\024Reas"
+          + "oningEngineProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aipla"
+          + "tformpb\252\002\037Google.Cloud.AIPlatform.V1Beta"
+          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
+          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -136,6 +139,7 @@ public final class ReasoningEngineProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -182,6 +186,7 @@ public final class ReasoningEngineProto {
               "UpdateTime",
               "Etag",
               "ContextSpec",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -230,6 +235,7 @@ public final class ReasoningEngineProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

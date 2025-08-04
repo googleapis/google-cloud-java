@@ -123,7 +123,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    * @deprecated
    *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=266
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=269
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Override
@@ -1511,7 +1511,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=266
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=269
      * @return The totalBillableCharacterCount.
      */
     @java.lang.Override
@@ -1533,7 +1533,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=266
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=269
      * @param value The totalBillableCharacterCount to set.
      * @return This builder for chaining.
      */
@@ -1559,7 +1559,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=266
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=269
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

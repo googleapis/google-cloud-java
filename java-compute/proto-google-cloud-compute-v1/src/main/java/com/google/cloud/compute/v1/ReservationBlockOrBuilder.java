@@ -93,6 +93,46 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Health information for the reservation block.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return Whether the healthInfo field is set.
+   */
+  boolean hasHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Health information for the reservation block.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return The healthInfo.
+   */
+  com.google.cloud.compute.v1.ReservationBlockHealthInfo getHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Health information for the reservation block.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationBlockHealthInfoOrBuilder getHealthInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *

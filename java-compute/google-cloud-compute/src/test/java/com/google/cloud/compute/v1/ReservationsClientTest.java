@@ -228,6 +228,7 @@ public class ReservationsClientTest {
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSchedulingType("schedulingType144670446")
             .setSelfLink("selfLink1191800166")
             .setShareSettings(ShareSettings.newBuilder().build())
             .setSpecificReservation(AllocationSpecificSKUReservation.newBuilder().build())

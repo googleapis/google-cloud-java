@@ -1034,6 +1034,7 @@ public class PredictionServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
 
@@ -1063,6 +1064,7 @@ public class PredictionServiceClientTest {
             .setToolConfig(ToolConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
 

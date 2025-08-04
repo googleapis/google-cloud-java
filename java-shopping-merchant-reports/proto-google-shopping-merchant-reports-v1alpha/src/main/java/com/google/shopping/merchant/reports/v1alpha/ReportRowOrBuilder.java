@@ -481,7 +481,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    *
    * @return Whether the youtubeCreatorPerformanceView field is set.
@@ -496,7 +496,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    *
    * @return The youtubeCreatorPerformanceView.
@@ -512,7 +512,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 11;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceView youtube_creator_performance_view = 13;
    * </code>
    */
   com.google.shopping.merchant.reports.v1alpha.YoutubeCreatorPerformanceViewOrBuilder
@@ -526,7 +526,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    *
    * @return Whether the youtubeContentPerformanceView field is set.
@@ -541,7 +541,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    *
    * @return The youtubeContentPerformanceView.
@@ -557,7 +557,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 12;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceView youtube_content_performance_view = 14;
    * </code>
    */
   com.google.shopping.merchant.reports.v1alpha.YoutubeContentPerformanceViewOrBuilder
@@ -571,7 +571,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    *
    * @return Whether the youtubeProductPerformanceView field is set.
@@ -586,7 +586,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    *
    * @return The youtubeProductPerformanceView.
@@ -602,7 +602,7 @@ public interface ReportRowOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 13;
+   * .google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceView youtube_product_performance_view = 15;
    * </code>
    */
   com.google.shopping.merchant.reports.v1alpha.YoutubeProductPerformanceViewOrBuilder
