@@ -1,4 +1,6 @@
+
 {
+
   "extends": [
     ":separateMajorReleases",
     ":combinePatchMinorReleases",
@@ -7,7 +9,8 @@
     ":updateNotScheduled",
     ":automergeDisabled",
     ":ignoreModulesAndTests",
-    ":maintainLockFilesDisabled"
+    ":maintainLockFilesDisabled",
+    ":autodetectPinVersions"
   ],
   "ignorePaths": [
     ".kokoro/requirements.txt",
@@ -19,8 +22,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/^.github/workflows/unmanaged_dependency_check.yaml$/"
+      "fileMatch": [
+        "^.github/workflows/unmanaged_dependency_check.yaml$"
       ],
       "matchStrings": [
         "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
@@ -31,63 +34,63 @@
   ],
   "packageRules": [
     {
-      "versioning": "docker",
-      "matchPackageNames": [
-        "/^com.google.guava:/"
-      ]
+      "packagePatterns": [
+        "^com.google.guava:"
+      ],
+      "versionScheme": "docker"
     },
     {
-      "semanticCommitType": "deps",
-      "semanticCommitScope": null,
-      "matchPackageNames": [
+      "packagePatterns": [
         "*"
-      ]
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": null
     },
     {
+      "packagePatterns": [
+        "^org.apache.maven",
+        "^org.jacoco:",
+        "^org.codehaus.mojo:",
+        "^org.sonatype.plugins:",
+        "^com.google.cloud:google-cloud-shared-config"
+      ],
       "semanticCommitType": "build",
-      "semanticCommitScope": "deps",
-      "matchPackageNames": [
-        "/^org.apache.maven/",
-        "/^org.jacoco:/",
-        "/^org.codehaus.mojo:/",
-        "/^org.sonatype.plugins:/",
-        "/^com.google.cloud:google-cloud-shared-config/"
-      ]
+      "semanticCommitScope": "deps"
     },
     {
+      "packagePatterns": [
+        "^com.google.cloud:google-cloud-logging",
+        "^com.google.cloud:libraries-bom",
+        "^com.google.cloud.samples:shared-configuration"
+      ],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "deps",
-      "matchPackageNames": [
-        "/^com.google.cloud:google-cloud-logging/",
-        "/^com.google.cloud:libraries-bom/",
-        "/^com.google.cloud.samples:shared-configuration/"
-      ]
+      "semanticCommitScope": "deps"
     },
     {
+      "packagePatterns": [
+        "^junit:junit",
+        "^com.google.truth:truth",
+        "^org.mockito:mockito-core",
+        "^org.objenesis:objenesis",
+        "^com.google.cloud:google-cloud-conformance-tests",
+        "^org.graalvm.buildtools:junit-platform-native"
+      ],
       "semanticCommitType": "test",
-      "semanticCommitScope": "deps",
-      "matchPackageNames": [
-        "/^junit:junit/",
-        "/^com.google.truth:truth/",
-        "/^org.mockito:mockito-core/",
-        "/^org.objenesis:objenesis/",
-        "/^com.google.cloud:google-cloud-conformance-tests/",
-        "/^org.graalvm.buildtools:junit-platform-native/"
-      ]
+      "semanticCommitScope": "deps"
     },
     {
-      "ignoreUnstable": false,
-      "matchPackageNames": [
-        "/^com.google.cloud:google-cloud-/"
-      ]
+      "packagePatterns": [
+        "^com.google.cloud:google-cloud-"
+      ],
+      "ignoreUnstable": false
     },
     {
-      "groupName": "jackson dependencies",
-      "matchPackageNames": [
-        "/^com.fasterxml.jackson.core/"
-      ]
+      "packagePatterns": [
+        "^com.fasterxml.jackson.core"
+      ],
+      "groupName": "jackson dependencies"
     }
   ],
-  "semanticCommits": "enabled",
+  "semanticCommits": true,
   "dependencyDashboard": true
 }
