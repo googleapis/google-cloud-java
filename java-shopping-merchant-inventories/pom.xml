@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
+        <artifactId>proto-google-shopping-merchant-inventories-v1</artifactId>
+        <version>0.47.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-inventories-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.shopping.api.grpc</groupId>
+        <artifactId>grpc-google-shopping-merchant-inventories-v1</artifactId>
+        <version>0.47.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-inventories-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-inventories-v1beta</artifactId>
         <version>0.47.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-inventories-v1beta:current} -->
       </dependency>
@@ -47,7 +57,9 @@
   <modules>
     <module>google-shopping-merchant-inventories</module>
     <module>grpc-google-shopping-merchant-inventories-v1beta</module>
+    <module>grpc-google-shopping-merchant-inventories-v1</module>
     <module>proto-google-shopping-merchant-inventories-v1beta</module>
+    <module>proto-google-shopping-merchant-inventories-v1</module>
     <module>google-shopping-merchant-inventories-bom</module>
   </modules>
 
