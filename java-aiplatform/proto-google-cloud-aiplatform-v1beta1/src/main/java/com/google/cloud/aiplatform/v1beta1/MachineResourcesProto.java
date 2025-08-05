@@ -65,6 +65,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_fieldAccessorTable;
@@ -128,19 +132,25 @@ public final class MachineResourcesProto {
           + "\010NfsMount\022\023\n"
           + "\006server\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\004path\030\002 \001(\tB\003\340A\002\022\030\n"
-          + "\013mount_point\030\003 \001(\tB\003\340A\002\"A\n"
+          + "\013mount_point\030\003 \001(\tB\003\340A\002\"\376\001\n"
           + "\025AutoscalingMetricSpec\022\030\n"
           + "\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n"
-          + "\006target\030\002 \001(\005\".\n"
+          + "\006target\030\002 \001(\005\022{\n"
+          + "\031monitored_resource_labels\030\003 \003(\0132S"
+          + ".google.cloud.aiplatform.v1beta1.Autosca"
+          + "lingMetricSpec.MonitoredResourceLabelsEntryB\003\340A\001\032>\n"
+          + "\034MonitoredResourceLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\".\n"
           + "\020ShieldedVmConfig\022\032\n"
           + "\022enable_secure_boot\030\001 \001(\010\"D\n"
           + "\tFlexStart\0227\n"
           + "\024max_runtime_duration\030\001 \001(\0132\031.google.protobuf.DurationB\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025MachineResourcesProtoP\001ZCcloud.google."
-          + "com/go/aiplatform/apiv1beta1/aiplatformp"
-          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\025MachineR"
+          + "esourcesProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -232,7 +242,17 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor,
             new java.lang.String[] {
-              "MetricName", "Target",
+              "MetricName", "Target", "MonitoredResourceLabels",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor =
         getDescriptor().getMessageTypes().get(9);

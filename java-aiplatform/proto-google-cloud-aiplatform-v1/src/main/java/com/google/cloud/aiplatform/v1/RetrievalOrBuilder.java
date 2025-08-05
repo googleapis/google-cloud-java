@@ -113,7 +113,7 @@ public interface RetrievalOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=273
+   *     google/cloud/aiplatform/v1/tool.proto;l=279
    * @return The disableAttribution.
    */
   @java.lang.Deprecated

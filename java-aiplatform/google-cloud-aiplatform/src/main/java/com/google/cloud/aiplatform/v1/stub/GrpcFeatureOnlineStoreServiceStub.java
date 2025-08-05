@@ -22,9 +22,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
@@ -77,6 +80,20 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(SearchNearestEntitiesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteMethodDescriptor =
+          MethodDescriptor
+              .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeatureOnlineStoreService/FeatureViewDirectWrite")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -127,6 +144,8 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
       fetchFeatureValuesCallable;
   private final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable;
+  private final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -204,6 +223,18 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteTransportSettings =
+            GrpcCallSettings
+                .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+                .setMethodDescriptor(featureViewDirectWriteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -266,6 +297,11 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
             searchNearestEntitiesTransportSettings,
             settings.searchNearestEntitiesSettings(),
             clientContext);
+    this.featureViewDirectWriteCallable =
+        callableFactory.createBidiStreamingCallable(
+            featureViewDirectWriteTransportSettings,
+            settings.featureViewDirectWriteSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -305,6 +341,12 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     return searchNearestEntitiesCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    return featureViewDirectWriteCallable;
   }
 
   @Override

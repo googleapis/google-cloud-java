@@ -175,7 +175,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
    * containing the substring `foo` and description containing the substring
    * `bar`.
    *
-   *
    * Besides field queries, the following exact-match filters are
    * supported. The exact-match filters do not support wildcards. Unlike
    * field-restricted queries, exact-match filters are case-sensitive.
@@ -257,7 +256,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
    * * `feature_id: foo AND description: bar` --&gt; Matches a Feature with ID
    * containing the substring `foo` and description containing the substring
    * `bar`.
-   *
    *
    * Besides field queries, the following exact-match filters are
    * supported. The exact-match filters do not support wildcards. Unlike
@@ -975,7 +973,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      * containing the substring `foo` and description containing the substring
      * `bar`.
      *
-     *
      * Besides field queries, the following exact-match filters are
      * supported. The exact-match filters do not support wildcards. Unlike
      * field-restricted queries, exact-match filters are case-sensitive.
@@ -1056,7 +1053,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      * * `feature_id: foo AND description: bar` --&gt; Matches a Feature with ID
      * containing the substring `foo` and description containing the substring
      * `bar`.
-     *
      *
      * Besides field queries, the following exact-match filters are
      * supported. The exact-match filters do not support wildcards. Unlike
@@ -1139,7 +1135,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      * containing the substring `foo` and description containing the substring
      * `bar`.
      *
-     *
      * Besides field queries, the following exact-match filters are
      * supported. The exact-match filters do not support wildcards. Unlike
      * field-restricted queries, exact-match filters are case-sensitive.
@@ -1220,7 +1215,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      * containing the substring `foo` and description containing the substring
      * `bar`.
      *
-     *
      * Besides field queries, the following exact-match filters are
      * supported. The exact-match filters do not support wildcards. Unlike
      * field-restricted queries, exact-match filters are case-sensitive.
@@ -1296,7 +1290,6 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      * * `feature_id: foo AND description: bar` --&gt; Matches a Feature with ID
      * containing the substring `foo` and description containing the substring
      * `bar`.
-     *
      *
      * Besides field queries, the following exact-match filters are
      * supported. The exact-match filters do not support wildcards. Unlike
