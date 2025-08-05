@@ -2322,6 +2322,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/products/v1
   - proto_path: google/shopping/merchant/products/v1beta
   library_name: shopping-merchant-products
 - api_shortname: merchantapi
