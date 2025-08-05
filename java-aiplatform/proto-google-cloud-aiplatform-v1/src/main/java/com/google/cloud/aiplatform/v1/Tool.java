@@ -73,7 +73,70 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public interface GoogleSearchOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.GoogleSearch)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the excludeDomains.
+     */
+    java.util.List<java.lang.String> getExcludeDomainsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of excludeDomains.
+     */
+    int getExcludeDomainsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeDomains at the given index.
+     */
+    java.lang.String getExcludeDomains(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeDomains at the given index.
+     */
+    com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+  }
 
   /**
    *
@@ -96,7 +159,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private GoogleSearch() {}
+    private GoogleSearch() {
+      excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -119,6 +184,82 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.Tool.GoogleSearch.Builder.class);
     }
 
+    public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the excludeDomains.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+      return excludeDomains_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of excludeDomains.
+     */
+    public int getExcludeDomainsCount() {
+      return excludeDomains_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeDomains at the given index.
+     */
+    public java.lang.String getExcludeDomains(int index) {
+      return excludeDomains_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeDomains at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+      return excludeDomains_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -133,6 +274,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < excludeDomains_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, excludeDomains_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -142,6 +286,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludeDomains_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludeDomains_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludeDomainsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -158,6 +310,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1.Tool.GoogleSearch other =
           (com.google.cloud.aiplatform.v1.Tool.GoogleSearch) obj;
 
+      if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -169,6 +322,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getExcludeDomainsCount() > 0) {
+        hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludeDomainsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,6 +468,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -338,8 +497,19 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.Tool.GoogleSearch buildPartial() {
         com.google.cloud.aiplatform.v1.Tool.GoogleSearch result =
             new com.google.cloud.aiplatform.v1.Tool.GoogleSearch(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Tool.GoogleSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          excludeDomains_.makeImmutable();
+          result.excludeDomains_ = excludeDomains_;
+        }
       }
 
       @java.lang.Override
@@ -390,6 +560,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeFrom(com.google.cloud.aiplatform.v1.Tool.GoogleSearch other) {
         if (other == com.google.cloud.aiplatform.v1.Tool.GoogleSearch.getDefaultInstance())
           return this;
+        if (!other.excludeDomains_.isEmpty()) {
+          if (excludeDomains_.isEmpty()) {
+            excludeDomains_ = other.excludeDomains_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureExcludeDomainsIsMutable();
+            excludeDomains_.addAll(other.excludeDomains_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -416,6 +596,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludeDomainsIsMutable();
+                  excludeDomains_.add(s);
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -430,6 +617,209 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureExcludeDomainsIsMutable() {
+        if (!excludeDomains_.isModifiable()) {
+          excludeDomains_ = new com.google.protobuf.LazyStringArrayList(excludeDomains_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+        excludeDomains_.makeImmutable();
+        return excludeDomains_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      public int getExcludeDomainsCount() {
+        return excludeDomains_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      public java.lang.String getExcludeDomains(int index) {
+        return excludeDomains_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+        return excludeDomains_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludeDomains to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludeDomains(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludeDomains(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludeDomains(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludeDomainsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeDomains_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludeDomains() {
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludeDomainsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
 

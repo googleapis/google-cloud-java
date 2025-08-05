@@ -56,6 +56,18 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
         .internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 3:
+        return internalGetMonitoredResourceLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -153,6 +165,133 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     return target_;
   }
 
+  public static final int MONITORED_RESOURCE_LABELS_FIELD_NUMBER = 3;
+
+  private static final class MonitoredResourceLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+                .internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_MonitoredResourceLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> monitoredResourceLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMonitoredResourceLabels() {
+    if (monitoredResourceLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MonitoredResourceLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return monitoredResourceLabels_;
+  }
+
+  public int getMonitoredResourceLabelsCount() {
+    return internalGetMonitoredResourceLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels used for metrics
+   * filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsMonitoredResourceLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMonitoredResourceLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getMonitoredResourceLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabels() {
+    return getMonitoredResourceLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels used for metrics
+   * filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabelsMap() {
+    return internalGetMonitoredResourceLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels used for metrics
+   * filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getMonitoredResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMonitoredResourceLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels used for metrics
+   * filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getMonitoredResourceLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMonitoredResourceLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -173,6 +312,11 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     if (target_ != 0) {
       output.writeInt32(2, target_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetMonitoredResourceLabels(),
+        MonitoredResourceLabelsDefaultEntryHolder.defaultEntry,
+        3);
     getUnknownFields().writeTo(output);
   }
 
@@ -187,6 +331,17 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     }
     if (target_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, target_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMonitoredResourceLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> monitoredResourceLabels__ =
+          MonitoredResourceLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, monitoredResourceLabels__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -206,6 +361,8 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
 
     if (!getMetricName().equals(other.getMetricName())) return false;
     if (getTarget() != other.getTarget()) return false;
+    if (!internalGetMonitoredResourceLabels().equals(other.internalGetMonitoredResourceLabels()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -221,6 +378,10 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getMetricName().hashCode();
     hash = (37 * hash) + TARGET_FIELD_NUMBER;
     hash = (53 * hash) + getTarget();
+    if (!internalGetMonitoredResourceLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + MONITORED_RESOURCE_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMonitoredResourceLabels().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,6 +504,28 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
           .internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMonitoredResourceLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableMonitoredResourceLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -366,6 +549,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       metricName_ = "";
       target_ = 0;
+      internalGetMutableMonitoredResourceLabels().clear();
       return this;
     }
 
@@ -407,6 +591,10 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.monitoredResourceLabels_ = internalGetMonitoredResourceLabels();
+        result.monitoredResourceLabels_.makeImmutable();
       }
     }
 
@@ -464,6 +652,9 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       if (other.getTarget() != 0) {
         setTarget(other.getTarget());
       }
+      internalGetMutableMonitoredResourceLabels()
+          .mergeFrom(other.internalGetMonitoredResourceLabels());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -502,6 +693,20 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    monitoredResourceLabels__ =
+                        input.readMessage(
+                            MonitoredResourceLabelsDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableMonitoredResourceLabels()
+                    .getMutableMap()
+                    .put(monitoredResourceLabels__.getKey(), monitoredResourceLabels__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -724,6 +929,214 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000002);
       target_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        monitoredResourceLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMonitoredResourceLabels() {
+      if (monitoredResourceLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MonitoredResourceLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return monitoredResourceLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMonitoredResourceLabels() {
+      if (monitoredResourceLabels_ == null) {
+        monitoredResourceLabels_ =
+            com.google.protobuf.MapField.newMapField(
+                MonitoredResourceLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!monitoredResourceLabels_.isMutable()) {
+        monitoredResourceLabels_ = monitoredResourceLabels_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return monitoredResourceLabels_;
+    }
+
+    public int getMonitoredResourceLabelsCount() {
+      return internalGetMonitoredResourceLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsMonitoredResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMonitoredResourceLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getMonitoredResourceLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabels() {
+      return getMonitoredResourceLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabelsMap() {
+      return internalGetMonitoredResourceLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getMonitoredResourceLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMonitoredResourceLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getMonitoredResourceLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMonitoredResourceLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMonitoredResourceLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableMonitoredResourceLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMonitoredResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMonitoredResourceLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMonitoredResourceLabels() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableMonitoredResourceLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putMonitoredResourceLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableMonitoredResourceLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Monitoring monitored resource labels used for metrics
+     * filtering. See Cloud Monitoring Labels
+     * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllMonitoredResourceLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMonitoredResourceLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

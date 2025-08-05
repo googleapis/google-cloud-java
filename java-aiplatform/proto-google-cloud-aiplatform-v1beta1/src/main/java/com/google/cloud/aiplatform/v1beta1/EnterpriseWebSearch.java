@@ -40,7 +40,9 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private EnterpriseWebSearch() {}
+  private EnterpriseWebSearch() {
+    excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -63,6 +65,78 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder.class);
   }
 
+  public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the excludeDomains.
+   */
+  public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+    return excludeDomains_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of excludeDomains.
+   */
+  public int getExcludeDomainsCount() {
+    return excludeDomains_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeDomains at the given index.
+   */
+  public java.lang.String getExcludeDomains(int index) {
+    return excludeDomains_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeDomains at the given index.
+   */
+  public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+    return excludeDomains_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -77,6 +151,9 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < excludeDomains_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, excludeDomains_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -86,6 +163,14 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    {
+      int dataSize = 0;
+      for (int i = 0; i < excludeDomains_.size(); i++) {
+        dataSize += computeStringSizeNoTag(excludeDomains_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExcludeDomainsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -102,6 +187,7 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch other =
         (com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch) obj;
 
+    if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -113,6 +199,10 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getExcludeDomainsCount() > 0) {
+      hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludeDomainsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -254,6 +344,8 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -281,8 +373,19 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch buildPartial() {
       com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch result =
           new com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        excludeDomains_.makeImmutable();
+        result.excludeDomains_ = excludeDomains_;
+      }
     }
 
     @java.lang.Override
@@ -331,6 +434,16 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch other) {
       if (other == com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance())
         return this;
+      if (!other.excludeDomains_.isEmpty()) {
+        if (excludeDomains_.isEmpty()) {
+          excludeDomains_ = other.excludeDomains_;
+          bitField0_ |= 0x00000001;
+        } else {
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.addAll(other.excludeDomains_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -357,6 +470,13 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExcludeDomainsIsMutable();
+                excludeDomains_.add(s);
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -371,6 +491,200 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExcludeDomainsIsMutable() {
+      if (!excludeDomains_.isModifiable()) {
+        excludeDomains_ = new com.google.protobuf.LazyStringArrayList(excludeDomains_);
+      }
+      bitField0_ |= 0x00000001;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the excludeDomains.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+      excludeDomains_.makeImmutable();
+      return excludeDomains_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of excludeDomains.
+     */
+    public int getExcludeDomainsCount() {
+      return excludeDomains_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeDomains at the given index.
+     */
+    public java.lang.String getExcludeDomains(int index) {
+      return excludeDomains_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeDomains at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+      return excludeDomains_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludeDomains to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludeDomains(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeDomainsIsMutable();
+      excludeDomains_.set(index, value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The excludeDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeDomains(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeDomainsIsMutable();
+      excludeDomains_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The excludeDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExcludeDomains(java.lang.Iterable<java.lang.String> values) {
+      ensureExcludeDomainsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeDomains_);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludeDomains() {
+      excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the excludeDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeDomainsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExcludeDomainsIsMutable();
+      excludeDomains_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
 

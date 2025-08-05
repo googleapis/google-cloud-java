@@ -166,6 +166,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia GB200 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_GB200 = 17;</code>
+   */
+  NVIDIA_GB200(17),
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -353,6 +363,17 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia GB200 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_GB200 = 17;</code>
+   */
+  public static final int NVIDIA_GB200_VALUE = 17;
+
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -443,6 +464,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_H200_141GB;
       case 16:
         return NVIDIA_B200;
+      case 17:
+        return NVIDIA_GB200;
       case 6:
         return TPU_V2;
       case 7:

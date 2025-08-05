@@ -1234,7 +1234,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=304
+   *     google/cloud/aiplatform/v1/tool.proto;l=310
    * @return Whether the similarityTopK field is set.
    */
   @java.lang.Override
@@ -1255,7 +1255,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=304
+   *     google/cloud/aiplatform/v1/tool.proto;l=310
    * @return The similarityTopK.
    */
   @java.lang.Override
@@ -1280,7 +1280,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is deprecated.
-   *     See google/cloud/aiplatform/v1/tool.proto;l=309
+   *     See google/cloud/aiplatform/v1/tool.proto;l=315
    * @return Whether the vectorDistanceThreshold field is set.
    */
   @java.lang.Override
@@ -1302,7 +1302,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is deprecated.
-   *     See google/cloud/aiplatform/v1/tool.proto;l=309
+   *     See google/cloud/aiplatform/v1/tool.proto;l=315
    * @return The vectorDistanceThreshold.
    */
   @java.lang.Override
@@ -2357,7 +2357,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=304
+     *     google/cloud/aiplatform/v1/tool.proto;l=310
      * @return Whether the similarityTopK field is set.
      */
     @java.lang.Override
@@ -2378,7 +2378,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=304
+     *     google/cloud/aiplatform/v1/tool.proto;l=310
      * @return The similarityTopK.
      */
     @java.lang.Override
@@ -2399,7 +2399,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=304
+     *     google/cloud/aiplatform/v1/tool.proto;l=310
      * @param value The similarityTopK to set.
      * @return This builder for chaining.
      */
@@ -2424,7 +2424,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=304
+     *     google/cloud/aiplatform/v1/tool.proto;l=310
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2450,7 +2450,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=309
+     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=315
      * @return Whether the vectorDistanceThreshold field is set.
      */
     @java.lang.Override
@@ -2472,7 +2472,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=309
+     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=315
      * @return The vectorDistanceThreshold.
      */
     @java.lang.Override
@@ -2494,7 +2494,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=309
+     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=315
      * @param value The vectorDistanceThreshold to set.
      * @return This builder for chaining.
      */
@@ -2520,7 +2520,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is
-     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=309
+     *     deprecated. See google/cloud/aiplatform/v1/tool.proto;l=315
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

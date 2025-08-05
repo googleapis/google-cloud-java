@@ -36,10 +36,13 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
@@ -123,6 +126,8 @@ public class FeatureOnlineStoreServiceStubSettings
       fetchFeatureValuesSettings;
   private final UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings;
+  private final StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -193,6 +198,12 @@ public class FeatureOnlineStoreServiceStubSettings
   public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings() {
     return searchNearestEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to featureViewDirectWrite. */
+  public StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings() {
+    return featureViewDirectWriteSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -305,6 +316,7 @@ public class FeatureOnlineStoreServiceStubSettings
 
     fetchFeatureValuesSettings = settingsBuilder.fetchFeatureValuesSettings().build();
     searchNearestEntitiesSettings = settingsBuilder.searchNearestEntitiesSettings().build();
+    featureViewDirectWriteSettings = settingsBuilder.featureViewDirectWriteSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -321,6 +333,9 @@ public class FeatureOnlineStoreServiceStubSettings
     private final UnaryCallSettings.Builder<
             SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings;
+    private final StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -358,6 +373,7 @@ public class FeatureOnlineStoreServiceStubSettings
 
       fetchFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchNearestEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      featureViewDirectWriteSettings = StreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -381,6 +397,7 @@ public class FeatureOnlineStoreServiceStubSettings
 
       fetchFeatureValuesSettings = settings.fetchFeatureValuesSettings.toBuilder();
       searchNearestEntitiesSettings = settings.searchNearestEntitiesSettings.toBuilder();
+      featureViewDirectWriteSettings = settings.featureViewDirectWriteSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -474,6 +491,13 @@ public class FeatureOnlineStoreServiceStubSettings
     public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings() {
       return searchNearestEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to featureViewDirectWrite. */
+    public StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings() {
+      return featureViewDirectWriteSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
