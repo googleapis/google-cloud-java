@@ -1242,6 +1242,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/issueresolution/v1
   - proto_path: google/shopping/merchant/issueresolution/v1beta
   library_name: java-shopping-merchant-issue-resolution
   requires_billing: true
