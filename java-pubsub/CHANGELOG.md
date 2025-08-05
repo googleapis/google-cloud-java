@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.141.2](https://github.com/googleapis/java-pubsub/compare/v1.141.1...v1.141.2) (2025-08-05)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.61.0 ([42eb599](https://github.com/googleapis/java-pubsub/commit/42eb5992557457a5ae4512334267113266c220ac))
+* Use a separate cached thread pool for handling ack and modack response callback for EOD-enabled subscriptions ([#2505](https://github.com/googleapis/java-pubsub/issues/2505)) ([224c269](https://github.com/googleapis/java-pubsub/commit/224c269e3bd0ae4cfc4b24ac85495911b8e2b90c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.54.0 ([#2506](https://github.com/googleapis/java-pubsub/issues/2506)) ([6bf8e62](https://github.com/googleapis/java-pubsub/commit/6bf8e62b1144568292e832dc8031a70a2c5b9ad7))
+* Update dependency com.google.cloud:google-cloud-core to v2.59.0 ([#2507](https://github.com/googleapis/java-pubsub/issues/2507)) ([070cf07](https://github.com/googleapis/java-pubsub/commit/070cf07b1d529c34d4f633b37ce1d35d14768325))
+* Update dependency com.google.cloud:google-cloud-storage to v2.54.0 ([#2510](https://github.com/googleapis/java-pubsub/issues/2510)) ([0fd589e](https://github.com/googleapis/java-pubsub/commit/0fd589e2ee80730b442f569b770fe16208feb4ba))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#2508](https://github.com/googleapis/java-pubsub/issues/2508)) ([a7be2a7](https://github.com/googleapis/java-pubsub/commit/a7be2a74327499b1acb2fe159e6f7465d6c8f798))
+* Update googleapis/sdk-platform-java action to v2.61.0 ([#2509](https://github.com/googleapis/java-pubsub/issues/2509)) ([32df6b6](https://github.com/googleapis/java-pubsub/commit/32df6b694f9aee2cf7132c2d817f9736d69060f3))
+
 ## [1.141.1](https://github.com/googleapis/java-pubsub/compare/v1.141.0...v1.141.1) (2025-07-28)
 
 
