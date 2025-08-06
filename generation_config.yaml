@@ -2295,6 +2295,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1
   - proto_path: google/shopping/merchant/lfp/v1beta
   requires_billing: true
 
