@@ -2368,6 +2368,7 @@ libraries:
   cloud_api: false
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
+  - proto_path: google/shopping/merchant/reports/v1
   - proto_path: google/shopping/merchant/reports/v1beta
   - proto_path: google/shopping/merchant/reports/v1alpha
 
