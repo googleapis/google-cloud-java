@@ -2341,6 +2341,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/promotions/v1
   - proto_path: google/shopping/merchant/promotions/v1beta
   library_name: shopping-merchant-promotions
   requires_billing: true
