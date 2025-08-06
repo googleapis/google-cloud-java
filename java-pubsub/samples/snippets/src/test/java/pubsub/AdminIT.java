@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.protobuf.Duration;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import java.io.ByteArrayOutputStream;
@@ -73,6 +74,12 @@ public class AdminIT {
       "java_samples_data_set" + _suffix.replace("-", "_");
   private static final String bigquerySubscriptionId = "iam-bigquery-subscription-" + _suffix;
   private static final String bigqueryTableId = "java_samples_table_" + _suffix;
+  private static final String cloudStorageSubscriptionId =
+      "iam-cloud-storage-subscription-" + _suffix;
+  private static final String cloudStorageFilenamePrefix = "log_events_";
+  private static final String cloudStorageFilenameSuffix = ".txt";
+  private static final Duration cloudStorageMaxDuration =
+      Duration.newBuilder().setSeconds(300).build();
   private static final String gcpServiceAccount =
       "fake-service-account@fake-gcp-project.iam.gserviceaccount.com";
   // AWS Kinesis ingestion settings.
@@ -323,12 +330,29 @@ public class AdminIT {
     assertThat(bout.toString()).contains(bigqueryTablePath);
 
     bout.reset();
+    // Test create a Cloud Storage subscription.
+    CreateCloudStorageSubscriptionExample.createCloudStorageSubscription(
+        projectId,
+        topicId,
+        cloudStorageSubscriptionId,
+        cloudStorageBucket,
+        cloudStorageFilenamePrefix,
+        cloudStorageFilenameSuffix,
+        cloudStorageMaxDuration);
+    assertThat(bout.toString()).contains("Created a CloudStorage subscription:");
+    assertThat(bout.toString()).contains(cloudStorageBucket);
+    assertThat(bout.toString()).contains(cloudStorageFilenamePrefix);
+    assertThat(bout.toString()).contains(cloudStorageFilenameSuffix);
+    assertThat(bout.toString()).contains(Long.toString(cloudStorageMaxDuration.getSeconds()));
+
+    bout.reset();
     // Test delete subscription.
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pullSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pushSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, orderedSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, exactlyOnceSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, bigquerySubscriptionId);
+    DeleteSubscriptionExample.deleteSubscriptionExample(projectId, cloudStorageSubscriptionId);
     assertThat(bout.toString()).contains("Deleted subscription.");
 
     bout.reset();
