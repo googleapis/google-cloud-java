@@ -149,9 +149,7 @@ public final class MultiEndpoint {
   }
 
   public List<String> getEndpoints() {
-    return endpointsMap
-        .values()
-        .stream()
+    return endpointsMap.values().stream()
         .sorted(comparingInt(Endpoint::getPriority))
         .map(Endpoint::getId)
         .collect(Collectors.toList());
@@ -216,9 +214,7 @@ public final class MultiEndpoint {
   // recovering.
   synchronized void maybeUpdateCurrentEndpoint() {
     Optional<Endpoint> topEndpoint =
-        endpointsMap
-            .values()
-            .stream()
+        endpointsMap.values().stream()
             .filter((c) -> c.getState().equals(EndpointState.AVAILABLE))
             .min(comparingInt(Endpoint::getPriority));
 

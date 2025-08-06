@@ -36,12 +36,18 @@ class GcpMetricsConstants {
   public static String TYPE_FALLBACK = "FALLBACK";
   public static String TYPE_RECOVER = "RECOVER";
   public static String TYPE_REPLACE = "REPLACE";
+  public static String DIRECTION_LABEL = "direction";
+  public static String DIRECTION_LABEL_DESC = "Direction (up/down).";
+  public static String DIRECTION_UP = "UP";
+  public static String DIRECTION_DOWN = "DOWN";
 
   // Unit to represent count.
   static final String COUNT = "1";
   static final String MICROSECOND = "us";
   static final String MILLISECOND = "ms";
 
+  public static String METRIC_NUM_CHANNELS = "num_channels";
+  public static String METRIC_MIN_CHANNELS = "min_channels";
   public static String METRIC_MAX_CHANNELS = "max_channels";
   public static String METRIC_MIN_READY_CHANNELS = "min_ready_channels";
   public static String METRIC_MAX_READY_CHANNELS = "max_ready_channels";
@@ -70,4 +76,5 @@ class GcpMetricsConstants {
   public static String METRIC_ENDPOINT_STATE = "endpoint_state";
   public static String METRIC_ENDPOINT_SWITCH = "endpoint_switch";
   public static String METRIC_CURRENT_ENDPOINT = "current_endpoint";
+  public static String METRIC_CHANNEL_POOL_SCALING = "channel_pool_scaling";
 }

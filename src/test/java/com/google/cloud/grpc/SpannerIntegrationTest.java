@@ -668,8 +668,7 @@ public final class SpannerIntegrationTest {
 
     // Make sure endpoint is set as a metric label for each pool.
     assertThat(
-            logRecords
-                .stream()
+            logRecords.stream()
                 .filter(
                     logRecord ->
                         logRecord
@@ -688,8 +687,7 @@ public final class SpannerIntegrationTest {
         .isEqualTo(1);
 
     assertThat(
-            logRecords
-                .stream()
+            logRecords.stream()
                 .filter(
                     logRecord ->
                         logRecord
@@ -765,8 +763,7 @@ public final class SpannerIntegrationTest {
 
     // Make sure there were 3 session creation requests in the leader pool only.
     assertThat(
-            logRecords
-                .stream()
+            logRecords.stream()
                 .filter(
                     logRecord ->
                         logRecord
@@ -777,8 +774,7 @@ public final class SpannerIntegrationTest {
         .isEqualTo(3);
 
     assertThat(
-            logRecords
-                .stream()
+            logRecords.stream()
                 .filter(
                     logRecord ->
                         logRecord

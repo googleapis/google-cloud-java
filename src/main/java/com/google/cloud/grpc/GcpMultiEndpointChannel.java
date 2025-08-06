@@ -494,8 +494,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     if (!poolsToRemove.isEmpty()) {
       // Get max switching delay.
       Optional<Duration> maxDelay =
-          meOptions
-              .stream()
+          meOptions.stream()
               .map(GcpMultiEndpointOptions::getSwitchingDelay)
               .max(Comparator.naturalOrder());
       if (maxDelay.isPresent() && maxDelay.get().toMillis() > 0) {

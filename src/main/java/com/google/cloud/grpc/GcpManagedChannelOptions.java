@@ -168,6 +168,20 @@ public class GcpManagedChannelOptions {
     // channel will be created
     // in the pool unless the pool reached its maximum size.
     private final int concurrentStreamsLowWatermark;
+    // The number of channels to initialize the pool with.
+    // If it is less than minSize it is ignored.
+    private final int initSize;
+
+    // The following three options enable the dynamic scaling functionality
+    // if all of them are positive.
+
+    // Minimum desired average concurrent calls per channel.
+    private final int minRpcPerChannel;
+    // Maximim desired average concurrent calls per channel.
+    private final int maxRpcPerChannel;
+    // How often to check for a possibility to scale down.
+    private final Duration scaleDownInterval;
+
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
     // How long to keep an affinity key after its last use.
@@ -178,6 +192,10 @@ public class GcpManagedChannelOptions {
     public GcpChannelPoolOptions(Builder builder) {
       maxSize = builder.maxSize;
       minSize = builder.minSize;
+      initSize = builder.initSize;
+      minRpcPerChannel = builder.minRpcPerChannel;
+      maxRpcPerChannel = builder.maxRpcPerChannel;
+      scaleDownInterval = builder.scaleDownInterval;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -190,6 +208,22 @@ public class GcpManagedChannelOptions {
 
     public int getMinSize() {
       return minSize;
+    }
+
+    public int getInitSize() {
+      return initSize;
+    }
+
+    public int getMinRpcPerChannel() {
+      return minRpcPerChannel;
+    }
+
+    public int getMaxRpcPerChannel() {
+      return maxRpcPerChannel;
+    }
+
+    public Duration getScaleDownInterval() {
+      return scaleDownInterval;
     }
 
     public int getConcurrentStreamsLowWatermark() {
@@ -228,6 +262,10 @@ public class GcpManagedChannelOptions {
     public static class Builder {
       private int maxSize = GcpManagedChannel.DEFAULT_MAX_CHANNEL;
       private int minSize = 0;
+      private int initSize = 0;
+      private int minRpcPerChannel = 0;
+      private int maxRpcPerChannel = 0;
+      private Duration scaleDownInterval = Duration.ZERO;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -242,6 +280,10 @@ public class GcpManagedChannelOptions {
         }
         this.maxSize = options.getMaxSize();
         this.minSize = options.getMinSize();
+        this.initSize = options.getInitSize();
+        this.minRpcPerChannel = options.getMinRpcPerChannel();
+        this.maxRpcPerChannel = options.getMaxRpcPerChannel();
+        this.scaleDownInterval = options.getScaleDownInterval();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -273,6 +315,72 @@ public class GcpManagedChannelOptions {
         Preconditions.checkArgument(
             minSize >= 0, "Channel pool minimum size must be 0 or positive.");
         this.minSize = minSize;
+        return this;
+      }
+
+      /**
+       * Sets the initial channel pool size. This is the number of channels that the pool will start
+       * with. If it is less than {@link #setMinSize(int)} it is ignored.
+       *
+       * @param initSize number of channels to start the pool with.
+       * @return
+       */
+      public Builder setInitSize(int initSize) {
+        Preconditions.checkArgument(
+            initSize >= 0, "Channel pool initial size must be 0 or positive.");
+        this.initSize = initSize;
+        return this;
+      }
+
+      /**
+       * Enables dynamic scaling functionality.
+       *
+       * <p>When the average number of concurrent calls per channel reaches <code>maxRpcPerChannel
+       * </code> the pool will create and add a new channel unless already at max size.
+       *
+       * <p>Every <code>scaleDownInterval</code> a check for downscaling is performed. Based on the
+       * maximum total concurrent calls observed since the last check, the desired number of
+       * channels is calculated as:
+       *
+       * <p><code>(max_total_concurrent_calls / minRpcPerChannel)</code> rounded up.
+       *
+       * <p>If the calculated desired number of channels is lower than the current number of
+       * channels, the pool will be downscaled to the desired number or min size (whichever is
+       * greater).
+       *
+       * <p>When downscaling, channels with the oldest connections are selected. Then the selected
+       * channels are removed from the pool but are not instructed to shutdown until all calls are
+       * completed. In a case when the pool is scaling up and there is a ready channel awaiting
+       * calls completion, the channel will be re-used instead of creating a new channel.
+       *
+       * @param minRpcPerChannel minimum desired average concurrent calls per channel.
+       * @param maxRpcPerChannel maximum desired average concurrent calls per channel.
+       * @param scaleDownInterval how often to check for a possibility to scale down.
+       */
+      public Builder setDynamicScaling(
+          int minRpcPerChannel, int maxRpcPerChannel, Duration scaleDownInterval) {
+        Preconditions.checkArgument(
+            minRpcPerChannel > 0, "Minimum RPCs per channel must be positive.");
+        Preconditions.checkArgument(
+            maxRpcPerChannel > 0, "Maximum RPCs per channel must be positive.");
+        Preconditions.checkArgument(
+            !scaleDownInterval.isNegative() && !scaleDownInterval.isZero(),
+            "Scale down interval must be positive.");
+        this.minRpcPerChannel = minRpcPerChannel;
+        this.maxRpcPerChannel = maxRpcPerChannel;
+        this.scaleDownInterval = scaleDownInterval;
+        return this;
+      }
+
+      /**
+       * Disables dynamic scaling functionality.
+       *
+       * @see #setDynamicScaling(int, int, Duration)
+       */
+      public Builder disableDynamicScaling() {
+        this.minRpcPerChannel = 0;
+        this.maxRpcPerChannel = 0;
+        this.scaleDownInterval = Duration.ZERO;
         return this;
       }
 
