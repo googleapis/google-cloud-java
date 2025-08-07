@@ -165,7 +165,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
@@ -269,7 +269,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>

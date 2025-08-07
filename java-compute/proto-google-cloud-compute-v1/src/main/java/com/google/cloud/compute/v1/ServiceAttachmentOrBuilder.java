@@ -138,7 +138,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -152,7 +152,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -166,7 +166,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -179,7 +179,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -194,7 +194,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -519,6 +519,69 @@ public interface ServiceAttachmentOrBuilder
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  int getMetadataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  boolean containsMetadata(java.lang.String key);
+
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  java.lang.String getMetadataOrThrow(java.lang.String key);
 
   /**
    *

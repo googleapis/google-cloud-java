@@ -198,6 +198,26 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>MAINTENANCE_REASON_UNKNOWN = 50570235;</code>
      */
     MAINTENANCE_REASON_UNKNOWN(50570235),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to planned network update.
+     * </pre>
+     *
+     * <code>PLANNED_NETWORK_UPDATE = 135494677;</code>
+     */
+    PLANNED_NETWORK_UPDATE(135494677),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to planned update to the instance.
+     * </pre>
+     *
+     * <code>PLANNED_UPDATE = 161733572;</code>
+     */
+    PLANNED_UPDATE(161733572),
     UNRECOGNIZED(-1),
     ;
 
@@ -333,6 +353,28 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      */
     public static final int MAINTENANCE_REASON_UNKNOWN_VALUE = 50570235;
 
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to planned network update.
+     * </pre>
+     *
+     * <code>PLANNED_NETWORK_UPDATE = 135494677;</code>
+     */
+    public static final int PLANNED_NETWORK_UPDATE_VALUE = 135494677;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to planned update to the instance.
+     * </pre>
+     *
+     * <code>PLANNED_UPDATE = 161733572;</code>
+     */
+    public static final int PLANNED_UPDATE_VALUE = 161733572;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -381,6 +423,10 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
           return INFRASTRUCTURE_RELOCATION;
         case 50570235:
           return MAINTENANCE_REASON_UNKNOWN;
+        case 135494677:
+          return PLANNED_NETWORK_UPDATE;
+        case 161733572:
+          return PLANNED_UPDATE;
         default:
           return null;
       }
@@ -645,6 +691,16 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Multiple maintenance types in one window. This is only intended to be used for groups.
+     * </pre>
+     *
+     * <code>MULTIPLE = 362714640;</code>
+     */
+    MULTIPLE(362714640),
+    /**
+     *
+     *
+     * <pre>
      * Scheduled maintenance (e.g. maintenance after uptime guarantee is complete).
      * </pre>
      *
@@ -684,6 +740,17 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Multiple maintenance types in one window. This is only intended to be used for groups.
+     * </pre>
+     *
+     * <code>MULTIPLE = 362714640;</code>
+     */
+    public static final int MULTIPLE_VALUE = 362714640;
 
     /**
      *
@@ -744,6 +811,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
+        case 362714640:
+          return MULTIPLE;
         case 478400653:
           return SCHEDULED;
         case 490705455:
