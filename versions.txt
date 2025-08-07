@@ -900,3 +900,6 @@ proto-google-shopping-merchant-quota-v1:0.33.0:0.34.0-SNAPSHOT
 grpc-google-shopping-merchant-quota-v1:0.33.0:0.34.0-SNAPSHOT
 proto-google-shopping-merchant-reports-v1:0.46.0:0.47.0-SNAPSHOT
 grpc-google-shopping-merchant-reports-v1:0.46.0:0.47.0-SNAPSHOT
+google-cloud-saasservicemgmt:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-saasservicemgmt-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-saasservicemgmt-v1beta1:0.0.0:0.0.1-SNAPSHOT
