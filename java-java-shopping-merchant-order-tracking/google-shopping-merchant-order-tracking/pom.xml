@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>proto-google-shopping-merchant-order-tracking-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-order-tracking-v1beta</artifactId>
     </dependency>
     <dependency>
@@ -74,6 +78,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>grpc-google-shopping-merchant-order-tracking-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
