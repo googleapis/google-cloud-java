@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.38.0</version>
+      <version>26.65.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -35,11 +35,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-notifications</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-shopping-merchant-notifications:released} -->
 
 ```xml
 <dependency>
@@ -60,7 +60,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.shopping" % "google-shopping-merchant-notifications" % "0.29.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -201,7 +200,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-notifications.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-notifications/0.0.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-notifications/0.29.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

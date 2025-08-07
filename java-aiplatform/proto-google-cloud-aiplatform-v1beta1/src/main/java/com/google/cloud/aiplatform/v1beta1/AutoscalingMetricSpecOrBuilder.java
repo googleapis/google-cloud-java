@@ -82,8 +82,8 @@ public interface AutoscalingMetricSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud Monitoring monitored resource labels used for metrics
-   * filtering. See Cloud Monitoring Labels
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
    * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
    * </pre>
    *
@@ -97,8 +97,8 @@ public interface AutoscalingMetricSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud Monitoring monitored resource labels used for metrics
-   * filtering. See Cloud Monitoring Labels
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
    * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
    * </pre>
    *
@@ -116,8 +116,8 @@ public interface AutoscalingMetricSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud Monitoring monitored resource labels used for metrics
-   * filtering. See Cloud Monitoring Labels
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
    * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
    * </pre>
    *
@@ -131,8 +131,8 @@ public interface AutoscalingMetricSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud Monitoring monitored resource labels used for metrics
-   * filtering. See Cloud Monitoring Labels
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
    * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
    * </pre>
    *
@@ -150,8 +150,8 @@ public interface AutoscalingMetricSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The Cloud Monitoring monitored resource labels used for metrics
-   * filtering. See Cloud Monitoring Labels
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
    * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
    * </pre>
    *

@@ -1,5 +1,5 @@
 gapic_generator_version: 2.61.0
-googleapis_commitish: 09f2446e4a30d6d79dff93e14bbc992b855ebaaf
+googleapis_commitish: b0316578aaf7434e3c5bb93badd252f67aacf8d5
 libraries_bom_version: 26.65.0
 
 # the libraries are ordered with respect to library name, which is
@@ -2298,7 +2298,21 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1
   - proto_path: google/shopping/merchant/inventories/v1beta
-
+- api_shortname: shopping-merchant-notifications
+  name_pretty: Merchant Notifications API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation:
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-notifications
+  api_id: shopping-merchant-notifications.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+    - proto_path: google/shopping/merchant/notifications/v1beta
+  requires_billing: true
 - api_shortname: shopping-merchant-lfp
   name_pretty: Merchant LFP API
   product_documentation: https://developers.google.com/merchant/api
