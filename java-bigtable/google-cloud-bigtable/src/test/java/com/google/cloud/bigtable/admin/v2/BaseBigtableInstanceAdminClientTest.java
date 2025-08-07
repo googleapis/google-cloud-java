@@ -157,6 +157,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -218,6 +219,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -279,6 +281,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -322,6 +325,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -445,6 +449,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -456,6 +461,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
 
     Instance actualResponse = client.updateInstance(request);
@@ -473,6 +479,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getCreateTime(), actualRequest.getCreateTime());
     Assert.assertEquals(request.getSatisfiesPzs(), actualRequest.getSatisfiesPzs());
     Assert.assertEquals(request.getSatisfiesPzi(), actualRequest.getSatisfiesPzi());
+    Assert.assertEquals(request.getTagsMap(), actualRequest.getTagsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -493,6 +500,7 @@ public class BaseBigtableInstanceAdminClientTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .putAllTags(new HashMap<String, String>())
               .build();
       client.updateInstance(request);
       Assert.fail("No exception raised");
@@ -511,6 +519,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

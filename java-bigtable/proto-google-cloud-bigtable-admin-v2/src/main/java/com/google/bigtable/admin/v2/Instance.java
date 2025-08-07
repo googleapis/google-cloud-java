@@ -67,6 +67,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 5:
         return internalGetLabels();
+      case 12:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -878,6 +880,153 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 12;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.bigtable.admin.v2.InstanceProto
+                .internal_static_google_bigtable_admin_v2_Instance_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -915,6 +1064,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(11, satisfiesPzi_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 12);
     getUnknownFields().writeTo(output);
   }
 
@@ -955,6 +1106,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, satisfiesPzi_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -987,6 +1148,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1021,6 +1183,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1149,6 +1315,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 5:
           return internalGetLabels();
+        case 12:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1160,6 +1328,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 5:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1207,6 +1377,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -1271,6 +1442,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1347,6 +1522,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000100;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1427,6 +1604,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 88
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2496,6 +2682,248 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       satisfiesPzi_ = false;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000100;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * - "123/environment": "production",
+     * - "123/costCenter": "marketing"
+     *
+     * Tags and Labels (above) are both used to bind metadata to resources, with
+     * different use-cases. See
+     * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+     * in-depth overview on the difference between tags and labels.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 

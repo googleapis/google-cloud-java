@@ -4707,7 +4707,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=406
+   *     google/bigtable/admin/v2/instance.proto;l=421
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -4728,7 +4728,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=406
+   *     google/bigtable/admin/v2/instance.proto;l=421
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -4752,7 +4752,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=406
+   *     google/bigtable/admin/v2/instance.proto;l=421
    * @return The priority.
    */
   @java.lang.Deprecated
@@ -6386,7 +6386,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @return Whether the priority field is set.
      */
     @java.lang.Override
@@ -6408,7 +6408,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @return The enum numeric value on the wire for priority.
      */
     @java.lang.Override
@@ -6433,7 +6433,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @param value The enum numeric value on the wire for priority to set.
      * @return This builder for chaining.
      */
@@ -6458,7 +6458,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @return The priority.
      */
     @java.lang.Override
@@ -6488,7 +6488,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -6516,7 +6516,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=406
+     *     google/bigtable/admin/v2/instance.proto;l=421
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

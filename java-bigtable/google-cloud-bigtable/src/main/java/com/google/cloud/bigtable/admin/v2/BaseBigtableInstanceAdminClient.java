@@ -644,6 +644,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setSatisfiesPzs(true)
    *           .setSatisfiesPzi(true)
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   Instance response = baseBigtableInstanceAdminClient.updateInstance(request);
    * }
@@ -679,6 +680,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setSatisfiesPzs(true)
    *           .setSatisfiesPzi(true)
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Instance> future =
    *       baseBigtableInstanceAdminClient.updateInstanceCallable().futureCall(request);

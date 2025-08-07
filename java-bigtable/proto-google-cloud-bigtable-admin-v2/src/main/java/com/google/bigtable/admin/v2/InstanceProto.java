@@ -37,6 +37,10 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Instance_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_Instance_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_Instance_TagsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_AutoscalingTargets_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AutoscalingTargets_fieldAccessorTable;
@@ -110,7 +114,7 @@ public final class InstanceProto {
           + "o\022\030google.bigtable.admin.v2\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032%google/bigtable/admin/v2/common"
-          + ".proto\032\037google/protobuf/timestamp.proto\"\223\005\n"
+          + ".proto\032\037google/protobuf/timestamp.proto\"\207\006\n"
           + "\010Instance\022\014\n"
           + "\004name\030\001 \001(\t\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022<\n"
@@ -121,8 +125,13 @@ public final class InstanceProto {
           + "\013create_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\037\n\r"
           + "satisfies_pzs\030\010 \001(\010B\003\340A\003H\000\210\001\001\022\037\n\r"
-          + "satisfies_pzi\030\013 \001(\010B\003\340A\003H\001\210\001\001\032-\n"
+          + "satisfies_pzi\030\013 \001(\010B\003\340A\003H\001\210\001\001\022E\n"
+          + "\004tags\030\014 \003(\0132,.google.bigtable.admin.v2.Instance.TagsEntryB"
+          + "\t\340A\004\340A\005\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"5\n"
           + "\005State\022\023\n"
@@ -150,14 +159,14 @@ public final class InstanceProto {
           + "\005state\030\003"
           + " \001(\0162\'.google.bigtable.admin.v2.Cluster.StateB\003\340A\003\022\023\n"
           + "\013serve_nodes\030\004 \001(\005\022U\n"
-          + "\023node_scaling_factor\030\t \001(\01623."
-          + "google.bigtable.admin.v2.Cluster.NodeScalingFactorB\003\340A\005\022I\n"
-          + "\016cluster_config\030\007 \001(\0132"
-          + "/.google.bigtable.admin.v2.Cluster.ClusterConfigH\000\022H\n"
-          + "\024default_storage_type\030\005 \001(\016"
-          + "2%.google.bigtable.admin.v2.StorageTypeB\003\340A\005\022R\n"
-          + "\021encryption_config\030\006 \001(\01322.google"
-          + ".bigtable.admin.v2.Cluster.EncryptionConfigB\003\340A\005\032\270\001\n"
+          + "\023node_scaling_factor\030\t \001(\01623.goog"
+          + "le.bigtable.admin.v2.Cluster.NodeScalingFactorB\003\340A\005\022I\n"
+          + "\016cluster_config\030\007 \001(\0132/.go"
+          + "ogle.bigtable.admin.v2.Cluster.ClusterConfigH\000\022H\n"
+          + "\024default_storage_type\030\005 \001(\0162%.g"
+          + "oogle.bigtable.admin.v2.StorageTypeB\003\340A\005\022R\n"
+          + "\021encryption_config\030\006 \001(\01322.google.big"
+          + "table.admin.v2.Cluster.EncryptionConfigB\003\340A\005\032\270\001\n"
           + "\030ClusterAutoscalingConfig\022L\n"
           + "\022autoscaling_limits\030\001"
           + " \001(\0132+.google.bigtable.admin.v2.AutoscalingLimitsB\003\340A\002\022N\n"
@@ -179,28 +188,28 @@ public final class InstanceProto {
           + "\037NODE_SCALING_FACTOR_UNSPECIFIED\020\000\022\032\n"
           + "\026NODE_SCALING_FACTOR_1X\020\001\022\032\n"
           + "\026NODE_SCALING_FACTOR_2X\020\002:x\352Au\n"
-          + "$bigtableadmin.googleapis.com/Cluster\022:projects"
-          + "/{project}/instances/{instance}/clusters/{cluster}*\010clusters2\007clusterB\010\n"
+          + "$bigtableadmin.googleapis.com/Cluster\022:projects/{pr"
+          + "oject}/instances/{instance}/clusters/{cluster}*\010clusters2\007clusterB\010\n"
           + "\006config\"\355\n\n\n"
           + "AppProfile\022\014\n"
           + "\004name\030\001 \001(\t\022\014\n"
           + "\004etag\030\002 \001(\t\022\023\n"
           + "\013description\030\003 \001(\t\022g\n"
-          + "\035multi_cluster_routing_use_any\030\005 \001(\0132>.google.bigtable"
-          + ".admin.v2.AppProfile.MultiClusterRoutingUseAnyH\000\022[\n"
-          + "\026single_cluster_routing\030\006 \001(\013"
-          + "29.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingH\000\022E\n"
-          + "\010priority\030\007 \001(\0162"
-          + "-.google.bigtable.admin.v2.AppProfile.PriorityB\002\030\001H\001\022T\n"
-          + "\022standard_isolation\030\013 \001(\013"
-          + "26.google.bigtable.admin.v2.AppProfile.StandardIsolationH\001\022i\n"
+          + "\035multi_cluster_routing_use_any\030\005 \001(\0132>.google.bigtable.adm"
+          + "in.v2.AppProfile.MultiClusterRoutingUseAnyH\000\022[\n"
+          + "\026single_cluster_routing\030\006 \001(\01329.g"
+          + "oogle.bigtable.admin.v2.AppProfile.SingleClusterRoutingH\000\022E\n"
+          + "\010priority\030\007 \001(\0162-.go"
+          + "ogle.bigtable.admin.v2.AppProfile.PriorityB\002\030\001H\001\022T\n"
+          + "\022standard_isolation\030\013 \001(\01326.g"
+          + "oogle.bigtable.admin.v2.AppProfile.StandardIsolationH\001\022i\n"
           + "\036data_boost_isolation_read_only\030\n"
-          + " \001(\0132?.google.bigtable.adm"
-          + "in.v2.AppProfile.DataBoostIsolationReadOnlyH\001\032\257\001\n"
+          + " \001(\0132?.google.bigtable.admin.v"
+          + "2.AppProfile.DataBoostIsolationReadOnlyH\001\032\257\001\n"
           + "\031MultiClusterRoutingUseAny\022\023\n"
           + "\013cluster_ids\030\001 \003(\t\022b\n"
-          + "\014row_affinity\030\003 \001(\0132J"
-          + ".google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.RowAffinityH\000\032\r\n"
+          + "\014row_affinity\030\003 \001(\0132J.goo"
+          + "gle.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.RowAffinityH\000\032\r\n"
           + "\013RowAffinityB\n\n"
           + "\010affinity\032N\n"
           + "\024SingleClusterRouting\022\022\n\n"
@@ -210,8 +219,8 @@ public final class InstanceProto {
           + "\010priority\030\001"
           + " \001(\0162-.google.bigtable.admin.v2.AppProfile.Priority\032\374\001\n"
           + "\032DataBoostIsolationReadOnly\022w\n"
-          + "\025compute_billing_owner\030\001 \001(\0162S.google.bigtable.admin.v2.A"
-          + "ppProfile.DataBoostIsolationReadOnly.ComputeBillingOwnerH\000\210\001\001\"K\n"
+          + "\025compute_billing_owner\030\001 \001(\0162S.google.bigtable.admin.v2.AppPr"
+          + "ofile.DataBoostIsolationReadOnly.ComputeBillingOwnerH\000\210\001\001\"K\n"
           + "\023ComputeBillingOwner\022%\n"
           + "!COMPUTE_BILLING_OWNER_UNSPECIFIED\020\000\022\r\n"
           + "\tHOST_PAYS\020\001B\030\n"
@@ -219,10 +228,11 @@ public final class InstanceProto {
           + "\010Priority\022\030\n"
           + "\024PRIORITY_UNSPECIFIED\020\000\022\020\n"
           + "\014PRIORITY_LOW\020\001\022\023\n"
-          + "\017PRIORITY_MEDIUM\020\002\022\021\n\r"
+          + "\017PRIORITY_MEDIUM\020\002\022\021\n"
+          + "\r"
           + "PRIORITY_HIGH\020\003:\211\001\352A\205\001\n"
-          + "\'bigtableadmin.googleapis.com/AppProfile\022Aprojects/{"
-          + "project}/instances/{instance}/appProfiles/{app_profile}*\013appProfiles2\n"
+          + "\'bigtableadmin.googleapis.com/AppProfile\022Aprojects/{proj"
+          + "ect}/instances/{instance}/appProfiles/{app_profile}*\013appProfiles2\n"
           + "appProfileB\020\n"
           + "\016routing_policyB\013\n"
           + "\tisolation\"\241\003\n"
@@ -235,30 +245,30 @@ public final class InstanceProto {
           + "\tstart_key\030\005 \001(\t\022\017\n"
           + "\007end_key\030\006 \001(\t\022#\n"
           + "\026node_cpu_usage_percent\030\007 \001(\002B\003\340A\003:\227\001\352A\223\001\n"
-          + "&bigtableadmin.googleapis.com/HotTablet\022Rprojects/{proj"
-          + "ect}/instances/{instance}/clusters/{cluster}/hotTablets/{hot_tablet}*\n"
+          + "&bigtableadmin.googleapis.com/HotTablet\022Rprojects/{project}"
+          + "/instances/{instance}/clusters/{cluster}/hotTablets/{hot_tablet}*\n"
           + "hotTablets2\thotTablet\"\372\001\n"
           + "\013LogicalView\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\022\n"
           + "\005query\030\002 \001(\tB\003\340A\002\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001\022 \n"
           + "\023deletion_protection\030\006 \001(\010B\003\340A\001:\216\001\352A\212\001\n"
-          + "(bigtableadmin.googleapis.com/LogicalView\022Cprojects/{project}/instances/{"
-          + "instance}/logicalViews/{logical_view}*\014logicalViews2\013logicalView\"\226\002\n"
+          + "(bigtableadmin.googleapis.com/LogicalView\022Cprojects/{project}/instances/{inst"
+          + "ance}/logicalViews/{logical_view}*\014logicalViews2\013logicalView\"\226\002\n"
           + "\020MaterializedView\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\025\n"
           + "\005query\030\002 \001(\tB\006\340A\002\340A\005\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001\022\033\n"
           + "\023deletion_protection\030\006 \001(\010:\247\001\352A\243\001\n"
-          + "-bigtableadmin.googleapis.com/MaterializedView\022Mprojects/"
-          + "{project}/instances/{instance}/materiali"
-          + "zedViews/{materialized_view}*\021materializedViews2\020materializedViewB\313\002\n"
+          + "-bigtableadmin.googleapis.com/MaterializedView\022Mprojects/{pro"
+          + "ject}/instances/{instance}/materializedV"
+          + "iews/{materialized_view}*\021materializedViews2\020materializedViewB\313\002\n"
           + "\034com.google.bigtable.admin.v2B\r"
-          + "InstanceProtoP\001Z8cloud.google.com/go/bigtable/admin/apiv2/ad"
-          + "minpb;adminpb\252\002\036Google.Cloud.Bigtable.Ad"
-          + "min.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigtable::Admin::V2\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}/keyR"
-          + "ings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "InstanceProtoP\001Z8cloud.google.com/go/bigtable/admin/apiv2/adminp"
+          + "b;adminpb\252\002\036Google.Cloud.Bigtable.Admin."
+          + "V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigtable::Admin::V2\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects"
+          + "/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -283,12 +293,21 @@ public final class InstanceProto {
               "CreateTime",
               "SatisfiesPzs",
               "SatisfiesPzi",
+              "Tags",
             });
     internal_static_google_bigtable_admin_v2_Instance_LabelsEntry_descriptor =
         internal_static_google_bigtable_admin_v2_Instance_descriptor.getNestedTypes().get(0);
     internal_static_google_bigtable_admin_v2_Instance_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Instance_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_bigtable_admin_v2_Instance_TagsEntry_descriptor =
+        internal_static_google_bigtable_admin_v2_Instance_descriptor.getNestedTypes().get(1);
+    internal_static_google_bigtable_admin_v2_Instance_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_Instance_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

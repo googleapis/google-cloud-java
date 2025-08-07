@@ -348,4 +348,117 @@ public interface InstanceOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * - "123/environment": "production",
+   * - "123/costCenter": "marketing"
+   *
+   * Tags and Labels (above) are both used to bind metadata to resources, with
+   * different use-cases. See
+   * https://cloud.google.com/resource-manager/docs/tags/tags-overview for an
+   * in-depth overview on the difference between tags and labels.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }
