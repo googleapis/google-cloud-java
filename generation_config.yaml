@@ -1,5 +1,5 @@
 gapic_generator_version: 2.61.0
-googleapis_commitish: 8c74a4f9ad52cfd7a7d1f6427fa0a0511377a395
+googleapis_commitish: 09f2446e4a30d6d79dff93e14bbc992b855ebaaf
 libraries_bom_version: 26.65.0
 
 # the libraries are ordered with respect to library name, which is
@@ -2248,6 +2248,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1
   - proto_path: google/shopping/merchant/conversions/v1beta
   requires_billing: true
 
@@ -2276,6 +2277,7 @@ libraries:
   cloud_api: false
   distribution_name: com.google.shopping:google-shopping-merchant-inventories
   GAPICs:
+  - proto_path: google/shopping/merchant/inventories/v1
   - proto_path: google/shopping/merchant/inventories/v1beta
 
 - api_shortname: shopping-merchant-lfp
