@@ -1171,7 +1171,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -1187,7 +1187,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -1241,7 +1241,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -1257,7 +1257,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3810,7 +3810,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3826,7 +3826,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3842,7 +3842,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3862,7 +3862,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3954,7 +3954,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3970,7 +3970,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3986,7 +3986,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -4006,7 +4006,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>

@@ -471,6 +471,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
                             }
+                            if (request.hasServiceProject()) {
+                              serializer.putQueryParam(
+                                  fields, "serviceProject", request.getServiceProject());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

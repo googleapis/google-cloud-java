@@ -28,7 +28,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return. Parent is derived from this field.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return. Parent is derived from this field.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. Not used. Parent is derived from resource_id.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>
@@ -71,7 +71,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. Not used. Parent is derived from resource_id.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>
@@ -84,7 +84,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. Not used. Parent is derived from resource_id.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>
