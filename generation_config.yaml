@@ -1242,6 +1242,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/issueresolution/v1
   - proto_path: google/shopping/merchant/issueresolution/v1beta
   library_name: java-shopping-merchant-issue-resolution
   requires_billing: true
@@ -1259,6 +1260,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/ordertracking/v1
   - proto_path: google/shopping/merchant/ordertracking/v1beta
   library_name: java-shopping-merchant-order-tracking
   requires_billing: true
@@ -2232,6 +2234,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/accounts/v1
   - proto_path: google/shopping/merchant/accounts/v1beta
   library_name: shopping-merchant-accounts
   requires_billing: true
@@ -2293,6 +2296,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1
   - proto_path: google/shopping/merchant/lfp/v1beta
   requires_billing: true
 
@@ -2325,6 +2329,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/products/v1
   - proto_path: google/shopping/merchant/products/v1beta
   library_name: shopping-merchant-products
 - api_shortname: merchantapi
@@ -2340,6 +2345,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/promotions/v1
   - proto_path: google/shopping/merchant/promotions/v1beta
   library_name: shopping-merchant-promotions
   requires_billing: true
@@ -2356,6 +2362,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/quota/v1
   - proto_path: google/shopping/merchant/quota/v1beta
   requires_billing: true
 
@@ -2367,6 +2374,7 @@ libraries:
   cloud_api: false
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
+  - proto_path: google/shopping/merchant/reports/v1
   - proto_path: google/shopping/merchant/reports/v1beta
   - proto_path: google/shopping/merchant/reports/v1alpha
 
