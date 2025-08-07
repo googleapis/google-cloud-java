@@ -1,0 +1,159 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.saasplatform.saasservicemgmt.v1beta1",
+  "libraryPackage": "com.google.cloud.saasplatform.saasservicemgmt.v1beta1",
+  "services": {
+    "SaasDeployments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SaasDeploymentsClient",
+          "rpcs": {
+            "CreateRelease": {
+              "methods": ["createRelease", "createRelease", "createRelease", "createReleaseCallable"]
+            },
+            "CreateSaas": {
+              "methods": ["createSaas", "createSaas", "createSaas", "createSaasCallable"]
+            },
+            "CreateTenant": {
+              "methods": ["createTenant", "createTenant", "createTenant", "createTenantCallable"]
+            },
+            "CreateUnit": {
+              "methods": ["createUnit", "createUnit", "createUnit", "createUnitCallable"]
+            },
+            "CreateUnitKind": {
+              "methods": ["createUnitKind", "createUnitKind", "createUnitKind", "createUnitKindCallable"]
+            },
+            "CreateUnitOperation": {
+              "methods": ["createUnitOperation", "createUnitOperation", "createUnitOperation", "createUnitOperationCallable"]
+            },
+            "DeleteRelease": {
+              "methods": ["deleteRelease", "deleteRelease", "deleteRelease", "deleteReleaseCallable"]
+            },
+            "DeleteSaas": {
+              "methods": ["deleteSaas", "deleteSaas", "deleteSaas", "deleteSaasCallable"]
+            },
+            "DeleteTenant": {
+              "methods": ["deleteTenant", "deleteTenant", "deleteTenant", "deleteTenantCallable"]
+            },
+            "DeleteUnit": {
+              "methods": ["deleteUnit", "deleteUnit", "deleteUnit", "deleteUnitCallable"]
+            },
+            "DeleteUnitKind": {
+              "methods": ["deleteUnitKind", "deleteUnitKind", "deleteUnitKind", "deleteUnitKindCallable"]
+            },
+            "DeleteUnitOperation": {
+              "methods": ["deleteUnitOperation", "deleteUnitOperation", "deleteUnitOperation", "deleteUnitOperationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRelease": {
+              "methods": ["getRelease", "getRelease", "getRelease", "getReleaseCallable"]
+            },
+            "GetSaas": {
+              "methods": ["getSaas", "getSaas", "getSaas", "getSaasCallable"]
+            },
+            "GetTenant": {
+              "methods": ["getTenant", "getTenant", "getTenant", "getTenantCallable"]
+            },
+            "GetUnit": {
+              "methods": ["getUnit", "getUnit", "getUnit", "getUnitCallable"]
+            },
+            "GetUnitKind": {
+              "methods": ["getUnitKind", "getUnitKind", "getUnitKind", "getUnitKindCallable"]
+            },
+            "GetUnitOperation": {
+              "methods": ["getUnitOperation", "getUnitOperation", "getUnitOperation", "getUnitOperationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReleases": {
+              "methods": ["listReleases", "listReleases", "listReleases", "listReleasesPagedCallable", "listReleasesCallable"]
+            },
+            "ListSaas": {
+              "methods": ["listSaas", "listSaas", "listSaas", "listSaasPagedCallable", "listSaasCallable"]
+            },
+            "ListTenants": {
+              "methods": ["listTenants", "listTenants", "listTenants", "listTenantsPagedCallable", "listTenantsCallable"]
+            },
+            "ListUnitKinds": {
+              "methods": ["listUnitKinds", "listUnitKinds", "listUnitKinds", "listUnitKindsPagedCallable", "listUnitKindsCallable"]
+            },
+            "ListUnitOperations": {
+              "methods": ["listUnitOperations", "listUnitOperations", "listUnitOperations", "listUnitOperationsPagedCallable", "listUnitOperationsCallable"]
+            },
+            "ListUnits": {
+              "methods": ["listUnits", "listUnits", "listUnits", "listUnitsPagedCallable", "listUnitsCallable"]
+            },
+            "UpdateRelease": {
+              "methods": ["updateRelease", "updateRelease", "updateReleaseCallable"]
+            },
+            "UpdateSaas": {
+              "methods": ["updateSaas", "updateSaas", "updateSaasCallable"]
+            },
+            "UpdateTenant": {
+              "methods": ["updateTenant", "updateTenant", "updateTenantCallable"]
+            },
+            "UpdateUnit": {
+              "methods": ["updateUnit", "updateUnit", "updateUnitCallable"]
+            },
+            "UpdateUnitKind": {
+              "methods": ["updateUnitKind", "updateUnitKind", "updateUnitKindCallable"]
+            },
+            "UpdateUnitOperation": {
+              "methods": ["updateUnitOperation", "updateUnitOperation", "updateUnitOperationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SaasRollouts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SaasRolloutsClient",
+          "rpcs": {
+            "CreateRollout": {
+              "methods": ["createRollout", "createRollout", "createRollout", "createRolloutCallable"]
+            },
+            "CreateRolloutKind": {
+              "methods": ["createRolloutKind", "createRolloutKind", "createRolloutKind", "createRolloutKindCallable"]
+            },
+            "DeleteRollout": {
+              "methods": ["deleteRollout", "deleteRollout", "deleteRollout", "deleteRolloutCallable"]
+            },
+            "DeleteRolloutKind": {
+              "methods": ["deleteRolloutKind", "deleteRolloutKind", "deleteRolloutKind", "deleteRolloutKindCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRollout": {
+              "methods": ["getRollout", "getRollout", "getRollout", "getRolloutCallable"]
+            },
+            "GetRolloutKind": {
+              "methods": ["getRolloutKind", "getRolloutKind", "getRolloutKind", "getRolloutKindCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRolloutKinds": {
+              "methods": ["listRolloutKinds", "listRolloutKinds", "listRolloutKinds", "listRolloutKindsPagedCallable", "listRolloutKindsCallable"]
+            },
+            "ListRollouts": {
+              "methods": ["listRollouts", "listRollouts", "listRollouts", "listRolloutsPagedCallable", "listRolloutsCallable"]
+            },
+            "UpdateRollout": {
+              "methods": ["updateRollout", "updateRollout", "updateRolloutCallable"]
+            },
+            "UpdateRolloutKind": {
+              "methods": ["updateRolloutKind", "updateRolloutKind", "updateRolloutKindCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
