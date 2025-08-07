@@ -2311,6 +2311,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+    - proto_path: google/shopping/merchant/notifications/v1
     - proto_path: google/shopping/merchant/notifications/v1beta
   requires_billing: true
 - api_shortname: shopping-merchant-lfp
