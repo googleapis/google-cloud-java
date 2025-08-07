@@ -2248,6 +2248,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1
   - proto_path: google/shopping/merchant/conversions/v1beta
   requires_billing: true
 
@@ -2264,6 +2265,7 @@ libraries:
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/datasources/v1
   - proto_path: google/shopping/merchant/datasources/v1beta
   library_name: shopping-merchant-datasources
   requires_billing: true
