@@ -1076,6 +1076,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
   private com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workloadPolicy_;
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>
@@ -1088,6 +1094,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>
@@ -1102,6 +1114,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>
@@ -3908,6 +3926,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         workloadPolicyBuilder_;
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -3919,6 +3943,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -3936,6 +3966,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -3956,6 +3992,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -3973,6 +4015,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -3999,6 +4047,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -4015,6 +4069,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -4027,6 +4087,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>
@@ -4043,6 +4109,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Resource policy for defining instance placement for MIGs.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
      * </code>

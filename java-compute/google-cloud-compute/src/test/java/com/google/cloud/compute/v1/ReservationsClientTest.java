@@ -212,6 +212,7 @@ public class ReservationsClientTest {
   public void getTest() throws Exception {
     Reservation expectedResponse =
         Reservation.newBuilder()
+            .setAdvancedDeploymentControl(ReservationAdvancedDeploymentControl.newBuilder().build())
             .setAggregateReservation(AllocationAggregateReservation.newBuilder().build())
             .setCommitment("commitment1019005717")
             .setCreationTimestamp("creationTimestamp-370203401")

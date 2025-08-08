@@ -279,6 +279,52 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMaps field is set.
+   */
+  boolean hasGoogleMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMaps.
+   */
+  com.google.cloud.aiplatform.v1.GoogleMaps getGoogleMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder getGoogleMapsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Tool to support searching public web data, powered by Vertex AI
    * Search and Sec4 compliance.
    * </pre>

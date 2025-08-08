@@ -70,6 +70,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
+   * Specifies the maximum distance between instances.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.MaxTopologyDistance}
@@ -256,6 +257,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
+   * Specifies the intent of the instance placement in the MIG.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Type}
@@ -275,7 +277,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * VMs will be provisioned in such a way which provides high availability.
+     * MIG spreads out the instances as much as possible for high availability.
      * </pre>
      *
      * <code>HIGH_AVAILABILITY = 409487576;</code>
@@ -285,7 +287,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * VMs will be provisioned in such a way which provides high throughput.
+     * MIG provisions instances as close to each other as possible for high throughput.
      * </pre>
      *
      * <code>HIGH_THROUGHPUT = 146499815;</code>
@@ -309,7 +311,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * VMs will be provisioned in such a way which provides high availability.
+     * MIG spreads out the instances as much as possible for high availability.
      * </pre>
      *
      * <code>HIGH_AVAILABILITY = 409487576;</code>
@@ -320,7 +322,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * VMs will be provisioned in such a way which provides high throughput.
+     * MIG provisions instances as close to each other as possible for high throughput.
      * </pre>
      *
      * <code>HIGH_THROUGHPUT = 146499815;</code>
@@ -419,6 +421,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
   private volatile java.lang.Object acceleratorTopology_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return Whether the acceleratorTopology field is set.
@@ -429,6 +437,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return The acceleratorTopology.
@@ -447,6 +461,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return The bytes for acceleratorTopology.
@@ -473,7 +493,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -490,7 +510,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -515,7 +535,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -545,7 +565,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -562,7 +582,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -587,7 +607,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1025,6 +1045,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     private java.lang.Object acceleratorTopology_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @return Whether the acceleratorTopology field is set.
@@ -1034,6 +1060,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @return The acceleratorTopology.
@@ -1051,6 +1083,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @return The bytes for acceleratorTopology.
@@ -1068,6 +1106,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @param value The acceleratorTopology to set.
@@ -1084,6 +1128,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @return This builder for chaining.
@@ -1096,6 +1146,12 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * </pre>
+     *
      * <code>optional string accelerator_topology = 389323203;</code>
      *
      * @param value The bytes for acceleratorTopology to set.
@@ -1118,7 +1174,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1134,7 +1190,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1158,7 +1214,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1182,7 +1238,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1205,7 +1261,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1224,7 +1280,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the maximum distance between instances.
      * Check the MaxTopologyDistance enum for the list of possible values.
      * </pre>
      *
@@ -1250,7 +1306,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1266,7 +1322,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1290,7 +1346,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1314,7 +1370,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1337,7 +1393,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1356,7 +1412,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     *
+     * Specifies the intent of the instance placement in the MIG.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

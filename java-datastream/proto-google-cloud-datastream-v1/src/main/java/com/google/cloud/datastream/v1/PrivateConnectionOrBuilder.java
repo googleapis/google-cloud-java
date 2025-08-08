@@ -384,4 +384,41 @@ public interface PrivateConnectionOrBuilder
    * <code>.google.cloud.datastream.v1.VpcPeeringConfig vpc_peering_config = 100;</code>
    */
   com.google.cloud.datastream.v1.VpcPeeringConfigOrBuilder getVpcPeeringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  boolean hasPscInterfaceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  com.google.cloud.datastream.v1.PscInterfaceConfig getPscInterfaceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   */
+  com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder getPscInterfaceConfigOrBuilder();
 }

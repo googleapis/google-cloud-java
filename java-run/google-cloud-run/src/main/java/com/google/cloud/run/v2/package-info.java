@@ -38,7 +38,7 @@
  *           .setImageUri("imageUri-859610607")
  *           .setServiceAccount("serviceAccount1079137720")
  *           .setWorkerPool(
- *               WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+ *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
  *           .addAllTags(new ArrayList<String>())
  *           .build();
  *   SubmitBuildResponse response = buildsClient.submitBuild(request);
@@ -132,6 +132,24 @@
  * try (TasksClient tasksClient = TasksClient.create()) {
  *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]", "[TASK]");
  *   Task response = tasksClient.getTask(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= WorkerPoolsClient =======================
+ *
+ * <p>Service Description: Cloud Run WorkerPool Control Plane API.
+ *
+ * <p>Sample for WorkerPoolsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (WorkerPoolsClient workerPoolsClient = WorkerPoolsClient.create()) {
+ *   WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
+ *   WorkerPool response = workerPoolsClient.getWorkerPool(name);
  * }
  * }</pre>
  */

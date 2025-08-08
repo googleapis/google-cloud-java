@@ -2725,6 +2725,1519 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface MapsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    boolean hasUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return Whether the title field is set.
+     */
+    boolean hasTitle();
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return The title.
+     */
+    java.lang.String getTitle();
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString getTitleBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    boolean hasText();
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The text.
+     */
+    java.lang.String getText();
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString getTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return Whether the placeId field is set.
+     */
+    boolean hasPlaceId();
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return The placeId.
+     */
+    java.lang.String getPlaceId();
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return The bytes for placeId.
+     */
+    com.google.protobuf.ByteString getPlaceIdBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Chunk from Google Maps.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps}
+   */
+  public static final class Maps extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)
+      MapsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Maps.newBuilder() to construct.
+    private Maps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Maps() {
+      uri_ = "";
+      title_ = "";
+      text_ = "";
+      placeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Maps();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.class,
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI reference of the chunk.
+     * </pre>
+     *
+     * <code>optional string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return Whether the title field is set.
+     */
+    @java.lang.Override
+    public boolean hasTitle() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Title of the chunk.
+     * </pre>
+     *
+     * <code>optional string title = 2;</code>
+     *
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the chunk.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLACE_ID_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object placeId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return Whether the placeId field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlaceId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return The placeId.
+     */
+    @java.lang.Override
+    public java.lang.String getPlaceId() {
+      java.lang.Object ref = placeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        placeId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This Place's resource name, in `places/{place_id}` format.  Can be used
+     * to look up the Place.
+     * </pre>
+     *
+     * <code>optional string place_id = 4;</code>
+     *
+     * @return The bytes for placeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPlaceIdBytes() {
+      java.lang.Object ref = placeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        placeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, placeId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, placeId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps other =
+          (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) obj;
+
+      if (hasUri() != other.hasUri()) return false;
+      if (hasUri()) {
+        if (!getUri().equals(other.getUri())) return false;
+      }
+      if (hasTitle() != other.hasTitle()) return false;
+      if (hasTitle()) {
+        if (!getTitle().equals(other.getTitle())) return false;
+      }
+      if (hasText() != other.hasText()) return false;
+      if (hasText()) {
+        if (!getText().equals(other.getText())) return false;
+      }
+      if (hasPlaceId() != other.hasPlaceId()) return false;
+      if (hasPlaceId()) {
+        if (!getPlaceId().equals(other.getPlaceId())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUri()) {
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+      }
+      if (hasTitle()) {
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+      }
+      if (hasText()) {
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+      }
+      if (hasPlaceId()) {
+        hash = (37 * hash) + PLACE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlaceId().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Chunk from Google Maps.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.class,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        title_ = "";
+        text_ = "";
+        placeId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps build() {
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps result =
+            new com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.title_ = title_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.text_ = text_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.placeId_ = placeId_;
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance())
+          return this;
+        if (other.hasUri()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasTitle()) {
+          title_ = other.title_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasText()) {
+          text_ = other.text_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasPlaceId()) {
+          placeId_ = other.placeId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  title_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  text_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  placeId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @return Whether the uri field is set.
+       */
+      public boolean hasUri() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * URI reference of the chunk.
+       * </pre>
+       *
+       * <code>optional string uri = 1;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @return Whether the title field is set.
+       */
+      public boolean hasTitle() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Title of the chunk.
+       * </pre>
+       *
+       * <code>optional string title = 2;</code>
+       *
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        text_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Text of the chunk.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        text_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object placeId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @return Whether the placeId field is set.
+       */
+      public boolean hasPlaceId() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @return The placeId.
+       */
+      public java.lang.String getPlaceId() {
+        java.lang.Object ref = placeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          placeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @return The bytes for placeId.
+       */
+      public com.google.protobuf.ByteString getPlaceIdBytes() {
+        java.lang.Object ref = placeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          placeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @param value The placeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlaceId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        placeId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPlaceId() {
+        placeId_ = getDefaultInstance().getPlaceId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * This Place's resource name, in `places/{place_id}` format.  Can be used
+       * to look up the Place.
+       * </pre>
+       *
+       * <code>optional string place_id = 4;</code>
+       *
+       * @param value The bytes for placeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlaceIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        placeId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)
+    private static final com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Maps> PARSER =
+        new com.google.protobuf.AbstractParser<Maps>() {
+          @java.lang.Override
+          public Maps parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Maps> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Maps> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int chunkTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2736,6 +4249,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     WEB(1),
     RETRIEVED_CONTEXT(2),
+    MAPS(3),
     CHUNKTYPE_NOT_SET(0);
     private final int value;
 
@@ -2759,6 +4273,8 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return WEB;
         case 2:
           return RETRIEVED_CONTEXT;
+        case 3:
+          return MAPS;
         case 0:
           return CHUNKTYPE_NOT_SET;
         default:
@@ -2887,6 +4403,60 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext.getDefaultInstance();
   }
 
+  public static final int MAPS_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   *
+   * @return Whether the maps field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaps() {
+    return chunkTypeCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   *
+   * @return The maps.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getMaps() {
+    if (chunkTypeCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder getMapsOrBuilder() {
+    if (chunkTypeCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2908,6 +4478,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           2, (com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext) chunkType_);
     }
+    if (chunkTypeCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2926,6 +4499,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext) chunkType_);
+    }
+    if (chunkTypeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2951,6 +4529,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getRetrievedContext().equals(other.getRetrievedContext())) return false;
         break;
+      case 3:
+        if (!getMaps().equals(other.getMaps())) return false;
+        break;
       case 0:
       default:
     }
@@ -2973,6 +4554,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + RETRIEVED_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getRetrievedContext().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + MAPS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaps().hashCode();
         break;
       case 0:
       default:
@@ -3123,6 +4708,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (retrievedContextBuilder_ != null) {
         retrievedContextBuilder_.clear();
       }
+      if (mapsBuilder_ != null) {
+        mapsBuilder_.clear();
+      }
       chunkTypeCase_ = 0;
       chunkType_ = null;
       return this;
@@ -3172,6 +4760,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       if (chunkTypeCase_ == 2 && retrievedContextBuilder_ != null) {
         result.chunkType_ = retrievedContextBuilder_.build();
+      }
+      if (chunkTypeCase_ == 3 && mapsBuilder_ != null) {
+        result.chunkType_ = mapsBuilder_.build();
       }
     }
 
@@ -3232,6 +4823,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             mergeRetrievedContext(other.getRetrievedContext());
             break;
           }
+        case MAPS:
+          {
+            mergeMaps(other.getMaps());
+            break;
+          }
         case CHUNKTYPE_NOT_SET:
           {
             break;
@@ -3276,6 +4872,12 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
                 chunkTypeCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getMapsFieldBuilder().getBuilder(), extensionRegistry);
+                chunkTypeCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3767,6 +5369,225 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       onChanged();
       return retrievedContextBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder>
+        mapsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     *
+     * @return Whether the maps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaps() {
+      return chunkTypeCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     *
+     * @return The maps.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getMaps() {
+      if (mapsBuilder_ == null) {
+        if (chunkTypeCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+      } else {
+        if (chunkTypeCase_ == 3) {
+          return mapsBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    public Builder setMaps(com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps value) {
+      if (mapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chunkType_ = value;
+        onChanged();
+      } else {
+        mapsBuilder_.setMessage(value);
+      }
+      chunkTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    public Builder setMaps(
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder builderForValue) {
+      if (mapsBuilder_ == null) {
+        chunkType_ = builderForValue.build();
+        onChanged();
+      } else {
+        mapsBuilder_.setMessage(builderForValue.build());
+      }
+      chunkTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    public Builder mergeMaps(com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps value) {
+      if (mapsBuilder_ == null) {
+        if (chunkTypeCase_ == 3
+            && chunkType_
+                != com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance()) {
+          chunkType_ =
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          chunkType_ = value;
+        }
+        onChanged();
+      } else {
+        if (chunkTypeCase_ == 3) {
+          mapsBuilder_.mergeFrom(value);
+        } else {
+          mapsBuilder_.setMessage(value);
+        }
+      }
+      chunkTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    public Builder clearMaps() {
+      if (mapsBuilder_ == null) {
+        if (chunkTypeCase_ == 3) {
+          chunkTypeCase_ = 0;
+          chunkType_ = null;
+          onChanged();
+        }
+      } else {
+        if (chunkTypeCase_ == 3) {
+          chunkTypeCase_ = 0;
+          chunkType_ = null;
+        }
+        mapsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder getMapsBuilder() {
+      return getMapsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder getMapsOrBuilder() {
+      if ((chunkTypeCase_ == 3) && (mapsBuilder_ != null)) {
+        return mapsBuilder_.getMessageOrBuilder();
+      } else {
+        if (chunkTypeCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding chunk from Google Maps.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder>
+        getMapsFieldBuilder() {
+      if (mapsBuilder_ == null) {
+        if (!(chunkTypeCase_ == 3)) {
+          chunkType_ = com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.getDefaultInstance();
+        }
+        mapsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Builder,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps) chunkType_,
+                getParentForChildren(),
+                isClean());
+        chunkType_ = null;
+      }
+      chunkTypeCase_ = 3;
+      onChanged();
+      return mapsBuilder_;
     }
 
     @java.lang.Override

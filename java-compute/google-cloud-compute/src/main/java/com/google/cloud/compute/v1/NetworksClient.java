@@ -234,6 +234,19 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RequestRemovePeering</td>
+ *      <td><p> Requests to remove a peering from the specified network. Applicable only for PeeringConnection with update_strategy=CONSENSUS.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> requestRemovePeeringAsync(String project, String network, NetworksRequestRemovePeeringRequest networksRequestRemovePeeringRequestResource)
+ *           <li><p> requestRemovePeeringAsync(RequestRemovePeeringNetworkRequest request)
+ *           <li><p> requestRemovePeeringOperationCallable()
+ *           <li><p> requestRemovePeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SwitchToCustomMode</td>
  *      <td><p> Switches the network mode from auto subnet mode to custom subnet mode.</td>
  *      <td>
@@ -1486,6 +1499,153 @@ public class NetworksClient implements BackgroundResource {
    */
   public final UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     return stub.removePeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests to remove a peering from the specified network. Applicable only for PeeringConnection
+   * with update_strategy=CONSENSUS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksRequestRemovePeeringRequest networksRequestRemovePeeringRequestResource =
+   *       NetworksRequestRemovePeeringRequest.newBuilder().build();
+   *   Operation response =
+   *       networksClient
+   *           .requestRemovePeeringAsync(
+   *               project, network, networksRequestRemovePeeringRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param network Name of the network resource to remove peering from.
+   * @param networksRequestRemovePeeringRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> requestRemovePeeringAsync(
+      String project,
+      String network,
+      NetworksRequestRemovePeeringRequest networksRequestRemovePeeringRequestResource) {
+    RequestRemovePeeringNetworkRequest request =
+        RequestRemovePeeringNetworkRequest.newBuilder()
+            .setProject(project)
+            .setNetwork(network)
+            .setNetworksRequestRemovePeeringRequestResource(
+                networksRequestRemovePeeringRequestResource)
+            .build();
+    return requestRemovePeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests to remove a peering from the specified network. Applicable only for PeeringConnection
+   * with update_strategy=CONSENSUS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   RequestRemovePeeringNetworkRequest request =
+   *       RequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksRequestRemovePeeringRequestResource(
+   *               NetworksRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = networksClient.requestRemovePeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> requestRemovePeeringAsync(
+      RequestRemovePeeringNetworkRequest request) {
+    return requestRemovePeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests to remove a peering from the specified network. Applicable only for PeeringConnection
+   * with update_strategy=CONSENSUS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   RequestRemovePeeringNetworkRequest request =
+   *       RequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksRequestRemovePeeringRequestResource(
+   *               NetworksRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networksClient.requestRemovePeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RequestRemovePeeringNetworkRequest, Operation, Operation>
+      requestRemovePeeringOperationCallable() {
+    return stub.requestRemovePeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests to remove a peering from the specified network. Applicable only for PeeringConnection
+   * with update_strategy=CONSENSUS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   RequestRemovePeeringNetworkRequest request =
+   *       RequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksRequestRemovePeeringRequestResource(
+   *               NetworksRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networksClient.requestRemovePeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RequestRemovePeeringNetworkRequest, Operation>
+      requestRemovePeeringCallable() {
+    return stub.requestRemovePeeringCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

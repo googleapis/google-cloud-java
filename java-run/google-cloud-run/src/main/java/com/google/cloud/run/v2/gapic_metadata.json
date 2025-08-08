@@ -139,6 +139,39 @@
           }
         }
       }
+    },
+    "WorkerPools": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkerPoolsClient",
+          "rpcs": {
+            "CreateWorkerPool": {
+              "methods": ["createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolOperationCallable", "createWorkerPoolCallable"]
+            },
+            "DeleteWorkerPool": {
+              "methods": ["deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolOperationCallable", "deleteWorkerPoolCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetWorkerPool": {
+              "methods": ["getWorkerPool", "getWorkerPool", "getWorkerPool", "getWorkerPoolCallable"]
+            },
+            "ListWorkerPools": {
+              "methods": ["listWorkerPools", "listWorkerPools", "listWorkerPools", "listWorkerPoolsPagedCallable", "listWorkerPoolsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateWorkerPool": {
+              "methods": ["updateWorkerPoolAsync", "updateWorkerPoolAsync", "updateWorkerPoolAsync", "updateWorkerPoolOperationCallable", "updateWorkerPoolCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -42,6 +42,7 @@ public class SyncListEvents {
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       for (SessionEvent element : sessionServiceClient.listEvents(request).iterateAll()) {
         // doThingsWith(element);

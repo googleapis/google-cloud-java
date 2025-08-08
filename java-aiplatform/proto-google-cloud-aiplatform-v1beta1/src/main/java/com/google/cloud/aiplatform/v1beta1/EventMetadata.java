@@ -327,6 +327,59 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CUSTOM_METADATA_FIELD_NUMBER = 7;
+  private com.google.protobuf.Struct customMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   *
+   * @return Whether the customMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   *
+   * @return The customMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getCustomMetadata() {
+    return customMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : customMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getCustomMetadataOrBuilder() {
+    return customMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : customMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -358,6 +411,9 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branch_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, branch_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getCustomMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -391,6 +447,9 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branch_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, branch_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCustomMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -416,6 +475,10 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     if (getInterrupted() != other.getInterrupted()) return false;
     if (!getLongRunningToolIdsList().equals(other.getLongRunningToolIdsList())) return false;
     if (!getBranch().equals(other.getBranch())) return false;
+    if (hasCustomMetadata() != other.hasCustomMetadata()) return false;
+    if (hasCustomMetadata()) {
+      if (!getCustomMetadata().equals(other.getCustomMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -443,6 +506,10 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + BRANCH_FIELD_NUMBER;
     hash = (53 * hash) + getBranch().hashCode();
+    if (hasCustomMetadata()) {
+      hash = (37 * hash) + CUSTOM_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -585,6 +652,7 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGroundingMetadataFieldBuilder();
+        getCustomMetadataFieldBuilder();
       }
     }
 
@@ -602,6 +670,11 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       interrupted_ = false;
       longRunningToolIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       branch_ = "";
+      customMetadata_ = null;
+      if (customMetadataBuilder_ != null) {
+        customMetadataBuilder_.dispose();
+        customMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -661,6 +734,11 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.branch_ = branch_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customMetadata_ =
+            customMetadataBuilder_ == null ? customMetadata_ : customMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -738,6 +816,9 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasCustomMetadata()) {
+        mergeCustomMetadata(other.getCustomMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -802,6 +883,12 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getCustomMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1555,6 +1642,200 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct customMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        customMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     *
+     * @return Whether the customMetadata field is set.
+     */
+    public boolean hasCustomMetadata() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     *
+     * @return The customMetadata.
+     */
+    public com.google.protobuf.Struct getCustomMetadata() {
+      if (customMetadataBuilder_ == null) {
+        return customMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : customMetadata_;
+      } else {
+        return customMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public Builder setCustomMetadata(com.google.protobuf.Struct value) {
+      if (customMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customMetadata_ = value;
+      } else {
+        customMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public Builder setCustomMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (customMetadataBuilder_ == null) {
+        customMetadata_ = builderForValue.build();
+      } else {
+        customMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public Builder mergeCustomMetadata(com.google.protobuf.Struct value) {
+      if (customMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && customMetadata_ != null
+            && customMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getCustomMetadataBuilder().mergeFrom(value);
+        } else {
+          customMetadata_ = value;
+        }
+      } else {
+        customMetadataBuilder_.mergeFrom(value);
+      }
+      if (customMetadata_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public Builder clearCustomMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      customMetadata_ = null;
+      if (customMetadataBuilder_ != null) {
+        customMetadataBuilder_.dispose();
+        customMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public com.google.protobuf.Struct.Builder getCustomMetadataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getCustomMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getCustomMetadataOrBuilder() {
+      if (customMetadataBuilder_ != null) {
+        return customMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return customMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : customMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom metadata of the LlmResponse.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getCustomMetadataFieldBuilder() {
+      if (customMetadataBuilder_ == null) {
+        customMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getCustomMetadata(), getParentForChildren(), isClean());
+        customMetadata_ = null;
+      }
+      return customMetadataBuilder_;
     }
 
     @java.lang.Override

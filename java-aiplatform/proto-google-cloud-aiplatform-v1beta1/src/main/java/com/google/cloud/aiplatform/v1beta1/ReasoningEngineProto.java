@@ -41,6 +41,10 @@ public final class ReasoningEngineProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_fieldAccessorTable;
@@ -52,6 +56,14 @@ public final class ReasoningEngineProto {
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_GenerationConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -74,32 +86,48 @@ public final class ReasoningEngineProto {
           + "m.v1beta1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\0325google/cl"
           + "oud/aiplatform/v1beta1/encryption_spec.proto\032-google/cloud/aiplatform/v1beta1/en"
-          + "v_var.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\220\005\n"
+          + "v_var.proto\0328google/cloud/aiplatform/v1b"
+          + "eta1/service_networking.proto\032\036google/pr"
+          + "otobuf/duration.proto\032\034google/protobuf/s"
+          + "truct.proto\032\037google/protobuf/timestamp.proto\"\277\010\n"
           + "\023ReasoningEngineSpec\022!\n"
           + "\017service_account\030\001 \001(\tB\003\340A\001H\000\210\001\001\022[\n"
-          + "\014package_spec\030\002 \001(\0132@.go"
-          + "ogle.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
-          + "\017deployment_spec\030\004 \001(\0132C.google.cloud.aiplatform.v1"
-          + "beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
+          + "\014package_spec\030\002"
+          + " \001(\0132@.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
+          + "\017deployment_spec\030\004 \001(\0132C.google.cloud.aip"
+          + "latform.v1beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
           + "class_methods\030\003 \003(\0132\027.google.protobuf.StructB\003\340A\001\022\034\n"
           + "\017agent_framework\030\005 \001(\tB\003\340A\001\032\230\001\n"
           + "\013PackageSpec\022\"\n"
           + "\025pickle_object_gcs_uri\030\001 \001(\tB\003\340A\001\022%\n"
           + "\030dependency_files_gcs_uri\030\002 \001(\tB\003\340A\001\022!\n"
           + "\024requirements_gcs_uri\030\003 \001(\tB\003\340A\001\022\033\n"
-          + "\016python_version\030\004 \001(\tB\003\340A\001\032\223\001\n"
+          + "\016python_version\030\004 \001(\tB\003\340A\001\032\302\004\n"
           + "\016DeploymentSpec\0229\n"
-          + "\003env\030\001 \003(\0132\'.go"
-          + "ogle.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
-          + "secret_env\030\002"
-          + " \003(\0132-.google.cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001B\022\n"
+          + "\003env\030\001"
+          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
+          + "secret_env\030\002 \003(\0132-.google"
+          + ".cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001\022V\n"
+          + "\024psc_interface_config\030\004 \001(\01323.goog"
+          + "le.cloud.aiplatform.v1beta1.PscInterfaceConfigB\003\340A\001\022\037\n\r"
+          + "min_instances\030\005 \001(\005B\003\340A\001H\000\210\001\001\022\037\n\r"
+          + "max_instances\030\006 \001(\005B\003\340A\001H\001\210\001\001\022u\n"
+          + "\017resource_limits\030\007 \003(\0132W.google.cloud.ai"
+          + "platform.v1beta1.ReasoningEngineSpec.DeploymentSpec.ResourceLimitsEntryB\003\340A\001\022\'\n"
+          + "\025container_concurrency\030\010 \001(\005B\003\340A\001H\002\210\001\001\0325\n"
+          + "\023ResourceLimitsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\020\n"
+          + "\016_min_instancesB\020\n"
+          + "\016_max_instancesB\030\n"
+          + "\026_container_concurrencyB\022\n"
           + "\020_service_account\"\345\004\n"
           + "\017ReasoningEngine\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\007 \001(\tB\003\340A\001\022G\n"
-          + "\004spec\030\003 \001(\0132"
-          + "4.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
+          + "\004spec\030\003 \001(\013"
+          + "24.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
@@ -108,30 +136,45 @@ public final class ReasoningEngineProto {
           + " \001(\0132;.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\003\340A\001\022H\n"
           + "\017encryption_spec\030\013"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec:\237\001\352A\233\001\n"
-          + ")aiplatform.googleapis.com/ReasoningEngine\022Kp"
-          + "rojects/{project}/locations/{location}/r"
-          + "easoningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\332\004\n"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022K"
+          + "projects/{project}/locations/{location}/"
+          + "reasoningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\354\010\n"
           + "\032ReasoningEngineContextSpec\022m\n"
-          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1bet"
-          + "a1.ReasoningEngineContextSpec.MemoryBankConfigB\003\340A\001\032\314\003\n"
+          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1be"
+          + "ta1.ReasoningEngineContextSpec.MemoryBankConfigB\003\340A\001\032\336\007\n"
           + "\020MemoryBankConfig\022}\n"
-          + "\021generation_config\030\001 \001(\0132].google.cloud.aipla"
-          + "tform.v1beta1.ReasoningEngineContextSpec"
-          + ".MemoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
-          + "\030similarity_search_config\030\002 \001(\0132c.goo"
-          + "gle.cloud.aiplatform.v1beta1.ReasoningEn"
-          + "gineContextSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\032M\n"
+          + "\021generation_config\030\001 \001(\0132].google.cloud.aipl"
+          + "atform.v1beta1.ReasoningEngineContextSpe"
+          + "c.MemoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
+          + "\030similarity_search_config\030\002 \001(\0132c.go"
+          + "ogle.cloud.aiplatform.v1beta1.ReasoningE"
+          + "ngineContextSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\022o\n\n"
+          + "ttl_config\030\005 \001(\0132V.google.cloud.aiplatform.v1beta1.Reas"
+          + "oningEngineContextSpec.MemoryBankConfig.TtlConfigB\003\340A\001\032\236\003\n"
+          + "\tTtlConfig\0225\n"
+          + "\013default_ttl\030\001"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\000\022\214\001\n"
+          + "\023granular_ttl_config\030\002 \001(\0132h.goog"
+          + "le.cloud.aiplatform.v1beta1.ReasoningEng"
+          + "ineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfigB\003\340A\001H\000\032\303\001\n"
+          + "\021GranularTtlConfig\0222\n\n"
+          + "create_ttl\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022<\n"
+          + "\024generate_created_ttl\030\002"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022<\n"
+          + "\024generate_updated_ttl\030\003"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001B\005\n"
+          + "\003ttl\032M\n"
           + "\020GenerationConfig\0229\n"
           + "\005model\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"aiplatform.googleapis.com/Endpoint\032]\n"
           + "\026SimilaritySearchConfig\022C\n"
           + "\017embedding_model\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"aiplatform.googleapis.com/EndpointB\353\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\024Reas"
-          + "oningEngineProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aipla"
-          + "tformpb\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -141,6 +184,8 @@ public final class ReasoningEngineProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ServiceNetworkingProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -170,7 +215,23 @@ public final class ReasoningEngineProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor,
             new java.lang.String[] {
-              "Env", "SecretEnv",
+              "Env",
+              "SecretEnv",
+              "PscInterfaceConfig",
+              "MinInstances",
+              "MaxInstances",
+              "ResourceLimits",
+              "ContainerConcurrency",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -204,12 +265,32 @@ public final class ReasoningEngineProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_descriptor,
             new java.lang.String[] {
-              "GenerationConfig", "SimilaritySearchConfig",
+              "GenerationConfig", "SimilaritySearchConfig", "TtlConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor,
+            new java.lang.String[] {
+              "DefaultTtl", "GranularTtlConfig", "Ttl",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor,
+            new java.lang.String[] {
+              "CreateTtl", "GenerateCreatedTtl", "GenerateUpdatedTtl",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_GenerationConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_GenerationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_GenerationConfig_descriptor,
@@ -219,7 +300,7 @@ public final class ReasoningEngineProto {
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_SimilaritySearchConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_SimilaritySearchConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_SimilaritySearchConfig_descriptor,
@@ -237,6 +318,8 @@ public final class ReasoningEngineProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ServiceNetworkingProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -95,6 +95,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     POSTGRESQL_PROFILE(104),
     SQL_SERVER_PROFILE(105),
     SALESFORCE_PROFILE(107),
+    MONGODB_PROFILE(108),
     PROFILE_NOT_SET(0);
     private final int value;
 
@@ -128,6 +129,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           return SQL_SERVER_PROFILE;
         case 107:
           return SALESFORCE_PROFILE;
+        case 108:
+          return MONGODB_PROFILE;
         case 0:
           return PROFILE_NOT_SET;
         default:
@@ -966,6 +969,60 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
   }
 
+  public static final int MONGODB_PROFILE_FIELD_NUMBER = 108;
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   *
+   * @return Whether the mongodbProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasMongodbProfile() {
+    return profileCase_ == 108;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   *
+   * @return The mongodbProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbProfile getMongodbProfile() {
+    if (profileCase_ == 108) {
+      return (com.google.cloud.datastream.v1.MongodbProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbProfileOrBuilder getMongodbProfileOrBuilder() {
+    if (profileCase_ == 108) {
+      return (com.google.cloud.datastream.v1.MongodbProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+  }
+
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 200;
 
   /**
@@ -1196,6 +1253,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (profileCase_ == 107) {
       output.writeMessage(107, (com.google.cloud.datastream.v1.SalesforceProfile) profile_);
     }
+    if (profileCase_ == 108) {
+      output.writeMessage(108, (com.google.cloud.datastream.v1.MongodbProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       output.writeMessage(
           200, (com.google.cloud.datastream.v1.StaticServiceIpConnectivity) connectivity_);
@@ -1279,6 +1339,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               107, (com.google.cloud.datastream.v1.SalesforceProfile) profile_);
     }
+    if (profileCase_ == 108) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              108, (com.google.cloud.datastream.v1.MongodbProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1351,6 +1416,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         break;
       case 107:
         if (!getSalesforceProfile().equals(other.getSalesforceProfile())) return false;
+        break;
+      case 108:
+        if (!getMongodbProfile().equals(other.getMongodbProfile())) return false;
         break;
       case 0:
       default:
@@ -1433,6 +1501,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 107:
         hash = (37 * hash) + SALESFORCE_PROFILE_FIELD_NUMBER;
         hash = (53 * hash) + getSalesforceProfile().hashCode();
+        break;
+      case 108:
+        hash = (37 * hash) + MONGODB_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbProfile().hashCode();
         break;
       case 0:
       default:
@@ -1662,6 +1734,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (salesforceProfileBuilder_ != null) {
         salesforceProfileBuilder_.clear();
       }
+      if (mongodbProfileBuilder_ != null) {
+        mongodbProfileBuilder_.clear();
+      }
       if (staticServiceIpConnectivityBuilder_ != null) {
         staticServiceIpConnectivityBuilder_.clear();
       }
@@ -1765,6 +1840,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       if (profileCase_ == 107 && salesforceProfileBuilder_ != null) {
         result.profile_ = salesforceProfileBuilder_.build();
+      }
+      if (profileCase_ == 108 && mongodbProfileBuilder_ != null) {
+        result.profile_ = mongodbProfileBuilder_.build();
       }
       result.connectivityCase_ = connectivityCase_;
       result.connectivity_ = this.connectivity_;
@@ -1883,6 +1961,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         case SALESFORCE_PROFILE:
           {
             mergeSalesforceProfile(other.getSalesforceProfile());
+            break;
+          }
+        case MONGODB_PROFILE:
+          {
+            mergeMongodbProfile(other.getMongodbProfile());
             break;
           }
         case PROFILE_NOT_SET:
@@ -2030,6 +2113,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 profileCase_ = 107;
                 break;
               } // case 858
+            case 866:
+              {
+                input.readMessage(getMongodbProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 108;
+                break;
+              } // case 866
             case 1602:
               {
                 input.readMessage(
@@ -4596,6 +4685,224 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 107;
       onChanged();
       return salesforceProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbProfile,
+            com.google.cloud.datastream.v1.MongodbProfile.Builder,
+            com.google.cloud.datastream.v1.MongodbProfileOrBuilder>
+        mongodbProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     *
+     * @return Whether the mongodbProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbProfile() {
+      return profileCase_ == 108;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     *
+     * @return The mongodbProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbProfile getMongodbProfile() {
+      if (mongodbProfileBuilder_ == null) {
+        if (profileCase_ == 108) {
+          return (com.google.cloud.datastream.v1.MongodbProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 108) {
+          return mongodbProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    public Builder setMongodbProfile(com.google.cloud.datastream.v1.MongodbProfile value) {
+      if (mongodbProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        mongodbProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    public Builder setMongodbProfile(
+        com.google.cloud.datastream.v1.MongodbProfile.Builder builderForValue) {
+      if (mongodbProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        mongodbProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    public Builder mergeMongodbProfile(com.google.cloud.datastream.v1.MongodbProfile value) {
+      if (mongodbProfileBuilder_ == null) {
+        if (profileCase_ == 108
+            && profile_ != com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.MongodbProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.MongodbProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 108) {
+          mongodbProfileBuilder_.mergeFrom(value);
+        } else {
+          mongodbProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    public Builder clearMongodbProfile() {
+      if (mongodbProfileBuilder_ == null) {
+        if (profileCase_ == 108) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 108) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        mongodbProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    public com.google.cloud.datastream.v1.MongodbProfile.Builder getMongodbProfileBuilder() {
+      return getMongodbProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbProfileOrBuilder getMongodbProfileOrBuilder() {
+      if ((profileCase_ == 108) && (mongodbProfileBuilder_ != null)) {
+        return mongodbProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 108) {
+          return (com.google.cloud.datastream.v1.MongodbProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbProfile,
+            com.google.cloud.datastream.v1.MongodbProfile.Builder,
+            com.google.cloud.datastream.v1.MongodbProfileOrBuilder>
+        getMongodbProfileFieldBuilder() {
+      if (mongodbProfileBuilder_ == null) {
+        if (!(profileCase_ == 108)) {
+          profile_ = com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+        }
+        mongodbProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.MongodbProfile,
+                com.google.cloud.datastream.v1.MongodbProfile.Builder,
+                com.google.cloud.datastream.v1.MongodbProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.MongodbProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 108;
+      onChanged();
+      return mongodbProfileBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
