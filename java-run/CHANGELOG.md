@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.71.0 (2025-08-08)
+
+### ⚠ BREAKING CHANGES
+
+* An existing resource_definition `cloudbuild.googleapis.com/WorkerPool` is removed
+
+### Bug Fixes
+
+* An existing resource_definition `cloudbuild.googleapis.com/WorkerPool` is removed ([9f28cd5](https://github.com/googleapis/google-cloud-java/commit/9f28cd5bcd951333fb2a3847edba015840b5029b))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
 ## 0.70.0 (2025-07-30)
 
 * No change

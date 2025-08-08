@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.12.0 (2025-08-08)
+
+### Features
+
+* MultiLanguage Detection in Model Armor Floor Setting ([42bda69](https://github.com/googleapis/google-cloud-java/commit/42bda696749f1d5b4cfd3529f74724fad52fdeca))
+* MultiLanguage Detection in Model Armor Floor Setting ([42bda69](https://github.com/googleapis/google-cloud-java/commit/42bda696749f1d5b4cfd3529f74724fad52fdeca))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
 ## 0.11.0 (2025-07-30)
 
 * No change
