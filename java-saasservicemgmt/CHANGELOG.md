@@ -1,0 +1,11 @@
+# Changelog
+
+## 0.1.0 (2025-08-08)
+
+### Features
+
+* new module for saasservicemgmt ([#11717](https://github.com/googleapis/google-cloud-java/issues/11717)) ([4790372](https://github.com/googleapis/google-cloud-java/commit/4790372329ef9bb2f3ab15b8372aaf2144fdf648))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
