@@ -96,6 +96,38 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The bytes for caCertificate.
      */
     com.google.protobuf.ByteString getCaCertificateBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serverCertificateHostname.
+     */
+    java.lang.String getServerCertificateHostname();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for serverCertificateHostname.
+     */
+    com.google.protobuf.ByteString getServerCertificateHostnameBytes();
   }
 
   /**
@@ -122,6 +154,7 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
 
     private ServerVerification() {
       caCertificate_ = "";
+      serverCertificateHostname_ = "";
     }
 
     @java.lang.Override
@@ -202,6 +235,65 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
     }
 
+    public static final int SERVER_CERTIFICATE_HOSTNAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serverCertificateHostname_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serverCertificateHostname.
+     */
+    @java.lang.Override
+    public java.lang.String getServerCertificateHostname() {
+      java.lang.Object ref = serverCertificateHostname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverCertificateHostname_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for serverCertificateHostname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServerCertificateHostnameBytes() {
+      java.lang.Object ref = serverCertificateHostname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serverCertificateHostname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -219,6 +311,9 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, caCertificate_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverCertificateHostname_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serverCertificateHostname_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -230,6 +325,10 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, caCertificate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverCertificateHostname_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serverCertificateHostname_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -248,6 +347,8 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           (com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerification) obj;
 
       if (!getCaCertificate().equals(other.getCaCertificate())) return false;
+      if (!getServerCertificateHostname().equals(other.getServerCertificateHostname()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -261,6 +362,8 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CA_CERTIFICATE_FIELD_NUMBER;
       hash = (53 * hash) + getCaCertificate().hashCode();
+      hash = (37 * hash) + SERVER_CERTIFICATE_HOSTNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getServerCertificateHostname().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -410,6 +513,7 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         super.clear();
         bitField0_ = 0;
         caCertificate_ = "";
+        serverCertificateHostname_ = "";
         return this;
       }
 
@@ -452,6 +556,9 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.caCertificate_ = caCertificate_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serverCertificateHostname_ = serverCertificateHostname_;
         }
       }
 
@@ -512,6 +619,11 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getServerCertificateHostname().isEmpty()) {
+          serverCertificateHostname_ = other.serverCertificateHostname_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -544,6 +656,12 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  serverCertificateHostname_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -680,6 +798,132 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         caCertificate_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serverCertificateHostname_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serverCertificateHostname.
+       */
+      public java.lang.String getServerCertificateHostname() {
+        java.lang.Object ref = serverCertificateHostname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serverCertificateHostname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for serverCertificateHostname.
+       */
+      public com.google.protobuf.ByteString getServerCertificateHostnameBytes() {
+        java.lang.Object ref = serverCertificateHostname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serverCertificateHostname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The serverCertificateHostname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServerCertificateHostname(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serverCertificateHostname_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServerCertificateHostname() {
+        serverCertificateHostname_ = getDefaultInstance().getServerCertificateHostname();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for serverCertificateHostname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServerCertificateHostnameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serverCertificateHostname_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -862,6 +1106,38 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The bytes for caCertificate.
      */
     com.google.protobuf.ByteString getCaCertificateBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serverCertificateHostname.
+     */
+    java.lang.String getServerCertificateHostname();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for serverCertificateHostname.
+     */
+    com.google.protobuf.ByteString getServerCertificateHostnameBytes();
   }
 
   /**
@@ -893,6 +1169,7 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       clientCertificate_ = "";
       clientKey_ = "";
       caCertificate_ = "";
+      serverCertificateHostname_ = "";
     }
 
     @java.lang.Override
@@ -1104,6 +1381,65 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
     }
 
+    public static final int SERVER_CERTIFICATE_HOSTNAME_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serverCertificateHostname_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serverCertificateHostname.
+     */
+    @java.lang.Override
+    public java.lang.String getServerCertificateHostname() {
+      java.lang.Object ref = serverCertificateHostname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverCertificateHostname_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hostname mentioned in the Subject or SAN extension of the
+     * server certificate. If this field is not provided, the hostname in the
+     * server certificate is not validated.
+     * </pre>
+     *
+     * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for serverCertificateHostname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServerCertificateHostnameBytes() {
+      java.lang.Object ref = serverCertificateHostname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serverCertificateHostname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1127,6 +1463,9 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, caCertificate_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverCertificateHostname_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serverCertificateHostname_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1144,6 +1483,10 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, caCertificate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverCertificateHostname_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serverCertificateHostname_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1166,6 +1509,8 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       if (!getClientCertificate().equals(other.getClientCertificate())) return false;
       if (!getClientKey().equals(other.getClientKey())) return false;
       if (!getCaCertificate().equals(other.getCaCertificate())) return false;
+      if (!getServerCertificateHostname().equals(other.getServerCertificateHostname()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1183,6 +1528,8 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getClientKey().hashCode();
       hash = (37 * hash) + CA_CERTIFICATE_FIELD_NUMBER;
       hash = (53 * hash) + getCaCertificate().hashCode();
+      hash = (37 * hash) + SERVER_CERTIFICATE_HOSTNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getServerCertificateHostname().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1342,6 +1689,7 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         clientCertificate_ = "";
         clientKey_ = "";
         caCertificate_ = "";
+        serverCertificateHostname_ = "";
         return this;
       }
 
@@ -1393,6 +1741,9 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.caCertificate_ = caCertificate_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.serverCertificateHostname_ = serverCertificateHostname_;
         }
       }
 
@@ -1465,6 +1816,11 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (!other.getServerCertificateHostname().isEmpty()) {
+          serverCertificateHostname_ = other.serverCertificateHostname_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1509,6 +1865,12 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 42:
+                {
+                  serverCertificateHostname_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1927,6 +2289,132 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         caCertificate_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serverCertificateHostname_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serverCertificateHostname.
+       */
+      public java.lang.String getServerCertificateHostname() {
+        java.lang.Object ref = serverCertificateHostname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serverCertificateHostname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for serverCertificateHostname.
+       */
+      public com.google.protobuf.ByteString getServerCertificateHostnameBytes() {
+        java.lang.Object ref = serverCertificateHostname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serverCertificateHostname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The serverCertificateHostname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServerCertificateHostname(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serverCertificateHostname_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServerCertificateHostname() {
+        serverCertificateHostname_ = getDefaultInstance().getServerCertificateHostname();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The hostname mentioned in the Subject or SAN extension of the
+       * server certificate. If this field is not provided, the hostname in the
+       * server certificate is not validated.
+       * </pre>
+       *
+       * <code>string server_certificate_hostname = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for serverCertificateHostname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServerCertificateHostnameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serverCertificateHostname_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

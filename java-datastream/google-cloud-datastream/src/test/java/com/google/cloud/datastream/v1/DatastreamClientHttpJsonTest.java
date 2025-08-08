@@ -1789,6 +1789,7 @@ public class DatastreamClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1853,6 +1854,7 @@ public class DatastreamClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1917,6 +1919,7 @@ public class DatastreamClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1973,6 +1976,7 @@ public class DatastreamClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

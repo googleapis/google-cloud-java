@@ -243,5 +243,42 @@ public interface SourceConfigOrBuilder
   com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder
       getSalesforceSourceConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   *
+   * @return Whether the mongodbSourceConfig field is set.
+   */
+  boolean hasMongodbSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   *
+   * @return The mongodbSourceConfig.
+   */
+  com.google.cloud.datastream.v1.MongodbSourceConfig getMongodbSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   */
+  com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder getMongodbSourceConfigOrBuilder();
+
   com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

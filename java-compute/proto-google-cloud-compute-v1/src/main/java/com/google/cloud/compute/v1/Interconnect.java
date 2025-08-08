@@ -1022,6 +1022,41 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int AAI_ENABLED_FIELD_NUMBER = 388780363;
+  private boolean aaiEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>optional bool aai_enabled = 388780363;</code>
+   *
+   * @return Whether the aaiEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasAaiEnabled() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>optional bool aai_enabled = 388780363;</code>
+   *
+   * @return The aaiEnabled.
+   */
+  @java.lang.Override
+  public boolean getAaiEnabled() {
+    return aaiEnabled_;
+  }
+
   public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
   private boolean adminEnabled_ = false;
 
@@ -1038,7 +1073,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAdminEnabled() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -1055,6 +1090,68 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getAdminEnabled() {
     return adminEnabled_;
+  }
+
+  public static final int APPLICATION_AWARE_INTERCONNECT_FIELD_NUMBER = 429095966;
+  private com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+      applicationAwareInterconnect_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   *
+   * @return Whether the applicationAwareInterconnect field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationAwareInterconnect() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   *
+   * @return The applicationAwareInterconnect.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+      getApplicationAwareInterconnect() {
+    return applicationAwareInterconnect_ == null
+        ? com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.getDefaultInstance()
+        : applicationAwareInterconnect_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder
+      getApplicationAwareInterconnectOrBuilder() {
+    return applicationAwareInterconnect_ == null
+        ? com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.getDefaultInstance()
+        : applicationAwareInterconnect_;
   }
 
   public static final int AVAILABLE_FEATURES_FIELD_NUMBER = 496344307;
@@ -1229,7 +1326,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -1298,7 +1395,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCustomerName() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -1367,7 +1464,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1526,7 +1623,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGoogleIpAddress() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1595,7 +1692,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGoogleReferenceId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1662,7 +1759,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1836,7 +1933,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInterconnectType() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1907,7 +2004,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1976,7 +2073,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLabelFingerprint() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -2153,7 +2250,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLinkType() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -2224,7 +2321,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocation() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -2291,7 +2388,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMacsec() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -2344,7 +2441,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMacsecEnabled() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -2381,7 +2478,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2450,7 +2547,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNocContactEmail() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -2520,7 +2617,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOperationalStatus() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -2591,7 +2688,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -2658,7 +2755,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisionedLinkCount() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -2695,7 +2792,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRemoteLocation() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -2834,7 +2931,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRequestedLinkCount() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -2869,7 +2966,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -2906,7 +3003,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -2976,7 +3073,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3043,43 +3140,43 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3665484, customerName_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14072832, nocContactEmail_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeInt32(45051387, requestedLinkCount_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
       output.writeMessage(164839855, circuitInfos_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeBool(194203812, macsecEnabled_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
     for (int i = 0; i < interconnectGroups_.size(); i++) {
@@ -3089,36 +3186,42 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < expectedOutages_.size(); i++) {
       output.writeMessage(264484123, expectedOutages_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 324388750, remoteLocation_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(388780363, aaiEnabled_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeInt32(410888565, provisionedLinkCount_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     for (int i = 0; i < interconnectAttachments_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 425388415, interconnectAttachments_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(429095966, getApplicationAwareInterconnect());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 443105954, googleIpAddress_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < requestedFeatures_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 461240814, requestedFeatures_.getRaw(i));
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     for (int i = 0; i < availableFeatures_.size(); i++) {
@@ -3127,16 +3230,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 515165259, interconnectType_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 523207775, linkType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(528867490, getMacsec());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
     }
     getUnknownFields().writeTo(output);
@@ -3148,47 +3251,47 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3665484, customerName_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14072832, nocContactEmail_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(45051387, requestedLinkCount_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(164839855, circuitInfos_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(194203812, macsecEnabled_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
     {
@@ -3204,17 +3307,20 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               264484123, expectedOutages_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324388750, remoteLocation_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(388780363, aaiEnabled_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(410888565, provisionedLinkCount_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     {
@@ -3225,13 +3331,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getInterconnectAttachmentsList().size();
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              429095966, getApplicationAwareInterconnect());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(443105954, googleIpAddress_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     {
@@ -3242,7 +3353,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getRequestedFeaturesList().size();
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     {
@@ -3263,17 +3374,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(515165259, interconnectType_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(523207775, linkType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(528867490, getMacsec());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(534944469, googleReferenceId_);
     }
@@ -3292,9 +3403,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Interconnect other = (com.google.cloud.compute.v1.Interconnect) obj;
 
+    if (hasAaiEnabled() != other.hasAaiEnabled()) return false;
+    if (hasAaiEnabled()) {
+      if (getAaiEnabled() != other.getAaiEnabled()) return false;
+    }
     if (hasAdminEnabled() != other.hasAdminEnabled()) return false;
     if (hasAdminEnabled()) {
       if (getAdminEnabled() != other.getAdminEnabled()) return false;
+    }
+    if (hasApplicationAwareInterconnect() != other.hasApplicationAwareInterconnect()) return false;
+    if (hasApplicationAwareInterconnect()) {
+      if (!getApplicationAwareInterconnect().equals(other.getApplicationAwareInterconnect()))
+        return false;
     }
     if (!getAvailableFeaturesList().equals(other.getAvailableFeaturesList())) return false;
     if (!getCircuitInfosList().equals(other.getCircuitInfosList())) return false;
@@ -3407,9 +3527,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAaiEnabled()) {
+      hash = (37 * hash) + AAI_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAaiEnabled());
+    }
     if (hasAdminEnabled()) {
       hash = (37 * hash) + ADMIN_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminEnabled());
+    }
+    if (hasApplicationAwareInterconnect()) {
+      hash = (37 * hash) + APPLICATION_AWARE_INTERCONNECT_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationAwareInterconnect().hashCode();
     }
     if (getAvailableFeaturesCount() > 0) {
       hash = (37 * hash) + AVAILABLE_FEATURES_FIELD_NUMBER;
@@ -3694,6 +3822,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getApplicationAwareInterconnectFieldBuilder();
         getCircuitInfosFieldBuilder();
         getExpectedOutagesFieldBuilder();
         getMacsecFieldBuilder();
@@ -3704,7 +3833,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
+      aaiEnabled_ = false;
       adminEnabled_ = false;
+      applicationAwareInterconnect_ = null;
+      if (applicationAwareInterconnectBuilder_ != null) {
+        applicationAwareInterconnectBuilder_.dispose();
+        applicationAwareInterconnectBuilder_ = null;
+      }
       availableFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (circuitInfosBuilder_ == null) {
         circuitInfos_ = java.util.Collections.emptyList();
@@ -3712,7 +3848,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         circuitInfos_ = null;
         circuitInfosBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = "";
       customerName_ = "";
       description_ = "";
@@ -3722,7 +3858,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         expectedOutages_ = null;
         expectedOutagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       googleIpAddress_ = "";
       googleReferenceId_ = "";
       id_ = 0L;
@@ -3782,24 +3918,27 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Interconnect result) {
       if (circuitInfosBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           circuitInfos_ = java.util.Collections.unmodifiableList(circuitInfos_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.circuitInfos_ = circuitInfos_;
       } else {
         result.circuitInfos_ = circuitInfosBuilder_.build();
       }
       if (expectedOutagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           expectedOutages_ = java.util.Collections.unmodifiableList(expectedOutages_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.expectedOutages_ = expectedOutages_;
       } else {
@@ -3811,120 +3950,137 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.adminEnabled_ = adminEnabled_;
+        result.aaiEnabled_ = aaiEnabled_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.adminEnabled_ = adminEnabled_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.applicationAwareInterconnect_ =
+            applicationAwareInterconnectBuilder_ == null
+                ? applicationAwareInterconnect_
+                : applicationAwareInterconnectBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         availableFeatures_.makeImmutable();
         result.availableFeatures_ = availableFeatures_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.customerName_ = customerName_;
-        to_bitField0_ |= 0x00000004;
-      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.description_ = description_;
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.googleIpAddress_ = googleIpAddress_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customerName_ = customerName_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.googleReferenceId_ = googleReferenceId_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.id_ = id_;
+        result.googleIpAddress_ = googleIpAddress_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.googleReferenceId_ = googleReferenceId_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         interconnectAttachments_.makeImmutable();
         result.interconnectAttachments_ = interconnectAttachments_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         interconnectGroups_.makeImmutable();
         result.interconnectGroups_ = interconnectGroups_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.interconnectType_ = interconnectType_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.kind_ = kind_;
-        to_bitField0_ |= 0x00000100;
-      }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.labelFingerprint_ = labelFingerprint_;
+        result.interconnectType_ = interconnectType_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.linkType_ = linkType_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.location_ = location_;
-        to_bitField0_ |= 0x00000800;
-      }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.macsec_ = macsecBuilder_ == null ? macsec_ : macsecBuilder_.build();
+        result.linkType_ = linkType_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.macsecEnabled_ = macsecEnabled_;
+        result.location_ = location_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.name_ = name_;
+        result.macsec_ = macsecBuilder_ == null ? macsec_ : macsecBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.nocContactEmail_ = nocContactEmail_;
+        result.macsecEnabled_ = macsecEnabled_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.operationalStatus_ = operationalStatus_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.peerIpAddress_ = peerIpAddress_;
+        result.nocContactEmail_ = nocContactEmail_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.provisionedLinkCount_ = provisionedLinkCount_;
+        result.operationalStatus_ = operationalStatus_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.remoteLocation_ = remoteLocation_;
+        result.peerIpAddress_ = peerIpAddress_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.provisionedLinkCount_ = provisionedLinkCount_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.remoteLocation_ = remoteLocation_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         requestedFeatures_.makeImmutable();
         result.requestedFeatures_ = requestedFeatures_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.requestedLinkCount_ = requestedLinkCount_;
-        to_bitField0_ |= 0x00100000;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
-        to_bitField0_ |= 0x00200000;
-      }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.requestedLinkCount_ = requestedLinkCount_;
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.state_ = state_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x01000000;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.compute.v1.Interconnect result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x02000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3974,13 +4130,19 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Interconnect other) {
       if (other == com.google.cloud.compute.v1.Interconnect.getDefaultInstance()) return this;
+      if (other.hasAaiEnabled()) {
+        setAaiEnabled(other.getAaiEnabled());
+      }
       if (other.hasAdminEnabled()) {
         setAdminEnabled(other.getAdminEnabled());
+      }
+      if (other.hasApplicationAwareInterconnect()) {
+        mergeApplicationAwareInterconnect(other.getApplicationAwareInterconnect());
       }
       if (!other.availableFeatures_.isEmpty()) {
         if (availableFeatures_.isEmpty()) {
           availableFeatures_ = other.availableFeatures_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         } else {
           ensureAvailableFeaturesIsMutable();
           availableFeatures_.addAll(other.availableFeatures_);
@@ -3991,7 +4153,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         if (!other.circuitInfos_.isEmpty()) {
           if (circuitInfos_.isEmpty()) {
             circuitInfos_ = other.circuitInfos_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureCircuitInfosIsMutable();
             circuitInfos_.addAll(other.circuitInfos_);
@@ -4004,7 +4166,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             circuitInfosBuilder_.dispose();
             circuitInfosBuilder_ = null;
             circuitInfos_ = other.circuitInfos_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             circuitInfosBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCircuitInfosFieldBuilder()
@@ -4016,24 +4178,24 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCustomerName()) {
         customerName_ = other.customerName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (expectedOutagesBuilder_ == null) {
         if (!other.expectedOutages_.isEmpty()) {
           if (expectedOutages_.isEmpty()) {
             expectedOutages_ = other.expectedOutages_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureExpectedOutagesIsMutable();
             expectedOutages_.addAll(other.expectedOutages_);
@@ -4046,7 +4208,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             expectedOutagesBuilder_.dispose();
             expectedOutagesBuilder_ = null;
             expectedOutages_ = other.expectedOutages_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
             expectedOutagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExpectedOutagesFieldBuilder()
@@ -4058,12 +4220,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGoogleIpAddress()) {
         googleIpAddress_ = other.googleIpAddress_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasGoogleReferenceId()) {
         googleReferenceId_ = other.googleReferenceId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasId()) {
@@ -4072,7 +4234,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!other.interconnectAttachments_.isEmpty()) {
         if (interconnectAttachments_.isEmpty()) {
           interconnectAttachments_ = other.interconnectAttachments_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00001000;
         } else {
           ensureInterconnectAttachmentsIsMutable();
           interconnectAttachments_.addAll(other.interconnectAttachments_);
@@ -4082,7 +4244,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!other.interconnectGroups_.isEmpty()) {
         if (interconnectGroups_.isEmpty()) {
           interconnectGroups_ = other.interconnectGroups_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00002000;
         } else {
           ensureInterconnectGroupsIsMutable();
           interconnectGroups_.addAll(other.interconnectGroups_);
@@ -4091,29 +4253,29 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasInterconnectType()) {
         interconnectType_ = other.interconnectType_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasLabelFingerprint()) {
         labelFingerprint_ = other.labelFingerprint_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       if (other.hasLinkType()) {
         linkType_ = other.linkType_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasLocation()) {
         location_ = other.location_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasMacsec()) {
@@ -4124,22 +4286,22 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasNocContactEmail()) {
         nocContactEmail_ = other.nocContactEmail_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasOperationalStatus()) {
         operationalStatus_ = other.operationalStatus_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.hasPeerIpAddress()) {
         peerIpAddress_ = other.peerIpAddress_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (other.hasProvisionedLinkCount()) {
@@ -4147,13 +4309,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRemoteLocation()) {
         remoteLocation_ = other.remoteLocation_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.requestedFeatures_.isEmpty()) {
         if (requestedFeatures_.isEmpty()) {
           requestedFeatures_ = other.requestedFeatures_;
-          bitField0_ |= 0x04000000;
+          bitField0_ |= 0x10000000;
         } else {
           ensureRequestedFeaturesIsMutable();
           requestedFeatures_.addAll(other.requestedFeatures_);
@@ -4168,12 +4330,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4205,49 +4367,49 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 26989658
             case 29323874:
               {
                 customerName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 29323874
             case 112582658:
               {
                 nocContactEmail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 112582658
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 244202930
             case 360411096:
               {
                 requestedLinkCount_ = input.readInt32();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 360411096
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 878060682
             case 1318718842:
@@ -4267,25 +4429,25 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1424998602
             case 1553630496:
               {
                 macsecEnabled_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 1553630496
             case 1608566778:
               {
                 operationalStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 1608566778
             case 1661886154:
               {
                 peerIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 1661886154
             case 1896396074:
@@ -4312,25 +4474,31 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -1971520086:
               {
                 location_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -1971520086
             case -1699857294:
               {
                 remoteLocation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -1699857294
+            case -1184724392:
+              {
+                aaiEnabled_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1184724392
             case -1007858776:
               {
                 provisionedLinkCount_ = input.readInt32();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case -1007858776
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -911466526
             case -891859974:
@@ -4340,22 +4508,29 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 interconnectAttachments_.add(s);
                 break;
               } // case -891859974
+            case -862199566:
+              {
+                input.readMessage(
+                    getApplicationAwareInterconnectFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -862199566
             case -750119662:
               {
                 googleIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -750119662
             case -729566584:
               {
                 adminEnabled_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -729566584
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case -645248918
             case -605040782:
@@ -4368,7 +4543,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case -447253160
             case -324212838:
@@ -4387,31 +4562,31 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -293404678
             case -173645222:
               {
                 interconnectType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -173645222
             case -109305094:
               {
                 linkType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -109305094
             case -64027374:
               {
                 input.readMessage(getMacsecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -64027374
             case -15411542:
               {
                 googleReferenceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -15411542
             default:
@@ -4432,6 +4607,79 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
+
+    private boolean aaiEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>optional bool aai_enabled = 388780363;</code>
+     *
+     * @return Whether the aaiEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasAaiEnabled() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>optional bool aai_enabled = 388780363;</code>
+     *
+     * @return The aaiEnabled.
+     */
+    @java.lang.Override
+    public boolean getAaiEnabled() {
+      return aaiEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>optional bool aai_enabled = 388780363;</code>
+     *
+     * @param value The aaiEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAaiEnabled(boolean value) {
+
+      aaiEnabled_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>optional bool aai_enabled = 388780363;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAaiEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      aaiEnabled_ = false;
+      onChanged();
+      return this;
+    }
 
     private boolean adminEnabled_;
 
@@ -4448,7 +4696,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAdminEnabled() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -4482,7 +4730,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setAdminEnabled(boolean value) {
 
       adminEnabled_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4499,10 +4747,234 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdminEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       adminEnabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+        applicationAwareInterconnect_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect,
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.Builder,
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder>
+        applicationAwareInterconnectBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     *
+     * @return Whether the applicationAwareInterconnect field is set.
+     */
+    public boolean hasApplicationAwareInterconnect() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     *
+     * @return The applicationAwareInterconnect.
+     */
+    public com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+        getApplicationAwareInterconnect() {
+      if (applicationAwareInterconnectBuilder_ == null) {
+        return applicationAwareInterconnect_ == null
+            ? com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+                .getDefaultInstance()
+            : applicationAwareInterconnect_;
+      } else {
+        return applicationAwareInterconnectBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public Builder setApplicationAwareInterconnect(
+        com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect value) {
+      if (applicationAwareInterconnectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        applicationAwareInterconnect_ = value;
+      } else {
+        applicationAwareInterconnectBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public Builder setApplicationAwareInterconnect(
+        com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.Builder
+            builderForValue) {
+      if (applicationAwareInterconnectBuilder_ == null) {
+        applicationAwareInterconnect_ = builderForValue.build();
+      } else {
+        applicationAwareInterconnectBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public Builder mergeApplicationAwareInterconnect(
+        com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect value) {
+      if (applicationAwareInterconnectBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && applicationAwareInterconnect_ != null
+            && applicationAwareInterconnect_
+                != com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+                    .getDefaultInstance()) {
+          getApplicationAwareInterconnectBuilder().mergeFrom(value);
+        } else {
+          applicationAwareInterconnect_ = value;
+        }
+      } else {
+        applicationAwareInterconnectBuilder_.mergeFrom(value);
+      }
+      if (applicationAwareInterconnect_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public Builder clearApplicationAwareInterconnect() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      applicationAwareInterconnect_ = null;
+      if (applicationAwareInterconnectBuilder_ != null) {
+        applicationAwareInterconnectBuilder_.dispose();
+        applicationAwareInterconnectBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.Builder
+        getApplicationAwareInterconnectBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getApplicationAwareInterconnectFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder
+        getApplicationAwareInterconnectOrBuilder() {
+      if (applicationAwareInterconnectBuilder_ != null) {
+        return applicationAwareInterconnectBuilder_.getMessageOrBuilder();
+      } else {
+        return applicationAwareInterconnect_ == null
+            ? com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+                .getDefaultInstance()
+            : applicationAwareInterconnect_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration information for application awareness on this Cloud Interconnect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect,
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.Builder,
+            com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder>
+        getApplicationAwareInterconnectFieldBuilder() {
+      if (applicationAwareInterconnectBuilder_ == null) {
+        applicationAwareInterconnectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect,
+                com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect.Builder,
+                com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder>(
+                getApplicationAwareInterconnect(), getParentForChildren(), isClean());
+        applicationAwareInterconnect_ = null;
+      }
+      return applicationAwareInterconnectBuilder_;
     }
 
     private com.google.protobuf.LazyStringArrayList availableFeatures_ =
@@ -4512,7 +4984,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!availableFeatures_.isModifiable()) {
         availableFeatures_ = new com.google.protobuf.LazyStringArrayList(availableFeatures_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
     }
 
     /**
@@ -4602,7 +5074,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4626,7 +5098,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4647,7 +5119,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAvailableFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureAvailableFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableFeatures_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4666,7 +5138,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAvailableFeatures() {
       availableFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -4692,7 +5164,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4701,11 +5173,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCircuitInfosIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         circuitInfos_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.InterconnectCircuitInfo>(
                 circuitInfos_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -4945,7 +5417,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCircuitInfos() {
       if (circuitInfosBuilder_ == null) {
         circuitInfos_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         circuitInfosBuilder_.clear();
@@ -5085,7 +5557,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.InterconnectCircuitInfo,
                 com.google.cloud.compute.v1.InterconnectCircuitInfo.Builder,
                 com.google.cloud.compute.v1.InterconnectCircuitInfoOrBuilder>(
-                circuitInfos_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                circuitInfos_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         circuitInfos_ = null;
       }
       return circuitInfosBuilder_;
@@ -5105,7 +5577,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -5171,7 +5643,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5189,7 +5661,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -5212,7 +5684,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5231,7 +5703,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customerName field is set.
      */
     public boolean hasCustomerName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -5297,7 +5769,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       customerName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5315,7 +5787,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCustomerName() {
       customerName_ = getDefaultInstance().getCustomerName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -5338,7 +5810,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       customerName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5357,7 +5829,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -5423,7 +5895,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5441,7 +5913,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -5464,7 +5936,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5473,11 +5945,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         expectedOutages_ = java.util.Collections.emptyList();
 
     private void ensureExpectedOutagesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         expectedOutages_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.InterconnectOutageNotification>(
                 expectedOutages_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -5733,7 +6205,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExpectedOutages() {
       if (expectedOutagesBuilder_ == null) {
         expectedOutages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         expectedOutagesBuilder_.clear();
@@ -5885,7 +6357,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.InterconnectOutageNotification.Builder,
                 com.google.cloud.compute.v1.InterconnectOutageNotificationOrBuilder>(
                 expectedOutages_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         expectedOutages_ = null;
@@ -5907,7 +6379,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the googleIpAddress field is set.
      */
     public boolean hasGoogleIpAddress() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -5973,7 +6445,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       googleIpAddress_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5991,7 +6463,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGoogleIpAddress() {
       googleIpAddress_ = getDefaultInstance().getGoogleIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -6014,7 +6486,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       googleIpAddress_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6033,7 +6505,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the googleReferenceId field is set.
      */
     public boolean hasGoogleReferenceId() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -6099,7 +6571,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       googleReferenceId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6117,7 +6589,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGoogleReferenceId() {
       googleReferenceId_ = getDefaultInstance().getGoogleReferenceId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -6140,7 +6612,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       googleReferenceId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6160,7 +6632,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -6194,7 +6666,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6211,7 +6683,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       id_ = 0L;
       onChanged();
       return this;
@@ -6225,7 +6697,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         interconnectAttachments_ =
             new com.google.protobuf.LazyStringArrayList(interconnectAttachments_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
     }
 
     /**
@@ -6310,7 +6782,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6333,7 +6805,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6353,7 +6825,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInterconnectAttachments(java.lang.Iterable<java.lang.String> values) {
       ensureInterconnectAttachmentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, interconnectAttachments_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6371,7 +6843,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInterconnectAttachments() {
       interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -6396,7 +6868,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6408,7 +6880,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!interconnectGroups_.isModifiable()) {
         interconnectGroups_ = new com.google.protobuf.LazyStringArrayList(interconnectGroups_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -6493,7 +6965,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectGroupsIsMutable();
       interconnectGroups_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6516,7 +6988,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectGroupsIsMutable();
       interconnectGroups_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6536,7 +7008,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInterconnectGroups(java.lang.Iterable<java.lang.String> values) {
       ensureInterconnectGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, interconnectGroups_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6554,7 +7026,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInterconnectGroups() {
       interconnectGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -6579,7 +7051,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInterconnectGroupsIsMutable();
       interconnectGroups_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6599,7 +7071,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interconnectType field is set.
      */
     public boolean hasInterconnectType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6668,7 +7140,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       interconnectType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6687,7 +7159,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInterconnectType() {
       interconnectType_ = getDefaultInstance().getInterconnectType();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6711,7 +7183,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       interconnectType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6730,7 +7202,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6796,7 +7268,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6814,7 +7286,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6837,7 +7309,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6856,7 +7328,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the labelFingerprint field is set.
      */
     public boolean hasLabelFingerprint() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6922,7 +7394,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       labelFingerprint_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6940,7 +7412,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLabelFingerprint() {
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6963,7 +7435,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       labelFingerprint_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6985,7 +7457,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return labels_;
     }
@@ -7075,7 +7547,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -7100,7 +7572,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -7121,7 +7593,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -7136,7 +7608,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -7155,7 +7627,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the linkType field is set.
      */
     public boolean hasLinkType() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -7224,7 +7696,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       linkType_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7243,7 +7715,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLinkType() {
       linkType_ = getDefaultInstance().getLinkType();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7267,7 +7739,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       linkType_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7286,7 +7758,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -7352,7 +7824,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       location_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7370,7 +7842,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocation() {
       location_ = getDefaultInstance().getLocation();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -7393,7 +7865,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       location_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7417,7 +7889,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the macsec field is set.
      */
     public boolean hasMacsec() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -7459,7 +7931,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       } else {
         macsecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7480,7 +7952,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       } else {
         macsecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7496,7 +7968,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMacsec(com.google.cloud.compute.v1.InterconnectMacsec value) {
       if (macsecBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && macsec_ != null
             && macsec_ != com.google.cloud.compute.v1.InterconnectMacsec.getDefaultInstance()) {
           getMacsecBuilder().mergeFrom(value);
@@ -7507,7 +7979,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         macsecBuilder_.mergeFrom(value);
       }
       if (macsec_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -7523,7 +7995,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
      */
     public Builder clearMacsec() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       macsec_ = null;
       if (macsecBuilder_ != null) {
         macsecBuilder_.dispose();
@@ -7543,7 +8015,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
      */
     public com.google.cloud.compute.v1.InterconnectMacsec.Builder getMacsecBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getMacsecFieldBuilder().getBuilder();
     }
@@ -7608,7 +8080,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMacsecEnabled() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7642,7 +8114,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setMacsecEnabled(boolean value) {
 
       macsecEnabled_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7659,7 +8131,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMacsecEnabled() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       macsecEnabled_ = false;
       onChanged();
       return this;
@@ -7679,7 +8151,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -7745,7 +8217,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7763,7 +8235,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7786,7 +8258,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7805,7 +8277,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nocContactEmail field is set.
      */
     public boolean hasNocContactEmail() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -7871,7 +8343,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nocContactEmail_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7889,7 +8361,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNocContactEmail() {
       nocContactEmail_ = getDefaultInstance().getNocContactEmail();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7912,7 +8384,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nocContactEmail_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7932,7 +8404,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operationalStatus field is set.
      */
     public boolean hasOperationalStatus() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -8001,7 +8473,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       operationalStatus_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8020,7 +8492,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOperationalStatus() {
       operationalStatus_ = getDefaultInstance().getOperationalStatus();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -8044,7 +8516,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       operationalStatus_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8063,7 +8535,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpAddress field is set.
      */
     public boolean hasPeerIpAddress() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -8129,7 +8601,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpAddress_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8147,7 +8619,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpAddress() {
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -8170,7 +8642,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpAddress_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8190,7 +8662,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProvisionedLinkCount() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -8224,7 +8696,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setProvisionedLinkCount(int value) {
 
       provisionedLinkCount_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8241,7 +8713,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvisionedLinkCount() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       provisionedLinkCount_ = 0;
       onChanged();
       return this;
@@ -8261,7 +8733,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the remoteLocation field is set.
      */
     public boolean hasRemoteLocation() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -8327,7 +8799,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       remoteLocation_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8345,7 +8817,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRemoteLocation() {
       remoteLocation_ = getDefaultInstance().getRemoteLocation();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -8368,7 +8840,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       remoteLocation_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8380,7 +8852,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!requestedFeatures_.isModifiable()) {
         requestedFeatures_ = new com.google.protobuf.LazyStringArrayList(requestedFeatures_);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
     }
 
     /**
@@ -8470,7 +8942,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.set(index, value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8494,7 +8966,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8515,7 +8987,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequestedFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureRequestedFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requestedFeatures_);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8534,7 +9006,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequestedFeatures() {
       requestedFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -8560,7 +9032,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8580,7 +9052,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRequestedLinkCount() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -8614,7 +9086,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequestedLinkCount(int value) {
 
       requestedLinkCount_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8631,7 +9103,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestedLinkCount() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       requestedLinkCount_ = 0;
       onChanged();
       return this;
@@ -8652,7 +9124,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -8686,7 +9158,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8703,7 +9175,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8723,7 +9195,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -8789,7 +9261,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8807,7 +9279,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -8830,7 +9302,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8850,7 +9322,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -8919,7 +9391,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8938,7 +9410,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -8962,7 +9434,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  *           .setImageUri("imageUri-859610607")
  *           .setServiceAccount("serviceAccount1079137720")
  *           .setWorkerPool(
- *               WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+ *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
  *           .addAllTags(new ArrayList<String>())
  *           .build();
  *   SubmitBuildResponse response = buildsClient.submitBuild(request);
@@ -195,7 +195,7 @@ public class BuildsClient implements BackgroundResource {
    *           .setImageUri("imageUri-859610607")
    *           .setServiceAccount("serviceAccount1079137720")
    *           .setWorkerPool(
-   *               WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+   *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
    *           .addAllTags(new ArrayList<String>())
    *           .build();
    *   SubmitBuildResponse response = buildsClient.submitBuild(request);
@@ -228,7 +228,7 @@ public class BuildsClient implements BackgroundResource {
    *           .setImageUri("imageUri-859610607")
    *           .setServiceAccount("serviceAccount1079137720")
    *           .setWorkerPool(
-   *               WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+   *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
    *           .addAllTags(new ArrayList<String>())
    *           .build();
    *   ApiFuture<SubmitBuildResponse> future =

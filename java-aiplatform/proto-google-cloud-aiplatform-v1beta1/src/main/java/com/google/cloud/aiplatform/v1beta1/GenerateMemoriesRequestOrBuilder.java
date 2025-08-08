@@ -124,6 +124,57 @@ public interface GenerateMemoriesRequestOrBuilder
    *
    *
    * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   *
+   * @return Whether the directMemoriesSource field is set.
+   */
+  boolean hasDirectMemoriesSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   *
+   * @return The directMemoriesSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+      getDirectMemoriesSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSourceOrBuilder
+      getDirectMemoriesSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the ReasoningEngine to generate memories
    * for. Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`

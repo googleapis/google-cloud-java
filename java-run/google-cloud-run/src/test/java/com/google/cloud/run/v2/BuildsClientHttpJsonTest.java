@@ -87,7 +87,8 @@ public class BuildsClientHttpJsonTest {
             .setParent("projects/project-5833/locations/location-5833")
             .setImageUri("imageUri-859610607")
             .setServiceAccount("serviceAccount1079137720")
-            .setWorkerPool(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setWorkerPool(
+                BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
             .addAllTags(new ArrayList<String>())
             .build();
 
@@ -123,7 +124,7 @@ public class BuildsClientHttpJsonTest {
               .setImageUri("imageUri-859610607")
               .setServiceAccount("serviceAccount1079137720")
               .setWorkerPool(
-                  WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+                  BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
               .build();
       client.submitBuild(request);

@@ -2438,6 +2438,68 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : googleSearchRetrieval_;
   }
 
+  public static final int GOOGLE_MAPS_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.GoogleMaps googleMaps_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMaps field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleMaps() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMaps.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GoogleMaps getGoogleMaps() {
+    return googleMaps_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GoogleMaps.getDefaultInstance()
+        : googleMaps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder getGoogleMapsOrBuilder() {
+    return googleMaps_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GoogleMaps.getDefaultInstance()
+        : googleMaps_;
+  }
+
   public static final int ENTERPRISE_WEB_SEARCH_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterpriseWebSearch_;
 
@@ -2457,7 +2519,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnterpriseWebSearch() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -2520,7 +2582,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCodeExecution() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -2582,7 +2644,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUrlContext() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -2643,7 +2705,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasComputerUse() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -2711,19 +2773,22 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getGoogleMaps());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(8, getUrlContext());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getComputerUse());
     }
     getUnknownFields().writeTo(output);
@@ -2746,19 +2811,22 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getGoogleMaps());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUrlContext());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
     }
     size += getUnknownFields().getSerializedSize();
@@ -2788,6 +2856,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasGoogleSearchRetrieval() != other.hasGoogleSearchRetrieval()) return false;
     if (hasGoogleSearchRetrieval()) {
       if (!getGoogleSearchRetrieval().equals(other.getGoogleSearchRetrieval())) return false;
+    }
+    if (hasGoogleMaps() != other.hasGoogleMaps()) return false;
+    if (hasGoogleMaps()) {
+      if (!getGoogleMaps().equals(other.getGoogleMaps())) return false;
     }
     if (hasEnterpriseWebSearch() != other.hasEnterpriseWebSearch()) return false;
     if (hasEnterpriseWebSearch()) {
@@ -2831,6 +2903,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasGoogleSearchRetrieval()) {
       hash = (37 * hash) + GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER;
       hash = (53 * hash) + getGoogleSearchRetrieval().hashCode();
+    }
+    if (hasGoogleMaps()) {
+      hash = (37 * hash) + GOOGLE_MAPS_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleMaps().hashCode();
     }
     if (hasEnterpriseWebSearch()) {
       hash = (37 * hash) + ENTERPRISE_WEB_SEARCH_FIELD_NUMBER;
@@ -2999,6 +3075,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         getRetrievalFieldBuilder();
         getGoogleSearchFieldBuilder();
         getGoogleSearchRetrievalFieldBuilder();
+        getGoogleMapsFieldBuilder();
         getEnterpriseWebSearchFieldBuilder();
         getCodeExecutionFieldBuilder();
         getUrlContextFieldBuilder();
@@ -3031,6 +3108,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (googleSearchRetrievalBuilder_ != null) {
         googleSearchRetrievalBuilder_.dispose();
         googleSearchRetrievalBuilder_ = null;
+      }
+      googleMaps_ = null;
+      if (googleMapsBuilder_ != null) {
+        googleMapsBuilder_.dispose();
+        googleMapsBuilder_ = null;
       }
       enterpriseWebSearch_ = null;
       if (enterpriseWebSearchBuilder_ != null) {
@@ -3119,25 +3201,29 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.googleMaps_ = googleMapsBuilder_ == null ? googleMaps_ : googleMapsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.enterpriseWebSearch_ =
             enterpriseWebSearchBuilder_ == null
                 ? enterpriseWebSearch_
                 : enterpriseWebSearchBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.codeExecution_ =
-            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        result.codeExecution_ =
+            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.computerUse_ =
             computerUseBuilder_ == null ? computerUse_ : computerUseBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3223,6 +3309,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGoogleSearchRetrieval()) {
         mergeGoogleSearchRetrieval(other.getGoogleSearchRetrieval());
       }
+      if (other.hasGoogleMaps()) {
+        mergeGoogleMaps(other.getGoogleMaps());
+      }
       if (other.hasEnterpriseWebSearch()) {
         mergeEnterpriseWebSearch(other.getEnterpriseWebSearch());
       }
@@ -3291,14 +3380,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getGoogleMapsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(
                     getEnterpriseWebSearchFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -3310,13 +3405,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getUrlContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 90:
               {
                 input.readMessage(getComputerUseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             default:
@@ -4613,6 +4708,228 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return googleSearchRetrievalBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.GoogleMaps googleMaps_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GoogleMaps,
+            com.google.cloud.aiplatform.v1beta1.GoogleMaps.Builder,
+            com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder>
+        googleMapsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the googleMaps field is set.
+     */
+    public boolean hasGoogleMaps() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleMaps.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GoogleMaps getGoogleMaps() {
+      if (googleMapsBuilder_ == null) {
+        return googleMaps_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GoogleMaps.getDefaultInstance()
+            : googleMaps_;
+      } else {
+        return googleMapsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMaps(com.google.cloud.aiplatform.v1beta1.GoogleMaps value) {
+      if (googleMapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleMaps_ = value;
+      } else {
+        googleMapsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMaps(
+        com.google.cloud.aiplatform.v1beta1.GoogleMaps.Builder builderForValue) {
+      if (googleMapsBuilder_ == null) {
+        googleMaps_ = builderForValue.build();
+      } else {
+        googleMapsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGoogleMaps(com.google.cloud.aiplatform.v1beta1.GoogleMaps value) {
+      if (googleMapsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && googleMaps_ != null
+            && googleMaps_ != com.google.cloud.aiplatform.v1beta1.GoogleMaps.getDefaultInstance()) {
+          getGoogleMapsBuilder().mergeFrom(value);
+        } else {
+          googleMaps_ = value;
+        }
+      } else {
+        googleMapsBuilder_.mergeFrom(value);
+      }
+      if (googleMaps_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoogleMaps() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      googleMaps_ = null;
+      if (googleMapsBuilder_ != null) {
+        googleMapsBuilder_.dispose();
+        googleMapsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GoogleMaps.Builder getGoogleMapsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getGoogleMapsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder getGoogleMapsOrBuilder() {
+      if (googleMapsBuilder_ != null) {
+        return googleMapsBuilder_.getMessageOrBuilder();
+      } else {
+        return googleMaps_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GoogleMaps.getDefaultInstance()
+            : googleMaps_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GoogleMaps,
+            com.google.cloud.aiplatform.v1beta1.GoogleMaps.Builder,
+            com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder>
+        getGoogleMapsFieldBuilder() {
+      if (googleMapsBuilder_ == null) {
+        googleMapsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GoogleMaps,
+                com.google.cloud.aiplatform.v1beta1.GoogleMaps.Builder,
+                com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder>(
+                getGoogleMaps(), getParentForChildren(), isClean());
+        googleMaps_ = null;
+      }
+      return googleMapsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterpriseWebSearch_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch,
@@ -4635,7 +4952,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enterpriseWebSearch field is set.
      */
     public boolean hasEnterpriseWebSearch() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -4684,7 +5001,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseWebSearchBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4708,7 +5025,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseWebSearchBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4728,7 +5045,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEnterpriseWebSearch(
         com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch value) {
       if (enterpriseWebSearchBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && enterpriseWebSearch_ != null
             && enterpriseWebSearch_
                 != com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()) {
@@ -4740,7 +5057,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         enterpriseWebSearchBuilder_.mergeFrom(value);
       }
       if (enterpriseWebSearch_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -4759,7 +5076,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEnterpriseWebSearch() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       enterpriseWebSearch_ = null;
       if (enterpriseWebSearchBuilder_ != null) {
         enterpriseWebSearchBuilder_.dispose();
@@ -4783,7 +5100,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder
         getEnterpriseWebSearchBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEnterpriseWebSearchFieldBuilder().getBuilder();
     }
@@ -4862,7 +5179,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the codeExecution field is set.
      */
     public boolean hasCodeExecution() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -4910,7 +5227,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4934,7 +5251,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4954,7 +5271,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCodeExecution(
         com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution value) {
       if (codeExecutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && codeExecution_ != null
             && codeExecution_
                 != com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution.getDefaultInstance()) {
@@ -4966,7 +5283,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         codeExecutionBuilder_.mergeFrom(value);
       }
       if (codeExecution_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -4985,7 +5302,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCodeExecution() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
         codeExecutionBuilder_.dispose();
@@ -5009,7 +5326,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution.Builder
         getCodeExecutionBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCodeExecutionFieldBuilder().getBuilder();
     }
@@ -5087,7 +5404,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the urlContext field is set.
      */
     public boolean hasUrlContext() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -5133,7 +5450,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5156,7 +5473,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5174,7 +5491,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1beta1.UrlContext value) {
       if (urlContextBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && urlContext_ != null
             && urlContext_ != com.google.cloud.aiplatform.v1beta1.UrlContext.getDefaultInstance()) {
           getUrlContextBuilder().mergeFrom(value);
@@ -5185,7 +5502,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         urlContextBuilder_.mergeFrom(value);
       }
       if (urlContext_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -5203,7 +5520,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUrlContext() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       urlContext_ = null;
       if (urlContextBuilder_ != null) {
         urlContextBuilder_.dispose();
@@ -5225,7 +5542,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.UrlContext.Builder getUrlContextBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUrlContextFieldBuilder().getBuilder();
     }
@@ -5302,7 +5619,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the computerUse field is set.
      */
     public boolean hasComputerUse() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -5352,7 +5669,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         computerUseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5377,7 +5694,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         computerUseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5397,7 +5714,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeComputerUse(com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse value) {
       if (computerUseBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && computerUse_ != null
             && computerUse_
                 != com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse.getDefaultInstance()) {
@@ -5409,7 +5726,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         computerUseBuilder_.mergeFrom(value);
       }
       if (computerUse_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -5429,7 +5746,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearComputerUse() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       computerUse_ = null;
       if (computerUseBuilder_ != null) {
         computerUseBuilder_.dispose();
@@ -5453,7 +5770,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse.Builder getComputerUseBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getComputerUseFieldBuilder().getBuilder();
     }

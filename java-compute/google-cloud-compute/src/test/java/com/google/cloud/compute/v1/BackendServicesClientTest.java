@@ -397,6 +397,7 @@ public class BackendServicesClientTest {
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setOutlierDetection(OutlierDetection.newBuilder().build())
+            .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)
             .setPortName("portName728194732")
             .setProtocol("protocol-989163880")

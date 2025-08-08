@@ -41,6 +41,7 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
 
   private OracleSslConfig() {
     caCertificate_ = "";
+    serverCertificateDistinguishedName_ = "";
   }
 
   @java.lang.Override
@@ -139,6 +140,71 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     return caCertificateSet_;
   }
 
+  public static final int SERVER_CERTIFICATE_DISTINGUISHED_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serverCertificateDistinguishedName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The distinguished name (DN) mentioned in the server
+   * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+   * Refer
+   * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+   * If this field is not provided, the DN matching is not enforced.
+   * </pre>
+   *
+   * <code>
+   * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serverCertificateDistinguishedName.
+   */
+  @java.lang.Override
+  public java.lang.String getServerCertificateDistinguishedName() {
+    java.lang.Object ref = serverCertificateDistinguishedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serverCertificateDistinguishedName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The distinguished name (DN) mentioned in the server
+   * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+   * Refer
+   * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+   * If this field is not provided, the DN matching is not enforced.
+   * </pre>
+   *
+   * <code>
+   * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for serverCertificateDistinguishedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServerCertificateDistinguishedNameBytes() {
+    java.lang.Object ref = serverCertificateDistinguishedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serverCertificateDistinguishedName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -159,6 +225,11 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     if (caCertificateSet_ != false) {
       output.writeBool(2, caCertificateSet_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        serverCertificateDistinguishedName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 3, serverCertificateDistinguishedName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -173,6 +244,12 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (caCertificateSet_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, caCertificateSet_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        serverCertificateDistinguishedName_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              3, serverCertificateDistinguishedName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -192,6 +269,8 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
 
     if (!getCaCertificate().equals(other.getCaCertificate())) return false;
     if (getCaCertificateSet() != other.getCaCertificateSet()) return false;
+    if (!getServerCertificateDistinguishedName()
+        .equals(other.getServerCertificateDistinguishedName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -207,6 +286,8 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getCaCertificate().hashCode();
     hash = (37 * hash) + CA_CERTIFICATE_SET_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCaCertificateSet());
+    hash = (37 * hash) + SERVER_CERTIFICATE_DISTINGUISHED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getServerCertificateDistinguishedName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -349,6 +430,7 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       caCertificate_ = "";
       caCertificateSet_ = false;
+      serverCertificateDistinguishedName_ = "";
       return this;
     }
 
@@ -390,6 +472,9 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.caCertificateSet_ = caCertificateSet_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serverCertificateDistinguishedName_ = serverCertificateDistinguishedName_;
       }
     }
 
@@ -446,6 +531,11 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       if (other.getCaCertificateSet() != false) {
         setCaCertificateSet(other.getCaCertificateSet());
       }
+      if (!other.getServerCertificateDistinguishedName().isEmpty()) {
+        serverCertificateDistinguishedName_ = other.serverCertificateDistinguishedName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -484,6 +574,12 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                serverCertificateDistinguishedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -674,6 +770,149 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     public Builder clearCaCertificateSet() {
       bitField0_ = (bitField0_ & ~0x00000002);
       caCertificateSet_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serverCertificateDistinguishedName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distinguished name (DN) mentioned in the server
+     * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+     * Refer
+     * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+     * If this field is not provided, the DN matching is not enforced.
+     * </pre>
+     *
+     * <code>
+     * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serverCertificateDistinguishedName.
+     */
+    public java.lang.String getServerCertificateDistinguishedName() {
+      java.lang.Object ref = serverCertificateDistinguishedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverCertificateDistinguishedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distinguished name (DN) mentioned in the server
+     * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+     * Refer
+     * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+     * If this field is not provided, the DN matching is not enforced.
+     * </pre>
+     *
+     * <code>
+     * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for serverCertificateDistinguishedName.
+     */
+    public com.google.protobuf.ByteString getServerCertificateDistinguishedNameBytes() {
+      java.lang.Object ref = serverCertificateDistinguishedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serverCertificateDistinguishedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distinguished name (DN) mentioned in the server
+     * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+     * Refer
+     * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+     * If this field is not provided, the DN matching is not enforced.
+     * </pre>
+     *
+     * <code>
+     * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The serverCertificateDistinguishedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCertificateDistinguishedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serverCertificateDistinguishedName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distinguished name (DN) mentioned in the server
+     * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+     * Refer
+     * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+     * If this field is not provided, the DN matching is not enforced.
+     * </pre>
+     *
+     * <code>
+     * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerCertificateDistinguishedName() {
+      serverCertificateDistinguishedName_ =
+          getDefaultInstance().getServerCertificateDistinguishedName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distinguished name (DN) mentioned in the server
+     * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+     * Refer
+     * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+     * If this field is not provided, the DN matching is not enforced.
+     * </pre>
+     *
+     * <code>
+     * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for serverCertificateDistinguishedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCertificateDistinguishedNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serverCertificateDistinguishedName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

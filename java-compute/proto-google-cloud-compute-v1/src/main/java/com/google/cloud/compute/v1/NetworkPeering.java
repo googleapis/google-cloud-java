@@ -45,6 +45,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     stackType_ = "";
     state_ = "";
     stateDetails_ = "";
+    updateStrategy_ = "";
   }
 
   @java.lang.Override
@@ -386,6 +387,188 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkPeering.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkPeering.UpdateStrategy}
+   */
+  public enum UpdateStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_UPDATE_STRATEGY = 0;</code>
+     */
+    UNDEFINED_UPDATE_STRATEGY(0),
+    /**
+     *
+     *
+     * <pre>
+     * Updates are reflected in the local peering but aren't applied to the peering connection until a complementary change is made to the matching peering. To delete a peering with the consensus update strategy, both the peerings must request the deletion of the peering before the peering can be deleted.
+     * </pre>
+     *
+     * <code>CONSENSUS = 203373655;</code>
+     */
+    CONSENSUS(203373655),
+    /**
+     *
+     *
+     * <pre>
+     * In this mode, changes to the peering configuration can be unilaterally altered by changing either side of the peering. This is the default value if the field is unspecified.
+     * </pre>
+     *
+     * <code>INDEPENDENT = 127011674;</code>
+     */
+    INDEPENDENT(127011674),
+    /**
+     *
+     *
+     * <pre>
+     * Peerings with update strategy UNSPECIFIED are created with update strategy INDEPENDENT.
+     * </pre>
+     *
+     * <code>UNSPECIFIED = 526786327;</code>
+     */
+    UNSPECIFIED(526786327),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_UPDATE_STRATEGY = 0;</code>
+     */
+    public static final int UNDEFINED_UPDATE_STRATEGY_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates are reflected in the local peering but aren't applied to the peering connection until a complementary change is made to the matching peering. To delete a peering with the consensus update strategy, both the peerings must request the deletion of the peering before the peering can be deleted.
+     * </pre>
+     *
+     * <code>CONSENSUS = 203373655;</code>
+     */
+    public static final int CONSENSUS_VALUE = 203373655;
+
+    /**
+     *
+     *
+     * <pre>
+     * In this mode, changes to the peering configuration can be unilaterally altered by changing either side of the peering. This is the default value if the field is unspecified.
+     * </pre>
+     *
+     * <code>INDEPENDENT = 127011674;</code>
+     */
+    public static final int INDEPENDENT_VALUE = 127011674;
+
+    /**
+     *
+     *
+     * <pre>
+     * Peerings with update strategy UNSPECIFIED are created with update strategy INDEPENDENT.
+     * </pre>
+     *
+     * <code>UNSPECIFIED = 526786327;</code>
+     */
+    public static final int UNSPECIFIED_VALUE = 526786327;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static UpdateStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static UpdateStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_UPDATE_STRATEGY;
+        case 203373655:
+          return CONSENSUS;
+        case 127011674:
+          return INDEPENDENT;
+        case 526786327:
+          return UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<UpdateStrategy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<UpdateStrategy> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<UpdateStrategy>() {
+          public UpdateStrategy findValueByNumber(int number) {
+            return UpdateStrategy.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkPeering.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final UpdateStrategy[] VALUES = values();
+
+    public static UpdateStrategy valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private UpdateStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkPeering.UpdateStrategy)
+  }
+
   private int bitField0_;
   public static final int AUTO_CREATE_ROUTES_FIELD_NUMBER = 57454941;
   private boolean autoCreateRoutes_ = false;
@@ -422,6 +605,66 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     return autoCreateRoutes_;
   }
 
+  public static final int CONNECTION_STATUS_FIELD_NUMBER = 525629555;
+  private com.google.cloud.compute.v1.NetworkPeeringConnectionStatus connectionStatus_;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   *
+   * @return Whether the connectionStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectionStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   *
+   * @return The connectionStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkPeeringConnectionStatus getConnectionStatus() {
+    return connectionStatus_ == null
+        ? com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.getDefaultInstance()
+        : connectionStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder
+      getConnectionStatusOrBuilder() {
+    return connectionStatus_ == null
+        ? com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.getDefaultInstance()
+        : connectionStatus_;
+  }
+
   public static final int EXCHANGE_SUBNET_ROUTES_FIELD_NUMBER = 26322256;
   private boolean exchangeSubnetRoutes_ = false;
 
@@ -438,7 +681,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExchangeSubnetRoutes() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -473,7 +716,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExportCustomRoutes() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -508,7 +751,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExportSubnetRoutesWithPublicIp() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -543,7 +786,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasImportCustomRoutes() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -578,7 +821,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasImportSubnetRoutesWithPublicIp() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -615,7 +858,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -684,7 +927,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -751,7 +994,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerMtu() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -789,7 +1032,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -861,7 +1104,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -932,7 +1175,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStateDetails() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -983,6 +1226,78 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int UPDATE_STRATEGY_FIELD_NUMBER = 6123049;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateStrategy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return Whether the updateStrategy field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateStrategy() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return The updateStrategy.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdateStrategy() {
+    java.lang.Object ref = updateStrategy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateStrategy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return The bytes for updateStrategy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpdateStrategyBytes() {
+    java.lang.Object ref = updateStrategy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      updateStrategy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -997,41 +1312,47 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6123049, updateStrategy_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(14419729, importSubnetRoutesWithPublicIp_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(26322256, exchangeSubnetRoutes_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(57454941, autoCreateRoutes_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(60281485, exportCustomRoutes_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(69584721, peerMtu_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 95566996, stateDetails_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(97940834, exportSubnetRoutesWithPublicIp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(197982398, importCustomRoutes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(525629555, getConnectionStatus());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1042,46 +1363,54 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6123049, updateStrategy_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               14419729, importSubnetRoutesWithPublicIp_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(26322256, exchangeSubnetRoutes_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(57454941, autoCreateRoutes_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(60281485, exportCustomRoutes_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(69584721, peerMtu_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(95566996, stateDetails_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               97940834, exportSubnetRoutesWithPublicIp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(197982398, importCustomRoutes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              525629555, getConnectionStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1102,6 +1431,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoCreateRoutes() != other.hasAutoCreateRoutes()) return false;
     if (hasAutoCreateRoutes()) {
       if (getAutoCreateRoutes() != other.getAutoCreateRoutes()) return false;
+    }
+    if (hasConnectionStatus() != other.hasConnectionStatus()) return false;
+    if (hasConnectionStatus()) {
+      if (!getConnectionStatus().equals(other.getConnectionStatus())) return false;
     }
     if (hasExchangeSubnetRoutes() != other.hasExchangeSubnetRoutes()) return false;
     if (hasExchangeSubnetRoutes()) {
@@ -1151,6 +1484,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (hasStateDetails()) {
       if (!getStateDetails().equals(other.getStateDetails())) return false;
     }
+    if (hasUpdateStrategy() != other.hasUpdateStrategy()) return false;
+    if (hasUpdateStrategy()) {
+      if (!getUpdateStrategy().equals(other.getUpdateStrategy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1165,6 +1502,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoCreateRoutes()) {
       hash = (37 * hash) + AUTO_CREATE_ROUTES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateRoutes());
+    }
+    if (hasConnectionStatus()) {
+      hash = (37 * hash) + CONNECTION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionStatus().hashCode();
     }
     if (hasExchangeSubnetRoutes()) {
       hash = (37 * hash) + EXCHANGE_SUBNET_ROUTES_FIELD_NUMBER;
@@ -1213,6 +1554,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (hasStateDetails()) {
       hash = (37 * hash) + STATE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getStateDetails().hashCode();
+    }
+    if (hasUpdateStrategy()) {
+      hash = (37 * hash) + UPDATE_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateStrategy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1344,10 +1689,19 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.NetworkPeering.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConnectionStatusFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1355,6 +1709,11 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       autoCreateRoutes_ = false;
+      connectionStatus_ = null;
+      if (connectionStatusBuilder_ != null) {
+        connectionStatusBuilder_.dispose();
+        connectionStatusBuilder_ = null;
+      }
       exchangeSubnetRoutes_ = false;
       exportCustomRoutes_ = false;
       exportSubnetRoutesWithPublicIp_ = false;
@@ -1366,6 +1725,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       stackType_ = "";
       state_ = "";
       stateDetails_ = "";
+      updateStrategy_ = "";
       return this;
     }
 
@@ -1408,48 +1768,57 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.exchangeSubnetRoutes_ = exchangeSubnetRoutes_;
+        result.connectionStatus_ =
+            connectionStatusBuilder_ == null ? connectionStatus_ : connectionStatusBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.exportCustomRoutes_ = exportCustomRoutes_;
+        result.exchangeSubnetRoutes_ = exchangeSubnetRoutes_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.exportSubnetRoutesWithPublicIp_ = exportSubnetRoutesWithPublicIp_;
+        result.exportCustomRoutes_ = exportCustomRoutes_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.importCustomRoutes_ = importCustomRoutes_;
+        result.exportSubnetRoutesWithPublicIp_ = exportSubnetRoutesWithPublicIp_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.importSubnetRoutesWithPublicIp_ = importSubnetRoutesWithPublicIp_;
+        result.importCustomRoutes_ = importCustomRoutes_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.name_ = name_;
+        result.importSubnetRoutesWithPublicIp_ = importSubnetRoutesWithPublicIp_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.network_ = network_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.peerMtu_ = peerMtu_;
+        result.network_ = network_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.stackType_ = stackType_;
+        result.peerMtu_ = peerMtu_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.state_ = state_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.stateDetails_ = stateDetails_;
+        result.state_ = state_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.stateDetails_ = stateDetails_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.updateStrategy_ = updateStrategy_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1502,6 +1871,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutoCreateRoutes()) {
         setAutoCreateRoutes(other.getAutoCreateRoutes());
       }
+      if (other.hasConnectionStatus()) {
+        mergeConnectionStatus(other.getConnectionStatus());
+      }
       if (other.hasExchangeSubnetRoutes()) {
         setExchangeSubnetRoutes(other.getExchangeSubnetRoutes());
       }
@@ -1519,12 +1891,12 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasPeerMtu()) {
@@ -1532,17 +1904,22 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStateDetails()) {
         stateDetails_ = other.stateDetails_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (other.hasUpdateStrategy()) {
+        updateStrategy_ = other.updateStrategy_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1574,19 +1951,25 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26989658
+            case 48984394:
+              {
+                updateStrategy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 48984394
             case 115357832:
               {
                 importSubnetRoutesWithPublicIp_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 115357832
             case 210578048:
               {
                 exchangeSubnetRoutes_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 210578048
             case 459639528:
@@ -1598,51 +1981,58 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             case 482251880:
               {
                 exportCustomRoutes_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 482251880
             case 556677768:
               {
                 peerMtu_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 556677768
             case 764535970:
               {
                 stateDetails_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 764535970
             case 783526672:
               {
                 exportSubnetRoutesWithPublicIp_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 783526672
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 878060682
             case 1583859184:
               {
                 importCustomRoutes_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1583859184
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1862979954
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -887696246
+            case -89930854:
+              {
+                input.readMessage(
+                    getConnectionStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -89930854
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1734,6 +2124,225 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.NetworkPeeringConnectionStatus connectionStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatus,
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.Builder,
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder>
+        connectionStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     *
+     * @return Whether the connectionStatus field is set.
+     */
+    public boolean hasConnectionStatus() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     *
+     * @return The connectionStatus.
+     */
+    public com.google.cloud.compute.v1.NetworkPeeringConnectionStatus getConnectionStatus() {
+      if (connectionStatusBuilder_ == null) {
+        return connectionStatus_ == null
+            ? com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.getDefaultInstance()
+            : connectionStatus_;
+      } else {
+        return connectionStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public Builder setConnectionStatus(
+        com.google.cloud.compute.v1.NetworkPeeringConnectionStatus value) {
+      if (connectionStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionStatus_ = value;
+      } else {
+        connectionStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public Builder setConnectionStatus(
+        com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.Builder builderForValue) {
+      if (connectionStatusBuilder_ == null) {
+        connectionStatus_ = builderForValue.build();
+      } else {
+        connectionStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public Builder mergeConnectionStatus(
+        com.google.cloud.compute.v1.NetworkPeeringConnectionStatus value) {
+      if (connectionStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && connectionStatus_ != null
+            && connectionStatus_
+                != com.google.cloud.compute.v1.NetworkPeeringConnectionStatus
+                    .getDefaultInstance()) {
+          getConnectionStatusBuilder().mergeFrom(value);
+        } else {
+          connectionStatus_ = value;
+        }
+      } else {
+        connectionStatusBuilder_.mergeFrom(value);
+      }
+      if (connectionStatus_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public Builder clearConnectionStatus() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      connectionStatus_ = null;
+      if (connectionStatusBuilder_ != null) {
+        connectionStatusBuilder_.dispose();
+        connectionStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.Builder
+        getConnectionStatusBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getConnectionStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder
+        getConnectionStatusOrBuilder() {
+      if (connectionStatusBuilder_ != null) {
+        return connectionStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return connectionStatus_ == null
+            ? com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.getDefaultInstance()
+            : connectionStatus_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The effective state of the peering connection as a whole.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatus,
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.Builder,
+            com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder>
+        getConnectionStatusFieldBuilder() {
+      if (connectionStatusBuilder_ == null) {
+        connectionStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.NetworkPeeringConnectionStatus,
+                com.google.cloud.compute.v1.NetworkPeeringConnectionStatus.Builder,
+                com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder>(
+                getConnectionStatus(), getParentForChildren(), isClean());
+        connectionStatus_ = null;
+      }
+      return connectionStatusBuilder_;
+    }
+
     private boolean exchangeSubnetRoutes_;
 
     /**
@@ -1749,7 +2358,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasExchangeSubnetRoutes() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1783,7 +2392,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setExchangeSubnetRoutes(boolean value) {
 
       exchangeSubnetRoutes_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1800,7 +2409,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExchangeSubnetRoutes() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       exchangeSubnetRoutes_ = false;
       onChanged();
       return this;
@@ -1821,7 +2430,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasExportCustomRoutes() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1855,7 +2464,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setExportCustomRoutes(boolean value) {
 
       exportCustomRoutes_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1872,7 +2481,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExportCustomRoutes() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       exportCustomRoutes_ = false;
       onChanged();
       return this;
@@ -1893,7 +2502,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasExportSubnetRoutesWithPublicIp() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1927,7 +2536,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setExportSubnetRoutesWithPublicIp(boolean value) {
 
       exportSubnetRoutesWithPublicIp_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1944,7 +2553,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExportSubnetRoutesWithPublicIp() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       exportSubnetRoutesWithPublicIp_ = false;
       onChanged();
       return this;
@@ -1965,7 +2574,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasImportCustomRoutes() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1999,7 +2608,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setImportCustomRoutes(boolean value) {
 
       importCustomRoutes_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2016,7 +2625,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportCustomRoutes() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       importCustomRoutes_ = false;
       onChanged();
       return this;
@@ -2037,7 +2646,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasImportSubnetRoutesWithPublicIp() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2071,7 +2680,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setImportSubnetRoutesWithPublicIp(boolean value) {
 
       importSubnetRoutesWithPublicIp_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2088,7 +2697,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportSubnetRoutesWithPublicIp() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       importSubnetRoutesWithPublicIp_ = false;
       onChanged();
       return this;
@@ -2108,7 +2717,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2174,7 +2783,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2192,7 +2801,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2215,7 +2824,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2234,7 +2843,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2300,7 +2909,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2318,7 +2927,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2341,7 +2950,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2361,7 +2970,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPeerMtu() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2395,7 +3004,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder setPeerMtu(int value) {
 
       peerMtu_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2412,7 +3021,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerMtu() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       peerMtu_ = 0;
       onChanged();
       return this;
@@ -2433,7 +3042,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2502,7 +3111,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2521,7 +3130,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2545,7 +3154,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2565,7 +3174,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2634,7 +3243,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2653,7 +3262,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2677,7 +3286,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2696,7 +3305,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateDetails field is set.
      */
     public boolean hasStateDetails() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -2762,7 +3371,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       stateDetails_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2780,7 +3389,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStateDetails() {
       stateDetails_ = getDefaultInstance().getStateDetails();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -2803,7 +3412,139 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       stateDetails_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object updateStrategy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @return Whether the updateStrategy field is set.
+     */
+    public boolean hasUpdateStrategy() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @return The updateStrategy.
+     */
+    public java.lang.String getUpdateStrategy() {
+      java.lang.Object ref = updateStrategy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateStrategy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @return The bytes for updateStrategy.
+     */
+    public com.google.protobuf.ByteString getUpdateStrategyBytes() {
+      java.lang.Object ref = updateStrategy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        updateStrategy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @param value The updateStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateStrategy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      updateStrategy_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateStrategy() {
+      updateStrategy_ = getDefaultInstance().getUpdateStrategy();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+     * Check the UpdateStrategy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string update_strategy = 6123049;</code>
+     *
+     * @param value The bytes for updateStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateStrategyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      updateStrategy_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

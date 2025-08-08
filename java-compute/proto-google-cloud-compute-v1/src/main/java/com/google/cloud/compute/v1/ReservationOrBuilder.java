@@ -28,6 +28,50 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   *
+   * @return Whether the advancedDeploymentControl field is set.
+   */
+  boolean hasAdvancedDeploymentControl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   *
+   * @return The advancedDeploymentControl.
+   */
+  com.google.cloud.compute.v1.ReservationAdvancedDeploymentControl getAdvancedDeploymentControl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationAdvancedDeploymentControlOrBuilder
+      getAdvancedDeploymentControlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Reservation for aggregated resources, providing shape flexibility.
    * </pre>
    *

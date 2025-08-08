@@ -850,6 +850,60 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         : vpcPeeringConfig_;
   }
 
+  public static final int PSC_INTERFACE_CONFIG_FIELD_NUMBER = 101;
+  private com.google.cloud.datastream.v1.PscInterfaceConfig pscInterfaceConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscInterfaceConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PscInterfaceConfig getPscInterfaceConfig() {
+    return pscInterfaceConfig_ == null
+        ? com.google.cloud.datastream.v1.PscInterfaceConfig.getDefaultInstance()
+        : pscInterfaceConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Interface Config.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder
+      getPscInterfaceConfigOrBuilder() {
+    return pscInterfaceConfig_ == null
+        ? com.google.cloud.datastream.v1.PscInterfaceConfig.getDefaultInstance()
+        : pscInterfaceConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -893,6 +947,9 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(100, getVpcPeeringConfig());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(101, getPscInterfaceConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -941,6 +998,10 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, getVpcPeeringConfig());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(101, getPscInterfaceConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -984,6 +1045,10 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     if (hasVpcPeeringConfig() != other.hasVpcPeeringConfig()) return false;
     if (hasVpcPeeringConfig()) {
       if (!getVpcPeeringConfig().equals(other.getVpcPeeringConfig())) return false;
+    }
+    if (hasPscInterfaceConfig() != other.hasPscInterfaceConfig()) return false;
+    if (hasPscInterfaceConfig()) {
+      if (!getPscInterfaceConfig().equals(other.getPscInterfaceConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1029,6 +1094,10 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     if (hasVpcPeeringConfig()) {
       hash = (37 * hash) + VPC_PEERING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getVpcPeeringConfig().hashCode();
+    }
+    if (hasPscInterfaceConfig()) {
+      hash = (37 * hash) + PSC_INTERFACE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPscInterfaceConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1198,6 +1267,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         getUpdateTimeFieldBuilder();
         getErrorFieldBuilder();
         getVpcPeeringConfigFieldBuilder();
+        getPscInterfaceConfigFieldBuilder();
       }
     }
 
@@ -1230,6 +1300,11 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       if (vpcPeeringConfigBuilder_ != null) {
         vpcPeeringConfigBuilder_.dispose();
         vpcPeeringConfigBuilder_ = null;
+      }
+      pscInterfaceConfig_ = null;
+      if (pscInterfaceConfigBuilder_ != null) {
+        pscInterfaceConfigBuilder_.dispose();
+        pscInterfaceConfigBuilder_ = null;
       }
       return this;
     }
@@ -1305,6 +1380,13 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         result.vpcPeeringConfig_ =
             vpcPeeringConfigBuilder_ == null ? vpcPeeringConfig_ : vpcPeeringConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pscInterfaceConfig_ =
+            pscInterfaceConfigBuilder_ == null
+                ? pscInterfaceConfig_
+                : pscInterfaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1387,6 +1469,9 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasVpcPeeringConfig()) {
         mergeVpcPeeringConfig(other.getVpcPeeringConfig());
+      }
+      if (other.hasPscInterfaceConfig()) {
+        mergePscInterfaceConfig(other.getPscInterfaceConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1481,6 +1566,13 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000200;
                 break;
               } // case 802
+            case 810:
+              {
+                input.readMessage(
+                    getPscInterfaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 810
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2990,6 +3082,205 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         vpcPeeringConfig_ = null;
       }
       return vpcPeeringConfigBuilder_;
+    }
+
+    private com.google.cloud.datastream.v1.PscInterfaceConfig pscInterfaceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PscInterfaceConfig,
+            com.google.cloud.datastream.v1.PscInterfaceConfig.Builder,
+            com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder>
+        pscInterfaceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     *
+     * @return Whether the pscInterfaceConfig field is set.
+     */
+    public boolean hasPscInterfaceConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     *
+     * @return The pscInterfaceConfig.
+     */
+    public com.google.cloud.datastream.v1.PscInterfaceConfig getPscInterfaceConfig() {
+      if (pscInterfaceConfigBuilder_ == null) {
+        return pscInterfaceConfig_ == null
+            ? com.google.cloud.datastream.v1.PscInterfaceConfig.getDefaultInstance()
+            : pscInterfaceConfig_;
+      } else {
+        return pscInterfaceConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public Builder setPscInterfaceConfig(com.google.cloud.datastream.v1.PscInterfaceConfig value) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pscInterfaceConfig_ = value;
+      } else {
+        pscInterfaceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public Builder setPscInterfaceConfig(
+        com.google.cloud.datastream.v1.PscInterfaceConfig.Builder builderForValue) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        pscInterfaceConfig_ = builderForValue.build();
+      } else {
+        pscInterfaceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public Builder mergePscInterfaceConfig(
+        com.google.cloud.datastream.v1.PscInterfaceConfig value) {
+      if (pscInterfaceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && pscInterfaceConfig_ != null
+            && pscInterfaceConfig_
+                != com.google.cloud.datastream.v1.PscInterfaceConfig.getDefaultInstance()) {
+          getPscInterfaceConfigBuilder().mergeFrom(value);
+        } else {
+          pscInterfaceConfig_ = value;
+        }
+      } else {
+        pscInterfaceConfigBuilder_.mergeFrom(value);
+      }
+      if (pscInterfaceConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public Builder clearPscInterfaceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      pscInterfaceConfig_ = null;
+      if (pscInterfaceConfigBuilder_ != null) {
+        pscInterfaceConfigBuilder_.dispose();
+        pscInterfaceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public com.google.cloud.datastream.v1.PscInterfaceConfig.Builder
+        getPscInterfaceConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getPscInterfaceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    public com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigOrBuilder() {
+      if (pscInterfaceConfigBuilder_ != null) {
+        return pscInterfaceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pscInterfaceConfig_ == null
+            ? com.google.cloud.datastream.v1.PscInterfaceConfig.getDefaultInstance()
+            : pscInterfaceConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PSC Interface Config.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PscInterfaceConfig psc_interface_config = 101;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PscInterfaceConfig,
+            com.google.cloud.datastream.v1.PscInterfaceConfig.Builder,
+            com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder>
+        getPscInterfaceConfigFieldBuilder() {
+      if (pscInterfaceConfigBuilder_ == null) {
+        pscInterfaceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.PscInterfaceConfig,
+                com.google.cloud.datastream.v1.PscInterfaceConfig.Builder,
+                com.google.cloud.datastream.v1.PscInterfaceConfigOrBuilder>(
+                getPscInterfaceConfig(), getParentForChildren(), isClean());
+        pscInterfaceConfig_ = null;
+      }
+      return pscInterfaceConfigBuilder_;
     }
 
     @java.lang.Override
