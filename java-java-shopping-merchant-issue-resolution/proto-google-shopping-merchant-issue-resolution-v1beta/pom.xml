@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping.api.grpc</groupId>
   <artifactId>proto-google-shopping-merchant-issue-resolution-v1beta</artifactId>
-  <version>0.11.0</version><!-- {x-version-update:proto-google-shopping-merchant-issue-resolution-v1beta:current} -->
+  <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-issue-resolution-v1beta:current} -->
   <name>proto-google-shopping-merchant-issue-resolution-v1beta</name>
   <description>Proto library for google-shopping-merchant-issue-resolution</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-issue-resolution-parent</artifactId>
-    <version>0.11.0</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+    <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   </parent>
   <dependencies>
     <dependency>
