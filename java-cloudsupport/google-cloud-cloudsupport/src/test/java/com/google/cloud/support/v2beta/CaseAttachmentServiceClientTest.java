@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -161,6 +162,102 @@ public class CaseAttachmentServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listAttachments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.ofOrganizationCaseAttachmentIdName(
+                        "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setFilename("filename-734768633")
+            .setMimeType("mimeType-1392120434")
+            .setSizeBytes(-1796325715)
+            .build();
+    mockCaseAttachmentService.addResponse(expectedResponse);
+
+    AttachmentName name =
+        AttachmentName.ofOrganizationCaseAttachmentIdName(
+            "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCaseAttachmentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttachmentRequest actualRequest = ((GetAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttachmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCaseAttachmentService.addException(exception);
+
+    try {
+      AttachmentName name =
+          AttachmentName.ofOrganizationCaseAttachmentIdName(
+              "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+      client.getAttachment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest2() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.ofOrganizationCaseAttachmentIdName(
+                        "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setFilename("filename-734768633")
+            .setMimeType("mimeType-1392120434")
+            .setSizeBytes(-1796325715)
+            .build();
+    mockCaseAttachmentService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCaseAttachmentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttachmentRequest actualRequest = ((GetAttachmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttachmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCaseAttachmentService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAttachment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

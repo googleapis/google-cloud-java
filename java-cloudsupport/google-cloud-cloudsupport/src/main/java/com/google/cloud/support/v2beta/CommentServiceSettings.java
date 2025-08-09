@@ -100,6 +100,11 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
     return ((CommentServiceStubSettings) getStubSettings()).createCommentSettings();
   }
 
+  /** Returns the object with the settings used for calls to getComment. */
+  public UnaryCallSettings<GetCommentRequest, Comment> getCommentSettings() {
+    return ((CommentServiceStubSettings) getStubSettings()).getCommentSettings();
+  }
+
   public static final CommentServiceSettings create(CommentServiceStubSettings stub)
       throws IOException {
     return new CommentServiceSettings.Builder(stub.toBuilder()).build();
@@ -222,6 +227,11 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
     /** Returns the builder for the settings used for calls to createComment. */
     public UnaryCallSettings.Builder<CreateCommentRequest, Comment> createCommentSettings() {
       return getStubSettingsBuilder().createCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getComment. */
+    public UnaryCallSettings.Builder<GetCommentRequest, Comment> getCommentSettings() {
+      return getStubSettingsBuilder().getCommentSettings();
     }
 
     @Override

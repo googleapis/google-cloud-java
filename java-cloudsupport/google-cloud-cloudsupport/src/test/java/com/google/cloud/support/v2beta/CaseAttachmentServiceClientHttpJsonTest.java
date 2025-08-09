@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.support.v2beta.stub.HttpJsonCaseAttachmentServiceStub;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -169,6 +170,114 @@ public class CaseAttachmentServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-2178/cases/case-2178";
       client.listAttachments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.ofOrganizationCaseAttachmentIdName(
+                        "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setFilename("filename-734768633")
+            .setMimeType("mimeType-1392120434")
+            .setSizeBytes(-1796325715)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AttachmentName name =
+        AttachmentName.ofOrganizationCaseAttachmentIdName(
+            "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttachmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AttachmentName name =
+          AttachmentName.ofOrganizationCaseAttachmentIdName(
+              "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+      client.getAttachment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttachmentTest2() throws Exception {
+    Attachment expectedResponse =
+        Attachment.newBuilder()
+            .setName(
+                AttachmentName.ofOrganizationCaseAttachmentIdName(
+                        "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setFilename("filename-734768633")
+            .setMimeType("mimeType-1392120434")
+            .setSizeBytes(-1796325715)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name-9781/name-9781/cases/case-9781/attachments/attachment-9781";
+
+    Attachment actualResponse = client.getAttachment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttachmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name-9781/name-9781/cases/case-9781/attachments/attachment-9781";
+      client.getAttachment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
