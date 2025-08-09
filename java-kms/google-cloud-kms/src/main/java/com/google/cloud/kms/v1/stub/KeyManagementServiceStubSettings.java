@@ -68,7 +68,7 @@ import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequestProto;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
@@ -187,7 +187,7 @@ public class KeyManagementServiceStubSettings
   private final PagedCallSettings<
           ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
       listImportJobsSettings;
-  private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
+  private final UnaryCallSettings<GetKeyRingRequestProto, KeyRing> getKeyRingSettings;
   private final UnaryCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
   private final UnaryCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionSettings;
@@ -529,7 +529,7 @@ public class KeyManagementServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to getKeyRing. */
-  public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
+  public UnaryCallSettings<GetKeyRingRequestProto, KeyRing> getKeyRingSettings() {
     return getKeyRingSettings;
   }
 
@@ -849,7 +849,7 @@ public class KeyManagementServiceStubSettings
     private final PagedCallSettings.Builder<
             ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
         listImportJobsSettings;
-    private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
+    private final UnaryCallSettings.Builder<GetKeyRingRequestProto, KeyRing> getKeyRingSettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionSettings;
@@ -1336,7 +1336,7 @@ public class KeyManagementServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to getKeyRing. */
-    public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
+    public UnaryCallSettings.Builder<GetKeyRingRequestProto, KeyRing> getKeyRingSettings() {
       return getKeyRingSettings;
     }
 
