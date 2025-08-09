@@ -33,10 +33,10 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
  *     CaseAttachmentServiceClient.create()) {
- *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
- *   for (Attachment element : caseAttachmentServiceClient.listAttachments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AttachmentName name =
+ *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+ *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+ *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
  * }
  * }</pre>
  *
