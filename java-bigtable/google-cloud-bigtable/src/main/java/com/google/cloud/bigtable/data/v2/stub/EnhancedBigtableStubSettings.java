@@ -446,7 +446,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
             ChannelPoolSettings.builder()
                 .setInitialChannelCount(10)
                 .setMinRpcsPerChannel(1)
-                .setMaxRpcsPerChannel(50)
+                // Keep it conservative as we scale the channel size every 1min
+                // and delta is 2 channels.
+                .setMaxRpcsPerChannel(25)
                 .setPreemptiveRefreshEnabled(true)
                 .build())
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
