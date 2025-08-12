@@ -377,7 +377,7 @@ public final class ContentProto {
           + "part_index\030\001 \001(\005B\003\340A\003\022\030\n"
           + "\013start_index\030\002 \001(\005B\003\340A\003\022\026\n"
           + "\tend_index\030\003 \001(\005B\003\340A\003\022\021\n"
-          + "\004text\030\004 \001(\tB\003\340A\003\"\356\004\n"
+          + "\004text\030\004 \001(\tB\003\340A\003\"\241\005\n"
           + "\016GroundingChunk\022=\n"
           + "\003web\030\001 \001(\0132..google.cloud.aiplatform.v1.GroundingChunk.WebH\000\022X\n"
           + "\021retrieved_context\030\002 \001(\0132;.google.cloud.aip"
@@ -388,16 +388,18 @@ public final class ContentProto {
           + "\003uri\030\001 \001(\tH\000\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\001\210\001\001B\006\n"
           + "\004_uriB\010\n"
-          + "\006_title\032\264\001\n"
+          + "\006_title\032\347\001\n"
           + "\020RetrievedContext\0229\n"
           + "\trag_chunk\030\004 \001(\0132$.google.cloud.aiplatform.v1.RagChunkH\000\022\020\n"
           + "\003uri\030\001 \001(\tH\001\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\002\210\001\001\022\021\n"
-          + "\004text\030\003 \001(\tH\003\210\001\001B\021\n"
+          + "\004text\030\003 \001(\tH\003\210\001\001\022\037\n\r"
+          + "document_name\030\006 \001(\tB\003\340A\003H\004\210\001\001B\021\n"
           + "\017context_detailsB\006\n"
           + "\004_uriB\010\n"
           + "\006_titleB\007\n"
-          + "\005_text\032~\n"
+          + "\005_textB\020\n"
+          + "\016_document_name\032~\n"
           + "\004Maps\022\020\n"
           + "\003uri\030\001 \001(\tH\000\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\001\210\001\001\022\021\n"
@@ -416,8 +418,8 @@ public final class ContentProto {
           + "\010_segment\"\377\003\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022R\n"
-          + "\022search_entry_point\030\004"
-          + " \001(\0132,.google.cloud.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
+          + "\022search_entry_point\030\004 \001(\0132,.google.cloud.a"
+          + "iplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
           + "\020grounding_chunks\030\005"
           + " \003(\0132*.google.cloud.aiplatform.v1.GroundingChunk\022M\n"
           + "\022grounding_supports\030\006"
@@ -456,12 +458,12 @@ public final class ContentProto {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\257\002\n"
-          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>cloud.goog"
-          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
-          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
-          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
-          + "\"modelarmor.googleapis.com/Template\022<projects/{project"
-          + "}/locations/{location}/templates/{template}b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z"
+          + ">cloud.google.com/go/aiplatform/apiv1/ai"
+          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
+          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
+          + "\"modelarmor.googleapis.com/Template\022<projec"
+          + "ts/{project}/locations/{location}/templates/{template}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -718,7 +720,7 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_descriptor,
             new java.lang.String[] {
-              "RagChunk", "Uri", "Title", "Text", "ContextDetails",
+              "RagChunk", "Uri", "Title", "Text", "DocumentName", "ContextDetails",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_descriptor =
         internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor

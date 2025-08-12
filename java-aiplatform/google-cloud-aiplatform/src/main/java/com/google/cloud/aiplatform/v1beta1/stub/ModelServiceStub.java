@@ -58,6 +58,8 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -242,6 +244,10 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationSlicesCallable()");
+  }
+
+  public UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: recommendSpecCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

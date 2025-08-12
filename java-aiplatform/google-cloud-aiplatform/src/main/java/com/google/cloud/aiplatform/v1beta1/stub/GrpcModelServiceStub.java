@@ -63,6 +63,8 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -303,6 +305,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationSlicesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RecommendSpecRequest, RecommendSpecResponse>
+      recommendSpecMethodDescriptor =
+          MethodDescriptor.<RecommendSpecRequest, RecommendSpecResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/RecommendSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RecommendSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RecommendSpecResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -409,6 +422,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable;
+  private final UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -669,6 +683,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<RecommendSpecRequest, RecommendSpecResponse> recommendSpecTransportSettings =
+        GrpcCallSettings.<RecommendSpecRequest, RecommendSpecResponse>newBuilder()
+            .setMethodDescriptor(recommendSpecMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -861,6 +885,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             listModelEvaluationSlicesTransportSettings,
             settings.listModelEvaluationSlicesSettings(),
             clientContext);
+    this.recommendSpecCallable =
+        callableFactory.createUnaryCallable(
+            recommendSpecTransportSettings, settings.recommendSpecSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1062,6 +1089,11 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable() {
     return listModelEvaluationSlicesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    return recommendSpecCallable;
   }
 
   @Override
