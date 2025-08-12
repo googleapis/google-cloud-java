@@ -29,9 +29,62 @@
     "name":"java.nio.DirectByteBuffer",
     "methods":[{"name":"<init>","parameterTypes":["long","int"] }]
   },
+
+  {
+    "name":"org.apache.arrow.memory.BaseAllocator",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.BaseAllocator$Config",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.DefaultAllocationManagerOption",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.netty.NettyAllocationManager$1",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.netty.DefaultAllocationManagerFactory",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
   {
     "name":"org.apache.arrow.memory.DefaultAllocationManagerFactory",
-    "fields":[{"name":"FACTORY"}]
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.RootAllocator",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.memory.DefaultAllocationManagerFactory",
+    "allDeclaredFields":true,
+    "queryAllDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
   },
   {
     "name":"org.apache.arrow.vector.types.pojo.ArrowType",
@@ -49,6 +102,18 @@
     "name":"org.apache.arrow.vector.types.pojo.ArrowType$PrimitiveType",
     "allDeclaredFields":true,
     "queryAllDeclaredMethods":true
+  },
+  {
+    "name": "org.apache.arrow.vector.types.pojo.DictionaryEncoding",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.apache.arrow.vector.types.pojo.Field",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.apache.arrow.vector.types.pojo.Schema",
+    "allDeclaredFields": true
   },
   {
     "name":"io.netty.buffer.AbstractReferenceCountedByteBuf",

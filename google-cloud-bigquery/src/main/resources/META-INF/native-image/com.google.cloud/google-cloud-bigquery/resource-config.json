@@ -1,6 +1,26 @@
 {
   "resources":{
-    "includes":[{
-      "pattern":"\\Qorg/apache/arrow/memory/DefaultAllocationManagerFactory.class\\E"
-    }]}
+    "includes":[
+      {
+        "pattern":"\\Qorg/apache/arrow/memory/DefaultAllocationManagerFactory.class\\E"
+      },
+      {
+        "pattern":"\\Qorg/apache/arrow/memory/netty/DefaultAllocationManagerFactory.class\\E"
+      },
+      {
+        "pattern":"\\Qorg/apache/arrow/memory/unsafe/DefaultAllocationManagerFactory.class\\E"
+      }
+    ]
+  },
+  "globs":[
+      {
+        "glob": "org/apache/arrow/memory/DefaultAllocationManagerFactory.class"
+      },
+      {
+        "glob": "org/apache/arrow/memory/netty/DefaultAllocationManagerFactory.class"
+      },
+      {
+        "glob": "org/apache/arrow/memory/unsafe/DefaultAllocationManagerFactory.class"
+      }
+   ]
 }
