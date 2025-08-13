@@ -751,9 +751,9 @@ grpc-google-shopping-merchant-datasources-v1beta:1.0.0:1.0.0
 google-shopping-merchant-conversions:1.0.0:1.0.0
 proto-google-shopping-merchant-conversions-v1beta:1.0.0:1.0.0
 grpc-google-shopping-merchant-conversions-v1beta:1.0.0:1.0.0
-google-shopping-merchant-lfp:0.31.0:0.31.0
-proto-google-shopping-merchant-lfp-v1beta:0.31.0:0.31.0
-grpc-google-shopping-merchant-lfp-v1beta:0.31.0:0.31.0
+google-shopping-merchant-lfp:1.0.0:1.0.0
+proto-google-shopping-merchant-lfp-v1beta:1.0.0:1.0.0
+grpc-google-shopping-merchant-lfp-v1beta:1.0.0:1.0.0
 google-shopping-merchant-notifications:1.0.0:1.0.0
 proto-google-shopping-merchant-notifications-v1beta:1.0.0:1.0.0
 grpc-google-shopping-merchant-notifications-v1beta:1.0.0:1.0.0
@@ -890,8 +890,8 @@ proto-google-shopping-merchant-order-tracking-v1:0.12.0:0.12.0
 grpc-google-shopping-merchant-order-tracking-v1:0.12.0:0.12.0
 proto-google-shopping-merchant-accounts-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-accounts-v1:1.0.0:1.0.0
-proto-google-shopping-merchant-lfp-v1:0.31.0:0.31.0
-grpc-google-shopping-merchant-lfp-v1:0.31.0:0.31.0
+proto-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
+grpc-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-products-v1:0.28.0:0.28.0
 grpc-google-shopping-merchant-products-v1:0.28.0:0.28.0
 proto-google-shopping-merchant-promotions-v1:0.28.0:0.28.0
