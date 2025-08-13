@@ -779,9 +779,9 @@ grpc-google-cloud-managedkafka-v1:0.28.0:0.28.0
 google-cloud-networkservices:0.28.0:0.28.0
 proto-google-cloud-networkservices-v1:0.28.0:0.28.0
 grpc-google-cloud-networkservices-v1:0.28.0:0.28.0
-google-shopping-merchant-products:0.28.0:0.28.0
-proto-google-shopping-merchant-products-v1beta:0.28.0:0.28.0
-grpc-google-shopping-merchant-products-v1beta:0.28.0:0.28.0
+google-shopping-merchant-products:1.0.0:1.0.0
+proto-google-shopping-merchant-products-v1beta:1.0.0:1.0.0
+grpc-google-shopping-merchant-products-v1beta:1.0.0:1.0.0
 google-cloud-gdchardwaremanagement:0.27.0:0.27.0
 proto-google-cloud-gdchardwaremanagement-v1alpha:0.27.0:0.27.0
 grpc-google-cloud-gdchardwaremanagement-v1alpha:0.27.0:0.27.0
@@ -892,8 +892,8 @@ proto-google-shopping-merchant-accounts-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-accounts-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
-proto-google-shopping-merchant-products-v1:0.28.0:0.28.0
-grpc-google-shopping-merchant-products-v1:0.28.0:0.28.0
+proto-google-shopping-merchant-products-v1:1.0.0:1.0.0
+grpc-google-shopping-merchant-products-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-promotions-v1:0.28.0:0.28.0
 grpc-google-shopping-merchant-promotions-v1:0.28.0:0.28.0
 proto-google-shopping-merchant-quota-v1:1.0.0:1.0.0
