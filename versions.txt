@@ -745,9 +745,9 @@ grpc-google-cloud-backupdr-v1:0.31.0:0.31.0
 google-maps-solar:0.31.0:0.31.0
 proto-google-maps-solar-v1:0.31.0:0.31.0
 grpc-google-maps-solar-v1:0.31.0:0.31.0
-google-shopping-merchant-datasources:0.28.0:0.28.0
-proto-google-shopping-merchant-datasources-v1beta:0.28.0:0.28.0
-grpc-google-shopping-merchant-datasources-v1beta:0.28.0:0.28.0
+google-shopping-merchant-datasources:1.0.0:1.0.0
+proto-google-shopping-merchant-datasources-v1beta:1.0.0:1.0.0
+grpc-google-shopping-merchant-datasources-v1beta:1.0.0:1.0.0
 google-shopping-merchant-conversions:1.0.0:1.0.0
 proto-google-shopping-merchant-conversions-v1beta:1.0.0:1.0.0
 grpc-google-shopping-merchant-conversions-v1beta:1.0.0:1.0.0
@@ -878,8 +878,8 @@ proto-google-cloud-bigquerydatapolicy-v2:0.69.0:0.69.0
 grpc-google-cloud-bigquerydatapolicy-v2:0.69.0:0.69.0
 proto-google-cloud-configdelivery-v1:0.6.0:0.6.0
 grpc-google-cloud-configdelivery-v1:0.6.0:0.6.0
-proto-google-shopping-merchant-datasources-v1:0.28.0:0.28.0
-grpc-google-shopping-merchant-datasources-v1:0.28.0:0.28.0
+proto-google-shopping-merchant-datasources-v1:1.0.0:1.0.0
+grpc-google-shopping-merchant-datasources-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-inventories-v1:0.48.0:0.48.0
 grpc-google-shopping-merchant-inventories-v1:0.48.0:0.48.0
 proto-google-shopping-merchant-conversions-v1:1.0.0:1.0.0
