@@ -4,7 +4,7 @@
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-order-tracking-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.12.0</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
   <name>Google Merchant Order Tracking API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-order-tracking</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-order-tracking-v1</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:proto-google-shopping-merchant-order-tracking-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-order-tracking-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-order-tracking-v1</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-order-tracking-v1beta</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-order-tracking-v1beta</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:proto-google-shopping-merchant-order-tracking-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-order-tracking-v1beta:current} -->
       </dependency>
 
     </dependencies>

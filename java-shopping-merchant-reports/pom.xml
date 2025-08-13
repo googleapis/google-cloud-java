@@ -4,7 +4,7 @@
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-reports-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.48.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
   <name>Google Merchant API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,37 +29,37 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-reports</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-reports-v1</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-reports-v1</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-reports-v1alpha</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1alpha:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-reports-v1alpha</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1alpha:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-reports-v1beta</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-reports-v1beta</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
