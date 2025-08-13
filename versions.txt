@@ -27,9 +27,9 @@ grpc-google-analytics-data-v1alpha:0.83.0:0.83.0
 google-cloud-analyticshub:0.69.0:0.69.0
 proto-google-cloud-analyticshub-v1:0.69.0:0.69.0
 grpc-google-cloud-analyticshub-v1:0.69.0:0.69.0
-google-shopping-merchant-promotions:0.28.0:0.28.0
-proto-google-shopping-merchant-promotions-v1beta:0.28.0:0.28.0
-grpc-google-shopping-merchant-promotions-v1beta:0.28.0:0.28.0
+google-shopping-merchant-promotions:1.0.0:1.0.0
+proto-google-shopping-merchant-promotions-v1beta:1.0.0:1.0.0
+grpc-google-shopping-merchant-promotions-v1beta:1.0.0:1.0.0
 google-cloud-api-gateway:2.72.0:2.72.0
 grpc-google-cloud-api-gateway-v1:2.72.0:2.72.0
 proto-google-cloud-api-gateway-v1:2.72.0:2.72.0
@@ -894,8 +894,8 @@ proto-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-lfp-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-products-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-products-v1:1.0.0:1.0.0
-proto-google-shopping-merchant-promotions-v1:0.28.0:0.28.0
-grpc-google-shopping-merchant-promotions-v1:0.28.0:0.28.0
+proto-google-shopping-merchant-promotions-v1:1.0.0:1.0.0
+grpc-google-shopping-merchant-promotions-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-quota-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-quota-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-reports-v1:1.0.0:1.0.0

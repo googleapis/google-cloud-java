@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-promotions-bom</artifactId>
-  <version>0.28.0</version><!-- {x-version-update:google-shopping-merchant-promotions:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-promotions:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -26,27 +26,27 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-promotions</artifactId>
-        <version>0.28.0</version><!-- {x-version-update:google-shopping-merchant-promotions:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-shopping-merchant-promotions:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-promotions-v1beta</artifactId>
-        <version>0.28.0</version><!-- {x-version-update:grpc-google-shopping-merchant-promotions-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-promotions-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-promotions-v1</artifactId>
-        <version>0.28.0</version><!-- {x-version-update:grpc-google-shopping-merchant-promotions-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-shopping-merchant-promotions-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-promotions-v1beta</artifactId>
-        <version>0.28.0</version><!-- {x-version-update:proto-google-shopping-merchant-promotions-v1beta:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-promotions-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-promotions-v1</artifactId>
-        <version>0.28.0</version><!-- {x-version-update:proto-google-shopping-merchant-promotions-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-shopping-merchant-promotions-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
