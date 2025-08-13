@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.54.1](https://github.com/googleapis/java-bigquery/compare/v2.54.0...v2.54.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* Adapt graalvm config to arrow update ([#3928](https://github.com/googleapis/java-bigquery/issues/3928)) ([ecfabc4](https://github.com/googleapis/java-bigquery/commit/ecfabc4b70922d0e697699ec5508a7328cadacf8))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#3924](https://github.com/googleapis/java-bigquery/issues/3924)) ([cb66be5](https://github.com/googleapis/java-bigquery/commit/cb66be596d1bfd0a5aed75f5a0e36d80269c7f6a))
+
 ## [2.54.0](https://github.com/googleapis/java-bigquery/compare/v2.53.0...v2.54.0) (2025-07-31)
 
 
