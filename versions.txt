@@ -660,9 +660,9 @@ grpc-google-cloud-infra-manager-v1:0.49.0:0.49.0
 proto-google-cloud-notebooks-v2:1.70.0:1.70.0
 grpc-google-cloud-notebooks-v2:1.70.0:1.70.0
 proto-google-cloud-alloydb-connectors-v1beta:0.50.0:0.50.0
-google-shopping-merchant-inventories:0.48.0:0.48.0
-proto-google-shopping-merchant-inventories-v1beta:0.48.0:0.48.0
-grpc-google-shopping-merchant-inventories-v1beta:0.48.0:0.48.0
+google-shopping-merchant-inventories:1.0.0:1.0.0
+proto-google-shopping-merchant-inventories-v1beta:1.0.0:1.0.0
+grpc-google-shopping-merchant-inventories-v1beta:1.0.0:1.0.0
 proto-google-cloud-policy-troubleshooter-v3:1.71.0:1.71.0
 grpc-google-cloud-policy-troubleshooter-v3:1.71.0:1.71.0
 google-shopping-merchant-reports:1.0.0:1.0.0
@@ -880,8 +880,8 @@ proto-google-cloud-configdelivery-v1:0.6.0:0.6.0
 grpc-google-cloud-configdelivery-v1:0.6.0:0.6.0
 proto-google-shopping-merchant-datasources-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-datasources-v1:1.0.0:1.0.0
-proto-google-shopping-merchant-inventories-v1:0.48.0:0.48.0
-grpc-google-shopping-merchant-inventories-v1:0.48.0:0.48.0
+proto-google-shopping-merchant-inventories-v1:1.0.0:1.0.0
+grpc-google-shopping-merchant-inventories-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-conversions-v1:1.0.0:1.0.0
 grpc-google-shopping-merchant-conversions-v1:1.0.0:1.0.0
 proto-google-shopping-merchant-issue-resolution-v1:0.12.0:0.12.0
