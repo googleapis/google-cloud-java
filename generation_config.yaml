@@ -1235,7 +1235,7 @@ libraries:
   api_description: Programatically manage your Merchant Issues
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-issue-resolution
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -1253,7 +1253,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center Accounts
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-order-tracking
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -2243,7 +2243,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-accounts
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -2260,7 +2260,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-conversions
   api_id: shopping-merchant-conversions.googleapis.com
   library_type: GAPIC_AUTO
@@ -2277,7 +2277,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-datasources
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -2294,6 +2294,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-inventories
   cloud_api: false
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-inventories
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1
@@ -2304,7 +2305,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation:
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-notifications
   api_id: shopping-merchant-notifications.googleapis.com
   library_type: GAPIC_AUTO
@@ -2320,7 +2321,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-lfp
   api_id: shopping-merchant-lfp.googleapis.com
   library_type: GAPIC_AUTO
@@ -2353,7 +2354,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-products
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -2369,7 +2370,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-promotions
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
@@ -2386,7 +2387,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-quota
   api_id: shopping-merchant-quota.googleapis.com
   library_type: GAPIC_AUTO
@@ -2403,6 +2404,7 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-reports
   cloud_api: false
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1

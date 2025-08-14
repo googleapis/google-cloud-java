@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.66.0](https://github.com/googleapis/google-cloud-java/compare/v1.65.0...v1.66.0) (2025-08-13)
+
+
+### Features
+
+* bump shopping-merchant sub-APIs to 1.0.0 ([#11723](https://github.com/googleapis/google-cloud-java/issues/11723)) ([6edda67](https://github.com/googleapis/google-cloud-java/commit/6edda6733965cb842e4be385808a96a584fa647f))
+
 ## [1.65.0](https://github.com/googleapis/google-cloud-java/compare/v1.64.0...v1.65.0) (2025-08-08)
 
 
