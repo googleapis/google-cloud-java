@@ -75,6 +75,8 @@ public class HttpJsonSolarStub extends SolarStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "exactQualityRequired", request.getExactQualityRequired());
+                            serializer.putQueryParam(
+                                fields, "experiments", request.getExperimentsList());
                             serializer.putQueryParam(fields, "location", request.getLocation());
                             serializer.putQueryParam(
                                 fields, "requiredQuality", request.getRequiredQualityValue());
@@ -113,6 +115,8 @@ public class HttpJsonSolarStub extends SolarStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "exactQualityRequired", request.getExactQualityRequired());
+                            serializer.putQueryParam(
+                                fields, "experiments", request.getExperimentsList());
                             serializer.putQueryParam(fields, "location", request.getLocation());
                             serializer.putQueryParam(
                                 fields, "pixelSizeMeters", request.getPixelSizeMeters());

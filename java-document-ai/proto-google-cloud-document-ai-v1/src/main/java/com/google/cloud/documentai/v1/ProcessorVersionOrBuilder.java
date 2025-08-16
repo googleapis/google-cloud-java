@@ -84,10 +84,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the documentSchema field is set.
    */
@@ -97,10 +99,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The documentSchema.
    */
@@ -110,10 +114,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder();
 
@@ -151,10 +157,11 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -164,10 +171,11 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -177,10 +185,11 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -188,10 +197,13 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the latestEvaluation field is set.
    */
@@ -201,10 +213,13 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The latestEvaluation.
    */
@@ -214,10 +229,13 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.documentai.v1.EvaluationReferenceOrBuilder getLatestEvaluationOrBuilder();
 
@@ -225,10 +243,10 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The KMS key name used for encryption.
+   * Output only. The KMS key name used for encryption.
    * </pre>
    *
-   * <code>string kms_key_name = 9;</code>
+   * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The kmsKeyName.
    */
@@ -238,10 +256,10 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The KMS key name used for encryption.
+   * Output only. The KMS key name used for encryption.
    * </pre>
    *
-   * <code>string kms_key_name = 9;</code>
+   * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -251,10 +269,10 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The KMS key version with which data is encrypted.
+   * Output only. The KMS key version with which data is encrypted.
    * </pre>
    *
-   * <code>string kms_key_version_name = 10;</code>
+   * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The kmsKeyVersionName.
    */
@@ -264,10 +282,10 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The KMS key version with which data is encrypted.
+   * Output only. The KMS key version with which data is encrypted.
    * </pre>
    *
-   * <code>string kms_key_version_name = 10;</code>
+   * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for kmsKeyVersionName.
    */
@@ -290,10 +308,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the deprecationInfo field is set.
@@ -304,10 +324,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The deprecationInfo.
@@ -318,10 +340,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfoOrBuilder

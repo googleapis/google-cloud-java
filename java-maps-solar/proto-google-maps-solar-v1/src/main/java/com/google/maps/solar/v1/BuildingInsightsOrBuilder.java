@@ -28,7 +28,7 @@ public interface BuildingInsightsOrBuilder
    *
    *
    * <pre>
-   * The resource name for the building, of the format `building/&lt;place ID&gt;`.
+   * The resource name for the building, of the format `buildings/{place_id}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface BuildingInsightsOrBuilder
    *
    *
    * <pre>
-   * The resource name for the building, of the format `building/&lt;place ID&gt;`.
+   * The resource name for the building, of the format `buildings/{place_id}`.
    * </pre>
    *
    * <code>string name = 1;</code>
