@@ -49,6 +49,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     pipelineJob_ = "";
     serviceAccount_ = "";
     outputUri_ = "";
+    evaluateDatasetRuns_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1611,6 +1612,95 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EVALUATE_DATASET_RUNS_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+      evaluateDatasetRuns_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+      getEvaluateDatasetRunsList() {
+    return evaluateDatasetRuns_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+      getEvaluateDatasetRunsOrBuilderList() {
+    return evaluateDatasetRuns_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getEvaluateDatasetRunsCount() {
+    return evaluateDatasetRuns_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun getEvaluateDatasetRuns(int index) {
+    return evaluateDatasetRuns_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder
+      getEvaluateDatasetRunsOrBuilder(int index) {
+    return evaluateDatasetRuns_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1691,6 +1781,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customBaseModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 26, customBaseModel_);
+    }
+    for (int i = 0; i < evaluateDatasetRuns_.size(); i++) {
+      output.writeMessage(32, evaluateDatasetRuns_.get(i));
     }
     if (tuningSpecCase_ == 33) {
       output.writeMessage(33, (com.google.cloud.aiplatform.v1beta1.VeoTuningSpec) tuningSpec_);
@@ -1783,6 +1876,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customBaseModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, customBaseModel_);
     }
+    for (int i = 0; i < evaluateDatasetRuns_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, evaluateDatasetRuns_.get(i));
+    }
     if (tuningSpecCase_ == 33) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1846,6 +1943,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getOutputUri().equals(other.getOutputUri())) return false;
+    if (!getEvaluateDatasetRunsList().equals(other.getEvaluateDatasetRunsList())) return false;
     if (!getSourceModelCase().equals(other.getSourceModelCase())) return false;
     switch (sourceModelCase_) {
       case 4:
@@ -1936,6 +2034,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getOutputUri().hashCode();
+    if (getEvaluateDatasetRunsCount() > 0) {
+      hash = (37 * hash) + EVALUATE_DATASET_RUNS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluateDatasetRunsList().hashCode();
+    }
     switch (sourceModelCase_) {
       case 4:
         hash = (37 * hash) + BASE_MODEL_FIELD_NUMBER;
@@ -2135,6 +2237,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         getTunedModelFieldBuilder();
         getTuningDataStatsFieldBuilder();
         getEncryptionSpecFieldBuilder();
+        getEvaluateDatasetRunsFieldBuilder();
       }
     }
 
@@ -2204,6 +2307,13 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       serviceAccount_ = "";
       outputUri_ = "";
+      if (evaluateDatasetRunsBuilder_ == null) {
+        evaluateDatasetRuns_ = java.util.Collections.emptyList();
+      } else {
+        evaluateDatasetRuns_ = null;
+        evaluateDatasetRunsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00800000);
       sourceModelCase_ = 0;
       sourceModel_ = null;
       tuningSpecCase_ = 0;
@@ -2235,12 +2345,25 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.TuningJob buildPartial() {
       com.google.cloud.aiplatform.v1beta1.TuningJob result =
           new com.google.cloud.aiplatform.v1beta1.TuningJob(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.TuningJob result) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)) {
+          evaluateDatasetRuns_ = java.util.Collections.unmodifiableList(evaluateDatasetRuns_);
+          bitField0_ = (bitField0_ & ~0x00800000);
+        }
+        result.evaluateDatasetRuns_ = evaluateDatasetRuns_;
+      } else {
+        result.evaluateDatasetRuns_ = evaluateDatasetRunsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.TuningJob result) {
@@ -2446,6 +2569,33 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         outputUri_ = other.outputUri_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (evaluateDatasetRunsBuilder_ == null) {
+        if (!other.evaluateDatasetRuns_.isEmpty()) {
+          if (evaluateDatasetRuns_.isEmpty()) {
+            evaluateDatasetRuns_ = other.evaluateDatasetRuns_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+          } else {
+            ensureEvaluateDatasetRunsIsMutable();
+            evaluateDatasetRuns_.addAll(other.evaluateDatasetRuns_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.evaluateDatasetRuns_.isEmpty()) {
+          if (evaluateDatasetRunsBuilder_.isEmpty()) {
+            evaluateDatasetRunsBuilder_.dispose();
+            evaluateDatasetRunsBuilder_ = null;
+            evaluateDatasetRuns_ = other.evaluateDatasetRuns_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+            evaluateDatasetRunsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEvaluateDatasetRunsFieldBuilder()
+                    : null;
+          } else {
+            evaluateDatasetRunsBuilder_.addAllMessages(other.evaluateDatasetRuns_);
+          }
+        }
       }
       switch (other.getSourceModelCase()) {
         case BASE_MODEL:
@@ -2654,6 +2804,20 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 210
+            case 258:
+              {
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.parser(),
+                        extensionRegistry);
+                if (evaluateDatasetRunsBuilder_ == null) {
+                  ensureEvaluateDatasetRunsIsMutable();
+                  evaluateDatasetRuns_.add(m);
+                } else {
+                  evaluateDatasetRunsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 258
             case 266:
               {
                 input.readMessage(getVeoTuningSpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -6856,6 +7020,425 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+        evaluateDatasetRuns_ = java.util.Collections.emptyList();
+
+    private void ensureEvaluateDatasetRunsIsMutable() {
+      if (!((bitField0_ & 0x00800000) != 0)) {
+        evaluateDatasetRuns_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>(
+                evaluateDatasetRuns_);
+        bitField0_ |= 0x00800000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+        evaluateDatasetRunsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+        getEvaluateDatasetRunsList() {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(evaluateDatasetRuns_);
+      } else {
+        return evaluateDatasetRunsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getEvaluateDatasetRunsCount() {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        return evaluateDatasetRuns_.size();
+      } else {
+        return evaluateDatasetRunsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun getEvaluateDatasetRuns(
+        int index) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        return evaluateDatasetRuns_.get(index);
+      } else {
+        return evaluateDatasetRunsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEvaluateDatasetRuns(
+        int index, com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun value) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.set(index, value);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEvaluateDatasetRuns(
+        int index, com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder builderForValue) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEvaluateDatasetRuns(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun value) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.add(value);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEvaluateDatasetRuns(
+        int index, com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun value) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.add(index, value);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEvaluateDatasetRuns(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder builderForValue) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.add(builderForValue.build());
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEvaluateDatasetRuns(
+        int index, com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder builderForValue) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllEvaluateDatasetRuns(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+            values) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        ensureEvaluateDatasetRunsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, evaluateDatasetRuns_);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEvaluateDatasetRuns() {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        evaluateDatasetRuns_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeEvaluateDatasetRuns(int index) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        ensureEvaluateDatasetRunsIsMutable();
+        evaluateDatasetRuns_.remove(index);
+        onChanged();
+      } else {
+        evaluateDatasetRunsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder
+        getEvaluateDatasetRunsBuilder(int index) {
+      return getEvaluateDatasetRunsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder
+        getEvaluateDatasetRunsOrBuilder(int index) {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        return evaluateDatasetRuns_.get(index);
+      } else {
+        return evaluateDatasetRunsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+        getEvaluateDatasetRunsOrBuilderList() {
+      if (evaluateDatasetRunsBuilder_ != null) {
+        return evaluateDatasetRunsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(evaluateDatasetRuns_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder
+        addEvaluateDatasetRunsBuilder() {
+      return getEvaluateDatasetRunsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder
+        addEvaluateDatasetRunsBuilder(int index) {
+      return getEvaluateDatasetRunsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Evaluation runs for the Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder>
+        getEvaluateDatasetRunsBuilderList() {
+      return getEvaluateDatasetRunsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+        getEvaluateDatasetRunsFieldBuilder() {
+      if (evaluateDatasetRunsBuilder_ == null) {
+        evaluateDatasetRunsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun,
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder,
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>(
+                evaluateDatasetRuns_,
+                ((bitField0_ & 0x00800000) != 0),
+                getParentForChildren(),
+                isClean());
+        evaluateDatasetRuns_ = null;
+      }
+      return evaluateDatasetRunsBuilder_;
     }
 
     @java.lang.Override

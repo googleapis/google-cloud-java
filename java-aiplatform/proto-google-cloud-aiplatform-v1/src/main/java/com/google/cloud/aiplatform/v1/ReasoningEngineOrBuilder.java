@@ -29,6 +29,8 @@ public interface ReasoningEngineOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,6 +44,8 @@ public interface ReasoningEngineOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -252,4 +256,47 @@ public interface ReasoningEngineOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

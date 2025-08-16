@@ -1360,6 +1360,9 @@
             "MergeVersionAliases": {
               "methods": ["mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliasesCallable"]
             },
+            "RecommendSpec": {
+              "methods": ["recommendSpec", "recommendSpecCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

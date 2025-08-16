@@ -229,9 +229,9 @@ public final class SolarGrpc {
      *
      *
      * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
+     * Locates the building whose centroid is closest to a query point. Returns an
+     * error with code `NOT_FOUND` if there are no buildings within approximately
+     * 50m of the query point.
      * </pre>
      */
     default void findClosestBuildingInsights(
@@ -307,9 +307,9 @@ public final class SolarGrpc {
      *
      *
      * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
+     * Locates the building whose centroid is closest to a query point. Returns an
+     * error with code `NOT_FOUND` if there are no buildings within approximately
+     * 50m of the query point.
      * </pre>
      */
     public void findClosestBuildingInsights(
@@ -376,9 +376,9 @@ public final class SolarGrpc {
      *
      *
      * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
+     * Locates the building whose centroid is closest to a query point. Returns an
+     * error with code `NOT_FOUND` if there are no buildings within approximately
+     * 50m of the query point.
      * </pre>
      */
     public com.google.maps.solar.v1.BuildingInsights findClosestBuildingInsights(
@@ -437,9 +437,9 @@ public final class SolarGrpc {
      *
      *
      * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
+     * Locates the building whose centroid is closest to a query point. Returns an
+     * error with code `NOT_FOUND` if there are no buildings within approximately
+     * 50m of the query point.
      * </pre>
      */
     public com.google.maps.solar.v1.BuildingInsights findClosestBuildingInsights(
@@ -498,9 +498,9 @@ public final class SolarGrpc {
      *
      *
      * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
+     * Locates the building whose centroid is closest to a query point. Returns an
+     * error with code `NOT_FOUND` if there are no buildings within approximately
+     * 50m of the query point.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

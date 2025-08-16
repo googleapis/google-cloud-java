@@ -24,7 +24,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service facilitates the management of a business's remorse return policy
  * configuration, encompassing return policies for both ads and free listings
  * ## programs. This API defines the following resource model:
- * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+ * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
  * </pre>
  */
 @javax.annotation.Generated(
@@ -312,7 +312,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public interface AsyncService {
@@ -385,7 +385,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public abstract static class OnlineReturnPolicyServiceImplBase
@@ -404,7 +404,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceStub
@@ -496,7 +496,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceBlockingV2Stub
@@ -574,7 +574,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceBlockingStub
@@ -652,7 +652,7 @@ public final class OnlineReturnPolicyServiceGrpc {
    * The service facilitates the management of a business's remorse return policy
    * configuration, encompassing return policies for both ads and free listings
    * ## programs. This API defines the following resource model:
-   * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1#google.shopping.merchant.accounts.v1.OnlineReturnPolicy)
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
    * </pre>
    */
   public static final class OnlineReturnPolicyServiceFutureStub

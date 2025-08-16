@@ -104,6 +104,7 @@ public class SolarClientTest {
             .setLocation(LatLng.newBuilder().build())
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setExactQualityRequired(true)
+            .addAllExperiments(new ArrayList<Experiment>())
             .build();
 
     BuildingInsights actualResponse = client.findClosestBuildingInsights(request);
@@ -117,6 +118,7 @@ public class SolarClientTest {
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertEquals(request.getRequiredQuality(), actualRequest.getRequiredQuality());
     Assert.assertEquals(request.getExactQualityRequired(), actualRequest.getExactQualityRequired());
+    Assert.assertEquals(request.getExperimentsList(), actualRequest.getExperimentsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -134,6 +136,7 @@ public class SolarClientTest {
               .setLocation(LatLng.newBuilder().build())
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       client.findClosestBuildingInsights(request);
       Assert.fail("No exception raised");
@@ -166,6 +169,7 @@ public class SolarClientTest {
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setPixelSizeMeters(-1623742513)
             .setExactQualityRequired(true)
+            .addAllExperiments(new ArrayList<Experiment>())
             .build();
 
     DataLayers actualResponse = client.getDataLayers(request);
@@ -181,6 +185,7 @@ public class SolarClientTest {
     Assert.assertEquals(request.getRequiredQuality(), actualRequest.getRequiredQuality());
     Assert.assertEquals(request.getPixelSizeMeters(), actualRequest.getPixelSizeMeters(), 0.0001f);
     Assert.assertEquals(request.getExactQualityRequired(), actualRequest.getExactQualityRequired());
+    Assert.assertEquals(request.getExperimentsList(), actualRequest.getExperimentsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -201,6 +206,7 @@ public class SolarClientTest {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setPixelSizeMeters(-1623742513)
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       client.getDataLayers(request);
       Assert.fail("No exception raised");

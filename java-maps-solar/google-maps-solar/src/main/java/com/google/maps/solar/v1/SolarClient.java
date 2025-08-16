@@ -44,6 +44,7 @@ import javax.annotation.Generated;
  *           .setLocation(LatLng.newBuilder().build())
  *           .setRequiredQuality(ImageryQuality.forNumber(0))
  *           .setExactQualityRequired(true)
+ *           .addAllExperiments(new ArrayList<Experiment>())
  *           .build();
  *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
  * }
@@ -61,7 +62,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> FindClosestBuildingInsights</td>
- *      <td><p> Locates the closest building to a query point. Returns an error with code `NOT_FOUND` if there are no buildings within approximately 50m of the query point.</td>
+ *      <td><p> Locates the building whose centroid is closest to a query point. Returns an error with code `NOT_FOUND` if there are no buildings within approximately 50m of the query point.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -204,8 +205,8 @@ public class SolarClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Locates the closest building to a query point. Returns an error with code `NOT_FOUND` if there
-   * are no buildings within approximately 50m of the query point.
+   * Locates the building whose centroid is closest to a query point. Returns an error with code
+   * `NOT_FOUND` if there are no buildings within approximately 50m of the query point.
    *
    * <p>Sample code:
    *
@@ -221,6 +222,7 @@ public class SolarClient implements BackgroundResource {
    *           .setLocation(LatLng.newBuilder().build())
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setExactQualityRequired(true)
+   *           .addAllExperiments(new ArrayList<Experiment>())
    *           .build();
    *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
    * }
@@ -236,8 +238,8 @@ public class SolarClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Locates the closest building to a query point. Returns an error with code `NOT_FOUND` if there
-   * are no buildings within approximately 50m of the query point.
+   * Locates the building whose centroid is closest to a query point. Returns an error with code
+   * `NOT_FOUND` if there are no buildings within approximately 50m of the query point.
    *
    * <p>Sample code:
    *
@@ -253,6 +255,7 @@ public class SolarClient implements BackgroundResource {
    *           .setLocation(LatLng.newBuilder().build())
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setExactQualityRequired(true)
+   *           .addAllExperiments(new ArrayList<Experiment>())
    *           .build();
    *   ApiFuture<BuildingInsights> future =
    *       solarClient.findClosestBuildingInsightsCallable().futureCall(request);
@@ -288,6 +291,7 @@ public class SolarClient implements BackgroundResource {
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setPixelSizeMeters(-1623742513)
    *           .setExactQualityRequired(true)
+   *           .addAllExperiments(new ArrayList<Experiment>())
    *           .build();
    *   DataLayers response = solarClient.getDataLayers(request);
    * }
@@ -322,6 +326,7 @@ public class SolarClient implements BackgroundResource {
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setPixelSizeMeters(-1623742513)
    *           .setExactQualityRequired(true)
+   *           .addAllExperiments(new ArrayList<Experiment>())
    *           .build();
    *   ApiFuture<DataLayers> future = solarClient.getDataLayersCallable().futureCall(request);
    *   // Do something.

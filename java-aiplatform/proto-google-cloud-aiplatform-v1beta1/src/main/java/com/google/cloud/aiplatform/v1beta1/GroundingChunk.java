@@ -1195,6 +1195,48 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the documentName field is set.
+     */
+    boolean hasDocumentName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The documentName.
+     */
+    java.lang.String getDocumentName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for documentName.
+     */
+    com.google.protobuf.ByteString getDocumentNameBytes();
+
     com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext.ContextDetailsCase
         getContextDetailsCase();
   }
@@ -1223,6 +1265,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       uri_ = "";
       title_ = "";
       text_ = "";
+      documentName_ = "";
     }
 
     @java.lang.Override
@@ -1558,6 +1601,78 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int DOCUMENT_NAME_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object documentName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the documentName field is set.
+     */
+    @java.lang.Override
+    public boolean hasDocumentName() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The documentName.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentName() {
+      java.lang.Object ref = documentName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full document name for the referenced Vertex AI Search
+     * document.
+     * </pre>
+     *
+     * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for documentName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDocumentNameBytes() {
+      java.lang.Object ref = documentName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        documentName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1584,6 +1699,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (contextDetailsCase_ == 4) {
         output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, documentName_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1606,6 +1724,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, documentName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1634,6 +1755,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasText() != other.hasText()) return false;
       if (hasText()) {
         if (!getText().equals(other.getText())) return false;
+      }
+      if (hasDocumentName() != other.hasDocumentName()) return false;
+      if (hasDocumentName()) {
+        if (!getDocumentName().equals(other.getDocumentName())) return false;
       }
       if (!getContextDetailsCase().equals(other.getContextDetailsCase())) return false;
       switch (contextDetailsCase_) {
@@ -1665,6 +1790,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasText()) {
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getText().hashCode();
+      }
+      if (hasDocumentName()) {
+        hash = (37 * hash) + DOCUMENT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDocumentName().hashCode();
       }
       switch (contextDetailsCase_) {
         case 4:
@@ -1825,6 +1954,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         uri_ = "";
         title_ = "";
         text_ = "";
+        documentName_ = "";
         contextDetailsCase_ = 0;
         contextDetails_ = null;
         return this;
@@ -1879,6 +2009,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.text_ = text_;
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.documentName_ = documentName_;
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1958,6 +2092,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (other.hasDocumentName()) {
+          documentName_ = other.documentName_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         switch (other.getContextDetailsCase()) {
           case RAG_CHUNK:
             {
@@ -2019,6 +2158,12 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
                   contextDetailsCase_ = 4;
                   break;
                 } // case 34
+              case 50:
+                {
+                  documentName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2654,6 +2799,144 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         text_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object documentName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the documentName field is set.
+       */
+      public boolean hasDocumentName() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The documentName.
+       */
+      public java.lang.String getDocumentName() {
+        java.lang.Object ref = documentName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for documentName.
+       */
+      public com.google.protobuf.ByteString getDocumentNameBytes() {
+        java.lang.Object ref = documentName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          documentName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The documentName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentName_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentName() {
+        documentName_ = getDefaultInstance().getDocumentName();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full document name for the referenced Vertex AI Search
+       * document.
+       * </pre>
+       *
+       * <code>optional string document_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for documentName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        documentName_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

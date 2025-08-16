@@ -2565,6 +2565,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.osconfig.v1.VulnerabilityReport$VulnerabilitySeverityLevel",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.longrunning.CancelOperationRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

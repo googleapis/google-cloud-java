@@ -495,6 +495,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.maps.solar.v1.Experiment",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.maps.solar.v1.FinancedPurchaseSavings",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -19,10 +19,12 @@ package com.google.maps.solar.v1.samples;
 // [START solar_v1_generated_Solar_GetDataLayers_sync]
 import com.google.maps.solar.v1.DataLayerView;
 import com.google.maps.solar.v1.DataLayers;
+import com.google.maps.solar.v1.Experiment;
 import com.google.maps.solar.v1.GetDataLayersRequest;
 import com.google.maps.solar.v1.ImageryQuality;
 import com.google.maps.solar.v1.SolarClient;
 import com.google.type.LatLng;
+import java.util.ArrayList;
 
 public class SyncGetDataLayers {
 
@@ -45,6 +47,7 @@ public class SyncGetDataLayers {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setPixelSizeMeters(-1623742513)
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       DataLayers response = solarClient.getDataLayers(request);
     }

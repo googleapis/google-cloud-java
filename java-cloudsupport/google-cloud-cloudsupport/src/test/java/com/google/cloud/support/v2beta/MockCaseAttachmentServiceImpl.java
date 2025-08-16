@@ -78,4 +78,25 @@ public class MockCaseAttachmentServiceImpl extends CaseAttachmentServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getAttachment(
+      GetAttachmentRequest request, StreamObserver<Attachment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Attachment) {
+      requests.add(request);
+      responseObserver.onNext(((Attachment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAttachment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Attachment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

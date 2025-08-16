@@ -100,6 +100,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -160,6 +161,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -320,6 +322,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -376,6 +379,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -512,6 +516,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -530,6 +535,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -574,6 +580,7 @@ public class ReservationServiceClientHttpJsonTest {
               .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setMaxSlots(-234568806)
               .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -600,6 +607,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setMaxSlots(-234568806)
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);

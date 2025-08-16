@@ -1024,6 +1024,44 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.ModelContainerSpecOrBuilder getContainerSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelUserId.
+     */
+    java.lang.String getModelUserId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelUserId.
+     */
+    com.google.protobuf.ByteString getModelUserIdBytes();
   }
 
   /**
@@ -1049,6 +1087,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     private ModelConfig() {
       huggingFaceAccessToken_ = "";
       modelDisplayName_ = "";
+      modelUserId_ = "";
     }
 
     @java.lang.Override
@@ -1287,6 +1326,71 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           : containerSpec_;
     }
 
+    public static final int MODEL_USER_ID_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelUserId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getModelUserId() {
+      java.lang.Object ref = modelUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelUserId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelUserIdBytes() {
+      java.lang.Object ref = modelUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1316,6 +1420,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(5, getContainerSpec());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelUserId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1341,6 +1448,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getContainerSpec());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelUserId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1365,6 +1475,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasContainerSpec()) {
         if (!getContainerSpec().equals(other.getContainerSpec())) return false;
       }
+      if (!getModelUserId().equals(other.getModelUserId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1388,6 +1499,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CONTAINER_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getContainerSpec().hashCode();
       }
+      hash = (37 * hash) + MODEL_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModelUserId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1549,6 +1662,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           containerSpecBuilder_.dispose();
           containerSpecBuilder_ = null;
         }
+        modelUserId_ = "";
         return this;
       }
 
@@ -1604,6 +1718,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           result.containerSpec_ =
               containerSpecBuilder_ == null ? containerSpec_ : containerSpecBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.modelUserId_ = modelUserId_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1677,6 +1794,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasContainerSpec()) {
           mergeContainerSpec(other.getContainerSpec());
         }
+        if (!other.getModelUserId().isEmpty()) {
+          modelUserId_ = other.modelUserId_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1733,6 +1855,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  modelUserId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2337,6 +2465,147 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         return containerSpecBuilder_;
       }
 
+      private java.lang.Object modelUserId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelUserId.
+       */
+      public java.lang.String getModelUserId() {
+        java.lang.Object ref = modelUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelUserId.
+       */
+      public com.google.protobuf.ByteString getModelUserIdBytes() {
+        java.lang.Object ref = modelUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The modelUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelUserId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelUserId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelUserId() {
+        modelUserId_ = getDefaultInstance().getModelUserId();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for modelUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelUserIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelUserId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2441,19 +2710,107 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, the endpoint will be exposed through a dedicated
-     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-     * will be isolated from other users' traffic and will have better
-     * performance and reliability. Note: Once you enabled dedicated endpoint,
-     * you won't be able to send request to the shared DNS
+     * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+     * If true, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+     * dedicated DNS will be isolated from other users' traffic and will have
+     * better performance and reliability. Note: Once you enabled dedicated
+     * endpoint, you won't be able to send request to the shared DNS
      * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
      * </pre>
      *
-     * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
      * @return The dedicatedEndpointEnabled.
      */
+    @java.lang.Deprecated
     boolean getDedicatedEndpointEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+     * Your request to the dedicated DNS will be isolated from other users'
+     * traffic and will have better performance and reliability. Note: Once you
+     * enabled dedicated endpoint, you won't be able to send request to the
+     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+     * removed soon.
+     *
+     * If this field is set to true, the dedicated endpoint will be disabled
+     * and the deployed model will be exposed through the shared DNS
+     * {region}-aiplatform.googleapis.com.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dedicatedEndpointDisabled.
+     */
+    boolean getDedicatedEndpointDisabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endpointUserId.
+     */
+    java.lang.String getEndpointUserId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for endpointUserId.
+     */
+    com.google.protobuf.ByteString getEndpointUserIdBytes();
   }
 
   /**
@@ -2478,6 +2835,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
     private EndpointConfig() {
       endpointDisplayName_ = "";
+      endpointUserId_ = "";
     }
 
     @java.lang.Override
@@ -2563,21 +2921,142 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, the endpoint will be exposed through a dedicated
-     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-     * will be isolated from other users' traffic and will have better
-     * performance and reliability. Note: Once you enabled dedicated endpoint,
-     * you won't be able to send request to the shared DNS
+     * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+     * If true, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+     * dedicated DNS will be isolated from other users' traffic and will have
+     * better performance and reliability. Note: Once you enabled dedicated
+     * endpoint, you won't be able to send request to the shared DNS
      * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
      * </pre>
      *
-     * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
      * @return The dedicatedEndpointEnabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDedicatedEndpointEnabled() {
       return dedicatedEndpointEnabled_;
+    }
+
+    public static final int DEDICATED_ENDPOINT_DISABLED_FIELD_NUMBER = 4;
+    private boolean dedicatedEndpointDisabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+     * Your request to the dedicated DNS will be isolated from other users'
+     * traffic and will have better performance and reliability. Note: Once you
+     * enabled dedicated endpoint, you won't be able to send request to the
+     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+     * removed soon.
+     *
+     * If this field is set to true, the dedicated endpoint will be disabled
+     * and the deployed model will be exposed through the shared DNS
+     * {region}-aiplatform.googleapis.com.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dedicatedEndpointDisabled.
+     */
+    @java.lang.Override
+    public boolean getDedicatedEndpointDisabled() {
+      return dedicatedEndpointDisabled_;
+    }
+
+    public static final int ENDPOINT_USER_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointUserId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endpointUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getEndpointUserId() {
+      java.lang.Object ref = endpointUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointUserId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for endpointUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEndpointUserIdBytes() {
+      java.lang.Object ref = endpointUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpointUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2600,6 +3079,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (dedicatedEndpointEnabled_ != false) {
         output.writeBool(2, dedicatedEndpointEnabled_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpointUserId_);
+      }
+      if (dedicatedEndpointDisabled_ != false) {
+        output.writeBool(4, dedicatedEndpointDisabled_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2614,6 +3099,13 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (dedicatedEndpointEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, dedicatedEndpointEnabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpointUserId_);
+      }
+      if (dedicatedEndpointDisabled_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(4, dedicatedEndpointDisabled_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2633,6 +3125,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (!getEndpointDisplayName().equals(other.getEndpointDisplayName())) return false;
       if (getDedicatedEndpointEnabled() != other.getDedicatedEndpointEnabled()) return false;
+      if (getDedicatedEndpointDisabled() != other.getDedicatedEndpointDisabled()) return false;
+      if (!getEndpointUserId().equals(other.getEndpointUserId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2648,6 +3142,10 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getEndpointDisplayName().hashCode();
       hash = (37 * hash) + DEDICATED_ENDPOINT_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointEnabled());
+      hash = (37 * hash) + DEDICATED_ENDPOINT_DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointDisabled());
+      hash = (37 * hash) + ENDPOINT_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointUserId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2795,6 +3293,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         endpointDisplayName_ = "";
         dedicatedEndpointEnabled_ = false;
+        dedicatedEndpointDisabled_ = false;
+        endpointUserId_ = "";
         return this;
       }
 
@@ -2839,6 +3339,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.dedicatedEndpointEnabled_ = dedicatedEndpointEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dedicatedEndpointDisabled_ = dedicatedEndpointDisabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endpointUserId_ = endpointUserId_;
         }
       }
 
@@ -2901,6 +3407,14 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.getDedicatedEndpointEnabled() != false) {
           setDedicatedEndpointEnabled(other.getDedicatedEndpointEnabled());
         }
+        if (other.getDedicatedEndpointDisabled() != false) {
+          setDedicatedEndpointDisabled(other.getDedicatedEndpointDisabled());
+        }
+        if (!other.getEndpointUserId().isEmpty()) {
+          endpointUserId_ = other.endpointUserId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2939,6 +3453,18 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  endpointUserId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  dedicatedEndpointDisabled_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3080,19 +3606,26 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @return The dedicatedEndpointEnabled.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getDedicatedEndpointEnabled() {
         return dedicatedEndpointEnabled_;
       }
@@ -3101,19 +3634,26 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @param value The dedicatedEndpointEnabled to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setDedicatedEndpointEnabled(boolean value) {
 
         dedicatedEndpointEnabled_ = value;
@@ -3126,21 +3666,308 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearDedicatedEndpointEnabled() {
         bitField0_ = (bitField0_ & ~0x00000002);
         dedicatedEndpointEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean dedicatedEndpointDisabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The dedicatedEndpointDisabled.
+       */
+      @java.lang.Override
+      public boolean getDedicatedEndpointDisabled() {
+        return dedicatedEndpointDisabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The dedicatedEndpointDisabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDedicatedEndpointDisabled(boolean value) {
+
+        dedicatedEndpointDisabled_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDedicatedEndpointDisabled() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        dedicatedEndpointDisabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endpointUserId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The endpointUserId.
+       */
+      public java.lang.String getEndpointUserId() {
+        java.lang.Object ref = endpointUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endpointUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for endpointUserId.
+       */
+      public com.google.protobuf.ByteString getEndpointUserIdBytes() {
+        java.lang.Object ref = endpointUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          endpointUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The endpointUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointUserId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpointUserId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndpointUserId() {
+        endpointUserId_ = getDefaultInstance().getEndpointUserId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for endpointUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointUserIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        endpointUserId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

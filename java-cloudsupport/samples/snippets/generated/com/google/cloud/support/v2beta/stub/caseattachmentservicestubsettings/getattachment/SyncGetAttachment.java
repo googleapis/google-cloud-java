@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.cloud.support.v2beta.samples;
+package com.google.cloud.support.v2beta.stub.samples;
 
-// [START cloudsupport_v2beta_generated_CaseAttachmentServiceSettings_ListAttachments_sync]
-import com.google.cloud.support.v2beta.CaseAttachmentServiceSettings;
+// [START cloudsupport_v2beta_generated_CaseAttachmentServiceStubSettings_GetAttachment_sync]
+import com.google.cloud.support.v2beta.stub.CaseAttachmentServiceStubSettings;
 import java.time.Duration;
 
-public class SyncListAttachments {
+public class SyncGetAttachment {
 
   public static void main(String[] args) throws Exception {
-    syncListAttachments();
+    syncGetAttachment();
   }
 
-  public static void syncListAttachments() throws Exception {
+  public static void syncGetAttachment() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    CaseAttachmentServiceSettings.Builder caseAttachmentServiceSettingsBuilder =
-        CaseAttachmentServiceSettings.newBuilder();
+    CaseAttachmentServiceStubSettings.Builder caseAttachmentServiceSettingsBuilder =
+        CaseAttachmentServiceStubSettings.newBuilder();
     caseAttachmentServiceSettingsBuilder
-        .listAttachmentsSettings()
+        .getAttachmentSettings()
         .setRetrySettings(
             caseAttachmentServiceSettingsBuilder
-                .listAttachmentsSettings()
+                .getAttachmentSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -50,8 +50,8 @@ public class SyncListAttachments {
                 .setRpcTimeoutMultiplier(1.5)
                 .setTotalTimeoutDuration(Duration.ofSeconds(300))
                 .build());
-    CaseAttachmentServiceSettings caseAttachmentServiceSettings =
+    CaseAttachmentServiceStubSettings caseAttachmentServiceSettings =
         caseAttachmentServiceSettingsBuilder.build();
   }
 }
-// [END cloudsupport_v2beta_generated_CaseAttachmentServiceSettings_ListAttachments_sync]
+// [END cloudsupport_v2beta_generated_CaseAttachmentServiceStubSettings_GetAttachment_sync]

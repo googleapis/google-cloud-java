@@ -246,7 +246,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -260,7 +261,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

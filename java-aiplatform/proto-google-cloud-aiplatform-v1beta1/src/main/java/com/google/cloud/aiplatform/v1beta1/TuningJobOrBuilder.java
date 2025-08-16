@@ -973,6 +973,74 @@ public interface TuningJobOrBuilder
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+      getEvaluateDatasetRunsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun getEvaluateDatasetRuns(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getEvaluateDatasetRunsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+      getEvaluateDatasetRunsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder getEvaluateDatasetRunsOrBuilder(
+      int index);
+
   com.google.cloud.aiplatform.v1beta1.TuningJob.SourceModelCase getSourceModelCase();
 
   com.google.cloud.aiplatform.v1beta1.TuningJob.TuningSpecCase getTuningSpecCase();

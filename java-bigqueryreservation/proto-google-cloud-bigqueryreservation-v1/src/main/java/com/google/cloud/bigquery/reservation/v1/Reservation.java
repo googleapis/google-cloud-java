@@ -45,6 +45,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     primaryLocation_ = "";
     secondaryLocation_ = "";
     originalPrimaryLocation_ = "";
+    scalingMode_ = 0;
   }
 
   @java.lang.Override
@@ -66,6 +67,271 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.bigquery.reservation.v1.Reservation.class,
             com.google.cloud.bigquery.reservation.v1.Reservation.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scaling mode for the reservation. This enum determines how the
+   * reservation scales up and down.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.bigquery.reservation.v1.Reservation.ScalingMode}
+   */
+  public enum ScalingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value of ScalingMode.
+     * </pre>
+     *
+     * <code>SCALING_MODE_UNSPECIFIED = 0;</code>
+     */
+    SCALING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up only using slots from autoscaling. It will
+     * not use any idle slots even if there may be some available. The upper
+     * limit that autoscaling can scale up to will be max_slots - baseline.
+     * For example, if max_slots is 1000, baseline is 200 and customer sets
+     * ScalingMode to AUTOSCALE_ONLY, then autoscalerg will scale up to 800
+     * slots and no idle slots will be used.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * true.
+     * </pre>
+     *
+     * <code>AUTOSCALE_ONLY = 1;</code>
+     */
+    AUTOSCALE_ONLY(1),
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up using only idle slots contributed by
+     * other reservations or from unassigned commitments. If no idle slots are
+     * available it will not scale up further. If the idle slots which it is
+     * using are reclaimed by the contributing reservation(s) it may be forced
+     * to scale down. The max idle slots the reservation can be max_slots -
+     * baseline capacity. For example, if max_slots is 1000, baseline is 200 and
+     * customer sets ScalingMode to IDLE_SLOTS_ONLY,
+     * 1. if there are 1000 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline and 800 idle
+     * slots.
+     * 2. if there are 500 idle slots available in other reservations, the
+     * reservation will scale up to 700 slots with 200 baseline and 300 idle
+     * slots.
+     * Please note, in this mode, the reservation might not be able to scale up
+     * to max_slots.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * false.
+     * </pre>
+     *
+     * <code>IDLE_SLOTS_ONLY = 2;</code>
+     */
+    IDLE_SLOTS_ONLY(2),
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up using all slots available to it. It will
+     * use idle slots contributed by other reservations or from unassigned
+     * commitments first. If no idle slots are available it will scale up using
+     * autoscaling. For example, if max_slots is 1000, baseline is 200 and
+     * customer sets ScalingMode to ALL_SLOTS,
+     * 1. if there are 800 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline and 800 idle
+     * slots.
+     * 2. if there are 500 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline, 500 idle
+     * slots and 300 autoscaling slots.
+     * 3. if there are no idle slots available in other reservations, it will
+     * scale up to 1000 slots with 200 baseline and 800 autoscaling slots.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * false.
+     * </pre>
+     *
+     * <code>ALL_SLOTS = 3;</code>
+     */
+    ALL_SLOTS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value of ScalingMode.
+     * </pre>
+     *
+     * <code>SCALING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SCALING_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up only using slots from autoscaling. It will
+     * not use any idle slots even if there may be some available. The upper
+     * limit that autoscaling can scale up to will be max_slots - baseline.
+     * For example, if max_slots is 1000, baseline is 200 and customer sets
+     * ScalingMode to AUTOSCALE_ONLY, then autoscalerg will scale up to 800
+     * slots and no idle slots will be used.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * true.
+     * </pre>
+     *
+     * <code>AUTOSCALE_ONLY = 1;</code>
+     */
+    public static final int AUTOSCALE_ONLY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up using only idle slots contributed by
+     * other reservations or from unassigned commitments. If no idle slots are
+     * available it will not scale up further. If the idle slots which it is
+     * using are reclaimed by the contributing reservation(s) it may be forced
+     * to scale down. The max idle slots the reservation can be max_slots -
+     * baseline capacity. For example, if max_slots is 1000, baseline is 200 and
+     * customer sets ScalingMode to IDLE_SLOTS_ONLY,
+     * 1. if there are 1000 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline and 800 idle
+     * slots.
+     * 2. if there are 500 idle slots available in other reservations, the
+     * reservation will scale up to 700 slots with 200 baseline and 300 idle
+     * slots.
+     * Please note, in this mode, the reservation might not be able to scale up
+     * to max_slots.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * false.
+     * </pre>
+     *
+     * <code>IDLE_SLOTS_ONLY = 2;</code>
+     */
+    public static final int IDLE_SLOTS_ONLY_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The reservation will scale up using all slots available to it. It will
+     * use idle slots contributed by other reservations or from unassigned
+     * commitments first. If no idle slots are available it will scale up using
+     * autoscaling. For example, if max_slots is 1000, baseline is 200 and
+     * customer sets ScalingMode to ALL_SLOTS,
+     * 1. if there are 800 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline and 800 idle
+     * slots.
+     * 2. if there are 500 idle slots available in other reservations, the
+     * reservation will scale up to 1000 slots with 200 baseline, 500 idle
+     * slots and 300 autoscaling slots.
+     * 3. if there are no idle slots available in other reservations, it will
+     * scale up to 1000 slots with 200 baseline and 800 autoscaling slots.
+     *
+     * Please note, in this mode, the ignore_idle_slots field must be set to
+     * false.
+     * </pre>
+     *
+     * <code>ALL_SLOTS = 3;</code>
+     */
+    public static final int ALL_SLOTS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ScalingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ScalingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SCALING_MODE_UNSPECIFIED;
+        case 1:
+          return AUTOSCALE_ONLY;
+        case 2:
+          return IDLE_SLOTS_ONLY;
+        case 3:
+          return ALL_SLOTS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ScalingMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ScalingMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ScalingMode>() {
+          public ScalingMode findValueByNumber(int number) {
+            return ScalingMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.reservation.v1.Reservation.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ScalingMode[] VALUES = values();
+
+    public static ScalingMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ScalingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.reservation.v1.Reservation.ScalingMode)
   }
 
   public interface AutoscaleOrBuilder
@@ -2853,6 +3119,164 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MAX_SLOTS_FIELD_NUMBER = 21;
+  private long maxSlots_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The overall max slots for the reservation, covering slot_capacity
+   * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+   * If present, the reservation won't use more than the specified number of
+   * slots, even if there is demand and supply (from idle slots).
+   * NOTE: capping a reservation's idle slot usage is best effort and its
+   * usage may exceed the max_slots value. However, in terms of
+   * autoscale.current_slots (which accounts for the additional added slots), it
+   * will never exceed the max_slots - baseline.
+   *
+   *
+   * This field must be set together with the scaling_mode enum value.
+   *
+   * If the max_slots and scaling_mode are set, the autoscale or
+   * autoscale.max_slots field must be unset. However, the
+   * autoscale field may still be in the output. The autopscale.max_slots will
+   * always show as 0 and the autoscaler.current_slots will represent the
+   * current slots from autoscaler excluding idle slots.
+   * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+   * then in the output, the autoscaler.max_slots will be 0 and the
+   * autoscaler.current_slots may be any value between 0 and 1000.
+   *
+   * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+   * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+   * will be 0 and the autoscaler.current_slots will not be higher than 700.
+   *
+   * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+   * output, the autoscaler field will be null.
+   *
+   * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+   * must be aligned with the scaling_mode enum value.(See details in
+   * ScalingMode comments).
+   *
+   * Please note,  the max_slots is for user to manage the part of slots greater
+   * than the baseline. Therefore, we don't allow users to set max_slots smaller
+   * or equal to the baseline as it will not be meaningful. If the field is
+   * present and slot_capacity&gt;=max_slots.
+   *
+   * Please note that if max_slots is set to 0, we will treat it as unset.
+   * Customers can set max_slots to 0 and set scaling_mode to
+   * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+   * </pre>
+   *
+   * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the maxSlots field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxSlots() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The overall max slots for the reservation, covering slot_capacity
+   * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+   * If present, the reservation won't use more than the specified number of
+   * slots, even if there is demand and supply (from idle slots).
+   * NOTE: capping a reservation's idle slot usage is best effort and its
+   * usage may exceed the max_slots value. However, in terms of
+   * autoscale.current_slots (which accounts for the additional added slots), it
+   * will never exceed the max_slots - baseline.
+   *
+   *
+   * This field must be set together with the scaling_mode enum value.
+   *
+   * If the max_slots and scaling_mode are set, the autoscale or
+   * autoscale.max_slots field must be unset. However, the
+   * autoscale field may still be in the output. The autopscale.max_slots will
+   * always show as 0 and the autoscaler.current_slots will represent the
+   * current slots from autoscaler excluding idle slots.
+   * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+   * then in the output, the autoscaler.max_slots will be 0 and the
+   * autoscaler.current_slots may be any value between 0 and 1000.
+   *
+   * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+   * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+   * will be 0 and the autoscaler.current_slots will not be higher than 700.
+   *
+   * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+   * output, the autoscaler field will be null.
+   *
+   * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+   * must be aligned with the scaling_mode enum value.(See details in
+   * ScalingMode comments).
+   *
+   * Please note,  the max_slots is for user to manage the part of slots greater
+   * than the baseline. Therefore, we don't allow users to set max_slots smaller
+   * or equal to the baseline as it will not be meaningful. If the field is
+   * present and slot_capacity&gt;=max_slots.
+   *
+   * Please note that if max_slots is set to 0, we will treat it as unset.
+   * Customers can set max_slots to 0 and set scaling_mode to
+   * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+   * </pre>
+   *
+   * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxSlots.
+   */
+  @java.lang.Override
+  public long getMaxSlots() {
+    return maxSlots_;
+  }
+
+  public static final int SCALING_MODE_FIELD_NUMBER = 22;
+  private int scalingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scaling mode for the reservation.
+   * If the field is present but max_slots is not present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scalingMode.
+   */
+  @java.lang.Override
+  public int getScalingModeValue() {
+    return scalingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scaling mode for the reservation.
+   * If the field is present but max_slots is not present.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scalingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode getScalingMode() {
+    com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode result =
+        com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.forNumber(scalingMode_);
+    return result == null
+        ? com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.UNRECOGNIZED
+        : result;
+  }
+
   public static final int REPLICATION_STATUS_FIELD_NUMBER = 24;
   private com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replicationStatus_;
 
@@ -2878,7 +3302,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasReplicationStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -2989,6 +3413,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, originalPrimaryLocation_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(21, maxSlots_);
+    }
+    if (scalingMode_
+        != com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.SCALING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, scalingMode_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(24, getReplicationStatus());
     }
     getUnknownFields().writeTo(output);
@@ -3039,6 +3471,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(20, originalPrimaryLocation_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(21, maxSlots_);
+    }
+    if (scalingMode_
+        != com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.SCALING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, scalingMode_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReplicationStatus());
     }
     size += getUnknownFields().getSerializedSize();
@@ -3078,6 +3518,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!getPrimaryLocation().equals(other.getPrimaryLocation())) return false;
     if (!getSecondaryLocation().equals(other.getSecondaryLocation())) return false;
     if (!getOriginalPrimaryLocation().equals(other.getOriginalPrimaryLocation())) return false;
+    if (hasMaxSlots() != other.hasMaxSlots()) return false;
+    if (hasMaxSlots()) {
+      if (getMaxSlots() != other.getMaxSlots()) return false;
+    }
+    if (scalingMode_ != other.scalingMode_) return false;
     if (hasReplicationStatus() != other.hasReplicationStatus()) return false;
     if (hasReplicationStatus()) {
       if (!getReplicationStatus().equals(other.getReplicationStatus())) return false;
@@ -3123,6 +3568,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSecondaryLocation().hashCode();
     hash = (37 * hash) + ORIGINAL_PRIMARY_LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getOriginalPrimaryLocation().hashCode();
+    if (hasMaxSlots()) {
+      hash = (37 * hash) + MAX_SLOTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxSlots());
+    }
+    hash = (37 * hash) + SCALING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + scalingMode_;
     if (hasReplicationStatus()) {
       hash = (37 * hash) + REPLICATION_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getReplicationStatus().hashCode();
@@ -3303,6 +3754,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       primaryLocation_ = "";
       secondaryLocation_ = "";
       originalPrimaryLocation_ = "";
+      maxSlots_ = 0L;
+      scalingMode_ = 0;
       replicationStatus_ = null;
       if (replicationStatusBuilder_ != null) {
         replicationStatusBuilder_.dispose();
@@ -3386,11 +3839,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         result.originalPrimaryLocation_ = originalPrimaryLocation_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.maxSlots_ = maxSlots_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.scalingMode_ = scalingMode_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.replicationStatus_ =
             replicationStatusBuilder_ == null
                 ? replicationStatus_
                 : replicationStatusBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3484,6 +3944,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         originalPrimaryLocation_ = other.originalPrimaryLocation_;
         bitField0_ |= 0x00000800;
         onChanged();
+      }
+      if (other.hasMaxSlots()) {
+        setMaxSlots(other.getMaxSlots());
+      }
+      if (other.scalingMode_ != 0) {
+        setScalingModeValue(other.getScalingModeValue());
       }
       if (other.hasReplicationStatus()) {
         mergeReplicationStatus(other.getReplicationStatus());
@@ -3586,11 +4052,23 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 162
+            case 168:
+              {
+                maxSlots_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 168
+            case 176:
+              {
+                scalingMode_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 176
             case 194:
               {
                 input.readMessage(
                     getReplicationStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 194
             default:
@@ -5185,6 +5663,347 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long maxSlots_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The overall max slots for the reservation, covering slot_capacity
+     * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+     * If present, the reservation won't use more than the specified number of
+     * slots, even if there is demand and supply (from idle slots).
+     * NOTE: capping a reservation's idle slot usage is best effort and its
+     * usage may exceed the max_slots value. However, in terms of
+     * autoscale.current_slots (which accounts for the additional added slots), it
+     * will never exceed the max_slots - baseline.
+     *
+     *
+     * This field must be set together with the scaling_mode enum value.
+     *
+     * If the max_slots and scaling_mode are set, the autoscale or
+     * autoscale.max_slots field must be unset. However, the
+     * autoscale field may still be in the output. The autopscale.max_slots will
+     * always show as 0 and the autoscaler.current_slots will represent the
+     * current slots from autoscaler excluding idle slots.
+     * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+     * then in the output, the autoscaler.max_slots will be 0 and the
+     * autoscaler.current_slots may be any value between 0 and 1000.
+     *
+     * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+     * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+     * will be 0 and the autoscaler.current_slots will not be higher than 700.
+     *
+     * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+     * output, the autoscaler field will be null.
+     *
+     * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+     * must be aligned with the scaling_mode enum value.(See details in
+     * ScalingMode comments).
+     *
+     * Please note,  the max_slots is for user to manage the part of slots greater
+     * than the baseline. Therefore, we don't allow users to set max_slots smaller
+     * or equal to the baseline as it will not be meaningful. If the field is
+     * present and slot_capacity&gt;=max_slots.
+     *
+     * Please note that if max_slots is set to 0, we will treat it as unset.
+     * Customers can set max_slots to 0 and set scaling_mode to
+     * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+     * </pre>
+     *
+     * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the maxSlots field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxSlots() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The overall max slots for the reservation, covering slot_capacity
+     * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+     * If present, the reservation won't use more than the specified number of
+     * slots, even if there is demand and supply (from idle slots).
+     * NOTE: capping a reservation's idle slot usage is best effort and its
+     * usage may exceed the max_slots value. However, in terms of
+     * autoscale.current_slots (which accounts for the additional added slots), it
+     * will never exceed the max_slots - baseline.
+     *
+     *
+     * This field must be set together with the scaling_mode enum value.
+     *
+     * If the max_slots and scaling_mode are set, the autoscale or
+     * autoscale.max_slots field must be unset. However, the
+     * autoscale field may still be in the output. The autopscale.max_slots will
+     * always show as 0 and the autoscaler.current_slots will represent the
+     * current slots from autoscaler excluding idle slots.
+     * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+     * then in the output, the autoscaler.max_slots will be 0 and the
+     * autoscaler.current_slots may be any value between 0 and 1000.
+     *
+     * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+     * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+     * will be 0 and the autoscaler.current_slots will not be higher than 700.
+     *
+     * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+     * output, the autoscaler field will be null.
+     *
+     * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+     * must be aligned with the scaling_mode enum value.(See details in
+     * ScalingMode comments).
+     *
+     * Please note,  the max_slots is for user to manage the part of slots greater
+     * than the baseline. Therefore, we don't allow users to set max_slots smaller
+     * or equal to the baseline as it will not be meaningful. If the field is
+     * present and slot_capacity&gt;=max_slots.
+     *
+     * Please note that if max_slots is set to 0, we will treat it as unset.
+     * Customers can set max_slots to 0 and set scaling_mode to
+     * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+     * </pre>
+     *
+     * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxSlots.
+     */
+    @java.lang.Override
+    public long getMaxSlots() {
+      return maxSlots_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The overall max slots for the reservation, covering slot_capacity
+     * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+     * If present, the reservation won't use more than the specified number of
+     * slots, even if there is demand and supply (from idle slots).
+     * NOTE: capping a reservation's idle slot usage is best effort and its
+     * usage may exceed the max_slots value. However, in terms of
+     * autoscale.current_slots (which accounts for the additional added slots), it
+     * will never exceed the max_slots - baseline.
+     *
+     *
+     * This field must be set together with the scaling_mode enum value.
+     *
+     * If the max_slots and scaling_mode are set, the autoscale or
+     * autoscale.max_slots field must be unset. However, the
+     * autoscale field may still be in the output. The autopscale.max_slots will
+     * always show as 0 and the autoscaler.current_slots will represent the
+     * current slots from autoscaler excluding idle slots.
+     * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+     * then in the output, the autoscaler.max_slots will be 0 and the
+     * autoscaler.current_slots may be any value between 0 and 1000.
+     *
+     * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+     * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+     * will be 0 and the autoscaler.current_slots will not be higher than 700.
+     *
+     * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+     * output, the autoscaler field will be null.
+     *
+     * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+     * must be aligned with the scaling_mode enum value.(See details in
+     * ScalingMode comments).
+     *
+     * Please note,  the max_slots is for user to manage the part of slots greater
+     * than the baseline. Therefore, we don't allow users to set max_slots smaller
+     * or equal to the baseline as it will not be meaningful. If the field is
+     * present and slot_capacity&gt;=max_slots.
+     *
+     * Please note that if max_slots is set to 0, we will treat it as unset.
+     * Customers can set max_slots to 0 and set scaling_mode to
+     * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+     * </pre>
+     *
+     * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxSlots to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxSlots(long value) {
+
+      maxSlots_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The overall max slots for the reservation, covering slot_capacity
+     * (baseline), idle slots (if ignore_idle_slots is false) and scaled slots.
+     * If present, the reservation won't use more than the specified number of
+     * slots, even if there is demand and supply (from idle slots).
+     * NOTE: capping a reservation's idle slot usage is best effort and its
+     * usage may exceed the max_slots value. However, in terms of
+     * autoscale.current_slots (which accounts for the additional added slots), it
+     * will never exceed the max_slots - baseline.
+     *
+     *
+     * This field must be set together with the scaling_mode enum value.
+     *
+     * If the max_slots and scaling_mode are set, the autoscale or
+     * autoscale.max_slots field must be unset. However, the
+     * autoscale field may still be in the output. The autopscale.max_slots will
+     * always show as 0 and the autoscaler.current_slots will represent the
+     * current slots from autoscaler excluding idle slots.
+     * For example, if the max_slots is 1000 and scaling_mode is AUTOSCALE_ONLY,
+     * then in the output, the autoscaler.max_slots will be 0 and the
+     * autoscaler.current_slots may be any value between 0 and 1000.
+     *
+     * If the max_slots is 1000, scaling_mode is ALL_SLOTS, the baseline is 100
+     * and idle slots usage is 200, then in the output, the autoscaler.max_slots
+     * will be 0 and the autoscaler.current_slots will not be higher than 700.
+     *
+     * If the max_slots is 1000, scaling_mode is IDLE_SLOTS_ONLY, then in the
+     * output, the autoscaler field will be null.
+     *
+     * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
+     * must be aligned with the scaling_mode enum value.(See details in
+     * ScalingMode comments).
+     *
+     * Please note,  the max_slots is for user to manage the part of slots greater
+     * than the baseline. Therefore, we don't allow users to set max_slots smaller
+     * or equal to the baseline as it will not be meaningful. If the field is
+     * present and slot_capacity&gt;=max_slots.
+     *
+     * Please note that if max_slots is set to 0, we will treat it as unset.
+     * Customers can set max_slots to 0 and set scaling_mode to
+     * SCALING_MODE_UNSPECIFIED to disable the max_slots feature.
+     * </pre>
+     *
+     * <code>optional int64 max_slots = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxSlots() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      maxSlots_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int scalingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scaling mode for the reservation.
+     * If the field is present but max_slots is not present.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scalingMode.
+     */
+    @java.lang.Override
+    public int getScalingModeValue() {
+      return scalingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scaling mode for the reservation.
+     * If the field is present but max_slots is not present.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for scalingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScalingModeValue(int value) {
+      scalingMode_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scaling mode for the reservation.
+     * If the field is present but max_slots is not present.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scalingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode getScalingMode() {
+      com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode result =
+          com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.forNumber(scalingMode_);
+      return result == null
+          ? com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scaling mode for the reservation.
+     * If the field is present but max_slots is not present.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The scalingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScalingMode(
+        com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      scalingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scaling mode for the reservation.
+     * If the field is present but max_slots is not present.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ScalingMode scaling_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScalingMode() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      scalingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
         replicationStatus_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5214,7 +6033,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the replicationStatus field is set.
      */
     public boolean hasReplicationStatus() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5277,7 +6096,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         replicationStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5308,7 +6127,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         replicationStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5334,7 +6153,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReplicationStatus(
         com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus value) {
       if (replicationStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && replicationStatus_ != null
             && replicationStatus_
                 != com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
@@ -5347,7 +6166,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         replicationStatusBuilder_.mergeFrom(value);
       }
       if (replicationStatus_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5372,7 +6191,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReplicationStatus() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       replicationStatus_ = null;
       if (replicationStatusBuilder_ != null) {
         replicationStatusBuilder_.dispose();
@@ -5402,7 +6221,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder
         getReplicationStatusBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getReplicationStatusFieldBuilder().getBuilder();
     }
