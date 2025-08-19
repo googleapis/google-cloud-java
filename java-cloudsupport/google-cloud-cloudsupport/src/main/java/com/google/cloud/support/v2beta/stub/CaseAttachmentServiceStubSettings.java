@@ -45,6 +45,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2beta.Attachment;
+import com.google.cloud.support.v2beta.GetAttachmentRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsResponse;
 import com.google.common.collect.ImmutableList;
@@ -73,7 +74,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of listAttachments:
+ * of getAttachment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -84,10 +85,10 @@ import javax.annotation.Generated;
  * CaseAttachmentServiceStubSettings.Builder caseAttachmentServiceSettingsBuilder =
  *     CaseAttachmentServiceStubSettings.newBuilder();
  * caseAttachmentServiceSettingsBuilder
- *     .listAttachmentsSettings()
+ *     .getAttachmentSettings()
  *     .setRetrySettings(
  *         caseAttachmentServiceSettingsBuilder
- *             .listAttachmentsSettings()
+ *             .getAttachmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -118,6 +119,7 @@ public class CaseAttachmentServiceStubSettings
   private final PagedCallSettings<
           ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
       listAttachmentsSettings;
+  private final UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings;
 
   private static final PagedListDescriptor<
           ListAttachmentsRequest, ListAttachmentsResponse, Attachment>
@@ -178,6 +180,11 @@ public class CaseAttachmentServiceStubSettings
           ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
       listAttachmentsSettings() {
     return listAttachmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAttachment. */
+  public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+    return getAttachmentSettings;
   }
 
   public CaseAttachmentServiceStub createStub() throws IOException {
@@ -292,6 +299,7 @@ public class CaseAttachmentServiceStubSettings
     super(settingsBuilder);
 
     listAttachmentsSettings = settingsBuilder.listAttachmentsSettings().build();
+    getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
   }
 
   /** Builder for CaseAttachmentServiceStubSettings. */
@@ -301,6 +309,7 @@ public class CaseAttachmentServiceStubSettings
     private final PagedCallSettings.Builder<
             ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
         listAttachmentsSettings;
+    private final UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -310,6 +319,7 @@ public class CaseAttachmentServiceStubSettings
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -329,6 +339,8 @@ public class CaseAttachmentServiceStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -340,9 +352,11 @@ public class CaseAttachmentServiceStubSettings
       super(clientContext);
 
       listAttachmentsSettings = PagedCallSettings.newBuilder(LIST_ATTACHMENTS_PAGE_STR_FACT);
+      getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listAttachmentsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listAttachmentsSettings, getAttachmentSettings);
       initDefaults(this);
     }
 
@@ -350,9 +364,11 @@ public class CaseAttachmentServiceStubSettings
       super(settings);
 
       listAttachmentsSettings = settings.listAttachmentsSettings.toBuilder();
+      getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listAttachmentsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listAttachmentsSettings, getAttachmentSettings);
     }
 
     private static Builder createDefault() {
@@ -385,6 +401,11 @@ public class CaseAttachmentServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .getAttachmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -408,6 +429,11 @@ public class CaseAttachmentServiceStubSettings
             ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
         listAttachmentsSettings() {
       return listAttachmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAttachment. */
+    public UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+      return getAttachmentSettings;
     }
 
     @Override

@@ -47,7 +47,8 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.1 m/pixel.
+   * Solar data is derived from aerial imagery captured at low-altitude and
+   * processed at 0.1 m/pixel.
    * </pre>
    *
    * <code>HIGH = 1;</code>
@@ -57,7 +58,8 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.25 m/pixel.
+   * Solar data is derived from enhanced aerial imagery captured at
+   * high-altitude and processed at 0.25 m/pixel.
    * </pre>
    *
    * <code>MEDIUM = 2;</code>
@@ -67,12 +69,24 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.5 m/pixel.
+   * Solar data is derived from enhanced satellite imagery processed at 0.25
+   * m/pixel.
    * </pre>
    *
    * <code>LOW = 3;</code>
    */
   LOW(3),
+  /**
+   *
+   *
+   * <pre>
+   * Solar data is derived from enhanced satellite imagery processed at 0.25
+   * m/pixel.
+   * </pre>
+   *
+   * <code>BASE = 4;</code>
+   */
+  BASE(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,7 +105,8 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.1 m/pixel.
+   * Solar data is derived from aerial imagery captured at low-altitude and
+   * processed at 0.1 m/pixel.
    * </pre>
    *
    * <code>HIGH = 1;</code>
@@ -102,7 +117,8 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.25 m/pixel.
+   * Solar data is derived from enhanced aerial imagery captured at
+   * high-altitude and processed at 0.25 m/pixel.
    * </pre>
    *
    * <code>MEDIUM = 2;</code>
@@ -113,12 +129,25 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The underlying imagery and DSM data were processed at 0.5 m/pixel.
+   * Solar data is derived from enhanced satellite imagery processed at 0.25
+   * m/pixel.
    * </pre>
    *
    * <code>LOW = 3;</code>
    */
   public static final int LOW_VALUE = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar data is derived from enhanced satellite imagery processed at 0.25
+   * m/pixel.
+   * </pre>
+   *
+   * <code>BASE = 4;</code>
+   */
+  public static final int BASE_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -152,6 +181,8 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
         return MEDIUM;
       case 3:
         return LOW;
+      case 4:
+        return BASE;
       default:
         return null;
     }

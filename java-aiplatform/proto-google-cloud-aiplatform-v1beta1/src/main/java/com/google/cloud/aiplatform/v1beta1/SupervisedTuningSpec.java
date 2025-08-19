@@ -423,6 +423,66 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     return exportLastCheckpointOnly_;
   }
 
+  public static final int EVALUATION_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.EvaluationConfig evaluationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvaluationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationConfig getEvaluationConfig() {
+    return evaluationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationConfig.getDefaultInstance()
+        : evaluationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder
+      getEvaluationConfigOrBuilder() {
+    return evaluationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationConfig.getDefaultInstance()
+        : evaluationConfig_;
+  }
+
   public static final int TUNING_MODE_FIELD_NUMBER = 7;
   private int tuningMode_ = 0;
 
@@ -485,6 +545,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getHyperParameters());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getEvaluationConfig());
+    }
     if (exportLastCheckpointOnly_ != false) {
       output.writeBool(6, exportLastCheckpointOnly_);
     }
@@ -511,6 +574,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getHyperParameters());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEvaluationConfig());
     }
     if (exportLastCheckpointOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, exportLastCheckpointOnly_);
@@ -544,6 +610,10 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       if (!getHyperParameters().equals(other.getHyperParameters())) return false;
     }
     if (getExportLastCheckpointOnly() != other.getExportLastCheckpointOnly()) return false;
+    if (hasEvaluationConfig() != other.hasEvaluationConfig()) return false;
+    if (hasEvaluationConfig()) {
+      if (!getEvaluationConfig().equals(other.getEvaluationConfig())) return false;
+    }
     if (tuningMode_ != other.tuningMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -566,6 +636,10 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + EXPORT_LAST_CHECKPOINT_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportLastCheckpointOnly());
+    if (hasEvaluationConfig()) {
+      hash = (37 * hash) + EVALUATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationConfig().hashCode();
+    }
     hash = (37 * hash) + TUNING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + tuningMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -711,6 +785,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getHyperParametersFieldBuilder();
+        getEvaluationConfigFieldBuilder();
       }
     }
 
@@ -726,6 +801,11 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
         hyperParametersBuilder_ = null;
       }
       exportLastCheckpointOnly_ = false;
+      evaluationConfig_ = null;
+      if (evaluationConfigBuilder_ != null) {
+        evaluationConfigBuilder_.dispose();
+        evaluationConfigBuilder_ = null;
+      }
       tuningMode_ = 0;
       return this;
     }
@@ -779,6 +859,11 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
         result.exportLastCheckpointOnly_ = exportLastCheckpointOnly_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.evaluationConfig_ =
+            evaluationConfigBuilder_ == null ? evaluationConfig_ : evaluationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.tuningMode_ = tuningMode_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -846,6 +931,9 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       if (other.getExportLastCheckpointOnly() != false) {
         setExportLastCheckpointOnly(other.getExportLastCheckpointOnly());
       }
+      if (other.hasEvaluationConfig()) {
+        mergeEvaluationConfig(other.getEvaluationConfig());
+      }
       if (other.tuningMode_ != 0) {
         setTuningModeValue(other.getTuningModeValue());
       }
@@ -893,6 +981,13 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getEvaluationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 48:
               {
                 exportLastCheckpointOnly_ = input.readBool();
@@ -902,7 +997,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
             case 56:
               {
                 tuningMode_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -1447,6 +1542,223 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.EvaluationConfig evaluationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfig,
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder>
+        evaluationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evaluationConfig field is set.
+     */
+    public boolean hasEvaluationConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evaluationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationConfig getEvaluationConfig() {
+      if (evaluationConfigBuilder_ == null) {
+        return evaluationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationConfig.getDefaultInstance()
+            : evaluationConfig_;
+      } else {
+        return evaluationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationConfig(com.google.cloud.aiplatform.v1beta1.EvaluationConfig value) {
+      if (evaluationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationConfig_ = value;
+      } else {
+        evaluationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationConfig(
+        com.google.cloud.aiplatform.v1beta1.EvaluationConfig.Builder builderForValue) {
+      if (evaluationConfigBuilder_ == null) {
+        evaluationConfig_ = builderForValue.build();
+      } else {
+        evaluationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvaluationConfig(
+        com.google.cloud.aiplatform.v1beta1.EvaluationConfig value) {
+      if (evaluationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && evaluationConfig_ != null
+            && evaluationConfig_
+                != com.google.cloud.aiplatform.v1beta1.EvaluationConfig.getDefaultInstance()) {
+          getEvaluationConfigBuilder().mergeFrom(value);
+        } else {
+          evaluationConfig_ = value;
+        }
+      } else {
+        evaluationConfigBuilder_.mergeFrom(value);
+      }
+      if (evaluationConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvaluationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      evaluationConfig_ = null;
+      if (evaluationConfigBuilder_ != null) {
+        evaluationConfigBuilder_.dispose();
+        evaluationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationConfig.Builder
+        getEvaluationConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getEvaluationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder
+        getEvaluationConfigOrBuilder() {
+      if (evaluationConfigBuilder_ != null) {
+        return evaluationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return evaluationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationConfig.getDefaultInstance()
+            : evaluationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Evaluation Config for Tuning Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfig,
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder>
+        getEvaluationConfigFieldBuilder() {
+      if (evaluationConfigBuilder_ == null) {
+        evaluationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EvaluationConfig,
+                com.google.cloud.aiplatform.v1beta1.EvaluationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder>(
+                getEvaluationConfig(), getParentForChildren(), isClean());
+        evaluationConfig_ = null;
+      }
+      return evaluationConfigBuilder_;
+    }
+
     private int tuningMode_ = 0;
 
     /**
@@ -1481,7 +1793,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      */
     public Builder setTuningModeValue(int value) {
       tuningMode_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1526,7 +1838,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       tuningMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1545,7 +1857,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTuningMode() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       tuningMode_ = 0;
       onChanged();
       return this;

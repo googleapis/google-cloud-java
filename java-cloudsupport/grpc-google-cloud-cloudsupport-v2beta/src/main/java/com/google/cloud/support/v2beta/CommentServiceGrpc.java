@@ -128,6 +128,51 @@ public final class CommentServiceGrpc {
     return getCreateCommentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2beta.GetCommentRequest,
+          com.google.cloud.support.v2beta.Comment>
+      getGetCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetComment",
+      requestType = com.google.cloud.support.v2beta.GetCommentRequest.class,
+      responseType = com.google.cloud.support.v2beta.Comment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2beta.GetCommentRequest,
+          com.google.cloud.support.v2beta.Comment>
+      getGetCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.support.v2beta.GetCommentRequest,
+            com.google.cloud.support.v2beta.Comment>
+        getGetCommentMethod;
+    if ((getGetCommentMethod = CommentServiceGrpc.getGetCommentMethod) == null) {
+      synchronized (CommentServiceGrpc.class) {
+        if ((getGetCommentMethod = CommentServiceGrpc.getGetCommentMethod) == null) {
+          CommentServiceGrpc.getGetCommentMethod =
+              getGetCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.support.v2beta.GetCommentRequest,
+                          com.google.cloud.support.v2beta.Comment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2beta.GetCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2beta.Comment.getDefaultInstance()))
+                      .setSchemaDescriptor(new CommentServiceMethodDescriptorSupplier("GetComment"))
+                      .build();
+        }
+      }
+    }
+    return getGetCommentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CommentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CommentServiceStub> factory =
@@ -220,6 +265,19 @@ public final class CommentServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateCommentMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * </pre>
+     */
+    default void getComment(
+        com.google.cloud.support.v2beta.GetCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2beta.Comment> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCommentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -289,6 +347,20 @@ public final class CommentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * </pre>
+     */
+    public void getComment(
+        com.google.cloud.support.v2beta.GetCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2beta.Comment> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCommentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -336,6 +408,19 @@ public final class CommentServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * </pre>
+     */
+    public com.google.cloud.support.v2beta.Comment getComment(
+        com.google.cloud.support.v2beta.GetCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCommentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -382,6 +467,19 @@ public final class CommentServiceGrpc {
         com.google.cloud.support.v2beta.CreateCommentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * </pre>
+     */
+    public com.google.cloud.support.v2beta.Comment getComment(
+        com.google.cloud.support.v2beta.GetCommentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCommentMethod(), getCallOptions(), request);
     }
   }
 
@@ -432,10 +530,25 @@ public final class CommentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCommentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a comment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.support.v2beta.Comment>
+        getComment(com.google.cloud.support.v2beta.GetCommentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCommentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_COMMENTS = 0;
   private static final int METHODID_CREATE_COMMENT = 1;
+  private static final int METHODID_GET_COMMENT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -463,6 +576,12 @@ public final class CommentServiceGrpc {
         case METHODID_CREATE_COMMENT:
           serviceImpl.createComment(
               (com.google.cloud.support.v2beta.CreateCommentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.support.v2beta.Comment>)
+                  responseObserver);
+          break;
+        case METHODID_GET_COMMENT:
+          serviceImpl.getComment(
+              (com.google.cloud.support.v2beta.GetCommentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.support.v2beta.Comment>)
                   responseObserver);
           break;
@@ -497,6 +616,12 @@ public final class CommentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.support.v2beta.CreateCommentRequest,
                     com.google.cloud.support.v2beta.Comment>(service, METHODID_CREATE_COMMENT)))
+        .addMethod(
+            getGetCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.support.v2beta.GetCommentRequest,
+                    com.google.cloud.support.v2beta.Comment>(service, METHODID_GET_COMMENT)))
         .build();
   }
 
@@ -550,6 +675,7 @@ public final class CommentServiceGrpc {
                       .setSchemaDescriptor(new CommentServiceFileDescriptorSupplier())
                       .addMethod(getListCommentsMethod())
                       .addMethod(getCreateCommentMethod())
+                      .addMethod(getGetCommentMethod())
                       .build();
         }
       }

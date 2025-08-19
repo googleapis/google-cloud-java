@@ -147,6 +147,49 @@ public interface SupervisedTuningSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationConfig field is set.
+   */
+  boolean hasEvaluationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationConfig getEvaluationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder getEvaluationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tuning mode.
    * </pre>
    *

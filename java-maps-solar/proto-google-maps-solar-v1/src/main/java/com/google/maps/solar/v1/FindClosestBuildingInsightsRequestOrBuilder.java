@@ -115,4 +115,81 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    * @return The exactQualityRequired.
    */
   boolean getExactQualityRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the experiments.
+   */
+  java.util.List<com.google.maps.solar.v1.Experiment> getExperimentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of experiments.
+   */
+  int getExperimentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The experiments at the given index.
+   */
+  com.google.maps.solar.v1.Experiment getExperiments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for experiments.
+   */
+  java.util.List<java.lang.Integer> getExperimentsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of experiments at the given index.
+   */
+  int getExperimentsValue(int index);
 }
