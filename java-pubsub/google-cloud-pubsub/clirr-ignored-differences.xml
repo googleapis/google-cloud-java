@@ -15,4 +15,10 @@
         <method>*(org.threeten.bp.Duration)</method>
         <to>*(java.time.Duration)</to>
     </difference>
+    <difference>
+        <differenceType>7002</differenceType>
+        <!--Ignore changes in this class because it's package private-->
+        <className>com/google/cloud/pubsub/v1/StreamingSubscriberConnection$Builder</className>
+        <method>* setEodAckCallbackExecutor(*)</method>
+    </difference>
 </differences>

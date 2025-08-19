@@ -62,7 +62,6 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -99,7 +98,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final String subscription;
   private final SubscriptionName subscriptionNameObject;
   private final ScheduledExecutorService systemExecutor;
-  private final ExecutorService eodAckCallbackExecutor;
   private final MessageDispatcher messageDispatcher;
 
   private final FlowControlSettings flowControlSettings;
@@ -131,7 +129,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     subscription = builder.subscription;
     subscriptionNameObject = SubscriptionName.parse(builder.subscription);
     systemExecutor = builder.systemExecutor;
-    eodAckCallbackExecutor = builder.eodAckCallbackExecutor;
 
     // We need to set the default stream ack deadline on the initial request, this will be
     // updated by modack requests in the message dispatcher
@@ -720,11 +717,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     };
   }
 
+  // If exactly-once is enabled, we hold a lock for the ack/modack response callback, so we want to
+  // avoid using the directExecutor() which runs the callback on the invoking thread. Instead, we
+  // want to schedule the callback to be run on a different thread.
   private Executor getCallbackExecutor() {
     if (!getExactlyOnceDeliveryEnabled()) {
       return directExecutor();
     }
-    return eodAckCallbackExecutor;
+    return systemExecutor;
   }
 
   /** Builder of {@link StreamingSubscriberConnection StreamingSubscriberConnections}. */
@@ -747,7 +747,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     private boolean useLegacyFlowControl;
     private ScheduledExecutorService executor;
     private ScheduledExecutorService systemExecutor;
-    private ExecutorService eodAckCallbackExecutor;
     private ApiClock clock;
 
     private boolean enableOpenTelemetryTracing;
@@ -835,11 +834,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     public Builder setSystemExecutor(ScheduledExecutorService systemExecutor) {
       this.systemExecutor = systemExecutor;
-      return this;
-    }
-
-    public Builder setEodAckCallbackExecutor(ExecutorService eodAckCallbackExecutor) {
-      this.eodAckCallbackExecutor = eodAckCallbackExecutor;
       return this;
     }
 

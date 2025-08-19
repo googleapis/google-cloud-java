@@ -587,7 +587,6 @@ public class StreamingSubscriberConnectionTest {
         .setFlowController(mock(FlowController.class))
         .setExecutor(executor)
         .setSystemExecutor(systemExecutor)
-        .setEodAckCallbackExecutor(systemExecutor)
         .setClock(clock)
         .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
         .setMinDurationPerAckExtensionDefaultUsed(true)
