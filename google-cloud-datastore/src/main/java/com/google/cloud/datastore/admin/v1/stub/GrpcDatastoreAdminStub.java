@@ -63,6 +63,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportEntitiesRequest, Operation>
@@ -73,6 +74,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIndexRequest, Operation> createIndexMethodDescriptor =
@@ -81,6 +83,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
           .setFullMethodName("google.datastore.admin.v1.DatastoreAdmin/CreateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
           .setFullMethodName("google.datastore.admin.v1.DatastoreAdmin/DeleteIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
@@ -97,6 +101,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
           .setFullMethodName("google.datastore.admin.v1.DatastoreAdmin/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -107,6 +112,7 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIndexesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ExportEntitiesRequest, Operation> exportEntitiesCallable;

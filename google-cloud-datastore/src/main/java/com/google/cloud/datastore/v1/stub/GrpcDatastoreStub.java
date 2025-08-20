@@ -61,6 +61,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
           .setFullMethodName("google.datastore.v1.Datastore/Lookup")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(LookupResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunQueryRequest, RunQueryResponse>
@@ -70,6 +71,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
               .setFullMethodName("google.datastore.v1.Datastore/RunQuery")
               .setRequestMarshaller(ProtoUtils.marshaller(RunQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RunQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAggregationQueryRequest, RunAggregationQueryResponse>
@@ -81,6 +83,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
                   ProtoUtils.marshaller(RunAggregationQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunAggregationQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BeginTransactionRequest, BeginTransactionResponse>
@@ -92,6 +95,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
                   ProtoUtils.marshaller(BeginTransactionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BeginTransactionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CommitRequest, CommitResponse> commitMethodDescriptor =
@@ -100,6 +104,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
           .setFullMethodName("google.datastore.v1.Datastore/Commit")
           .setRequestMarshaller(ProtoUtils.marshaller(CommitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CommitResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RollbackRequest, RollbackResponse>
@@ -109,6 +114,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
               .setFullMethodName("google.datastore.v1.Datastore/Rollback")
               .setRequestMarshaller(ProtoUtils.marshaller(RollbackRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RollbackResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AllocateIdsRequest, AllocateIdsResponse>
@@ -119,6 +125,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
               .setRequestMarshaller(ProtoUtils.marshaller(AllocateIdsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AllocateIdsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReserveIdsRequest, ReserveIdsResponse>
@@ -128,6 +135,7 @@ public class GrpcDatastoreStub extends DatastoreStub {
               .setFullMethodName("google.datastore.v1.Datastore/ReserveIds")
               .setRequestMarshaller(ProtoUtils.marshaller(ReserveIdsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReserveIdsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<LookupRequest, LookupResponse> lookupCallable;
