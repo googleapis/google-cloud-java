@@ -60,6 +60,7 @@ public class GrpcImageServiceStub extends ImageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateProductImageBackgroundResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -75,6 +76,7 @@ public class GrpcImageServiceStub extends ImageServiceStub {
                   ProtoUtils.marshaller(RemoveProductImageBackgroundRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveProductImageBackgroundResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpscaleProductImageRequest, UpscaleProductImageResponse>
@@ -87,6 +89,7 @@ public class GrpcImageServiceStub extends ImageServiceStub {
                   ProtoUtils.marshaller(UpscaleProductImageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpscaleProductImageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

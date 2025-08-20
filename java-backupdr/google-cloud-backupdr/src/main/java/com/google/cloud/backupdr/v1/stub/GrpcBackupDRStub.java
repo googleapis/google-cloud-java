@@ -127,6 +127,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListManagementServersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListManagementServersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetManagementServerRequest, ManagementServer>
@@ -137,6 +138,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetManagementServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ManagementServer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateManagementServerRequest, Operation>
@@ -147,6 +149,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateManagementServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteManagementServerRequest, Operation>
@@ -157,6 +160,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteManagementServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupVaultRequest, Operation>
@@ -167,6 +171,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupVaultsRequest, ListBackupVaultsResponse>
@@ -178,6 +183,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListBackupVaultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupVaultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -191,6 +197,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(FetchUsableBackupVaultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchUsableBackupVaultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupVaultRequest, BackupVault>
@@ -201,6 +208,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupVault.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupVaultRequest, Operation>
@@ -211,6 +219,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupVaultRequest, Operation>
@@ -221,6 +230,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
@@ -232,6 +242,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListDataSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataSourceRequest, DataSource>
@@ -242,6 +253,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataSourceRequest, Operation>
@@ -252,6 +264,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -262,6 +275,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -270,6 +284,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
           .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -279,6 +294,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -288,6 +304,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreBackupRequest, Operation>
@@ -298,6 +315,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupPlanRequest, Operation>
@@ -308,6 +326,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupPlanRequest, Operation>
@@ -318,6 +337,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPlanRequest, BackupPlan>
@@ -328,6 +348,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPlan.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupPlansRequest, ListBackupPlansResponse>
@@ -339,6 +360,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListBackupPlansRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPlansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupPlanRequest, Operation>
@@ -349,6 +371,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPlanRevisionRequest, BackupPlanRevision>
@@ -359,6 +382,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPlanRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPlanRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -372,6 +396,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListBackupPlanRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPlanRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupPlanAssociationRequest, Operation>
@@ -382,6 +407,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPlanAssociationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupPlanAssociationRequest, Operation>
@@ -392,6 +418,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupPlanAssociationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPlanAssociationRequest, BackupPlanAssociation>
@@ -403,6 +430,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(GetBackupPlanAssociationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BackupPlanAssociation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -416,6 +444,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListBackupPlanAssociationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPlanAssociationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -435,6 +464,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       FetchBackupPlanAssociationsForResourceTypeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupPlanAssociationRequest, Operation>
@@ -445,6 +475,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPlanAssociationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TriggerBackupRequest, Operation>
@@ -455,6 +486,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TriggerBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataSourceReferenceRequest, DataSourceReference>
@@ -466,6 +498,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(GetDataSourceReferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataSourceReference.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -485,6 +518,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       FetchDataSourceReferencesForResourceTypeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InitializeServiceRequest, Operation>
@@ -495,6 +529,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InitializeServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -506,6 +541,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -514,6 +550,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -522,6 +559,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -530,6 +568,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -541,6 +580,7 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListManagementServersRequest, ListManagementServersResponse>

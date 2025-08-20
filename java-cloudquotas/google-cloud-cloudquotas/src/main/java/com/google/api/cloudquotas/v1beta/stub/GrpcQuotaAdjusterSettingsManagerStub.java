@@ -53,6 +53,7 @@ public class GrpcQuotaAdjusterSettingsManagerStub extends QuotaAdjusterSettingsM
                   ProtoUtils.marshaller(UpdateQuotaAdjusterSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QuotaAdjusterSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQuotaAdjusterSettingsRequest, QuotaAdjusterSettings>
@@ -65,6 +66,7 @@ public class GrpcQuotaAdjusterSettingsManagerStub extends QuotaAdjusterSettingsM
                   ProtoUtils.marshaller(GetQuotaAdjusterSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QuotaAdjusterSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateQuotaAdjusterSettingsRequest, QuotaAdjusterSettings>

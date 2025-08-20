@@ -69,6 +69,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   ProtoUtils.marshaller(ListConstraintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConstraintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPoliciesRequest, ListPoliciesResponse>
@@ -79,6 +80,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyRequest, Policy> getPolicyMethodDescriptor =
@@ -87,6 +89,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/GetPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEffectivePolicyRequest, Policy>
@@ -97,6 +100,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEffectivePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePolicyRequest, Policy> createPolicyMethodDescriptor =
@@ -105,6 +109,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/CreatePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(CreatePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePolicyRequest, Policy> updatePolicyMethodDescriptor =
@@ -113,6 +118,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/UpdatePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeletePolicyRequest, Empty> deletePolicyMethodDescriptor =
@@ -121,6 +127,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/DeletePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(DeletePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCustomConstraintRequest, CustomConstraint>
@@ -131,6 +138,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomConstraintRequest, CustomConstraint>
@@ -141,6 +149,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomConstraintRequest, CustomConstraint>
@@ -151,6 +160,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
@@ -162,6 +172,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   ProtoUtils.marshaller(ListCustomConstraintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomConstraintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomConstraintRequest, Empty>
@@ -172,6 +183,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomConstraintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListConstraintsRequest, ListConstraintsResponse>

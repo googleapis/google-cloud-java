@@ -69,6 +69,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTuningJobRequest, TuningJob>
@@ -78,6 +79,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.GenAiTuningService/GetTuningJob")
               .setRequestMarshaller(ProtoUtils.marshaller(GetTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTuningJobsRequest, ListTuningJobsResponse>
@@ -89,6 +91,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(ListTuningJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTuningJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelTuningJobRequest, Empty>
@@ -99,6 +102,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RebaseTunedModelRequest, Operation>
@@ -109,6 +113,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RebaseTunedModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -120,6 +125,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -128,6 +134,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -136,6 +143,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -144,6 +152,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -155,6 +164,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTuningJobRequest, TuningJob> createTuningJobCallable;

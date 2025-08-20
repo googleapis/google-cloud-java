@@ -83,6 +83,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Predict")
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RawPredictRequest, HttpBody> rawPredictMethodDescriptor =
@@ -91,6 +92,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/RawPredict")
           .setRequestMarshaller(ProtoUtils.marshaller(RawPredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StreamRawPredictRequest, HttpBody>
@@ -102,6 +104,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DirectPredictRequest, DirectPredictResponse>
@@ -113,6 +116,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(DirectPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DirectPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DirectRawPredictRequest, DirectRawPredictResponse>
@@ -125,6 +129,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(DirectRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DirectRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamDirectPredictRequest, StreamDirectPredictResponse>
@@ -137,6 +142,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamDirectPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamDirectPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -151,6 +157,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamDirectRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamDirectRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingPredictRequest, StreamingPredictResponse>
@@ -163,6 +170,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingPredictRequest, StreamingPredictResponse>
@@ -175,6 +183,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingRawPredictRequest, StreamingRawPredictResponse>
@@ -187,6 +196,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(StreamingRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingRawPredictResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExplainRequest, ExplainResponse> explainMethodDescriptor =
@@ -195,6 +205,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Explain")
           .setRequestMarshaller(ProtoUtils.marshaller(ExplainRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
@@ -205,6 +216,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
@@ -217,6 +229,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
@@ -229,6 +242,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ChatCompletionsRequest, HttpBody>
@@ -240,6 +254,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ChatCompletionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -251,6 +266,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -259,6 +275,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -267,6 +284,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -275,6 +293,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -286,6 +305,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;

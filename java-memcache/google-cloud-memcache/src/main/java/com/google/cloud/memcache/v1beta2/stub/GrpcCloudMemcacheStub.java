@@ -71,6 +71,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -79,6 +80,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
           .setFullMethodName("google.cloud.memcache.v1beta2.CloudMemcache/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -89,6 +91,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -99,6 +102,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParametersRequest, Operation>
@@ -109,6 +113,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -119,6 +124,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplyParametersRequest, Operation>
@@ -129,6 +135,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplyParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplySoftwareUpdateRequest, Operation>
@@ -139,6 +146,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplySoftwareUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RescheduleMaintenanceRequest, Operation>
@@ -150,6 +158,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RescheduleMaintenanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -161,6 +170,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -169,6 +179,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

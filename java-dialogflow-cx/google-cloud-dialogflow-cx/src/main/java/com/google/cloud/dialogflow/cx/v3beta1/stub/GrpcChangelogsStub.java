@@ -60,6 +60,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
                   ProtoUtils.marshaller(ListChangelogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChangelogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChangelogRequest, Changelog>
@@ -69,6 +70,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Changelogs/GetChangelog")
               .setRequestMarshaller(ProtoUtils.marshaller(GetChangelogRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Changelog.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -80,6 +82,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -88,6 +91,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsResponse> listChangelogsCallable;

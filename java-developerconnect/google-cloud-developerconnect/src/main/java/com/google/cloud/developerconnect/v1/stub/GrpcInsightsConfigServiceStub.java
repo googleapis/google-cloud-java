@@ -66,6 +66,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   ProtoUtils.marshaller(ListInsightsConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInsightsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInsightsConfigRequest, Operation>
@@ -77,6 +78,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInsightsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInsightsConfigRequest, InsightsConfig>
@@ -88,6 +90,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInsightsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InsightsConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInsightsConfigRequest, Operation>
@@ -99,6 +102,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInsightsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInsightsConfigRequest, Operation>
@@ -110,6 +114,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInsightsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -121,6 +126,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -129,6 +135,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInsightsConfigsRequest, ListInsightsConfigsResponse>

@@ -60,6 +60,7 @@ public class GrpcEncryptionSpecServiceStub extends EncryptionSpecServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEncryptionSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EncryptionSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InitializeEncryptionSpecRequest, Operation>
@@ -71,6 +72,7 @@ public class GrpcEncryptionSpecServiceStub extends EncryptionSpecServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InitializeEncryptionSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -82,6 +84,7 @@ public class GrpcEncryptionSpecServiceStub extends EncryptionSpecServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -90,6 +93,7 @@ public class GrpcEncryptionSpecServiceStub extends EncryptionSpecServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable;

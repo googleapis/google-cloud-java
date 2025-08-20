@@ -51,6 +51,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1p5beta1.AssetService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;

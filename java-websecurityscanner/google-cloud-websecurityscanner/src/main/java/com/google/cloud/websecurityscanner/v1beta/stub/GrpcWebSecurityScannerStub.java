@@ -76,6 +76,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteScanConfigRequest, Empty>
@@ -87,6 +88,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetScanConfigRequest, ScanConfig>
@@ -98,6 +100,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListScanConfigsRequest, ListScanConfigsResponse>
@@ -110,6 +113,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListScanConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateScanConfigRequest, ScanConfig>
@@ -121,6 +125,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartScanRunRequest, ScanRun> startScanRunMethodDescriptor =
@@ -130,6 +135,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1beta.WebSecurityScanner/StartScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(StartScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetScanRunRequest, ScanRun> getScanRunMethodDescriptor =
@@ -138,6 +144,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setFullMethodName("google.cloud.websecurityscanner.v1beta.WebSecurityScanner/GetScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListScanRunsRequest, ListScanRunsResponse>
@@ -149,6 +156,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListScanRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopScanRunRequest, ScanRun> stopScanRunMethodDescriptor =
@@ -158,6 +166,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               "google.cloud.websecurityscanner.v1beta.WebSecurityScanner/StopScanRun")
           .setRequestMarshaller(ProtoUtils.marshaller(StopScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
@@ -170,6 +179,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListCrawledUrlsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCrawledUrlsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFindingRequest, Finding> getFindingMethodDescriptor =
@@ -178,6 +188,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setFullMethodName("google.cloud.websecurityscanner.v1beta.WebSecurityScanner/GetFinding")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFindingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -189,6 +200,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
@@ -201,6 +213,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(ListFindingTypeStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingTypeStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable;

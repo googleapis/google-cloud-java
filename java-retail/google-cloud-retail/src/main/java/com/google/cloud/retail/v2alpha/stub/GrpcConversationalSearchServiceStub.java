@@ -52,6 +52,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ConversationalSearchRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationalSearchResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final ServerStreamingCallable<ConversationalSearchRequest, ConversationalSearchResponse>

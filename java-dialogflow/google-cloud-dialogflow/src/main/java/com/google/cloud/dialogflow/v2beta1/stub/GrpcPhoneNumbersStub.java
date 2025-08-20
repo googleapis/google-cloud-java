@@ -62,6 +62,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
                   ProtoUtils.marshaller(ListPhoneNumbersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhoneNumbersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhoneNumberRequest, PhoneNumber>
@@ -72,6 +73,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhoneNumberRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhoneNumber.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhoneNumberRequest, PhoneNumber>
@@ -82,6 +84,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhoneNumberRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhoneNumber.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeletePhoneNumberRequest, PhoneNumber>
@@ -92,6 +95,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeletePhoneNumberRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhoneNumber.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -103,6 +107,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -111,6 +116,7 @@ public class GrpcPhoneNumbersStub extends PhoneNumbersStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListPhoneNumbersRequest, ListPhoneNumbersResponse>

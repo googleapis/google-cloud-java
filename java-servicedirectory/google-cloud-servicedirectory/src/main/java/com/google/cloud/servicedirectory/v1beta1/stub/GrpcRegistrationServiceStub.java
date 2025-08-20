@@ -85,6 +85,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNamespacesRequest, ListNamespacesResponse>
@@ -97,6 +98,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListNamespacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNamespacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNamespaceRequest, Namespace>
@@ -107,6 +109,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   "google.cloud.servicedirectory.v1beta1.RegistrationService/GetNamespace")
               .setRequestMarshaller(ProtoUtils.marshaller(GetNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNamespaceRequest, Namespace>
@@ -118,6 +121,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNamespaceRequest, Empty>
@@ -129,6 +133,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Service>
@@ -140,6 +145,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -151,6 +157,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -159,6 +166,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.servicedirectory.v1beta1.RegistrationService/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Service>
@@ -170,6 +178,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
@@ -179,6 +188,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               "google.cloud.servicedirectory.v1beta1.RegistrationService/DeleteService")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEndpointRequest, Endpoint>
@@ -190,6 +200,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
@@ -202,6 +213,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
@@ -211,6 +223,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               "google.cloud.servicedirectory.v1beta1.RegistrationService/GetEndpoint")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEndpointRequest, Endpoint>
@@ -222,6 +235,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointRequest, Empty>
@@ -233,6 +247,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -242,6 +257,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               "google.cloud.servicedirectory.v1beta1.RegistrationService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -251,6 +267,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               "google.cloud.servicedirectory.v1beta1.RegistrationService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -263,6 +280,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -274,6 +292,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -282,6 +301,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateNamespaceRequest, Namespace> createNamespaceCallable;

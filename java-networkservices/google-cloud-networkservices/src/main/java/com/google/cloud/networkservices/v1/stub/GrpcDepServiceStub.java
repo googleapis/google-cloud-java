@@ -89,6 +89,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLbTrafficExtensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLbTrafficExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLbTrafficExtensionRequest, LbTrafficExtension>
@@ -99,6 +100,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LbTrafficExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLbTrafficExtensionRequest, Operation>
@@ -110,6 +112,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLbTrafficExtensionRequest, Operation>
@@ -121,6 +124,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLbTrafficExtensionRequest, Operation>
@@ -132,6 +136,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse>
@@ -143,6 +148,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLbRouteExtensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLbRouteExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLbRouteExtensionRequest, LbRouteExtension>
@@ -153,6 +159,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LbRouteExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLbRouteExtensionRequest, Operation>
@@ -164,6 +171,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLbRouteExtensionRequest, Operation>
@@ -175,6 +183,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLbRouteExtensionRequest, Operation>
@@ -186,6 +195,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
@@ -197,6 +207,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListAuthzExtensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAuthzExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAuthzExtensionRequest, AuthzExtension>
@@ -207,6 +218,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAuthzExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AuthzExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAuthzExtensionRequest, Operation>
@@ -217,6 +229,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAuthzExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAuthzExtensionRequest, Operation>
@@ -227,6 +240,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAuthzExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAuthzExtensionRequest, Operation>
@@ -237,6 +251,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAuthzExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -248,6 +263,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -256,6 +272,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -264,6 +281,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -272,6 +290,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -283,6 +302,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLbTrafficExtensionsRequest, ListLbTrafficExtensionsResponse>

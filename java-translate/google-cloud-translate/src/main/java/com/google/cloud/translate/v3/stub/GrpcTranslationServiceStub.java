@@ -132,6 +132,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(TranslateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RomanizeTextRequest, RomanizeTextResponse>
@@ -142,6 +143,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RomanizeTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RomanizeTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DetectLanguageRequest, DetectLanguageResponse>
@@ -153,6 +155,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(DetectLanguageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectLanguageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -164,6 +167,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSupportedLanguagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SupportedLanguages.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TranslateDocumentRequest, TranslateDocumentResponse>
@@ -175,6 +179,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(TranslateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateDocumentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchTranslateTextRequest, Operation>
@@ -186,6 +191,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchTranslateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchTranslateDocumentRequest, Operation>
@@ -197,6 +203,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchTranslateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGlossaryRequest, Operation>
@@ -207,6 +214,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGlossaryRequest, Operation>
@@ -217,6 +225,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGlossariesRequest, ListGlossariesResponse>
@@ -228,6 +237,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListGlossariesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGlossariesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGlossaryRequest, Glossary> getGlossaryMethodDescriptor =
@@ -236,6 +246,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/GetGlossary")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGlossaryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Glossary.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGlossaryRequest, Operation>
@@ -246,6 +257,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGlossaryEntryRequest, GlossaryEntry>
@@ -256,6 +268,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGlossaryEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GlossaryEntry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse>
@@ -268,6 +281,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListGlossaryEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGlossaryEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGlossaryEntryRequest, GlossaryEntry>
@@ -279,6 +293,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGlossaryEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GlossaryEntry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGlossaryEntryRequest, GlossaryEntry>
@@ -290,6 +305,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGlossaryEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GlossaryEntry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGlossaryEntryRequest, Empty>
@@ -301,6 +317,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGlossaryEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDatasetRequest, Operation>
@@ -311,6 +328,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -319,6 +337,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -329,6 +348,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
@@ -339,6 +359,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
@@ -350,6 +371,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAdaptiveMtDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtDataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAdaptiveMtDatasetRequest, Empty>
@@ -361,6 +383,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAdaptiveMtDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
@@ -372,6 +395,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAdaptiveMtDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtDataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -386,6 +410,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListAdaptiveMtDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAdaptiveMtDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
@@ -398,6 +423,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(AdaptiveMtTranslateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AdaptiveMtTranslateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAdaptiveMtFileRequest, AdaptiveMtFile>
@@ -408,6 +434,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAdaptiveMtFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtFile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAdaptiveMtFileRequest, Empty>
@@ -419,6 +446,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAdaptiveMtFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
@@ -431,6 +459,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ImportAdaptiveMtFileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ImportAdaptiveMtFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
@@ -443,6 +472,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListAdaptiveMtFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAdaptiveMtFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -457,6 +487,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListAdaptiveMtSentencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAdaptiveMtSentencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
@@ -465,6 +496,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
@@ -473,6 +505,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/ExportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListExamplesRequest, ListExamplesResponse>
@@ -483,6 +516,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateModelRequest, Operation> createModelMethodDescriptor =
@@ -491,6 +525,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -500,6 +535,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setFullMethodName("google.cloud.translation.v3.TranslationService/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -508,6 +544,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -516,6 +553,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3.TranslationService/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;

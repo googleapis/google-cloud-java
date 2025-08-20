@@ -67,6 +67,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(ReadFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -81,6 +82,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(StreamingReadFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
@@ -93,6 +95,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(WriteFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(WriteFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -104,6 +107,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -112,6 +116,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -120,6 +125,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -128,6 +134,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -139,6 +146,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ReadFeatureValuesRequest, ReadFeatureValuesResponse>

@@ -57,6 +57,7 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
                   ProtoUtils.marshaller(ListUserLicensesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserLicensesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateUserLicensesRequest, Operation>
@@ -68,6 +69,7 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateUserLicensesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListUserLicensesRequest, ListUserLicensesResponse>

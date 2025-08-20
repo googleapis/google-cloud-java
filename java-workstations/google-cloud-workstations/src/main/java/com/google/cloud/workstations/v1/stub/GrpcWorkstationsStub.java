@@ -89,6 +89,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkstationCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -103,6 +104,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationClusterRequest, Operation>
@@ -114,6 +116,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationClusterRequest, Operation>
@@ -125,6 +128,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationClusterRequest, Operation>
@@ -136,6 +140,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkstationConfigRequest, WorkstationConfig>
@@ -146,6 +151,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkstationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -159,6 +165,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -174,6 +181,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListUsableWorkstationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUsableWorkstationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationConfigRequest, Operation>
@@ -185,6 +193,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationConfigRequest, Operation>
@@ -196,6 +205,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationConfigRequest, Operation>
@@ -207,6 +217,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkstationRequest, Workstation>
@@ -217,6 +228,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workstation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkstationsRequest, ListWorkstationsResponse>
@@ -228,6 +240,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListWorkstationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkstationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -241,6 +254,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(ListUsableWorkstationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUsableWorkstationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkstationRequest, Operation>
@@ -251,6 +265,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkstationRequest, Operation>
@@ -261,6 +276,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkstationRequest, Operation>
@@ -271,6 +287,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartWorkstationRequest, Operation>
@@ -281,6 +298,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopWorkstationRequest, Operation>
@@ -291,6 +309,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopWorkstationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -302,6 +321,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(GenerateAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -310,6 +330,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -318,6 +339,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -329,6 +351,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetWorkstationClusterRequest, WorkstationCluster>

@@ -62,7 +62,7 @@ public interface SubpropertySyncConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. Resource name of the Subproperty that these
+   * Output only. Immutable. Resource name of the subproperty that these
    * settings apply to.
    * </pre>
    *
@@ -78,7 +78,7 @@ public interface SubpropertySyncConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. Resource name of the Subproperty that these
+   * Output only. Immutable. Resource name of the subproperty that these
    * settings apply to.
    * </pre>
    *
@@ -95,11 +95,11 @@ public interface SubpropertySyncConfigOrBuilder
    *
    * <pre>
    * Required. Specifies the Custom Dimension / Metric synchronization mode for
-   * the Subproperty.
+   * the subproperty.
    *
    * If set to ALL, Custom Dimension / Metric synchronization will be
    * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-   * will not be allowed on the Subproperty so long as the synchronization mode
+   * will not be allowed on the subproperty so long as the synchronization mode
    * is set to ALL.
    *
    * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -120,11 +120,11 @@ public interface SubpropertySyncConfigOrBuilder
    *
    * <pre>
    * Required. Specifies the Custom Dimension / Metric synchronization mode for
-   * the Subproperty.
+   * the subproperty.
    *
    * If set to ALL, Custom Dimension / Metric synchronization will be
    * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-   * will not be allowed on the Subproperty so long as the synchronization mode
+   * will not be allowed on the subproperty so long as the synchronization mode
    * is set to ALL.
    *
    * If set to NONE, Custom Dimensions / Metric synchronization is disabled.

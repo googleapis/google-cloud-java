@@ -91,6 +91,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSiteSearchEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SiteSearchEngine.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTargetSiteRequest, Operation>
@@ -102,6 +103,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateTargetSitesRequest, Operation>
@@ -113,6 +115,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTargetSiteRequest, TargetSite>
@@ -124,6 +127,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TargetSite.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTargetSiteRequest, Operation>
@@ -135,6 +139,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTargetSiteRequest, Operation>
@@ -146,6 +151,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTargetSiteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTargetSitesRequest, ListTargetSitesResponse>
@@ -158,6 +164,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   ProtoUtils.marshaller(ListTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTargetSitesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSitemapRequest, Operation>
@@ -169,6 +176,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSitemapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSitemapRequest, Operation>
@@ -180,6 +188,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSitemapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchSitemapsRequest, FetchSitemapsResponse>
@@ -192,6 +201,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   ProtoUtils.marshaller(FetchSitemapsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchSitemapsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableAdvancedSiteSearchRequest, Operation>
@@ -203,6 +213,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableAdvancedSiteSearchRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableAdvancedSiteSearchRequest, Operation>
@@ -214,6 +225,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableAdvancedSiteSearchRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecrawlUrisRequest, Operation> recrawlUrisMethodDescriptor =
@@ -223,6 +235,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               "google.cloud.discoveryengine.v1beta.SiteSearchEngineService/RecrawlUris")
           .setRequestMarshaller(ProtoUtils.marshaller(RecrawlUrisRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchVerifyTargetSitesRequest, Operation>
@@ -234,6 +247,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchVerifyTargetSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -249,6 +263,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   ProtoUtils.marshaller(FetchDomainVerificationStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchDomainVerificationStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSiteSearchEngineRequest, SiteSearchEngine>

@@ -68,6 +68,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -78,6 +79,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopClusterRequest, Operation> stopClusterMethodDescriptor =
@@ -86,6 +88,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.ClusterController/StopCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(StopClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StartClusterRequest, Operation>
@@ -95,6 +98,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setFullMethodName("google.cloud.dataproc.v1.ClusterController/StartCluster")
               .setRequestMarshaller(ProtoUtils.marshaller(StartClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -105,6 +109,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -113,6 +118,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.ClusterController/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListClustersRequest, ListClustersResponse>
@@ -123,6 +129,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DiagnoseClusterRequest, Operation>
@@ -133,6 +140,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DiagnoseClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -141,6 +149,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -149,6 +158,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -160,6 +170,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;

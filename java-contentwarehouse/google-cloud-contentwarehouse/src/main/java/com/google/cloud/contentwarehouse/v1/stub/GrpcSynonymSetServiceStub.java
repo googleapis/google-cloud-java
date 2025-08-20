@@ -57,6 +57,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSynonymSetRequest, SynonymSet>
@@ -67,6 +68,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSynonymSetRequest, SynonymSet>
@@ -78,6 +80,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SynonymSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSynonymSetRequest, Empty>
@@ -89,6 +92,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSynonymSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSynonymSetsRequest, ListSynonymSetsResponse>
@@ -101,6 +105,7 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                   ProtoUtils.marshaller(ListSynonymSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSynonymSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSynonymSetRequest, SynonymSet> createSynonymSetCallable;

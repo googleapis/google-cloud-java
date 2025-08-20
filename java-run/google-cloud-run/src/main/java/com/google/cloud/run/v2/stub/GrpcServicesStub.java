@@ -63,6 +63,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -81,6 +83,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Operation>
@@ -91,6 +94,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -101,6 +105,7 @@ public class GrpcServicesStub extends ServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -109,6 +114,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -117,6 +123,7 @@ public class GrpcServicesStub extends ServicesStub {
           .setFullMethodName("google.cloud.run.v2.Services/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -128,6 +135,7 @@ public class GrpcServicesStub extends ServicesStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateServiceRequest, Operation> createServiceCallable;

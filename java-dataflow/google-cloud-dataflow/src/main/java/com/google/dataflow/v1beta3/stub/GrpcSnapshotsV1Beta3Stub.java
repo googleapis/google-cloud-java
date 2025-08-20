@@ -52,6 +52,7 @@ public class GrpcSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
           .setFullMethodName("google.dataflow.v1beta3.SnapshotsV1Beta3/GetSnapshot")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSnapshotRequest, DeleteSnapshotResponse>
@@ -63,6 +64,7 @@ public class GrpcSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeleteSnapshotResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -74,6 +76,7 @@ public class GrpcSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
                   ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable;

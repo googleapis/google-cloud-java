@@ -56,6 +56,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOnlineReturnPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OnlineReturnPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -70,6 +71,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                   ProtoUtils.marshaller(ListOnlineReturnPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOnlineReturnPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
@@ -81,6 +83,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOnlineReturnPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OnlineReturnPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOnlineReturnPolicyRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOnlineReturnPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOnlineReturnPolicyRequest, OnlineReturnPolicy>

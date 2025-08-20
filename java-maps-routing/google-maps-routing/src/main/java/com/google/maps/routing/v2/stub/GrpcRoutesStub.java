@@ -51,6 +51,7 @@ public class GrpcRoutesStub extends RoutesStub {
                   ProtoUtils.marshaller(ComputeRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ComputeRouteMatrixRequest, RouteMatrixElement>
@@ -61,6 +62,7 @@ public class GrpcRoutesStub extends RoutesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ComputeRouteMatrixRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RouteMatrixElement.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesCallable;

@@ -50,6 +50,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.SearchService/Search")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;

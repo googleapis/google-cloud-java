@@ -82,6 +82,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunFunnelReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunFunnelReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAudienceListRequest, Operation>
@@ -93,6 +94,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryAudienceListRequest, QueryAudienceListResponse>
@@ -105,6 +107,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(QueryAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryAudienceListResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -119,6 +122,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(SheetExportAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SheetExportAudienceListResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAudienceListRequest, AudienceList>
@@ -129,6 +133,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAudienceListsRequest, ListAudienceListsResponse>
@@ -141,6 +146,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListAudienceListsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAudienceListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRecurringAudienceListRequest, RecurringAudienceList>
@@ -153,6 +159,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(CreateRecurringAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecurringAudienceListRequest, RecurringAudienceList>
@@ -165,6 +172,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(GetRecurringAudienceListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -179,6 +187,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListRecurringAudienceListsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecurringAudienceListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
@@ -191,6 +200,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(GetPropertyQuotasSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PropertyQuotasSnapshot.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReportTaskRequest, Operation>
@@ -202,6 +212,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReportTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryReportTaskRequest, QueryReportTaskResponse>
@@ -213,6 +224,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(QueryReportTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryReportTaskResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportTaskRequest, ReportTask>
@@ -223,6 +235,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportTask.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReportTasksRequest, ListReportTasksResponse>
@@ -234,6 +247,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListReportTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>

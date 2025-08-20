@@ -98,6 +98,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotebookRuntimeTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
@@ -110,6 +111,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(GetNotebookRuntimeTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotebookRuntimeTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -125,6 +127,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ListNotebookRuntimeTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotebookRuntimeTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotebookRuntimeTemplateRequest, Operation>
@@ -136,6 +139,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotebookRuntimeTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -150,6 +154,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(UpdateNotebookRuntimeTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotebookRuntimeTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AssignNotebookRuntimeRequest, Operation>
@@ -161,6 +166,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AssignNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotebookRuntimeRequest, NotebookRuntime>
@@ -172,6 +178,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotebookRuntime.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNotebookRuntimesRequest, ListNotebookRuntimesResponse>
@@ -184,6 +191,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ListNotebookRuntimesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotebookRuntimesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotebookRuntimeRequest, Operation>
@@ -195,6 +203,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeNotebookRuntimeRequest, Operation>
@@ -206,6 +215,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartNotebookRuntimeRequest, Operation>
@@ -217,6 +227,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopNotebookRuntimeRequest, Operation>
@@ -228,6 +239,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopNotebookRuntimeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotebookExecutionJobRequest, Operation>
@@ -239,6 +251,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotebookExecutionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotebookExecutionJobRequest, NotebookExecutionJob>
@@ -251,6 +264,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(GetNotebookExecutionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotebookExecutionJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -265,6 +279,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ListNotebookExecutionJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotebookExecutionJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotebookExecutionJobRequest, Operation>
@@ -276,6 +291,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotebookExecutionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -287,6 +303,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -295,6 +312,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -303,6 +321,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -311,6 +330,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -322,6 +342,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateNotebookRuntimeTemplateRequest, Operation>

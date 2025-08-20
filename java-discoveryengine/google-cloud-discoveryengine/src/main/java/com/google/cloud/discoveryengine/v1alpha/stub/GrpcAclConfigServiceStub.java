@@ -52,6 +52,7 @@ public class GrpcAclConfigServiceStub extends AclConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAclConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AclConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAclConfigRequest, AclConfig>
@@ -62,6 +63,7 @@ public class GrpcAclConfigServiceStub extends AclConfigServiceStub {
                   "google.cloud.discoveryengine.v1alpha.AclConfigService/GetAclConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetAclConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AclConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateAclConfigRequest, AclConfig> updateAclConfigCallable;

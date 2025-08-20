@@ -82,6 +82,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   ProtoUtils.marshaller(CheckOnboardingStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckOnboardingStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntitlementsRequest, ListEntitlementsResponse>
@@ -94,6 +95,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   ProtoUtils.marshaller(ListEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitlementsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchEntitlementsRequest, SearchEntitlementsResponse>
@@ -106,6 +108,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   ProtoUtils.marshaller(SearchEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchEntitlementsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntitlementRequest, Entitlement>
@@ -117,6 +120,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Entitlement.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntitlementRequest, Operation>
@@ -128,6 +132,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntitlementRequest, Operation>
@@ -139,6 +144,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntitlementRequest, Operation>
@@ -150,6 +156,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGrantsRequest, ListGrantsResponse>
@@ -160,6 +167,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/ListGrants")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGrantsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGrantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchGrantsRequest, SearchGrantsResponse>
@@ -171,6 +179,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               .setRequestMarshaller(ProtoUtils.marshaller(SearchGrantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchGrantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGrantRequest, Grant> getGrantMethodDescriptor =
@@ -180,6 +189,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/GetGrant")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGrantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Grant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGrantRequest, Grant> createGrantMethodDescriptor =
@@ -189,6 +199,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/CreateGrant")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGrantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Grant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ApproveGrantRequest, Grant> approveGrantMethodDescriptor =
@@ -198,6 +209,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/ApproveGrant")
           .setRequestMarshaller(ProtoUtils.marshaller(ApproveGrantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Grant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DenyGrantRequest, Grant> denyGrantMethodDescriptor =
@@ -207,6 +219,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/DenyGrant")
           .setRequestMarshaller(ProtoUtils.marshaller(DenyGrantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Grant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RevokeGrantRequest, Operation> revokeGrantMethodDescriptor =
@@ -216,6 +229,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
               "google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager/RevokeGrant")
           .setRequestMarshaller(ProtoUtils.marshaller(RevokeGrantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -227,6 +241,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -235,6 +250,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CheckOnboardingStatusRequest, CheckOnboardingStatusResponse>

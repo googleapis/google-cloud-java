@@ -81,6 +81,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPosturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPosturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPostureRevisionsRequest, ListPostureRevisionsResponse>
@@ -93,6 +94,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   ProtoUtils.marshaller(ListPostureRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPostureRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPostureRequest, Posture> getPostureMethodDescriptor =
@@ -101,6 +103,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
           .setFullMethodName("google.cloud.securityposture.v1.SecurityPosture/GetPosture")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPostureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Posture.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreatePostureRequest, Operation>
@@ -111,6 +114,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePostureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePostureRequest, Operation>
@@ -121,6 +125,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePostureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePostureRequest, Operation>
@@ -131,6 +136,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePostureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExtractPostureRequest, Operation>
@@ -141,6 +147,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExtractPostureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -155,6 +162,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   ProtoUtils.marshaller(ListPostureDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPostureDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPostureDeploymentRequest, PostureDeployment>
@@ -166,6 +174,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPostureDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PostureDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePostureDeploymentRequest, Operation>
@@ -177,6 +186,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePostureDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePostureDeploymentRequest, Operation>
@@ -188,6 +198,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePostureDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePostureDeploymentRequest, Operation>
@@ -199,6 +210,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePostureDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPostureTemplatesRequest, ListPostureTemplatesResponse>
@@ -211,6 +223,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   ProtoUtils.marshaller(ListPostureTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPostureTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPostureTemplateRequest, PostureTemplate>
@@ -222,6 +235,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPostureTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PostureTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -233,6 +247,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -241,6 +256,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListPosturesRequest, ListPosturesResponse> listPosturesCallable;

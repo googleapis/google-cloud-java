@@ -58,6 +58,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodeGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResizeNodeGroupRequest, Operation>
@@ -68,6 +69,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResizeNodeGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodeGroupRequest, NodeGroup>
@@ -77,6 +79,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
               .setFullMethodName("google.cloud.dataproc.v1.NodeGroupController/GetNodeGroup")
               .setRequestMarshaller(ProtoUtils.marshaller(GetNodeGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NodeGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -85,6 +88,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -93,6 +97,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -104,6 +109,7 @@ public class GrpcNodeGroupControllerStub extends NodeGroupControllerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateNodeGroupRequest, Operation> createNodeGroupCallable;

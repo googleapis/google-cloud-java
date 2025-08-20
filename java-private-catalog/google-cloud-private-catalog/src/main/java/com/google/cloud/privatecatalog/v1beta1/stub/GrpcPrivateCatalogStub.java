@@ -60,6 +60,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchCatalogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchProductsRequest, SearchProductsResponse>
@@ -72,6 +73,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchVersionsRequest, SearchVersionsResponse>
@@ -84,6 +86,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchCatalogsRequest, SearchCatalogsResponse> searchCatalogsCallable;

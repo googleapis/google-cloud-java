@@ -73,6 +73,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Schedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteScheduleRequest, Operation>
@@ -83,6 +84,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetScheduleRequest, Schedule> getScheduleMethodDescriptor =
@@ -91,6 +93,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ScheduleService/GetSchedule")
           .setRequestMarshaller(ProtoUtils.marshaller(GetScheduleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Schedule.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSchedulesRequest, ListSchedulesResponse>
@@ -102,6 +105,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
                   ProtoUtils.marshaller(ListSchedulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSchedulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseScheduleRequest, Empty> pauseScheduleMethodDescriptor =
@@ -110,6 +114,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ScheduleService/PauseSchedule")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseScheduleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeScheduleRequest, Empty>
@@ -120,6 +125,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateScheduleRequest, Schedule>
@@ -130,6 +136,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Schedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -141,6 +148,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -149,6 +157,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -157,6 +166,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -165,6 +175,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -176,6 +187,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateScheduleRequest, Schedule> createScheduleCallable;

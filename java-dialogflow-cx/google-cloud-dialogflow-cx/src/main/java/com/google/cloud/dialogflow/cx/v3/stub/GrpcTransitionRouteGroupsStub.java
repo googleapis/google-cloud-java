@@ -65,6 +65,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(ListTransitionRouteGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransitionRouteGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -77,6 +78,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(GetTransitionRouteGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -89,6 +91,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(CreateTransitionRouteGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -101,6 +104,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(UpdateTransitionRouteGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTransitionRouteGroupRequest, Empty>
@@ -112,6 +116,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTransitionRouteGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -123,6 +128,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -131,6 +137,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>

@@ -71,6 +71,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   ProtoUtils.marshaller(ListInternalRangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInternalRangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInternalRangeRequest, InternalRange>
@@ -82,6 +83,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInternalRangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InternalRange.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInternalRangeRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInternalRangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInternalRangeRequest, Operation>
@@ -104,6 +107,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInternalRangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInternalRangeRequest, Operation>
@@ -115,6 +119,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInternalRangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -126,6 +131,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -134,6 +140,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -142,6 +149,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -150,6 +158,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -161,6 +170,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListInternalRangesRequest, ListInternalRangesResponse>

@@ -83,6 +83,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataTaxonomyRequest, Operation>
@@ -93,6 +94,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataTaxonomyRequest, Operation>
@@ -103,6 +105,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse>
@@ -114,6 +117,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataTaxonomyRequest, DataTaxonomy>
@@ -124,6 +128,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataTaxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataAttributeBindingRequest, Operation>
@@ -135,6 +140,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAttributeBindingRequest, Operation>
@@ -146,6 +152,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAttributeBindingRequest, Operation>
@@ -157,6 +164,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +179,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataAttributeBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAttributeBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAttributeBindingRequest, DataAttributeBinding>
@@ -183,6 +192,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(GetDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataAttributeBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataAttributeRequest, Operation>
@@ -193,6 +203,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAttributeRequest, Operation>
@@ -203,6 +214,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAttributeRequest, Operation>
@@ -213,6 +225,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataAttributesRequest, ListDataAttributesResponse>
@@ -224,6 +237,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataAttributesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAttributesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAttributeRequest, DataAttribute>
@@ -234,6 +248,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAttribute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -245,6 +260,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -253,6 +269,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDataTaxonomyRequest, Operation> createDataTaxonomyCallable;

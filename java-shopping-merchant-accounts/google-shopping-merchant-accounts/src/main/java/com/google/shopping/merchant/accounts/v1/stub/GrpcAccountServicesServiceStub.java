@@ -57,6 +57,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAccountServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountServicesRequest, ListAccountServicesResponse>
@@ -69,6 +70,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                   ProtoUtils.marshaller(ListAccountServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ProposeAccountServiceRequest, AccountService>
@@ -80,6 +82,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProposeAccountServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApproveAccountServiceRequest, AccountService>
@@ -91,6 +94,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApproveAccountServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RejectAccountServiceRequest, Empty>
@@ -102,6 +106,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RejectAccountServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountServiceRequest, AccountService> getAccountServiceCallable;

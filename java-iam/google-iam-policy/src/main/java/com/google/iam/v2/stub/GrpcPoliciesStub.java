@@ -58,6 +58,7 @@ public class GrpcPoliciesStub extends PoliciesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyRequest, Policy> getPolicyMethodDescriptor =
@@ -66,6 +67,7 @@ public class GrpcPoliciesStub extends PoliciesStub {
           .setFullMethodName("google.iam.v2.Policies/GetPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreatePolicyRequest, Operation>
@@ -75,6 +77,7 @@ public class GrpcPoliciesStub extends PoliciesStub {
               .setFullMethodName("google.iam.v2.Policies/CreatePolicy")
               .setRequestMarshaller(ProtoUtils.marshaller(CreatePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePolicyRequest, Operation>
@@ -84,6 +87,7 @@ public class GrpcPoliciesStub extends PoliciesStub {
               .setFullMethodName("google.iam.v2.Policies/UpdatePolicy")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdatePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePolicyRequest, Operation>
@@ -93,6 +97,7 @@ public class GrpcPoliciesStub extends PoliciesStub {
               .setFullMethodName("google.iam.v2.Policies/DeletePolicy")
               .setRequestMarshaller(ProtoUtils.marshaller(DeletePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListPoliciesRequest, ListPoliciesResponse> listPoliciesCallable;

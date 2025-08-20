@@ -52,6 +52,7 @@ public class GrpcImageVersionsStub extends ImageVersionsStub {
                   ProtoUtils.marshaller(ListImageVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListImageVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListImageVersionsRequest, ListImageVersionsResponse>

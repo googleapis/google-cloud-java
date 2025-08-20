@@ -54,6 +54,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/GetUser")
           .setRequestMarshaller(ProtoUtils.marshaller(GetUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateUserRequest, User> createUserMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/CreateUser")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteUserRequest, Empty> deleteUserMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/DeleteUser")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateUserRequest, User> updateUserMethodDescriptor =
@@ -78,6 +81,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/UpdateUser")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
@@ -87,6 +91,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
               .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/ListUsers")
               .setRequestMarshaller(ProtoUtils.marshaller(ListUsersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetUserRequest, User> getUserCallable;

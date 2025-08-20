@@ -124,6 +124,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataStoreRequest, MetadataStore>
@@ -134,6 +135,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataStoresRequest, ListMetadataStoresResponse>
@@ -146,6 +148,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListMetadataStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMetadataStoreRequest, Operation>
@@ -157,6 +160,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMetadataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateArtifactRequest, Artifact>
@@ -167,6 +171,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetArtifactRequest, Artifact> getArtifactMethodDescriptor =
@@ -175,6 +180,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/GetArtifact")
           .setRequestMarshaller(ProtoUtils.marshaller(GetArtifactRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListArtifactsRequest, ListArtifactsResponse>
@@ -186,6 +192,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListArtifactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateArtifactRequest, Artifact>
@@ -196,6 +203,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteArtifactRequest, Operation>
@@ -206,6 +214,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteArtifactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeArtifactsRequest, Operation>
@@ -216,6 +225,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateContextRequest, Context>
@@ -226,6 +236,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetContextRequest, Context> getContextMethodDescriptor =
@@ -234,6 +245,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/GetContext")
           .setRequestMarshaller(ProtoUtils.marshaller(GetContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListContextsRequest, ListContextsResponse>
@@ -244,6 +256,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateContextRequest, Context>
@@ -254,6 +267,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteContextRequest, Operation>
@@ -264,6 +278,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeContextsRequest, Operation>
@@ -274,6 +289,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -291,6 +307,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       AddContextArtifactsAndExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddContextChildrenRequest, AddContextChildrenResponse>
@@ -303,6 +320,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(AddContextChildrenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddContextChildrenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
@@ -315,6 +333,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(RemoveContextChildrenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveContextChildrenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryContextLineageSubgraphRequest, LineageSubgraph>
@@ -326,6 +345,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryContextLineageSubgraphRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExecutionRequest, Execution>
@@ -336,6 +356,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExecutionRequest, Execution>
@@ -345,6 +366,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/GetExecution")
               .setRequestMarshaller(ProtoUtils.marshaller(GetExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListExecutionsRequest, ListExecutionsResponse>
@@ -356,6 +378,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExecutionRequest, Execution>
@@ -366,6 +389,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExecutionRequest, Operation>
@@ -376,6 +400,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeExecutionsRequest, Operation>
@@ -386,6 +411,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -398,6 +424,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(AddExecutionEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddExecutionEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -409,6 +436,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryExecutionInputsAndOutputsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetadataSchemaRequest, MetadataSchema>
@@ -420,6 +448,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataSchemaRequest, MetadataSchema>
@@ -431,6 +460,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
@@ -443,6 +473,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListMetadataSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
@@ -454,6 +485,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryArtifactLineageSubgraphRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageSubgraph.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -465,6 +497,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -473,6 +506,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -481,6 +515,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -489,6 +524,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -500,6 +536,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMetadataStoreRequest, Operation> createMetadataStoreCallable;

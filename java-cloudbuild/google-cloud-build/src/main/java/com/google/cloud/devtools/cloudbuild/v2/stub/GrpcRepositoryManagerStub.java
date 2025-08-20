@@ -82,6 +82,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -92,6 +93,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
@@ -103,6 +105,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Operation>
@@ -113,6 +116,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Operation>
@@ -123,6 +127,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRepositoryRequest, Operation>
@@ -133,6 +138,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateRepositoriesRequest, Operation>
@@ -144,6 +150,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRepositoryRequest, Repository>
@@ -154,6 +161,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
@@ -165,6 +173,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(ListRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRepositoryRequest, Operation>
@@ -175,6 +184,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
@@ -187,6 +197,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchReadWriteTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadWriteTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadTokenRequest, FetchReadTokenResponse>
@@ -198,6 +209,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchReadTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -212,6 +224,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(FetchLinkableRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchLinkableRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
@@ -222,6 +235,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -230,6 +244,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -238,6 +253,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -249,6 +265,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConnectionRequest, Operation> createConnectionCallable;

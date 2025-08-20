@@ -53,6 +53,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
               .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/ListTraces")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTraceRequest, Trace> getTraceMethodDescriptor =
@@ -61,6 +62,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
           .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/GetTrace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trace.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PatchTracesRequest, Empty> patchTracesMethodDescriptor =
@@ -69,6 +71,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
           .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/PatchTraces")
           .setRequestMarshaller(ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;

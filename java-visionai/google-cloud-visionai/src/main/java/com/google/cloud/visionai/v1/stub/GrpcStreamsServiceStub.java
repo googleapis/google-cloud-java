@@ -89,6 +89,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -97,6 +98,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -107,6 +109,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -117,6 +120,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -127,6 +131,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListStreamsRequest, ListStreamsResponse>
@@ -137,6 +142,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStreamRequest, Stream> getStreamMethodDescriptor =
@@ -145,6 +151,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/GetStream")
           .setRequestMarshaller(ProtoUtils.marshaller(GetStreamRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Stream.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateStreamRequest, Operation>
@@ -154,6 +161,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/CreateStream")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStreamRequest, Operation>
@@ -163,6 +171,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/UpdateStream")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStreamRequest, Operation>
@@ -172,6 +181,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/DeleteStream")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStreamThumbnailRequest, Operation>
@@ -182,6 +192,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetStreamThumbnailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -195,6 +206,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   ProtoUtils.marshaller(GenerateStreamHlsTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateStreamHlsTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
@@ -204,6 +216,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEventRequest, Event> getEventMethodDescriptor =
@@ -212,6 +225,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/GetEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEventRequest, Operation> createEventMethodDescriptor =
@@ -220,6 +234,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/CreateEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEventRequest, Operation> updateEventMethodDescriptor =
@@ -228,6 +243,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/UpdateEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEventRequest, Operation> deleteEventMethodDescriptor =
@@ -236,6 +252,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/DeleteEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSeriesRequest, ListSeriesResponse>
@@ -245,6 +262,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/ListSeries")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSeriesRequest, Series> getSeriesMethodDescriptor =
@@ -253,6 +271,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamsService/GetSeries")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSeriesRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Series.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSeriesRequest, Operation>
@@ -262,6 +281,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/CreateSeries")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSeriesRequest, Operation>
@@ -271,6 +291,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/UpdateSeries")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSeriesRequest, Operation>
@@ -280,6 +301,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setFullMethodName("google.cloud.visionai.v1.StreamsService/DeleteSeries")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MaterializeChannelRequest, Operation>
@@ -290,6 +312,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MaterializeChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;

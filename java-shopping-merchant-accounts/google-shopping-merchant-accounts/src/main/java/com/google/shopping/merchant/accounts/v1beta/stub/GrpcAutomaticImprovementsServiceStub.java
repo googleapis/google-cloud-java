@@ -53,6 +53,7 @@ public class GrpcAutomaticImprovementsServiceStub extends AutomaticImprovementsS
                   ProtoUtils.marshaller(GetAutomaticImprovementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AutomaticImprovements.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutomaticImprovementsRequest, AutomaticImprovements>
@@ -65,6 +66,7 @@ public class GrpcAutomaticImprovementsServiceStub extends AutomaticImprovementsS
                   ProtoUtils.marshaller(UpdateAutomaticImprovementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AutomaticImprovements.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAutomaticImprovementsRequest, AutomaticImprovements>

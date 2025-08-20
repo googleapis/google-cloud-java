@@ -48,6 +48,7 @@ public class GrpcAssistantServiceStub extends AssistantServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(StreamAssistRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamAssistResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse>

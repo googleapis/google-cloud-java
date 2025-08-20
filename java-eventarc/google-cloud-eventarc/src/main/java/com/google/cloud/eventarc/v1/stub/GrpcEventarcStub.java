@@ -124,6 +124,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetTrigger")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTriggerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trigger.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTriggersRequest, ListTriggersResponse>
@@ -134,6 +135,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTriggersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTriggersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTriggerRequest, Operation>
@@ -144,6 +146,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTriggerRequest, Operation>
@@ -154,6 +157,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTriggerRequest, Operation>
@@ -164,6 +168,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChannelRequest, Channel> getChannelMethodDescriptor =
@@ -172,6 +177,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetChannel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetChannelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Channel.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListChannelsRequest, ListChannelsResponse>
@@ -182,6 +188,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateChannelRequest, Operation>
@@ -192,6 +199,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateChannelRequest, Operation>
@@ -202,6 +210,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteChannelRequest, Operation>
@@ -212,6 +221,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProviderRequest, Provider> getProviderMethodDescriptor =
@@ -220,6 +230,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetProvider")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProviderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Provider.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProvidersRequest, ListProvidersResponse>
@@ -231,6 +242,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListProvidersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProvidersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChannelConnectionRequest, ChannelConnection>
@@ -241,6 +253,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetChannelConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -254,6 +267,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListChannelConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChannelConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateChannelConnectionRequest, Operation>
@@ -264,6 +278,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChannelConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteChannelConnectionRequest, Operation>
@@ -274,6 +289,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteChannelConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGoogleChannelConfigRequest, GoogleChannelConfig>
@@ -285,6 +301,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(GetGoogleChannelConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GoogleChannelConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
@@ -296,6 +313,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(UpdateGoogleChannelConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GoogleChannelConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMessageBusRequest, MessageBus>
@@ -306,6 +324,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMessageBusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MessageBus.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMessageBusesRequest, ListMessageBusesResponse>
@@ -317,6 +336,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListMessageBusesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMessageBusesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -330,6 +350,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListMessageBusEnrollmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMessageBusEnrollmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMessageBusRequest, Operation>
@@ -340,6 +361,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMessageBusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMessageBusRequest, Operation>
@@ -350,6 +372,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMessageBusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMessageBusRequest, Operation>
@@ -360,6 +383,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMessageBusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEnrollmentRequest, Enrollment>
@@ -370,6 +394,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnrollmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Enrollment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEnrollmentsRequest, ListEnrollmentsResponse>
@@ -381,6 +406,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListEnrollmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnrollmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEnrollmentRequest, Operation>
@@ -391,6 +417,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEnrollmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEnrollmentRequest, Operation>
@@ -401,6 +428,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEnrollmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEnrollmentRequest, Operation>
@@ -411,6 +439,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEnrollmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPipelineRequest, Pipeline> getPipelineMethodDescriptor =
@@ -419,6 +448,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetPipeline")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPipelineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Pipeline.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListPipelinesRequest, ListPipelinesResponse>
@@ -430,6 +460,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListPipelinesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPipelinesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePipelineRequest, Operation>
@@ -440,6 +471,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePipelineRequest, Operation>
@@ -450,6 +482,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePipelineRequest, Operation>
@@ -460,6 +493,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGoogleApiSourceRequest, GoogleApiSource>
@@ -470,6 +504,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGoogleApiSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleApiSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
@@ -481,6 +516,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListGoogleApiSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGoogleApiSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGoogleApiSourceRequest, Operation>
@@ -491,6 +527,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGoogleApiSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGoogleApiSourceRequest, Operation>
@@ -501,6 +538,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGoogleApiSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGoogleApiSourceRequest, Operation>
@@ -511,6 +549,7 @@ public class GrpcEventarcStub extends EventarcStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGoogleApiSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -522,6 +561,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -530,6 +570,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -538,6 +579,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -546,6 +588,7 @@ public class GrpcEventarcStub extends EventarcStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -557,6 +600,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetTriggerRequest, Trigger> getTriggerCallable;

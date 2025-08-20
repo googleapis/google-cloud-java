@@ -51,6 +51,7 @@ public class GrpcAuthorizedDomainsStub extends AuthorizedDomainsStub {
                   ProtoUtils.marshaller(ListAuthorizedDomainsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAuthorizedDomainsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse>

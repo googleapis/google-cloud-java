@@ -48,6 +48,7 @@ public class GrpcLfpSaleServiceStub extends LfpSaleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertLfpSaleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LfpSale.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertLfpSaleRequest, LfpSale> insertLfpSaleCallable;

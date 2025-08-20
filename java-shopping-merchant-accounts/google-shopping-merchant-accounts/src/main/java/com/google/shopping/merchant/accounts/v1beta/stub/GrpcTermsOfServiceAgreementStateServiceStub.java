@@ -57,6 +57,7 @@ public class GrpcTermsOfServiceAgreementStateServiceStub
                       GetTermsOfServiceAgreementStateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TermsOfServiceAgreementState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -75,6 +76,7 @@ public class GrpcTermsOfServiceAgreementStateServiceStub
                           .getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TermsOfServiceAgreementState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetTermsOfServiceAgreementStateRequest, TermsOfServiceAgreementState>

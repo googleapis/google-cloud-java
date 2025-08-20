@@ -55,6 +55,7 @@ public class GrpcAccountRelationshipsServiceStub extends AccountRelationshipsSer
                   ProtoUtils.marshaller(GetAccountRelationshipRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccountRelationship.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccountRelationshipRequest, AccountRelationship>
@@ -67,6 +68,7 @@ public class GrpcAccountRelationshipsServiceStub extends AccountRelationshipsSer
                   ProtoUtils.marshaller(UpdateAccountRelationshipRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccountRelationship.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -81,6 +83,7 @@ public class GrpcAccountRelationshipsServiceStub extends AccountRelationshipsSer
                   ProtoUtils.marshaller(ListAccountRelationshipsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountRelationshipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountRelationshipRequest, AccountRelationship>

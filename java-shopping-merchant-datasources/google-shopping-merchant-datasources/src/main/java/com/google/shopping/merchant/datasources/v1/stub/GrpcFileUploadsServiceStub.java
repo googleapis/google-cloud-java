@@ -49,6 +49,7 @@ public class GrpcFileUploadsServiceStub extends FileUploadsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFileUploadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FileUpload.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetFileUploadRequest, FileUpload> getFileUploadCallable;

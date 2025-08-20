@@ -51,6 +51,7 @@ public class GrpcQueryServiceStub extends QueryServiceStub {
                   ProtoUtils.marshaller(QueryTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesResponse>

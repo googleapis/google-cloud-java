@@ -72,6 +72,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
           .setFullMethodName("google.cloud.chronicle.v1.RuleService/CreateRule")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRuleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetRuleRequest, Rule> getRuleMethodDescriptor =
@@ -80,6 +81,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
           .setFullMethodName("google.cloud.chronicle.v1.RuleService/GetRule")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRuleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRulesRequest, ListRulesResponse>
@@ -89,6 +91,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
               .setFullMethodName("google.cloud.chronicle.v1.RuleService/ListRules")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRuleRequest, Rule> updateRuleMethodDescriptor =
@@ -97,6 +100,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
           .setFullMethodName("google.cloud.chronicle.v1.RuleService/UpdateRule")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRuleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteRuleRequest, Empty> deleteRuleMethodDescriptor =
@@ -105,6 +109,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
           .setFullMethodName("google.cloud.chronicle.v1.RuleService/DeleteRule")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRuleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
@@ -116,6 +121,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   ProtoUtils.marshaller(ListRuleRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuleRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRetrohuntRequest, Operation>
@@ -126,6 +132,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRetrohuntRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRetrohuntRequest, Retrohunt>
@@ -135,6 +142,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
               .setFullMethodName("google.cloud.chronicle.v1.RuleService/GetRetrohunt")
               .setRequestMarshaller(ProtoUtils.marshaller(GetRetrohuntRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Retrohunt.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRetrohuntsRequest, ListRetrohuntsResponse>
@@ -146,6 +154,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   ProtoUtils.marshaller(ListRetrohuntsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRetrohuntsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRuleDeploymentRequest, RuleDeployment>
@@ -156,6 +165,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRuleDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse>
@@ -167,6 +177,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   ProtoUtils.marshaller(ListRuleDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuleDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRuleDeploymentRequest, RuleDeployment>
@@ -177,6 +188,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRuleDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateRuleRequest, Rule> createRuleCallable;

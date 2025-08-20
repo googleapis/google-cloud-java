@@ -166,6 +166,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRepositoryRequest, Repository>
@@ -176,6 +177,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRepositoryRequest, Repository>
@@ -186,6 +188,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRepositoryRequest, Repository>
@@ -196,6 +199,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRepositoryRequest, Empty>
@@ -206,6 +210,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -219,6 +224,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(CommitRepositoryChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CommitRepositoryChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
@@ -230,6 +236,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ReadRepositoryFileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadRepositoryFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -247,6 +254,7 @@ public class GrpcDataformStub extends DataformStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       QueryRepositoryDirectoryContentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -260,6 +268,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(FetchRepositoryHistoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchRepositoryHistoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -278,6 +287,7 @@ public class GrpcDataformStub extends DataformStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ComputeRepositoryAccessTokenStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
@@ -289,6 +299,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(FetchRemoteBranchesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchRemoteBranchesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkspacesRequest, ListWorkspacesResponse>
@@ -300,6 +311,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListWorkspacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkspacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkspaceRequest, Workspace>
@@ -309,6 +321,7 @@ public class GrpcDataformStub extends DataformStub {
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetWorkspace")
               .setRequestMarshaller(ProtoUtils.marshaller(GetWorkspaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workspace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkspaceRequest, Workspace>
@@ -319,6 +332,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkspaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workspace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkspaceRequest, Empty>
@@ -329,6 +343,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkspaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
@@ -340,6 +355,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(InstallNpmPackagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InstallNpmPackagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PullGitCommitsRequest, PullGitCommitsResponse>
@@ -351,6 +367,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(PullGitCommitsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PullGitCommitsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PushGitCommitsRequest, PushGitCommitsResponse>
@@ -362,6 +379,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(PushGitCommitsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PushGitCommitsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
@@ -373,6 +391,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(FetchFileGitStatusesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchFileGitStatusesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
@@ -384,6 +403,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(FetchGitAheadBehindRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitAheadBehindResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -397,6 +417,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(CommitWorkspaceChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CommitWorkspaceChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
@@ -408,6 +429,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ResetWorkspaceChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResetWorkspaceChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchFileDiffRequest, FetchFileDiffResponse>
@@ -419,6 +441,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(FetchFileDiffRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchFileDiffResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -432,6 +455,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(QueryDirectoryContentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryDirectoryContentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchFilesRequest, SearchFilesResponse>
@@ -442,6 +466,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MakeDirectoryRequest, MakeDirectoryResponse>
@@ -453,6 +478,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(MakeDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MakeDirectoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveDirectoryRequest, RemoveDirectoryResponse>
@@ -464,6 +490,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(RemoveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveDirectoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveDirectoryRequest, MoveDirectoryResponse>
@@ -475,6 +502,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(MoveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MoveDirectoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadFileRequest, ReadFileResponse>
@@ -484,6 +512,7 @@ public class GrpcDataformStub extends DataformStub {
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/ReadFile")
               .setRequestMarshaller(ProtoUtils.marshaller(ReadFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReadFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveFileRequest, RemoveFileResponse>
@@ -493,6 +522,7 @@ public class GrpcDataformStub extends DataformStub {
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/RemoveFile")
               .setRequestMarshaller(ProtoUtils.marshaller(RemoveFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RemoveFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveFileRequest, MoveFileResponse>
@@ -502,6 +532,7 @@ public class GrpcDataformStub extends DataformStub {
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/MoveFile")
               .setRequestMarshaller(ProtoUtils.marshaller(MoveFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MoveFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<WriteFileRequest, WriteFileResponse>
@@ -511,6 +542,7 @@ public class GrpcDataformStub extends DataformStub {
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/WriteFile")
               .setRequestMarshaller(ProtoUtils.marshaller(WriteFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WriteFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReleaseConfigsRequest, ListReleaseConfigsResponse>
@@ -522,6 +554,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListReleaseConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReleaseConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReleaseConfigRequest, ReleaseConfig>
@@ -532,6 +565,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReleaseConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReleaseConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReleaseConfigRequest, ReleaseConfig>
@@ -542,6 +576,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReleaseConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReleaseConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReleaseConfigRequest, ReleaseConfig>
@@ -552,6 +587,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReleaseConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReleaseConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReleaseConfigRequest, Empty>
@@ -562,6 +598,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReleaseConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -575,6 +612,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListCompilationResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCompilationResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCompilationResultRequest, CompilationResult>
@@ -585,6 +623,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCompilationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CompilationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCompilationResultRequest, CompilationResult>
@@ -595,6 +634,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCompilationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CompilationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -610,6 +650,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(QueryCompilationResultActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryCompilationResultActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse>
@@ -621,6 +662,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListWorkflowConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkflowConfigRequest, WorkflowConfig>
@@ -631,6 +673,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkflowConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkflowConfigRequest, WorkflowConfig>
@@ -641,6 +684,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkflowConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkflowConfigRequest, WorkflowConfig>
@@ -651,6 +695,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkflowConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkflowConfigRequest, Empty>
@@ -661,6 +706,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkflowConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -674,6 +720,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListWorkflowInvocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowInvocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkflowInvocationRequest, WorkflowInvocation>
@@ -684,6 +731,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkflowInvocationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowInvocation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkflowInvocationRequest, WorkflowInvocation>
@@ -694,6 +742,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkflowInvocationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowInvocation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkflowInvocationRequest, Empty>
@@ -704,6 +753,7 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkflowInvocationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -717,6 +767,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(CancelWorkflowInvocationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CancelWorkflowInvocationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -733,6 +784,7 @@ public class GrpcDataformStub extends DataformStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       QueryWorkflowInvocationActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
@@ -741,6 +793,7 @@ public class GrpcDataformStub extends DataformStub {
           .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(GetConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateConfigRequest, Config> updateConfigMethodDescriptor =
@@ -749,6 +802,7 @@ public class GrpcDataformStub extends DataformStub {
           .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/UpdateConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -760,6 +814,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -768,6 +823,7 @@ public class GrpcDataformStub extends DataformStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -776,6 +832,7 @@ public class GrpcDataformStub extends DataformStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -784,6 +841,7 @@ public class GrpcDataformStub extends DataformStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -795,6 +853,7 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListRepositoriesRequest, ListRepositoriesResponse>

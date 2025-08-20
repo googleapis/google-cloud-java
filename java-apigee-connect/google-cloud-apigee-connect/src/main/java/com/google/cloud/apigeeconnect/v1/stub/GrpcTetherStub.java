@@ -45,6 +45,7 @@ public class GrpcTetherStub extends TetherStub {
           .setFullMethodName("google.cloud.apigeeconnect.v1.Tether/Egress")
           .setRequestMarshaller(ProtoUtils.marshaller(EgressResponse.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(EgressRequest.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final BidiStreamingCallable<EgressResponse, EgressRequest> egressCallable;

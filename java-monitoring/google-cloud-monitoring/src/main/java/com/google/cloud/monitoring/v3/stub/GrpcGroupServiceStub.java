@@ -58,6 +58,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
               .setFullMethodName("google.monitoring.v3.GroupService/ListGroups")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
@@ -66,6 +67,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGroupRequest, Group> createGroupMethodDescriptor =
@@ -74,6 +76,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/CreateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/UpdateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
@@ -90,6 +94,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setFullMethodName("google.monitoring.v3.GroupService/DeleteGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
@@ -101,6 +106,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   ProtoUtils.marshaller(ListGroupMembersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGroupMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;

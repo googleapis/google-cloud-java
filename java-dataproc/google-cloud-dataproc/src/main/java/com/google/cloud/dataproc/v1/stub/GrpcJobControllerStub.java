@@ -63,6 +63,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.JobController/SubmitJob")
           .setRequestMarshaller(ProtoUtils.marshaller(SubmitJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SubmitJobRequest, Operation>
@@ -72,6 +73,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
               .setFullMethodName("google.cloud.dataproc.v1.JobController/SubmitJobAsOperation")
               .setRequestMarshaller(ProtoUtils.marshaller(SubmitJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -80,6 +82,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.JobController/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -89,6 +92,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
               .setFullMethodName("google.cloud.dataproc.v1.JobController/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
@@ -97,6 +101,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.JobController/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelJobRequest, Job> cancelJobMethodDescriptor =
@@ -105,6 +110,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.JobController/CancelJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -113,6 +119,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.JobController/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -121,6 +128,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -129,6 +137,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -140,6 +149,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SubmitJobRequest, Job> submitJobCallable;

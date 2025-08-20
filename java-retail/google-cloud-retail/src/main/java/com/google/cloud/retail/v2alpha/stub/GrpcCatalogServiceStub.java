@@ -69,6 +69,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCatalogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCatalogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCatalogRequest, Catalog>
@@ -79,6 +80,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCatalogRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Catalog.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetDefaultBranchRequest, Empty>
@@ -89,6 +91,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetDefaultBranchRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDefaultBranchRequest, GetDefaultBranchResponse>
@@ -100,6 +103,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(GetDefaultBranchRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetDefaultBranchResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCompletionConfigRequest, CompletionConfig>
@@ -110,6 +114,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCompletionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CompletionConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCompletionConfigRequest, CompletionConfig>
@@ -121,6 +126,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCompletionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CompletionConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttributesConfigRequest, AttributesConfig>
@@ -131,6 +137,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttributesConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAttributesConfigRequest, AttributesConfig>
@@ -142,6 +149,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAttributesConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddCatalogAttributeRequest, AttributesConfig>
@@ -152,6 +160,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddCatalogAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveCatalogAttributeRequest, AttributesConfig>
@@ -163,6 +172,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveCatalogAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -178,6 +188,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(BatchRemoveCatalogAttributesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRemoveCatalogAttributesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceCatalogAttributeRequest, AttributesConfig>
@@ -189,6 +200,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceCatalogAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable;

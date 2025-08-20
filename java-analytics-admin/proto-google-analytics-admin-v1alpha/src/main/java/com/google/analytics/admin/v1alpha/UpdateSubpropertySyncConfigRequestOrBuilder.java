@@ -28,7 +28,7 @@ public interface UpdateSubpropertySyncConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface UpdateSubpropertySyncConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface UpdateSubpropertySyncConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>

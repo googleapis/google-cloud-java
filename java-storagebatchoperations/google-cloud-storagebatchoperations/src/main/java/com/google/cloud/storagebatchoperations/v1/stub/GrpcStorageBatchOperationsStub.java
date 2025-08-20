@@ -65,6 +65,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   "google.cloud.storagebatchoperations.v1.StorageBatchOperations/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -73,6 +74,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
           .setFullMethodName("google.cloud.storagebatchoperations.v1.StorageBatchOperations/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateJobRequest, Operation> createJobMethodDescriptor =
@@ -82,6 +84,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
               "google.cloud.storagebatchoperations.v1.StorageBatchOperations/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -91,6 +94,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
               "google.cloud.storagebatchoperations.v1.StorageBatchOperations/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelJobRequest, CancelJobResponse>
@@ -101,6 +105,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   "google.cloud.storagebatchoperations.v1.StorageBatchOperations/CancelJob")
               .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CancelJobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -112,6 +117,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -120,6 +126,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;

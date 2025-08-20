@@ -52,6 +52,7 @@ public class GrpcCssProductsServiceStub extends CssProductsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCssProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CssProduct.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCssProductsRequest, ListCssProductsResponse>
@@ -63,6 +64,7 @@ public class GrpcCssProductsServiceStub extends CssProductsServiceStub {
                   ProtoUtils.marshaller(ListCssProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCssProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetCssProductRequest, CssProduct> getCssProductCallable;

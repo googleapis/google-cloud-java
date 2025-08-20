@@ -52,6 +52,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.GetPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.UpdatePolicyRequest, Resources.Policy>
@@ -63,6 +64,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.UpdatePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.CreateAttestorRequest, Resources.Attestor>
@@ -74,6 +76,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.CreateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.GetAttestorRequest, Resources.Attestor>
@@ -85,6 +88,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.GetAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.UpdateAttestorRequest, Resources.Attestor>
@@ -96,6 +100,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.UpdateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Resources.Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.ListAttestorsRequest, Service.ListAttestorsResponse>
@@ -108,6 +113,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   ProtoUtils.marshaller(Service.ListAttestorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(Service.ListAttestorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Service.DeleteAttestorRequest, Empty>
@@ -119,6 +125,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Service.DeleteAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<Service.GetPolicyRequest, Resources.Policy> getPolicyCallable;

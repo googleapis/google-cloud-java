@@ -56,6 +56,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServingConfigRequest, ServingConfig>
@@ -67,6 +68,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServingConfigsRequest, ListServingConfigsResponse>
@@ -79,6 +81,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   ProtoUtils.marshaller(ListServingConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>

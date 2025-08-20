@@ -50,6 +50,7 @@ public class GrpcEventServiceStub extends EventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClientEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ClientEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateClientEventRequest, ClientEvent> createClientEventCallable;

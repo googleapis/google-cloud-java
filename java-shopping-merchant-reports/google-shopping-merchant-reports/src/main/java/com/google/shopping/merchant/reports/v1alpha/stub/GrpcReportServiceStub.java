@@ -50,6 +50,7 @@ public class GrpcReportServiceStub extends ReportServiceStub {
           .setFullMethodName("google.shopping.merchant.reports.v1alpha.ReportService/Search")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;

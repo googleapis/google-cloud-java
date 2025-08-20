@@ -354,8 +354,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The un-hashed, unencrypted, [user-provided
-   * data](https://support.google.com/analytics/answer/14077171).
+   * [User-provided
+   * data](https://support.google.com/analytics/answer/14077171).  May contain
+   * either one email address or one phone number.
+   *
+   * Email addresses should be normalized as such:
+   *
+   * * lowercase
+   * * remove periods before &#64; for gmail.com/googlemail.com addresses
+   * * remove all spaces
+   *
+   * Phone numbers should be normalized as such:
+   *
+   * * remove all non digit characters
+   * * add + prefix
    * </pre>
    *
    * <code>string user_provided_data = 5;</code>
@@ -370,8 +382,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The un-hashed, unencrypted, [user-provided
-   * data](https://support.google.com/analytics/answer/14077171).
+   * [User-provided
+   * data](https://support.google.com/analytics/answer/14077171).  May contain
+   * either one email address or one phone number.
+   *
+   * Email addresses should be normalized as such:
+   *
+   * * lowercase
+   * * remove periods before &#64; for gmail.com/googlemail.com addresses
+   * * remove all spaces
+   *
+   * Phone numbers should be normalized as such:
+   *
+   * * remove all non digit characters
+   * * add + prefix
    * </pre>
    *
    * <code>string user_provided_data = 5;</code>
@@ -399,8 +423,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The un-hashed, unencrypted, [user-provided
-   * data](https://support.google.com/analytics/answer/14077171).
+   * [User-provided
+   * data](https://support.google.com/analytics/answer/14077171).  May contain
+   * either one email address or one phone number.
+   *
+   * Email addresses should be normalized as such:
+   *
+   * * lowercase
+   * * remove periods before &#64; for gmail.com/googlemail.com addresses
+   * * remove all spaces
+   *
+   * Phone numbers should be normalized as such:
+   *
+   * * remove all non digit characters
+   * * add + prefix
    * </pre>
    *
    * <code>string user_provided_data = 5;</code>
@@ -1413,8 +1449,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>
@@ -1430,8 +1478,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>
@@ -1460,8 +1520,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>
@@ -1490,8 +1562,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>
@@ -1513,8 +1597,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>
@@ -1534,8 +1630,20 @@ public final class SubmitUserDeletionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The un-hashed, unencrypted, [user-provided
-     * data](https://support.google.com/analytics/answer/14077171).
+     * [User-provided
+     * data](https://support.google.com/analytics/answer/14077171).  May contain
+     * either one email address or one phone number.
+     *
+     * Email addresses should be normalized as such:
+     *
+     * * lowercase
+     * * remove periods before &#64; for gmail.com/googlemail.com addresses
+     * * remove all spaces
+     *
+     * Phone numbers should be normalized as such:
+     *
+     * * remove all non digit characters
+     * * add + prefix
      * </pre>
      *
      * <code>string user_provided_data = 5;</code>

@@ -59,6 +59,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
           .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -67,6 +68,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
           .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
@@ -75,6 +77,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
           .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -84,6 +87,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
               .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -93,6 +97,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
               .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/AggregatedListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CheckActiveJobsRequest, CheckActiveJobsResponse>
@@ -104,6 +109,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
                   ProtoUtils.marshaller(CheckActiveJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckActiveJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SnapshotJobRequest, Snapshot> snapshotJobMethodDescriptor =
@@ -112,6 +118,7 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
           .setFullMethodName("google.dataflow.v1beta3.JobsV1Beta3/SnapshotJob")
           .setRequestMarshaller(ProtoUtils.marshaller(SnapshotJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;

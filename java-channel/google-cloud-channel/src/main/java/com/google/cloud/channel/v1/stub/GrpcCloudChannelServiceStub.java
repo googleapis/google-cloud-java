@@ -144,6 +144,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListCustomersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomerRequest, Customer> getCustomerMethodDescriptor =
@@ -152,6 +153,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
           .setFullMethodName("google.cloud.channel.v1.CloudChannelService/GetCustomer")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCustomerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -169,6 +171,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       CheckCloudIdentityAccountsExistResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomerRequest, Customer>
@@ -179,6 +182,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomerRequest, Customer>
@@ -189,6 +193,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomerRequest, Empty>
@@ -199,6 +204,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportCustomerRequest, Customer>
@@ -209,6 +215,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportCustomerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ProvisionCloudIdentityRequest, Operation>
@@ -220,6 +227,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProvisionCloudIdentityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntitlementsRequest, ListEntitlementsResponse>
@@ -231,6 +239,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitlementsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTransferableSkusRequest, ListTransferableSkusResponse>
@@ -242,6 +251,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListTransferableSkusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferableSkusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -256,6 +266,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListTransferableOffersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferableOffersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntitlementRequest, Entitlement>
@@ -266,6 +277,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Entitlement.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntitlementRequest, Operation>
@@ -276,6 +288,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ChangeParametersRequest, Operation>
@@ -286,6 +299,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ChangeParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ChangeRenewalSettingsRequest, Operation>
@@ -297,6 +311,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ChangeRenewalSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ChangeOfferRequest, Operation> changeOfferMethodDescriptor =
@@ -305,6 +320,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
           .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ChangeOffer")
           .setRequestMarshaller(ProtoUtils.marshaller(ChangeOfferRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StartPaidServiceRequest, Operation>
@@ -315,6 +331,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartPaidServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuspendEntitlementRequest, Operation>
@@ -325,6 +342,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SuspendEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelEntitlementRequest, Operation>
@@ -335,6 +353,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ActivateEntitlementRequest, Operation>
@@ -345,6 +364,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ActivateEntitlementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferEntitlementsRequest, Operation>
@@ -355,6 +375,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferEntitlementsToGoogleRequest, Operation>
@@ -366,6 +387,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferEntitlementsToGoogleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -380,6 +402,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListChannelPartnerLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChannelPartnerLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -391,6 +414,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetChannelPartnerLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelPartnerLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -402,6 +426,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChannelPartnerLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelPartnerLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -413,6 +438,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateChannelPartnerLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelPartnerLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
@@ -425,6 +451,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(GetCustomerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -440,6 +467,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListCustomerRepricingConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomerRepricingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -454,6 +482,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(CreateCustomerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -468,6 +497,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(UpdateCustomerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomerRepricingConfigRequest, Empty>
@@ -479,6 +509,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -494,6 +525,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       GetChannelPartnerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -512,6 +544,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListChannelPartnerRepricingConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -528,6 +561,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       CreateChannelPartnerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -544,6 +578,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       UpdateChannelPartnerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteChannelPartnerRepricingConfigRequest, Empty>
@@ -556,6 +591,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(
                       DeleteChannelPartnerRepricingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSkuGroupsRequest, ListSkuGroupsResponse>
@@ -567,6 +603,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListSkuGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSkuGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -581,6 +618,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListSkuGroupBillableSkusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSkuGroupBillableSkusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LookupOfferRequest, Offer> lookupOfferMethodDescriptor =
@@ -589,6 +627,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
           .setFullMethodName("google.cloud.channel.v1.CloudChannelService/LookupOffer")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupOfferRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Offer.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -599,6 +638,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSkusRequest, ListSkusResponse>
@@ -608,6 +648,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ListSkus")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSkusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSkusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOffersRequest, ListOffersResponse>
@@ -617,6 +658,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ListOffers")
               .setRequestMarshaller(ProtoUtils.marshaller(ListOffersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListOffersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPurchasableSkusRequest, ListPurchasableSkusResponse>
@@ -628,6 +670,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListPurchasableSkusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPurchasableSkusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
@@ -640,6 +683,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListPurchasableOffersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPurchasableOffersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -655,6 +699,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(QueryEligibleBillingAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryEligibleBillingAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RegisterSubscriberRequest, RegisterSubscriberResponse>
@@ -666,6 +711,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(RegisterSubscriberRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RegisterSubscriberResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -677,6 +723,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(UnregisterSubscriberRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UnregisterSubscriberResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubscribersRequest, ListSubscribersResponse>
@@ -688,6 +735,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListSubscribersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubscribersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -702,6 +750,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListEntitlementChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitlementChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable;

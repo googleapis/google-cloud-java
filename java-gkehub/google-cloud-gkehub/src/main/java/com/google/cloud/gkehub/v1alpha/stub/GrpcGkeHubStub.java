@@ -61,6 +61,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
@@ -69,6 +70,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
           .setFullMethodName("google.cloud.gkehub.v1alpha.GkeHub/GetFeature")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeatureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateFeatureRequest, Operation>
@@ -79,6 +81,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureRequest, Operation>
@@ -89,6 +92,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureRequest, Operation>
@@ -99,6 +103,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesResponse> listFeaturesCallable;

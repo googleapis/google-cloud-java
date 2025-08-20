@@ -50,6 +50,7 @@ public class GrpcEmailPreferencesServiceStub extends EmailPreferencesServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEmailPreferencesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EmailPreferences.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEmailPreferencesRequest, EmailPreferences>
@@ -61,6 +62,7 @@ public class GrpcEmailPreferencesServiceStub extends EmailPreferencesServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEmailPreferencesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EmailPreferences.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetEmailPreferencesRequest, EmailPreferences>

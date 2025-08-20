@@ -52,6 +52,7 @@ public class GrpcPublicCertificateAuthorityServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExternalAccountKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalAccountKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateExternalAccountKeyRequest, ExternalAccountKey>

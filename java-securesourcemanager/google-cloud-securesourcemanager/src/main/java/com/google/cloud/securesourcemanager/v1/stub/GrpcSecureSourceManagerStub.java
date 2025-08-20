@@ -144,6 +144,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -152,6 +153,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -163,6 +165,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -174,6 +177,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
@@ -186,6 +190,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRepositoryRequest, Repository>
@@ -197,6 +202,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRepositoryRequest, Operation>
@@ -208,6 +214,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRepositoryRequest, Operation>
@@ -219,6 +226,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRepositoryRequest, Operation>
@@ -230,6 +238,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHooksRequest, ListHooksResponse>
@@ -240,6 +249,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/ListHooks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListHooksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListHooksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHookRequest, Hook> getHookMethodDescriptor =
@@ -248,6 +258,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/GetHook")
           .setRequestMarshaller(ProtoUtils.marshaller(GetHookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Hook.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateHookRequest, Operation> createHookMethodDescriptor =
@@ -256,6 +267,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/CreateHook")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateHookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateHookRequest, Operation> updateHookMethodDescriptor =
@@ -264,6 +276,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/UpdateHook")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateHookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteHookRequest, Operation> deleteHookMethodDescriptor =
@@ -272,6 +285,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/DeleteHook")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteHookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy>
@@ -282,6 +296,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/GetIamPolicyRepo")
               .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy>
@@ -292,6 +307,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/SetIamPolicyRepo")
               .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -304,6 +320,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBranchRuleRequest, Operation>
@@ -315,6 +332,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBranchRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBranchRulesRequest, ListBranchRulesResponse>
@@ -327,6 +345,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListBranchRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBranchRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBranchRuleRequest, BranchRule>
@@ -338,6 +357,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBranchRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BranchRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBranchRuleRequest, Operation>
@@ -349,6 +369,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBranchRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBranchRuleRequest, Operation>
@@ -360,6 +381,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBranchRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePullRequestRequest, Operation>
@@ -371,6 +393,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPullRequestRequest, PullRequest>
@@ -382,6 +405,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PullRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPullRequestsRequest, ListPullRequestsResponse>
@@ -394,6 +418,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListPullRequestsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPullRequestsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePullRequestRequest, Operation>
@@ -405,6 +430,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MergePullRequestRequest, Operation>
@@ -416,6 +442,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MergePullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<OpenPullRequestRequest, Operation>
@@ -427,6 +454,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(OpenPullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ClosePullRequestRequest, Operation>
@@ -438,6 +466,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ClosePullRequestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -452,6 +481,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListPullRequestFileDiffsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPullRequestFileDiffsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchTreeRequest, FetchTreeResponse>
@@ -462,6 +492,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/FetchTree")
               .setRequestMarshaller(ProtoUtils.marshaller(FetchTreeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FetchTreeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchBlobRequest, FetchBlobResponse>
@@ -472,6 +503,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/FetchBlob")
               .setRequestMarshaller(ProtoUtils.marshaller(FetchBlobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FetchBlobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIssueRequest, Operation> createIssueMethodDescriptor =
@@ -480,6 +512,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/CreateIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIssueRequest, Issue> getIssueMethodDescriptor =
@@ -488,6 +521,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/GetIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Issue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIssuesRequest, ListIssuesResponse>
@@ -498,6 +532,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   "google.cloud.securesourcemanager.v1.SecureSourceManager/ListIssues")
               .setRequestMarshaller(ProtoUtils.marshaller(ListIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIssueRequest, Operation> updateIssueMethodDescriptor =
@@ -506,6 +541,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/UpdateIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIssueRequest, Operation> deleteIssueMethodDescriptor =
@@ -514,6 +550,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/DeleteIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<OpenIssueRequest, Operation> openIssueMethodDescriptor =
@@ -522,6 +559,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/OpenIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(OpenIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CloseIssueRequest, Operation> closeIssueMethodDescriptor =
@@ -530,6 +568,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.securesourcemanager.v1.SecureSourceManager/CloseIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(CloseIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetPullRequestCommentRequest, PullRequestComment>
@@ -541,6 +580,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPullRequestCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PullRequestComment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -555,6 +595,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListPullRequestCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPullRequestCommentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePullRequestCommentRequest, Operation>
@@ -566,6 +607,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePullRequestCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePullRequestCommentRequest, Operation>
@@ -577,6 +619,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePullRequestCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePullRequestCommentRequest, Operation>
@@ -588,6 +631,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePullRequestCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreatePullRequestCommentsRequest, Operation>
@@ -599,6 +643,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreatePullRequestCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResolvePullRequestCommentsRequest, Operation>
@@ -610,6 +655,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResolvePullRequestCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnresolvePullRequestCommentsRequest, Operation>
@@ -621,6 +667,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UnresolvePullRequestCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIssueCommentRequest, Operation>
@@ -632,6 +679,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateIssueCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIssueCommentRequest, IssueComment>
@@ -643,6 +691,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetIssueCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IssueComment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIssueCommentsRequest, ListIssueCommentsResponse>
@@ -655,6 +704,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListIssueCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIssueCommentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIssueCommentRequest, Operation>
@@ -666,6 +716,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateIssueCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIssueCommentRequest, Operation>
@@ -677,6 +728,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIssueCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -688,6 +740,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -696,6 +749,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -704,6 +758,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -712,6 +767,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -723,6 +779,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

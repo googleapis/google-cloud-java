@@ -56,6 +56,7 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
                   ProtoUtils.marshaller(ListAttachmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttachmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttachmentRequest, Attachment>
@@ -66,6 +67,7 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Attachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>

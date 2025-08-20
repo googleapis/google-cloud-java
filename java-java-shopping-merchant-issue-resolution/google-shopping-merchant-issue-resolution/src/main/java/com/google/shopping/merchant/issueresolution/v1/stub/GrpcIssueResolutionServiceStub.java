@@ -54,6 +54,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                   ProtoUtils.marshaller(RenderAccountIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RenderAccountIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenderProductIssuesRequest, RenderProductIssuesResponse>
@@ -66,6 +67,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                   ProtoUtils.marshaller(RenderProductIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RenderProductIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TriggerActionRequest, TriggerActionResponse>
@@ -78,6 +80,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                   ProtoUtils.marshaller(TriggerActionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TriggerActionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RenderAccountIssuesRequest, RenderAccountIssuesResponse>

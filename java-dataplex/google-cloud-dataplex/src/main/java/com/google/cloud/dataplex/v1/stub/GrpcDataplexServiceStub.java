@@ -112,6 +112,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateLake")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateLakeRequest, Operation> updateLakeMethodDescriptor =
@@ -120,6 +121,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateLake")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteLakeRequest, Operation> deleteLakeMethodDescriptor =
@@ -128,6 +130,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteLake")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLakesRequest, ListLakesResponse>
@@ -137,6 +140,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListLakes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListLakesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListLakesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLakeRequest, Lake> getLakeMethodDescriptor =
@@ -145,6 +149,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetLake")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLakeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Lake.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLakeActionsRequest, ListActionsResponse>
@@ -156,6 +161,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListLakeActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateZoneRequest, Operation> createZoneMethodDescriptor =
@@ -164,6 +170,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateZoneRequest, Operation> updateZoneMethodDescriptor =
@@ -172,6 +179,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteZoneRequest, Operation> deleteZoneMethodDescriptor =
@@ -180,6 +188,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteZone")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListZonesRequest, ListZonesResponse>
@@ -189,6 +198,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListZones")
               .setRequestMarshaller(ProtoUtils.marshaller(ListZonesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListZonesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetZoneRequest, Zone> getZoneMethodDescriptor =
@@ -197,6 +207,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetZone")
           .setRequestMarshaller(ProtoUtils.marshaller(GetZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Zone.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListZoneActionsRequest, ListActionsResponse>
@@ -208,6 +219,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListZoneActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAssetRequest, Operation> createAssetMethodDescriptor =
@@ -216,6 +228,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAssetRequest, Operation> updateAssetMethodDescriptor =
@@ -224,6 +237,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
@@ -232,6 +246,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -241,6 +256,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -249,6 +265,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetActionsRequest, ListActionsResponse>
@@ -260,6 +277,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListAssetActionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTaskRequest, Operation> createTaskMethodDescriptor =
@@ -268,6 +286,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTaskRequest, Operation> updateTaskMethodDescriptor =
@@ -276,6 +295,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTaskRequest, Operation> deleteTaskMethodDescriptor =
@@ -284,6 +304,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteTask")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -293,6 +314,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -301,6 +323,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -310,6 +333,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunTaskRequest, RunTaskResponse> runTaskMethodDescriptor =
@@ -318,6 +342,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/RunTask")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RunTaskResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -326,6 +351,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelJobRequest, Empty> cancelJobMethodDescriptor =
@@ -334,6 +360,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CancelJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -344,6 +371,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
@@ -354,6 +382,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEnvironmentRequest, Operation>
@@ -364,6 +393,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -375,6 +405,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListEnvironmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
@@ -385,6 +416,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
@@ -395,6 +427,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -406,6 +439,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -414,6 +448,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateLakeRequest, Operation> createLakeCallable;

@@ -55,6 +55,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCheckoutSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CheckoutSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCheckoutSettingsRequest, CheckoutSettings>
@@ -66,6 +67,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCheckoutSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CheckoutSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCheckoutSettingsRequest, CheckoutSettings>
@@ -77,6 +79,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCheckoutSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CheckoutSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCheckoutSettingsRequest, Empty>
@@ -88,6 +91,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCheckoutSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetCheckoutSettingsRequest, CheckoutSettings>

@@ -71,6 +71,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCatalogRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Catalog.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCatalogRequest, Catalog>
@@ -81,6 +82,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCatalogRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Catalog.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCatalogRequest, Catalog> getCatalogMethodDescriptor =
@@ -89,6 +91,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/GetCatalog")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCatalogRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Catalog.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCatalogsRequest, ListCatalogsResponse>
@@ -99,6 +102,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCatalogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCatalogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDatabaseRequest, Database>
@@ -109,6 +113,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatabaseRequest, Database>
@@ -119,6 +124,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatabaseRequest, Database>
@@ -129,6 +135,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatabaseRequest, Database> getDatabaseMethodDescriptor =
@@ -137,6 +144,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/GetDatabase")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatabaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
@@ -148,6 +156,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTableRequest, Table> createTableMethodDescriptor =
@@ -156,6 +165,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/CreateTable")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTableRequest, Table> deleteTableMethodDescriptor =
@@ -164,6 +174,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/DeleteTable")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTableRequest, Table> updateTableMethodDescriptor =
@@ -172,6 +183,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/UpdateTable")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RenameTableRequest, Table> renameTableMethodDescriptor =
@@ -180,6 +192,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/RenameTable")
           .setRequestMarshaller(ProtoUtils.marshaller(RenameTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
@@ -188,6 +201,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/GetTable")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTablesRequest, ListTablesResponse>
@@ -197,6 +211,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
               .setFullMethodName("google.cloud.bigquery.biglake.v1.MetastoreService/ListTables")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCatalogRequest, Catalog> createCatalogCallable;
